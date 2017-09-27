@@ -1,25 +1,228 @@
-section {
+.contents{
   width: 100%;
+  min-width: 1200px;
   margin: 0 auto;
 }
-section .inner{
-  width: 1200px;
-  margin: 0 auto;
-  text-align: center;
 
+.contents-sub{
+  &-head{
+    margin-top:30px;
+    margin-bottom: 40px;
+
+    &-title{
+      color:#222;
+      font-size:46px;
+      font-weight:600;
+      font-family: 'NanumSquare', sans-serif;
+    }
+
+    &-article{
+      color:#666;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+  }
 }
 
-.sub-head{
-  color:#222;
-  font-size:46px;
-}
-.sub-visual {
-  min-width: 100%;
+.contents-visual{
   min-height:300px;
   height:300px;
   background-size: cover;
+
+  &.departure{
+    background:url("../images/img_sub_visual_departure.jpg") center no-repeat;
+  }
 }
 
-.sub-visual.departure{
-  background:url("../images/img_sub_visual_departure.jpg") center no-repeat;
+.congestion{
+  border-left: 1px solid rgba(255, 255, 255, .2);
+  width: 200px;
+  float: right;
+  position:relative;
+  right: 40px;
+  top:-25px;
+
+  &-title{
+    color:#fff;
+    font-size: 24px;
+    margin-left:45px;
+    line-height: 30px;
+    margin-bottom: 10px;
+
+    .point{
+      color: #ffae44;
+    }
+  }
+
+  &-quick-link{
+    color:#fff;
+    font-size: 14px;
+    border: 1px solid #fff;
+    border-radius:20px;
+    padding:7px 10px;
+    display: inline-block;
+    width: 106px;
+    text-align: left;
+    margin-left: 45px;
+  }
 }
+
+.tab{
+  &-area{
+    position:relative;
+    top:-210px;
+  }
+
+  &-main{
+    margin: 0 auto;
+    text-align:center;
+    display: inline-block;
+
+    &-list{
+      border: 2px solid rgba(255, 255, 255, .5);
+      border-radius: 5px;
+      width: 420px;
+      //height: 50px;
+      box-sizing:border-box;
+
+      @extend %clearfix;
+
+      &-item{
+        float: left;
+        width: 208px;
+        font-weight: 600;
+
+        & a{
+          color: #fff;
+          line-height: 50px;
+        }
+
+        &.on{
+          background:#fff;
+
+          & a{
+            color: #42519e;
+          }
+        }
+      }
+    }
+  }
+
+  &-sub{
+    width:1152px;
+    text-align: center;
+    margin: 0 auto;
+    &-list{
+      margin-top: 85px;
+      height: 72px;
+      &-item {
+        float: left;
+        background:rgba(66, 81, 158, .9);
+        width: 574px;
+        font-size: 22px;
+        line-height:72px;
+        & a{ color: #fff;
+        }
+        &.on{
+          color:#fff;
+          background: #fff;
+          & a{ color: #42519e;
+          }
+        }
+        &+.tab-sub-list-item{
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}
+
+.info{
+  clear: both;
+  text-align:left;
+  margin-top: 30px;
+  padding: 0 20px;
+  &-txt{
+    font-size: 16px;
+    color:#666;
+    &-article{
+      line-height: 26px;
+    }
+  }
+}
+
+.search{
+  margin-top: 30px;
+  margin: 0px 20px;
+  &-option{
+    float: left;
+    margin-right:20px;
+    &-btn{
+      background: #fff;
+      border: 1px solid #a5a7aa;
+      box-sizing: border-box;
+      color: #666;
+      font-size: 16px;
+      padding:0 18px;
+      height: 60px;
+
+      &.btn.on{
+        color: #343951;
+        border: 1px solid #323648;
+      }
+    }
+  }
+  &-select{
+    border: 1px solid #666;
+    box-sizing: border-box;
+    height: 60px;
+    float: left;
+
+    &-article{
+      font-size: 16px;
+      padding:18px 10px;
+      box-sizing: border-box;
+      border: none;
+      border-right: 1px solid #d9d9d9;
+      vertical-align: bottom;
+      width: 182px;
+      height: 58px;
+      float: left;
+    }
+    &-airplane{
+      background: #fcfbe8;
+      border: none;
+      font-size: 16px;
+      padding:0 10px;
+      width: 180px;
+      height:58px;
+      float: left;
+    }
+    &-btn{
+      border:none;
+      padding:20px;
+      vertical-align: bottom;
+      background:#323648 url("../images/icon_.search_btn.png") 50% no-repeat;
+      text-indent: -999px;
+      display: inline-block;
+      width: 62px;
+      height: 58px;
+    }
+  }
+}
+
+.updata{
+  clear: both;
+  margin: 0 20px;
+  text-align: right;
+  &-time{
+    font-size:14px;
+    color: #666;
+  }
+  &-refresh{
+    background: #fff;
+    border: 1px solid #fff;
+  }
+}
+
