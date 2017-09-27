@@ -2,74 +2,80 @@
 <section id="top-contents" class="contents">
   <div class="inner-section">
     <!--서브타이틀-->
-    <div class="sub-head">
-      <h3 class="title">출발시간</h3>
-      <p class="article">항공사별/ 도시별/ 출발 정보를 안내합니다.</p>
+    <div class="contents-sub-head">
+      <h3 class="contents-sub-head-title">출발시간</h3>
+      <p class="contents-sub-head-article">항공사별/ 도시별/ 출발 정보를 안내합니다.</p>
     </div>
     <!--//서브타이틀-->
   </div>
   <!--비주얼이미지-->
-  <div class="sub-visual departure"></div>
+  <div class="contents-visual departure"></div>
   <!--//비주얼이미지-->
 </section>
 
 <section class="contents tab-area">
   <div class="inner-section">
-    <!--tab-->
-    <div class="tab-link">
-      <ul class="tab-link-list">
-        <li class="list-item on"><a href="#">여객</a></li>
-        <li class="list-item"><a href="#">화물</a></li>
-      </ul>
-    </div>
-    <!--tab-->
     <!--혼잡도-->
     <div class="congestion">
       <div class="congestion-title">출국장<br> <span class="point">혼잡도</span> 보기</div>
-      <a href="#" class="quick-link">바로가기</a>
+      <a href="#" class="congestion-quick-link">바로가기</a>
     </div>
     <!--//혼잡도-->
+    <!--tab-->
+    <div class="tab-main">
+      <ul class="tab-main-list">
+        <li class="tab-main-list-item on"><a href="#" class="tab-main-list-link">여객</a></li>
+        <li class="tab-main-list-item"><a href="#" class="tab-main-list-link">화물</a></li>
+      </ul>
+    </div>
+    <!--tab-->
     <!--subtab-->
-    <div class="subtab">
-      <ul class="subtab-list">
-        <li class="list-item on"><a href="#">여객 출발 시간표</a></li>
-        <li class="list-item"><a href="#">여객 출발 정기 운항편</a></li>
+    <div class="tab-sub">
+      <ul class="tab-sub-list">
+        <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">여객 출발 시간표</a></li>
+        <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">여객 출발 정기 운항편</a></li>
       </ul>
     </div>
     <!--//subtab-->
     <!--info-txt-->
     <div class="info">
       <ul class="info-txt">
-        <li class="article">- 시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.</li>
-        <li class="article">- 운항편명을 클릭하시면 탑승을 위한 이동경로 및 상세정보를 확인하실 수 있습니다.</li>
-        <li class="article">- 항공기 출발시간 10~15분전까지 탑승을 완료하여 주시기 바랍니다.</li>
+        <li class="info-txt-article">- 시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.</li>
+        <li class="info-txt-article">- 운항편명을 클릭하시면 탑승을 위한 이동경로 및 상세정보를 확인하실 수 있습니다.</li>
+        <li class="info-txt-article">- 항공기 출발시간 10~15분전까지 탑승을 완료하여 주시기 바랍니다.</li>
       </ul>
     </div>
     <!--//info-txt-->
     <!--검색영역-->
-    <div class="search-area">
-      <div class="option-btn">
-        <button type="button" class="btn on">오늘</button>
-        <button type="button" class="btn">내일</button>
+    <div class="search">
+      <div class="search-option">
+        <button type="button" class="search-option-btn on">오늘</button>
+        <button type="button" class="search-option-btn">내일</button>
       </div>
-      <div class="select-group">
-        <select>
+      <div class="search-select">
+        <select class="search-select-article">
           <option>2017.08.21(월)</option>
         </select>
-        <select>
+        <select class="search-select-article">
           <option>00:00~00:59</option>
         </select>
-        <select>
+        <select class="search-select-article">
           <option>목적지</option>
         </select>
-        <select>
+        <select class="search-select-article">
           <option>항공사</option>
         </select>
-        <input type="text" class="airplane-number" placeholder="편명입력">
-        <button type="button" class="search-btn">검색</button>
+        <input type="text" class="search-select-airplane" placeholder="편명입력">
+        <button type="button" class="search-select-btn">검색</button>
       </div>
     </div>
     <!--//검색영역-->
+    <!--업데이트 시간-->
+    <div class="updata">
+      <span class="updata-time">마지막 업데이트:2017.08.21 13:35</span>
+      <button type="button" class="updata-refresh">새로고침</button>
+    </div>
+    <!--//업데이트 시간-->
   </div>
 </section>
 <!--=include _include/_footer.html -->
