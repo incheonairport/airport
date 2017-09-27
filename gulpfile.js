@@ -1,4 +1,3 @@
-// 변수선언 = require('모듈이름');
 var gulp = require('gulp');
 
 var livereload = require('gulp-livereload');
@@ -9,9 +8,8 @@ var include = require('gulp-include');
 var sass = require('gulp-sass');
 
 var sourcemaps = require('gulp-sourcemaps');
-var concat = require('gulp-concat');
 
-// pipe()는 모듈의 기능을 실행해주는 함수
+//var concat = require('gulp-concat');
 
 // 새로 고침
 gulp.task('livereload', function(){
@@ -24,7 +22,7 @@ gulp.task('watch', function() {
   gulp.watch('*', ['livereload']);
   gulp.watch('html_src/**', ['include', 'livereload']);
   gulp.watch('css_src/**', ['sass', 'livereload']);
-  gulp.watch('js_src/**', ['jsconcat', 'livereload']);
+  //gulp.watch('js_src/**', ['jsconcat', 'livereload']);
 });
 
 // header, footer, 공통영역 분리
