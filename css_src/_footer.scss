@@ -35,7 +35,7 @@
       }
       &-link{
         color:#222;
-        font-size:14px;
+        font-size:0.875rem;
         font-weight:400;
         text-decoration:none;
         &:hover{
@@ -45,7 +45,7 @@
     }
   }
   &-call{
-    font-size:18px;
+    font-size:1.125rem;
     margin:28px 0 20px 0;
     &-num{
       color:#2c8179;
@@ -59,7 +59,7 @@
     &-item{
       display:inline-block;
       color:#666;
-      font-size:14px;
+      font-size:0.875rem;
       margin-right:10px;
       &:before{
         content:'';
@@ -80,7 +80,7 @@
 
   &-copyright{
     color:#666;
-    font-size:12px;
+    font-size:0.75rem;
     letter-spacing:.3px;
   }
 
@@ -131,8 +131,7 @@
       float:right;
       margin-top:2px;
       &-link{
-        color:#222;
-        font-size:14px;
+        font-size:0.875rem;
         line-height:22px;
         text-decoration:none;
         &:hover{
