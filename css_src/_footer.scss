@@ -1,5 +1,313 @@
-.footer{
-  background: #ffff00;
-  &-inner{width:100px;margin:auto;}
-  .txt{color:red}
+.footer *{box-sizing: border-box;}
+
+.clearfix{
+  &:after{
+    content:'';
+    display:block;
+    clear:both;
+  }
 }
+
+.footer{
+  background: #fff;
+  border-top:1px solid #dcdfe4;
+  &-inner{
+    min-width:1200px;
+    width:1200px;
+    padding:20px 24px;
+    margin:auto;
+  }
+  &-al.left{
+    float:left
+  }
+  .fnb{
+    &-list{
+      font-size:0;
+      &-item{
+        margin-left:10px;
+        display:inline-block;
+        &:before{
+          content:'';
+          display:inline-block;
+          width:1px;
+          height:11px;
+          background:#ccc;
+          margin-right:10px;
+        }
+
+        &:first-child{
+          margin-left:0;
+        }
+
+        &:first-child:before{
+          display:none;
+        }
+      }
+      &-link{
+        color:#222;
+        font-size:14px;
+        font-weight:400;
+        text-decoration:none;
+        &:hover{
+          opacity:.5
+        }
+      }
+    }
+  }
+  &-call{
+    font-size:18px;
+    margin:28px 0 20px 0;
+    &-num{
+      color:#2c8179;
+      font-weight:400;
+    }
+  }
+
+  &-contact{
+    margin-bottom:12px;
+    font-size:0;
+    &-item{
+      display:inline-block;
+      color:#666;
+      font-size:14px;
+      margin-right:10px;
+      &:before{
+        content:'';
+        display:inline-block;
+        width:1px;
+        height:11px;
+        background:#ccc;
+        margin-right:10px;
+      }
+      &:first-child{
+        margin-left:0px;
+      }
+      &:first-child:before{
+        display:none;
+      }
+    }
+  }
+
+  &-copyright{
+    color:#666;
+    font-size:12px;
+    letter-spacing:.3px;
+  }
+
+  &-al.right{
+    float:right;
+    margin-top:-16px;
+  }
+
+  .sns{
+    &-list{
+      float:right;
+      margin-right:-11px;
+      font-size:0;
+      &-item{
+        display:inline-block;
+        margin-right:10px;
+      }
+      &-link{
+        width:22px;
+        height:22px;
+        &:hover{
+          opacity:.5;
+        }
+      }
+    }
+  }
+  .relsite{
+    position:relative;
+    float:right;
+    width:202px;
+    height:32px;
+    margin:20px 0 12px 0;
+    .slt-list{
+      top:-392px;
+      width:202px;
+      max-height:392px;
+    }
+  }
+
+  .incheon-etc{
+    .web-mark{
+      float:left;
+      margin-right:20px;
+    }
+    .footer-shortcut{
+      float:right;
+      margin-top:2px;
+      &-link{
+        color:#222;
+        font-size:14px;
+        line-height:22px;
+        text-decoration:none;
+        &:hover{
+          opacity:.5;
+        }
+        .link-tit{
+          display:inline-block;
+          width:96px;
+        }
+      }
+    }
+
+  }
+
+}
+
+/* sprite icon */
+.ico{
+  display:inline-block;
+  position:relative;
+  text-indent:-999em;
+  &:after{
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background: url('../images/spr_ico_footer.png') no-repeat;
+    margin:auto;
+  }
+
+  &.ig:after{
+    background-position:-31px -28px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &.fb:after{
+    background-position:-69px -28px;
+    width: 9px;
+    height: 20px;
+  }
+
+  &.tt:after{
+    background-position:-98px -29px;
+    width: 21px;
+    height: 19px;
+  }
+
+  &.yb:after{
+    background-position:-133px -31px;
+    width: 20px;
+    height: 14px;
+  }
+
+  &.arrow_up:after{
+    background-position:-35px -67px;
+    width: 12px;
+    height: 7px;
+  }
+
+  &.arrow_down:after{
+    background-position:-67px -67px;
+    width: 12px;
+    height: 7px;
+  }
+}
+
+
+/* link type select box */
+.slt-link{
+  background:#fff;
+  border:1px solid #ccc;
+  &.on{
+    border: 1px solid #666;
+  }
+  &-default{
+    width:100%;
+    height:100%;
+    background:none;
+    padding:0;
+    border:none;
+    color:#666;
+    font-size:13px;
+    font-weight:300;
+    line-height:0;
+    text-align: left;
+    text-indent:10px;
+    .ico{
+      position:absolute;
+      right:0;
+      top:0;
+      bottom:0;
+      width:30px;
+      height:30px;
+      background:none;
+      margin:auto;
+      border:none;
+      &:after{
+        transition: all .4s;
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1px;
+        height: 18px;
+        background: #ccc;
+      }
+      &.on:after{
+        transform:rotate(180deg);
+      }
+    }
+  }
+}
+
+.slt-list{
+    /*
+      아래서 위로 올라오는 경우 button class="ico arrow_down" :: ul class="slt-list up"
+      위에서 아래로 내려가는 경우 button class="ico arrow_up" :: ul class="slt-list"
+      포지셔닝은 div class="slt-link" 의 해당 위치에있는 별도 클래스로 지정.
+     */
+  &.up.on{
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #666;
+  }
+  height:0;
+  border:none;
+  overflow:hidden;
+  overflow-y:auto;
+  position:absolute;
+  top:30px;
+  left:-1px;
+  background:#fff;
+  transition: height .4s;
+
+
+  &-item{
+    line-height:30px;
+    text-indent:10px;
+  }
+  &-link{
+    display:block;
+    width:100%;
+    height:100%;
+    color:#666;
+    font-size:13px;
+    font-weight:300;
+    text-decoration:none;
+    &:hover{
+      background:#4674c9;
+      color:#fff;
+    }
+  }
+  &.on{
+    height:auto;
+    border:1px solid #666;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #666;
+  }
+}
+
+
+
