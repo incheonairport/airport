@@ -109,13 +109,12 @@
     }
   }
   .relsite{
-    position:relative;
     float:right;
     width:202px;
     height:32px;
     margin:20px 0 12px 0;
     .select-list{
-      top:-392px;
+      top:-391px;
       width:202px;
       max-height:392px;
     }
@@ -151,7 +150,7 @@
 
 .footer .ico{
   &:after{
-    background: url('../images/spr_ico_footer.png') no-repeat;
+    background: url(../images/spr_ico_sns_arrow.png) no-repeat;
   }
 }
 
