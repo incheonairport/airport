@@ -82,6 +82,7 @@
     color:#666;
     font-size:0.75rem;
     letter-spacing:.3px;
+    font-style:oblique;
   }
 
   &-align.right{
@@ -131,7 +132,7 @@
       margin-top:2px;
       &-link{
         font-size:0.875rem;
-        line-height:22px;
+        line-height:1.3rem;
         text-decoration:none;
         &:hover{
           opacity:.5;
@@ -146,17 +147,3 @@
   }
 
 }
-
-
-.footer .ico{
-  &:after{
-    background: url(../images/spr_ico_sns_arrow.png) no-repeat;
-  }
-}
-
-
-
-
-
-
-

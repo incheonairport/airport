@@ -11,7 +11,7 @@
   clear:both;
 }
 
-/* sprite icon */
+/* global sprite icon */
 .ico{
   display:inline-block;
   position:relative;
@@ -25,6 +25,7 @@
     left:0;
     bottom:0;
     margin:auto;
+    background: url(../images/spr_ico_global.png) no-repeat;
   }
 
   &.ig:after{
@@ -63,50 +64,8 @@
     height: 7px;
   }
 
-  &.arrival:after{
-    background-position:-34px -38px;
-    width: 88px;
-    height: 44px;
-  }
-
-  &.procedure:after{
-    background-position:-158px -43px;
-    width: 70px;
-    height: 43px;
-  }
-
-  &.baggage:after{
-    background-position:-265px -32px;
-    width: 55px;
-    height: 60px;
-  }
-
-  &.customs:after{
-    background-position:-359px -36px;
-    width: 57px;
-    height: 54px;
-  }
-
-  &.leave:after{
-    background-position:-453px -29px;
-    width: 86px;
-    height: 63px;
-  }
-
-  &.security:after{
-    background-position:-570px -28px;
-    width: 90px;
-    height: 53px;
-  }
-
-  &.screening:after{
-    background-position:-696px -27px;
-    width: 51px;
-    height: 63px;
-  }
-
   &.arrow-link-right:after{
-    background-position:-30px -259px;
+    background-position:-351px -65px;
     width: 7px;
     height: 10px;
   }
@@ -134,7 +93,7 @@
     text-align: left;
     text-indent:10px;
     position:relative;
-    border:1px solid #ccc;
+    border:1px solid #d9d9d9;
 
     &.on{
       border-color:#666;
@@ -165,7 +124,7 @@
         margin: auto;
         width: 1px;
         height: 18px;
-        background: #ccc;
+        background: #d9d9d9;
       }
     }
 
@@ -182,7 +141,7 @@
     top:31px;
     background:#fff;
     transition: height .4s;
-    border:1px solid #ccc;
+    border:1px solid #d9d9d9;
     z-index:10;
 
     &.on{
@@ -190,12 +149,12 @@
 
       &.up{
         border-color:#666;
-        border-bottom-color:#ccc;
+        border-bottom-color:#d9d9d9;
       }
 
       &.down{
         border-color:#666;
-        border-top-color:#ccc;
+        border-top-color:#d9d9d9;
       }
     }
 
@@ -216,7 +175,5 @@
         color:#fff;
       }
     }
-
-
   }
 }
