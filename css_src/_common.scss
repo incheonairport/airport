@@ -69,7 +69,11 @@
     width: 7px;
     height: 10px;
   }
-
+  &.updata-refresh:after{
+    background-position:-31px -98px;
+    width: 20px;
+    height: 20px;
+  }
 }
 
 

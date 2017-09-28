@@ -243,12 +243,15 @@
   }
   &-refresh{
     border: 1px solid #d9d9d9;
+    background: #fff;
     font-size:0.8125rem;
     color: #666;
-    background:#fff url(../images/icon_refresh_btn.png) 10px 7px no-repeat;
     padding: 0 10px  0 25px;
     line-height: 26px;
     height: 26px;
+    &.ico{
+      text-indent:0em;
+    }
   }
 }
 
