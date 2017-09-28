@@ -1,0 +1,174 @@
+// 절차 list 컴포넌트
+.step{
+  margin-top:40px;
+  &-list{
+    @extend %clearfix;
+    margin-left:-24px;
+    &-item{
+      padding:0 30px;
+      float:left;
+      width:368px;
+      height:412px;
+      background:#fff;
+      border: 1px solid #dee3eb;
+      margin:0 0 30px 24px;
+    }
+
+    &-num{
+      display:block;
+      position:relative;
+      margin-top:20px;
+      color:#97a4b9;
+      font-size:1.25rem;
+      font-weight:300;
+      text-align:center;
+      &:before{
+        content:'';
+        display:block;
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:130px;
+        height:1px;
+        background:#dbdfe6;
+      }
+      &:after{
+        content:'';
+        display:block;
+        position:absolute;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:130px;
+        height:1px;
+        background:#dbdfe6;
+      }
+    }
+
+    &-head{
+      margin-top:44px;
+      font-family: nanumsq, sans-serif;
+      font-size:2.125rem;
+      font-weight:400;
+      text-align:center;
+    }
+
+    &-subhead{
+      display:inline-block;
+      color:#fff;
+      font-size:1.125rem;
+      font-weight:300;
+      background:#323648;
+      padding:3px 6px;
+      margin-top:16px;
+      margin-bottom:4px;
+      &+.step-list-desc{
+        line-height:1.4;
+        text-align:left;
+      }
+    }
+
+
+    &-desc{
+      color:#000;
+      font-size:1.125rem;
+      line-height:1.7;
+      text-align:center ;
+    }
+
+    &-guide{
+      display:inline-block;
+      color:#d43e41;
+      font-size:16px;
+      line-height: 1.5;
+      margin-top:4px;
+    }
+
+    .btn-group{
+      margin-bottom:4px;
+    }
+
+
+
+    &-item.main{
+      border:none;
+      &.step_leave{
+        background:url('../images/step_leave.jpg');
+      }
+      &.step_entry{
+        background:url('../images/step_entry.jpg');
+      }
+      .step-list-head{
+        color:#fff;
+        font-size:2.875rem;
+        font-weight:500;
+        margin-top:80px;
+        &:after{
+          display:none
+        }
+      }
+      .step-list-desc{
+        color:#fff;
+        font-size:1.125rem;
+        font-weight:300;
+        text-transform:uppercase;
+        margin-top:6px;
+      }
+    }
+    &-item.color{
+      background:#f2f4f7;
+    }
+  }
+}
+
+// AP_AC 절차 엘리먼트 link 버튼타입
+// :: btn-group col-2 / row-2 클래스 추가에따른 버튼레이아웃 변화
+.btn-group{
+  height:38px;
+  line-height:38px;
+  &.col-2{
+    border:1px solid #d9e0ea;
+    border-radius:4px;
+    overflow:hidden;
+    .btn-link{
+      float:left;
+      width:50%;
+      border:none;
+      border-radius:0;
+      &:first-child{
+        border-right:1px solid #d9e0ea;
+      }
+    }
+  }
+
+  &.row-2{
+    height:80px;
+    line-height:80px;
+  }
+
+  .btn-link{
+    display:block;
+    position: relative;
+    width:100%;
+    height:100%;
+    background:#fff;
+    border:1px solid #d9e0ea;
+    border-radius:4px;
+    font-size:1.125rem;
+    text-indent:20px;
+    &.ico:after{
+      left:auto;
+      right:20px;
+    }
+
+    .link-guide{
+      color:#666;
+      font-size:1rem;
+      vertical-align:1px;
+
+    }
+  }
+}
