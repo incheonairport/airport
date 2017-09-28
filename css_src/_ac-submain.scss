@@ -9,6 +9,7 @@
       float:left;
       width:368px;
       height:412px;
+      background:#fff;
       border: 1px solid #dee3eb;
       margin:0 0 24px 24px;
     }
@@ -16,9 +17,10 @@
     &-num{
       display:block;
       position:relative;
-      margin-top:24px;
+      margin-top:20px;
       color:#97a4b9;
-      font-size:20px;
+      font-size:1.25rem;
+      font-weight:300;
       text-align:center;
       &:before{
         content:'';
@@ -49,22 +51,40 @@
     &-head{
       margin-top:44px;
       font-family: nanumsq, sans-serif;
-      color:#222;
-      font-size:34px;
+      font-size:2.125rem;
+      font-weight:400;
       text-align:center;
+    }
 
-      +.ico{
-        width:100%;
-        height:100px;
+    &-subhead{
+      display:inline-block;
+      color:#fff;
+      font-size:1.125rem;
+      font-weight:300;
+      background:#323648;
+      padding:3px 6px;
+      margin-top:16px;
+      margin-bottom:4px;
+      &+.step-list-desc{
+        line-height:1.4;
+        text-align:left;
       }
     }
 
 
     &-desc{
       color:#000;
-      font-size:18px;
-      line-height:30px;
+      font-size:1.125rem;
+      line-height:1.7;
       text-align:center ;
+    }
+
+    &-guide{
+      display:inline-block;
+      color:#d43e41;
+      font-size:16px;
+      line-height: 1.5;
+      margin-top:4px;
     }
 
     .btn-group{
@@ -80,13 +100,15 @@
       }
       .step-list-head{
         color:#fff;
-        font-size:46px;
-        font-weight:700;
+        font-size:2.875rem;
+        font-weight:500;
       }
       .step-list-desc{
         color:#fff;
-        font-size:18px;
+        font-size:1.125rem;
         font-weight:300;
+        text-transform:uppercase;
+        margin-top:6px;
       }
     }
     &-item.color{
@@ -128,20 +150,16 @@
     background:#fff;
     border:1px solid #d9e0ea;
     border-radius:4px;
-    color:#222;
-    font-size:18px;
+    font-size:1.125rem;
     text-indent:20px;
-    .ico{
-      position: absolute;
-      top:0;
-      bottom:0;
+    &.ico:after{
+      left:auto;
       right:20px;
-      margin:auto;
     }
 
     .link-guide{
       color:#666;
-      font-size:16px;
+      font-size:1rem;
       vertical-align:1px;
 
     }
@@ -149,11 +167,79 @@
 }
 
 
-
-
-
-.ap-ac .ico{
+.step-list-head{
   &:after{
-    background: url('../images/spr_ico_ac_submain.png') no-repeat;
+    content:'';
+    display:block;
+    margin:20px auto;
+    background: url(../images/spr_ico_ac_submain.png) no-repeat;
+  }
+
+  &.noicon:after{
+    display:none;
+  }
+
+  &.arrival:after{
+    background-position:-34px -38px;
+    width: 88px;
+    height: 44px;
+  }
+
+  &.procedure:after{
+    background-position:-158px -43px;
+    width: 70px;
+    height: 43px;
+  }
+
+  &.baggage:after{
+    background-position:-265px -32px;
+    width: 55px;
+    height: 60px;
+  }
+
+  &.customs:after{
+    background-position:-359px -36px;
+    width: 57px;
+    height: 54px;
+  }
+
+  &.leave:after{
+    background-position:-453px -29px;
+    width: 86px;
+    height: 63px;
+  }
+
+  &.security:after{
+    background-position:-570px -28px;
+    width: 90px;
+    height: 53px;
+  }
+
+  &.screening:after{
+    background-position:-696px -27px;
+    width: 51px;
+    height: 63px;
+  }
+}
+
+.contents.ap-ac {
+  & +.tab-area{
+    margin-top:-153px;
+  }
+}
+.contents.ap-ac .contents-visual{
+  min-height:420px;
+  height:420px;
+  background-size: cover;
+  &-tit{
+    padding-top:52px;
+    font-family: nanumsq, sans-serif;
+    font-size:2.875rem;
+    font-weight:300;
+    line-height:1.1;
+  }
+
+  &.map-stepleave{ // 임시 이미지 퍼블리싱 본래 지도가 들어갑니다
+    background:url("../images/img_sub_visual_stepleave.jpg") center no-repeat;
   }
 }
