@@ -11,7 +11,6 @@
     text-align: center;
 
     &-title{
-      color:#222;
       font-size:2.875rem;
       font-weight:600;
       font-family: 'NanumSquare', sans-serif;
@@ -32,13 +31,12 @@
   background-size: cover;
 
   &.departure{
-    background:url("../images/img_sub_visual_departure.jpg") center no-repeat;
+    background:url(../images/img_sub_visual_departure.jpg) center no-repeat;
   }
 }
 
 .congestion{
-  border-left: 1px solid rgba(255, 255,
-          255, .2);
+  border-left: 1px solid rgba(255, 255, 255, .2);
   width: 200px;
   float: right;
   position:relative;
@@ -70,7 +68,7 @@
     height: 30px;
     text-align: left;
     margin-left: 40px;
-    background: url("../images/icon_white_right_arrow.png") 90% center no-repeat;
+    background:url(../images/icon_white_right_arrow.png) 90% center no-repeat;
   }
 }
 
@@ -226,7 +224,7 @@
       border:none;
       padding:20px;
       vertical-align: bottom;
-      background:#323648 url("../images/icon_.search_btn.png") 50% no-repeat;
+      background:#323648 url(../images/icon_.search_btn.png) 50% no-repeat;
       text-indent: -9999px;
       display: inline-block;
       width: 62px;
@@ -247,7 +245,7 @@
     border: 1px solid #d9d9d9;
     font-size:0.8125rem;
     color: #666;
-    background: #fff url("../images/icon_refresh_btn.png") 10px 7px no-repeat;
+    background:#fff url(../images/icon_refresh_btn.png) 10px 7px no-repeat;
     padding: 0 10px  0 25px;
     line-height: 26px;
     height: 26px;
@@ -272,60 +270,107 @@
         border-left: 1px solid #474a5b;
         box-sizing: border-box;
       }
-      /*여객type*/
-      &.type1{
-        width:160px;
+      /*width type*/
+      &.xxxx-s{
+        width:80px;
       }
-      &.type2{
-        width:200px;
-      }
-      &.type3{
-        width:265px;
-      }
-      &.type4{
-        width:100px;
-      }
-      &.type5{
-        width:130px;
-      }
-      &.type6{
+      &.xxx-s{
         width:90px;
       }
-      &.type7{
-        width:110px;
-      }
-      &.type8{
+      &.xx-s{
         width:95px;
       }
-      /*화물type*/
-      &.type9{
+      &.x-s{
+        width:100px;
+      }
+      &.small{
+        width:110px;
+      }
+      &.medium{
+        width:130px;
+      }
+      &.Large{
+        width:140px;
+      }
+      &.x-L{
+        width:150px;
+      }
+      &.xx-L{
+        width:160px;
+      }
+      &.xxx-L{
         width:195px;
       }
-      &.type10{
+      &.xxxx-L{
+        width:200px;
+      }
+      &.big{
+        width:265px;
+      }
+      &.greater{
         width:297px;
       }
-      &.type11{
+      &.biggest{
         width:360px;
-      }
-      &.type12{
-        width:150px;
       }
     }
   }
 }
 
-table{
+.table-area{
   width: 100%;
-  & caption{
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-    font-size: 0;
-    position: absolute;
-    top: -10000px;
-    left: -10000px;
+  margin-bottom: 120px;
+  box-sizing: border-box;
+  & table{
+    width: 100%;
+    border-collapse: inherit;
+    & caption{
+      width: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+      font-size: 0;
+      position: absolute;
+      top: -10000px;
+      left: -10000px;
+    }
+    & thead{
+      & th{
+        float: none;
+        padding: 10px;
+        vertical-align: middle;
+        font-weight: 300;
+        box-sizing: border-box;
+        &.week{
+          border-top: 1px solid #212535;
+          border-bottom: 1px solid #212535;
+          background: #4d5164;
+          font-size: 0.875rem;
+          & +.week{
+            border-left: 1px solid #212535;
+          }
+        }
+        &.end{
+          background: #2f4985;
+        }
+      }
+    }
+    & tbody{
+
+      & tr:last-child td{
+        border-bottom: 1px solid #a5a7aa;
+      }
+      & td{
+        border-bottom: 1px solid #d9d9d9;
+        text-align: center;
+        padding: 20px 10px;
+
+        & + td{
+          border-left: 1px solid #f2f4f7;
+        }
+      }
+    }
   }
 }
 
@@ -333,16 +378,30 @@ table{
     border-top: 1px solid #a5a7aa;
     padding-top: 35px;
     text-align: center;
+    margin-bottom: 35px;
   &-search{
       font-size: 1.875rem;
+      color: #444;
+    &-txt{
+      margin-right:5px;
+    }
     &-option{
       font-size: 1.125rem;
+      color: #666;
+      padding: 0 15px;
+      border: 1px solid #d9d9d9;
+      height:58px;
+      width: 180px;
+      margin-right:5px;
     }
     &-btn{
       font-size: 1.625rem;
       color: #fff;
       background: #323648;
       border: none;
+      width: 130px;
+      height: 58px;
+      margin-left:25px;
     }
   }
 }
