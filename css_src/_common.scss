@@ -74,6 +74,12 @@
     height: 10px;
   }
 
+  &.arrow-infolin-right_w:after{
+    background-position:-186px -65px;
+    width:6px;
+    height:10px;
+  }
+
 }
 
 
@@ -180,4 +186,60 @@
       }
     }
   }
+}
+
+/* button style */
+// info link type
+.btn-type-infolink{
+  height:50px;
+  padding:0 60px 0 20px;
+  line-height:50px;
+  border:2px solid #fff;
+  color:#fff;
+  font-size:1.25rem;
+  font-weight:400;
+  transition:all .4s;
+  &:hover{
+    border-color:rgba(255,255,255,.3)
+  }
+  &.ico{
+    text-indent:0;
+    &:after{
+      left:auto;
+      right:18px;
+    }
+  }
+}
+
+
+/* text */
+// 가이드문구
+.guide-desc{
+  display:block;
+  text-indent:-20px;
+  color:#d43e41;
+  line-height:1.4;
+  padding-left:15px;
+  &:before{
+    content:"※";
+  }
+}
+
+
+
+
+
+
+/* simple style */
+
+%cell-left{
+  text-align:left!important;
+}
+
+%cell-right{
+  text-align:right!important;
+}
+
+%cell-center{
+  text-align:center!important;
 }

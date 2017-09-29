@@ -100,12 +100,19 @@
             $(this).next('.select-list').toggleClass('on');
         });
 
-
         $('.select-list .select-list-link').on('click',function(){
-            $(this).parents('.select-list').removeClass('on');
+            $(this).parents('.select-list').removeClass('on')
             $(this).parents('.select-list').prev('.select-link-default').removeClass('on');
         });
 
+        // document 클릭시 remove class...
+        $(document).mouseup(function (e) {
+            var container = $('.select-list');
+            if (!container.is(e.target) && container.has(e.target).length === 0){
+                container.removeClass('on');
+                $('.select-link-default').removeClass('on');
+            }
+        });
     }
 
 </script>
