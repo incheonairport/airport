@@ -80,6 +80,52 @@
     height:10px;
   }
 
+  &.updata-refresh:after{
+    background-position:-31px -98px;
+    width: 20px;
+    height: 20px;
+  }
+  &.search-select-btn:after{
+    background-position:-74px -134px;
+    width: 22px;
+    height: 22px;
+  }
+  &.congestion-quick-link:after{
+    background-position:-121px -59px;
+    width: 22px;
+    height: 22px;
+  }
+  &.flight-search-btn:after{
+    background-position:-74px -134px;
+    width: 22px;
+    height: 22px;
+  }
+  &.search-area-airline-btn:after{
+    background-position:-74px -134px;
+    width: 22px;
+    height: 22px;
+  }
+  &.location-btn-minus:after{
+    background-position:-192px -93px;
+    width: 22px;
+    height: 22px;
+  }
+  &.location-btn-plus:after{
+    background-position:-238px -93px;
+    width: 22px;
+    height: 22px;
+  }
+  &.location-btn-print:after{
+    background-position:-284px -93px;
+    width: 22px;
+    height: 22px;
+  }
+  &.location-bar-home:after{
+    background-position:-128px -93px;
+    width: 22px;
+    height: 22px;
+  }
+
 }
 
 
@@ -188,6 +234,7 @@
   }
 }
 
+<<<<<<< HEAD
 /* button style */
 // info link type
 .btn-type-infolink{
@@ -243,3 +290,7 @@
 %cell-center{
   text-align:center!important;
 }
+=======
+
+
+>>>>>>> m/bskim

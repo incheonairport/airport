@@ -4,15 +4,44 @@
   margin: 0 auto;
 }
 
+.location{
+  position: relative;
+  &-btn{
+    position: absolute;
+    top:20px;
+    right:25px;
+    & button{
+      border: none;
+      background:#fff;
+      width: 22px;
+      height: 22px;
+      margin: 0 11px;
+      &+ button{
+       /* border-left: 1px solid #f2f2f2;*/
+      }
+    }
+  }
+  &-bar{
+    position: absolute;
+    top:20px;
+    left:25px;
+    & a{
+      color: #666;
+      font-size:0.875rem;
+    }
+    &-home{
+      width: 22px;
+    }
+  }
+}
+
 .contents-sub{
   &-head{
     padding:62px 0 40px;
     text-align: center;
 
     &-title{
-      font-size:2.875rem;
-      font-weight:600;
-      font-family: 'NanumSquare', sans-serif;
+      font:700 2.875rem  'NanumSquare', sans-serif;
     }
 
     &-article{
@@ -31,6 +60,9 @@
 
   &.departure{
     background:url(../images/img_sub_visual_departure.jpg) center no-repeat;
+  }
+  &.airline{
+    background:url(../images/img_sub_visual_airline.jpg) center no-repeat;
   }
 }
 
@@ -67,8 +99,15 @@
     height: 30px;
     text-align: left;
     margin-left: 40px;
-    background:url(../images/icon_white_right_arrow.png) 90% center no-repeat;
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      left:95px;
+    }
   }
+
+
 }
 
 .tab{
@@ -223,7 +262,7 @@
       border:none;
       padding:20px;
       vertical-align: bottom;
-      background:#323648 url(../images/icon_.search_btn.png) 50% no-repeat;
+      background:#323648;
       text-indent: -9999px;
       display: inline-block;
       width: 62px;
@@ -242,19 +281,27 @@
   }
   &-refresh{
     border: 1px solid #d9d9d9;
+    background: #fff;
     font-size:0.8125rem;
     color: #666;
-    background:#fff url(../images/icon_refresh_btn.png) 10px 7px no-repeat;
     padding: 0 10px  0 25px;
     line-height: 26px;
     height: 26px;
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      right: 60px;
+      top:6px;
+    }
   }
 }
 
-.departuretime{
+.ap-basic{
 
   &-title{
     background:#323648;
+    margin-bottom: 10px;
 
     @extend %clearfix;
 
@@ -265,7 +312,7 @@
       text-align: center;
       padding: 18px 0;
 
-      &+.departuretime-title-details{
+      &+.ap-basic-title-details{
         border-left: 1px solid #474a5b;
         box-sizing: border-box;
       }
@@ -288,26 +335,26 @@
       &.medium{
         width:130px;
       }
-      &.Large{
+      &.large{
         width:140px;
       }
-      &.x-L{
+      &.x-l{
         width:150px;
       }
-      &.xx-L{
+      &.xx-l{
         width:160px;
       }
-      &.xxx-L{
+      &.xxx-l{
         width:195px;
       }
-      &.xxxx-L{
+      &.xxxx-l{
         width:200px;
       }
       &.big{
         width:265px;
       }
       &.greater{
-        width:297px;
+        width:300px;
       }
       &.biggest{
         width:360px;
@@ -322,7 +369,6 @@
   box-sizing: border-box;
   & table{
     width: 100%;
-    border-collapse: inherit;
     & caption{
       width: 0;
       height: 0;
@@ -334,27 +380,31 @@
       top: -10000px;
       left: -10000px;
     }
-    & thead{
-      & th{
+  }
+  & table.ap-basic {
+    border-collapse: inherit;
+    & thead {
+      & th {
         float: none;
         padding: 10px;
         vertical-align: middle;
         font-weight: 300;
         box-sizing: border-box;
-        &.week{
+        &.week {
           border-top: 1px solid #212535;
           border-bottom: 1px solid #212535;
           background: #4d5164;
           font-size: 0.875rem;
-          & +.week{
+          & + .week {
             border-left: 1px solid #212535;
           }
-        }
-        &.end{
-          background: #2f4985;
+          &.end {
+            background: #2f4985;
+          }
         }
       }
     }
+<<<<<<< HEAD
     & tbody{
       & tr:last-child th{
         border-bottom: 1px solid #a5a7aa;
@@ -365,14 +415,22 @@
       }
 
       & tr:last-child td{
+=======
+    & tbody {
+      & tr:nth-child(even)
+      {
+        background:#f8f8f8;
+      }
+      & tr:last-child td {
+>>>>>>> m/bskim
         border-bottom: 1px solid #a5a7aa;
       }
-      & td{
+      & td {
         border-bottom: 1px solid #d9d9d9;
         text-align: center;
         padding: 20px 10px;
 
-        & + td{
+        & + td {
           border-left: 1px solid #f2f4f7;
         }
       }
@@ -407,7 +465,71 @@
       border: none;
       width: 130px;
       height: 58px;
+      line-height:1;
       margin-left:25px;
+      padding-left:40px;
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        right:60px;
+        top:4px;
+      }
+    }
+  }
+}
+
+.search-area{
+  position:relative;
+  margin-top:-247px;
+  &-head{
+    text-align: center;
+    height: 94px;
+    &-title{
+      color: #fff;
+      font: 2.375rem 'NanumSquare', sans-serif;
+      margin-bottom: 20px;
+    }
+  }
+  &-airline{
+    margin: 0 auto;
+    width: 670px;
+
+    @extend %clearfix;
+
+    &-option{
+      border: none;
+      font-size: 1.125rem;
+      padding: 0 15px;
+      width: 182px;
+      height: 58px;
+      line-height: 1;
+      float: left;
+    }
+    &-txt{
+      width: 323px;
+      height: 58px;
+      border: 0;
+      border-left:1px solid #d9d9d9;
+      padding: 0 15px;
+      float: left;
+    }
+    &-btn{
+      background:#42519e;
+      border: none;
+      color: #fff;
+      font-size: 1.625rem;
+      width: 132px;
+      height: 58px;
+      line-height: 1;
+      padding-left: 15px;
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        top:3px;
+        right:88px;
+      }
     }
   }
 }
