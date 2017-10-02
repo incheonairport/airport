@@ -74,6 +74,18 @@
     height: 10px;
   }
 
+  &.gnb-map:after{
+    background-position:-154px -131px;
+    width: 22px;
+    height: 27px;
+  }
+
+  &.gnb-search:after{
+    background-position:-34px -134px;
+    width: 22px;
+    height: 27px;
+  }
+
 }
 
 
