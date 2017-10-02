@@ -1,9 +1,25 @@
 // 절차 list 컴포넌트
 .step{
-  margin-top:40px;
+  &.clip-type{
+    margin-top:0;
+    &:before{
+      content:'';
+      display:block;
+      width:2px;
+      height:40px;
+      background:#666;
+      margin:0 575px 30px;
+    }
+  }
+
+  &-guide{
+    color:#666;
+    text-align:right;
+  }
   &-list{
     @extend %clearfix;
     margin-left:-24px;
+    margin-top:40px;
     &-item{
       padding:0 30px;
       float:left;
@@ -56,20 +72,21 @@
       text-align:center;
     }
 
-    &-subhead{
+    &-support{
+      font-size:1.25rem;
+    }
+
+    &-highlight{
       display:inline-block;
       color:#fff;
       font-size:1.125rem;
       font-weight:300;
+      line-height:1;
       background:#323648;
       padding:3px 6px;
-      margin-top:16px;
       margin-bottom:4px;
-      &+.step-list-desc{
-        line-height:1.4;
-        text-align:left;
-      }
     }
+
 
 
     &-desc{
@@ -77,6 +94,17 @@
       font-size:1.125rem;
       line-height:1.7;
       text-align:center ;
+      &.left{
+        margin:16px 0 4px;
+        text-align:left;
+        line-height:1.4;
+      }
+      &.small{
+        color:#444;
+        font-size:1rem;
+        margin-top:10px!important;
+        letter-spacing:-1px;
+      }
     }
 
     &-guide{
@@ -89,6 +117,9 @@
 
     .btn-group{
       margin-bottom:4px;
+      &+.step-list-desc{
+        margin-top:18px;
+      }
     }
 
 
@@ -121,10 +152,17 @@
     &-item.color{
       background:#f2f4f7;
     }
+    &-item.list-end{
+      width:760px;
+      .step-list-head{
+        color:#b7c0ce;
+        line-height:312px;
+      }
+    }
   }
 }
 
-// AP_AC 절차 엘리먼트 link 버튼타입
+// AP 절차 엘리먼트 link 버튼타입
 // :: btn-group col-2 / row-2 클래스 추가에따른 버튼레이아웃 변화
 .btn-group{
   height:38px;
@@ -147,6 +185,11 @@
   &.row-2{
     height:80px;
     line-height:80px;
+  }
+
+  &.row-3{
+    height:66px;
+    line-height:66px;
   }
 
   .btn-link{
