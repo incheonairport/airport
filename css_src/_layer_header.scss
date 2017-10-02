@@ -1,0 +1,53 @@
+.header{
+  width:500px;
+  height:100%;
+  padding-top:232px;
+  background:url(../images/bg_layer_header.png) no-repeat left bottom;
+  background-size:cover;
+  box-sizing:border-box;
+
+  position:fixed;
+
+  &-heading{
+    font-family:nanumsq, sans-serif;
+    font-size:2.875em;
+    font-weight:400;
+    color:#fff;
+    text-align:center;
+
+  }
+}
+
+.gnb{
+
+  &-item{
+    margin-top:32px;
+    text-align:center;
+  }
+
+  &-link{
+    display:inline-block;
+    height:28px;
+    font-size:1.25em;
+    font-weight:300;
+    color:#fff;
+    position:relative;
+
+    &.on{
+      font-weight:700;
+
+      &:after{
+        content:"";
+        display:block;
+        width:100%;
+        height:3px;
+        margin-top:5px;
+        background:#fff;
+        position:absolute;
+        bottom:0;
+        left:0;
+      }
+    }
+  }
+
+}
