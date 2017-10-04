@@ -2,7 +2,6 @@
   width:calc(100% - 500px);
   padding:65px 150px 100px 120px;
   float:right;
-  box-sizing:border-box;
 }
 
 .heading{
@@ -202,7 +201,6 @@
         color:#666;
         line-height:54px;
         text-align:center;
-        box-sizing:border-box;
 
         &.on{
           border:2px solid #42519e;
@@ -231,7 +229,6 @@
     border:1px solid #dde3ed;
     float:left;
     position:relative;
-    box-sizing:border-box;
 
     &:nth-child(even){
       float:right;
@@ -286,4 +283,6 @@
   }
 
 }
+
+
 
