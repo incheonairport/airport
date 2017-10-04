@@ -362,6 +362,7 @@
     }
   }
 }
+
 /*
 .table-area{
   width: 100%;
@@ -438,6 +439,82 @@
   }
 }
 */
+
+//.table-area{
+//  width: 100%;
+//  margin-bottom: 120px;
+//  box-sizing: border-box;
+//  & table{
+//    width: 100%;
+//    & caption{
+//      width: 0;
+//      height: 0;
+//      margin: 0;
+//      padding: 0;
+//      line-height: 0;
+//      font-size: 0;
+//      position: absolute;
+//      top: -10000px;
+//      left: -10000px;
+//    }
+//  }
+//  & table.ap-basic {
+//    border-collapse: inherit;
+//    & thead {
+//      & th {
+//        float: none;
+//        padding: 10px;
+//        vertical-align: middle;
+//        font-weight: 300;
+//        box-sizing: border-box;
+//        &.week {
+//          border-top: 1px solid #212535;
+//          border-bottom: 1px solid #212535;
+//          background: #4d5164;
+//          font-size: 0.875rem;
+//          & + .week {
+//            border-left: 1px solid #212535;
+//          }
+//          &.end {
+//            background: #2f4985;
+//          }
+//        }
+//      }
+//    }
+//<<<<<<< HEAD
+//    & tbody{
+//      & tr:last-child th{
+//        border-bottom: 1px solid #a5a7aa;
+//      }
+//      & th{
+//        border-right: 1px solid #f2f4f7;
+//        border-bottom:1px solid #d9d9d9;
+//      }
+//
+//      & tr:last-child td{
+//=======
+//    & tbody {
+//      & tr:nth-child(even)
+//      {
+//        background:#f8f8f8;
+//      }
+//      & tr:last-child td {
+//>>>>>>> m/bskim
+//        border-bottom: 1px solid #a5a7aa;
+//      }
+//      & td {
+//        border-bottom: 1px solid #d9d9d9;
+//        text-align: center;
+//        padding: 20px 10px;
+//
+//        & + td {
+//          border-left: 1px solid #f2f4f7;
+//        }
+//      }
+//    }
+//  }
+//}
+
 .flight{
     border-top: 1px solid #a5a7aa;
     padding-top: 35px;
