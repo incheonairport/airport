@@ -51,7 +51,6 @@
 
 
 .btn-type-normal{
-  box-sizing: border-box;
   min-width:192px;
   height:50px;
   background:#fff;
@@ -79,7 +78,6 @@
 }
 
 .btn-type-small{
-  box-sizing: border-box;
   min-width:146px;
   height:30px;
   background:#fff;
@@ -139,7 +137,6 @@
 
 
 
-.guidebox *{box-sizing:border-box}
 .guidebox{
   @extend %clearfix;
 
@@ -220,7 +217,7 @@
 
 
 
-.linklist *{box-sizing:border-box}
+
 .linklist{
   @extend %clearfix;
   &-img{
@@ -242,9 +239,9 @@
 }
 
 
-.stepA *{box-sizing: border-box}
-.stepA{
-  .stepA-list{
+
+.step1{
+  .step1-list{
     @extend %clearfix;
     margin-left:-24px;
     &-item{
@@ -252,7 +249,7 @@
       position:relative;
       width:564px;
       margin-left:24px;
-      .stepA-list-img{
+      .list-img{
         position:absolute;
         left:0;
         top:0;
@@ -261,13 +258,13 @@
         background:#b7c0ce;
         z-index:-1;
       }
-      .stepA-list-article{
+      .list-article{
         background:#fff;
         padding:42px 0;
         margin:220px 20px auto 20px;
         height:182px;
         text-align:center;
-        .stepA-list-num{
+        .article-num{
           display:block;
           color:#333649;
           font-size:1.125rem;
@@ -275,7 +272,7 @@
           text-transform:uppercase;
           margin-bottom:24px;
         }
-        .stepA-list-desc{
+        .article-desc{
           color:#666;
           font-size:1.125rem;
           line-height:1.4;
