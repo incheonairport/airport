@@ -7,8 +7,8 @@ h3{
 }
 /*통합시 지워야할 css end*/
 .list1{
-    color: #444;
-    font-weight: 400;
+  color: #444;
+  font-weight: 400;
   &-item{
     content:'';
     font-size:1.125rem;
@@ -245,9 +245,9 @@ h3{
       padding-left: 90px;
     }
     &.another{
-       background: url(../images/icon_another.png) no-repeat;
-       padding-left: 90px;
-     }
+      background: url(../images/icon_another.png) no-repeat;
+      padding-left: 90px;
+    }
     &.airline-area li{
       font-weight: 400;
     }
@@ -269,36 +269,36 @@ h3{
   }
 }
 .check-in{
-    width: 1252px;
-    height: 240px;
-    text-align: center;
-    background: url(../images/img_sub_layer_banner_bg.jpg) no-repeat;
-    &-title{
-      color: #ffae44;
-      font-size: 3.75rem;
-      font-weight: 300;
-      padding-top: 55px;
-      &strong{
-        font-weight: 700;
-      }
+  width: 1252px;
+  height: 240px;
+  text-align: center;
+  background: url(../images/img_sub_layer_banner_bg.jpg) no-repeat;
+  &-title{
+    color: #ffae44;
+    font-size: 3.75rem;
+    font-weight: 300;
+    padding-top: 55px;
+    &strong{
+      font-weight: 700;
     }
-    &-tab{
-      border-top: 1px solid #fff;
-      width: 50px;
-      margin: 0 auto;
-      margin-top: 18px;
-    }
-    &-text{
-      color: #fff;
-      font-size: 1.25rem;
-      font-weight: 300;
-      line-height: 1.5;
-      width: 350px;
-      margin: 0 auto;
-      margin-top:18px;
-      &strong{
-        font-weight: 700;
-      }
-    }
-
   }
+  &-tab{
+    border-top: 1px solid #fff;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 18px;
+  }
+  &-text{
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5;
+    width: 350px;
+    margin: 0 auto;
+    margin-top:18px;
+    &strong{
+      font-weight: 700;
+    }
+  }
+
+}

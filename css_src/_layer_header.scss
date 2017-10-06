@@ -6,10 +6,12 @@
   background:url(../images/bg_layer_header.png) no-repeat left bottom;
   background-size:cover;
   box-sizing:border-box;
-
   position:fixed;
+  overflow:auto;
+  z-index:99999;
 
   &-heading{
+    margin-bottom:75px;
     font-family:nanumsq, sans-serif;
     font-size:2.875em;
     font-weight:400;
@@ -21,7 +23,7 @@
 .gnb{
 
   &-item{
-    margin-top:32px;
+    margin-bottom:32px;
     text-align:center;
   }
 
