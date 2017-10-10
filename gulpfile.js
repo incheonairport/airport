@@ -9,6 +9,8 @@ var sass = require('gulp-sass');
 
 var sourcemaps = require('gulp-sourcemaps');
 
+var index = require('gulp-index');
+
 //var concat = require('gulp-concat');
 
 // 새로 고침
@@ -40,6 +42,12 @@ gulp.task('sass', function(){
       .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
       .pipe(sourcemaps.write())
       .pipe(gulp.dest('css/'));
+});
+
+gulp.task('buildIndex', function() {
+  return gulp.src('./html/**')
+      .pipe(index())
+      .pipe(gulp.dest('./guide/pub_list/'));
 });
 
 // concat 실행 - 여러 개의 파일을 하나의 파일로 합치는 기능
@@ -87,4 +95,4 @@ gulp.task('accmenu', function() {
 
 //gulp.task('jsconcat', ['tabmenu', 'gnbmenu', 'timingfunction', 'imagesliding', 'accmenu']);
 
-gulp.task('default', ['livereload', 'include', 'sass', 'watch']);
+gulp.task('default', ['livereload', 'include', 'sass', 'watch', 'buildIndex']);
