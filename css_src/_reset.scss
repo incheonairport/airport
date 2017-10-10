@@ -26,6 +26,7 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
   display: block;
+  font-size:1.125rem;
 }
 html{
   font-size:16px;
@@ -51,8 +52,20 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+
+  th{
+    text-align:center;
+  }
 }
+
+
 a{
   text-decoration: none;
   color:#222;
+}
+p{
+  line-height:1.7;
+}
+li{
+  line-height:1.7;
 }
