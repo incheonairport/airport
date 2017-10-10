@@ -457,7 +457,7 @@
 }
 
 strong{
-  font-weight: 700;
+  font-weight: 900;
   &.color{
     color:#41519e;
   }
@@ -839,6 +839,17 @@ em{
 
 }
 
-.mb5, %mb5{
-  margin-bottom:5px;
+// margin-bottom:13px;
+.mb7, %mb7{
+  margin-bottom:7px;
+}
+
+// margin-top:20px
+.mt10, %mt10{
+  margin-top:10px;
+}
+
+// margin-top:40px;
+.mt30, %mt30{
+  margin-top:30px;
 }
