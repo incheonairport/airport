@@ -26,6 +26,7 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
   display: block;
+  font-size:1.125rem;
 }
 html{
   font-size:16px;
@@ -35,7 +36,7 @@ body {
   font-family: roboto, spoqa, sans-serif;
   font-size:16px;
   font-weight:400;
-  color:#222;
+  color:#444;
 }
 ol, ul {
   list-style: none;
@@ -51,8 +52,23 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+
+  th{
+    text-align:center;
+  }
 }
+
+h1,h2,h3,h4,h5,h6{
+  color:#222;
+}
+
 a{
   text-decoration: none;
   color:#222;
+}
+p{
+  line-height:1.7;
+}
+li{
+  line-height:1.7;
 }
