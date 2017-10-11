@@ -17,6 +17,10 @@
     font-weight:400;
     color:#fff;
     text-align:center;
+
+    &-sub{
+      font-size:1.75rem;
+    }
   }
 }
 
@@ -29,7 +33,7 @@
 
   &-link{
     display:inline-block;
-    height:28px;
+    //height:28px;
     font-size:1.25em;
     font-weight:300;
     color:#fff;
