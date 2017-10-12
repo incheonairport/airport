@@ -6,12 +6,6 @@
     background:#333649 url(../images/digr_customs_inspection_procedure.png) no-repeat;
 }
 
-/*검역 절차*/
-.quarantine_procedure{
-  height:452px;
-  text-indent:-999em;
-  background:url(../images/info_quarantine_procedure.jpg) no-repeat;
-}
 
 // 기존 버튼 디자인
 .ico {
@@ -36,6 +30,16 @@
   }
   &.search-area-btn:after {
     background-position: -74px -134px;
+    width: 22px;
+    height: 22px;
+  }
+  &.btn-download:after {
+    background-position: -68px -98px;
+    width: 22px;
+    height: 22px;
+  }
+  &.shuttle-bus-stop:after {
+    background-position: -89px -63px;
     width: 22px;
     height: 22px;
   }
@@ -109,19 +113,23 @@
   }
 }
 
+/*버스지역*/
 .local {
   width: 100%;
 
   &-list {
-    border: 1px solid #a5a7aa;
-    border-bottom: 0;
+    border-left: 1px solid #a5a7aa;
+    border-right: 1px solid #a5a7aa;
+
     @extend %clearfix;
 
     &-item {
-      width: 104px;
+      width: 104.5px;
       border-right: 1px solid #d9d9d9;
       float: left;
-
+      &:last-child{
+        border-right: none;
+      }
       &-link {
         height: 58px;
         display: block;
@@ -137,14 +145,22 @@
           background: #323648;
           border: 1px solid #323648;
           font-weight: 800;
+          position: relative;
 
           &:after{
-
+            width: 16px;
+            height: 16px;
+            content: '';
+            position:absolute;
+            left:43px;
+            top: 45px;
+            background: #323648;
+            z-index: 1;
+            transform: rotate(45deg);
           }
         }
       }
     }
-
   }
 
   &-town {
@@ -174,6 +190,41 @@
           font-weight: 800;
         }
       }
+    }
+  }
+}
+
+/*버스노선도*/
+.shuttle-bus{
+  @extend %clearfix;
+  &-stop{
+    float: left;
+    margin-right:30px;
+    letter-spacing: -0.05rem;
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      left: auto;
+      right:-20px;
+      top:7px;
+    }
+  }
+}
+
+.btn-download{
+  width: 86px;
+  height: 26px;
+  padding-left:15px;
+  line-height: 26px;
+  border: 1px solid #d9d9d9;
+  background:#f2f2f2;
+  font-size: 0.8125rem;
+  &.ico{
+    text-indent: 0;
+    &:after{
+      top:10px;
+      right:48px;
     }
   }
 }
