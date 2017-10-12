@@ -2,7 +2,7 @@ $(function(){
 
   var item = [];
 
-  $.getJSON('data/file_list.json', function(data){
+  $.getJSON('file_list.json', function(data){
 
     $.each(data, function(key, val){
 
@@ -12,7 +12,7 @@ $(function(){
 
   }).done(function(){
 
-    $('tbody tr').each(function(){
+    $('.file-list tbody tr').each(function(){
 
       for(var j=0; j<item.length; j++){
 
@@ -27,7 +27,29 @@ $(function(){
 
       }
 
+      if( $(this).children('td').has('s').length ){
+        $(this).children('td').addClass('cancel');
+      }
+
     });
+
+  });
+
+  $('body').on('click', 'tr', function(e){
+
+    if( $(this).find('.list-link').length ){
+
+      window.open($(this).find('.list-link').attr('href'));
+
+    } else if( $(this).find('.cancel').length ){
+
+      alert('제작이 취소된 페이지 입니다')
+
+    } else {
+
+      alert('준비 중 입니다.');
+
+    }
 
   });
 
