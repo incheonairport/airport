@@ -6,7 +6,7 @@
   <title>인천국제공항</title>
   <link rel="stylesheet" href="../css/guide_style.css" />
   <script src="../js/lib/jquery-3.2.1.min.js"></script>
-  <script src="../js/guide_function.js"></script>
+  <script src="../js/guide_function.min.js"></script>
 </head>
 <body>
 
@@ -40,22 +40,48 @@
 
 <section class="section">
   <div class="inner-section">
-    <div class="heading-wrap">
-      <h1 class="heading-level1">File List</h1>
-      <p class="heading-desc">메뉴 구조도와 퍼블리싱된 페이지를<br />비교할 수 있습니다 </p>
+    <div class="top-contents-wrap">
+      <div class="heading-wrap">
+        <h1 class="heading-level1">File List</h1>
+        <p class="heading-desc">메뉴 구조도와 퍼블리싱된 페이지를<br />비교할 수 있습니다 </p>
+      </div>
+
+      <div class="process-wrap">
+        <h2 class="heading-level2">공정률</h2>
+        <table class="vt">
+          <thead>
+          <tr>
+            <th>전체 페이지 개수</th>
+            <th>현재 페이지 개수</th>
+            <th>공정률</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="page-whole-num"></td>
+            <td class="page-current-num"></td>
+            <td class="page-process-percent">
+              <div class="page-process-bar-wrap">
+                <div class="page-process-bar"></div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <table class="vt-dark">
+    <table class="file-list vt-dark">
       <colgroup>
-        <col style="width:7%" />
-        <col style="width:11%" />
-        <col style="width:11%" />
-        <col style="width:11%" />
-        <col style="width:16%" />
+        <col style="width:6%" />
+        <col style="width:13%" />
         <col style="width:auto" />
+        <col style="width:14%" />
+        <col style="width:15%" />
+        <col style="width:14%" />
+        <col style="width:5%" />
         <col style="width:8%" />
-        <col style="width:11%" />
-        <col style="width:8%" />
+        <col style="width:6%" />
       </colgroup>
       <thead>
       <tr>
@@ -67,7 +93,7 @@
         <th>6 Depth</th>
         <th>Develop</th>
         <th>화면 ID</th>
-        <th>작업완료여부/링크</th>
+        <th>작업완료여부</th>
       </tr>
       </thead>
       <tbody>
@@ -1324,7 +1350,7 @@
       <tr>
         <td></td>
         <td>환승 즐기기</td>
-        <td>게시판 타일형, 목록형 / 환승 프로모션 - 배너로 노출</td>
+        <td>게시판 타일형, 목록형/환승 프로모션 - 배너로 노출</td>
         <td></td>
         <td></td>
         <td></td>
@@ -4486,7 +4512,7 @@
   </div>
 </section>
 
-<a href="#" class="top">top</a>
+<a href="#" class="back-to-top">top</a>
 <footer class="footer">
   Incheon Airport Guide
 </footer>
