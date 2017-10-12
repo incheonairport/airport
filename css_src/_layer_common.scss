@@ -432,6 +432,30 @@
     height: 19px;
   }
 
+  &.first:after{
+    background-position:-236px -60px;
+    width: 20px;
+    height: 19px;
+  }
+
+  &.prev:after{
+    background-position:-268px -60px;
+    width: 11px;
+    height: 19px;
+  }
+
+  &.next:after{
+    background-position:-296px -60px;
+    width: 11px;
+    height: 19px;
+  }
+
+  &.last:after{
+    background-position:-319px -60px;
+    width: 20px;
+    height: 19px;
+  }
+
 }
 
 .btn-type-normal{
@@ -938,3 +962,254 @@ em{
 .text-center {
   text-align: center
 }
+
+
+// pagenation list
+.pagenation{
+  display: table;
+  margin: 0 auto;
+  @extend %clearfix;
+  .ico{
+    width:44px;
+    height:44px;
+    border:1px solid #d9d9d9;
+    border-left:0;
+    float:left;
+
+    &.first{
+      border-left:1px solid #d9d9d9;
+      &:after{
+        left:-1px
+      }
+    }
+
+    &.prev{
+      &:after{
+        left:-1px
+      }
+    }
+
+    &.next{
+      border-left:1px solid #d9d9d9;
+      &:after{
+        right:-1px
+      }
+    }
+
+    &.last{
+      &:after{
+        right:-1px
+      }
+    }
+
+    // 더이상 페이지가 없을 때 클래스
+    &.default{
+      pointer-events:none;
+      &:after{
+        opacity:.5;
+      }
+    }
+
+    &:hover{
+      &:after{
+        opacity:.5;
+      }
+    }
+  }
+
+  &-list{
+    float:left;
+    margin:0 20px;
+    @extend %clearfix;
+    &-item{
+      &:first-child{
+        border-left:1px solid #d9d9d9;
+      }
+      &:hover{
+        background:#42519e;
+        border-color:#42519e;
+        .pagenation-list-link{
+          color:#fff;
+        }
+      }
+      // 활성화 클래스
+      &.on{
+        background:#42519e;
+        border-color:#42519e;
+        .pagenation-list-link{
+          color:#fff;
+        }
+      }
+      float:left;
+      width:44px;
+      height:44px;
+      border:1px solid #d9d9d9;
+      border-left:0;
+      position:relative;
+    }
+    &-link{
+      display:block;
+      width:100%;
+      height:100%;
+      line-height:44px;
+      text-align:center;
+    }
+  }
+}
+
+
+// 슬라이드형 게시판 목록
+.board-slide{
+  .board-list{
+    //padding:0 30px;
+    border-top:1px solid #d9d9d9;
+    border-bottom:0;
+    &:last-child{
+      border-bottom:1px solid #d9d9d9;
+    }
+    // 활성화 스타일링
+    &.on{
+      border-bottom:1px solid #d9d9d9;
+      border-color:#a5a7aa;
+      &+.board-list{
+        border-top:0;
+      }
+      .board-list-head{
+        border-bottom:1px solid #d9d9d9;
+        .board-list-tit{
+          &:after{
+            transform:rotate(180deg);
+          }
+        }
+      }
+      .board-list-body{
+        display:block;
+      }
+    }
+  }
+  // 제목부분
+  .board-list-head{
+    .board-list-tit{
+      display:block;
+      width:100%;
+      height:100%;
+      padding:26px 0;
+      font-size:1.25rem;
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:30px;
+        transition:all .4s;
+      }
+      &-inner{
+        display:block;
+        padding:0 80px 0 30px;
+        line-height:1.5;
+      }
+    }
+  }
+  // 내용부분
+  .board-list-body{
+    display:none;
+    background:#f2f4f7;
+    padding:30px;
+    .board-list-desc{
+      color:#444;
+    }
+    .board-list-link{
+      color:#4674c9;
+      line-height:1.7;
+    }
+  }
+}
+
+
+// 절차 step2
+
+
+.step2-list{
+  &.col-3{
+    .step2-list-item{
+      width:calc(33.33% - 16px);
+      min-height:250px;
+    }
+  }
+
+  &.col-4{
+    .step2-list-item{
+      width:calc(25% - 18px);
+      min-height:458px;
+    }
+  }
+
+  @extend %clearfix;
+  &-item{
+    background:#333649;
+    padding:40px 15px 21px;
+    margin-left:24px;
+    float:left;
+    &:first-child{
+      margin-left:0;
+    }
+    .step2-list-head{
+      text-align:center;
+      .article-tit{
+        font-size:1.5rem;
+        color:#ffae43;
+        line-height:1;
+
+      }
+      .article-num-box{
+        display:block;
+        width:100%;
+        height:33px;
+        margin-bottom:26px;
+        border-bottom:1px solid #666;
+        position:relative;
+        .article-num{
+          display:block;
+          height:33px;
+          color:#666;
+          font-size:2.5rem;
+          font-weight:700;
+          line-height:1;
+          position:absolute;
+          right:-1px;
+          bottom:0;
+        }
+      }
+    }
+    // left 클래스추가시 텍스트 왼쪽정렬
+    .step2-list-body{
+      text-align:center;
+      &.left{
+        text-align:left;
+      }
+
+      .article-desc{
+        color:#fff;
+        font-size:1rem;
+        line-height:1.6;
+        font-weight:300;
+        text-align:center;
+      }
+      .list1-item{
+        margin-bottom:10px;
+        color:#fff;
+        font-size:1rem;
+        line-height:1.3;
+        font-weight:300;
+      }
+      .list2-item{
+        color:#a6a7ab;
+        font-size:0.875rem;
+        font-weight:300;
+        &:first-child{
+          margin-top:6px;
+        }
+      }
+    }
+  }
+}
+
+
