@@ -840,6 +840,13 @@ em{
   .inner-col{
     float:left;
     text-align:justify;
+
+    &.btn-right{
+      position: absolute;
+      right:0;
+      bottom:0;
+      text-align: right;
+    }
   }
 
   &.double{
@@ -900,7 +907,3 @@ em{
   margin-top:40px;
 }
 
-.btn-right{
-  text-align: right;
-  margin-top: -50px;
-}
