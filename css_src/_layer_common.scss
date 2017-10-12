@@ -866,6 +866,13 @@ em{
   .inner-col{
     float:left;
     text-align:justify;
+
+    &.btn-right{
+      position: absolute;
+      right:0;
+      bottom:0;
+      text-align: right;
+    }
   }
 
   &.double{
@@ -930,9 +937,4 @@ em{
 // element img text center
 .text-center {
   text-align: center
-}
-
-.btn-right{
-  text-align: right;
-  margin-top: -50px;
 }

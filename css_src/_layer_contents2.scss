@@ -69,7 +69,7 @@
 /*버스검색*/
 .bussearch{
   background:url(../images/img_layer_search_bg.jpg) no-repeat;
-  padding: 60px 145px;
+  padding: 58px 145px;
   &-title{
     color: #fff;
     font-size: 1.5rem;
@@ -113,25 +113,34 @@
   width: 100%;
 
   &-list {
+    border: 1px solid #a5a7aa;
+    border-bottom: 0;
+    @extend %clearfix;
 
     &-item {
-      width: 9%;
+      width: 104px;
+      border-right: 1px solid #d9d9d9;
       float: left;
+
       &-link {
         height: 58px;
         display: block;
         background: #fff;
-        border: 1px solid #a5a7aa;
         font-size: 1rem;
         font-weight: 300;
         color: #666;
         text-align: center;
+        line-height: 58px;
 
         &.on {
           color: #fff;
           background: #323648;
           border: 1px solid #323648;
           font-weight: 800;
+
+          &:after{
+
+          }
         }
       }
     }
@@ -139,14 +148,21 @@
   }
 
   &-town {
-    padding: 40px;
+    padding: 30px 30px 20px;
     border: 1px solid #a5a7aa;
     background: #f2f2f2;
+
+    @extend %clearfix;
+
     &-item {
       width: 12.5%;
       float: left;
       border-right: 1px solid #d9d9d9;
       text-align: center;
+      margin-bottom:20px;
+      &:nth-child(8){
+        border-right: none;
+      }
       &:last-child{
         border-right: none;
       }
