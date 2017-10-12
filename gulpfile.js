@@ -11,6 +11,10 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var index = require('gulp-index');
 
+var pubList = require('gulp-pub-list');
+
+var minify = require('gulp-minify');
+
 //var concat = require('gulp-concat');
 
 // 새로 고침
@@ -22,17 +26,26 @@ gulp.task('livereload', function(){
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch('*', ['livereload']);
-  gulp.watch('html_src/**', ['include', 'livereload']);
+  gulp.watch('html_src/**', ['include:html', 'livereload']);
   gulp.watch('css_src/**', ['sass', 'livereload']);
   //gulp.watch('js_src/**', ['jsconcat', 'livereload']);
+  gulp.watch('guide_src/**', ['include:guide', 'livereload']);
 });
 
-// header, footer, 공통영역 분리
-gulp.task('include', function(){
+// html - header, footer, 공통영역 분리
+gulp.task('include:html', function(){
   gulp.src("html_src/*.html")
       .pipe(include())
       .on('error', console.log)
       .pipe(gulp.dest("html/"));
+});
+
+// guide - header, footer 공통영역 분리
+gulp.task('include:guide', function(){
+  gulp.src("guide_src/*.html")
+      .pipe(include())
+      .on('error', console.log)
+      .pipe(gulp.dest("guide/"));
 });
 
 // sass 실행
@@ -44,55 +57,33 @@ gulp.task('sass', function(){
       .pipe(gulp.dest('css/'));
 });
 
-gulp.task('buildIndex', function() {
-  return gulp.src('./html/**')
-      .pipe(index())
-      .pipe(gulp.dest('./guide/pub_list/'));
+gulp.task('buildPubList', function() {
+  pubList();
 });
 
-// concat 실행 - 여러 개의 파일을 하나의 파일로 합치는 기능
-/*
-gulp.task('tabmenu', function() {
-  return gulp.src('js_src/tab_menu/*.js')
-      .pipe(sourcemaps.init())
-      .pipe(concat('tab_menu.js'))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('js/'));
+// concat
+
+// minify
+gulp.task('compress', function(){
+  gulp.src('js_src/*.js')
+    .pipe(minify({
+        ext:{
+          src : '.debug.js',
+          min : '.min.js'
+        }
+      }))
+    .pipe(gulp.dest('js'));
 });
 
-gulp.task('gnbmenu', function() {
-  return gulp.src('js_src/gnb_menu/*.js')
-      .pipe(sourcemaps.init())
-      .pipe(concat('gnb_menu.js'))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('js/'));
+// copy
+gulp.task('copy:jsLib', function() {
+  return gulp.src('js_src/lib/*.*')
+      .pipe(gulp.dest('js/lib/'));
 });
 
-gulp.task('timingfunction', function() {
-  return gulp.src('js_src/timing_function/*.js')
-      .pipe(sourcemaps.init())
-      .pipe(concat('timing_function.js'))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('js/'));
+gulp.task('copy:jsonData', function(){
+  return gulp.src('guide_src/data/*.*')
+      .pipe(gulp.dest('guide/data/'));
 });
 
-gulp.task('imagesliding', function() {
-  return gulp.src('js_src/image_sliding/*.js')
-      .pipe(sourcemaps.init())
-      .pipe(concat('image_sliding.js'))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('js/'));
-});
-
-gulp.task('accmenu', function() {
-  return gulp.src('js_src/acc_menu/*.js')
-      .pipe(sourcemaps.init())
-      .pipe(concat('acc_menu.js'))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('js/'));
-});
-*/
-
-//gulp.task('jsconcat', ['tabmenu', 'gnbmenu', 'timingfunction', 'imagesliding', 'accmenu']);
-
-gulp.task('default', ['livereload', 'include', 'sass', 'watch', 'buildIndex']);
+gulp.task('default', ['livereload', 'include:html', 'include:guide', 'sass', 'watch']);

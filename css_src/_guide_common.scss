@@ -1,0 +1,140 @@
+%clearfix:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.section{
+  margin:120px 0;
+}
+
+.inner-section{
+  width:1200px;
+  margin:0 auto;
+}
+
+.heading{
+
+  &-wrap{
+    margin-bottom:30px;
+  }
+  &-level1{
+    display:inline-block;
+    width:300px;
+    padding-bottom:15px;
+    margin-bottom:20px;
+    font-family: nanumsq, sans-serif;
+    font-weight:300;
+    font-size:50px;
+    color:#4674c9;
+    position:relative;
+
+    &:after{
+      content:"";
+      display:block;
+      width:100%;
+      height:1px;
+      background:#d9d9d9;
+      position:absolute;
+      bottom:0;
+      left:0;
+    }
+  }
+
+  &-desc{
+    font-size:16px;
+    color:#666;
+  }
+}
+
+.top{
+  width:50px;
+  height:50px;
+  border:1px solid #aaa;
+  background:#fff url(../images/ico_top_arrow.png) no-repeat -1px 0;
+  position:fixed;
+  bottom:-1px;
+  right:30px;
+  font-family: nanumsq, sans-serif;
+  font-weight:700;
+  color:#fff;
+  text-indent:-99999em;
+  border-radius:5px 5px 0 0;
+}
+
+table{
+  width:100%;
+  &.vt-dark{
+    border-bottom:1px solid #a5a7aa;
+
+    tbody{
+      tr:first-child{
+        td{
+          border-top:0;
+        }
+      }
+    }
+
+    th{
+      padding:10px 0 8px;
+      font-size:0.625rem;
+      color:#fff;
+      background:#323648;
+      border-right:1px solid #474a5b;
+      vertical-align:middle;
+
+      &:last-child{
+        border-right:0;
+      }
+
+      &.half{
+        padding:12px;
+      }
+
+      &.sub{
+        padding:6px 0 8px;
+        border:{
+          top:1px solid #212535;
+          right:1px solid #212535;
+        }
+        background:#4d5164;
+        font-size:0.625rem;
+
+        &:last-child{
+          border-right:0;
+        }
+      }
+
+    }
+
+    td{
+      padding:10px 5px 8px;
+      font-size:0.625rem;
+      line-height:1.4;
+      border-right:1px solid #f2f4f7;
+      border-top:1px solid #d9d9d9;
+      vertical-align:middle;
+
+      &.center{
+        text-align:center;
+      }
+
+      &:last-child{
+        border-right:0;
+      }
+    }
+  }
+}
+
+.footer{
+  border-top:1px solid #d9d9d9;
+  text-align:center;
+}
+
+.list-link{
+  font-weight:900;
+  color:red;
+  &:hover{
+    text-decoration:underline;
+  }
+}
