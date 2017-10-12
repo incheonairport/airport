@@ -1,0 +1,217 @@
+.step * {box-sizing: border-box}
+
+// 절차 아이콘 모음
+.step-list-head{
+  &:after{
+    content:'';
+    display:block;
+    height:79px;
+    margin:20px auto 0 auto;
+    background: url(../images/spr_ico_ac_submain.png) no-repeat;
+  }
+
+  &.noicon:after{
+    display:none;
+  }
+
+  /* 터미널도착 */
+  &.arrival:after{
+    background-position:-34px -38px;
+    width: 88px;
+  }
+
+  /* 탑승수속 */
+  &.procedure:after{
+    background-position:-158px -43px;
+    width: 70px;
+  }
+
+  /* 수하물 */
+  &.baggage:after{
+    background-position:-265px -32px;
+    width: 55px;
+  }
+
+  /* 세관신고 */
+  &.customs:after{
+    background-position:-359px -36px;
+    width: 57px;
+  }
+
+  /* 출국장 이동 및 입국장 */
+  &.leave:after{
+    background-position:-453px -29px;
+    width: 86px;
+  }
+
+  /* 보안검색 */
+  &.security:after{
+    background-position:-570px -28px;
+    width: 90px;
+  }
+
+  /* 출국심사 및 입국심사 */
+  &.screening:after{
+    background-position:-696px -27px;
+    width: 51px;
+  }
+
+  /* 인천국제공항 돡 */
+  &.incheon-arrival:after{
+    background-position:-34px -125px;
+    width: 88px;
+  }
+
+  /* 신고서 작성 */
+  &.statement:after{
+    background-position:-176px -125px;
+    width: 44px;
+  }
+
+  /* 세관검사 */
+  &.examination:after{
+    background-position:-274px -125px;
+    width: 57px;
+  }
+
+  /* 비자 */
+  &.visa:after{
+    background-position:-361px -126px;
+    width: 57px;
+  }
+
+  /* 국제운전면허증 */
+  &.certification:after{
+    background-position:-459px -117px;
+    width: 73px;
+  }
+
+}
+
+// 입출국 절차에서 비주얼 높이
+.contents.ap-type {
+  & +.tab-area{
+    margin-top:-153px;
+  }
+}
+
+// 지도영역
+.contents.ap-type .contents-visual{
+  position:relative;
+  min-height:420px;
+  height:420px;
+  background-size: cover;
+  &-tit{
+    position:absolute;
+    top:54px;
+    font-family: nanumsq, sans-serif;
+    font-size:2.875rem;
+    font-weight:300;
+    line-height:1.1;
+  }
+
+  &.rough-map{ // 임시 이미지 퍼블리싱 본래 지도가 들어갑니다
+    background:url("../images/img_sub_visual_stepleave.jpg") center no-repeat;
+  }
+}
+
+//---------------------------------구분 테스트
+
+
+.section-bg *{box-sizing:border-box}
+.section-bg{
+  height:510px;
+  background:url(../images/bg_tourinfo.jpg);
+  margin-top:40px;
+}
+
+.split-group{
+  height:100%;
+  @extend %clearfix;
+  .split{
+    width:50%;
+    height:100%;
+    float:left;
+    display:table;
+    &.color{
+      background:rgba(66,81,158,.6);
+      padding-left:108px;
+    }
+    &-inner{
+      display:table-cell;
+      vertical-align:middle;
+    }
+    &-head{
+      font-family: nanumsq, sans-serif;
+      color:#fff;
+      font-size:2.875rem;
+      font-weight:300;
+      text-align:center;
+      &:after{
+        content:'';
+        display:block;
+        width:40px;
+        height:2px;
+        background:#fff;
+        margin:30px auto;
+      }
+    }
+    &-desc{
+      color:#fff;
+      font-size:1.125rem;
+      line-height:1.5;
+      text-align:center;
+
+      &.left{
+        text-align:left;
+      }
+      .desc-bold{
+        color:#ffae44;
+        font-weight:400;
+      }
+    }
+
+    &-list{
+      color:#fff;
+      &-tit{
+        font-size:1.375rem;
+        font-weight:400;
+        margin-top:20px;
+      }
+      &-desc{
+        padding-top:8px;
+        line-height:1.5;
+      }
+    }
+
+    .btn-type-infolink{
+      margin-bottom:30px;
+    }
+  }
+}
+
+// 아티클 소제목 현재 레이어팝업에서도 같은스타일 title 존재
+.article{
+  margin-bottom:60px;
+  .article-head{
+    font-size:1.625rem;
+    font-weight:400;
+    margin-bottom:20px;
+  }
+}
+
+.table-desc{
+  color:#444;
+  font-size:1.125rem;
+  line-height:1.8;
+  margin-bottom:8px;
+}
+
+//.aa td{
+//  @extend %cell-left;
+//}
+
+.txt-indent{
+  display:block;
+  padding: 4px 0 4px 10px
+}

@@ -1,0 +1,230 @@
+// IR 인포그래픽
+/*세관검사 절차*/
+.customs_inspection{
+    height:400px;
+    text-indent:-999em;
+    background:#333649 url(../images/digr_customs_inspection_procedure.png) no-repeat;
+}
+
+
+// 기존 버튼 디자인
+.ico {
+  display: inline-block;
+  position: relative;
+  text-indent: -999em;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url(../images/spr_ico_global.png) no-repeat;
+  }
+  &.updata-refresh:after{
+    background-position:-31px -98px;
+    width: 20px;
+    height: 20px;
+  }
+  &.search-area-btn:after {
+    background-position: -74px -134px;
+    width: 22px;
+    height: 22px;
+  }
+  &.btn-download:after {
+    background-position: -68px -98px;
+    width: 22px;
+    height: 22px;
+  }
+  &.shuttle-bus-stop:after {
+    background-position: -89px -63px;
+    width: 22px;
+    height: 22px;
+  }
+}
+.updata{
+  text-align: right;
+  margin-bottom: 20px;
+  &-time{
+    font-size: 0.875rem;
+    color: #666;
+    margin-right: 10px;
+  }
+  &-refresh{
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    font-size:0.8125rem;
+    color: #666;
+    padding: 0 10px  0 25px;
+    line-height: 26px;
+    height: 26px;
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      right: 60px;
+      top:6px;
+    }
+  }
+}
+
+/*버스검색*/
+.bussearch{
+  background:url(../images/img_layer_search_bg.jpg) no-repeat;
+  padding: 58px 145px;
+  &-title{
+    color: #fff;
+    font-size: 1.5rem;
+    float: left;
+    margin: 20px;
+  }
+  .search-area{
+
+      @extend %clearfix;
+
+    &-txt{
+      width: 505px;
+      height: 58px;
+      border: 0;
+      padding: 0 15px;
+      border-left:1px solid #d9d9d9;
+      float: left;
+      font-size:1.125rem;
+    }
+    &-btn{
+      background:#42519e;
+      border: none;
+      color: #fff;
+      font-size: 1.625rem;
+      width: 132px;
+      height: 58px;
+      line-height: 1;
+      padding-left: 15px;
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        top:3px;
+        right:88px;
+      }
+    }
+  }
+}
+
+/*버스지역*/
+.local {
+  width: 100%;
+
+  &-list {
+    border-left: 1px solid #a5a7aa;
+    border-right: 1px solid #a5a7aa;
+
+    @extend %clearfix;
+
+    &-item {
+      width: 104.5px;
+      border-right: 1px solid #d9d9d9;
+      float: left;
+      &:last-child{
+        border-right: none;
+      }
+      &-link {
+        height: 58px;
+        display: block;
+        background: #fff;
+        font-size: 1rem;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        line-height: 58px;
+
+        &.on {
+          color: #fff;
+          background: #323648;
+          border: 1px solid #323648;
+          font-weight: 800;
+          position: relative;
+
+          &:after{
+            width: 16px;
+            height: 16px;
+            content: '';
+            position:absolute;
+            left:43px;
+            top: 45px;
+            background: #323648;
+            z-index: 1;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  &-town {
+    padding: 30px 30px 20px;
+    border: 1px solid #a5a7aa;
+    background: #f2f2f2;
+
+    @extend %clearfix;
+
+    &-item {
+      width: 12.5%;
+      float: left;
+      border-right: 1px solid #d9d9d9;
+      text-align: center;
+      margin-bottom:20px;
+      &:nth-child(8){
+        border-right: none;
+      }
+      &:last-child{
+        border-right: none;
+      }
+      &-link {
+
+        &.on {
+          color: #41519e;
+          border-bottom:2px solid #41519e;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}
+
+/*버스노선도*/
+.shuttle-bus{
+  @extend %clearfix;
+  &-stop{
+    float: left;
+    margin-right:30px;
+    letter-spacing: -0.05rem;
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      left: auto;
+      right:-20px;
+      top:7px;
+    }
+  }
+}
+
+.btn-download{
+  width: 86px;
+  height: 26px;
+  padding-left:15px;
+  line-height: 26px;
+  border: 1px solid #d9d9d9;
+  background:#f2f2f2;
+  font-size: 0.8125rem;
+  &.ico{
+    text-indent: 0;
+    &:after{
+      top:10px;
+      right:48px;
+    }
+  }
+}
