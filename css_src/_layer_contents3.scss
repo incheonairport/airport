@@ -35,13 +35,17 @@
   text-indent:-999em;
   margin-bottom:34px;
   &.baggage1{
-    background:url(../images/info_graphic01.png) no-repeat #323648;
+    background:url(../images/digr_info_graphic01.png) no-repeat #323648;
   }
   &.baggage2{
-    background:url(../images/info_graphic02.png) no-repeat #323648;
+    background:url(../images/digr_info_graphic02.png) no-repeat #323648;
   }
   &.baggage3{
-    background:url(../images/info_graphic03.png) no-repeat #323648;
+    background:url(../images/digr_info_graphic03.png) no-repeat #323648;
+  }
+  &.packing{
+    height:330px;
+    background:url(../images/digr_info_graphic04.png) no-repeat #323648;
   }
 }
 
@@ -103,3 +107,55 @@
     height:100%;
   }
 }
+
+// 제한물품 바로가기 박스모델
+.link-box{
+  background:#f2f4f7;
+  border:1px solid #d9d9d9;
+  height:90px;
+  &-link{
+    display:inline-block;
+    width:100%;
+    height:100%;
+    line-height:90px;
+    text-align:center;
+    .link-strong{
+      font-size:22px;
+    }
+    .nowlink{
+      width:23px;
+    }
+  }
+}
+
+// 슬라이드형 게시판 FAQ style
+//.slide-board-list {
+//  &-item{
+//    border-bottom: 1px solid #d9d9d9;
+//  }
+//  &-item.on{
+//    border-color:#a5a7aa;
+//  }
+//  &-content{
+//    display:none;
+//  }
+//  &-link{
+//    border-bottom: 1px solid #d9d9d9;
+//    padding:30px;
+//    text-indent:0;
+//    display: block;
+//    width: 100%;
+//    height: 100%;
+//    user-select: none;
+//    &:after{
+//      left:auto;
+//      right: 30px;
+//      transition:all .4s;
+//    }
+//  }
+//  &-link.on{
+//    &:after{
+//      transform:rotate(180deg);
+//    }
+//  }
+//}
