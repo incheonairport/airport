@@ -14,6 +14,7 @@
 }
 
 .top-contents-wrap{
+  margin-bottom:30px;
   @extend %clearfix;
 }
 
@@ -21,7 +22,6 @@
 
   &-wrap{
     margin-bottom:30px;
-    float:left;
   }
 
   &-level1{
@@ -38,7 +38,7 @@
       content:"";
       display:block;
       width:100%;
-      height:1px;
+      height:2px;
       background:#d9d9d9;
       position:absolute;
       bottom:0;
@@ -47,11 +47,12 @@
   }
 
   &-level2{
+    padding-bottom:17px;
+    position:relative;
     font-family: nanumsq, sans-serif;
     font-weight:300;
-    font-size:50px;
-    color:#ffae44;
-    position:relative;
+    font-size:30px;
+    color:#dd7714;
   }
 
   &-desc{
@@ -62,7 +63,6 @@
 
 .process{
   &-wrap{
-    float:right;
   }
 }
 
@@ -83,6 +83,7 @@
 
 table{
   width:100%;
+
   &.vt-dark{
     border-bottom:1px solid #a5a7aa;
 
@@ -163,20 +164,23 @@ table{
       top:2px solid #444;
       bottom:1px solid #a5a7aa;
     }
+
     &.border-no{
       border-top: none;
       td:last-child{
         border-right: 1px solid #d9d9d9;
       }
     }
+
     &.border-right{
       td:last-child{
         border-right: 1px solid #d9d9d9;
       }
     }
+
     th{
       padding:10px 0 8px;
-      font-size:0.625rem;
+      font-size:1rem;
       font-weight:700;
       position:relative;
 
@@ -187,7 +191,7 @@ table{
         height:16px;
         background:#a5a7aa;
         position:absolute;
-        top:17px;
+        top:9px;
         right:0;
       }
 
