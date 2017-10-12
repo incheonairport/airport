@@ -8,6 +8,17 @@
     </div>
 
     <table class="vt-dark">
+      <colgroup>
+        <col style="width:7%" />
+        <col style="width:11%" />
+        <col style="width:11%" />
+        <col style="width:11%" />
+        <col style="width:16%" />
+        <col style="width:auto" />
+        <col style="width:8%" />
+        <col style="width:11%" />
+        <col style="width:8%" />
+      </colgroup>
       <thead>
       <tr>
         <th>1 Depth</th>
@@ -4438,44 +4449,6 @@
 </section>
 
 <a href="#" class="top">top</a>
-
-<script src="../js/lib/jquery-3.2.1.min.js"></script>
-<script>
-  $(function(){
-
-    var item = [];
-
-    $.getJSON('data/file_list.json', function(data){
-
-      $.each(data, function(key, val){
-
-        item[key] = val.split('.')[0];
-
-      });
-
-    }).done(function(){
-
-      $('tbody tr').each(function(){
-
-        for(var j=0; j<item.length; j++){
-
-          if( $(this).children('td:last-child').text() == item[j] ){
-            $(this).append('<td class="center"><a href="../html/' + item[j] + '.html" class="list-link" target="blonk"> DONE </a></td>');
-            break;
-          } else {
-            if( j == item.length-1 ){
-              $(this).append('<td class="center">X</td>');
-            }
-          }
-
-        }
-
-      });
-
-    });
-
-  });
-</script>
 <!--=include _include/_footer.html -->
 </body>
 </html>

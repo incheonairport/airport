@@ -13,6 +13,8 @@ var index = require('gulp-index');
 
 var pubList = require('gulp-pub-list');
 
+var minify = require('gulp-minify');
+
 //var concat = require('gulp-concat');
 
 // 새로 고침
@@ -59,7 +61,19 @@ gulp.task('buildPubList', function() {
   pubList();
 });
 
-// concat 실행
+// concat
+
+// minify
+gulp.task('compress', function(){
+  gulp.src('js_src/*.js')
+    .pipe(minify({
+        ext:{
+          src : '.debug.js',
+          min : '.min.js'
+        }
+      }))
+    .pipe(gulp.dest('js'));
+});
 
 // copy
 gulp.task('copy:jsLib', function() {
