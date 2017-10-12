@@ -78,7 +78,17 @@
       top:2px solid #444;
       bottom:1px solid #a5a7aa;
     }
-
+    &.border-no{
+      border-top: none;
+      td:last-child{
+        border-right: 1px solid #d9d9d9;
+      }
+    }
+    &.border-right{
+      td:last-child{
+        border-right: 1px solid #d9d9d9;
+      }
+    }
     th{
       padding:19px 0 16px;
       font-size:1rem;
@@ -116,6 +126,16 @@
 
       &:last-child{
         border-right:0;
+      }
+
+      &.color-b{
+        border-left: 4px solid #42519e;
+      }
+      &.color-g{
+        border-left: 4px solid #2c8279;
+      }
+      &.color-o{
+        border-left: 4px solid #dd7714;
       }
     }
 
@@ -212,7 +232,9 @@
       border-right:1px solid #f2f4f7;
       line-height:1.4;
       vertical-align:middle;
-
+      &.center{
+        text-align:center;
+      }
       &:last-child{
         border-right:0;
       }
@@ -542,6 +564,7 @@ em{
     font-family: nanumsq, sans-serif;
     font-size:1.25rem;
     font-weight:600;
+    line-height: 1.5;
   }
 
   &-list{
@@ -875,4 +898,9 @@ em{
 // margin-top:40px;
 .mt40, %mt40{
   margin-top:40px;
+}
+
+.btn-right{
+  text-align: right;
+  margin-top: -50px;
 }
