@@ -143,15 +143,27 @@
       }
 
       //게시판
-      & .text-color{
-        &.orange{
+      & .text-color-o{
           color:#dd7714;
-        }
-        &.green{
-          color:#41519e;
-        }
-        &.blue{
-          color:#2c8279;
+      }
+      & .text-color-g{
+        color:#2c8279;
+      }
+      & .text-color-b{
+        color:#41519e;
+      }
+      & b{
+        font-weight:900;
+      }
+    }
+
+    &.board-list{
+      font-size:1rem;
+      & td{
+        border-right:0;
+        padding:23px 20px;
+        &.tit{
+          font-size:1.125rem;
         }
       }
     }
