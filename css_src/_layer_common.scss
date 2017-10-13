@@ -297,6 +297,36 @@
 
   }
 
+  &-area{
+    position:relative;
+
+    &-heading{
+      width:50%;
+      display:block;
+      height:54px;
+      background:#f2f2f2;
+      border:1px solid #d9d9d9;
+      border-bottom-color:#42519e;
+
+      position:absolute;
+      top:0;
+
+      font-size:1.25rem;
+      font-weight:300;
+      color:#666;
+      line-height:54px;
+      text-align:center;
+
+      &.on{
+        border:2px solid #42519e;
+        border-bottom:none;
+        background:#fff;
+        font-weight:700;
+        color:#42519e;
+      }
+    }
+  }
+
 }
 
 .stuff{
