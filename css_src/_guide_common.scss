@@ -61,8 +61,25 @@
   }
 }
 
-.process{
+.progress{
   &-wrap{
+    display:inline-block;
+    width:80%;
+    height:30px;
+    background:#ddd;
+    position:relative;
+  }
+  &-bar{
+    width:0;
+    height:30px;
+    line-height:30px;
+    background:#ffae44;
+  }
+
+  &-percent{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -201,7 +218,7 @@ table{
     }
 
     td{
-      padding:19px 20px 16px;
+      padding:10px 20px 8px;
       line-height:1.4;
       border:{
         right:1px solid #f2f4f7;
