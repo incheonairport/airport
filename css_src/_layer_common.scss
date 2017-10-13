@@ -147,20 +147,6 @@
         border-left: 4px solid #dd7714;
       }
 
-      //게시판
-      & .text-color-o{
-          color:#dd7714;
-      }
-      & .text-color-g{
-        color:#2c8279;
-      }
-      & .text-color-b{
-        color:#41519e;
-      }
-      & b{
-        font-weight:900;
-      }
-
       & .board-list-link{
         font-size:1.125rem;
         transition:all .2s;
@@ -286,6 +272,8 @@
   }
 
 }
+
+
 
 .tab{
 
@@ -1297,4 +1285,59 @@ em{
   }
 }
 
+.text-color-o{
+  color:#dd7714;
+}
+.text-color-g{
+  color:#2c8279;
+}
+.text-color-b{
+  color:#41519e;
+}
+b.text-bold{
+  font-weight:900;
+}
 
+// 이벤트 게시판 상세
+
+.borad-view{
+  .view-head{
+    padding:25px 30px;
+    border-bottom:1px solid #a5a7aa;
+    &-tit{
+      display:inline;
+      font-size:1.375rem;
+      font-weight:900;
+    }
+    &-date{
+      display:inline;
+      float:right;
+    }
+    &-info{
+      @extend %clearfix;
+      margin-top:16px;
+      font-size:1rem;
+      .info-tit{
+        float:left;
+        margin-right:10px;
+      }
+      .info-desc{
+        float:left;
+        &:after{
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 16px;
+          margin: auto 20px;
+          background: #d9d9d9;
+          vertical-align:middle;
+
+        }
+      }
+    }
+  }
+  .view-body{
+    min-height:578px;
+    padding:30px;
+  }
+}
