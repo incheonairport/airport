@@ -137,6 +137,6 @@ gulp.task('release:fonts', function(){
  * run task
  */
 
-gulp.task('default', ['build:include:html', 'build:include:guide', 'build:sass:dev', 'build:jsCompress', 'reload:livereload', 'reload:watch']);
+gulp.task('default', ['build:include:html', 'build:include:guide', 'build:sass:dev', 'build:jsCompress', 'reload:watch']);
 
 gulp.task('release', ['release:html', 'release:guide', 'release:sass', 'release:js', 'release:images', 'release:fonts']);
