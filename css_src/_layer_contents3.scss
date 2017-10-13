@@ -1,8 +1,10 @@
 // list-item에 바로가기 버튼이 있는 경우 버튼 위치조정을 위한 css
-.list1-item .btn-type-small{
-  position:absolute;
-  top:-8px;
-  margin-left:8px
+.btn-type-small{
+  &.position{
+    position:absolute;
+    top:-8px;
+    margin-left:8px
+  }
 }
 
 // 타 사이트 로고 목록
@@ -124,38 +126,68 @@
     }
     .nowlink{
       width:23px;
+      &:after{
+        height: 26px;
+        margin-left: 6px;
+      }
     }
   }
 }
 
-// 슬라이드형 게시판 FAQ style
-//.slide-board-list {
-//  &-item{
-//    border-bottom: 1px solid #d9d9d9;
-//  }
-//  &-item.on{
-//    border-color:#a5a7aa;
-//  }
-//  &-content{
-//    display:none;
-//  }
-//  &-link{
-//    border-bottom: 1px solid #d9d9d9;
-//    padding:30px;
-//    text-indent:0;
-//    display: block;
-//    width: 100%;
-//    height: 100%;
-//    user-select: none;
-//    &:after{
-//      left:auto;
-//      right: 30px;
-//      transition:all .4s;
-//    }
-//  }
-//  &-link.on{
-//    &:after{
-//      transform:rotate(180deg);
-//    }
-//  }
-//}
+// common
+.ml20{
+  margin-left:20px;
+}
+
+.minh427{
+  min-height:427px;
+}
+
+.minh452{
+  min-height:452px;
+}
+
+
+// 이벤트 게시판 리스트
+
+.board-list{
+  & .table.vt{
+    font-size:1rem;
+    td{
+      border-right:0;
+      padding:23px 20px
+    }
+    //번호
+    //td.num{
+    //}
+    //분류
+    td.classify{
+      &.shopping{//쇼핑
+        color:#dd7714;
+      }
+      &.tax{//면세
+        color:#41519e;
+      }
+      &.restaurant{//식당
+        color:#2c8279;
+      }
+    }
+    //제목
+    td.tit{
+      font-size:1.125rem;
+    }
+    //기간
+    //td.date{
+    //}
+    //조회수
+    //td.view{
+    //}
+    //진행여부
+    td.progress{
+      &.ing{//진행중
+        color:#41519e;
+        font-weight:900;
+      }
+    }
+  }
+}
