@@ -138,11 +138,19 @@ $(function(){
 
     });
 
-    console.log(count);
+    $('.all-work').text(count[2]);
+    $('.done-work').text(count[7]);
 
-    //$('.page-whole-num').text(wholeCount);
-    //$('.page-current-num').text(doneCount);
-    //$('.progress-bar').css({width : Math.floor(doneCount/wholeCount*100) + '%'}).html('<div class="progress-percent">' + Math.floor(doneCount/wholeCount*100) + '%</div>');
+    $('.html-all-work').text(count[3]);
+    $('.html-done-work').text(count[8]);
+
+    $('.board-all-work').text(count[4]);
+    $('.board-done-work').text(count[9]);
+
+    $('.develop-all-work').text(count[5]);
+    $('.develop-done-work').text(count[10]);
+
+    $('.progress-bar').css({width : Math.floor(count[7]/count[2]*100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7]/count[2]*100) + '%</div>');
   }
 
   /**
@@ -170,6 +178,35 @@ $(function(){
 
   });
 
+  // show each list
+
+  $('body').on('click', '.js-show-all', function(){
+
+    var showCategory = $(this).attr('class').split(' ')[4];
+
+    $('.file-list tbody tr').addClass('hide');
+
+    if( showCategory == undefined ){
+      $('.file-list tbody tr').removeClass('hide');
+    } else {
+      $('.file-list tbody tr.' + showCategory + '-category').removeClass('hide');
+    }
+
+  });
+
+  $('body').on('click', '.js-show-done', function(){
+
+    var showCategory = $(this).attr('class').split(' ')[4];
+
+    $('.file-list tbody tr').addClass('hide');
+
+    if( showCategory == undefined ){
+      $('.file-list tbody tr.done').removeClass('hide');
+    } else {
+      $('.file-list tbody tr.' + showCategory + '-category.done').removeClass('hide');
+    }
+
+  });
 
   // link or alert message
   $('body').on('click', '.file-list tr', function(e){
