@@ -107,6 +107,18 @@ table{
     tbody{
       tr {
 
+        &.category{
+          background:#999;
+        }
+
+        &.cancel{
+          background:orange;
+        }
+
+        &.link{
+          background:skyblue;
+        }
+
         &:hover{
           background:#ffae44;
           cursor:pointer;

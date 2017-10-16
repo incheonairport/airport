@@ -6,7 +6,7 @@
   <title>인천국제공항</title>
   <link rel="stylesheet" href="../css/guide_style.css" />
   <script src="../js/lib/jquery-3.2.1.min.js"></script>
-  <script src="../js/guide_function.min.js"></script>
+  <script src="../js/guide_function.debug.js"></script>
 </head>
 <body>
 
@@ -52,12 +52,43 @@
           <colgroup>
             <col style="width:20%" />
             <col style="width:20%" />
+            <col style="width:20%" />
+            <col style="width:20%" />
+            <col style="width:20%" />
+          </colgroup>
+          <thead>
+          <tr>
+            <th>전체 작업할 페이지 개수</th>
+            <th>전체 작업할 HTML 페이지 개수</th>
+            <th>전체 작업할 Board 페이지 개수</th>
+            <th>전체 작업할 Develop 페이지 개수</th>
+            <th>외부 링크 개수</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="page-whole-num center"></td>
+            <td class="page-current-num center"></td>
+            <td class="page-progress center">
+              <div class="progress-wrap">
+                <div class="progress-bar"></div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <table class="vt">
+          <colgroup>
+            <col style="width:20%" />
+            <col style="width:20%" />
             <col style="width:60%" />
           </colgroup>
           <thead>
           <tr>
-            <th>전체 페이지 개수</th>
-            <th>현재 페이지 개수</th>
+            <th>현재 작업된 페이지 개수</th>
+            <th>현재 작업된 HTML 페이지 개수</th>
+            <th>현재 작업된 Board 페이지 개수</th>
+            <th>현재 작업된 Develop 페이지 개수</th>
             <th>진행율</th>
           </tr>
           </thead>
@@ -75,6 +106,8 @@
         </table>
       </div>
     </div>
+
+    <div></div>
 
     <table class="file-list vt-dark">
       <colgroup>
@@ -139,7 +172,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_AA_01</td>
       </tr>
       <tr>
@@ -149,7 +182,7 @@
         <td>[T] 여객 출발 시간표</td>
         <td>아코디언 게시판</td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_AA_01_01</td>
       </tr>
       <tr>
@@ -229,7 +262,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_AA_02</td>
       </tr>
       <tr>
@@ -289,7 +322,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>html</td>
         <td>AP_AC</td>
       </tr>
       <tr>
@@ -299,7 +332,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_AC_01</td>
       </tr>
       <tr>
@@ -309,7 +342,7 @@
         <td>[LP] 일반 탑승수속 (체크인 카운터)</td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td>html</td>
         <td>AP_AC_01_01</td>
       </tr>
       <tr>
@@ -322,6 +355,8 @@
         <td>Html</td>
         <td>AP_AC_01_02</td>
       </tr>
+
+      <!--
       <tr>
         <td></td>
         <td></td>
@@ -472,6 +507,9 @@
         <td>Html</td>
         <td>AP_AC_01_02_15</td>
       </tr>
+
+      -->
+
       <tr>
         <td></td>
         <td></td>
@@ -489,7 +527,7 @@
         <td>[LP] 도심공항터미널 이용</td>
         <td></td>
         <td></td>
-        <td>Html</td>
+        <td></td>
         <td>AP_AC_01_04</td>
       </tr>
       <tr>
@@ -519,7 +557,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>Html</td>
+        <td></td>
         <td>AP_AC_02</td>
       </tr>
       <tr>
@@ -529,7 +567,7 @@
         <td>[LP] 기내반입 (짐을 들고 탑승)</td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td>Html</td>
         <td>AP_AC_02_01</td>
       </tr>
       <tr>
@@ -589,7 +627,7 @@
         <td>[LP] 검역안내</td>
         <td></td>
         <td></td>
-        <td>Html</td>
+        <td></td>
         <td>AP_AC_03_03</td>
       </tr>
       <tr>
@@ -649,7 +687,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>Html</td>
+        <td></td>
         <td>AP_AC_04</td>
       </tr>
       <tr>
@@ -709,7 +747,7 @@
         <td>[LP] 제한물품</td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_AC_04_04</td>
       </tr>
       <tr>
@@ -769,7 +807,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>Html</td>
         <td>AP_AD</td>
       </tr>
       <tr>
@@ -779,8 +817,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -789,8 +827,8 @@
         <td><s>[T] 여권</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -799,8 +837,8 @@
         <td><s>[T] 국제운전면허증</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -809,8 +847,8 @@
         <td><s>[T] 비자</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -819,8 +857,8 @@
         <td><s>[T] 안전여행정보</s></td>
         <td><s>[T] 체크리스트</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -829,8 +867,8 @@
         <td></td>
         <td><s>[T] 사건/사고 대응수칙</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -839,8 +877,8 @@
         <td></td>
         <td><s>[T] 여행경보현황</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -849,8 +887,8 @@
         <td><s>[T] 출국 납부금/공항 이용료</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -859,8 +897,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -869,8 +907,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -959,7 +997,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_BA_01</td>
       </tr>
       <tr>
@@ -969,7 +1007,7 @@
         <td>[T] 여객 도착 시간표</td>
         <td>아코디언 게시판</td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_BA_01_01</td>
       </tr>
       <tr>
@@ -1002,6 +1040,7 @@
         <td>Develop</td>
         <td>AP_BA_01_01_01_02</td>
       </tr>
+      <!--
       <tr>
         <td></td>
         <td></td>
@@ -1022,6 +1061,7 @@
         <td>Develop</td>
         <td>AP_BA_01_01_02_01</td>
       </tr>
+      -->
       <tr>
         <td></td>
         <td></td>
@@ -1049,7 +1089,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_BA_02</td>
       </tr>
       <tr>
@@ -1109,7 +1149,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>Html</td>
         <td>AP_BC</td>
       </tr>
       <tr>
@@ -1219,7 +1259,7 @@
         <td>[LP] 검역안내</td>
         <td></td>
         <td></td>
-        <td>Html</td>
+        <td></td>
         <td>AP_BC_04_03</td>
       </tr>
       <tr>
@@ -1279,8 +1319,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1289,8 +1329,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>환승</td>
@@ -1329,8 +1369,8 @@
         <td><s>[T] 터미널 도착 승객</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1339,8 +1379,8 @@
         <td><s>[T] 탑승동 도착 승객</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1359,7 +1399,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_CB</td>
       </tr>
       <tr>
@@ -1369,7 +1409,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_CB_01</td>
       </tr>
       <tr>
@@ -1399,7 +1439,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_CB_02</td>
       </tr>
       <tr>
@@ -1429,7 +1469,7 @@
         <td>내용 정리 필요: 환승팀</td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_CB_03</td>
       </tr>
       <tr>
@@ -1499,8 +1539,8 @@
         <td><s></s></td>
         <td><s></s></td>
         <td><s></s></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1509,8 +1549,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1519,8 +1559,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1529,8 +1569,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1539,8 +1579,8 @@
         <td><s>[T] 이용안내</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1549,8 +1589,8 @@
         <td><s>[T] 객실소개 &amp; 이용요금</s></td>
         <td><s></s></td>
         <td><s></s></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1559,8 +1599,8 @@
         <td><s>[T] 예약하기</s></td>
         <td><s></s></td>
         <td><s></s></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1569,8 +1609,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1579,8 +1619,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1589,8 +1629,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1599,8 +1639,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1609,8 +1649,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1619,8 +1659,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1629,8 +1669,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1639,8 +1679,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1649,8 +1689,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1659,8 +1699,8 @@
         <td><s>[T] 1시간</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1669,8 +1709,8 @@
         <td><s>[T] 2시간</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1679,8 +1719,8 @@
         <td><s>[T] 3시간</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1689,8 +1729,8 @@
         <td><s>[T] 4시간</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1699,8 +1739,8 @@
         <td><s>[T] 5시간</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1709,8 +1749,8 @@
         <td><s>[T] 인천공항 문화투어</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1719,8 +1759,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1729,8 +1769,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1739,8 +1779,8 @@
         <td><s>[T] 인하국제의료센터 프로그램</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1749,8 +1789,8 @@
         <td><s>[T] 카톨릭관동대학교 국제성심병원</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1759,8 +1799,8 @@
         <td><s>[T] 지안 국제건강증진센터 프로그램</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1769,8 +1809,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1779,8 +1819,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1789,8 +1829,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1799,8 +1839,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -1809,8 +1849,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>교통/주차</td>
@@ -1819,7 +1859,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>Html</td>
+        <td></td>
         <td>AP_D0</td>
       </tr>
       <tr>
@@ -1839,7 +1879,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>Html</td>
+        <td></td>
         <td>AP_DB</td>
       </tr>
       <tr>
@@ -1999,7 +2039,7 @@
         <td>[LP] 무료순환버스(셔틀) 안내</td>
         <td></td>
         <td></td>
-        <td>Html</td>
+        <td></td>
         <td>AP_DC_01_04</td>
       </tr>
       <tr>
@@ -2049,7 +2089,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_DC_02</td>
       </tr>
       <tr>
@@ -2079,7 +2119,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_DC_03</td>
       </tr>
       <tr>
@@ -2109,7 +2149,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_DC_04</td>
       </tr>
       <tr>
@@ -2179,7 +2219,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_DC_05</td>
       </tr>
       <tr>
@@ -2209,7 +2249,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_DC_06</td>
       </tr>
       <tr>
@@ -2289,8 +2329,8 @@
         <td><s>[T] 자기부상철도 안전시스템</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2299,8 +2339,8 @@
         <td></td>
         <td><s>[T] 안전경영방침</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2309,8 +2349,8 @@
         <td></td>
         <td><s>[T] 안전경영 검토결과</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2319,8 +2359,8 @@
         <td></td>
         <td><s>[T] 안전목표</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2329,8 +2369,8 @@
         <td></td>
         <td><s>[T] 철도안전 공지사항</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2339,8 +2379,8 @@
         <td></td>
         <td><s>[T] 기타 위헙사건 신고접수</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>쇼핑/식당</td>
@@ -2419,7 +2459,7 @@
         <td>면세점, 일반 쇼핑 공통 LP, 게시판</td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_EB_03</td>
       </tr>
       <tr>
@@ -2589,7 +2629,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>Board</td>
+        <td></td>
         <td>AP_FA</td>
       </tr>
       <tr>
@@ -2599,7 +2639,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>Board</td>
         <td>AP_FA_01</td>
       </tr>
       <tr>
@@ -2609,7 +2649,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>Board</td>
         <td>AP_FA_02</td>
       </tr>
       <tr>
@@ -2629,7 +2669,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_FB_01</td>
       </tr>
       <tr>
@@ -2659,7 +2699,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_FB_02</td>
       </tr>
       <tr>
@@ -2689,8 +2729,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2699,8 +2739,8 @@
         <td><s>[T] 문화공연</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2709,8 +2749,8 @@
         <td><s>[T] 한국전통문화센터</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2719,8 +2759,8 @@
         <td><s>[T] 왕가의산책</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2729,8 +2769,8 @@
         <td><s>[T] 한국문화거리</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2739,8 +2779,8 @@
         <td><s>[T] 한국문화전시관</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2749,8 +2789,8 @@
         <td><s>[T] 한국문화박물관</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2759,8 +2799,8 @@
         <td><s>[T] 입국장전시</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2769,8 +2809,8 @@
         <td><s>[T] 유물 전시</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2779,8 +2819,8 @@
         <td><s>[T] 공항전망대</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2789,8 +2829,8 @@
         <td><s>[T] 정원이야기</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2799,8 +2839,8 @@
         <td></td>
         <td><s>[T] 여객터미널</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2809,8 +2849,8 @@
         <td></td>
         <td><s>[T] 야생초화원(교통센터)</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2819,8 +2859,8 @@
         <td></td>
         <td><s>[T] 하늘정원</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2829,8 +2869,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2839,8 +2879,8 @@
         <td><s>[T] Flying to the Future</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2849,8 +2889,8 @@
         <td><s>[T] 골프장</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2859,8 +2899,8 @@
         <td><s>[T] 카지노</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2869,8 +2909,8 @@
         <td><s>[T] 호텔</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2879,8 +2919,8 @@
         <td></td>
         <td><s>[T] 그랜드 하얏트 인천</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2889,8 +2929,8 @@
         <td></td>
         <td><s>[T] 베스트 웨스턴 호텔</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2899,8 +2939,8 @@
         <td></td>
         <td><s>[T] ㈜호텔휴</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2909,8 +2949,8 @@
         <td></td>
         <td><s>[T] 네스트 호텔</s></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -2999,7 +3039,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>Board</td>
+        <td></td>
         <td>AP_HB</td>
       </tr>
       <tr>
@@ -3169,8 +3209,8 @@
         <td><s>[T] 국내항공사</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3179,8 +3219,8 @@
         <td><s>[T] 외국항공사</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3339,8 +3379,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3379,8 +3419,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3389,8 +3429,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3399,8 +3439,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3409,7 +3449,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>Html</td>
         <td>AP_HG</td>
       </tr>
       <tr>
@@ -3429,8 +3469,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3439,8 +3479,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3449,8 +3489,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3459,8 +3499,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3469,8 +3509,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3479,8 +3519,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3489,8 +3529,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3499,8 +3539,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3509,8 +3549,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3519,8 +3559,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3529,8 +3569,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3539,8 +3579,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3549,8 +3589,8 @@
         <td><s>순서로보기</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3559,8 +3599,8 @@
         <td><s>지도로보기</s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3569,8 +3609,8 @@
         <td><s></s></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3689,8 +3729,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3699,8 +3739,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3709,8 +3749,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3729,8 +3769,8 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
@@ -3759,7 +3799,7 @@
         <td><s></s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA</td>
       </tr>
       <tr>
@@ -3769,7 +3809,7 @@
         <td><s></s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA_01</td>
       </tr>
       <tr>
@@ -3809,7 +3849,7 @@
         <td><s></s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA_02</td>
       </tr>
       <tr>
@@ -3839,7 +3879,7 @@
         <td><s></s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA_03</td>
       </tr>
       <tr>
@@ -3889,7 +3929,7 @@
         <td><s></s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA_04</td>
       </tr>
       <tr>
@@ -3899,7 +3939,7 @@
         <td><s>입국시</s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA_04_01</td>
       </tr>
       <tr>
@@ -3959,7 +3999,7 @@
         <td><s>출국시</s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA_04_02</td>
       </tr>
       <tr>
@@ -4019,7 +4059,7 @@
         <td><s></s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA_05</td>
       </tr>
       <tr>
@@ -4029,7 +4069,7 @@
         <td><s></s></td>
         <td><s></s></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_JA_06</td>
       </tr>
       <tr>
@@ -4359,7 +4399,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>&nbsp;</td>
+        <td></td>
         <td>AP_M0</td>
       </tr>
       <tr>
