@@ -6,6 +6,25 @@
     background:#333649 url(../images/digr_customs_inspection_procedure.png) no-repeat;
 }
 
+/*KTX 노선도*/
+.digr_ktx_route{
+  height:274px;
+  text-indent:-999em;
+  background:#333649 url(../images/digr_ktx_route.png) no-repeat;
+}
+
+
+// 배너bg
+/*자기부상열차*/
+.maglev-train{
+  height:240px;
+  background:#333649 url(../images/img_maglev_train.jpg) no-repeat;
+}
+/*자기부상열차견학*/
+.maglev-train-tour{
+  height:240px;
+  background:#333649 url(../images/img_maglev_train_tour.jpg) no-repeat;
+}
 
 // 기존 버튼 디자인
 .ico {
@@ -38,7 +57,12 @@
     width: 22px;
     height: 22px;
   }
-  &.shuttle-bus-stop:after {
+  &.btn-download.big:after {
+    background-position: -355px -136px;
+    width: 28px;
+    height: 22px;
+  }
+  &.bus-stop:after {
     background-position: -89px -63px;
     width: 22px;
     height: 22px;
@@ -195,23 +219,29 @@
 }
 
 /*버스노선도*/
-.shuttle-bus{
+.bus {
   @extend %clearfix;
-  &-stop{
-    float: left;
-    margin-right:30px;
-    letter-spacing: -0.05rem;
-    &.ico{
-      text-indent:0;
+  &.float-no{
+    li{
+      float: none;
     }
-    &.ico:after{
+  }
+  &-stop {
+    float: left;
+    margin-right: 30px;
+    letter-spacing: -0.05rem;
+    &.ico {
+      text-indent: 0;
+    }
+    &.ico:after {
       left: auto;
-      right:-20px;
-      top:7px;
+      right: -20px;
+      top: 7px;
     }
   }
 }
 
+/*다운로드버튼*/
 .btn-download{
   width: 86px;
   height: 26px;
@@ -220,6 +250,20 @@
   border: 1px solid #d9d9d9;
   background:#f2f2f2;
   font-size: 0.8125rem;
+  &.big{
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    padding: 0 30px 0 0;
+    text-align: center;
+    font-size: 1.375rem;
+    &.ico{
+      &:after{
+        top:0px;
+        left:260px;
+      }
+    }
+  }
   &.ico{
     text-indent: 0;
     &:after{
@@ -228,3 +272,65 @@
     }
   }
 }
+
+/*주차장혼잡도*/
+.congested{
+  width: 100%;
+  padding: 30px 30px 40px;
+  margin-top:-3px ;
+  border: 1px solid #d9d9d9;
+  &-parkinglot{
+    font-size: 1.625rem;
+    float: left;
+  }
+  &-info{
+    padding: 5px 15px;
+    border: 1px solid;
+    border-radius: 20px;
+    float: right;
+    &.level1{
+      border-color:#2c8179;
+      color: #2c8179;
+    }
+    &.level2{
+      border-color:#42519e;
+      color: #42519e;
+    }
+    &.level3{
+      border-color:#dd7714;
+      color: #dd7714;
+    }
+    &.level4{
+      border-color:#d43e41;
+      color: #d43e41;
+    }
+  }
+  &-wrap{
+    display:inline-block;
+    width:100%;
+    height:14px;
+    margin-top: 25px;
+    background:#f2f2f2;
+    position:relative;
+  }
+  &-bar{
+    width:0;
+    height:14px;
+    line-height:14px;
+    text-indent: -999em;
+    &.level1{
+      background:#2c8179;
+    }
+    &.level2{
+      background:#42519e;
+    }
+    &.level3{
+      background:#dd7714;
+    }
+    &.level4{
+      background:#d43e41;
+    }
+  }
+
+}
+
