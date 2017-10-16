@@ -1,0 +1,482 @@
+.contents{
+  width: 100%;
+  min-width: 1200px;
+  margin: 0 auto;
+}
+
+.location{
+  position: relative;
+  &-btn{
+    position: absolute;
+    top:20px;
+    right:25px;
+    & button{
+      border: none;
+      background:#fff;
+      width: 44px;
+      height: 22px;
+      &+ button{
+        border-left: 1px solid #f2f2f2;
+      }
+    }
+  }
+  &-bar{
+    position: absolute;
+    top:20px;
+    left:25px;
+    &-nav{
+     @extend %clearfix;
+
+     &-item {
+       padding-left: 20px;
+       float: left;
+       line-height:1.7;
+       &.ico{
+         text-indent: 0;
+         &:after{
+           top:1px;
+           left: auto;
+           right: -10px;
+         }
+       }
+       .home{
+         &.ico{
+           &:after{
+             top:-2px;
+             left: auto;
+             right: 0px;
+           }
+         }
+       }
+      &-link{
+        color: #666;
+        font-size:0.875rem;
+      }
+     }
+    }
+  }
+}
+
+.contents-sub{
+  &-head{
+    padding:62px 0 40px;
+    text-align: center;
+
+    &-title{
+      font:700 2.875rem  'NanumSquare', sans-serif;
+    }
+
+    &-article{
+      color:#666;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+
+  }
+}
+
+.contents-visual{
+  min-height:300px;
+  height:300px;
+  background-size: cover;
+
+  &.departure{
+    background:url(../images/img_sub_visual_departure.jpg) center no-repeat;
+  }
+  &.airline{
+    background:url(../images/img_sub_visual_airline.jpg) center no-repeat;
+  }
+}
+
+.congestion{
+  border-left: 1px solid rgba(255, 255, 255, .2);
+  width: 200px;
+  float: right;
+  position:relative;
+  right: 40px;
+  top:-25px;
+
+  &-title{
+    color:#fff;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: center;
+
+    .point{
+      color: #ffae44;
+    }
+  }
+
+  &-quick-link{
+    color:#fff;
+    font-size: 0.875rem;
+    border: 1px solid #fff;
+    border-radius:20px;
+    box-sizing: border-box;
+    padding:0 10px;
+    line-height: 30px;
+    display: inline-block;
+    width: 126px;
+    height: 30px;
+    text-align: left;
+    margin-left: 40px;
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      left:95px;
+    }
+  }
+
+
+}
+
+.tab{
+  &-area{
+    position:relative;
+    margin-top:-210px;
+  }
+
+  &-main{
+    width: 450px;
+    margin: 0 auto;
+    text-align: center;
+
+    &-list{
+      display: inline-block;
+
+      @extend %clearfix;
+
+      &-item{
+        float: left;
+        border: 2px solid rgba(255, 255, 255, .5);
+        box-sizing: border-box;
+        font-size: 1.5rem;
+
+        &:first-child{
+          border-top-left-radius: 5px;
+          border-bottom-left-radius:5px;
+          border-right:none;
+        }
+        &:last-child{
+          border-top-right-radius: 5px;
+          border-bottom-right-radius:5px;
+          border-left:none;
+        }
+        & a{
+          color: #fff;
+          line-height: 50px;
+          width: 208px;
+          height: 50px;
+          font-weight: 700;
+          display: inline-block;
+        }
+
+        &.on{
+          background:#fff;
+
+          & a{
+            color: #42519e;
+          }
+        }
+      }
+    }
+  }
+
+  &-sub{
+    text-align: center;
+    margin-bottom: 30px;
+
+    &-list{
+      margin-top: 81px;
+
+      @extend %clearfix;
+
+      &-item {
+        float: left;
+        background:rgba(66, 81, 158, .9);
+        font-size: 	1.375rem;
+        font-weight:300;
+        line-height:72px;
+        height: 72px;
+        & a{
+          color: #fff;
+          display: inline-block;
+          width: 574px;
+        }
+        &.on{
+          background: #fff;
+          font-weight: 700;
+          & a{ color: #42519e;
+          }
+        }
+        &+.tab-sub-list-item{
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}
+
+.info{
+  text-align:left;
+  margin-bottom:30px;
+  &-txt{
+    font-size: 1rem;
+    color:#666;
+    &-article{
+      line-height:1.5;
+    }
+  }
+}
+
+.search{
+  margin-bottom:20px;
+  display: inline-block;
+  &-option{
+    float: left;
+    margin-right:20px;
+    &-btn{
+      background: #fff;
+      border: 1px solid #a5a7aa;
+      box-sizing: border-box;
+      color: #666;
+      font-size: 1rem;
+      padding:0 18px;
+      height: 60px;
+      float: left;
+
+      &.on{
+        color: #343951;
+        border: 1px solid #323648;
+      }
+    }
+  }
+  &-select{
+    border: 1px solid #666;
+    box-sizing: border-box;
+    height: 60px;
+    float: left;
+
+    &-article{
+      font-size: 1rem;
+      padding:18px 10px;
+      box-sizing: border-box;
+      border: none;
+      border-right: 1px solid #d9d9d9;
+      vertical-align: bottom;
+      width: 186px;
+      height: 58px;
+      float: left;
+    }
+    &-airplane{
+      background: #fcfbe8;
+      border: none;
+      box-sizing: border-box;
+      font-size: 1rem;
+      padding:0 10px;
+      width: 180px;
+      height:58px;
+      float: left;
+    }
+    &-btn{
+      border:none;
+      padding:20px;
+      vertical-align: bottom;
+      background:#323648;
+      text-indent: -9999px;
+      display: inline-block;
+      width: 62px;
+      height: 58px;
+    }
+  }
+}
+
+.updata{
+  text-align: right;
+  margin-bottom: 20px;
+  &-time{
+    font-size: 0.875rem;
+    color: #666;
+    margin-right: 10px;
+  }
+  &-refresh{
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    font-size:0.8125rem;
+    color: #666;
+    padding: 0 10px  0 25px;
+    line-height: 26px;
+    height: 26px;
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      right: 60px;
+      top:6px;
+    }
+  }
+}
+
+.ap-basic{
+
+  &-title{
+    background:#323648;
+    margin-bottom: 10px;
+
+    @extend %clearfix;
+
+    &-details{
+      float:left;
+      font-size:1rem;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0;
+
+      &+.ap-basic-title-details{
+        border-left: 1px solid #474a5b;
+        box-sizing: border-box;
+      }
+      /*width type*/
+      &.xxxx-s{
+        width:80px;
+      }
+      &.xxx-s{
+        width:90px;
+      }
+      &.xx-s{
+        width:95px;
+      }
+      &.x-s{
+        width:100px;
+      }
+      &.small{
+        width:110px;
+      }
+      &.medium{
+        width:130px;
+      }
+      &.large{
+        width:140px;
+      }
+      &.x-l{
+        width:150px;
+      }
+      &.xx-l{
+        width:160px;
+      }
+      &.xxx-l{
+        width:195px;
+      }
+      &.xxxx-l{
+        width:200px;
+      }
+      &.big{
+        width:265px;
+      }
+      &.greater{
+        width:300px;
+      }
+      &.biggest{
+        width:360px;
+      }
+    }
+  }
+}
+
+.flight{
+    border-top: 1px solid #a5a7aa;
+    padding-top: 35px;
+    text-align: center;
+    margin-bottom: 35px;
+  &-search{
+      font-size: 1.875rem;
+      color: #444;
+    &-txt{
+      margin-right:5px;
+    }
+    &-option{
+      font-size: 1.125rem;
+      color: #666;
+      padding: 0 15px;
+      border: 1px solid #d9d9d9;
+      height:58px;
+      width: 180px;
+      margin-right:5px;
+    }
+    &-btn{
+      font-size: 1.625rem;
+      color: #fff;
+      background: #323648;
+      border: none;
+      width: 130px;
+      height: 58px;
+      line-height:1;
+      margin-left:25px;
+      padding-left:40px;
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        right:60px;
+        top:4px;
+      }
+    }
+  }
+}
+
+.search-area{
+  position:relative;
+  margin-top:-247px;
+  &-head{
+    text-align: center;
+    height: 94px;
+    &-title{
+      color: #fff;
+      font: 2.375rem 'NanumSquare', sans-serif;
+      margin-bottom: 20px;
+    }
+  }
+  &-airline{
+    margin: 0 auto;
+    width: 670px;
+
+    @extend %clearfix;
+
+    &-option{
+      border: none;
+      font-size: 1.125rem;
+      padding: 0 15px;
+      width: 182px;
+      height: 58px;
+      line-height: 1;
+      float: left;
+    }
+    &-txt{
+      width: 323px;
+      height: 58px;
+      border: 0;
+      border-left:1px solid #d9d9d9;
+      padding: 0 15px;
+      float: left;
+    }
+    &-btn{
+      background:#42519e;
+      border: none;
+      color: #fff;
+      font-size: 1.625rem;
+      width: 132px;
+      height: 58px;
+      line-height: 1;
+      padding-left: 15px;
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        top:3px;
+        right:88px;
+      }
+    }
+  }
+}
