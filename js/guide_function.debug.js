@@ -46,7 +46,7 @@ $(function(){
   // find same filename and put link html code or X
   function compareFile($record){
 
-    if(!$record.hasClass('cancel') && !$record.hasClass('category')){
+    if(!$record.hasClass('cancel') && !$record.hasClass('category') && !$record.hasClass('link-category')){
 
       for(var j=0; j<item.length; j++){
 
