@@ -1,0 +1,437 @@
+// 절차 아이콘 모음
+.step-list-head{
+  &:after{
+    content:'';
+    display:block;
+    height:79px;
+    margin:8px auto 0 auto;
+    background: url(../images/spr_ico_ac_submain.png) no-repeat;
+  }
+
+  &.noicon:after{
+    display:none;
+  }
+
+  /* 터미널도착 */
+  &.arrival:after{
+    background-position:-34px -38px;
+    width: 88px;
+  }
+
+  /* 탑승수속 */
+  &.procedure:after{
+    background-position:-158px -43px;
+    width: 70px;
+  }
+
+  /* 수하물 */
+  &.baggage:after{
+    background-position:-265px -32px;
+    width: 55px;
+  }
+
+  /* 세관신고 */
+  &.customs:after{
+    background-position:-359px -36px;
+    width: 57px;
+  }
+
+  /* 출국장 이동 및 입국장 */
+  &.leave:after{
+    background-position:-453px -29px;
+    width: 86px;
+  }
+
+  /* 보안검색 */
+  &.security:after{
+    background-position:-570px -28px;
+    width: 90px;
+  }
+
+  /* 출국심사 및 입국심사 */
+  &.screening:after{
+    background-position:-696px -27px;
+    width: 51px;
+  }
+
+  /* 인천국제공항 돡 */
+  &.incheon-arrival:after{
+    background-position:-34px -125px;
+    width: 88px;
+  }
+
+  /* 신고서 작성 */
+  &.statement:after{
+    background-position:-176px -125px;
+    width: 44px;
+  }
+
+  /* 세관검사 */
+  &.examination:after{
+    background-position:-274px -125px;
+    width: 57px;
+  }
+
+  /* 비자 */
+  &.visa:after{
+    background-position:-361px -126px;
+    width: 57px;
+  }
+
+  /* 국제운전면허증 */
+  &.certification:after{
+    background-position:-459px -117px;
+    width: 73px;
+  }
+
+}
+
+// 입출국 절차에서 비주얼 높이
+.contents.ap-type {
+  & +.tab-area{
+    margin-top:-153px;
+  }
+}
+
+// 지도영역
+.contents.ap-type .contents-visual{
+  position:relative;
+  min-height:420px;
+  height:420px;
+  background-size: cover;
+  &-tit{
+    position:absolute;
+    top:54px;
+    font-family: nanumsq, sans-serif;
+    font-size:2.875rem;
+    font-weight:300;
+    line-height:1.1;
+  }
+
+  &.rough-map{ // 임시 이미지 퍼블리싱 본래 지도가 들어갑니다
+    background:url("../images/img_sub_visual_stepleave.jpg") center no-repeat;
+  }
+}
+
+// base 절차 list 컴포넌트
+.step{
+  &.clip-type{
+    margin-top:0;
+    &:before{
+      content:'';
+      display:block;
+      width:2px;
+      height:40px;
+      background:#666;
+      margin:0 575px 30px;
+    }
+  }
+
+  &-guide{
+    color:#666;
+    text-align:right;
+  }
+  &-list{
+    @extend %clearfix;
+    margin-left:-24px;
+    margin-top:40px;
+    &-item{
+      padding:30px 30px 10px;
+      float:left;
+      width:368px;
+      min-height:412px;
+      background:#fff;
+      border: 1px solid #dee3eb;
+      margin:0 0 30px 24px;
+    }
+
+    &-num{
+      display:block;
+      position:relative;
+      margin:-16px 0 20px;
+      color:#97a4b9;
+      font-size:1.25rem;
+      font-weight:300;
+      text-align:center;
+      &:before{
+        content:'';
+        display:block;
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:130px;
+        height:1px;
+        background:#dbdfe6;
+      }
+      &:after{
+        content:'';
+        display:block;
+        position:absolute;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:130px;
+        height:1px;
+        background:#dbdfe6;
+      }
+    }
+
+    &-head{
+      font-family: nanumsq, sans-serif;
+      font-size:2.125rem;
+      font-weight:400;
+      text-align:center;
+    }
+
+    &-support{
+      font-size:1.25rem;
+    }
+
+    &-highlight{
+      display:inline-block;
+      color:#fff;
+      font-size:1.125rem;
+      font-weight:300;
+      line-height:1;
+      background:#323648;
+      padding:3px 6px;
+      margin-bottom:4px;
+    }
+
+
+
+    &-desc{
+      color:#000;
+      font-size:1.125rem;
+      line-height:1.7;
+      text-align:center ;
+      &.left{
+        margin-top:12px;
+        text-align:left;
+        line-height:1.4;
+      }
+      &.small{
+        color:#444;
+        font-size:1rem;
+        margin-top:10px!important;
+        letter-spacing:-1px;
+      }
+    }
+
+    &-guide{
+      display:inline-block;
+      color:#d43e41;
+      font-size:16px;
+      line-height: 1.5;
+      margin-top:4px;
+    }
+
+    .btn-group{
+      margin-bottom:4px;
+      &+.step-list-desc{
+        margin-top:18px;
+      }
+    }
+
+
+
+    &-item.main{
+      border:none;
+      &.step_leave{
+        background:url('../images/img_step_leave.jpg');
+      }
+      &.step_entry{
+        background:url('../images/img_step_entry.jpg');
+      }
+      .step-list-head{
+        color:#fff;
+        font-size:2.875rem;
+        font-weight:500;
+        margin-top:80px;
+        &:after{
+          display:none
+        }
+      }
+      .step-list-desc{
+        max-width:306px;
+        color:#fff;
+        font-size:1.125rem;
+        font-weight:300;
+        text-transform:uppercase;
+        margin-top:6px;
+      }
+    }
+    &-item.color{
+      background:#f2f4f7;
+    }
+    &-item.color2{
+      background:#f3f4f8;
+    }
+
+    &-item.list-end{
+      width:760px;
+      .step-list-head{
+        color:#b7c0ce;
+        line-height:312px;
+      }
+    }
+
+    &-item.col-2{
+      width:564px;
+    }
+  }
+}
+
+// AP 절차 엘리먼트 link 버튼타입
+// :: btn-group col-2 / row-2 클래스 추가에따른 버튼레이아웃 변화
+.btn-group{
+  height:38px;
+  line-height:38px;
+  &.col-2{
+    border:1px solid #d9e0ea;
+    border-radius:4px;
+    overflow:hidden;
+    .btn-link{
+      float:left;
+      width:50%;
+      border:none;
+      border-radius:0;
+      &:first-child{
+        border-right:1px solid #d9e0ea;
+      }
+    }
+  }
+
+  &.row-2{
+    height:80px;
+    line-height:80px;
+  }
+
+  &.row-3{
+    height:66px;
+    line-height:66px;
+  }
+
+  .btn-link{
+    display:block;
+    position: relative;
+    max-width:306px;
+    height:100%;
+    margin:auto;
+    background:#fff;
+    border:1px solid #d9e0ea;
+    border-radius:4px;
+    font-size:1.125rem;
+    text-indent:20px;
+    &.ico:after{
+      left:auto;
+      right:20px;
+    }
+
+    .link-guide{
+      color:#666;
+      font-size:1rem;
+      vertical-align:1px;
+
+    }
+  }
+}
+
+.section-bg{
+  height:510px;
+  background:url(../images/bg_tourinfo.jpg);
+  margin-top:40px;
+}
+
+// bg위에 화면나누기
+.split-group{
+  height:100%;
+  @extend %clearfix;
+  .split{
+    width:50%;
+    height:100%;
+    float:left;
+    display:table;
+    &.color{
+      background:rgba(66,81,158,.6);
+      padding-left:108px;
+    }
+    &-inner{
+      display:table-cell;
+      vertical-align:middle;
+    }
+    &-head{
+      font-family: nanumsq, sans-serif;
+      color:#fff;
+      font-size:2.875rem;
+      font-weight:300;
+      text-align:center;
+      &:after{
+        content:'';
+        display:block;
+        width:40px;
+        height:2px;
+        background:#fff;
+        margin:30px auto;
+      }
+    }
+    &-desc{
+      color:#fff;
+      font-size:1.125rem;
+      line-height:1.5;
+      text-align:center;
+
+      &.left{
+        text-align:left;
+      }
+      .desc-bold{
+        color:#ffae44;
+        font-weight:700;
+      }
+    }
+
+    &-list{
+      color:#fff;
+      &-tit{
+        font-size:1.375rem;
+        font-weight:400;
+        margin-top:20px;
+      }
+      &-desc{
+        padding-top:8px;
+        line-height:1.5;
+      }
+    }
+
+    .btn-type-infolink{
+      margin-bottom:30px;
+    }
+  }
+}
+
+// 아티클 소제목 현재 레이어팝업에서도 같은스타일 title 존재
+.article{
+  margin-bottom:60px;
+  .article-head{
+    font-size:1.625rem;
+    font-weight:400;
+    margin-bottom:20px;
+  }
+}
+
+
+.table-desc{
+  color:#444;
+  font-size:1.125rem;
+  line-height:1.8;
+  margin-bottom:8px;
+}
+
+
+.txt-indent{
+  display:block;
+  padding: 4px 0 4px 10px
+}
