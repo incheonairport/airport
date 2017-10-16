@@ -15,70 +15,121 @@
 
 <section class="contents tab-area">
   <div class="inner-section">
+    <!--혼잡도-->
+    <div class="congestion">
+      <div class="congestion-title"><span class="point">입국비행기</span><br>한 눈에 보기</div>
+      <a href="#" class="congestion-quick-link ico">바로가기</a>
+    </div>
+    <!--//혼잡도-->
     <!--tab-->
     <div class="tab-main">
       <ul class="tab-main-list">
-        <li class="tab-main-list-item"><a href="#" class="tab-main-list-link">여객</a></li>
-        <li class="tab-main-list-item on"><a href="#" class="tab-main-list-link">화물</a></li>
+        <li class="tab-main-list-item on"><a href="#" class="tab-main-list-link">여객</a></li>
+        <li class="tab-main-list-item"><a href="#" class="tab-main-list-link">화물</a></li>
       </ul>
     </div>
     <!--tab-->
     <!--subtab-->
     <div class="tab-sub">
       <ul class="tab-sub-list">
-        <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">화물 도착 시간표</a></li>
-        <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">화물 도착 정기 운항편</a></li>
+        <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">여객 출발 시간표</a></li>
+        <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">여객 출발 정기 운항편</a></li>
       </ul>
     </div>
     <!--//subtab-->
     <!--info-txt-->
     <div class="info">
       <ul class="info-txt">
-        <li class="info-txt-article">- 시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.</li>
+        <li class="info-txt-article">- 여객 도착 주간 운행 주간표를 알려 드립니다.</li>
+        <li class="info-txt-article">- 실제와 상이할 수 있으므로 정확한 정보는 해당 항공사에 문의하시기 바랍니다.</li>
       </ul>
     </div>
     <!--//info-txt-->
-    <!--검색영역-->
-    <div class="search">
-      <div class="search-option">
-        <button type="button" class="search-option-btn on">오늘</button>
-        <button type="button" class="search-option-btn">내일</button>
-      </div>
-      <div class="search-select">
-        <select class="search-select-article">
-          <option>2017.08.21(월)</option>
+    <!--항공편 검색-->
+    <div class="flight">
+      <div class="flight-search">
+        <select class="flight-search-option">
+          <option>전체</option>
         </select>
-        <select class="search-select-article">
-          <option>00:00~00:59</option>
-        </select>
-        <select class="search-select-article">
-          <option>출발지 선택</option>
-        </select>
-        <select class="search-select-article">
-          <option>항공사 선택</option>
-        </select>
-        <input type="text" class="search-select-airplane" placeholder="편명입력">
-        <button type="button" class="search-select-btn ico">검색</button>
+        <span class="flight-search-txt">에서 인천공항으로 오는 항공편</span>
+        <button type="button" class="flight-search-btn ico">검색</button>
       </div>
     </div>
-    <!--//검색영역-->
-    <!--업데이트 시간-->
-    <div class="updata">
-      <span class="updata-time">마지막 업데이트:2017.08.21 13:35</span>
-      <button type="button" class="updata-refresh ico">새로고침</button>
+    <!--//항공편 검색-->
+    <!--출발시간표-->
+    <div class="table-area">
+      <table class="ap-basic" summary="여객 도착 정기 운항편 표">
+        <caption>여객 도착 정기 운항편</caption>
+        <colgroup>
+          <col width="10%">
+          <col width="10%">
+          <col width="10%">
+          <col width="14%">
+          <col width="9%">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col width="17%">
+        </colgroup>
+        <thead class="ap-basic-title">
+          <tr>
+            <th rowspan="2" class="ap-basic-title-details">운항편명</th>
+            <th rowspan="2" class="ap-basic-title-details">항공사</th>
+            <th rowspan="2" class="ap-basic-title-details">도착시간</th>
+            <th rowspan="2" class="ap-basic-title-details">출발지</th>
+            <th rowspan="2" class="ap-basic-title-details">터미널</th>
+            <th colspan="7" class="ap-basic-title-details">운항요일</th>
+            <th rowspan="2" class="ap-basic-title-details">운항기간</th>
+          </tr>
+          <tr>
+            <th class="ap-basic-title-details week">월</th>
+            <th class="ap-basic-title-details week">화</th>
+            <th class="ap-basic-title-details week">수</th>
+            <th class="ap-basic-title-details week">목</th>
+            <th class="ap-basic-title-details week">금</th>
+            <th class="ap-basic-title-details week end">토</th>
+            <th class="ap-basic-title-details week end">일</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-    <!--//업데이트 시간-->
-    <!--도착시간표-->
-    <div class="ap-basic">
-      <div class="ap-basic-title">
-        <div class="ap-basic-title-details xxxx-l">도착시간</div>
-        <div class="ap-basic-title-details greater">출발지</div>
-        <div class="ap-basic-title-details biggest">항공사/운항편명</div>
-        <div class="ap-basic-title-details x-l">주기장</div>
-        <div class="ap-basic-title-details large">도착현황</div>
-      </div>
-    </div>
-    <!--//도착시간표-->
+    <!--//출발시간표-->
   </div>
 </section>
 <!--=include _include/_footer.html -->
