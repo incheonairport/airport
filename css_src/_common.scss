@@ -140,8 +140,13 @@
     height: 22px;
   }
 
-  &.location-bar-home:after{
+  &.location-bar-nav-item-link.home:after{
     background-position:-128px -93px;
+    width: 22px;
+    height: 22px;
+  }
+  &.location-bar-nav-item:after{
+    background-position:-153px -93px;
     width: 22px;
     height: 22px;
   }

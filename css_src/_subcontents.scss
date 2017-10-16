@@ -13,11 +13,10 @@
     & button{
       border: none;
       background:#fff;
-      width: 22px;
+      width: 44px;
       height: 22px;
-      margin: 0 11px;
       &+ button{
-       /* border-left: 1px solid #f2f2f2;*/
+        border-left: 1px solid #f2f2f2;
       }
     }
   }
@@ -25,12 +24,35 @@
     position: absolute;
     top:20px;
     left:25px;
-    & a{
-      color: #666;
-      font-size:0.875rem;
-    }
-    &-home{
-      width: 22px;
+    &-nav{
+     @extend %clearfix;
+
+     &-item {
+       padding-left: 20px;
+       float: left;
+       line-height:1.7;
+       &.ico{
+         text-indent: 0;
+         &:after{
+           top:1px;
+           left: auto;
+           right: -10px;
+         }
+       }
+       .home{
+         &.ico{
+           &:after{
+             top:-2px;
+             left: auto;
+             right: 0px;
+           }
+         }
+       }
+      &-link{
+        color: #666;
+        font-size:0.875rem;
+      }
+     }
     }
   }
 }
