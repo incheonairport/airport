@@ -151,7 +151,42 @@
         font-size:1.125rem;
         transition:all .2s;
         &:hover{
-          opacity:.5;
+          color:#999;
+        }
+        &.lock{
+          &:after{
+            content:"";
+            display:inline-block;
+            background:url(../images/spr_ico_crud.png) no-repeat -45px -52px;
+            width: 13px;
+            height: 17px;
+            margin-left:14px;
+            vertical-align:-1px;
+          }
+        }
+
+        &.good{
+          &:before{
+            content:"";
+            display:inline-block;
+            background:url(../images/spr_ico_crud.png) no-repeat -52px -89px;
+            width: 24px;
+            height: 24px;
+            margin-right:12px;
+            vertical-align:-5px;
+          }
+        }
+
+        &.bad{
+          &:before{
+            content:"";
+            display:inline-block;
+            background:url(../images/spr_ico_crud.png) no-repeat -16px -89px;
+            width: 24px;
+            height: 24px;
+            margin-right:12px;
+            vertical-align:-5px;
+          }
         }
       }
     }
@@ -979,6 +1014,16 @@ em{
   }
 }
 
+%normal-3{
+  .inner-col{
+    width:calc(33.33% - 16px)!important;
+    margin-left:24px;
+    &:first-child{
+      margin-left:0;
+    }
+  }
+}
+
 .multi-col{
   position:relative;
   @extend %clearfix;
@@ -1009,6 +1054,18 @@ em{
       &.w30{
         width: 30%;
       }
+      &.calc-w466-l{
+        width: calc(100% - 466px);
+        padding-left:24px;
+      }
+      &.calc-w466-r{
+        width: calc(100% - 466px);
+        padding-right:24px;
+      }
+      &.w466{
+        width: 466px;
+        padding:0;
+      }
     }
   }
 
@@ -1034,6 +1091,10 @@ em{
 
   &.gutter{
     @extend %gutter;
+  }
+
+  &.normal-3{
+    @extend %normal-3;
   }
 
 }
@@ -1370,13 +1431,169 @@ b.text-bold{
           margin: auto 20px;
           background: #d9d9d9;
           vertical-align:middle;
-
+        }
+        &:last-child:after{
+          display:none;
         }
       }
     }
   }
   .view-body{
-    min-height:578px;
-    padding:30px;
+    padding:30px 30px 70px;
   }
+  .view-file{
+    @extend %clearfix;
+    border-top:1px solid #d9d9d9;
+    padding:30px;
+    .file-group-text{
+      float:left;
+      width:124px;
+      color:#002222;
+      font-size:1rem;
+      line-height:1.7;
+    }
+    .file-list{
+      float:left;
+      &-item{
+
+      }
+      &-link{
+        color:#666;
+        font-size:1rem;
+      }
+    }
+    .crud-ico{
+      text-indent:0;
+      &:after{
+        left:-22px;
+        right:auto;
+        bottom:4px;
+      }
+    }
+  }
+  .reply-box{
+    background:#f2f4f7;
+    padding:40px;
+    border:1px solid #d9d9d9;
+    margin-bottom:30px;
+    .reply-head{
+      @extend %clearfix;
+      margin-bottom:30px;
+      &-tit{
+        float:left;
+        padding-left:20px;
+        font-weight:900;
+        text-indent:0;
+        line-height:1;
+        &:after{
+          right:auto
+        }
+      }
+      &-info{
+        float:right;
+        @extend %clearfix;
+        font-size:1rem;
+        .info-tit{
+          float:left;
+          margin-right:10px;
+          color:#002222;
+        }
+        .info-desc{
+          float:left;
+          color:#444;
+          &:after{
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 16px;
+            margin: auto 20px;
+            background: #d9d9d9;
+            vertical-align:middle;
+          }
+          &:last-child:after{
+            display:none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 게시판내 사용되는 아이콘
+.crud-ico{
+  display:inline-block;
+  position:relative;
+  text-indent:-999em;
+  &:after{
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+    background: url(../images/spr_ico_crud.png) no-repeat;
+  }
+
+  &.file-hwp:after{
+    background-position:-19px -18px;
+    width: 14px;
+    height: 17px;
+  }
+
+  &.file-txt:after{
+    background-position:-44px -18px;
+    width: 15px;
+    height: 17px;
+  }
+
+  &.file-img:after{
+    background-position:-70px -18px;
+    width: 13px;
+    height: 17px;
+  }
+
+  &.file-xlsx:after{
+    background-position:-94px -18px;
+    width: 14px;
+    height: 17px;
+  }
+
+  &.file-ppt:after{
+    background-position:-119px -18px;
+    width: 14px;
+    height: 17px;
+  }
+
+  &.file-pdf:after{
+     background-position:-144px -18px;
+     width: 14px;
+     height: 17px;
+   }
+
+  &.arrow-reply:after{
+    background-position:-19px -56px;
+    width: 12px;
+    height: 13px;
+  }
+
+  &.lock:after{
+    background-position:-45px -52px;
+    width: 13px;
+    height: 17px;
+  }
+
+  &.good:after{
+    background-position:-52px -89px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &.bad:after{
+    background-position:-16px -89px;
+    width: 24px;
+    height: 24px;
+  }
+
 }
