@@ -10,72 +10,127 @@
 
       <div class="process-wrap">
         <h2 class="heading-level2">진행율</h2>
-        <table class="vt">
-          <colgroup>
-            <col style="width:20%" />
-            <col style="width:20%" />
-            <col style="width:20%" />
-            <col style="width:20%" />
-            <col style="width:20%" />
-          </colgroup>
-          <thead>
-          <tr>
-            <th>전체 작업할 페이지 개수</th>
-            <th>전체 작업할 HTML 페이지 개수</th>
-            <th>전체 작업할 Board 페이지 개수</th>
-            <th>전체 작업할 Develop 페이지 개수</th>
-            <th>외부 링크 개수</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td class="page-whole-num center"></td>
-            <td class="page-current-num center"></td>
-            <td class="page-progress center">
-              <div class="progress-wrap">
-                <div class="progress-bar"></div>
-              </div>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-        <table class="vt">
-          <colgroup>
-            <col style="width:20%" />
-            <col style="width:20%" />
-            <col style="width:60%" />
-          </colgroup>
-          <thead>
-          <tr>
-            <th>현재 작업된 페이지 개수</th>
-            <th>현재 작업된 HTML 페이지 개수</th>
-            <th>현재 작업된 Board 페이지 개수</th>
-            <th>현재 작업된 Develop 페이지 개수</th>
-            <th>진행율</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td class="page-whole-num center"></td>
-            <td class="page-current-num center"></td>
-            <td class="page-progress center">
-              <div class="progress-wrap">
-                <div class="progress-bar"></div>
-              </div>
-            </td>
-          </tr>
-          </tbody>
-        </table>
+        <div class="multi-col double gutter">
+          <div class="inner-col">
+            <table class="vt">
+              <colgroup>
+                <col style="width:20%" />
+                <col style="width:20%" />
+              </colgroup>
+              <thead>
+              <tr>
+                <th>전체 작업할 페이지 개수</th>
+                <th>현재 완료된 페이지 개수</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="center number all-work center">0</td>
+                <td class="center number done-work center">0</td>
+              </tr>
+              </tbody>
+            </table>
+            <table class="vt">
+              <colgroup>
+                <col style="width:20%" />
+                <col style="width:20%" />
+              </colgroup>
+              <thead>
+              <tr>
+                <th>전체 작업할 HTML 페이지 개수</th>
+                <th>현재 완료된 HTML 페이지 개수</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="center number html-all-work">0</td>
+                <td class="center number html-done-work">0</td>
+              </tr>
+              </tbody>
+            </table>
+            <table class="vt">
+              <colgroup>
+                <col style="width:20%" />
+                <col style="width:20%" />
+              </colgroup>
+              <thead>
+              <tr>
+                <th>전체 작업할 Board 페이지 개수</th>
+                <th>현재 완료된 Board 페이지 개수</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="center number board-all-work">0</td>
+                <td class="center number board-done-work">0</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="inner-col">
+            <table class="vt">
+              <colgroup>
+                <col style="width:20%" />
+                <col style="width:20%" />
+              </colgroup>
+              <thead>
+              <tr>
+                <th>전체 작업할 Develop 페이지 개수</th>
+                <th>현재 완료된 Develop 페이지 개수</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="center number develop-all-work">0</td>
+                <td class="center number develop-done-work">0</td>
+              </tr>
+              </tbody>
+            </table>
+            <table class="vt">
+              <colgroup>
+                <col style="width:100%" />
+              </colgroup>
+              <thead>
+              <tr>
+                <th>진행율</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="page-progress center">
+                  <div class="progress-wrap">
+                    <div class="progress-bar"></div>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
       </div>
     </div>
 
-    <div></div>
+    <div style="margin-bottom:30px;">
+      <button class="btn-type-small ico arrow-small-right js-show-all">전체</button>
+      <button class="btn-type-small ico arrow-small-right js-show-done">완료된 페이지</button>
+
+      <button class="btn-type-small ico arrow-small-right js-show-all html">전체 HTML 페이지</button>
+      <button class="btn-type-small ico arrow-small-right js-show-done html">완료된 HTML 페이지</button>
+
+      <button class="btn-type-small ico arrow-small-right js-show-all board">전체 Board 페이지</button>
+      <button class="btn-type-small ico arrow-small-right js-show-done board">완료된 Board 페이지</button>
+
+      <button class="btn-type-small ico arrow-small-right js-show-all develop">전체 Develop 페이지</button>
+      <button class="btn-type-small ico arrow-small-right js-show-done develop">완료된 Develop 페이지</button>
+    </div>
 
     <table class="file-list vt-dark">
       <colgroup>
         <col style="width:6%" />
         <col style="width:13%" />
-        <col style="width:auto" />
+        <col style="width:19%" />
         <col style="width:14%" />
         <col style="width:15%" />
         <col style="width:14%" />
