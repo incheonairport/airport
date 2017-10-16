@@ -604,6 +604,12 @@ strong{
   &.color{
     color:#41519e;
   }
+  & span.color{
+    color:#41519e;
+  }
+  &.f-left{
+    float:left;
+  }
 }
 
 em{
@@ -733,8 +739,12 @@ em{
       position:relative;
       width:calc(50% - 12px);
       margin-right:24px;
-
-      &:nth-child(even){
+        &.wide{
+          float: none;
+          width: 100%;
+          margin-right: 0;
+        }
+        &:nth-child(even){
         margin-right:0;
       }
       .list-img{
@@ -756,6 +766,9 @@ em{
         text-align:center;
         position:relative;
         top:-40px;
+        &.left{
+          text-align: left;
+        }
 
         .article-num{
           display:block;
@@ -877,6 +890,18 @@ em{
     &-another:after {
       background-position: -199px -293px;
     }
+    &-maglev-train1:after {
+      background-position: -11px -387px;
+    }
+    &-maglev-train2:after {
+      background-position: -105px -387px;
+    }
+    &-maglev-train3:after {
+      background-position: -198px -387px;
+    }
+    &-maglev-train4:after {
+      background-position: -11px -480px;
+    }
   }
 
   &-title {
@@ -973,6 +998,10 @@ em{
   &.double{
     .inner-col{
       width:50%;
+      &.w-auto{
+        width: auto;
+        padding-right:24px;
+      }
       &.w70{
         width: 70%;
         padding-right:24px;
