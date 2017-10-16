@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-@import "reset";
+@import "init_reset";
 
-@import "font";
+@import "init_font";
 
-@import "scrollbar";
+@import "init_scrollbar";
 
 @import "guide_common";
 
 @import "guide_header";
 
-@import "footer";
+@import "base_footer";
