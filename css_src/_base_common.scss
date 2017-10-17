@@ -151,6 +151,90 @@
     height: 22px;
   }
 
+  &.arrow-normal-right:after{
+    background-position:-101px -64px;
+    width: 8px;
+    height: 12px;
+  }
+
+  &.arrow-point-right:after{
+    background-position:-129px -64px;
+    width: 8px;
+    height: 12px;
+  }
+
+  &.arrow-small-right:after{
+    background-position:-158px -65px;
+    width: 6px;
+    height: 10px;
+  }
+
+  &.arrow-middle-right:after{
+    background-position:-186px -65px;
+    width: 6px;
+    height: 10px;
+  }
+
+  &.arrow-down:after{
+    background-position:-349px -99px;
+    width: 19px;
+    height: 11px;
+  }
+
+  &.arrow-up:after{
+    background-position:-319px -99px;
+    width: 19px;
+    height: 11px;
+  }
+
+  &.nowlink:after{
+    background-position:-313px -134px;
+    width: 23px;
+    height: 19px;
+  }
+
+  &.first:after{
+    background-position:-236px -60px;
+    width: 20px;
+    height: 19px;
+  }
+
+  &.prev:after{
+    background-position:-268px -60px;
+    width: 11px;
+    height: 19px;
+  }
+
+  &.next:after{
+    background-position:-296px -60px;
+    width: 11px;
+    height: 19px;
+  }
+
+  &.last:after{
+    background-position:-319px -60px;
+    width: 20px;
+    height: 19px;
+  }
+
+  &.arrow-w-down:after{
+    background-position:-390px -66px;
+    width: 12px;
+    height: 8px;
+  }
+
+  &.arrow-w-up:after{
+    background-position:-415px -66px;
+    width: 12px;
+    height: 8px;
+  }
+
+  &.outside-link:after{
+    background-position:-383px -99px;
+    width: 14px;
+    height: 12px;
+  }
+
 }
 
 
@@ -256,43 +340,6 @@
         color: #fff;
       }
     }
-  }
-}
-
-/* button style */
-// info link type
-.btn-type-infolink{
-  height:50px;
-  padding:0 60px 0 20px;
-  line-height:50px;
-  border:2px solid #fff;
-  color:#fff;
-  font-size:1.25rem;
-  font-weight:400;
-  transition:all .4s;
-  &:hover{
-    border-color:rgba(255,255,255,.3)
-  }
-  &.ico{
-    text-indent:0;
-    &:after{
-      left:auto;
-      right:18px;
-    }
-  }
-}
-
-
-/* text */
-// 가이드문구
-.guide-desc{
-  display:block;
-  text-indent:-20px;
-  color:#d43e41;
-  line-height:1.4;
-  padding-left:15px;
-  &:before{
-    content:"※";
   }
 }
 

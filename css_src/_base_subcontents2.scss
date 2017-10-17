@@ -1,10 +1,10 @@
 // 절차 아이콘 모음
-.step-list-head{
+.boxmodel-list-head{
   &:after{
     content:'';
     display:block;
     height:79px;
-    margin:8px auto 0 auto;
+    margin:18px auto 0 auto;
     background: url(../images/spr_ico_ac_submain.png) no-repeat;
   }
 
@@ -15,86 +15,121 @@
   /* 터미널도착 */
   &.arrival:after{
     background-position:-34px -38px;
-    width: 88px;
+    width:88px;
   }
 
   /* 탑승수속 */
   &.procedure:after{
     background-position:-158px -43px;
-    width: 70px;
+    width:70px;
   }
 
   /* 수하물 */
   &.baggage:after{
     background-position:-265px -32px;
-    width: 55px;
+    width:55px;
   }
 
   /* 세관신고 */
   &.customs:after{
     background-position:-359px -36px;
-    width: 57px;
+    width:57px;
   }
 
   /* 출국장 이동 및 입국장 */
   &.leave:after{
     background-position:-453px -29px;
-    width: 86px;
+    width:86px;
   }
 
   /* 보안검색 */
   &.security:after{
     background-position:-570px -28px;
-    width: 90px;
+    width:90px;
   }
 
   /* 출국심사 및 입국심사 */
   &.screening:after{
     background-position:-696px -27px;
-    width: 51px;
+    width:51px;
   }
 
   /* 인천국제공항 돡 */
   &.incheon-arrival:after{
     background-position:-34px -125px;
-    width: 88px;
+    width:88px;
   }
 
   /* 신고서 작성 */
   &.statement:after{
     background-position:-176px -125px;
-    width: 44px;
+    width:44px;
   }
 
   /* 세관검사 */
   &.examination:after{
     background-position:-274px -125px;
-    width: 57px;
+    width:57px;
   }
 
   /* 비자 */
   &.visa:after{
     background-position:-361px -126px;
-    width: 57px;
+    width:57px;
   }
 
   /* 국제운전면허증 */
   &.certification:after{
     background-position:-459px -117px;
-    width: 73px;
+    width:73px;
   }
 
-}
+  /* 임산부 유아 동반 */
+  &.pregnantwoman:after{
+    background-position:-587px -118px;
+    width:58px;
+  }
 
-// 입출국 절차에서 비주얼 높이
-.contents.ap-type {
-  & +.tab-area{
-    margin-top:-153px;
+  /* 어린이 동반 */
+  &.child:after{
+    background-position:-690px -112px;
+    width:58px;
+  }
+
+  /* 교통약자 동반 */
+  &.traffickingweak:after{
+    background-position:-50px -215px;
+    width:55px;
+  }
+
+  /* 애완동물 동반 */
+  &.pet:after{
+    background-position:-171px -216px;
+    width:56px;
+  }
+
+  /* 버스 */
+  &.bus:after{
+    background-position:-270px -217px;
+    width:52px;
+  }
+
+  /* 콜밴 */
+  &.callvan:after{
+    background-position:-355px -220px;
+    width:53px;
+  }
+
+  /* 공항철도 */
+  &.airtrack:after{
+    background-position:-466px -207px;
+    width:73px;
   }
 }
 
-// 지도영역
-.contents.ap-type .contents-visual{
+// top 지도영역
+.rough-map{
+  background:url(../images/img_sub_visual_stepleave.jpg) center no-repeat;
   position:relative;
   min-height:420px;
   height:420px;
@@ -107,246 +142,61 @@
     font-weight:300;
     line-height:1.1;
   }
-
-  &.rough-map{ // 임시 이미지 퍼블리싱 본래 지도가 들어갑니다
-    background:url("../images/img_sub_visual_stepleave.jpg") center no-repeat;
-  }
 }
 
-// base 절차 list 컴포넌트
-.step{
-  &.clip-type{
-    margin-top:0;
-    &:before{
-      content:'';
-      display:block;
-      width:2px;
-      height:40px;
-      background:#666;
-      margin:0 575px 30px;
-    }
-  }
-
-  &-guide{
-    color:#666;
-    text-align:right;
-  }
-  &-list{
-    @extend %clearfix;
-    margin-left:-24px;
-    margin-top:40px;
-    &-item{
-      padding:30px 30px 10px;
-      float:left;
-      width:368px;
-      min-height:412px;
-      background:#fff;
-      border: 1px solid #dee3eb;
-      margin:0 0 30px 24px;
-    }
-
-    &-num{
-      display:block;
-      position:relative;
-      margin:-16px 0 20px;
-      color:#97a4b9;
-      font-size:1.25rem;
-      font-weight:300;
-      text-align:center;
-      &:before{
-        content:'';
-        display:block;
-        position:absolute;
-        left:0;
-        top:0;
-        bottom:0;
-        margin:auto;
-        width:130px;
-        height:1px;
-        background:#dbdfe6;
-      }
-      &:after{
-        content:'';
-        display:block;
-        position:absolute;
-        right:0;
-        top:0;
-        bottom:0;
-        margin:auto;
-        width:130px;
-        height:1px;
-        background:#dbdfe6;
-      }
-    }
-
-    &-head{
-      font-family: nanumsq, sans-serif;
-      font-size:2.125rem;
-      font-weight:400;
-      text-align:center;
-    }
-
-    &-support{
-      font-size:1.25rem;
-    }
-
-    &-highlight{
-      display:inline-block;
-      color:#fff;
-      font-size:1.125rem;
-      font-weight:300;
-      line-height:1;
-      background:#323648;
-      padding:3px 6px;
-      margin-bottom:4px;
-    }
-
-
-
-    &-desc{
-      color:#000;
-      font-size:1.125rem;
-      line-height:1.7;
-      text-align:center ;
-      &.left{
-        margin-top:12px;
-        text-align:left;
-        line-height:1.4;
-      }
-      &.small{
-        color:#444;
-        font-size:1rem;
-        margin-top:10px!important;
-        letter-spacing:-1px;
-      }
-    }
-
-    &-guide{
-      display:inline-block;
-      color:#d43e41;
-      font-size:16px;
-      line-height: 1.5;
-      margin-top:4px;
-    }
-
-    .btn-group{
-      margin-bottom:4px;
-      &+.step-list-desc{
-        margin-top:18px;
-      }
-    }
-
-
-
-    &-item.main{
-      border:none;
-      &.step_leave{
-        background:url('../images/img_step_leave.jpg');
-      }
-      &.step_entry{
-        background:url('../images/img_step_entry.jpg');
-      }
-      .step-list-head{
-        color:#fff;
-        font-size:2.875rem;
-        font-weight:500;
-        margin-top:80px;
-        &:after{
-          display:none
-        }
-      }
-      .step-list-desc{
-        max-width:306px;
-        color:#fff;
-        font-size:1.125rem;
-        font-weight:300;
-        text-transform:uppercase;
-        margin-top:6px;
-      }
-    }
-    &-item.color{
-      background:#f2f4f7;
-    }
-    &-item.color2{
-      background:#f3f4f8;
-    }
-
-    &-item.list-end{
-      width:760px;
-      .step-list-head{
-        color:#b7c0ce;
-        line-height:312px;
-      }
-    }
-
-    &-item.col-2{
-      width:564px;
-    }
-  }
-}
-
-// AP 절차 엘리먼트 link 버튼타입
-// :: btn-group col-2 / row-2 클래스 추가에따른 버튼레이아웃 변화
-.btn-group{
-  height:38px;
-  line-height:38px;
-  &.col-2{
-    border:1px solid #d9e0ea;
-    border-radius:4px;
-    overflow:hidden;
-    .btn-link{
-      float:left;
-      width:50%;
-      border:none;
-      border-radius:0;
-      &:first-child{
-        border-right:1px solid #d9e0ea;
-      }
-    }
-  }
-
-  &.row-2{
-    height:80px;
-    line-height:80px;
-  }
-
-  &.row-3{
-    height:66px;
-    line-height:66px;
-  }
-
-  .btn-link{
-    display:block;
-    position: relative;
-    max-width:306px;
+// top 타이틀
+.sub-top{
+  min-height:300px;
+  height:300px;
+  background-size: cover;
+  text-align:center;
+  &-inner{
+    display:table;
+    width:100%;
     height:100%;
-    margin:auto;
-    background:#fff;
-    border:1px solid #d9e0ea;
-    border-radius:4px;
-    font-size:1.125rem;
-    text-indent:20px;
-    &.ico:after{
-      left:auto;
-      right:20px;
+  }
+  &-desc{
+    display:table-cell;
+    font-family: nanumsq, sans-serif;
+    color:#fff;
+    font-size:2.5rem;
+    font-weight:300;
+    vertical-align:middle;
+    .tit-desc{
+      font-size:3.125rem;
     }
-
-    .link-guide{
-      color:#666;
-      font-size:1rem;
-      vertical-align:1px;
-
+    .sub-desc{
+      font-size:1.375rem;
+      font-family: roboto, spoqa, sans-serif;
     }
+    .btn-group{
+      height:auto;
+      margin-top:26px;
+      .btn-type-down:first-child{
+        margin-right:14px;
+      }
+    }
+  }
+  &-text{
+    line-height:1.2;
+  }
+
+  &.bg1{
+    background:url(../images/img_base_top01.jpg) center no-repeat;
+  }
+  &.bg2{
+    background:url(../images/img_base_top02.jpg) center no-repeat;
   }
 }
 
+// bg section
 .section-bg{
   height:510px;
   background:url(../images/bg_tourinfo.jpg);
   margin-top:40px;
 }
 
-// bg위에 화면나누기
+// bg 화면분할
 .split-group{
   height:100%;
   @extend %clearfix;
@@ -412,26 +262,484 @@
   }
 }
 
-// 아티클 소제목 현재 레이어팝업에서도 같은스타일 title 존재
-.article{
-  margin-bottom:60px;
-  .article-head{
-    font-size:1.625rem;
-    font-weight:400;
-    margin-bottom:20px;
+// boxmodel
+.boxmodel{
+  &-guide{
+    color:#666;
+    text-align:right;
+  }
+  &-list{
+    @extend %clearfix;
+    display:flex;
+    margin-left:-24px;
+    margin-top:30px;
+    &-item{
+      padding:40px 30px 20px;
+      float:left;
+      width:368px;
+      min-height:352px;
+      background:#fff;
+      border: 1px solid #dee3eb;
+      margin:0 0 30px 24px;
+    }
+
+    &-num{
+      display:block;
+      position:relative;
+      margin:-16px 0 40px;
+      color:#97a4b9;
+      font-size:1.25rem;
+      font-weight:300;
+      text-align:center;
+      &:before{
+        content:'';
+        display:block;
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:130px;
+        height:1px;
+        background:#dbdfe6;
+      }
+      &:after{
+        content:'';
+        display:block;
+        position:absolute;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:130px;
+        height:1px;
+        background:#dbdfe6;
+      }
+    }
+
+    &-head{
+      font-family: nanumsq, sans-serif;
+      font-size:2.125rem;
+      font-weight:400;
+      text-align:center;
+    }
+
+    &-support{
+      font-size:1.25rem;
+    }
+
+    &-desc{
+      color:#000;
+      line-height:1.7;
+      text-align:center ;
+    }
+
+    .btn-group{
+      margin-bottom:4px;
+      &+.boxmodel-list-desc{
+        margin-top:10px;
+      }
+    }
+
+    .boxmodel-list-desc{
+      &+.btn-group{
+        margin-top:10px;
+      }
+    }
+
+
+
+    &-item.img{
+      border:none;
+      &.leave{
+        background:url(../images/img_step_leave.jpg);
+      }
+      &.entry{
+        background:url(../images/img_step_entry.jpg);
+      }
+      .boxmodel-list-head{
+        color:#fff;
+        font-size:2.875rem;
+        font-weight:500;
+        margin-top:80px;
+        &:after{
+          display:none
+        }
+      }
+      .boxmodel-list-desc{
+        max-width:306px;
+        color:#fff;
+        font-size:1.125rem;
+        font-weight:300;
+        text-transform:uppercase;
+        margin-top:6px;
+      }
+    }
+    &-item.color{
+      background:#f2f4f7;
+    }
+    &-item.color2{
+      background:#f3f4f8;
+    }
+    &-item.text-left{
+      p{
+        text-align:left;
+        margin-bottom:10px;
+      }
+    }
+    &-item.text-small{
+      color:#444;
+      font-size:1rem;
+      letter-spacing:-1px;
+    }
+
+    &-item.list-end{
+      display:table;
+      width:760px;
+      color:#b7c0ce;
+      font-size:2.875em;
+      text-align:center;
+      & div{
+        display:table-cell;
+        vertical-align:middle;
+      }
+    }
+
+    &-item.col-2{
+      width:564px;
+    }
   }
 }
 
+// boxmodel button layout
+.btn-group{
+  height:38px;
+  line-height:38px;
+  &.col-2{
+    border:1px solid #d9e0ea;
+    border-radius:4px;
+    overflow:hidden;
+    .btn-link{
+      float:left;
+      width:50%;
+      border:none;
+      border-radius:0;
+      &:first-child{
+        border-right:1px solid #d9e0ea;
+      }
+    }
+  }
 
-.table-desc{
-  color:#444;
-  font-size:1.125rem;
-  line-height:1.8;
-  margin-bottom:8px;
+  &.row-2{
+    height:80px;
+    line-height:80px;
+  }
+
+  &.row-3{
+    height:66px;
+    line-height:66px;
+  }
 }
 
-
-.txt-indent{
+// boxmodel button style
+.btn-link{
   display:block;
-  padding: 4px 0 4px 10px
+  position: relative;
+  max-width:306px;
+  height:100%;
+  margin:auto;
+  background:#fff;
+  border:1px solid #d9e0ea;
+  border-radius:4px;
+  font-size:1.125rem;
+  text-indent:20px;
+  transition:all .2s;
+  &:hover{
+    background:#f2f4f7;
+  }
+  &.ico:after{
+    left:auto;
+    right:20px;
+  }
+
+  .link-guide{
+    color:#666;
+    font-size:1rem;
+    vertical-align:1px;
+
+  }
 }
+
+// boxmodel sub button style
+.btn-sub{
+  display: block;
+  max-width: 306px;
+  margin: auto;
+  background: #f8f8f8;
+  border: 1px solid #d9e0ea;
+  border-radius: 4px;
+  font-size: 1.125rem;
+  overflow:hidden;
+  & .link-tit{
+    display:inline-block;
+    width: 100%;
+    height: 38px;
+    background:#fff;
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom:8px;
+    line-height:38px;
+    text-indent:20px;
+  }
+  &-item{
+    &:last-child{
+      .btn-sub-link{
+      margin-bottom:8px;
+      }
+    }
+  }
+  &-link{
+    width:100%;
+    text-indent:20px;
+    line-height:1.7;
+    transition:all .2s;
+    &:hover{
+      color:#999;
+    }
+    &:before{
+      content:'- ';
+    }
+    &.ico:after{
+      left:auto;
+      right:20px;
+    }
+  }
+}
+
+// boxmodel2
+.boxmodel2-list{
+  @extend %clearfix;
+  &.col-4{
+    .boxmodel2-list-item{
+      width:calc(25% - 18px);
+    }
+  }
+  &-item{
+    float:left;
+    display:table;
+    background:rgba(0,0,0,.2);
+    padding:30px;
+    margin-left:24px;
+    border:2px solid rgba(222,227,235,.5);
+    &:first-child{
+      margin-left:0;
+    }
+  }
+  &-inner{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    & .btn-type-small{
+      margin-top:30px;
+      min-width:126px;
+    }
+  }
+  &-tit{
+    font-family: nanumsq, sans-serif;
+    color:#fff;
+    font-size:1.625rem;
+    font-weight:300;
+  }
+}
+
+//text
+.level5{
+  font-size:2.875rem;
+  font-weight:400;
+  text-align:center;
+}
+.clip{
+  &.up:before{
+    content:'';
+    display:block;
+    width:2px;
+    height:40px;
+    background:#666;
+    margin:0 auto 30px;
+  }
+  &.down:after{
+    content:'';
+    display:block;
+    width:2px;
+    height:40px;
+    background:#666;
+    margin:40px auto 0;
+  }
+  &.up-white:before{
+    content:'';
+    display:block;
+    width:2px;
+    height:40px;
+    background:#fff;
+    margin:0 auto 30px;
+  }
+  &.down-white:after{
+    content:'';
+    display:block;
+    width:2px;
+    height:40px;
+    background:#fff;
+    margin:40px auto 0;
+  }
+
+}
+mark{
+  display:inline-block;
+  color:#fff;
+  font-size:1.125rem;
+  font-weight:300;
+  line-height:1;
+  background:#323648;
+  padding:3px 6px;
+  margin-bottom:4px;
+}
+strong{
+  font-weight: 900;
+}
+em{
+  font-style: normal;
+}
+.color-b{
+  color:#41519e;
+}
+.color-o{
+  color:#ffae44;
+}
+.guide-desc{
+  display:block;
+  color:#666;
+  font-size:1rem;
+  line-height:1.6;
+  &.color{
+    color:#d43e41;
+  }
+  &.mark{
+    text-indent:-20px;
+    padding-left:20px;
+
+    &:before{
+      content:"※";
+    }
+  }
+}
+
+//button
+.btn-type-infolink{
+  height:50px;
+  padding:0 60px 0 20px;
+  line-height:50px;
+  border:2px solid #fff;
+  color:#fff;
+  font-size:1.25rem;
+  font-weight:400;
+  transition:all .4s;
+  &:hover{
+    border-color:rgba(255,255,255,.3)
+  }
+  &.ico{
+    text-indent:0;
+    &:after{
+      left:auto;
+      right:18px;
+    }
+  }
+}
+.btn-type-normal{
+  min-width:192px;
+  height:50px;
+  background:#fff;
+  padding:0 45px 0 20px;
+  line-height:50px;
+  border:1px solid #666;
+  font-weight:600;
+  transition:all .4s;
+  &.point{
+    background:#42519e;
+    border:none;
+    color:#fff;
+  }
+  &:hover{
+
+  }
+  &.ico{
+    text-indent:0;
+    &:after{
+      left:auto;
+      right:18px;
+    }
+  }
+}
+.btn-type-small{
+  min-width:146px;
+  height:30px;
+  background:#fff;
+  padding:0 32px 0 12px;
+  line-height:30px;
+  border:1px solid #d9d9d9;
+  border-radius:50px;
+  font-size:0.875rem;
+  font-weight:400;
+  transition:all .4s;
+  &.point{
+    background:#f2f2f2;
+  }
+  &.under{
+    background:none;
+    color:#fff;
+  }
+  &:hover{
+
+  }
+  &.ico{
+    text-indent:0;
+    &:after{
+      left:auto;
+      right:14px;
+    }
+  }
+}
+.btn-type-down{
+  height:70px;
+  padding:0 96px 0 20px;
+  background:rgba(0,0,0,.2);
+  border:2px solid rgba(242,244,247,.5);
+  color:#fff;
+  font-size:1.5rem;
+  font-weight:700;
+  line-height:70px;
+  transition:all .4s;
+  &.ico{
+    text-indent:0;
+    &:after{
+      left:auto;
+      right:20px;
+    }
+  }
+}
+
+//.article{
+//  margin-bottom:60px;
+//  .article-head{
+//    font-size:1.625rem;
+//    font-weight:400;
+//    margin-bottom:20px;
+//  }
+//}
+
+// 입출국 절차에서 비주얼 높이
+//.contents.ap-type {
+//  & +.tab-area{
+//    margin-top:-153px;
+//  }
+//}
+
+
