@@ -1,0 +1,458 @@
+<!--=include _include/_base_header.html -->
+<section id="top-contents" class="contents">
+  <!--위치-->
+  <div class="location">
+    <div class="location-btn">
+      <button type="button" class="location-btn-minus ico"></button>
+      <button type="button" class="location-btn-plus ico"></button>
+      <button type="button" class="location-btn-print ico"></button>
+    </div>
+    <div class="location-bar">
+      <ul class="location-bar-nav">
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">출발</a></li>
+        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">취항정보</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--//위치-->
+  <div class="inner-section">
+    <!--서브타이틀-->
+    <div class="contents-sub-head">
+      <h3 class="contents-sub-head-title">출발시간</h3>
+      <p class="contents-sub-head-article">항공사별/ 도시별/ 출발 정보를 안내합니다.</p>
+    </div>
+    <!--//서브타이틀-->
+  </div>
+  <!--비주얼이미지-->
+  <div class="contents-visual departure">
+    <div class="inner-section">
+      <!--혼잡도-->
+      <div class="congestion">
+        <div class="congestion-title">출국장<br> <span class="point">혼잡도</span> 보기</div>
+        <a href="#" class="congestion-quick-link ico">바로가기</a>
+      </div>
+      <!--//혼잡도-->
+      <!--tab-->
+      <div class="tab-main">
+        <ul class="tab-main-list">
+          <li class="tab-main-list-item on"><a href="#" class="tab-main-list-link">여객</a></li>
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-link">화물</a></li>
+        </ul>
+      </div>
+      <!--tab-->
+      <!--subtab-->
+      <div class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">여객 출발 시간표</a></li>
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">여객 출발 정기 운항편</a></li>
+        </ul>
+      </div>
+      <!--//subtab-->
+    </div>
+  </div>
+  <!--//비주얼이미지-->
+  <div class="inner-section">
+    <ul class="list2 mt20">
+      <li class="list2-item">
+        시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.
+      </li>
+      <li class="list2-item">
+        운항편명을 클릭하시면 탑승을 위한 이동경로 및 상세정보를 확인하실 수 있습니다.
+      </li>
+      <li class="list2-item">
+        항공기 출발시간 10~15분전까지 탑승을 완료하여 주시기 바랍니다.
+      </li>
+    </ul>
+    <!--검색영역-->
+    <div class="search mt20">
+      <div class="search-option">
+        <input type="radio" name="day" id="today" class="radio" value="today" checked>
+        <label for="today" class="search-option-btn">오늘</label>
+        <input type="radio" name="day" id="tomorrow" class="radio" value="tomorrow">
+        <label for="tomorrow" class="search-option-btn">내일</label>
+      </div>
+      <div class="search-select">
+        <select class="search-select-article">
+          <option>2017.08.21(월)</option>
+        </select>
+        <select class="search-select-article">
+          <option>00:00~00:59</option>
+        </select>
+        <select class="search-select-article">
+          <option>목적지 선택</option>
+        </select>
+        <select class="search-select-article">
+          <option>항공사 선택</option>
+        </select>
+        <input type="text" class="search-select-airplane" placeholder="편명입력">
+        <button type="button" class="search-select-btn ico">검색</button>
+      </div>
+    </div>
+    <!--//검색영역-->
+  </div>
+  <div class="contents-visual airline">
+    <div class="inner-section">
+      <!--취항항공사 검색-->
+      <div class="search-area-head">
+        <h4 class="search-area-head-title"><strong class="search-area-head-title-bold">취항 항공사</strong> 검색</h4>
+        <div class="search-area-airline">
+          <select class="search-area-airline-option">
+            <option>항공사명</option>
+          </select>
+          <input type="text" class="search-area-airline-txt">
+          <button type="button" class="search-area-airline-btn ico">검색</button>
+        </div>
+      </div>
+      <!--//취항항공사검색-->
+    </div>
+  </div>
+  <!--업데이트-->
+  <div class="inner-section">
+    <div class="updata mt20">
+      <span class="updata-time">마지막 업데이트:2017.08.21 13:35</span>
+      <button type="button" class="updata-refresh ico">새로고침</button>
+    </div>
+  </div>
+  <!--//업데이트-->
+  <!--항공편-->
+  <div class="inner-section">
+    <div class="flight">
+      <div class="flight-search">
+        <span class="flight-search-txt">인천공항에서</span>
+        <select class="flight-search-option">
+          <option>전체</option>
+        </select>
+        <span class="flight-search-txt">까지 가는 항공편</span>
+        <button type="button" class="flight-search-btn ico">검색</button>
+      </div>
+    </div>
+  </div>
+  <!--//항공편-->
+  <!--테이블 st-->
+  <div class="inner-section">
+    <div class="ap-basic">
+      <div class="ap-basic-title">
+        <div class="ap-basic-title-details xxx-l">출발시간</div>
+        <div class="ap-basic-title-details greater">목적지</div>
+        <div class="ap-basic-title-details biggest">항공사/운항편명</div>
+        <div class="ap-basic-title-details x-l">주기장</div>
+        <div class="ap-basic-title-details large">탑승현황</div>
+      </div>
+    </div>
+
+    <div class="ap-basic">
+      <div class="ap-basic-title">
+        <div class="ap-basic-title-details xx-l">출발시간</div>
+        <div class="ap-basic-title-details xxxx-l">목적지</div>
+        <div class="ap-basic-title-details big">항공사/운항편명</div>
+        <div class="ap-basic-title-details x-s">터미널</div>
+        <div class="ap-basic-title-details medium">체크인 카운터</div>
+        <div class="ap-basic-title-details xxx-s">탑승구</div>
+        <div class="ap-basic-title-details small">탑승현황</div>
+        <div class="ap-basic-title-details xx-s">운항속보</div>
+      </div>
+      <div class="ap-basic-substance">
+        <div class="ap-basic-substance-details xx-l two">
+          <strong class="font-large">16:30</strong><br>
+          <span class="text-line">15:30</span>
+        </div>
+        <div class="ap-basic-substance-details xxxx-l">쿠알라룸푸르</div>
+        <div class="ap-basic-substance-details big">
+          <div class="f-left">
+            <img src="../images/logo_s_koreanair.png" alt="대한항공로고"/>
+          </div>
+          <div class="two">
+            <strong>KE5845</strong><br>
+            <span class="font-small">대한항공</span>
+          </div>
+        </div>
+        <div class="ap-basic-substance-details x-s"><strong>T1</strong></div>
+        <div class="ap-basic-substance-details medium"><strong>E24-E36</strong></div>
+        <div class="ap-basic-substance-details xxx-s"><strong class="color">129</strong></div>
+        <div class="ap-basic-substance-details small">출발</div>
+        <div class="ap-basic-substance-details xx-s">
+          <a href="#"><img src="../images/ico_mobile_sms.png"alt="운항속보신청"></a>
+        </div>
+      </div>
+      <div class="ap-basic-substance">
+        <div class="ap-basic-substance-details xx-l two">
+          <strong class="font-large">16:30</strong><br>
+          <span class="text-line">15:30</span>
+        </div>
+        <div class="ap-basic-substance-details xxxx-l">쿠알라룸푸르</div>
+        <div class="ap-basic-substance-details big">
+          <div class="f-left">
+            <img src="../images/logo_s_koreanair.png" alt="대한항공로고"/>
+          </div>
+          <div class="two">
+            <strong>KE5845</strong><br>
+            <span class="font-small">대한항공</span>
+          </div>
+        </div>
+        <div class="ap-basic-substance-details x-s"><strong>T1</strong></div>
+        <div class="ap-basic-substance-details medium"><strong>E24-E36</strong></div>
+        <div class="ap-basic-substance-details xxx-s"><strong class="color">129</strong></div>
+        <div class="ap-basic-substance-details small"><span class="bg type1">지연</span></div>
+        <div class="ap-basic-substance-details xx-s">
+          <a href="#"><img src="../images/ico_mobile_sms.png"alt="운항속보신청"></a>
+        </div>
+      </div>
+      <div class="ap-basic-substance">
+        <div class="ap-basic-substance-details xx-l two">
+          <strong class="font-large">16:30</strong><br>
+          <span class="text-line">15:30</span>
+        </div>
+        <div class="ap-basic-substance-details xxxx-l">쿠알라룸푸르</div>
+        <div class="ap-basic-substance-details big">
+          <div class="f-left">
+            <img src="../images/logo_s_koreanair.png" alt="대한항공로고"/>
+          </div>
+          <div class="two">
+            <strong>KE5845</strong><br>
+            <span class="font-small">대한항공</span>
+          </div>
+        </div>
+        <div class="ap-basic-substance-details x-s"><strong>T1</strong></div>
+        <div class="ap-basic-substance-details medium"><strong>E24-E36</strong></div>
+        <div class="ap-basic-substance-details xxx-s"><strong class="color">129</strong></div>
+        <div class="ap-basic-substance-details small"><span class="bg type2">탑승중</span></div>
+        <div class="ap-basic-substance-details xx-s">
+          <a href="#"><img src="../images/ico_mobile_sms.png"alt="운항속보신청"></a>
+        </div>
+      </div>
+      <div class="ap-basic-substance">
+        <div class="ap-basic-substance-details xx-l two">
+          <strong class="font-large">16:30</strong><br>
+          <span class="text-line">15:30</span>
+        </div>
+        <div class="ap-basic-substance-details xxxx-l">쿠알라룸푸르</div>
+        <div class="ap-basic-substance-details big">
+          <div class="f-left">
+            <img src="../images/logo_s_koreanair.png" alt="대한항공로고"/>
+          </div>
+          <div class="two">
+            <strong>KE5845</strong><br>
+            <span class="font-small">대한항공</span>
+          </div>
+        </div>
+        <div class="ap-basic-substance-details x-s"><strong>T1</strong></div>
+        <div class="ap-basic-substance-details medium"><strong>E24-E36</strong></div>
+        <div class="ap-basic-substance-details xxx-s"><strong class="color">129</strong></div>
+        <div class="ap-basic-substance-details small"><span class="bg type3">마감예정</span></div>
+        <div class="ap-basic-substance-details xx-s">
+          <a href="#"><img src="../images/ico_mobile_sms.png"alt="운항속보신청"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/테이블 st-->
+  <!--테이블-->
+  <div class="inner-section">
+    <table class="table vt-dark" summary="여객 출발기 정기 운항편에 대한 안내 표입니다">
+      <caption>여객 출발기 정기 운항편 안내표</caption>
+      <colgroup>
+        <col width="11%">
+        <col width="15%">
+        <col width="11%">
+        <col width="23%">
+        <col width="11%">
+        <col width="3%">
+        <col width="3%">
+        <col width="3%">
+        <col width="3%">
+        <col width="3%">
+        <col width="3%">
+        <col>
+      </colgroup>
+      <thead>
+      <tr>
+        <th scope="col" rowspan="2">운항편명</th>
+        <th scope="col" rowspan="2">항공사</th>
+        <th scope="col" rowspan="2">출발시간</th>
+        <th scope="col" rowspan="2">목적지</th>
+        <th scope="col" rowspan="2">터미널</th>
+        <th scope="col" colspan="7" class="half">운항요일</th>
+        <th scope="col" rowspan="2">운항기간</th>
+      </tr>
+      <tr>
+        <th scope="col" class="sub">월</th>
+        <th scope="col" class="sub">화</th>
+        <th scope="col" class="sub">수</th>
+        <th scope="col" class="sub">목</th>
+        <th scope="col" class="sub">금</th>
+        <th scope="col" class="sub point">토</th>
+        <th scope="col" class="sub point">일</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">대한항공</td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center"></td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center"></td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center"></td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      </tbody>
+    </table>
+    <table class="table vt-dark" summary="취항항송사에 대한 안내 표 입니다.">
+      <caption>취항항공사 안내</caption>
+      <colgroup>
+        <col width="20%">
+        <col width="10%">
+        <col width="15%">
+        <col width="15%">
+        <col width="10%">
+        <col width="10%">
+        <col width="10%">
+      </colgroup>
+      <thead>
+      <tr>
+        <th scope="col">항공사명</th>
+        <th scope="col">국적</th>
+        <th scope="col">대표연락처</th>
+        <th scope="col">공항연락처</th>
+        <th scope="col">IATA</th>
+        <th scope="col">ICAO</th>
+        <th scope="col">출발현황</th>
+        <th scope="col">도착현황</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="center"><img src="../images/logo_s_s7.png" alt=""/><p class="font-m">S7 항공</p></td>
+        <td class="center">러시아</td>
+        <td class="center">02-6399-6500</td>
+        <td class="center">010-6884-5644</td>
+        <td class="center">S7</td>
+        <td class="center">SBI</td>
+        <td class="center"><a href="#"><img src="../images/ico_airplane_departure.png" alt="출발"/></a></td>
+        <td class="center"><a href="#"><img src="../images/ico_airplane_arrival.png" alt="도착"/></a></td>
+      </tr>
+      <tr>
+        <td class="center"><img src="../images/logo_s_garuda.png" alt=""/><p class="font-m">가루다인도네시아 항공</p></td>
+        <td class="center">인도네시아</td>
+        <td class="center">02-744-1991</td>
+        <td class="center">032-744-19914</td>
+        <td class="center">GA</td>
+        <td class="center">GIA</td>
+        <td class="center"><a href="#"><img src="../images/ico_airplane_departure.png" alt="출발"/></a></td>
+        <td class="center"><a href="#"><img src="../images/ico_airplane_arrival.png" alt="도착"/> </a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--//테이블-->
+  <!--레이어팝업-->
+  <div class="layer">
+    <div class="layer-area">
+      <div class="layer-article">
+        <h4 class="layer-title">운항속보 SMS 이용안내</h4>
+        <a href="#" class="layer-close">닫기</a>
+        <ul class="list1">
+          <li class="list1-item">
+            신청하신 운항편이 1시간 이상 지연, 결항되는 경우 이를 휴대전화 문자(SMS)로 알려드리는<br>
+            서비스입니다.
+          </li>
+          <li class="list1-item">
+            신청하신 운항편이 1시간 이상 지연, 결항되지 않고 정상적으로 운항한 경우에는 SMS가<br>
+            발송 되지 않습니다.
+          </li>
+          <li class="list1-item">
+            당사 또는 이동통신사 사정으로 문자 미발송 및 지연 발송이 발생할 수 있습니다.<br>
+            본 서비스는 부가정보로 활용하시고, 이용하시는 항공사 등 다양한 매체를 통해 정확한 정보<br>
+            를  확인하시기 바랍니다.
+          </li>
+        </ul>
+      </div>
+      <div class="layer-article">
+        <h5 class="layer-article-title">휴대폰번호입력</h5>
+        <input type="text" placeholder="휴대폰 번호 입역" class="layer-article-input">
+      </div>
+      <div class="layer-article">
+        <h5 class="layer-article-title">개인정보 3자 제공 정책 및 동의여부 선택</h5>
+        <div class="layer-article-box">
+          <h6 class="layer-article-box-sub">제공받는 자</h6>
+          <p class="layer-article-box-txt">SMS 서비스: 디노벤 (KT SMS)</p>
+          <h6 class="layer-article-box-sub mt10">제공받는 자</h6>
+          <p class="layer-article-box-txt">
+            운항정보 SMS 신청 서비스의 1시간 이상 지연, 결항 등 운항속보 상황에만 SMS 발송
+            운항정보 SMS 신청 서비스의 1시간 이상 지연, 결항 등 운항속보 상황에만 SMS 발송
+            운항정보 SMS 신청 서비스의 1시간 이상 지연, 결항 등 운항속보 상황에만 SMS 발송
+            운항정보 SMS 신청 서비스의 1시간 이상 지연, 결항 등 운항속보 상황에만 SMS 발송
+            운항정보 SMS 신청 서비스의 1시간 이상 지연, 결항 등 운항속보 상황에만 SMS 발송
+          </p>
+        </div>
+        <p class="info-desc mt10">
+          * 개인정보보호법 제15조 제2항 제4조(동의를 (동의를 거부할 권리가 있다는 사실 및 동의 거부에 따른<br>
+          불이익이 있는 경우에는 그 불이익의 내용)에 따라 동의를 거부할 수 있으나 거부할 경우 서비스 이용에<br>
+          제한이 있을 수 있음을 알려드립니다.
+        </p>
+      </div>
+      <div class="agree">
+        <input type="radio" name="agree" id="yes" class="agree-radio ico" value="yes" checked>
+        <label for="yes">동의함</label>
+        <input type="radio" name="agree" id="no" class="agree-radio ico" value="no">
+        <label for="no">동의하지 않음</label>
+      </div>
+    </div>
+    <div class="enter">
+      <button type="button" class="enter-btn">확인</button>
+    </div>
+  </div>
+  <!--//레이어팝업-->
+</section>
+<!--=include _include/_base_footer.html -->
