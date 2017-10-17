@@ -182,7 +182,11 @@ $(function(){
 
   $('body').on('click', '.js-show-all', function(){
 
+    $('.btn-type-small').removeClass('on');
+
     var showCategory = $(this).attr('class').split(' ')[4];
+
+    $(this).addClass('on');
 
     $('.file-list tbody tr').addClass('hide');
 
@@ -196,7 +200,11 @@ $(function(){
 
   $('body').on('click', '.js-show-done', function(){
 
+    $('.btn-type-small').removeClass('on');
+
     var showCategory = $(this).attr('class').split(' ')[4];
+
+    $(this).addClass('on');
 
     $('.file-list tbody tr').addClass('hide');
 
