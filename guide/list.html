@@ -6,149 +6,76 @@
   <title>인천국제공항</title>
   <link rel="stylesheet" href="../css/guide_style.css" />
   <script src="../js/lib/jquery-3.2.1.min.js"></script>
-  <script src="../js/guide_function.debug.js"></script>
+  <script src="../js/guide_function.min.js"></script>
 </head>
 <body>
 
+<aside class="top-popup"></aside>
+
 <header class="header">
 
-  <h1 class="header-logo">
-    <a href="#">
-      <img src="../images/logo_white.png" alt="인천공항 로고" />
-    </a>
-  </h1>
+  <div class="inner-section">
 
-  <nav id="gnb" class="gnb">
-    <ul class="gnb-depth1">
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link on">파일 리스트</a>
-      </li>
+    <h1 class="header-logo">
+      <a href="#">
+        <img src="../images/logo-dev.png" alt="인천공항 로고" />
+      </a>
+    </h1>
 
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">스타일 가이드</a>
-      </li>
+    <nav id="gnb" class="gnb">
+      <ul class="gnb-depth1">
+        <li class="gnb-depth1-item">
+          <a href="#" class="gnb-depth1-link">STYLE GUIDE</a>
+        </li>
 
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">UI 가이드</a>
-      </li>
-    </ul>
-  </nav>
+        <li class="gnb-depth1-item">
+          <a href="#" class="gnb-depth1-link">UI COMPONENT</a>
+        </li>
+
+        <li class="gnb-depth1-item">
+          <a href="#" class="gnb-depth1-link">JS COMPONENT</a>
+        </li>
+
+        <li class="gnb-depth1-item">
+          <a href="#" class="gnb-depth1-link">CODE CONVENTION</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
 
 </header>
 
-
+<section id="top-contents" class="contents">
+  <div class="inner-section">
+    <!--서브타이틀-->
+    <div class="contents-sub-head">
+      <h3 class="contents-sub-head-title">진행율</h3>
+      <p class="contents-sub-head-article">Frontend 작업 진행율을 나타냅니다</p>
+    </div>
+    <!--//서브타이틀-->
+  </div>
+  <!--비주얼이미지-->
+  <div class="contents-visual departure">
+    <div class="inner-section">
+      <div class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">진행율</a></li>
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">리스트</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--//비주얼이미지-->
+</section>
 
 <section class="section">
   <div class="inner-section">
-    <div class="top-contents-wrap">
-      <div class="heading-wrap">
-        <h1 class="heading-level1">File List</h1>
-        <p class="heading-desc">메뉴 구조도와 퍼블리싱된 페이지를<br />비교할 수 있습니다 </p>
-      </div>
-
-      <div class="process-wrap">
-        <h2 class="heading-level2">진행율</h2>
-        <div class="multi-col double gutter">
-          <div class="inner-col">
-            <table class="vt">
-              <colgroup>
-                <col style="width:20%" />
-                <col style="width:20%" />
-              </colgroup>
-              <thead>
-              <tr>
-                <th>전체 작업할 페이지 개수</th>
-                <th>현재 완료된 페이지 개수</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td class="center number all-work center">0</td>
-                <td class="center number done-work center">0</td>
-              </tr>
-              </tbody>
-            </table>
-            <table class="vt">
-              <colgroup>
-                <col style="width:20%" />
-                <col style="width:20%" />
-              </colgroup>
-              <thead>
-              <tr>
-                <th>전체 작업할 HTML 페이지 개수</th>
-                <th>현재 완료된 HTML 페이지 개수</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td class="center number html-all-work">0</td>
-                <td class="center number html-done-work">0</td>
-              </tr>
-              </tbody>
-            </table>
-            <table class="vt">
-              <colgroup>
-                <col style="width:20%" />
-                <col style="width:20%" />
-              </colgroup>
-              <thead>
-              <tr>
-                <th>전체 작업할 Board 페이지 개수</th>
-                <th>현재 완료된 Board 페이지 개수</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td class="center number board-all-work">0</td>
-                <td class="center number board-done-work">0</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="inner-col">
-            <table class="vt">
-              <colgroup>
-                <col style="width:20%" />
-                <col style="width:20%" />
-              </colgroup>
-              <thead>
-              <tr>
-                <th>전체 작업할 Develop 페이지 개수</th>
-                <th>현재 완료된 Develop 페이지 개수</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td class="center number develop-all-work">0</td>
-                <td class="center number develop-done-work">0</td>
-              </tr>
-              </tbody>
-            </table>
-            <table class="vt">
-              <colgroup>
-                <col style="width:100%" />
-              </colgroup>
-              <thead>
-              <tr>
-                <th>진행율</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td class="page-progress center">
-                  <div class="progress-wrap">
-                    <div class="progress-bar"></div>
-                  </div>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
+    <ul class="list2 mt20">
+      <li class="list2-item">
+        전체 진행율과 각 카테고리별 작업 진행상황을 나타냅니다.
+      </li>
+    </ul>
 
     <div style="margin-bottom:30px;">
       <button class="btn-type-small ico arrow-small-right js-show-all on">전체</button>
@@ -4613,10 +4540,8 @@
 </section>
 
 <a href="#" class="back-to-top">top</a>
-<footer class="footer">
-  Incheon Airport Guide
+<footer class="footer mt40">
+  Incheon Airport Developer
 </footer>
-</body>
-</html>
 </body>
 </html>
