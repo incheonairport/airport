@@ -227,7 +227,7 @@
   }
 }
 
-.search{
+.search-flight-detail{
   margin-bottom:20px;
   display: inline-block;
   &-option{
@@ -307,7 +307,103 @@
   }
 }
 
-.updata{
+.search-flight{
+  border-top: 1px solid #a5a7aa;
+  padding-top: 35px;
+  text-align: center;
+  margin-bottom: 35px;
+  &-search{
+    font-size: 1.875rem;
+    color: #444;
+    &-txt{
+      margin-right:5px;
+    }
+    &-option{
+      font-size: 1.125rem;
+      color: #666;
+      padding: 0 15px;
+      border: 1px solid #d9d9d9;
+      height:58px;
+      width: 180px;
+      margin-right:5px;
+    }
+    &-btn{
+      font-size: 1.625rem;
+      color: #fff;
+      background: #323648;
+      border: none;
+      width: 130px;
+      height: 58px;
+      line-height:1;
+      margin-left:25px;
+      padding-left:40px;
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        right:60px;
+        top:4px;
+      }
+    }
+  }
+}
+
+.search-airline{
+  position:relative;
+  margin-top:-247px;
+  &-head{
+    text-align: center;
+    height: 94px;
+    &-title{
+      color: #fff;
+      font: 2.375rem 'NanumSquare', sans-serif;
+      margin-bottom: 20px;
+    }
+  }
+  &-airline{
+    margin: 0 auto;
+    width: 670px;
+
+    @extend %clearfix;
+
+    &-option{
+      border: none;
+      font-size: 1.125rem;
+      padding: 0 15px;
+      width: 182px;
+      height: 58px;
+      line-height: 1;
+      float: left;
+    }
+    &-txt{
+      width: 323px;
+      height: 58px;
+      border: 0;
+      border-left:1px solid #d9d9d9;
+      padding: 0 15px;
+      float: left;
+    }
+    &-btn{
+      background:#42519e;
+      border: none;
+      color: #fff;
+      font-size: 1.625rem;
+      width: 132px;
+      height: 58px;
+      line-height: 1;
+      padding-left: 15px;
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        top:3px;
+        right:88px;
+      }
+    }
+  }
+}
+
+.update{
   text-align: right;
   margin-bottom: 20px;
   &-time{
@@ -453,102 +549,6 @@
   }
 }
 
-.flight{
-    border-top: 1px solid #a5a7aa;
-    padding-top: 35px;
-    text-align: center;
-    margin-bottom: 35px;
-  &-search{
-      font-size: 1.875rem;
-      color: #444;
-    &-txt{
-      margin-right:5px;
-    }
-    &-option{
-      font-size: 1.125rem;
-      color: #666;
-      padding: 0 15px;
-      border: 1px solid #d9d9d9;
-      height:58px;
-      width: 180px;
-      margin-right:5px;
-    }
-    &-btn{
-      font-size: 1.625rem;
-      color: #fff;
-      background: #323648;
-      border: none;
-      width: 130px;
-      height: 58px;
-      line-height:1;
-      margin-left:25px;
-      padding-left:40px;
-      &.ico{
-        text-indent:0;
-      }
-      &.ico:after{
-        right:60px;
-        top:4px;
-      }
-    }
-  }
-}
-
-.search-area{
-  position:relative;
-  margin-top:-247px;
-  &-head{
-    text-align: center;
-    height: 94px;
-    &-title{
-      color: #fff;
-      font: 2.375rem 'NanumSquare', sans-serif;
-      margin-bottom: 20px;
-    }
-  }
-  &-airline{
-    margin: 0 auto;
-    width: 670px;
-
-    @extend %clearfix;
-
-    &-option{
-      border: none;
-      font-size: 1.125rem;
-      padding: 0 15px;
-      width: 182px;
-      height: 58px;
-      line-height: 1;
-      float: left;
-    }
-    &-txt{
-      width: 323px;
-      height: 58px;
-      border: 0;
-      border-left:1px solid #d9d9d9;
-      padding: 0 15px;
-      float: left;
-    }
-    &-btn{
-      background:#42519e;
-      border: none;
-      color: #fff;
-      font-size: 1.625rem;
-      width: 132px;
-      height: 58px;
-      line-height: 1;
-      padding-left: 15px;
-      &.ico{
-        text-indent:0;
-      }
-      &.ico:after{
-        top:3px;
-        right:88px;
-      }
-    }
-  }
-}
-
 .list1{
   &-item{
     padding-left:12px;
@@ -563,6 +563,7 @@
     }
   }
 }
+
 .list2{
   &-item{
     padding-left:12px;
@@ -852,6 +853,7 @@
 
 }
 
+// layer popup
 .layer{
   width: 680px;
   height: 938px;
@@ -950,11 +952,13 @@
   }
 
 }
+
 .ico.agree-radio:after {
   background-position:-35px -293px;
   width: 27px;
   height: 27px;
 }
+
 .enter{
   width: 100%;
   padding: 20px 0 30px;
@@ -985,11 +989,9 @@ strong{
   }
 }
 
-.font-m{
-  font-size: 1rem;
+.font16, %font16{
+  font-size:1rem;
 }
-
-
 
 // text margin-top:20px
 .mt10, %mt10{
