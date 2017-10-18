@@ -34,20 +34,20 @@
       </div>
       <!--//혼잡도-->
       <!--tab-->
-      <div class="tab-main">
+      <nav class="tab-main">
         <ul class="tab-main-list">
-          <li class="tab-main-list-item on"><a href="#" class="tab-main-list-link">여객</a></li>
-          <li class="tab-main-list-item"><a href="#" class="tab-main-list-link">화물</a></li>
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-item-link left on">여객</a></li>
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-item-link right">화물</a></li>
         </ul>
-      </div>
+      </nav>
       <!--tab-->
       <!--subtab-->
-      <div class="tab-sub">
+      <nav class="tab-sub">
         <ul class="tab-sub-list">
-          <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">여객 출발 시간표</a></li>
-          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">여객 출발 정기 운항편</a></li>
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link on">여객 출발 시간표</a></li>
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link">여객 출발 정기 운항편</a></li>
         </ul>
-      </div>
+      </nav>
       <!--//subtab-->
     </div>
   </div>
@@ -65,66 +65,72 @@
       </li>
     </ul>
     <!--검색영역-->
-    <div class="search mt20">
-      <div class="search-option">
+    <div class="search-flight-detail mt20">
+      <div class="search-flight-detail-option">
         <input type="radio" name="day" id="today" class="radio" value="today" checked>
         <label for="today" class="search-option-btn">오늘</label>
         <input type="radio" name="day" id="tomorrow" class="radio" value="tomorrow">
         <label for="tomorrow" class="search-option-btn">내일</label>
       </div>
-      <div class="search-select">
-        <select class="search-select-article">
+      <div class="search-flight-detail-select">
+        <select class="search-flight-detail-select-article">
           <option>2017.08.21(월)</option>
         </select>
-        <select class="search-select-article">
+        <select class="search-flight-detail-select-article">
           <option>00:00~00:59</option>
         </select>
-        <select class="search-select-article">
+        <select class="search-flight-detail-select-article">
           <option>목적지 선택</option>
         </select>
-        <select class="search-select-article">
+        <select class="search-flight-detail-select-article">
           <option>항공사 선택</option>
         </select>
-        <input type="text" class="search-select-airplane" placeholder="편명입력">
-        <button type="button" class="search-select-btn ico">검색</button>
+        <input type="text" class="search-flight-detail-select-airplane" placeholder="편명입력">
+        <button type="button" class="search-flight-detail-select-btn ico">검색</button>
       </div>
     </div>
     <!--//검색영역-->
   </div>
-  <div class="contents-visual airline">
+  <div class="contents-visual search-airline">
     <div class="inner-section">
       <!--취항항공사 검색-->
-      <div class="search-area-head">
-        <h4 class="search-area-head-title"><strong class="search-area-head-title-bold">취항 항공사</strong> 검색</h4>
-        <div class="search-area-airline">
-          <select class="search-area-airline-option">
+      <div class="search-airline-head">
+        <h4 class="search-airline-head-title"><strong>취항 항공사</strong> 검색</h4>
+        <div class="search-airline-name">
+          <select class="search-airline-name-option">
             <option>항공사명</option>
           </select>
-          <input type="text" class="search-area-airline-txt">
-          <button type="button" class="search-area-airline-btn ico">검색</button>
+          <input type="text" class="search-airline-name-txt">
+          <button type="button" class="search-airline-name-btn ico">검색</button>
         </div>
       </div>
       <!--//취항항공사검색-->
+      <nav class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link on">취항 항공사</a></li>
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link">취항 도시</a></li>
+        </ul>
+      </nav>
     </div>
   </div>
   <!--업데이트-->
   <div class="inner-section">
-    <div class="updata mt20">
-      <span class="updata-time">마지막 업데이트:2017.08.21 13:35</span>
-      <button type="button" class="updata-refresh ico">새로고침</button>
+    <div class="update mt20">
+      <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
+      <button type="button" class="update-refresh ico">새로고침</button>
     </div>
   </div>
   <!--//업데이트-->
   <!--항공편-->
   <div class="inner-section">
-    <div class="flight">
-      <div class="flight-search">
-        <span class="flight-search-txt">인천공항에서</span>
-        <select class="flight-search-option">
+    <div class="search-flight">
+      <div class="search-flight-search">
+        <span class="search-flight-search-txt">인천공항에서</span>
+        <select class="search-flight-search-option">
           <option>전체</option>
         </select>
-        <span class="flight-search-txt">까지 가는 항공편</span>
-        <button type="button" class="flight-search-btn ico">검색</button>
+        <span class="search-flight-search-txt">까지 가는 항공편</span>
+        <button type="button" class="search-flight-search-btn ico">검색</button>
       </div>
     </div>
   </div>
@@ -154,7 +160,7 @@
       </div>
       <div class="ap-basic-substance">
         <div class="ap-basic-substance-details xx-l two">
-          <strong class="font-large">16:30</strong><br>
+          <strong class="font24">16:30</strong><br>
           <span class="text-line">15:30</span>
         </div>
         <div class="ap-basic-substance-details xxxx-l">쿠알라룸푸르</div>
@@ -164,7 +170,8 @@
           </div>
           <div class="two">
             <strong>KE5845</strong><br>
-            <span class="font-small">대한항공</span>
+            <span class="font14">대한항공</span>
+            <span class="font14">대한항공</span>
           </div>
         </div>
         <div class="ap-basic-substance-details x-s"><strong>T1</strong></div>
@@ -177,7 +184,7 @@
       </div>
       <div class="ap-basic-substance">
         <div class="ap-basic-substance-details xx-l two">
-          <strong class="font-large">16:30</strong><br>
+          <strong class="font24">16:30</strong><br>
           <span class="text-line">15:30</span>
         </div>
         <div class="ap-basic-substance-details xxxx-l">쿠알라룸푸르</div>
@@ -187,7 +194,8 @@
           </div>
           <div class="two">
             <strong>KE5845</strong><br>
-            <span class="font-small">대한항공</span>
+            <span class="font14">대한항공</span>
+            <span class="font14">대한항공</span>
           </div>
         </div>
         <div class="ap-basic-substance-details x-s"><strong>T1</strong></div>
@@ -200,7 +208,7 @@
       </div>
       <div class="ap-basic-substance">
         <div class="ap-basic-substance-details xx-l two">
-          <strong class="font-large">16:30</strong><br>
+          <strong class="font24">16:30</strong><br>
           <span class="text-line">15:30</span>
         </div>
         <div class="ap-basic-substance-details xxxx-l">쿠알라룸푸르</div>
@@ -210,7 +218,8 @@
           </div>
           <div class="two">
             <strong>KE5845</strong><br>
-            <span class="font-small">대한항공</span>
+            <span class="font14">대한항공</span>
+            <span class="font14">대한항공</span>
           </div>
         </div>
         <div class="ap-basic-substance-details x-s"><strong>T1</strong></div>
@@ -223,7 +232,7 @@
       </div>
       <div class="ap-basic-substance">
         <div class="ap-basic-substance-details xx-l two">
-          <strong class="font-large">16:30</strong><br>
+          <strong class="font24">16:30</strong><br>
           <span class="text-line">15:30</span>
         </div>
         <div class="ap-basic-substance-details xxxx-l">쿠알라룸푸르</div>
@@ -233,7 +242,8 @@
           </div>
           <div class="two">
             <strong>KE5845</strong><br>
-            <span class="font-small">대한항공</span>
+            <span class="font14">대한항공</span>
+            <span class="font14">대한항공</span>
           </div>
         </div>
         <div class="ap-basic-substance-details x-s"><strong>T1</strong></div>
@@ -288,62 +298,74 @@
       <tbody>
       <tr>
         <td class="center"><strong>7C1102</strong></td>
-        <td class="center">대한항공</td>
+        <td class="center">
+          <img src="../images/logo_s_koreanair.png" alt="대한항공로고"/>
+          <span class="font16">대한항공</span>
+        </td>
         <td class="center">12:50</td>
         <td class="center">나리타 (NRT)</td>
         <td class="center">T1</td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule weekend">유</span></td>
-        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
         <td class="center">2017.03.26~2017.10.28</td>
       </tr>
       <tr>
         <td class="center"><strong>7C1102</strong></td>
-        <td class="center"></td>
+        <td class="center">
+          <img src="../images/logo_s_koreanair.png" alt="대한항공로고"/>
+          <span class="font16">대한항공</span>
+        </td>
         <td class="center">12:50</td>
         <td class="center">나리타 (NRT)</td>
         <td class="center">T1</td>
-        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
         <td class="center"></td>
         <td class="center"></td>
         <td class="center"></td>
         <td class="center"></td>
         <td class="center"></td>
-        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
         <td class="center">2017.03.26~2017.10.28</td>
       </tr>
       <tr>
         <td class="center"><strong>7C1102</strong></td>
-        <td class="center"></td>
+        <td class="center">
+          <img src="../images/logo_s_csair.png" alt="중국남방항공로고"/>
+          <span class="font16">중국남방항공</span>
+        </td>
         <td class="center">12:50</td>
         <td class="center">나리타 (NRT)</td>
         <td class="center">T1</td>
-        <td class="center"><span class="schedule">유</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
         <td class="center"></td>
         <td class="center"></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule weekend">유</span></td>
-        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
         <td class="center">2017.03.26~2017.10.28</td>
       </tr>
       <tr>
         <td class="center"><strong>7C1102</strong></td>
-        <td class="center"></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="아시아나로고"/>
+          <span class="font16">아시아나항공</span>
+        </td>
         <td class="center">12:50</td>
         <td class="center">나리타 (NRT)</td>
         <td class="center">T1</td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule">유</span></td>
-        <td class="center"><span class="schedule weekend">유</span></td>
-        <td class="center"><span class="schedule weekend">유</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
         <td class="center">2017.03.26~2017.10.28</td>
       </tr>
       </tbody>
@@ -373,7 +395,7 @@
       </thead>
       <tbody>
       <tr>
-        <td class="center"><img src="../images/logo_s_s7.png" alt=""/><p class="font-m">S7 항공</p></td>
+        <td class="center"><img src="../images/logo_s_s7.png" alt=""/><p class="font16">S7 항공</p></td>
         <td class="center">러시아</td>
         <td class="center">02-6399-6500</td>
         <td class="center">010-6884-5644</td>
@@ -383,7 +405,7 @@
         <td class="center"><a href="#"><img src="../images/ico_airplane_arrival.png" alt="도착"/></a></td>
       </tr>
       <tr>
-        <td class="center"><img src="../images/logo_s_garuda.png" alt=""/><p class="font-m">가루다인도네시아 항공</p></td>
+        <td class="center"><img src="../images/logo_s_garuda.png" alt=""/><p class="font16">가루다인도네시아 항공</p></td>
         <td class="center">인도네시아</td>
         <td class="center">02-744-1991</td>
         <td class="center">032-744-19914</td>

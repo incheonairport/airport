@@ -9,63 +9,69 @@
     <!--//서브타이틀-->
   </div>
   <!--비주얼이미지-->
-  <div class="contents-visual departure"></div>
+  <div class="contents-visual departure">
+    <div class="inner-section">
+      <!--tab-->
+      <nav class="tab-main">
+        <ul class="tab-main-list">
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-item-link left">여객</a></li>
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-item-link right on">화물</a></li>
+        </ul>
+      </nav>
+      <!--tab-->
+      <!--subtab-->
+      <nav class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link on">화물 출발 시간표</a></li>
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link">화물 출발 정기 운항편</a></li>
+        </ul>
+      </nav>
+      <!--//subtab-->
+    </div>
+  </div>
   <!--//비주얼이미지-->
 </section>
 
 <section class="contents tab-area">
   <div class="inner-section">
-    <!--tab-->
-    <div class="tab-main">
-      <ul class="tab-main-list">
-        <li class="tab-main-list-item"><a href="#" class="tab-main-list-link">여객</a></li>
-        <li class="tab-main-list-item on"><a href="#" class="tab-main-list-link">화물</a></li>
-      </ul>
-    </div>
-    <!--tab-->
-    <!--subtab-->
-    <div class="tab-sub">
-      <ul class="tab-sub-list">
-        <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">화물 출발 시간표</a></li>
-        <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">화물 출발 정기 운항편</a></li>
-      </ul>
-    </div>
-    <!--//subtab-->
     <!--info-txt-->
-    <div class="info">
-      <ul class="info-txt">
-        <li class="info-txt-article">- 시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.</li>
-      </ul>
-    </div>
+    <ul class="list2 mt30">
+      <li class="list2-item">
+        시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.
+      </li>
+    </ul>
+
     <!--//info-txt-->
     <!--검색영역-->
-    <div class="search">
-      <div class="search-option">
-        <button type="button" class="search-option-btn on">오늘</button>
-        <button type="button" class="search-option-btn">내일</button>
+    <div class="search-flight-detail mt30">
+      <div class="search-flight-detail-option">
+        <input type="radio" name="day" id="today" class="radio" value="today" checked>
+        <label for="today" class="search-option-btn">오늘</label>
+        <input type="radio" name="day" id="tomorrow" class="radio" value="tomorrow">
+        <label for="tomorrow" class="search-option-btn">내일</label>
       </div>
-      <div class="search-select">
-        <select class="search-select-article">
+      <div class="search-flight-detail-select">
+        <select class="search-flight-detail-select-article">
           <option>2017.08.21(월)</option>
         </select>
-        <select class="search-select-article">
+        <select class="search-flight-detail-select-article">
           <option>00:00~00:59</option>
         </select>
-        <select class="search-select-article">
+        <select class="search-flight-detail-select-article">
           <option>목적지 선택</option>
         </select>
-        <select class="search-select-article">
+        <select class="search-flight-detail-select-article">
           <option>항공사 선택</option>
         </select>
-        <input type="text" class="search-select-airplane" placeholder="편명입력">
-        <button type="button" class="search-select-btn ico">검색</button>
+        <input type="text" class="search-flight-detail-select-airplane" placeholder="편명입력">
+        <button type="button" class="search-flight-detail-select-btn ico">검색</button>
       </div>
     </div>
     <!--//검색영역-->
     <!--업데이트 시간-->
-    <div class="updata">
-      <span class="updata-time">마지막 업데이트:2017.08.21 13:35</span>
-      <button type="button" class="updata-refresh ico">새로고침</button>
+    <div class="update">
+      <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
+      <button type="button" class="update-refresh ico">새로고침</button>
     </div>
     <!--//업데이트 시간-->
     <!--출발시간표-->
