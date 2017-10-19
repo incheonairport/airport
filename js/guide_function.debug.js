@@ -83,18 +83,18 @@ $(function(){
   }
 
   // write each count number
-  function outputProgress(){
+  function outputProgress() {
 
-    $record.each(function(){
+    $record.each(function () {
 
       var className = $(this).attr('class');
 
-      if( className == 'cancel' ){
+      if (className == 'cancel') {
 
         // number of cancel page
         count[0]++;
 
-      } else if( className == 'category' ){
+      } else if (className == 'category') {
 
         // number of category
         count[1]++;
@@ -104,31 +104,31 @@ $(function(){
         // number of working page
         count[2]++;
 
-        if( className.toLowerCase().indexOf('html') >= 0 ){
+        if (className.toLowerCase().indexOf('html') >= 0) {
           // number of html page
           count[3]++;
-        } else if(className.toLowerCase().indexOf('develop') >= 0){
+        } else if (className.toLowerCase().indexOf('develop') >= 0) {
           // number of develop page
           count[4]++;
-        } else if(className.toLowerCase().indexOf('board') >= 0){
+        } else if (className.toLowerCase().indexOf('board') >= 0) {
           // number of board page
           count[5]++;
-        } else if(className.toLowerCase().indexOf('link') >= 0){
+        } else if (className.toLowerCase().indexOf('link') >= 0) {
           // number of link
           count[6]++;
         }
 
-        if(className.toLowerCase().indexOf('done') >= 0){
+        if (className.toLowerCase().indexOf('done') >= 0) {
           // number of done page
           count[7]++;
 
-          if( className.toLowerCase().indexOf('html') >= 0 ){
+          if (className.toLowerCase().indexOf('html') >= 0) {
             // number of done html page
             count[8]++;
-          } else if(className.toLowerCase().indexOf('develop') >= 0){
+          } else if (className.toLowerCase().indexOf('develop') >= 0) {
             // number of done develop page
             count[9]++;
-          } else if(className.toLowerCase().indexOf('board') >= 0){
+          } else if (className.toLowerCase().indexOf('board') >= 0) {
             // number of done board page
             count[10]++;
           }
@@ -138,19 +138,19 @@ $(function(){
 
     });
 
-    $('.all-work').text(count[2]);
-    $('.done-work').text(count[7]);
+    $('.progress-all .progress-bar').css({width: Math.floor(count[7] / count[2] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7] / count[2] * 100) + '%</div>');
 
-    $('.html-all-work').text(count[3]);
-    $('.html-done-work').text(count[8]);
+    $('.all-work').text(count[2] + 'p');
+    $('.done-work .progress-bar').css({width: Math.floor(count[7] / count[2] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7]) + 'p</div>');
 
-    $('.board-all-work').text(count[4]);
-    $('.board-done-work').text(count[9]);
+    $('.all-work-html').text(count[3] + 'p');
+    $('.done-work-html .progress-bar').css({width: Math.floor(count[8] / count[3] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[8]) + 'p</div>');
 
-    $('.develop-all-work').text(count[5]);
-    $('.develop-done-work').text(count[10]);
+    $('.all-work-board').text(count[4] + 'p');
+    $('.done-work-board .progress-bar').css({width: Math.floor(count[9] / count[4] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[9]) + 'p</div>');
 
-    $('.progress-bar').css({width : Math.floor(count[7]/count[2]*100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7]/count[2]*100) + '%</div>');
+    $('.all-work-develop').text(count[5] + 'p');
+    $('.done-work-develop .progress-bar').css({width: Math.floor(count[10] / count[5] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[10]) + 'p</div>');
   }
 
   /**
@@ -182,7 +182,11 @@ $(function(){
 
   $('body').on('click', '.js-show-all', function(){
 
+    $('.btn-type-small').removeClass('on');
+
     var showCategory = $(this).attr('class').split(' ')[4];
+
+    $(this).addClass('on');
 
     $('.file-list tbody tr').addClass('hide');
 
@@ -196,7 +200,11 @@ $(function(){
 
   $('body').on('click', '.js-show-done', function(){
 
+    $('.btn-type-small').removeClass('on');
+
     var showCategory = $(this).attr('class').split(' ')[4];
+
+    $(this).addClass('on');
 
     $('.file-list tbody tr').addClass('hide');
 
@@ -224,6 +232,24 @@ $(function(){
       alert('준비 중 입니다.');
 
     }
+
+  });
+
+  // tab
+
+  $('.tab-sub-list-link').on('click', function(e){
+    e.preventDefault();
+
+    var $tab = $('.tab-sub-list-link');
+    var $tabContents = $('.tab-contents');
+
+    var index = $tab.index( $(this) );
+
+    $tab.removeClass('on');
+    $(this).addClass('on');
+
+    $tabContents.removeClass('on');
+    $tabContents.eq(index).addClass('on');
 
   });
 
