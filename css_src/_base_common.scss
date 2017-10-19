@@ -15,6 +15,73 @@
   clear:both;
 }
 
+.contents-sub{
+  &-head{
+    padding:62px 0 40px;
+    text-align: center;
+
+    &-title{
+      font-size:2.875rem;
+      font-family:'NanumSquare', sans-serif;
+
+      &-lv3{
+        font-size:2.875rem;
+        font-weight:400;
+        text-align:center;
+      }
+    }
+
+    &-clip{
+      &:after, &:before{
+        content:'';
+        display:block;
+        width:2px;
+        height:40px;
+      }
+      &.up:before{
+        background:#666;
+        margin:0 auto 30px;
+      }
+      &.up:after{
+        display:none;
+      }
+      &.down:after{
+        background:#666;
+        margin:40px auto 0;
+      }
+      &.down:before{
+        display:none;
+      }
+      &.up-white{
+        color:#fff;
+        &:before{
+          background:#fff;
+          margin:0 auto 30px;
+        }
+        &:after{
+          display:none;
+        }
+      }
+      &.down-white{
+        color:#fff;
+        &:after{
+          background:#fff;
+          margin:40px auto 0;
+        }
+        &:before{
+          display:none;
+        }
+      }
+    }
+
+    &-article{
+      margin-top: 20px;
+      color:#666;
+      font-size: 1rem;
+    }
+  }
+}
+
 /* global sprite icon */
 .ico{
   display:inline-block;
@@ -237,7 +304,6 @@
 
 }
 
-
 /* link type select box */
 .select-link {
   // 아래서 위로 올라오는 경우  class="ico arrow_down" :: class="select-list up"
@@ -351,4 +417,376 @@
   position:fixed;
   right:0;
   color:#fff;
+}
+
+mark{
+  display:inline-block;
+  color:#fff;
+  font-size:1.125rem;
+  font-weight:300;
+  line-height:1;
+  background:#323648;
+  padding:3px 6px;
+  margin-bottom:4px;
+}
+
+strong{
+  font-weight: 900;
+
+  .color-b{
+    color:#41519e;
+  }
+  .color-o{
+    color:#ffae44;
+  }
+}
+
+em{
+  font-style: normal;
+}
+
+.list1{
+  &-item{
+    padding-left:12px;
+    position:relative;
+
+    &:before{
+      content: "·";
+      font-size: 	1.625rem;
+      position:absolute;
+      top:-6px;
+      left:0;
+    }
+  }
+}
+
+.list2{
+  &-item{
+    padding-left:12px;
+    position:relative;
+
+    &:before{
+      content: "-";
+      font-size: 	1rem;
+      font-weight: 300;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+  }
+}
+
+.list3{
+  &-item{
+    padding-left:23px;
+    position:relative;
+
+    .number{
+      position:absolute;
+      top:0;
+      left:0;
+    }
+  }
+}
+
+.table{
+  width:100%;
+
+  caption{
+    display:none;
+  }
+
+  &.vt{
+    border:{
+      top:2px solid #444;
+      bottom:1px solid #a5a7aa;
+    }
+    &.border-no{
+      border-top: none;
+      td:last-child{
+        border-right: 1px solid #d9d9d9;
+      }
+    }
+    &.border-right{
+      td:last-child{
+        border-right: 1px solid #d9d9d9;
+      }
+    }
+
+    tr.on{
+      background:#f3f4f8;
+    }
+
+    th{
+      padding:19px 0 16px;
+      font-size:1rem;
+      font-weight:700;
+      position:relative;
+
+      &:after{
+        content:"";
+        display:block;
+        width:1px;
+        height:16px;
+        background:#a5a7aa;
+        position:absolute;
+        top:17px;
+        right:0;
+      }
+
+      &:last-child:after{
+        content:none;
+      }
+    }
+
+    td{
+      padding:19px 20px 16px;
+      line-height:1.4;
+      border:{
+        right:1px solid #f2f4f7;
+        top:1px solid #d9d9d9;
+      }
+      vertical-align:middle;
+
+      &.center{
+        text-align:center;
+      }
+
+      &.right{
+        text-align:right;
+      }
+
+      &:last-child{
+        border-right:0;
+      }
+
+      &.color-b{
+        border-left: 4px solid #42519e;
+      }
+      &.color-g{
+        border-left: 4px solid #2c8279;
+      }
+      &.color-o{
+        border-left: 4px solid #dd7714;
+      }
+
+      & .board-list-link{
+        font-size:1.125rem;
+        transition:all .2s;
+        &:hover{
+          color:#999;
+        }
+        &.lock{
+          &:after{
+            content:"";
+            display:inline-block;
+            background:url(../images/spr_ico_crud.png) no-repeat -45px -52px;
+            width: 13px;
+            height: 17px;
+            margin-left:14px;
+            vertical-align:-1px;
+          }
+        }
+
+        &.good{
+          &:before{
+            content:"";
+            display:inline-block;
+            background:url(../images/spr_ico_crud.png) no-repeat -52px -89px;
+            width: 24px;
+            height: 24px;
+            margin-right:12px;
+            vertical-align:-5px;
+          }
+        }
+
+        &.bad{
+          &:before{
+            content:"";
+            display:inline-block;
+            background:url(../images/spr_ico_crud.png) no-repeat -16px -89px;
+            width: 24px;
+            height: 24px;
+            margin-right:12px;
+            vertical-align:-5px;
+          }
+        }
+      }
+    }
+
+    &.board-list{
+      font-size:1rem;
+      & td{
+        border-right:0;
+        padding:23px 20px;
+      }
+    }
+
+  }
+
+  &.vt-dark{
+    border-bottom:1px solid #a5a7aa;
+
+    tbody{
+      tr:first-child{
+        td{
+          border-top:0;
+        }
+      }
+      tr:nth-child(even){
+        background: #f8f8f8;
+      }
+    }
+
+    th{
+      padding:18px 0 16px;
+      font-size:1rem;
+      font-weight:400;
+      color:#fff;
+      background:#323648;
+      border-right:1px solid #474a5b;
+      vertical-align:middle;
+
+      &:last-child{
+        border-right:0;
+      }
+
+      &.half{
+        padding:12px;
+      }
+
+      &.sub{
+        padding:6px 0 8px;
+        border:{
+          top:1px solid #212535;
+          right:1px solid #212535;
+        }
+        background:#4d5164;
+        font-size:0.875rem;
+        &.point{
+          background: #2f4985;
+        }
+
+        &:last-child{
+          border-right:0;
+        }
+      }
+
+    }
+
+    td{
+      padding:16px 20px;
+      line-height:1.4;
+      border-right:1px solid #f2f4f7;
+      border-top:1px solid #d9d9d9;
+      vertical-align:middle;
+      word-break: keep-all;
+
+      &.center{
+        text-align:center;
+      }
+
+      &:last-child{
+        border-right:0;
+      }
+      .schedule {
+        background: #2f4985;
+        border:5px solid #2f4985;
+        border-radius: 20px;
+        font-size: 0px;
+        position: relative;
+        top: -5px;
+        &.weekend{
+          background: #2c8179;
+          border:5px solid #2c8179;
+        }
+      }
+    }
+  }
+
+  &.hr{
+
+    border:{
+      top:2px solid #444;
+      bottom:1px solid #a5a7aa;
+    }
+
+    tr:first-child{
+      th, td{
+        border-top:0;
+      }
+    }
+
+    th{
+      min-width:150px;
+      border-top:1px solid #d9d9d9;
+      background:#f3f4f8;
+      font-size:1rem;
+      line-height:1.4;
+      font-weight:700;
+      vertical-align:middle;
+      &.left{
+        text-align: left;
+        padding-left: 20px;
+      }
+    }
+
+    td{
+      padding:19px 20px 16px;
+      border-top:1px solid #d9d9d9;
+      border-right:1px solid #f2f4f7;
+      line-height:1.4;
+      vertical-align:middle;
+      &.center{
+        text-align:center;
+      }
+      &:last-child{
+        border-right:0;
+      }
+    }
+
+  }
+
+}
+
+//font-size
+.font14, %font14{
+  font-size: 	0.875rem;
+}
+.font16, %font16{
+  font-size:1rem;
+}
+.font24, %font24{
+  font-size: 1.5rem;
+}
+
+// text margin-top:20px
+.mt10, %mt10{
+  margin-top:10px;
+}
+
+// margin-top:20px;
+.mt20, %mt20{
+  margin-top:20px;
+}
+
+// text margin-top:40px;
+.mt30, %mt30{
+  margin-top:30px;
+}
+
+// margin-top:40px;
+.mt40, %mt40{
+  margin-top:40px;
+}
+
+// float
+.f{
+  &-left{
+    float:left;
+  }
+
+  &-right{
+    float:right;
+  }
 }

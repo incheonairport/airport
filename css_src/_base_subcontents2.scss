@@ -519,70 +519,6 @@
   }
 }
 
-.clip{
-  &:after, &:before{
-    content:'';
-    display:block;
-    width:2px;
-    height:40px;
-  }
-  &.up:before{
-    background:#666;
-    margin:0 auto 30px;
-  }
-  &.up:after{
-    display:none;
-  }
-  &.down:after{
-    background:#666;
-    margin:40px auto 0;
-  }
-  &.down:before{
-    display:none;
-  }
-  &.up-white{
-    color:#fff;
-    &:before{
-      background:#fff;
-      margin:0 auto 30px;
-    }
-    &:after{
-      display:none;
-    }
-  }
-  &.down-white{
-    color:#fff;
-    &:after{
-      background:#fff;
-      margin:40px auto 0;
-    }
-    &:before{
-      display:none;
-    }
-  }
-}
-mark{
-  display:inline-block;
-  color:#fff;
-  font-size:1.125rem;
-  font-weight:300;
-  line-height:1;
-  background:#323648;
-  padding:3px 6px;
-  margin-bottom:4px;
-}
-strong{
-  font-weight: 900;
-}
-em{
-  font-style: normal;
-}
-.color-b{
-  color:#41519e;
-}
-.color-o{
-  color:#ffae44;
-}
 .guide-desc{
   display:block;
   color:#666;
@@ -613,7 +549,7 @@ em{
     color:#fff;
     font-size:1.25rem;
     font-weight:400;
-    transition:all .4s;
+
     &:hover{
       border-color:rgba(255,255,255,.4);
       color:#ffae44;
@@ -639,7 +575,7 @@ em{
     line-height:50px;
     border:1px solid #666;
     font-weight:600;
-    transition:all .4s;
+
     &.point{
       background:#42519e;
       border:none;
@@ -666,7 +602,7 @@ em{
     border-radius:50px;
     font-size:0.875rem;
     font-weight:400;
-    transition:all .4s;
+
     &.point{
       background:#f2f2f2;
     }
@@ -700,7 +636,7 @@ em{
     font-size:1.5rem;
     font-weight:700;
     line-height:70px;
-    transition:all .4s;
+
     &:hover{
       color:rgba(255,255,255,.4);
       color:#ffae44;
@@ -719,69 +655,3 @@ em{
     }
   }
 }
-
-// layer common
-.list2{
-  &-item{
-    padding-left:12px;
-    position:relative;
-
-    &:before{
-      content: "-";
-      font-size: 	1rem;
-      font-weight: 300;
-      position:absolute;
-      top:0;
-      left:0;
-    }
-  }
-}
-
-// margin-bottom:13px;
-.mb7, %mb7{
-  margin-bottom:7px;
-}
-
-// text margin-top:20px
-.mt10, %mt10{
-  margin-top:10px;
-}
-
-// margin-top:20px;
-.mt20, %mt20{
-  margin-top:20px;
-}
-
-// text margin-top:40px;
-.mt30, %mt30{
-  margin-top:30px;
-}
-
-// margin-top:40px;
-.mt40, %mt40{
-  margin-top:40px;
-}
-
-
-
-//text
-.level5{
-  font-size:2.875rem;
-  font-weight:400;
-  text-align:center;
-}
-//.article{
-//  margin-bottom:60px;
-//  .article-head{
-//    font-size:1.625rem;
-//    font-weight:400;
-//    margin-bottom:20px;
-//  }
-//}
-
-// 입출국 절차에서 비주얼 높이
-//.contents.ap-type {
-//  & +.tab-area{
-//    margin-top:-153px;
-//  }
-//}

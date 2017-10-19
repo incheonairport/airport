@@ -639,12 +639,6 @@ strong{
   &.color{
     color:#41519e;
   }
-  & span.color{
-    color:#41519e;
-  }
-  &.f-left{
-    float:left;
-  }
 }
 
 em{
@@ -1600,4 +1594,15 @@ b.text-bold{
     height: 24px;
   }
 
+}
+
+// float
+.f{
+  &-left{
+    float:left;
+  }
+
+  &-right{
+    float:right;
+  }
 }
