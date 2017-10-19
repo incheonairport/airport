@@ -1,83 +1,98 @@
 <!--=include _include/_base_header.html -->
 <section id="top-contents" class="contents">
+  <!--위치-->
+  <div class="location">
+    <div class="location-btn">
+      <button type="button" class="location-btn-minus ico"></button>
+      <button type="button" class="location-btn-plus ico"></button>
+      <button type="button" class="location-btn-print ico"></button>
+    </div>
+    <div class="location-bar">
+      <ul class="location-bar-nav">
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">도착</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">도착시간</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">화물</a></li>
+        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">화물 도착 시간표</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--//위치-->
   <div class="inner-section">
     <!--서브타이틀-->
     <div class="contents-sub-head">
-      <h3 class="contents-sub-head-title">도착시간</h3>
+      <h2 class="contents-sub-head-title">도착시간</h2>
       <p class="contents-sub-head-article">항공사별/ 도시별/ 도착 정보를 안내합니다.</p>
     </div>
     <!--//서브타이틀-->
   </div>
   <!--비주얼이미지-->
-  <div class="contents-visual departure"></div>
+  <div class="contents-visual departure">
+    <div class="inner-section">
+      <!--tab-->
+      <nav class="tab-main">
+        <ul class="tab-main-list">
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-item-link left">여객</a></li>
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-item-link right on">화물</a></li>
+        </ul>
+      </nav>
+      <!--tab-->
+      <!--subtab-->
+      <nav class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link on">화물 도착 시간표</a></li>
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link">화물 도착 정기 운항편</a></li>
+        </ul>
+      </nav>
+      <!--//subtab-->
+    </div>
+  </div>
   <!--//비주얼이미지-->
 </section>
 
 <section class="contents tab-area">
   <div class="inner-section">
-    <!--tab-->
-    <div class="tab-main">
-      <ul class="tab-main-list">
-        <li class="tab-main-list-item"><a href="#" class="tab-main-list-link">여객</a></li>
-        <li class="tab-main-list-item on"><a href="#" class="tab-main-list-link">화물</a></li>
-      </ul>
-    </div>
-    <!--tab-->
-    <!--subtab-->
-    <div class="tab-sub">
-      <ul class="tab-sub-list">
-        <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">화물 도착 시간표</a></li>
-        <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">화물 도착 정기 운항편</a></li>
-      </ul>
-    </div>
-    <!--//subtab-->
-    <!--info-txt-->
-    <div class="info">
-      <ul class="info-txt">
-        <li class="info-txt-article">- 시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.</li>
-      </ul>
-    </div>
-    <!--//info-txt-->
+
+    <ul class="list2 mt30">
+      <li class="list2-item">
+        시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.
+      </li>
+    </ul>
+
     <!--검색영역-->
-    <div class="search">
-      <div class="search-option">
-        <button type="button" class="search-option-btn on">오늘</button>
-        <button type="button" class="search-option-btn">내일</button>
+    <div class="search-flight-detail mt30">
+      <div class="search-flight-detail-option">
+        <input type="radio" name="day" id="today" class="radio" value="today" checked>
+        <label for="today" class="search-option-btn">오늘</label>
+        <input type="radio" name="day" id="tomorrow" class="radio" value="tomorrow">
+        <label for="tomorrow" class="search-option-btn">내일</label>
       </div>
-      <div class="search-select">
-        <select class="search-select-article">
+      <div class="search-flight-detail-select">
+        <select class="search-flight-detail-select-article">
           <option>2017.08.21(월)</option>
         </select>
-        <select class="search-select-article">
+        <select class="search-flight-detail-select-article">
           <option>00:00~00:59</option>
         </select>
-        <select class="search-select-article">
-          <option>출발지 선택</option>
+        <select class="search-flight-detail-select-article">
+          <option>목적지 선택</option>
         </select>
-        <select class="search-select-article">
+        <select class="search-flight-detail-select-article">
           <option>항공사 선택</option>
         </select>
-        <input type="text" class="search-select-airplane" placeholder="편명입력">
-        <button type="button" class="search-select-btn ico">검색</button>
+        <input type="text" class="search-flight-detail-select-airplane" placeholder="편명입력">
+        <button type="button" class="search-flight-detail-select-btn ico">검색</button>
       </div>
     </div>
     <!--//검색영역-->
     <!--업데이트 시간-->
-    <div class="updata">
-      <span class="updata-time">마지막 업데이트:2017.08.21 13:35</span>
-      <button type="button" class="updata-refresh ico">새로고침</button>
+    <div class="update">
+      <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
+      <button type="button" class="update-refresh ico">새로고침</button>
     </div>
     <!--//업데이트 시간-->
     <!--도착시간표-->
-    <div class="ap-basic">
-      <div class="ap-basic-title">
-        <div class="ap-basic-title-details xxxx-l">도착시간</div>
-        <div class="ap-basic-title-details greater">출발지</div>
-        <div class="ap-basic-title-details biggest">항공사/운항편명</div>
-        <div class="ap-basic-title-details x-l">주기장</div>
-        <div class="ap-basic-title-details large">도착현황</div>
-      </div>
-    </div>
+
     <!--//도착시간표-->
   </div>
 </section>

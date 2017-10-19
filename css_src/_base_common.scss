@@ -652,9 +652,6 @@ em{
           border-top:0;
         }
       }
-      tr:nth-child(even){
-        background: #f8f8f8;
-      }
     }
 
     th{
@@ -722,6 +719,13 @@ em{
         &.weekend{
           background: #2c8179;
           border:5px solid #2c8179;
+        }
+      }
+    }
+    &.even{
+      tbody{
+        tr:nth-child(even){
+          background: #f8f8f8;
         }
       }
     }
