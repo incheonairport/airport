@@ -1,125 +1,323 @@
 <!--=include _include/_base_header.html -->
 <section id="top-contents" class="contents">
+  <!--위치-->
+  <div class="location">
+    <div class="location-btn">
+      <button type="button" class="location-btn-minus ico"></button>
+      <button type="button" class="location-btn-plus ico"></button>
+      <button type="button" class="location-btn-print ico"></button>
+    </div>
+    <div class="location-bar">
+      <ul class="location-bar-nav">
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">출발</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">출발시간</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">화물</a></li>
+        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">화물 출발 정기 운항편</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--//위치-->
   <div class="inner-section">
     <!--서브타이틀-->
     <div class="contents-sub-head">
-      <h3 class="contents-sub-head-title">출발시간</h3>
+      <h2 class="contents-sub-head-title">출발시간</h2>
       <p class="contents-sub-head-article">항공사별/ 도시별/ 출발 정보를 안내합니다.</p>
     </div>
     <!--//서브타이틀-->
   </div>
   <!--비주얼이미지-->
-  <div class="contents-visual departure"></div>
+  <div class="contents-visual departure">
+    <div class="inner-section">
+      <!--혼잡도-->
+      <div class="congestion">
+        <div class="congestion-title">출국장<br> <span class="point">혼잡도</span> 보기</div>
+        <a href="#" class="congestion-quick-link ico">바로가기</a>
+      </div>
+      <!--//혼잡도-->
+      <!--tab-->
+      <nav class="tab-main">
+        <ul class="tab-main-list">
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-item-link left">여객</a></li>
+          <li class="tab-main-list-item"><a href="#" class="tab-main-list-item-link right on">화물</a></li>
+        </ul>
+      </nav>
+      <!--tab-->
+      <!--subtab-->
+      <nav class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link on">화물 출발 시간표</a></li>
+          <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-item-link">화물 출발 정기 운항편</a></li>
+        </ul>
+      </nav>
+      <!--//subtab-->
+    </div>
+  </div>
   <!--//비주얼이미지-->
 </section>
 
 <section class="contents tab-area">
   <div class="inner-section">
-    <!--tab-->
-    <div class="tab-main">
-      <ul class="tab-main-list">
-        <li class="tab-main-list-item"><a href="#" class="tab-main-list-link">여객</a></li>
-        <li class="tab-main-list-item on"><a href="#" class="tab-main-list-link">화물</a></li>
-      </ul>
-    </div>
-    <!--tab-->
-    <!--subtab-->
-    <div class="tab-sub">
-      <ul class="tab-sub-list">
-        <li class="tab-sub-list-item"><a href="#" class="tab-sub-list-link">화물 출발 시간표</a></li>
-        <li class="tab-sub-list-item on"><a href="#" class="tab-sub-list-link">화물 출발 정기 운항편</a></li>
-      </ul>
-    </div>
-    <!--//subtab-->
-    <!--info-txt-->
-    <div class="info">
-      <ul class="info-txt">
-        <li class="info-txt-article">- 화물 출발 주간 운행 주간표를 알려 드립니다.</li>
-        <li class="info-txt-article">- 실제와 상이할 수 있으므로 정확한 정보는 해당 항공사에 문의하시기 바랍니다.</li>
-      </ul>
-    </div>
-    <!--//info-txt-->
+
+    <ul class="list2 mt30">
+      <li class="list2-item">
+        화물 출발 주간 운행 주간표를 알려 드립니다.
+      </li>
+      <li class="list2-item">
+        실제와 상이할 수 있으므로 정확한 정보는 해당 항공사에 문의하시기 바랍니다.
+      </li>
+    </ul>
+
     <!--항공편 검색-->
-    <div class="flight">
-      <div class="flight-search">
-        <span class="flight-search-txt">인천공항에서</span>
-        <select class="flight-search-option">
+    <div class="search-flight mt30">
+      <div class="search-flight-search">
+        <span class="search-flight-search-txt">인천공항에서</span>
+        <select class="search-flight-search-option">
           <option>전체</option>
         </select>
-        <span class="flight-search-txt">까지 가는 항공편</span>
-        <button type="button" class="flight-search-btn ico">검색</button>
+        <span class="search-flight-search-txt">까지 가는 항공편</span>
+        <button type="button" class="search-flight-search-btn ico">검색</button>
       </div>
     </div>
     <!--//항공편 검색-->
     <!--출발시간표-->
-    <div class="table-area">
-      <table class="ap-basic" summary="화물 출발 정기 운항편 표">
-        <caption>화물 출발 정기 운항편</caption>
-        <colgroup>
-          <col width="11%">
-          <col width="14%">
-          <col width="10%">
-          <col width="23%">
-          <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col width="18%">
-        </colgroup>
-        <thead class="ap-basic-title">
-          <tr>
-            <th rowspan="2" class="ap-basic-title-details">운항편명</th>
-            <th rowspan="2" class="ap-basic-title-details">항공사</th>
-            <th rowspan="2" class="ap-basic-title-details">출발시간</th>
-            <th rowspan="2" class="ap-basic-title-details">목적지</th>
-            <th colspan="7" class="ap-basic-title-details">운항요일</th>
-            <th rowspan="2" class="ap-basic-title-details">운항기간</th>
-          </tr>
-          <tr>
-            <th class="ap-basic-title-details week">월</th>
-            <th class="ap-basic-title-details week">화</th>
-            <th class="ap-basic-title-details week">수</th>
-            <th class="ap-basic-title-details week">목</th>
-            <th class="ap-basic-title-details week">금</th>
-            <th class="ap-basic-title-details week end">토</th>
-            <th class="ap-basic-title-details week end">일</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+    <table class="table vt-dark even" summary="여객 출발기 정기 운항편에 대한 안내 표입니다">
+      <caption>여객 출발기 정기 운항편 안내표</caption>
+      <colgroup>
+        <col width="11%">
+        <col width="15%">
+        <col width="11%">
+        <col width="23%">
+        <col width="11%">
+        <col width="3%">
+        <col width="3%">
+        <col width="3%">
+        <col width="3%">
+        <col width="3%">
+        <col width="3%">
+        <col>
+      </colgroup>
+      <thead>
+      <tr>
+        <th scope="col" rowspan="2">운항편명</th>
+        <th scope="col" rowspan="2">항공사</th>
+        <th scope="col" rowspan="2">출발시간</th>
+        <th scope="col" rowspan="2">목적지</th>
+        <th scope="col" rowspan="2">터미널</th>
+        <th scope="col" colspan="7" class="half">운항요일</th>
+        <th scope="col" rowspan="2">운항기간</th>
+      </tr>
+      <tr>
+        <th scope="col" class="sub">월</th>
+        <th scope="col" class="sub">화</th>
+        <th scope="col" class="sub">수</th>
+        <th scope="col" class="sub">목</th>
+        <th scope="col" class="sub">금</th>
+        <th scope="col" class="sub point">토</th>
+        <th scope="col" class="sub point">일</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_koreanair.png" alt="대한항공로고">
+          <span class="font16">대한항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_koreanair.png" alt="대한항공로고">
+          <span class="font16">대한항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_csair.png" alt="중국남방항공로고">
+          <span class="font16">중국남방항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="아시아나로고">
+          <span class="font16">아시아나항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>AF7890</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="티웨이로고">
+          <span class="font16">티웨이항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="아시아나로고">
+          <span class="font16">아시아나항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="아시아나로고">
+          <span class="font16">아시아나항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="아시아나로고">
+          <span class="font16">아시아나항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="아시아나로고">
+          <span class="font16">아시아나항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="아시아나로고">
+          <span class="font16">아시아나항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      <tr>
+        <td class="center"><strong>7C1102</strong></td>
+        <td class="center">
+          <img src="../images/logo_s_asiana.png" alt="아시아나로고">
+          <span class="font16">아시아나항공</span>
+        </td>
+        <td class="center">12:50</td>
+        <td class="center">나리타 (NRT)</td>
+        <td class="center">T1</td>
+        <td class="center"><span class="schedule">운항</span></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center"><span class="schedule weekend">운항</span></td>
+        <td class="center">2017.03.26~2017.10.28</td>
+      </tr>
+      </tbody>
+    </table>
     <!--//출발시간표-->
   </div>
 </section>
