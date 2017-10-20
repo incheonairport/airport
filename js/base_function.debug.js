@@ -55,4 +55,13 @@ $(function(){
   var t;
   t = new TableLike();
 
+  $('.flight-info-basic-link').on('click', function(e){
+    console.log(586567);
+  });
+
+  $('.btn-newsflash').on('click', function(e){
+    e.stopPropagation();
+    console.log(1212);
+  });
+
 });
