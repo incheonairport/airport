@@ -31,28 +31,40 @@
       }
     }
 
-    &-clip{
+    &.clip, &.clip-white{
+      padding:40px 0;
       &:after, &:before{
         content:'';
         display:block;
         width:2px;
         height:40px;
       }
-      &.up:before{
-        background:#666;
-        margin:0 auto 30px;
+      &.up{
+        &:before{
+          background:#666;
+          margin:0 auto 30px;
+        }
+        &:after{
+          display:none;
+        }
       }
-      &.up:after{
-        display:none;
+      &.down{
+        padding:40px 0 30px;
+        &:after{
+          background:#666;
+          margin:30px auto 0;
+        }
+        &:before{
+          display:none;
+        }
       }
-      &.down:after{
-        background:#666;
-        margin:40px auto 0;
+
+    }
+    &.clip-white{
+      .contents-sub-head-title-lv3{
+        color:#fff;
       }
-      &.down:before{
-        display:none;
-      }
-      &.up-white{
+      &.up{
         color:#fff;
         &:before{
           background:#fff;
@@ -62,7 +74,7 @@
           display:none;
         }
       }
-      &.down-white{
+      &.down{
         color:#fff;
         &:after{
           background:#fff;
@@ -433,16 +445,23 @@ mark{
 strong{
   font-weight: 900;
 
-  .color-b{
+  &.color-b{
     color:#41519e;
   }
-  .color-o{
+  &.color-o{
     color:#ffae44;
   }
 }
 
 em{
   font-style: normal;
+
+  &.color-b{
+    color:#41519e;
+  }
+  &.color-o{
+    color:#ffae44;
+  }
 }
 
 .list1{
@@ -633,9 +652,6 @@ em{
           border-top:0;
         }
       }
-      tr:nth-child(even){
-        background: #f8f8f8;
-      }
     }
 
     th{
@@ -686,6 +702,10 @@ em{
         text-align:center;
       }
 
+      &.top{
+        vertical-align:top;
+      }
+
       &:last-child{
         border-right:0;
       }
@@ -699,6 +719,13 @@ em{
         &.weekend{
           background: #2c8179;
           border:5px solid #2c8179;
+        }
+      }
+    }
+    &.even{
+      tbody{
+        tr:nth-child(even){
+          background: #f8f8f8;
         }
       }
     }
@@ -770,9 +797,19 @@ em{
   margin-top:20px;
 }
 
+// margin-top:25px;
+.mt25, %mt25{
+  margin-top:25px;
+}
+
 // text margin-top:40px;
 .mt30, %mt30{
   margin-top:30px;
+}
+
+// margin-top:35px;
+.mt35, %mt35{
+  margin-top:35px;
 }
 
 // margin-top:40px;
@@ -788,5 +825,20 @@ em{
 
   &-right{
     float:right;
+  }
+}
+
+//article
+.article{
+  margin-bottom:60px;
+
+  &:last-child{
+    margin-bottom:0;
+  }
+  &-head{
+    margin-bottom:20px;
+    font-family:nanumsq, sans-serif;
+    font-size:1.625rem;
+    font-weight:400;
   }
 }
