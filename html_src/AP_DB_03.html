@@ -5,8 +5,31 @@
     <h2 class="heading-level1">주차요금 계산기</h2>
 
     <div class="article">
-      <table class="table hr" summary="주차요금 안내 표입니다.">
-        <caption>주차요금 안내표</caption>
+      <div class="calculator">
+        <div class="timesetting-date f-left">
+          <input type="text" class="timesetting-date-day f-left" readonly placeholder="2017.08.21(월)">
+          <button class="timesetting-date-calendar ico  f-left">날짜 선택</button>
+          <select class="timesetting-date-option  f-left">
+            <option>시간 선택</option>
+          </select>
+          <select class="timesetting-date-option f-left">
+            <option>분 선택</option>
+          </select>
+        </div>
+        <p class="timesetting-dash f-left"><strong>~</strong></p>
+        <div class="timesetting-date f-right">
+          <input type="text" class="timesetting-date-day f-left" readonly placeholder="2017.08.21(월)">
+          <button class="timesetting-date-calendar ico  f-left">날짜 선택</button>
+          <select class="timesetting-date-option f-left">
+            <option>시간 선택</option>
+          </select>
+          <select class="timesetting-date-option f-left">
+            <option>분 선택</option>
+          </select>
+        </div>
+      </div>
+      <table class="table hr" summary="주차요금 계산 설정 표입니다.">
+        <caption>주차요금 계산 설절 안내표</caption>
         <colgroup>
           <col style="width:20%">
           <col style="width:80%">
@@ -17,8 +40,10 @@
             터미널
           </th>
           <td>
-            외국인 관광객에 대한 부가세 환급대행,<br>
-            외교관 여권소지자 공항이용료 환불대행
+            <input type="radio" name="terminal" id="terminal1" class="parking-option ico" checked="checked">
+            <label for="terminal1" class="parking-option-label">제1 여객 터미널</label>
+            <input type="radio" name="terminal" id="terminal2" class="parking-option ico" >
+            <label for="terminal2" class="parking-option-label">제2 여객 터미널</label>
           </td>
         </tr>
         <tr>
@@ -26,7 +51,10 @@
             분류
           </th>
           <td>
-            07:00 ~ 22:00
+            <input type="radio" name="parking" id="parking1" class="parking-option ico" checked="checked">
+            <label for="parking1" class="parking-option-label">단기주차장</label>
+            <input type="radio" name="parking" id="parking2" class="parking-option ico" >
+            <label for="parking2" class="parking-option-label">장기주차장</label>
           </td>
         </tr>
         <tr>
@@ -34,7 +62,10 @@
             차종
           </th>
           <td>
-            032) 743-7556
+            <input type="radio" name="size" id="small" class="parking-option ico" checked="checked">
+            <label for="small" class="parking-option-label">소형</label>
+            <input type="radio" name="size" id="big" class="parking-option ico">
+            <label for="big" class="parking-option-label">대형</label>
           </td>
         </tr>
         <tr>
@@ -42,15 +73,42 @@
             감면대상
           </th>
           <td>
-            면세지역 4층 26~27 Gate 부근
+            <input type="radio" name="remission" id="remission-no" class="parking-option ico" checked="checked">
+            <label class="parking-option-label">해당사항 없음</label>
+            <input type="radio"name="remission"id="remission-yes" class="parking-option ico">
+            <label class="parking-option-label">국가유공자/장애인/경차/친환경차량</label>
           </td>
         </tr>
         </tbody>
       </table>
-      <div>
-        <a href="#" class="btn-type-normal point ico arrow-point-right">주차요금 계산하기</a>
+      <div class="text-center mt20 to-calculate">
         <button type="button" class="btn-type-normal point ico arrow-point-right">주차요금 계산하기</button>
       </div>
+    </div>
+
+    <div class="article">
+      <table class="table hr" summary="주차요금 계산 결과 표입니다.">
+        <caption>주차요금 계산 결과 안내표</caption>
+        <colgroup>
+          <col style="width:50%">
+          <col style="width:50%">
+        </colgroup>
+        <tbody>
+        <tr>
+          <th class="center parking-fee">
+            <strong>2,251</strong> 원
+          </th>
+          <td>
+            <ul>
+              <li><strong>기간 : </strong> 2017.08.23~2017.08.23</li>
+              <li><strong>터미널 : </strong> 제2터미널</li>
+              <li><strong>분류 : </strong> 단기주차장</li>
+              <li><strong>차종 : </strong> 소형</li>
+              <li><strong>요율 : </strong> 해당사항없음</li>
+            </ul>
+          </td>
+        </tbody>
+      </table>
     </div>
 
   </div>
