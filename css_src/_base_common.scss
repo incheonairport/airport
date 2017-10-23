@@ -32,7 +32,7 @@
     }
 
     &.clip, &.clip-white{
-      padding:40px 0;
+      padding:40px 0 20px;
       &:after, &:before{
         content:'';
         display:block;
@@ -63,6 +63,8 @@
     &.clip-white{
       .contents-sub-head-title-lv3{
         color:#fff;
+        font-size:3.125rem;
+        font-weight: 300;
       }
       &.up{
         color:#fff;
@@ -78,7 +80,7 @@
         color:#fff;
         &:after{
           background:#fff;
-          margin:40px auto 0;
+          margin:28px auto 0;
         }
         &:before{
           display:none;
@@ -314,6 +316,65 @@
     height: 12px;
   }
 
+  &.base-check:after{
+    background-position:-225px -294px;
+    width: 26px;
+    height: 26px;
+  }
+
+  &.arrow-small-up:after{
+    background-position:-437px -102px;
+    width: 10px;
+    height: 6px;
+  }
+
+  &.arrow-small-down:after{
+    background-position:-416px -102px;
+    width: 10px;
+    height: 6px;
+  }
+
+  &.arrow-small-up-w:after{
+    background-position:-460px -67px;
+    width: 10px;
+    height: 6px;
+  }
+
+  &.arrow-small-down-w:after{
+    background-position:-440px -67px;
+    width: 10px;
+    height: 6px;
+  }
+
+  &.base-close:after{
+    background-position:-143px -189px;
+    width: 25px;
+    height: 25px;
+  }
+
+  &.slide-right:after{
+    background-position:-231px -185px;
+    width: 16px;
+    height: 33px;
+  }
+
+  &.slide-left:after{
+    background-position:-193px -185px;
+    width: 16px;
+    height: 33px;
+  }
+
+  &.view-list:after{
+    background-position:-317px -190px;
+    width: 22px;
+    height: 22px;
+  }
+
+  &.view-thumbnail:after{
+    background-position:-359px -188px;
+    width: 22px;
+    height: 22px;
+  }
 }
 
 /* link type select box */
@@ -331,7 +392,7 @@
     padding: 0;
     color: #666;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 0;
     text-align: left;
     text-indent: 10px;
@@ -411,7 +472,7 @@
       height: 100%;
       color: #666;
       font-size: 13px;
-      font-weight: 300;
+      font-weight: 400;
       text-decoration: none;
       &:hover {
         background: #4674c9;
@@ -461,6 +522,10 @@ em{
   }
   &.color-o{
     color:#ffae44;
+  }
+  &.text-georgia{
+    font-style: italic;
+    font-family: 'georgia', sans-serif;
   }
 }
 
@@ -817,6 +882,16 @@ em{
   margin-top:40px;
 }
 
+// margin-top:55px;
+.mt55, %mt55{
+  margin-top:55px;
+}
+
+// margin-top:60px;
+.mt60, %mt60{
+  margin-top:60px;
+}
+
 // float
 .f{
   &-left{
@@ -831,7 +906,6 @@ em{
 //article
 .article{
   margin-bottom:60px;
-
   &:last-child{
     margin-bottom:0;
   }
@@ -842,3 +916,5 @@ em{
     font-weight:400;
   }
 }
+
+

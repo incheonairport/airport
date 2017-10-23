@@ -37,7 +37,7 @@
       &-link{
         color:#222;
         font-size:0.875rem;
-        font-weight:400;
+        font-weight:600;
         text-decoration:none;
         &:hover{
           opacity:.5
@@ -46,11 +46,12 @@
     }
   }
   &-call{
-    font-size:1.125rem;
     margin:28px 0 20px 0;
+    font-size:1.125rem;
+    font-weight:600;
     &-num{
       color:#2c8179;
-      font-weight:400;
+      font-weight:900;
     }
   }
 
@@ -133,6 +134,7 @@
       margin-top:2px;
       &-link{
         font-size:0.875rem;
+        font-weight:600;
         line-height:1.3rem;
         text-decoration:none;
         &:hover{

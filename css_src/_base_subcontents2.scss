@@ -15,7 +15,6 @@
     background:url(../images/img_sub_visual_stepleave.jpg) center no-repeat;
   }
 }
-
 // top 타이틀
 .sub-top{
   min-height:300px;
@@ -47,19 +46,109 @@
   }
   &-btn-group{
     height:auto;
-    margin-top:26px;
+    margin-top:28px;
     & .btn-type-down:first-child{
       margin-right:14px;
     }
   }
+  &-linkbox{
+    display:block;
+    height:122px;
+    background:rgba(0,0,0,.2);
+    border:2px solid rgba(222,227,235,.2);
+    font-size:1.625rem;
+    line-height:122px;
+    &-text{
+      position:relative;
+      &:before{
+        content:'';
+        display:inline-block;
+        background: url(../images/spr_ico_bgset.png) no-repeat -253px -40px;
+        width: 34px;
+        height: 34px;
+        position: relative;
+        top: 8px;
+        margin-right: 10px;
+      }
+    }
+
+    .btn-type-small{
+      vertical-align:middle;
+    }
+  }
+  &.type2{
+    .sub-top-descbox{
+      display:block;
+      padding-top:70px;
+    }
+  }
+  &.type3{
+    height:350px;
+    .sub-top-descbox{
+      display:block;
+      padding-top:70px;
+      .sub-top-descbox-text{
+        .sub-top-descbox-tit{
+          font-size:4.375rem;
+          .text-georgia{
+            font-size:6.125rem;
+          }
+        }
+        .btn-type-infolink{
+          margin-left:8px;
+          vertical-align: super;
+        }
+      }
+    }
+  }
+  &.type4{
+    height:420px;
+    .sub-top-descbox{
+      .sub-top-descbox-text{
+        font-family:roboto, sans-serif;
+        &:after{
+          content:'';
+          display:block;
+          width:2px;
+          height:40px;
+          background:#fff;
+          margin:28px auto;
+        }
+        .sub-top-descbox-tit{
+          font-size:5.625rem;
+          font-weight:900;
+          line-height:1;
+        }
+        .sub-top-descbox-sub{
+          display:block;
+          font-size:1.75rem;
+
+        }
+        .btn-type-infolink{
+          margin-left:8px;
+          vertical-align: super;
+        }
+      }
+
+    }
+  }
+
   &.bg1{
     background:url(../images/img_base_top01.jpg) center no-repeat;
   }
   &.bg2{
     background:url(../images/img_base_top02.jpg) center no-repeat;
   }
+  &.bg3{
+    background:url(../images/img_base_top03.jpg) center no-repeat;
+  }
+  &.bg4{
+    background:url(../images/img_base_top04.jpg) center no-repeat;
+  }
+  &.bg5{
+    background:url(../images/img_base_top05.jpg) center no-repeat;
+  }
 }
-
 // bg 컨텐츠
 .section-bg{
   height:420px;
@@ -99,7 +188,7 @@
       float:left;
       display:table;
       background:rgba(0,0,0,.25);
-      padding:30px;
+      padding:27px;
       margin-left:24px;
       border:2px solid rgba(222,227,235,.5);
       &:first-child{
@@ -174,7 +263,6 @@
     }
   }
 }
-
 // boxmodel
 .boxmodel{
   // boxmodel list style
@@ -191,6 +279,44 @@
       font-size:2.125rem;
       font-weight:400;
       text-align:center;
+
+      &.reverse{
+        &:after{
+          display:none
+        }
+
+        &:before{
+          content:'';
+          display:block;
+          height:79px;
+          margin:18px auto 0 auto;
+          background: url(../images/spr_ico_ac_submain.png) no-repeat;
+        }
+
+        /* 임산부 유아 동반 */
+        &.pregnantwoman:before{
+          background-position:-587px -118px;
+          width:58px;
+        }
+
+        /* 어린이 동반 */
+        &.child:before{
+          background-position:-690px -112px;
+          width:58px;
+        }
+
+        /* 교통약자 동반 */
+        &.traffickingweak:before{
+          background-position:-50px -215px;
+          width:55px;
+        }
+
+        /* 애완동물 동반 */
+        &.pet:before{
+          background-position:-171px -216px;
+          width:56px;
+        }
+      }
 
       &:after{
         content:'';
@@ -274,30 +400,6 @@
       &.certification:after{
         background-position:-459px -117px;
         width:73px;
-      }
-
-      /* 임산부 유아 동반 */
-      &.pregnantwoman:after{
-        background-position:-587px -118px;
-        width:58px;
-      }
-
-      /* 어린이 동반 */
-      &.child:after{
-        background-position:-690px -112px;
-        width:58px;
-      }
-
-      /* 교통약자 동반 */
-      &.traffickingweak:after{
-        background-position:-50px -215px;
-        width:55px;
-      }
-
-      /* 애완동물 동반 */
-      &.pet:after{
-        background-position:-171px -216px;
-        width:56px;
       }
 
       /* 버스 */
@@ -485,6 +587,7 @@
       border-bottom:1px solid #d9d9d9;
       line-height:38px;
       text-indent:20px;
+      font-weight:600;
     }
     & .list2{
       width:100%;
@@ -495,6 +598,7 @@
         width:100%;
         height:100%;
         text-indent:0px;
+        font-weight:600;
         &.ico:after{
           left:auto;
           right:20px;
@@ -516,6 +620,7 @@
     border:1px solid #d9e0ea;
     border-radius:4px;
     font-size:1.125rem;
+    font-weight:600;
     text-indent:20px;
     transition:all .2s;
     &:hover{
@@ -534,27 +639,6 @@
     }
   }
 }
-
-.guide-desc{
-  display:block;
-  color:#666;
-  font-size:1rem;
-  line-height:1.6;
-
-  &.color{
-    color:#d43e41;
-  }
-
-  &.mark{
-    text-indent:-20px;
-    padding-left:20px;
-
-    &:before{
-      content:"※";
-    }
-  }
-}
-
 //button
 .btn-type{
   &-infolink{
@@ -565,7 +649,7 @@
     color:#fff;
     font-size:1.25rem;
     font-weight:400;
-
+    cursor: pointer;
     &:hover{
       border-color:rgba(255,255,255,.4);
       color:#ffae44;
@@ -589,7 +673,7 @@
     line-height:50px;
     border:1px solid #666;
     font-weight:600;
-
+    cursor: pointer;
     &.point{
       background:#42519e;
       border:none;
@@ -606,6 +690,33 @@
       }
     }
   }
+  &-round-under{
+    min-width:198px;
+    height:47px;
+    line-height:47px;
+    padding:0 32px 0 22px;
+    background:none;
+    border:2px solid #d9d9d9;
+    border-radius:50px;
+    color:#fff;
+    font-size:1.125rem;
+    text-align: left;
+    text-indent:0;
+    cursor: pointer;
+    &:hover{
+      border-color:rgba(255,255,255,.4);
+      &:after{
+        opacity:.4;
+      }
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:22px;
+      }
+    }
+  }
   &-small{
     min-width:146px;
     height:30px;
@@ -616,27 +727,31 @@
     border-radius:50px;
     font-size:0.875rem;
     font-weight:400;
-
+    cursor: pointer;
     &.point{
       background:#f2f2f2;
     }
     &.under{
       background:none;
       color:#fff;
-    }
-    &:hover{
-      border-color:rgba(255,255,255,.4);
-      color:#ffae44;
-      &:after{
-        opacity:.4;
+      &:hover{
+        border-color:rgba(255,255,255,.4);
+        color:#ffae44;
+        &:after{
+          opacity:.4;
+        }
       }
     }
+    &.detail{
+      padding:0 58px 0 14px;
+      min-width:110px;
+    }
+
     &.ico{
       text-indent:0;
       &:after{
         left:auto;
         right:14px;
-        transition:all .4s;
       }
     }
   }
@@ -647,9 +762,9 @@
     border:2px solid rgba(242,244,247,.5);
     color:#fff;
     font-size:1.5rem;
-    font-weight:700;
+    font-weight:600;
     line-height:70px;
-
+    cursor: pointer;
     &:hover{
       color:rgba(255,255,255,.4);
       color:#ffae44;
@@ -661,12 +776,31 @@
       text-indent:0;
       &:after{
         left:auto;
-        right:20px;
+        right:16px;
       }
     }
   }
 }
 
-.clearfix{
-  @extend %clearfix;
+.guide-desc{
+  display:block;
+  color:#666;
+  font-size:1rem;
+  line-height:1.6;
+
+  &.color{
+    color:#d43e41;
+  }
+
+  &.mark{
+    text-indent:-20px;
+    padding-left:20px;
+
+    &:before{
+      content:"※";
+    }
+  }
+}
+.footer-graft{
+  margin-bottom:-120px;
 }
