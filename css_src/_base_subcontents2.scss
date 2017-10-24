@@ -1,7 +1,5 @@
 // top 지도영역
 .rough-map{
-  background:url(../images/img_sub_visual_stepleave.jpg) center no-repeat;
-  position:relative;
   min-height:420px;
   height:420px;
   background-size: cover;
@@ -13,8 +11,10 @@
     font-weight:300;
     line-height:1.1;
   }
+  &.arrival{
+    background:url(/static/images/img_sub_visual_stepleave.jpg) center no-repeat;
+  }
 }
-
 // top 타이틀
 .sub-top{
   min-height:300px;
@@ -46,23 +46,113 @@
   }
   &-btn-group{
     height:auto;
-    margin-top:26px;
+    margin-top:28px;
     & .btn-type-down:first-child{
       margin-right:14px;
     }
   }
+  &-linkbox{
+    display:block;
+    height:122px;
+    background:rgba(0,0,0,.2);
+    border:2px solid rgba(222,227,235,.2);
+    font-size:1.625rem;
+    line-height:122px;
+    &-text{
+      position:relative;
+      &:before{
+        content:'';
+        display:inline-block;
+        background: url(/static/images/spr_ico_bgset.png) no-repeat -253px -40px;
+        width: 34px;
+        height: 34px;
+        position: relative;
+        top: 8px;
+        margin-right: 10px;
+      }
+    }
+
+    .btn-type-small{
+      vertical-align:middle;
+    }
+  }
+  &.type2{
+    .sub-top-descbox{
+      display:block;
+      padding-top:70px;
+    }
+  }
+  &.type3{
+    height:350px;
+    .sub-top-descbox{
+      display:block;
+      padding-top:70px;
+      .sub-top-descbox-text{
+        .sub-top-descbox-tit{
+          font-size:4.375rem;
+          .text-georgia{
+            font-size:6.125rem;
+          }
+        }
+        .btn-type-infolink{
+          margin-left:8px;
+          vertical-align: super;
+        }
+      }
+    }
+  }
+  &.type4{
+    height:420px;
+    .sub-top-descbox{
+      .sub-top-descbox-text{
+        font-family:roboto, sans-serif;
+        &:after{
+          content:'';
+          display:block;
+          width:2px;
+          height:40px;
+          background:#fff;
+          margin:28px auto;
+        }
+        .sub-top-descbox-tit{
+          font-size:5.625rem;
+          font-weight:900;
+          line-height:1;
+        }
+        .sub-top-descbox-sub{
+          display:block;
+          font-size:1.75rem;
+
+        }
+        .btn-type-infolink{
+          margin-left:8px;
+          vertical-align: super;
+        }
+      }
+
+    }
+  }
+
   &.bg1{
-    background:url(../images/img_base_top01.jpg) center no-repeat;
+    background:url(/static/images/img_base_top01.jpg) center no-repeat;
   }
   &.bg2{
-    background:url(../images/img_base_top02.jpg) center no-repeat;
+    background:url(/static/images/img_base_top02.jpg) center no-repeat;
+  }
+  &.bg3{
+    background:url(/static/images/img_base_top03.jpg) center no-repeat;
+  }
+  &.bg4{
+    background:url(/static/images/img_base_top04.jpg) center no-repeat;
+  }
+  &.bg5{
+    background:url(/static/images/img_base_top05.jpg) center no-repeat;
   }
 }
-
 // bg 컨텐츠
 .section-bg{
   height:420px;
-  background:url(../images/bg_section01.jpg) center no-repeat;
+  background:url(/static/images/bg_section01.jpg) center no-repeat;
   &-inner{
     @extend %clearfix;
     display:table;
@@ -89,11 +179,16 @@
         width:calc(25% - 18px);
       }
     }
+    &.col-5{
+      .section-bg-list-item{
+        width:calc(20% - 19px);
+      }
+    }
     &-item{
       float:left;
       display:table;
       background:rgba(0,0,0,.25);
-      padding:30px;
+      padding:27px;
       margin-left:24px;
       border:2px solid rgba(222,227,235,.5);
       &:first-child{
@@ -117,10 +212,11 @@
     }
   }
   &.tour-info{
-    background:url(../images/bg_tourinfo.jpg);
+    background:url(/static/images/bg_tourinfo.jpg);
     height:510px;
   }
   &-head{
+    display:block;
     font-family: nanumsq, sans-serif;
     color:#fff;
     font-size:2.875rem;
@@ -143,10 +239,11 @@
       text-align:left;
     }
   }
-  &-list{
+  &-sublist{
     color:#fff;
     &-tit{
       font-size:1.375rem;
+      font-weight:700;
       margin-top:20px;
     }
     &-desc{
@@ -154,11 +251,18 @@
       line-height:1.5;
     }
   }
-  & .btn-type-infolink{
+  .btn-type-infolink{
     margin-bottom:30px;
   }
+  .contents-sub-head{
+    padding:0!important;
+    .clip-white{
+      &:after{
+        margin:20px auto 0;
+      }
+    }
+  }
 }
-
 // boxmodel
 .boxmodel{
   // boxmodel list style
@@ -176,12 +280,50 @@
       font-weight:400;
       text-align:center;
 
+      &.reverse{
+        &:after{
+          display:none
+        }
+
+        &:before{
+          content:'';
+          display:block;
+          height:79px;
+          margin:18px auto 0 auto;
+          background: url(/static/images/spr_ico_ac_submain.png) no-repeat;
+        }
+
+        /* 임산부 유아 동반 */
+        &.pregnantwoman:before{
+          background-position:-587px -118px;
+          width:58px;
+        }
+
+        /* 어린이 동반 */
+        &.child:before{
+          background-position:-690px -112px;
+          width:58px;
+        }
+
+        /* 교통약자 동반 */
+        &.traffickingweak:before{
+          background-position:-50px -215px;
+          width:55px;
+        }
+
+        /* 애완동물 동반 */
+        &.pet:before{
+          background-position:-171px -216px;
+          width:56px;
+        }
+      }
+
       &:after{
         content:'';
         display:block;
         height:79px;
         margin:18px auto 0 auto;
-        background: url(../images/spr_ico_ac_submain.png) no-repeat;
+        background: url(/static/images/spr_ico_ac_submain.png) no-repeat;
       }
 
       &.noicon:after{
@@ -260,30 +402,6 @@
         width:73px;
       }
 
-      /* 임산부 유아 동반 */
-      &.pregnantwoman:after{
-        background-position:-587px -118px;
-        width:58px;
-      }
-
-      /* 어린이 동반 */
-      &.child:after{
-        background-position:-690px -112px;
-        width:58px;
-      }
-
-      /* 교통약자 동반 */
-      &.traffickingweak:after{
-        background-position:-50px -215px;
-        width:55px;
-      }
-
-      /* 애완동물 동반 */
-      &.pet:after{
-        background-position:-171px -216px;
-        width:56px;
-      }
-
       /* 버스 */
       &.bus:after{
         background-position:-270px -217px;
@@ -360,10 +478,10 @@
     &-item.img{
       border:none;
       &.leave{
-        background:url(../images/img_step_leave.jpg);
+        background:url(/static/images/img_step_leave.jpg);
       }
       &.entry{
-        background:url(../images/img_step_entry.jpg);
+        background:url(/static/images/img_step_entry.jpg);
       }
       .boxmodel-list-head{
         color:#fff;
@@ -402,7 +520,7 @@
     &-item.list-end{
       width:66.66%;
       color:#b7c0ce;
-      font-size:2.875em;
+      font-size:2.225rem;
       text-align:center;
       position:relative;
       .list-end-content{
@@ -469,6 +587,7 @@
       border-bottom:1px solid #d9d9d9;
       line-height:38px;
       text-indent:20px;
+      font-weight:600;
     }
     & .list2{
       width:100%;
@@ -479,6 +598,7 @@
         width:100%;
         height:100%;
         text-indent:0px;
+        font-weight:600;
         &.ico:after{
           left:auto;
           right:20px;
@@ -500,6 +620,7 @@
     border:1px solid #d9e0ea;
     border-radius:4px;
     font-size:1.125rem;
+    font-weight:600;
     text-indent:20px;
     transition:all .2s;
     &:hover{
@@ -515,6 +636,148 @@
       font-size:1rem;
       vertical-align:1px;
 
+    }
+  }
+}
+//button
+.btn-type{
+  &-infolink{
+    height:50px;
+    padding:0 60px 0 20px;
+    line-height:50px;
+    border:2px solid #fff;
+    color:#fff;
+    font-size:1.25rem;
+    font-weight:400;
+    cursor: pointer;
+    &:hover{
+      border-color:rgba(255,255,255,.4);
+      color:#ffae44;
+      &:after{
+        opacity:.4;
+      }
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:18px;
+      }
+    }
+  }
+  &-normal{
+    min-width:192px;
+    height:50px;
+    background:#fff;
+    padding:0 45px 0 20px;
+    line-height:50px;
+    border:1px solid #666;
+    font-weight:600;
+    cursor: pointer;
+    &.point{
+      background:#42519e;
+      border:none;
+      color:#fff;
+    }
+    &:hover{
+
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:18px;
+      }
+    }
+  }
+  &-round-under{
+    min-width:198px;
+    height:47px;
+    line-height:47px;
+    padding:0 32px 0 22px;
+    background:none;
+    border:2px solid #d9d9d9;
+    border-radius:50px;
+    color:#fff;
+    font-size:1.125rem;
+    text-align: left;
+    text-indent:0;
+    cursor: pointer;
+    &:hover{
+      border-color:rgba(255,255,255,.4);
+      &:after{
+        opacity:.4;
+      }
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:22px;
+      }
+    }
+  }
+  &-small{
+    min-width:146px;
+    height:30px;
+    background:#fff;
+    padding:0 32px 0 12px;
+    line-height:30px;
+    border:1px solid #d9d9d9;
+    border-radius:50px;
+    font-size:0.875rem;
+    font-weight:400;
+    cursor: pointer;
+    &.point{
+      background:#f2f2f2;
+    }
+    &.under{
+      background:none;
+      color:#fff;
+      &:hover{
+        border-color:rgba(255,255,255,.4);
+        color:#ffae44;
+        &:after{
+          opacity:.4;
+        }
+      }
+    }
+    &.detail{
+      padding:0 58px 0 14px;
+      min-width:110px;
+    }
+
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:14px;
+      }
+    }
+  }
+  &-down{
+    height:70px;
+    padding:0 96px 0 20px;
+    background:rgba(0,0,0,.2);
+    border:2px solid rgba(242,244,247,.5);
+    color:#fff;
+    font-size:1.5rem;
+    font-weight:600;
+    line-height:70px;
+    cursor: pointer;
+    &:hover{
+      color:rgba(255,255,255,.4);
+      color:#ffae44;
+      &:after{
+        opacity:.5;
+      }
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:16px;
+      }
     }
   }
 }
@@ -538,120 +801,6 @@
     }
   }
 }
-
-//button
-.btn-type{
-  &-infolink{
-    height:50px;
-    padding:0 60px 0 20px;
-    line-height:50px;
-    border:2px solid #fff;
-    color:#fff;
-    font-size:1.25rem;
-    font-weight:400;
-
-    &:hover{
-      border-color:rgba(255,255,255,.4);
-      color:#ffae44;
-      &:after{
-        right:14px!important;
-        opacity:.4;
-      }
-    }
-    &.ico{
-      text-indent:0;
-      &:after{
-        left:auto;
-        right:18px;
-        transition:all .4s;
-      }
-    }
-  }
-  &-normal{
-    min-width:192px;
-    height:50px;
-    background:#fff;
-    padding:0 45px 0 20px;
-    line-height:50px;
-    border:1px solid #666;
-    font-weight:600;
-
-    &.point{
-      background:#42519e;
-      border:none;
-      color:#fff;
-    }
-    &:hover{
-
-    }
-    &.ico{
-      text-indent:0;
-      &:after{
-        left:auto;
-        right:18px;
-      }
-    }
-  }
-  &-small{
-    min-width:146px;
-    height:30px;
-    background:#fff;
-    padding:0 32px 0 12px;
-    line-height:30px;
-    border:1px solid #d9d9d9;
-    border-radius:50px;
-    font-size:0.875rem;
-    font-weight:400;
-
-    &.point{
-      background:#f2f2f2;
-    }
-    &.under{
-      background:none;
-      color:#fff;
-    }
-    &:hover{
-      border-color:rgba(255,255,255,.4);
-      color:#ffae44;
-      &:after{
-        right:10px!important;
-        opacity:.4;
-      }
-    }
-    &.ico{
-      text-indent:0;
-      &:after{
-        left:auto;
-        right:14px;
-        transition:all .4s;
-      }
-    }
-  }
-  &-down{
-    height:70px;
-    padding:0 96px 0 20px;
-    background:rgba(0,0,0,.2);
-    border:2px solid rgba(242,244,247,.5);
-    color:#fff;
-    font-size:1.5rem;
-    font-weight:700;
-    line-height:70px;
-
-    &:hover{
-      color:rgba(255,255,255,.4);
-      color:#ffae44;
-      &:after{
-        top:10px;
-        opacity:.5;
-      }
-    }
-    &.ico{
-      text-indent:0;
-      &:after{
-        left:auto;
-        right:20px;
-        transition:all .4s;
-      }
-    }
-  }
+.footer-graft{
+  margin-bottom:-120px;
 }
