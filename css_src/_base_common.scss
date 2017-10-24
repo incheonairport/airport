@@ -110,7 +110,7 @@
     left:0;
     bottom:0;
     margin:auto;
-    background: url(../images/spr_ico_global.png) no-repeat;
+    background: url(/static/images/spr_ico_global.png) no-repeat;
   }
 
   &.ig:after{
@@ -664,7 +664,7 @@ em{
           &:after{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -45px -52px;
+            background:url(/static/images/spr_ico_crud.png) no-repeat -45px -52px;
             width: 13px;
             height: 17px;
             margin-left:14px;
@@ -676,7 +676,7 @@ em{
           &:before{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -52px -89px;
+            background:url(/static/images/spr_ico_crud.png) no-repeat -52px -89px;
             width: 24px;
             height: 24px;
             margin-right:12px;
@@ -688,7 +688,7 @@ em{
           &:before{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -16px -89px;
+            background:url(/static/images/spr_ico_crud.png) no-repeat -16px -89px;
             width: 24px;
             height: 24px;
             margin-right:12px;

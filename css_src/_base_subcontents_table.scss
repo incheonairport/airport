@@ -99,7 +99,7 @@
         border: 0;
         background: #fff;
         text-indent:-999em ;
-        background: url(../images/ico_mobile_sms.png ) 50% no-repeat;
+        background: url(/static/images/ico_mobile_sms.png ) 50% no-repeat;
       }
       &.share-close{
         padding: 0;
@@ -221,7 +221,7 @@
 
   &-detail{
     height: 186px;
-    background: url(../images/img_flight_info_detail_bg.jpg) no-repeat;
+    background: url(/static/images/img_flight_info_detail_bg.jpg) no-repeat;
     &-heading{
       @extend %clearfix;
       &-title{
@@ -255,7 +255,7 @@
       @extend %clearfix;
       text-align: center;
       padding-top: 30px;
-      background:url(../images/ico_airplane_arrow_departure.png) 50% 40px no-repeat;
+      background:url(/static/images/ico_airplane_arrow_departure.png) 50% 40px no-repeat;
       .flight-info-detail{
         &-country{
           color: #ffae44;
@@ -268,7 +268,7 @@
         }
       }
       &.arrival{
-        background:url(../images/ico_airplane_arrow_arrival.png) 50% 40px no-repeat;
+        background:url(/static/images/ico_airplane_arrow_arrival.png) 50% 40px no-repeat;
       }
     }
 
@@ -425,7 +425,7 @@
     left: 0;
     bottom: 0;
     margin: auto;
-    background: url(../images/spr_ico_sns.png) no-repeat;
+    background: url(/static/images/spr_ico_sns.png) no-repeat;
   }
 
   &.telegram:after {
