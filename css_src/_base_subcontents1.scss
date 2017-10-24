@@ -468,7 +468,7 @@
   &-radio {
     width: 27px;
     height:27px;
-    margin-right: 0.5rem;
+    margin-right: 5px;
     vertical-align: text-bottom;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -476,8 +476,11 @@
     -o-appearance: none;
     appearance: none;
     cursor: pointer;
-    display: inline-block;
-    outline: none;
+    &.ico.agree-radio:after{
+      background-position:-35px -293px;
+      width: 27px;
+      height: 27px;
+    }
     &:checked {
       &.ico.agree-radio:after {
         background-position:-82px -293px;
@@ -495,12 +498,6 @@
       }
     }
   }
-}
-
-.ico.agree-radio:after {
-  background-position:-35px -293px;
-  width: 27px;
-  height: 27px;
 }
 
 .enter{
