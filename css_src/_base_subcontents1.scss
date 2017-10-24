@@ -69,17 +69,17 @@
   }
 
   &.departure{
-    background:url(../images/img_sub_visual_departure.jpg) center no-repeat;
+    background:url(/static/images/img_sub_visual_departure.jpg) center no-repeat;
 
   }
   &.search-airline{
-    background:url(../images/img_sub_visual_airline.jpg) center no-repeat;
+    background:url(/static/images/img_sub_visual_airline.jpg) center no-repeat;
     padding-top: 53px;
   }
 
   &.facilities{
     padding-top: 53px;
-    background:url(../images/img_base_top06.jpg) center no-repeat;
+    background:url(/static/images/img_base_top06.jpg) center no-repeat;
   }
 }
 
@@ -426,7 +426,7 @@
     display: block;
     width: 31px;
     height: 31px;
-    background:url(../images/ico_layer_close.png ) center no-repeat;
+    background:url(/static/images/ico_layer_close.png ) center no-repeat;
     text-indent: -99999em;
     position:relative;
     top: -56px;
