@@ -1,0 +1,35 @@
+.radio-type1{
+  text-align: center;
+  .radio-wrap{
+    display: inline-block;
+    &.ico{
+      text-indent: 0;
+      &.ico:after{
+        background-position:-35px -293px;
+        width: 27px;
+        height: 27px;
+        left:0;
+        right:auto;
+      }
+    }
+  }
+  &-label{
+    &.ico {
+      text-indent: 0;
+      &.ico:after{
+        background-position:-35px -293px;
+        width: 27px;
+        height: 27px;
+        left:0;
+        right:auto;
+      }
+    }
+  }
+  input[type="radio"]:checked {
+    &.ico.radio-type1-label:after {
+      background-position:-82px -293px;
+      width: 27px;
+      height: 27px;
+    }
+  }
+}
