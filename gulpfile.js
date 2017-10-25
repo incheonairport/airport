@@ -61,7 +61,7 @@ gulp.task('build:sass:dev', function(){
       .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest('static/css/'));
+      .pipe(gulp.dest('../static/css/'));
 });
 
 // build js compress

@@ -473,46 +473,6 @@
   }
 }
 
-.agree{
-  text-align: center;
-  &-radio {
-    width: 27px;
-    height:27px;
-    margin-right: 0.5rem;
-    vertical-align: text-bottom;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    display: inline-block;
-    outline: none;
-    &:checked {
-      &.ico.agree-radio:after {
-        background-position:-82px -293px;
-        width: 27px;
-        height: 27px;
-      }
-    }
-
-    &-label{
-      cursor: pointer;
-      position:relative;
-      top:-5px;
-      &+.agree-radio{
-        margin-left:40px;
-      }
-    }
-  }
-}
-
-.ico.agree-radio:after {
-  background-position:-35px -293px;
-  width: 27px;
-  height: 27px;
-}
-
 .enter{
   width: 100%;
   padding: 20px 0 30px;
