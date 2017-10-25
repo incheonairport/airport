@@ -846,19 +846,6 @@ button{
   cursor:pointer
 }
 
-// 체크박스/라디오 기본속성제거
-input[type="checkbox"],input[type="radio"]{
-  vertical-align: text-bottom;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-}
-
 // 버튼+인풋 영역 스타일 및 너비값제어
 .responsive-form-box{
   position:relative;
