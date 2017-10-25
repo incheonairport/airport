@@ -28,7 +28,7 @@
   display:block;
   width:31px;
   height:31px;
-  background:url(/static/images/ico_back_to_home.png) no-repeat;
+  background:url(/static/ap/images/ico_back_to_home.png) no-repeat;
   text-indent:-99999em;
   position:absolute;
   top:50px;
@@ -157,7 +157,7 @@
           &:after{
             content:"";
             display:inline-block;
-            background:url(/static/images/spr_ico_crud.png) no-repeat -45px -52px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -45px -52px;
             width: 13px;
             height: 17px;
             margin-left:14px;
@@ -169,7 +169,7 @@
           &:before{
             content:"";
             display:inline-block;
-            background:url(/static/images/spr_ico_crud.png) no-repeat -52px -89px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -52px -89px;
             width: 24px;
             height: 24px;
             margin-right:12px;
@@ -181,7 +181,7 @@
           &:before{
             content:"";
             display:inline-block;
-            background:url(/static/images/spr_ico_crud.png) no-repeat -16px -89px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -16px -89px;
             width: 24px;
             height: 24px;
             margin-right:12px;
@@ -411,7 +411,7 @@
       content:"";
       display:block;
       height:116px;
-      background:url(/static/images/spr_ico_stuff.png) no-repeat;
+      background:url(/static/ap/images/spr_ico_stuff.png) no-repeat;
       position:absolute;
       top:40px;
       left:40px;
@@ -460,7 +460,7 @@
     width:15px;
     height:15px;
     margin-left:8px;
-    background:url(/static/images/spr_ico_ox.png) no-repeat;
+    background:url(/static/ap/images/spr_ico_ox.png) no-repeat;
     position:relative;
     top:7px;
     text-indent:-99999em;
@@ -489,7 +489,7 @@
     left:0;
     bottom:0;
     margin:auto;
-    background: url(/static/images/spr_ico_global.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_global.png) no-repeat;
   }
 
   &.arrow-normal-right:after{
@@ -881,7 +881,7 @@ em{
     top: 0;
     left: 0;
     margin: auto;
-    background: url(/static/images/spr_ico_text.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_text.png) no-repeat;
   }
 
   &.icon {
@@ -958,7 +958,7 @@ em{
   //width: 1152px;
   height: 240px;
   text-align: center;
-  background: url(/static/images/img_sub_layer_banner_bg_01.jpg) no-repeat;
+  background: url(/static/ap/images/img_sub_layer_banner_bg_01.jpg) no-repeat;
   position:relative;
 
   &-title{
@@ -988,19 +988,19 @@ em{
   }
 
   &.bg2{
-    background:url(/static/images/img_sub_layer_banner_bg_00.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_00.jpg) no-repeat;
   }
 
   &.bg3{
-    background:url(/static/images/img_sub_layer_banner_bg_02.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_02.jpg) no-repeat;
   }
 
   &.bg4{
-    background:url(/static/images/img_sub_layer_banner_bg_03.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_03.jpg) no-repeat;
   }
 
   &.bg5{
-    background:url(/static/images/img_sub_layer_banner_bg_04.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_04.jpg) no-repeat;
   }
 
 }
@@ -1534,7 +1534,7 @@ b.text-bold{
     left:0;
     bottom:0;
     margin:auto;
-    background: url(/static/images/spr_ico_crud.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_crud.png) no-repeat;
   }
 
   &.file-hwp:after{

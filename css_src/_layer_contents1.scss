@@ -3,7 +3,7 @@
 .customs_inspection{
     height:400px;
     text-indent:-999em;
-    background:#333649 url(/static/images/digr_customs_inspection_procedure.png) no-repeat;
+    background:#333649 url(/static/ap/images/digr_customs_inspection_procedure.png) no-repeat;
 }
 
 
@@ -11,14 +11,14 @@
 .digr_airport_railroad{
   height:274px;
   text-indent:-999em;
-  background: url(/static/images/digr_airport_railroad.png) no-repeat;
+  background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
 }
 
 /*KTX 노선도*/
 .digr_ktx_route{
   height:274px;
   text-indent:-999em;
-  background: url(/static/images/digr_ktx_route.png) no-repeat;
+  background: url(/static/ap/images/digr_ktx_route.png) no-repeat;
 }
 
 
@@ -26,12 +26,12 @@
 /*자기부상열차*/
 .maglev-train{
   height:240px;
-  background:url(/static/images/img_maglev_train.jpg) no-repeat;
+  background:url(/static/ap/images/img_maglev_train.jpg) no-repeat;
 }
 /*자기부상열차견학*/
 .maglev-train-tour{
   height:240px;
-  background:url(/static/images/img_maglev_train_tour.jpg) no-repeat;
+  background:url(/static/ap/images/img_maglev_train_tour.jpg) no-repeat;
 }
 
 // 기존 버튼 디자인
@@ -48,7 +48,7 @@
     left: 0;
     bottom: 0;
     margin: auto;
-    background: url(/static/images/spr_ico_global.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_global.png) no-repeat;
   }
   &.update-refresh:after{
     background-position:-31px -98px;
@@ -104,7 +104,7 @@
 
 /*버스검색*/
 .bussearch{
-  background:url(/static/images/img_layer_search_bg.jpg) no-repeat;
+  background:url(/static/ap/images/img_layer_search_bg.jpg) no-repeat;
   padding: 58px 144px;
   &-title{
     color: #fff;
@@ -564,7 +564,7 @@
 .departure-step{
   height: 240px;
   padding-top: 30px;
-  background: url(/static/images/bg_departure_step.jpg) no-repeat;
+  background: url(/static/ap/images/bg_departure_step.jpg) no-repeat;
   @extend %clearfix;
   &-list{
     margin: 0 auto;
@@ -584,7 +584,7 @@
           left: 0;
           bottom: 0;
           margin: auto;
-          background: url(/static/images/spr_ico_check_in.png) no-repeat;
+          background: url(/static/ap/images/spr_ico_check_in.png) no-repeat;
         }
         &.step-1:after{
           background-position: -16px -16px;
@@ -611,7 +611,7 @@
           left: 0;
           bottom: 0;
           margin: auto;
-          background: url(/static/images/spr_ico_self_bag_drop.png) no-repeat;
+          background: url(/static/ap/images/spr_ico_self_bag_drop.png) no-repeat;
         }
         &.step-1:after{
           background-position: -16px -16px;
@@ -644,7 +644,7 @@
           left: 0;
           bottom: 0;
           margin: auto;
-          background: url(/static/images/spr_ico_quarantine.png) no-repeat;
+          background: url(/static/ap/images/spr_ico_quarantine.png) no-repeat;
         }
         &.step-1:after{
           background-position: -16px -16px;

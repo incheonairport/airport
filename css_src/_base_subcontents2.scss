@@ -12,7 +12,7 @@
     line-height:1.1;
   }
   &.arrival{
-    background:url(/static/images/img_sub_visual_stepleave.jpg) center no-repeat;
+    background:url(/static/ap/images/img_sub_visual_stepleave.jpg) center no-repeat;
   }
 }
 // top 타이틀
@@ -63,7 +63,7 @@
       &:before{
         content:'';
         display:inline-block;
-        background: url(/static/images/spr_ico_bgset.png) no-repeat -253px -40px;
+        background: url(/static/ap/images/spr_ico_bgset.png) no-repeat -253px -40px;
         width: 34px;
         height: 34px;
         position: relative;
@@ -134,25 +134,25 @@
   }
 
   &.bg1{
-    background:url(/static/images/img_base_top01.jpg) center no-repeat;
+    background:url(/static/ap/images/img_base_top01.jpg) center no-repeat;
   }
   &.bg2{
-    background:url(/static/images/img_base_top02.jpg) center no-repeat;
+    background:url(/static/ap/images/img_base_top02.jpg) center no-repeat;
   }
   &.bg3{
-    background:url(/static/images/img_base_top03.jpg) center no-repeat;
+    background:url(/static/ap/images/img_base_top03.jpg) center no-repeat;
   }
   &.bg4{
-    background:url(/static/images/img_base_top04.jpg) center no-repeat;
+    background:url(/static/ap/images/img_base_top04.jpg) center no-repeat;
   }
   &.bg5{
-    background:url(/static/images/img_base_top05.jpg) center no-repeat;
+    background:url(/static/ap/images/img_base_top05.jpg) center no-repeat;
   }
 }
 // bg 컨텐츠
 .section-bg{
   height:420px;
-  background:url(/static/images/bg_section01.jpg) center no-repeat;
+  background:url(/static/ap/images/bg_section01.jpg) center no-repeat;
   &-inner{
     @extend %clearfix;
     display:table;
@@ -212,7 +212,7 @@
     }
   }
   &.tour-info{
-    background:url(/static/images/bg_tourinfo.jpg);
+    background:url(/static/ap/images/bg_tourinfo.jpg);
     height:510px;
   }
   &-head{
@@ -290,7 +290,7 @@
           display:block;
           height:79px;
           margin:18px auto 0 auto;
-          background: url(/static/images/spr_ico_ac_submain.png) no-repeat;
+          background: url(/static/ap/images/spr_ico_ac_submain.png) no-repeat;
         }
 
         /* 임산부 유아 동반 */
@@ -323,7 +323,7 @@
         display:block;
         height:79px;
         margin:18px auto 0 auto;
-        background: url(/static/images/spr_ico_ac_submain.png) no-repeat;
+        background: url(/static/ap/images/spr_ico_ac_submain.png) no-repeat;
       }
 
       &.noicon:after{
@@ -478,10 +478,10 @@
     &-item.img{
       border:none;
       &.leave{
-        background:url(/static/images/img_step_leave.jpg);
+        background:url(/static/ap/images/img_step_leave.jpg);
       }
       &.entry{
-        background:url(/static/images/img_step_entry.jpg);
+        background:url(/static/ap/images/img_step_entry.jpg);
       }
       .boxmodel-list-head{
         color:#fff;

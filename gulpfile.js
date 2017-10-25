@@ -61,7 +61,7 @@ gulp.task('build:sass:dev', function(){
       .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest('../static/css/'));
+      .pipe(gulp.dest('../static/ap/css/'));
 });
 
 // build js compress
@@ -73,7 +73,7 @@ gulp.task('build:jsCompress', function(){
           min : '.min.js'
         }
       }))
-      .pipe(gulp.dest('static/js'));
+      .pipe(gulp.dest('../static/ap/js'));
 });
 
 /**
@@ -88,7 +88,7 @@ gulp.task('seperate:build:fileListJson', function() {
 // copy js library file
 gulp.task('seperate:copy:jsLib', function() {
   return gulp.src('js_src/lib/*.*')
-      .pipe(gulp.dest('static/js/lib/'));
+      .pipe(gulp.dest('../static/ap/js/lib/'));
 });
 
 // copy file list json
@@ -104,38 +104,38 @@ gulp.task('seperate:copy:fileListJson', function(){
 // release site html
 gulp.task('release:html', function(){
   return gulp.src('html/*.*')
-      .pipe(gulp.dest('release/html/'));
+      .pipe(gulp.dest('../release/ap/html/'));
 });
 
 // release guide html
 gulp.task('release:guide', function(){
   return gulp.src('guide/*.*')
-      .pipe(gulp.dest('release/guide/'));
+      .pipe(gulp.dest('../release/ap/guide/'));
 });
 
 // release sass
 gulp.task('release:sass', function(){
   return gulp.src('css_src/*.scss')
       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-      .pipe(gulp.dest('release/static/css/'));
+      .pipe(gulp.dest('../release/static/ap/css/'));
 });
 
 // release js
 gulp.task('release:js', function(){
-  return gulp.src('js/**')
-      .pipe(gulp.dest('release/static/js/'));
+  return gulp.src('../static/ap/js/**')
+      .pipe(gulp.dest('../release/static/ap/js/'));
 });
 
 // release images
 gulp.task('release:images', function(){
-  return gulp.src('images/*.*')
-      .pipe(gulp.dest('release/static/images/'));
+  return gulp.src('../static/ap/images/*.*')
+      .pipe(gulp.dest('../release/static/ap/images/'));
 });
 
 // release fonts
 gulp.task('release:fonts', function(){
-  return gulp.src('fonts/**')
-      .pipe(gulp.dest('release/static/fonts/'));
+  return gulp.src('../static/ap/fonts/**')
+      .pipe(gulp.dest('../release/static/ap/fonts/'));
 });
 
 
