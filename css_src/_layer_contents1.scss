@@ -105,7 +105,7 @@
 /*버스검색*/
 .bussearch{
   background:url(/static/ap/images/img_layer_search_bg.jpg) no-repeat;
-  padding: 58px 144px;
+  padding: 58px 141px;
   &-title{
     color: #fff;
     font-size: 1.5rem;
@@ -204,6 +204,7 @@
 
     &-item {
       width: 12.5%;
+      height: 30px;
       float: left;
       border-right: 1px solid #d9d9d9;
       text-align: center;
