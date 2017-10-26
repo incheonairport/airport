@@ -8,21 +8,103 @@
   &-iconlist{
     @extend %clearfix;
 
+
     &-item{
       float: left;
-      border-left: 1px solid rgba(217,217,217,0.4);
+      //border-left: 1px solid rgba(217,217,217,0.4);
       text-align: center;
+      margin:0 41px 0 41px;
+      position: relative;
+
+      &:after{
+        //float: right;
+        //margin-left: 41px;
+        position: absolute;
+        top: 0;
+        right: -41px;
+        content: '';
+        display: block;
+        width: 1px;
+        height: 106px;
+        background: rgba(217,217,217,0.4);
+      }
 
       &:first-child{
-        border-left: 0;
+        //border-left: 0;
+        margin-left: 0;
+      }
+
+      &:last-child{
+        margin-right: 0;
+
+        &:after{
+          display: none;
+        }
       }
     }
 
 
     &-link{
+      display: inline-block;
+      width: 93px;
+      height: 106px;
       font-family: spoqa, sans-serif;
       font-size: 1rem;
       font-weight: 300;
+      position: relative;
+
+      &:before{
+        content: '';
+        display: block;
+        margin: 0 auto 20px;
+        background: url("/static/ap/images/spr_ico_sub_tab.png")no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      &.question:before{
+        background-position: 0 0;
+        width: 51px;
+        height: 52px;
+      }
+
+      &.appraisal:before{
+        background-position: -10px 0;
+        width: 51px;
+        height: 52px;
+      }
+
+      &.suggestion:before{
+        background-position: 0 0;
+        width: 51px;
+        height: 52px;
+      }
+
+      &.phone:before{
+        background-position: 0 0;
+        width: 51px;
+        height: 52px;
+      }
+
+      &.lostproperty:before{
+        background-position: 0 0;
+        width: 51px;
+        height: 52px;
+      }
+
+      &.anadvisorypanel:before{
+        background-position: 0 0;
+        width: 51px;
+        height: 52px;
+      }
+
+      &.damagerelief:before{
+        background-position: 0 0;
+        width: 51px;
+        height: 52px;
+      }
 
     }
 
