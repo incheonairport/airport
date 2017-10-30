@@ -10,7 +10,8 @@ $(function(){
 
   var $record = $('.file-list tbody tr');
 
-  var count = new Array(11).fill(0);
+  var count = new Array(12).fill(0);
+  var pageCount = 1;
 
   // each data split filename and ext
   function splitData(data){
@@ -35,7 +36,15 @@ $(function(){
 
     } else {
 
-      childrenText = childrenText ? childrenText + '-' : childrenText;
+      if( $children.eq(7).text().indexOf('*') >= 0){
+
+        childrenText = 'extra-';
+
+      } else {
+
+        childrenText = childrenText ? childrenText + '-' : childrenText;
+
+      }
 
       $record.addClass(childrenText + 'category');
 
@@ -50,23 +59,33 @@ $(function(){
 
       for(var j=0; j<item.length; j++){
 
-        if( $record.children('td:last-child').text() == item[j] ){
+        if( $record.children('td:nth-child(8)').text() == item[j] ) {
 
+          $record.prepend('<td>'+ pageCount +'</td>');
           $record.addClass('done').append('<td class="center"><a href="../html/' + item[j] + '.html" class="list-link" target="blank"> DONE </a></td>');
           itemFlag[j] = true;
+          pageCount++;
+          break;
+
+        } else if( $record.children('td:nth-child(8)').text().indexOf('*') >= 0 ){
+
+          $record.prepend('<td></td>');
+          $record.append('<td></td>');
           break;
 
         } else {
 
           if( j == item.length-1 ){
+            $record.prepend('<td>'+ pageCount +'</td>');
             $record.append('<td class="center">X</td>');
+            pageCount++;
           }
 
         }
       }
 
     } else {
-
+      $record.prepend('<td></td>');
       $record.append('<td></td>');
 
     }
@@ -116,6 +135,9 @@ $(function(){
         } else if (className.toLowerCase().indexOf('link') >= 0) {
           // number of link
           count[6]++;
+        } else if( className.toLowerCase().indexOf('extra') >= 0 ){
+          // number of extra
+          count[11]++;
         }
 
         if (className.toLowerCase().indexOf('done') >= 0) {
@@ -138,19 +160,19 @@ $(function(){
 
     });
 
-    $('.progress-all .progress-bar').css({width: Math.floor(count[7] / count[2] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7] / count[2] * 100) + '%</div>');
+    $('.progress-all .progress-bar').css({width: Math.floor(count[7] / (count[2]-count[11]) * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7] / (count[2]-count[11]) * 100) + '%</div>');
 
-    $('.all-work').text(count[2] + 'p');
-    $('.done-work .progress-bar').css({width: Math.floor(count[7] / count[2] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7]) + 'p</div>');
+    $('.all-work').text( (count[2]-count[11]) + 'p');
+    $('.done-work .progress-bar').css({width: Math.floor(count[7] / (count[2]-count[11]) * 100) + '%'}).html('<div class="progress-percent">' + (count[7] - count[11]) + 'p</div>');
 
     $('.all-work-html').text(count[3] + 'p');
-    $('.done-work-html .progress-bar').css({width: Math.floor(count[8] / count[3] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[8]) + 'p</div>');
+    $('.done-work-html .progress-bar').css({width: Math.floor(count[8] / count[3] * 100) + '%'}).html('<div class="progress-percent">' + count[8] + 'p</div>');
 
     $('.all-work-board').text(count[4] + 'p');
-    $('.done-work-board .progress-bar').css({width: Math.floor(count[9] / count[4] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[9]) + 'p</div>');
+    $('.done-work-board .progress-bar').css({width: Math.floor(count[9] / count[4] * 100) + '%'}).html('<div class="progress-percent">' + count[9] + 'p</div>');
 
     $('.all-work-develop').text(count[5] + 'p');
-    $('.done-work-develop .progress-bar').css({width: Math.floor(count[10] / count[5] * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[10]) + 'p</div>');
+    $('.done-work-develop .progress-bar').css({width: Math.floor(count[10] / count[5] * 100) + '%'}).html('<div class="progress-percent">' + count[10] + 'p</div>');
   }
 
   /**
@@ -219,11 +241,13 @@ $(function(){
   // link or alert message
   $('body').on('click', '.file-list tr', function(e){
 
+    console.log( $(this).hasClass('cancel') );
+
     if( $(this).find('.list-link').length ){
 
       window.open($(this).find('.list-link').attr('href'));
 
-    } else if( $(this).find('.cancel').length ){
+    } else if( $(this).hasClass('cancel') ){
 
       alert('제작이 취소된 페이지 입니다')
 

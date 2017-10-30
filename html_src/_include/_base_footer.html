@@ -62,7 +62,7 @@
       </div>
 
       <div class="incheon-etc">
-        <img src="../images/logo_web_standard_mark.png" alt="웹 접근성 우수사이트 인증마크(WA인증마크)" class="web-mark" />
+        <img src="/static/ap/images/logo_web_standard_mark.png" alt="웹 접근성 우수사이트 인증마크(WA인증마크)" class="web-mark" />
         <ul class="footer-shortcut">
           <li class="footer-shortcut-item"><a href="#" target="_blank" class="footer-shortcut-link"><span class="link-tit">&middot; Mobile Home </span>바로가기</a></li>
           <li class="footer-shortcut-item"><a href="#" target="_blank" class="footer-shortcut-link"><span class="link-tit">&middot; Android APP </span>다운받기</a></li>
@@ -108,17 +108,17 @@
     });
 
     $('.select-list .select-list-link').on('click',function(){
-        $(this).parents('.select-list').removeClass('on')
-        $(this).parents('.select-list').prev('.select-link-default').removeClass('on');
+      $(this).parents('.select-list').removeClass('on')
+      $(this).parents('.select-list').prev('.select-link-default').removeClass('on');
     });
 
     // document 클릭시 remove class...
     $(document).mouseup(function (e) {
-        var container = $('.select-list');
-        if (!container.is(e.target) && container.has(e.target).length === 0){
-            container.removeClass('on');
-            $('.select-link-default').removeClass('on');
-        }
+      var container = $('.select-list');
+      if (!container.is(e.target) && container.has(e.target).length === 0){
+        container.removeClass('on');
+        $('.select-link-default').removeClass('on');
+      }
     });
 
   }

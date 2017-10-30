@@ -3,21 +3,22 @@
 .customs_inspection{
     height:400px;
     text-indent:-999em;
-    background:#333649 url(../images/digr_customs_inspection_procedure.png) no-repeat;
+    background:#333649 url(/static/ap/images/digr_customs_inspection_procedure.png) no-repeat;
 }
+
 
 /*공항철도 노선도*/
 .digr_airport_railroad{
   height:274px;
   text-indent:-999em;
-  background:#333649 url(../images/digr_airport_railroad.png) no-repeat;
+  background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
 }
 
 /*KTX 노선도*/
 .digr_ktx_route{
   height:274px;
   text-indent:-999em;
-  background:#333649 url(../images/digr_ktx_route.png) no-repeat;
+  background: url(/static/ap/images/digr_ktx_route.png) no-repeat;
 }
 
 
@@ -25,12 +26,12 @@
 /*자기부상열차*/
 .maglev-train{
   height:240px;
-  background:#333649 url(../images/img_maglev_train.jpg) no-repeat;
+  background:url(/static/ap/images/img_maglev_train.jpg) no-repeat;
 }
 /*자기부상열차견학*/
 .maglev-train-tour{
   height:240px;
-  background:#333649 url(../images/img_maglev_train_tour.jpg) no-repeat;
+  background:url(/static/ap/images/img_maglev_train_tour.jpg) no-repeat;
 }
 
 // 기존 버튼 디자인
@@ -47,9 +48,9 @@
     left: 0;
     bottom: 0;
     margin: auto;
-    background: url(../images/spr_ico_global.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_global.png) no-repeat;
   }
-  &.updata-refresh:after{
+  &.update-refresh:after{
     background-position:-31px -98px;
     width: 20px;
     height: 20px;
@@ -75,7 +76,7 @@
     height: 22px;
   }
 }
-.updata{
+.update{
   text-align: right;
   margin-bottom: 20px;
   &-time{
@@ -103,8 +104,8 @@
 
 /*버스검색*/
 .bussearch{
-  background:url(../images/img_layer_search_bg.jpg) no-repeat;
-  padding: 58px 144px;
+  background:url(/static/ap/images/img_layer_search_bg.jpg) no-repeat;
+  padding: 58px 141px;
   &-title{
     color: #fff;
     font-size: 1.5rem;
@@ -203,6 +204,7 @@
 
     &-item {
       width: 12.5%;
+      height: 30px;
       float: left;
       border-right: 1px solid #d9d9d9;
       text-align: center;
@@ -341,3 +343,346 @@
 
 }
 
+/*주차요금계산기*/
+.calculator{
+  width: 100%;
+  height: 98px;
+  padding: 20px;
+  background: #323648;
+  @extend %clearfix;
+}
+
+/*날짜및시간설정*/
+.timesetting{
+  &-date{
+    &-day{
+      width: 140px;
+      height: 56px;
+      padding: 0;
+      border: 1px solid #d9d9d9;
+      border-right: 0;
+      font-size: 1rem;
+      padding-left: 10px;
+      color: #666;
+    }
+    &-calendar{
+      width: 46px;
+      height: 58px;
+      border: 1px solid #d9d9d9;
+      border-left: 0;
+      background: #fff;
+      &:after{
+        background-position:-97px -92px;
+        width: 20px;
+        height: 20px;
+      }
+      +.timesetting-date-option{
+        border-left: 0;
+      }
+    }
+    &-option{
+      width: 170px;
+      height: 58px;
+      font-size: 1rem;
+      padding-left: 10px;
+      border: 1px solid #d9d9d9;
+      color: #666;
+      +.timesetting-date-option{
+        border-left: 0;
+      }
+    }
+  }
+  &-dash{
+    margin: 0 auto;
+    padding-left: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.375rem;
+    line-height: 58px;
+  }
+}
+
+.to-calculate{
+  .btn-type-normal{
+    font-size: 	1.125rem;
+  }
+}
+
+.parking-option {
+  width: 27px;
+  height: 27px;
+  margin-right: 8px;
+  vertical-align: text-bottom;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  &:checked {
+    &.parking-option:after {
+      background-position: -177px -293px;
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  &-label {
+    min-width: 145px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+  }
+  &.ico:after {
+    background-position: -129px -293px;
+    width: 27px;
+    height: 27px;
+  }
+}
+
+.parking-fee{
+  font-size: 1.375rem;
+  strong{
+    font-size: 2.75rem;
+    color: #d43e41;
+  }
+}
+
+.packing{
+  .btn-type-tab{
+    min-width: 130px;
+    height: 40px;
+    padding: 10px 20px;
+    border: 1px solid #666;
+    color: #444;
+    float: left;
+    &.on{
+      color: #fff;
+      background: #222;
+    }
+    &+.btn-type-tab{
+      margin: 0;
+    }
+  }
+}
+
+.input-bg{
+  width: 440px;
+  height: 50px;
+  padding: 0 10px;
+  color: #666;
+  background: #fcfbe8;
+  border: 1px solid #d9d9d9;
+}
+
+/*차량번호 검색*/
+.search-box {
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+  background: #f2f4f7;
+  border: 1px solid #d9d9d9;
+  text-align: center;
+  &-area{
+    display: inline-block;
+    &-title {
+      float: left;
+      position: relative;
+      top:20px;
+      margin-right:30px ;
+    }
+    &-input {
+      width: 406px;
+      height: 58px;
+      padding: 10px;
+      border: 1px solid #666;
+      box-sizing: border-box;
+      float: left;
+    }
+    &-btn {
+      width: 62px;
+      height: 58px;
+      border: none;
+      vertical-align: bottom;
+      background: #323648;
+      text-indent: -9999px;
+      display: inline-block;
+      float: left;
+      &.ico:after {
+        background-position: -74px -134px;
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+/*약관*/
+.agreement-box{
+  width: 100%;
+  height: 148px;
+  padding: 20px 15px;
+  overflow-y: auto;
+  background: #f5f6f7;
+  border: 1px solid #e2e5e9;
+  &-title{
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+  }
+  &-txt{
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+}
+
+/*노선버스공지*/
+.notice-box{
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #d9d9d9;
+  @extend %clearfix;
+  &-title{
+    width: 170px;
+    border-right: 1px solid #a5a7aa;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 900;
+    float: left;
+    position: relative;
+    top:5px;
+  }
+  &-txt{
+    margin-left: 30px;
+    float: left;
+  }
+}
+
+/*step*/
+.departure-step{
+  height: 240px;
+  padding-top: 30px;
+  background: url(/static/ap/images/bg_departure_step.jpg) no-repeat;
+  @extend %clearfix;
+  &-list{
+    margin: 0 auto;
+    position: relative;
+    top: 125px;
+    &.check-in{
+      width: 602px;
+      .departure-step-list-article{
+        &:after {
+          content: '';
+          display: block;
+          width: 116px;
+          height:116px;
+          position: absolute;
+          top:-320px;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/ap/images/spr_ico_check_in.png) no-repeat;
+        }
+        &.step-1:after{
+          background-position: -16px -16px;
+         }
+        &.step-2:after{
+          background-position: -154px -16px;
+        }
+        &.step-3:after{
+          background-position: -292px -16px;
+        }
+      }
+    }
+    &.self{
+      width: 1002px;
+      .departure-step-list-article{
+        &:after {
+          content: '';
+          display: block;
+          width: 116px;
+          height:116px;
+          position: absolute;
+          top:-320px;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/ap/images/spr_ico_self_bag_drop.png) no-repeat;
+        }
+        &.step-1:after{
+          background-position: -16px -16px;
+        }
+        &.step-2:after{
+          background-position: -154px -16px;
+        }
+        &.step-3:after{
+          background-position: -292px -16px;
+        }
+        &.step-4:after{
+          background-position: -16px -152px;
+        }
+        &.step-5:after{
+          background-position: -154px -152px;
+        }
+      }
+    }
+    &.quarantine{
+      width: 802px;
+      .departure-step-list-article{
+        &:after {
+          content: '';
+          display: block;
+          width: 116px;
+          height:116px;
+          position: absolute;
+          top:-320px;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/ap/images/spr_ico_quarantine.png) no-repeat;
+        }
+        &.step-1:after{
+          background-position: -16px -16px;
+        }
+        &.step-2:after{
+          background-position: -154px -16px;
+        }
+        &.step-3:after{
+          background-position: -292px -16px;
+        }
+        &.step-4:after{
+          background-position: -16px -152px;
+        }
+      }
+    }
+    &-article{
+      width: 200px;
+      height: 200px;
+      color: #fff;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      text-align: center;
+      float: left;
+      display: inline-block;
+      position: relative;
+    }
+  }
+}
+
+
+
+.font20, %font20{
+  font-size: 1.25rem;
+
+}
+
+
+button{
+  cursor: pointer;
+}

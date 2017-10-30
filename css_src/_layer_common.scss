@@ -28,7 +28,7 @@
   display:block;
   width:31px;
   height:31px;
-  background:url(../images/ico_back_to_home.png) no-repeat;
+  background:url(/static/ap/images/ico_back_to_home.png) no-repeat;
   text-indent:-99999em;
   position:absolute;
   top:50px;
@@ -157,7 +157,7 @@
           &:after{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -45px -52px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -45px -52px;
             width: 13px;
             height: 17px;
             margin-left:14px;
@@ -169,7 +169,7 @@
           &:before{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -52px -89px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -52px -89px;
             width: 24px;
             height: 24px;
             margin-right:12px;
@@ -181,7 +181,7 @@
           &:before{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -16px -89px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -16px -89px;
             width: 24px;
             height: 24px;
             margin-right:12px;
@@ -411,7 +411,7 @@
       content:"";
       display:block;
       height:116px;
-      background:url(../images/spr_ico_stuff.png) no-repeat;
+      background:url(/static/ap/images/spr_ico_stuff.png) no-repeat;
       position:absolute;
       top:40px;
       left:40px;
@@ -460,7 +460,7 @@
     width:15px;
     height:15px;
     margin-left:8px;
-    background:url(../images/spr_ico_ox.png) no-repeat;
+    background:url(/static/ap/images/spr_ico_ox.png) no-repeat;
     position:relative;
     top:7px;
     text-indent:-99999em;
@@ -489,7 +489,7 @@
     left:0;
     bottom:0;
     margin:auto;
-    background: url(../images/spr_ico_global.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_global.png) no-repeat;
   }
 
   &.arrow-normal-right:after{
@@ -565,7 +565,7 @@
   height:50px;
   background:#fff;
   padding:0 45px 0 20px;
-  line-height:50px;
+  line-height:45px;
   border:1px solid #666;
   font-weight:600;
   transition:all .4s;
@@ -591,7 +591,7 @@
   height:30px;
   background:#fff;
   padding:0 32px 0 12px;
-  line-height:30px;
+  line-height:25px;
   border:1px solid #d9d9d9;
   border-radius:50px;
   font-size:0.875rem;
@@ -644,6 +644,9 @@ strong{
 em{
   font-style: normal;
   color:#41519e;
+  &.color{
+    color:#d43e41;
+  }
 }
 
 .font-normal{
@@ -878,7 +881,7 @@ em{
     top: 0;
     left: 0;
     margin: auto;
-    background: url(../images/spr_ico_text.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_text.png) no-repeat;
   }
 
   &.icon {
@@ -955,7 +958,7 @@ em{
   //width: 1152px;
   height: 240px;
   text-align: center;
-  background: url(../images/img_sub_layer_banner_bg_01.jpg) no-repeat;
+  background: url(/static/ap/images/img_sub_layer_banner_bg_01.jpg) no-repeat;
   position:relative;
 
   &-title{
@@ -985,19 +988,19 @@ em{
   }
 
   &.bg2{
-    background:url(../images/img_sub_layer_banner_bg_00.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_00.jpg) no-repeat;
   }
 
   &.bg3{
-    background:url(../images/img_sub_layer_banner_bg_02.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_02.jpg) no-repeat;
   }
 
   &.bg4{
-    background:url(../images/img_sub_layer_banner_bg_03.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_03.jpg) no-repeat;
   }
 
   &.bg5{
-    background:url(../images/img_sub_layer_banner_bg_04.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_04.jpg) no-repeat;
   }
 
 }
@@ -1302,7 +1305,7 @@ em{
   &.col-4{
     .step2-list-item{
       width:calc(25% - 18px);
-      min-height:458px;
+      min-height:480px;
     }
   }
 
@@ -1531,7 +1534,7 @@ b.text-bold{
     left:0;
     bottom:0;
     margin:auto;
-    background: url(../images/spr_ico_crud.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_crud.png) no-repeat;
   }
 
   &.file-hwp:after{

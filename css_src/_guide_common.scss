@@ -21,7 +21,8 @@
     text-align: center;
 
     &-title{
-      font:700 2.875rem  'NanumSquare', sans-serif;
+      font-size:2.875rem;
+      font-family:'nanumsq', sans-serif;
     }
 
     &-article{
@@ -37,11 +38,11 @@
   height:200px;
   padding-top: 90px;
   &.departure{
-    background:url(../images/img_sub_visual_departure.jpg) center no-repeat;
+    background:url(/static/ap/images/img_sub_visual_departure.jpg) center no-repeat;
     background-size: cover;
   }
   &.airline{
-    background:url(../images/img_sub_visual_airline.jpg) center no-repeat;
+    background:url(/static/ap/images/img_sub_visual_airline.jpg) center no-repeat;
     background-size: cover;
   }
 }
@@ -323,7 +324,7 @@
   width:50px;
   height:50px;
   border:1px solid #aaa;
-  background:#fff url(../images/ico_top_arrow.png) no-repeat -1px 0;
+  background:#fff url(/static/ap/images/ico_top_arrow.png) no-repeat -1px 0;
   position:fixed;
   bottom:-1px;
   right:30px;
@@ -512,7 +513,7 @@ table{
           &:after{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -45px -52px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -45px -52px;
             width: 13px;
             height: 17px;
             margin-left:14px;
@@ -524,7 +525,7 @@ table{
           &:before{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -52px -89px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -52px -89px;
             width: 24px;
             height: 24px;
             margin-right:12px;
@@ -536,7 +537,7 @@ table{
           &:before{
             content:"";
             display:inline-block;
-            background:url(../images/spr_ico_crud.png) no-repeat -16px -89px;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -16px -89px;
             width: 24px;
             height: 24px;
             margin-right:12px;
