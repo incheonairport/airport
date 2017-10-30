@@ -10,17 +10,29 @@
     width:220px;
     height:50px;
 
+
+    &-font{
+      font-size:1rem;
+    }
+
   }
 
   .ico:before{
     display:none;
   }
 
+
 }
 
 .select-list{
   &.object-list{
     width: 100%;
+    top: 50px;
+
+    &-link{
+      font-size:1rem;
+    }
+
   }
 }
 /*고객센터 글 작성 목적*/
