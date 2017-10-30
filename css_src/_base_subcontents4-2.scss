@@ -1,0 +1,199 @@
+//sub-menu-tab type
+
+/* link type select box */
+
+/*고객센터 글 작성 목적*/
+.select-link{
+
+
+  &.object-link{
+    width:220px;
+    height:50px;
+
+  }
+
+  .ico:before{
+    display:none;
+  }
+
+}
+
+.select-list{
+  &.object-list{
+    width: 100%;
+  }
+}
+/*고객센터 글 작성 목적*/
+
+/*주소검색*/
+.search-customer-address{
+
+  width:957px;
+
+
+
+  &-text{
+    width:810px;
+    height:46px;
+    font-size:16px;
+    border: 1px solid #d9d9d9;
+    float:left;
+
+
+  }
+
+  &-btn{
+    width:145px;
+    height:50px;
+    background-color: #f2f2f2;
+    border: 1px solid #d9d9d9;
+
+    font-family: spoqa, sans-serif;
+    font-weight: bold;
+
+
+
+  }
+}
+/*주소검색*/
+
+/*2단 글상자*/
+
+%gutter{
+  .inner-col{
+    padding:0 12px 0 0;
+
+    &:last-child{
+      padding:0 0 0 12px;
+    }
+  }
+}
+
+%normal-3{
+  .inner-col{
+    width:calc(33.33% - 16px)!important;
+    margin-left:24px;
+    &:first-child{
+      margin-left:0;
+    }
+  }
+}
+
+.multi-col{
+  position:relative;
+  @extend %clearfix;
+
+  .inner-col{
+    float:left;
+    text-align:justify;
+
+    &.btn-right{
+      position: absolute;
+      right:0;
+      bottom:0;
+      text-align: right;
+    }
+  }
+
+  &.double{
+    .inner-col{
+      width:50%;
+      &.w-auto{
+        width: auto;
+        padding-right:24px;
+      }
+      &.w70{
+        width: 70%;
+        padding-right:24px;
+      }
+      &.w30{
+        width: 30%;
+      }
+      &.calc-w466-l{
+        width: calc(100% - 466px);
+        padding-left:24px;
+      }
+      &.calc-w466-r{
+        width: calc(100% - 466px);
+        padding-right:24px;
+      }
+      &.w466{
+        width: 466px;
+        padding:0;
+      }
+    }
+  }
+
+  &.triple{
+    .inner-col{
+      width:33.33%;
+    }
+  }
+
+  &.line{
+    &:before{
+      content:"";
+      display:block;
+      width:1px;
+      height:100%;
+      background:#d9d9d9;
+      position:absolute;
+      top:0;
+      left:50%;
+    }
+    @extend %gutter;
+  }
+
+  &.gutter{
+    @extend %gutter;
+  }
+
+  &.normal-3{
+    @extend %normal-3;
+  }
+
+}
+
+.text-box{
+  width:100%;
+  height: 180px;
+  border: 1px solid #d9d9d9;
+  padding:30px;
+
+  &-headline{
+   font-weight: bold;
+  }
+
+  &-headline-col{
+    margin-bottom: 30px;
+  }
+
+
+  .headline-ico{
+    float:left;
+    margin-right: 10px ;
+
+    &:after{
+      width:20px;
+      height:20px;
+      background-position: -275px -135px;
+    }
+
+  }
+
+  &-col{
+    width:50%;
+    float: left;
+  }
+
+  &-right{
+    margin-left: 18px;
+  }
+
+
+
+}
+
+/*2단 글상자*/
+
+
