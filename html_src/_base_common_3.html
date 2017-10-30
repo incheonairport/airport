@@ -1,31 +1,47 @@
 <!--=include _include/_base_header.html -->
 <section id="top-contents" class="contents">
 
+  <div class="sub-top type4 bg5">
+    <div class="sub-top-inner">
+      <div class="sub-top-descbox">
 
-  <!--
-  <!--
-맵 배경-->
-  <div class="bg-type1 food">
+        <p class="sub-top-descbox-text clip-white down">
+          <span class="sub-top-descbox-tit">Welcome</span><br />
+          <span class="sub-top-descbox-sub">Meeting Passengers</span>
+        </p>
+
+        <div class="inner-section">
+          <div class="sub-top-linkbox">
+            <span class="sub-top-linkbox-text"><em class="color-o">입국 비행기</em> 한 눈에 보기</span>
+            <a href="#" class="btn-type-round-under ico arrow-point-right">바로가기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bg-banner food">
     <div class="inner-section">
-      <span class="bg-type1-tit">
+      <span class="bg-banner-tit">
         Incheon Airport<br />
         <strong>food</strong>
       </span>
 
-      <ul class="bg-type1-iconlist">
-        <li class="bg-type1-iconlist-item">
-          <a href="#" class="bg-type1-bgico event">이벤트</a>
+      <ul class="bg-banner-iconlist">
+        <li class="bg-banner-iconlist-item">
+          <a href="#" class="bg-banner-bgico event">이벤트</a>
         </li>
-        <li class="bg-type1-iconlist-item">
-          <a href="#" class="bg-type1-bgico map">면세점 쇼핑맵</a>
+        <li class="bg-banner-iconlist-item">
+          <a href="#" class="bg-banner-bgico map">면세점 쇼핑맵</a>
         </li>
-        <li class="bg-type1-iconlist-item">
-          <a href="#" class="bg-type1-bgico shopping">쇼핑가이드</a>
+        <li class="bg-banner-iconlist-item">
+          <a href="#" class="bg-banner-bgico shopping">쇼핑가이드</a>
         </li>
       </ul>
 
       <!-- 슬라이드배너 -->
-      <div class="bg-type1-banner">
+      <div class="bg-banner-banner">
         <div class="slide-banner">
           <a href="#" class="ico slide-left slide-banner-btn">이전</a>
 
@@ -57,68 +73,35 @@
         </div>
       </div>
       <!-- 슬라이드배너 e-->
-
-    </div>
-  </div>
-
-
-
-  <div class="sub-top type4 bg5">
-      <div class="sub-top-inner">
-        <div class="sub-top-descbox">
-          <p class="sub-top-descbox-text">
-            <span class="sub-top-descbox-tit">Welcome</span><br />
-            <span class="sub-top-descbox-sub">Meeting Passengers</span>
-          </p>
-          <div class="inner-section">
-            <div class="sub-top-linkbox">
-              <span class="sub-top-linkbox-text"><em class="color-o">입국 비행기</em> 한 눈에 보기</span>
-              <a href="#" class="btn-type-round-under ico arrow-middle-right">바로가기</a>
-            </div>
-          </div>
-      </div>
     </div>
   </div>
 
   <section class="inner-section">
-    <!-- 필터 -->
-    <div class="filter mt40">
-      <div class="filter-service">
-        <div class="filter-service-head">
-          <div class="filter-service-head-box field">
+    <div class="filter mt30">
+      <!-- 터미널별 검색 -->
+      <div class="filter-terminal-search">
+        <span class="filter-terminal-search-heading">터미널 별 검색</span>
+        <!-- 1차 필터 검색 -->
+        <div class="filter-terminal-search-depth1">
+          <div class="input-box field">
             <div class="field-division">
-              <input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="today" checked>
-              <label for="main-terminal-1" class="field-radiomain-label">제1 여객터미널</label>
+              <input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="main-terminal-1" checked>
+              <label for="main-terminal-1" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">제1 여객터미널</label>
             </div>
 
-            <div class="filter-service-head-box field-division">
-              <input type="radio" name="main-terminal" id="main-terminal-2" class="field-radiomain" value="tomorrow">
-              <label for="main-terminal-2" class="field-radiomain-label">제2 여객터미널</label>
-            </div>
-          </div>
-
-          <div class="filter-service-head-box base">
-            <div class="base-group">
-              <input type="checkbox" name="todclock" id="todclock" class="base-check ico" value="yes" checked>
-              <label class="base-check-label" for="todclock">24시간</label>
+            <div class="input-box field-division">
+              <input type="radio" name="main-terminal" id="main-terminal-2" class="field-radiomain" value="main-terminal-2">
+              <label for="main-terminal-2" class="field-radiomain-label" title="클릭하면 제2 여객터미널에서 검색이 가능합니다.">제2 여객터미널</label>
             </div>
           </div>
 
-          <div class="filter-service-head-box field-search">
-            <div class="responsive-form-box search">
-              <div class="responsive-form-box-area">
-                <label for="brandSearch" class="responsive-form-box-hide">브랜드검색</label>
-                <input type="text" id="brandSearch" placeholder="매장명, 브랜드명 입력"/>
-                <button type="button" title="버튼을 클릭하면 검색결과가 나타납니다" class="ico gnb-search">검색</button>
-              </div>
-            </div>
-            <button type="button" title="버튼을 클릭하면 브랜드상세검색창이 나타납니다." class="field-search-btn ico arrow-small-down-w">브랜드 검색</button>
+          <div class="input-box base">
+            <input type="checkbox" name="main-todclock" id="main-todclock" class="" value="" checked>
+            <label class="" for="main-todclock">24시간</label>
           </div>
-        </div> <!-- filter-service-head e-->
-
-
-
-        <div class="filter-service-field">
+        </div>
+        <!-- 2차 필터 검색 -->
+        <div class="filter-terminal-search-depth2">
           <div class="field">
             <div class="field-group">
               <input type="radio" name="air-area" id="air-all" class="field-radio" value="air-all" checked>
@@ -175,11 +158,32 @@
               <label class="field-radio-label" for="shop-korean">한류상품</label>
             </div>
           </div>
-        </div> <!-- filter-service-field e -->
+        </div>
+        <!-- 3차 (2차에서 3차가 있다면) 필터 검색 -->
+        <div class="filter-terminal-search-depth3">
+          <div class="field">
+            <div class="field-group big">
+              <input type="radio" name="product" id="product-all" class="field-radio" value="brand2-product" checked>
+              <label class="field-radio-label pd10" for="product-all">전체</label>
 
-        <div class="filter-service-detail">
-          <div class="filter-service-detail-head">
-            <button type="button" title="버튼을 클릭하면 브랜드 검색 창이 닫힙니다" class="filter-service-detail-close ico base-close">닫기</button>
+              <input type="radio" name="product" id="product-souvenir" class="field-radio" value="brand2-product">
+              <label class="field-radio-label" for="product-souvenir">기념품</label>
+
+              <input type="radio" name="product" id="product-toy" class="field-radio" value="brand2-product">
+              <label class="field-radio-label" for="product-toy">유아&middot;완구</label>
+
+              <input type="radio" name="product" id="product-flower" class="field-radio" value="brand2-product">
+              <label class="field-radio-label" for="product-flower">꽃</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 브랜드검색 -->
+      <div class="filter-brand-search">
+        <button type="button" title="버튼을 클릭하면 브랜드 이름으로 검색할 수 있습니다." class="filter-brand-search-btn ico arrow-small-down-w">브랜드 검색</button>
+        <div class="filter-brand-search-detail">
+          <div class="filter-brand-search-detail-head">
+            <button type="button" title="버튼을 클릭하면 브랜드 검색 창이 닫힙니다" class="filter-brand-search-detail-close ico base-close">닫기</button>
             <div class="field">
               <div class="field-group">
                 <input type="radio" name="brand-name" id="brand-all" class="field-radio" value="brand-all" checked>
@@ -320,7 +324,8 @@
               </div>
             </div>
           </div>
-          <div class="filter-service-detail-result">
+
+          <div class="filter-brand-search-detail-result">
             <ul class="brand-list">
               <li class="brand-list-item"><a href="#" class="brand-list-link">16브랜드</a></li>
               <li class="brand-list-item"><a href="#" class="brand-list-link">23이얼즈올드</a></li>
@@ -357,7 +362,6 @@
               <li class="brand-list-item"><a href="#" class="brand-list-link">DERMALOGICA</a></li>
               <li class="brand-list-item"><a href="#" class="brand-list-link">DIOR</a></li>
 
-
               <li class="brand-list-item"><a href="#" class="brand-list-link">16브랜드</a></li>
               <li class="brand-list-item"><a href="#" class="brand-list-link">23이얼즈올드</a></li>
               <li class="brand-list-item"><a href="#" class="brand-list-link">ADDICTION</a></li>
@@ -393,352 +397,408 @@
               <li class="brand-list-item"><a href="#" class="brand-list-link">DARPHIN</a></li>
               <li class="brand-list-item"><a href="#" class="brand-list-link">DERMALOGICA</a></li>
               <li class="brand-list-item"><a href="#" class="brand-list-link">DIOR</a></li>
-
             </ul>
-
           </div>
-        </div> <!-- filter-service-detail e -->
+        </div>
+      </div>
+      <!-- 매장검색 -->
+      <div class="filter-store-search">
+        <div class="filter-store-search-input">
+          <label for="brandSearch" class="responsive-form-box-hide">브랜드검색</label>
+          <input type="text" id="brandSearch" placeholder="매장명, 브랜드명 입력"/>
+        </div>
+        <div class="filter-store-search-icon">
+          <button type="button" title="키워드 검색을 할 수 있습니다." class="ico gnb-search">검색</button>
+        </div>
+      </div>
+    </div>
 
-        <div class="filter-service-2depth">
-          <div class="field">
-            <div class="field-group big">
-              <input type="radio" name="product" id="product-all" class="field-radio" value="brand2-product" checked>
-              <label class="field-radio-label pd10" for="product-all">전체</label>
+    <!--
+    박스모델2 리스트 ::
+    상세보기가 있는 리스트 -->
+    <div class="boxmodel2">
+      <ul class="boxmodel2-list">
+        <!-- li에 todclock 클래스 추가시 24시간 마크 표기 -->
+        <li class="boxmodel2-list-item todclock">
+          <div class="boxmodel2-list-box">
+            <div class="boxmodel2-list-box-split col-1">
+              <div class="boxmodel2-imggroup">
+                <span class="boxmodel2-imggroup-mark brown">비지니스</span>
+                <img src="/static/ap/images/img_list_item02.jpg" class="imgbox" alt="종합정부행정센터 이미지">
+              </div>
+            </div>
 
-              <input type="radio" name="product" id="product-souvenir" class="field-radio" value="brand2-product">
-              <label class="field-radio-label" for="product-souvenir">기념품</label>
+            <div class="boxmodel2-list-box-split col-2">
+              <span class="boxmodel2-maintit">종합정부행정센터</span>
+              <div class="boxmodel2-column col-2">
+                <dl class="boxmodel2-table w60">
+                  <dt class="boxmodel2-table-tit">영업시간</dt>
+                  <dd class="boxmodel2-table-desc">09:00 ~ 18:00(일부기관 24시간 운영)</dd>
+                </dl>
+                <dl class="boxmodel2-table w40">
+                  <dt class="boxmodel2-table-tit">연락처</dt>
+                  <dd class="boxmodel2-table-desc">032-743-8191</dd>
+                </dl>
+              </div>
 
-              <input type="radio" name="product" id="product-toy" class="field-radio" value="brand2-product">
-              <label class="field-radio-label" for="product-toy">유아&middot;완구</label>
+              <div class="boxmodel2-column">
+                <dl class="boxmodel2-table">
+                  <dt class="boxmodel2-table-tit">위치</dt>
+                  <dd class="boxmodel2-table-desc"><em class="color-lb">제 2여객터미널 2층 중앙부, LANDSIDE</em></dd>
+                </dl>
+              </div>
 
-              <input type="radio" name="product" id="product-flower" class="field-radio" value="brand2-product">
-              <label class="field-radio-label" for="product-flower">꽃</label>
+              <div class="boxmodel2-column">
+                <dl class="boxmodel2-table">
+                  <dt class="boxmodel2-table-tit">주요정보</dt>
+                  <dd class="boxmodel2-table-desc">총 9개 정부기관 민원실 입주</dd>
+                </dl>
+              </div>
+            </div>
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+          </div>
+
+          <div class="boxmodel2-list-detail">
+            <span class="boxmodel2-list-tit">시설소개</span>
+            <div class="boxmodel2-list-detail-split col-1">
+
+
+              <p class="boxmodel2-desc">
+                해외여행 관련 정부기관 상대 민원행정 업무에 관해 원스톱으로 처리합니다.
+              </p>
+
+              <dl class="boxmodel2-list-info mt20">
+                <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                <dd class="boxmodel2-list-info-price">5,000원</dd>
+                <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                <dd class="boxmodel2-list-info-price">5,200원</dd>
+              </dl>
+
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+            </div>
+            <div class="boxmodel2-list-detail-split col-2">
+              <img src="/static/ap/images/img_list_item02_detail.jpg" class="imgbox" alt="종합정부행정센터 시설소개 약도 이미지">
             </div>
           </div>
-        </div> <!-- filter-service-2depth e -->
-
-      </div>
-    </div> <!-- 필터 e -->
+        </li>
+      </ul> <!-- list style -->
+    </div>
   </section>
-
 
   <div class="sub-top type3 bg4">
     <div class="inner-section">
       <div class="sub-top-descbox">
         <p class="sub-top-descbox-text">
-          <span class="sub-top-descbox-tit"><em class="color-o">Transit</em> <em class="text-georgia">tour</em></span>
+          <span class="sub-top-descbox-tit roboto"><em class="color-o">TRANSIT</em><em class="text-georgia">tour</em></span>
           <a href="#" target="_blank" class="btn-type-infolink ico arrow-infolin-right_w">환승 투어 안내</a>
         </p>
       </div>
     </div>
   </div>
-  <div class="inner-section">
-    <div class="position-box108">
-      <div class="fix-banner">
-        <div class="fix-banner-col fix-ad01">
-          <a href="#" class="fix-banner-link">
-            <div class="fix-banner-col-textgroup">
-              <span class="fix-banner-col-subtit color-g">Shopping</span>
-              <span class="fix-banner-col-tit color-g">쇼핑</span>
-            </div>
+  <div class="inner-section position-box108">
+    <div class="fix-banner">
+      <div class="fix-banner-col fix-ad01">
+        <a href="#" class="fix-banner-link">
+          <div class="fix-banner-col-textgroup">
+            <span class="fix-banner-col-subtit color-g">Shopping</span>
+            <span class="fix-banner-col-tit color-g">쇼핑</span>
+          </div>
 
-            <span class="fix-banner-col-view color-w">바로가기</span>
-          </a>
-        </div>
-        <div class="fix-banner-col fix-ad02">
-          <a href="#" class="fix-banner-link">
-            <div class="fix-banner-col-textgroup">
-              <span class="fix-banner-col-subtit color-o">Shopping</span>
-              <span class="fix-banner-col-tit color-o">쇼핑</span>
-            </div>
-
-            <span class="fix-banner-col-view">바로가기</span>
-          </a>
-        </div>
+          <span class="fix-banner-col-view color-w">바로가기</span>
+        </a>
       </div>
-      <div class="filter white">
-        <div class="filter-service">
-          <div class="filter-service-field">
-            <div class="field">
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">제 1여객터미널</span>
-                </div>
+      <div class="fix-banner-col fix-ad02">
+        <a href="#" class="fix-banner-link">
+          <div class="fix-banner-col-textgroup">
+            <span class="fix-banner-col-subtit color-o">Restaurant</span>
+            <span class="fix-banner-col-tit color-o">식당</span>
+          </div>
 
-                <div class="field-division col-2">
-                  <input type="radio" name="air-area" id="air-all" class="field-radio" value="air-all" checked>
-                  <label class="field-radio-label" for="air-all">전체</label>
-
-                  <input type="radio" name="air-area" id="air-terminalB1" class="field-radio" value="air-terminalB1">
-                  <label class="field-radio-label" for="air-terminalB1">여객터미널 B1</label>
-
-                  <input type="radio" name="air-area" id="air-terminal2F" class="field-radio" value="air-terminal2F">
-                  <label class="field-radio-label" for="air-terminal2F">여객터미널 2F</label>
-
-                  <input type="radio" name="air-area" id="air-all" class="field-radio" value="air-all" checked>
-                  <label class="field-radio-label" for="air-all">전체</label>
-
-                  <input type="radio" name="air-area" id="air-terminalB1" class="field-radio" value="air-terminalB1">
-                  <label class="field-radio-label" for="air-terminalB1">여객터미널 B1</label>
-
-                  <input type="radio" name="air-area" id="air-terminal2F" class="field-radio" value="air-terminal2F">
-                  <label class="field-radio-label" for="air-terminal2F">여객터미널 2F</label>
-
-                  <input type="radio" name="air-area" id="air-all" class="field-radio" value="air-all" checked>
-                  <label class="field-radio-label" for="air-all">전체</label>
-
-                  <input type="radio" name="air-area" id="air-terminalB1" class="field-radio" value="air-terminalB1">
-                  <label class="field-radio-label" for="air-terminalB1">여객터미널 B1</label>
-
-                  <input type="radio" name="air-area" id="air-terminal2F" class="field-radio" value="air-terminal2F">
-                  <label class="field-radio-label" for="air-terminal2F">여객터미널 2F</label>
-
-                  <input type="radio" name="air-area" id="air-all" class="field-radio" value="air-all" checked>
-                  <label class="field-radio-label" for="air-all">전체</label>
-
-                  <input type="radio" name="air-area" id="air-terminalB1" class="field-radio" value="air-terminalB1">
-                  <label class="field-radio-label" for="air-terminalB1">여객터미널 B1</label>
-
-                  <input type="radio" name="air-area" id="air-terminal2F" class="field-radio" value="air-terminal2F">
-                  <label class="field-radio-label" for="air-terminal2F">여객터미널 2F</label>
-                </div>
-
-              </div>
-
-              <div class="field-group">
-                <span class="field-group-tit">제 2여객터미널</span>
-                <input type="radio" name="shop-area" id="shop-all" class="field-radio" value="shop-all" checked>
-                <label class="field-radio-label" for="shop-all">전체</label>
-
-                <input type="radio" name="shop-area" id="shop-boutique" class="field-radio" value="shop-boutique">
-                <label class="field-radio-label" for="shop-boutique">부티크</label>
-
-                <input type="radio" name="shop-area" id="shop-cosmetics" class="field-radio" value="shop-cosmetics">
-                <label class="field-radio-label" for="shop-cosmetics">화장품/향수</label>
-              </div>
-            </div>
-          </div> <!-- filter-service-field e -->
-          <button type="button" class="filter-service-option ico arrow-small-up-w">검색옵션</button>
-        </div>
+          <span class="fix-banner-col-view">바로가기</span>
+        </a>
       </div>
-      <div class="filter white">
-        <div class="filter-service">
-          <div class="filter-service-field">
-            <div class="field">
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">시설선택</span>
-                </div>
-
-                <div class="field-division col-2">
-                  <input type="radio" name="facilities" id="facilities-all" class="field-radio" value="air-all" checked>
-                  <label class="field-radio-label" for="facilities-all">전체</label>
-
-                  <input type="radio" name="facilities" id="facilities-massage" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="facilities-massage">안마의자</label>
-
-                  <input type="radio" name="facilities" id="facilities-shower" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="facilities-shower">샤워</label>
-
-                  <input type="radio" name="facilities" id="facilities-internet" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="facilities-internet">인터넷</label>
-
-                  <input type="radio" name="facilities" id="facilities-spa" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="facilities-spa">스파</label>
-
-                  <input type="radio" name="facilities" id="facilities-fitness" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="facilities-fitness">피트니스</label>
-                </div>
-              </div>
-
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">서비스 선택</span>
-                </div>
-
-                <div class="field-division col-2">
-                  <input type="radio" name="service" id="service-all" class="field-radio" value="service-all" checked>
-                  <label class="field-radio-label" for="service-all">전체</label>
-
-                  <input type="radio" name="service" id="service-guide" class="field-radio" value="service-guide">
-                  <label class="field-radio-label" for="service-guide">가이드</label>
-
-                  <input type="radio" name="service" id="service-hotel" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="service-hotel">호텔</label>
-
-                  <input type="radio" name="service" id="service-lounge" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="service-lounge">라운지</label>
-                </div>
-              </div>
-
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">할 일</span>
-                </div>
-
-                <div class="field-division col-2">
-                  <input type="radio" name="schedule" id="schedule-all" class="field-radio" value="air-all" checked>
-                  <label class="field-radio-label" for="schedule-all">전체</label>
-
-                  <input type="radio" name="schedule" id="schedule-public" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="schedule-public">대중교통 여행</label>
-
-                  <input type="radio" name="schedule" id="schedule-stopover" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="schedule-stopover">스탑오버</label>
-
-                  <input type="radio" name="schedule" id="schedule-kpop" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="schedule-kpop">K-POP</label>
-                </div>
-              </div>
-
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">프로모션</span>
-                </div>
-
-                <div class="field-division col-2">
-                  <input type="radio" name="promotion" id="promotion-all" class="field-radio" value="air-all" checked>
-                  <label class="field-radio-label" for="promotion-all">전체</label>
-
-                  <input type="radio" name="promotion" id="promotion-coupon" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="promotion-coupon">쿠폰</label>
-
-                  <input type="radio" name="promotion" id="promotion-event" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="promotion-event">이벤트</label>
-                </div>
-              </div>
-
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">터미널</span>
-                </div>
-
-                <div class="field-division col-2">
-                  <input type="radio" name="terminal" id="terminal-all" class="field-radio" value="air-all" checked>
-                  <label class="field-radio-label" for="terminal-all">전체</label>
-
-                  <input type="radio" name="terminal" id="terminal-1" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="terminal-1">제 1터미널</label>
-
-                  <input type="radio" name="terminal" id="terminal-2" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="terminal-2">제 2터미널</label>
-
-                  <input type="radio" name="terminal" id="terminal-boarding" class="field-radio" value="air-all">
-                  <label class="field-radio-label" for="terminal-boarding">탑승동</label>
-                </div>
-              </div>
-
-            </div>
-          </div> <!-- filter-service-field e -->
-          <button type="button" class="filter-service-option ico arrow-small-up-w">검색옵션</button>
-        </div>
-      </div>
-
-
-
-
     </div>
-</div>
+    <div class="filter">
+      <button type="button" class="filter-option ico arrow-small-up-w" title="클릭하면 검색옵션을 활성화 또는 비활성화합니다.">환승즐기기</button>
+      <div class="filter-service-field on">
+        <div class="field">
+          <span class="filter-service-field-tit">나의환승정보</span>
+          AP_DB_03.html
+        </div>
+      </div>
+    </div>
+    <div class="filter">
+      <button type="button" class="filter-option ico arrow-small-up-w" title="클릭하면 검색옵션을 활성화 또는 비활성화합니다.">검색옵션</button>
+      <div class="filter-service-field">
+        <div class="field">
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">시설선택</span>
+            </div>
+
+            <div class="field-division col-2">
+              <input type="radio" name="facilities" id="facilities-all" class="field-radio" value="facilities-all" checked>
+              <label class="field-radio-label" for="facilities-all">전체</label>
+
+              <input type="radio" name="facilities" id="facilities-massage" class="field-radio" value="facilities-massage">
+              <label class="field-radio-label" for="facilities-massage">안마의자</label>
+
+              <input type="radio" name="facilities" id="facilities-shower" class="field-radio" value="facilities-shower">
+              <label class="field-radio-label" for="facilities-shower">샤워</label>
+
+              <input type="radio" name="facilities" id="facilities-internet" class="field-radio" value="facilities-internet">
+              <label class="field-radio-label" for="facilities-internet">인터넷</label>
+
+              <input type="radio" name="facilities" id="facilities-spa" class="field-radio" value="facilities-spa">
+              <label class="field-radio-label" for="facilities-spa">스파</label>
+
+              <input type="radio" name="facilities" id="facilities-fitness" class="field-radio" value="facilities-fitness">
+              <label class="field-radio-label" for="facilities-fitness">피트니스</label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">서비스 선택</span>
+            </div>
+
+            <div class="field-division col-2">
+              <input type="radio" name="transit-service" id="transit-service-all" class="field-radio" value="transit-service-all" checked>
+              <label class="field-radio-label" for="transit-service-all">전체</label>
+
+              <input type="radio" name="transit-service" id="transit-service-guide" class="field-radio" value="transit-service-guide">
+              <label class="field-radio-label" for="transit-service-guide">가이드</label>
+
+              <input type="radio" name="transit-service" id="transit-service-hotel" class="field-radio" value="transit-service-hotel">
+              <label class="field-radio-label" for="transit-service-hotel">호텔</label>
+
+              <input type="radio" name="transit-service" id="transit-service-lounge" class="field-radio" value="transit-service-lounge">
+              <label class="field-radio-label" for="transit-service-lounge">라운지</label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">할 일</span>
+            </div>
+
+            <div class="field-division col-2">
+              <input type="radio" name="schedule" id="schedule-all" class="field-radio" value="schedule-all" checked>
+              <label class="field-radio-label" for="schedule-all">전체</label>
+
+              <input type="radio" name="schedule" id="schedule-public" class="field-radio" value="schedule-public">
+              <label class="field-radio-label" for="schedule-public">대중교통 여행</label>
+
+              <input type="radio" name="schedule" id="schedule-stopover" class="field-radio" value="schedule-stopover">
+              <label class="field-radio-label" for="schedule-stopover">스탑오버</label>
+
+              <input type="radio" name="schedule" id="schedule-kpop" class="field-radio" value="schedule-kpop">
+              <label class="field-radio-label" for="schedule-kpop">K-POP</label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">프로모션</span>
+            </div>
+
+            <div class="field-division col-2">
+              <input type="radio" name="promotion" id="promotion-all" class="field-radio" value="promotion-all" checked>
+              <label class="field-radio-label" for="promotion-all">전체</label>
+
+              <input type="radio" name="promotion" id="promotion-coupon" class="field-radio" value="promotion-coupon">
+              <label class="field-radio-label" for="promotion-coupon">쿠폰</label>
+
+              <input type="radio" name="promotion" id="promotion-event" class="field-radio" value="promotion-event">
+              <label class="field-radio-label" for="promotion-event">이벤트</label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">터미널</span>
+            </div>
+
+            <div class="field-division col-2">
+              <input type="radio" name="transit-terminal" id="transit-terminal-all" class="field-radio" value="transit-terminal-all" checked>
+              <label class="field-radio-label" for="transit-terminal-all">전체</label>
+
+              <input type="radio" name="transit-terminal" id="transit-terminal-1" class="field-radio" value="transit-terminal-1">
+              <label class="field-radio-label" for="transit-terminal-1">제 1터미널</label>
+
+              <input type="radio" name="transit-terminal" id="transit-terminal-2" class="field-radio" value="transit-terminal-2">
+              <label class="field-radio-label" for="transit-terminal-2">제 2터미널</label>
+
+              <input type="radio" name="transit-terminal" id="transit-terminal-boarding" class="field-radio" value="transit-terminal-boarding">
+              <label class="field-radio-label" for="transit-terminal-boarding">탑승동</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 리스트탭 -->
+    <div class="boxmodel2-tab">
+      <div class="boxmodel2-tab-btngroup">
+        <button type="button" title="버튼을 클릭하면 썸네일 형태로 보여집니다" class="ico view-thumbnail">리스트 보기</button>
+        <button type="button" title="버튼을 클릭하면 리스트 형태로 보여집니다" class="ico view-list on">리스트 보기</button>
+      </div>
+    </div>
+
+    <!--
+    박스모델2 리스트 ::
+    상세보기가 있는 리스트 -->
+    <div class="boxmodel2">
+      <ul class="boxmodel2-list simple">
+        <li class="boxmodel2-list-item">
+          <div class="boxmodel2-list-box">
+            <div class="boxmodel2-list-box-split col-1">
+              <div class="boxmodel2-imggroup">
+                <span class="boxmodel2-imggroup-mark blue">공항주변</span>
+                <img src="/static/ap/images/img_list_item03.jpg" class="imgbox" alt="INTERNET ZONE 관련 이미지">
+              </div>
+            </div>
+
+            <div class="boxmodel2-list-box-split col-2">
+              <span class="boxmodel2-maintit">INTERNET ZONE</span>
+
+              <div class="boxmodel2-column">
+                <dl class="boxmodel2-table">
+                  <dt class="boxmodel2-table-tit">시간</dt>
+                  <dd class="boxmodel2-table-desc">24시간</dd>
+                </dl>
+              </div>
+
+              <div class="boxmodel2-column">
+                <dl class="boxmodel2-table">
+                  <dt class="boxmodel2-table-tit">위치</dt>
+                  <dd class="boxmodel2-table-desc"><a href="#" class="color-lb boxmodel2-map-link">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</a></dd>
+                </dl>
+              </div>
+
+              <div class="boxmodel2-column">
+                <dl class="boxmodel2-table">
+                  <dt class="boxmodel2-table-tit">정보</dt>
+                  <dd class="boxmodel2-table-desc text-info">
+                    환승하는 여행객들이 무료로 인터넷을 즐길 수 있는 공간입니다.
+                  </dd>
+                </dl>
+              </div>
+
+              <div class="boxmodel2-column col-2">
+                <dl class="boxmodel2-table">
+                  <dt class="boxmodel2-table-tit">요금</dt>
+                  <dd class="boxmodel2-table-desc">무료</dd>
+                </dl>
+                <dl class="boxmodel2-table">
+                  <dt class="boxmodel2-table-tit">연락처</dt>
+                  <dd class="boxmodel2-table-desc">-</dd>
+                </dl>
+              </div>
+
+            </div>
+          </div>
+        </li>
+      </ul> <!-- list simple style -->
+    </div>
+  </div>
 
 
 
   <div class="contents-visual facilities">
     <div class="inner-section">
       <div class="congestion">
-        <div class="congestion-title">제2 여객터미널<br> <span class="point">종합정부행정센터 안내</span></div>
+        <div class="congestion-title ft20">제2 여객터미널<br> <span class="point">종합정부행정센터</span> 안내</div>
         <a href="#" class="congestion-quick-link ico">바로가기</a>
       </div>
       <div class="search-airline-head">
         <h4 class="search-airline-head-title"><strong>공항시설</strong> 검색</h4>
         <div class="search-airline-name">
           <label for="search-facilities" class="label-hide"></label>
-          <input type="text" id="search-facilities" class="search-airline-name-txt">
+          <input type="text" id="search-facilities" class="search-airline-name-txt" placeholder="서비스명 입력">
           <button type="button" class="search-airline-name-btn ico">검색</button>
         </div>
       </div>
     </div>
   </div>
-
-
-
-  <div class="inner-section">
-    <div class="position-box70">
-      <div class="filter white">
-        <div class="filter-service">
-          <div class="filter-service-field">
-            <div class="field">
-
-
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">터미널 선택</span>
-                </div>
-                <div class="field-division col-2">
-                  <input type="radio" name="terminal" id="terminal-1" class="field-radio" value="air-terminalB1">
-                  <label class="field-radio-label" for="terminal-1">제 1터미널</label>
-
-                  <input type="radio" name="terminal" id="terminal-2" class="field-radio" value="air-terminal2F">
-                  <label class="field-radio-label" for="terminal-2">제 2터미널</label>
-
-                  <div class="base-group-align">
-                    <input type="checkbox" name="todclock" id="todclock" class="base-check ico" value="yes" checked>
-                    <label class="base-check-label" for="todclock">24시간</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">서비스 선택</span>
-                </div>
-
-                <div class="field-division col-2">
-                  <input type="radio" name="shop-area" id="service-all" class="field-radio" value="shop-all" checked>
-                  <label class="field-radio-label" for="service-all">전체</label>
-
-                  <input type="radio" name="shop-area" id="service-financial" class="field-radio" value="shop-all" checked>
-                  <label class="field-radio-label" for="service-financial">금융&middot;통신</label>
-
-                  <input type="radio" name="shop-area" id="service-internet" class="field-radio" value="shop-boutique">
-                  <label class="field-radio-label" for="service-internet">인터넷비즈니스</label>
-
-                  <input type="radio" name="shop-area" id="service-medical" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-medical">휴게&middot;의료</label>
-
-                  <input type="radio" name="shop-area" id="service-life" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-life">생활&middot;미용</label>
-
-                  <input type="radio" name="shop-area" id="service-leisure" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-leisure">레저</label>
-
-                  <input type="radio" name="shop-area" id="service-amenities" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-amenities">환승편의시설</label>
-
-                  <input type="radio" name="shop-area" id="service-guide" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-guide">안내&middot;서비스</label>
-
-                  <input type="radio" name="shop-area" id="service-bank" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-bank">은행</label>
-
-                  <input type="radio" name="shop-area" id="service-exchange" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-exchange">환전</label>
-
-                  <input type="radio" name="shop-area" id="service-insurance" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-insurance">여행자보험</label>
-
-                  <input type="radio" name="shop-area" id="service-roaming" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-roaming">휴대폰여/로밍</label>
-
-                  <input type="radio" name="shop-area" id="service-mobile" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-mobile">모바일 충전시설</label>
-                </div>
-              </div>
-
-
+  <div class="inner-section position-box70">
+    <div class="filter">
+      <div class="filter-service-field">
+        <div class="field">
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">터미널 선택</span>
             </div>
-          </div> <!-- filter-service-field e -->
+            <div class="field-division col-2">
+              <input type="radio" name="air-terminal" id="air-terminal-1" class="field-radio" value="air-terminal-1" checked>
+              <label class="field-radio-label" for="air-terminal-1">제 1터미널</label>
+
+              <input type="radio" name="air-terminal" id="air-terminal-2" class="field-radio" value="air-terminal-2">
+              <label class="field-radio-label" for="air-terminal-2">제 2터미널</label>
+
+              <div class="base-align">
+                <input type="checkbox" name="todclock" id="todclock" class="" value="" checked>
+                <label class="" for="todclock">24시간</label>
+              </div>
+            </div>
+          </div>
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">서비스 선택</span>
+            </div>
+
+            <div class="field-division col-2">
+              <input type="radio" name="air-service" id="air-service-all" class="field-radio" value="air-service-all" checked>
+              <label class="field-radio-label" for="air-service-all">전체</label>
+
+              <input type="radio" name="air-service" id="air-service-financial" class="field-radio" value="air-service-financial">
+              <label class="field-radio-label" for="air-service-financial">금융&middot;통신</label>
+
+              <input type="radio" name="air-service" id="air-service-internet" class="field-radio" value="air-service-internet">
+              <label class="field-radio-label" for="air-service-internet">인터넷비즈니스</label>
+
+              <input type="radio" name="air-service" id="air-service-medical" class="field-radio" value="air-service-medical">
+              <label class="field-radio-label" for="air-service-medical">휴게&middot;의료</label>
+
+              <input type="radio" name="air-service" id="air-service-life" class="field-radio" value="air-service-life">
+              <label class="field-radio-label" for="air-service-life">생활&middot;미용</label>
+
+              <input type="radio" name="air-service" id="air-service-leisure" class="field-radio" value="air-service-leisure">
+              <label class="field-radio-label" for="air-service-leisure">레저</label>
+
+              <input type="radio" name="air-service" id="air-service-amenities" class="field-radio" value="air-service-amenities">
+              <label class="field-radio-label" for="air-service-amenities">환승편의시설</label>
+
+              <input type="radio" name="air-service" id="air-service-info" class="field-radio" value="air-service-info">
+              <label class="field-radio-label" for="air-service-info">안내&middot;서비스</label>
+
+              <input type="radio" name="air-service" id="air-service-bank" class="field-radio" value="air-service-bank">
+              <label class="field-radio-label" for="air-service-bank">은행</label>
+
+              <input type="radio" name="air-service" id="air-service-exchange" class="field-radio" value="air-service-exchange">
+              <label class="field-radio-label" for="air-service-exchange">환전</label>
+
+              <input type="radio" name="air-service" id="air-service-insurance" class="field-radio" value="air-service-insurance">
+              <label class="field-radio-label" for="air-service-insurance">여행자보험</label>
+
+              <input type="radio" name="air-service" id="air-service-roaming" class="field-radio" value="air-service-roaming">
+              <label class="field-radio-label" for="air-service-roaming">휴대폰여/로밍</label>
+
+              <input type="radio" name="air-service" id="air-service-mobile" class="field-radio" value="air-service-mobile">
+              <label class="field-radio-label" for="air-service-mobile">모바일 충전시설</label>
+            </div>
+          </div>
         </div>
-      </div>
+      </div> <!-- filter-service-field e -->
     </div>
   </div>
 
@@ -753,542 +813,247 @@
       </div>
     </div>
   </div>
-  <div class="inner-section">
-    <div class="position-box70">
-      <div class="filter white">
-        <div class="filter-service">
-          <div class="filter-service-field">
-            <div class="field">
+  <div class="inner-section position-box70">
+    <div class="filter">
+      <div class="filter-service-field">
+        <div class="field">
 
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">터미널 선택</span>
-                </div>
-                <div class="field-division col-2">
-                  <input type="radio" name="terminal" id="terminal-1" class="field-radio" value="air-terminalB1">
-                  <label class="field-radio-label" for="terminal-1">제 1터미널</label>
-
-                  <input type="radio" name="terminal" id="terminal-2" class="field-radio" value="air-terminal2F">
-                  <label class="field-radio-label" for="terminal-2">제 2터미널</label>
-                </div>
-              </div>
-
-              <div class="field-group">
-                <div class="field-division col-1">
-                  <span class="field-group-tit">서비스 선택</span>
-                </div>
-
-                <div class="field-division col-2">
-                  <input type="radio" name="shop-area" id="service-all" class="field-radio" value="shop-all" checked>
-                  <label class="field-radio-label" for="service-all">전체</label>
-
-                  <input type="radio" name="shop-area" id="service-contry" class="field-radio" value="shop-boutique">
-                  <label class="field-radio-label" for="service-contry">문화체험관</label>
-
-                  <input type="radio" name="shop-area" id="service-airside" class="field-radio" value="shop-cosmetics">
-                  <label class="field-radio-label" for="service-airside">공항주변</label>
-               </div>
-              </div>
-
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">터미널 선택</span>
             </div>
-          </div> <!-- filter-service-field e -->
+            <div class="field-division col-2">
+              <input type="radio" name="terminal" id="terminal-1" class="field-radio" value="terminal-1" checked>
+              <label class="field-radio-label" for="terminal-1">제 1터미널</label>
+
+              <input type="radio" name="terminal" id="terminal-2" class="field-radio" value="terminal-2">
+              <label class="field-radio-label" for="terminal-2">제 2터미널</label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-division col-1">
+              <span class="field-group-tit">서비스 선택</span>
+            </div>
+
+            <div class="field-division col-2">
+              <input type="radio" name="service" id="service-all" class="field-radio" value="service-all" checked>
+              <label class="field-radio-label" for="service-all">전체</label>
+
+              <input type="radio" name="service" id="service-contry" class="field-radio" value="service-contry">
+              <label class="field-radio-label" for="service-contry">문화체험관</label>
+
+              <input type="radio" name="service" id="service-airside" class="field-radio" value="service-airside">
+              <label class="field-radio-label" for="service-airside">공항주변</label>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 
 
-<section class="inner-section">
-<!-- 기본타입3 -->
-<!--
-서비스선택 필터 -->
+
+  <section class="inner-section">
 
 
+    <div class="boxmodel2">
+      <ul class="boxmodel2-thumbnail">
+        <li class="boxmodel2-thumbnail-item">
+          <a href="#" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark green">공연/전시</span>
+                  <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="왕가의 산책 관련 이미지">
+                </div>
+              </div>
 
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">왕가의 산책</span>
+                <p class="boxmodel2-desc">
+                  조선시대 왕과 왕비를 비롯한 궁중왕실의 일상모습을 재현한 행사입니다. 궁중복식 및 의장물을 착용한 출연진들과 함께 기념사진을 촬영할 수 있는 포토타임도 마련되어 있습니다.
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제 1여객터미널] (면세지역) 4층 동&middot;서 끝 편(2개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
 
+        <li class="boxmodel2-thumbnail-item">
+          <a href="#" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark red">라운지</span>
+                  <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
+                </div>
+              </div>
 
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">INTERNET ZONE</span>
+                <p class="boxmodel2-desc">
+                  환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
 
+        <li class="boxmodel2-thumbnail-item">
+          <a href="#" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark red">라운지</span>
+                  <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
+                </div>
+              </div>
 
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">INTERNET ZONE</span>
+                <p class="boxmodel2-desc">
+                  환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
 
+        <li class="boxmodel2-thumbnail-item">
+          <a href="#" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark red">라운지</span>
+                  <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
+                </div>
+              </div>
 
-<!--
-박스모델2 리스트 -->
-<div class="boxmodel2">
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">INTERNET ZONE</span>
+                <p class="boxmodel2-desc">
+                  환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
 
-  <div class="boxmodel2-filter">
-    <div class="boxmodel2-filter-btngroup">
-      <button type="button" title="버튼을 클릭하면 썸네일 형태로 보여집니다" class="ico view-thumbnail">리스트 보기</button>
-      <button type="button" title="버튼을 클릭하면 리스트 형태로 보여집니다" class="ico view-list on">리스트 보기</button>
+        <li class="boxmodel2-thumbnail-item">
+          <a href="#" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark red">라운지</span>
+                  <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">INTERNET ZONE</span>
+                <p class="boxmodel2-desc">
+                  환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="#" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark red">라운지</span>
+                  <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">INTERNET ZONE</span>
+                <p class="boxmodel2-desc">
+                  환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                  객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+      </ul> <!-- thumbnail style -->
     </div>
-  </div>
+  </section>
+</section>
 
-  <ul class="boxmodel2-list">
-    <li class="boxmodel2-list-item todclock">
-      <div class="boxmodel2-list-box">
-        <div class="boxmodel2-list-box-split col-1">
-          <div class="boxmodel2-imggroup">
-            <span class="boxmodel2-imggroup-mark green">금융&middot;통신</span>
-            <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-          </div>
-        </div>
+<script>
+  $(document).ready(function(){
+    filterEvent(); // 필터 관련 펼치기 이벤트
+    boxmodelEvent(); // 박스모델 세부사항 펼치기 이벤트
+  });
 
-        <div class="boxmodel2-list-box-split col-2">
-          <span class="boxmodel2-maintit">할리비데이슨</span>
-          <table class="table boxmodel2-list-table" summary="여객 출발기 정기 운항편에 대한 안내 표입니다">
-            <caption>여객 출발기 정기 운항편 안내표</caption>
-            <colgroup>
-              <col width="15%">
-              <col width="35%">
-              <col width="15%">
-              <col width="35%">
-            </colgroup>
-            <tbody>
-            <tr>
-              <th scope="col">영업시간</th>
-              <td scope="col">06:30 ~ 21:00</td>
-              <th scope="col">연락처</th>
-              <td scope="col">032-743-4769</td>
-            </tr>
+  function boxmodelEvent(){
+    var listItem = $('.boxmodel2-list-item');
+    $('.boxmodel2-list-item .btn-type-small').on('click', function(){
+      $(this).parents(listItem).toggleClass('on');
+      if($(this).parents(listItem).hasClass('on')) {
+        $(this).text('닫기');
+      } else {
+        $(this).text('펼치기');
+      }
+    });
+  }
 
-            <tr>
-              <th colspan="1">위치</th>
-              <td colspan="3"><em class="color-lb">여객터미널 3층 체크인카운터 G부근</em></td>
-            </tr>
-
-            <tr>
-              <th colspan="1">주요상품</th>
-              <td colspan="3" class="position">
-                할리데이비슨 의류, 기념품
-                <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button></td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="boxmodel2-list-detail">
-        <span class="boxmodel2-list-tit">매장소개</span>
-        <div class="boxmodel2-list-detail-split col-1">
-          <p class="boxmodel2-desc">
-            베이커리, 아이스크림, 커피, 샌드위치, 떡, 빙수, 주스 등 세상의 모든
-            디저트를 한자리에서 즐길 수 있는 고메디저트.<br />
-            공항을 방문하는 고객에게 행복한 추억과 더불어 미식의 디저트까지 선물하는 공간입니다.
-          </p>
-
-          <dl class="boxmodel2-list-info">
-            <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
-            <dd class="boxmodel2-list-info-price">5,000원</dd>
-            <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
-            <dd class="boxmodel2-list-info-price">5,200원</dd>
-          </dl>
-
-          <span class="boxmodel2-list-subtit">SMS 서비스 정보 받기</span>
-
-          <div class="responsive-form-box send">
-            <div class="responsive-form-box-area">
-              <label for="phone" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
-              <input type="phone" id="phone" placeholder="휴대폰 번호 입력" />
-            </div>
-            <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
-          </div>
-        </div>
-        <div class="boxmodel2-list-detail-split col-2">
-          <img src="/static/ap/images/img_temp_05.jpg" class="imgbox" alt="">
-        </div>
-      </div>
-    </li>
-
-
-
-
-    <li class="boxmodel2-list-item">
-      <div class="boxmodel2-list-box">
-        <div class="boxmodel2-list-box-split col-1">
-          <div class="boxmodel2-imggroup">
-            <span class="boxmodel2-imggroup-mark green">금융&middot;통신</span>
-            <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-          </div>
-        </div>
-
-        <div class="boxmodel2-list-box-split col-2">
-          <span class="boxmodel2-maintit">할리비데이슨</span>
-          <table class="table boxmodel2-list-table" summary="여객 출발기 정기 운항편에 대한 안내 표입니다">
-            <caption>여객 출발기 정기 운항편 안내표</caption>
-            <colgroup>
-              <col width="15%">
-              <col width="35%">
-              <col width="15%">
-              <col width="35%">
-            </colgroup>
-            <tbody>
-            <tr>
-              <th scope="col">영업시간</th>
-              <td scope="col">06:30 ~ 21:00</td>
-              <th scope="col">연락처</th>
-              <td scope="col">032-743-4769</td>
-            </tr>
-
-            <tr>
-              <th colspan="1">위치</th>
-              <td colspan="3"><em class="color-lb">여객터미널 3층 체크인카운터 G부근</em></td>
-            </tr>
-
-            <tr>
-              <th colspan="1">주요상품</th>
-              <td colspan="3" class="position">
-                할리데이비슨 의류, 기념품
-                <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button></td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="boxmodel2-list-detail">
-        <span class="boxmodel2-list-tit">매장소개</span>
-        <div class="boxmodel2-list-detail-split col-1">
-          <p class="boxmodel2-desc">
-            베이커리, 아이스크림, 커피, 샌드위치, 떡, 빙수, 주스 등 세상의 모든
-            디저트를 한자리에서 즐길 수 있는 고메디저트.<br />
-            공항을 방문하는 고객에게 행복한 추억과 더불어 미식의 디저트까지 선물하는 공간입니다.
-          </p>
-
-          <dl class="boxmodel2-list-info">
-            <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
-            <dd class="boxmodel2-list-info-price">5,000원</dd>
-            <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
-            <dd class="boxmodel2-list-info-price">5,200원</dd>
-          </dl>
-
-          <span class="boxmodel2-list-subtit">SMS 서비스 정보 받기</span>
-
-          <div class="responsive-form-box send">
-            <div class="responsive-form-box-area">
-              <label for="phone" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
-              <input type="phone" id="phone" placeholder="휴대폰 번호 입력" />
-            </div>
-            <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
-          </div>
-        </div>
-        <div class="boxmodel2-list-detail-split col-2">
-          <img src="/static/ap/images/img_temp_05.jpg" class="imgbox" alt="">
-        </div>
-      </div>
-    </li>
-  </ul> <!-- list style -->
-</div>
-
-
-<div class="boxmodel2">
-  <ul class="boxmodel2-list simple">
-    <li class="boxmodel2-list-item">
-      <div class="boxmodel2-list-box">
-        <div class="boxmodel2-list-box-split col-1">
-          <div class="boxmodel2-imggroup">
-            <span class="boxmodel2-imggroup-mark red">라운지</span>
-            <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-          </div>
-        </div>
-
-        <div class="boxmodel2-list-box-split col-2">
-          <span class="boxmodel2-maintit">INTERNET ZONE</span>
-          <table class="table boxmodel2-list-table" summary="여객 출발기 정기 운항편에 대한 안내 표입니다">
-            <caption>여객 출발기 정기 운항편 안내표</caption>
-            <colgroup>
-              <col width="15%">
-              <col width="35%">
-              <col width="15%">
-              <col width="35%">
-            </colgroup>
-            <tbody>
-            <tr>
-              <th scope="col" colspan="1">시간</th>
-              <td scope="col" colspan="3">24시간</td>
-            </tr>
-
-            <tr>
-              <th scope="col" colspan="1">위치</th>
-              <td scope="col" colspan="3"><a href="#" class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</a></td>
-            </tr>
-
-            <tr>
-              <th scope="col" colspan="1">정보</th>
-              <td scope="col" colspan="3">
-                <p class="text-info">
-                환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설 객실 96실,<br>
-                환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설 객실 96실, 객실갤시개실개시린러러ㅑㅐㅈㄷ러ㅐㅈ랴더재ㅑㄷㄹㄷ재ㅑ러잴
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <th scope="col">요금</th>
-              <td scope="col">무료</td>
-
-              <th scope="col">연락처</th>
-              <td scope="col">-</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </li>
-
-    <li class="boxmodel2-list-item">
-      <div class="boxmodel2-list-box">
-        <div class="boxmodel2-list-box-split col-1">
-          <div class="boxmodel2-imggroup">
-            <span class="boxmodel2-imggroup-mark red">라운지</span>
-            <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-          </div>
-        </div>
-
-        <div class="boxmodel2-list-box-split col-2">
-          <span class="boxmodel2-maintit">INTERNET ZONE</span>
-          <table class="table boxmodel2-list-table" summary="여객 출발기 정기 운항편에 대한 안내 표입니다">
-            <caption>여객 출발기 정기 운항편 안내표</caption>
-            <colgroup>
-              <col width="15%">
-              <col width="35%">
-              <col width="15%">
-              <col width="35%">
-            </colgroup>
-            <tbody>
-            <tr>
-              <th scope="col" colspan="1">시간</th>
-              <td scope="col" colspan="3">24시간</td>
-            </tr>
-
-            <tr>
-              <th scope="col" colspan="1">위치</th>
-              <td scope="col" colspan="3"><a href="#" class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</a></td>
-            </tr>
-
-            <tr>
-              <th scope="col" colspan="1">정보</th>
-              <td scope="col" colspan="3">
-                <p class="text-info">
-                  환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설 객실 96실,<br>
-                  환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설 객실 96실,
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <th scope="col">요금</th>
-              <td scope="col">무료</td>
-
-              <th scope="col">연락처</th>
-              <td scope="col">-</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </li>
-  </ul> <!-- list simple style -->
-</div>
-
-
-  <div class="boxmodel2">
-    <ul class="boxmodel2-thumbnail">
-      <li class="boxmodel2-thumbnail-item">
-        <a href="#" class="boxmodel2-thumbnail-link">
-          <div class="boxmodel2-thumbnail-cover">
-            <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
-          </div>
-          <div class="boxmodel2-thumbnail-box">
-            <div class="boxmodel2-thumbnail-box-split row-1">
-              <div class="boxmodel2-imggroup">
-                <span class="boxmodel2-imggroup-mark red">라운지</span>
-                <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-              </div>
-            </div>
-
-            <div class="boxmodel2-thumbnail-box-split row-2">
-              <span class="boxmodel2-maintit">INTERNET ZONE</span>
-              <p class="boxmodel2-desc">
-                환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-              </p>
-              <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li class="boxmodel2-thumbnail-item">
-        <a href="#" class="boxmodel2-thumbnail-link">
-          <div class="boxmodel2-thumbnail-cover">
-            <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
-          </div>
-          <div class="boxmodel2-thumbnail-box">
-            <div class="boxmodel2-thumbnail-box-split row-1">
-              <div class="boxmodel2-imggroup">
-                <span class="boxmodel2-imggroup-mark red">라운지</span>
-                <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-              </div>
-            </div>
-
-            <div class="boxmodel2-thumbnail-box-split row-2">
-              <span class="boxmodel2-maintit">INTERNET ZONE</span>
-              <p class="boxmodel2-desc">
-                환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-              </p>
-              <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li class="boxmodel2-thumbnail-item">
-        <a href="#" class="boxmodel2-thumbnail-link">
-          <div class="boxmodel2-thumbnail-cover">
-            <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
-          </div>
-          <div class="boxmodel2-thumbnail-box">
-            <div class="boxmodel2-thumbnail-box-split row-1">
-              <div class="boxmodel2-imggroup">
-                <span class="boxmodel2-imggroup-mark red">라운지</span>
-                <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-              </div>
-            </div>
-
-            <div class="boxmodel2-thumbnail-box-split row-2">
-              <span class="boxmodel2-maintit">INTERNET ZONE</span>
-              <p class="boxmodel2-desc">
-                환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-              </p>
-              <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li class="boxmodel2-thumbnail-item">
-        <a href="#" class="boxmodel2-thumbnail-link">
-          <div class="boxmodel2-thumbnail-cover">
-            <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
-          </div>
-          <div class="boxmodel2-thumbnail-box">
-            <div class="boxmodel2-thumbnail-box-split row-1">
-              <div class="boxmodel2-imggroup">
-                <span class="boxmodel2-imggroup-mark red">라운지</span>
-                <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-              </div>
-            </div>
-
-            <div class="boxmodel2-thumbnail-box-split row-2">
-              <span class="boxmodel2-maintit">INTERNET ZONE</span>
-              <p class="boxmodel2-desc">
-                환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-              </p>
-              <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li class="boxmodel2-thumbnail-item">
-        <a href="#" class="boxmodel2-thumbnail-link">
-          <div class="boxmodel2-thumbnail-cover">
-            <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
-          </div>
-          <div class="boxmodel2-thumbnail-box">
-            <div class="boxmodel2-thumbnail-box-split row-1">
-              <div class="boxmodel2-imggroup">
-                <span class="boxmodel2-imggroup-mark red">라운지</span>
-                <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-              </div>
-            </div>
-
-            <div class="boxmodel2-thumbnail-box-split row-2">
-              <span class="boxmodel2-maintit">INTERNET ZONE</span>
-              <p class="boxmodel2-desc">
-                환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-              </p>
-              <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li class="boxmodel2-thumbnail-item">
-        <a href="#" class="boxmodel2-thumbnail-link">
-          <div class="boxmodel2-thumbnail-cover">
-            <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
-          </div>
-          <div class="boxmodel2-thumbnail-box">
-            <div class="boxmodel2-thumbnail-box-split row-1">
-              <div class="boxmodel2-imggroup">
-                <span class="boxmodel2-imggroup-mark red">라운지</span>
-                <img src="/static/ap/images/img_list_item01.jpg" class="imgbox" alt="">
-              </div>
-            </div>
-
-            <div class="boxmodel2-thumbnail-box-split row-2">
-              <span class="boxmodel2-maintit">INTERNET ZONE</span>
-              <p class="boxmodel2-desc">
-                환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-                객실 96실, 인터넷 이용 및 간단한 업무를 볼 수 있는 비즈니스센터, 호텔라운지 이용가능
-              </p>
-              <span class="boxmodel2-map-link color-lb">[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)[제1여객터미널] 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편(2개소)</span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-    </ul> <!-- thumbnail style -->
-  </div>
-
-  <script>
-    $(document).ready(function(){
-      filterEvent(); // 필터 관련 펼치기 이벤트
-      boxmodelEvent(); // 박스모델 세부사항 펼치기 이벤트
+  function filterEvent(){
+    $('.filter .filter-brand-search-btn').on('click', function(){
+      $(this).toggleClass('on');
+      $(this).parents('.filter').toggleClass('on');
     });
 
-    function boxmodelEvent(){
-      var listItem = $('.boxmodel2-list-item');
-      $('.boxmodel2-list-item .btn-type-small').on('click', function(){
-        $(this).parents(listItem).toggleClass('on');
-        if($(this).parents(listItem).hasClass('on')) {
-          $(this).text('닫기');
-        } else {
-          $(this).text('펼치기');
-        }
-      });
-    }
+    $('.filter .base-close').on('click', function(){
+      $(this).parents('.filter').removeClass('on');
+    });
 
-    function filterEvent(){
-      $('.filter .field-search-btn').on('click', function(){
-        $(this).toggleClass('on');
-        $(this).parents('.filter').toggleClass('on');
-      });
-
-      $('.filter .base-close').on('click', function(){
-        $(this).parents('.filter').removeClass('on');
-      });
-
-      $('.filter .filter-service-option').on('click', function(){
-        $(this).toggleClass('on');
-        $(this).parents('.filter-service').toggleClass('on');
-        $(this).prev('.filter-service-field').toggleClass('off');
-      });
-    }
-  </script>
-</section>
-
-</section>
+    $('.filter .filter-option').on('click', function(){
+      $(this).toggleClass('on');
+      $(this).next('.filter-service-field').toggleClass('on');
+      //$(this).next('.filter-service-field').toggleClass('off');
+    });
+  }
+</script>
 <!--=include _include/_base_footer.html -->
 
 
