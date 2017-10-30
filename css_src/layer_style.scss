@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-@import "reset";
+@import "init_reset";
 
-@import "font";
+@import "init_font";
 
-@import "scrollbar";
+@import "init_scrollbar";
 
 @import "layer_header";
 
@@ -12,6 +12,6 @@
 
 @import "layer_contents1";
 
-@import "layer_contents2";
+@import "layer_contents1";
 
-@import "layer_contents3";
+@import "layer_contents2";

@@ -1,0 +1,495 @@
+.contents{
+  width: 100%;
+  min-width: 1200px;
+  margin: 0 auto;
+}
+
+.location{
+  position: relative;
+  &-btn{
+    position: absolute;
+    top:20px;
+    right:25px;
+    & button{
+      width: 44px;
+      height: 22px;
+      border: none;
+      background:#fff;
+      &+ button{
+        border-left: 1px solid #f2f2f2;
+      }
+    }
+  }
+  &-bar{
+    position: absolute;
+    top:20px;
+    left:25px;
+    &-nav{
+     @extend %clearfix;
+
+     &-item {
+       padding-left: 20px;
+       float: left;
+       line-height:1.7;
+       &.ico{
+         text-indent: 0;
+         &:after{
+           top:1px;
+           left: auto;
+           right: -10px;
+         }
+       }
+       .home{
+         &.ico{
+           &:after{
+             top:-2px;
+             left: auto;
+             right: 0px;
+           }
+         }
+       }
+      &-link{
+        color: #666;
+        font-size:0.875rem;
+      }
+     }
+    }
+  }
+}
+
+.contents-visual{
+  min-height:300px;
+  height:300px;
+  padding-top: 90px;
+  position:relative;
+  background-size: cover;
+  .inner-section{
+    height:100%;
+    position:relative;
+  }
+
+  &.departure{
+    background:url(/static/ap/images/img_sub_visual_departure.jpg) center no-repeat;
+
+  }
+  &.search-airline{
+    background:url(/static/ap/images/img_sub_visual_airline.jpg) center no-repeat;
+    padding-top: 53px;
+  }
+
+  &.facilities{
+    padding-top: 53px;
+    background:url(/static/ap/images/img_base_top06.jpg) center no-repeat;
+  }
+}
+
+.congestion{
+  width: auto;
+  border-left: 1px solid rgba(255, 255, 255, .2);
+  padding-left:24px;
+  float: right;
+  position: absolute;
+  right: 24px;
+  top: 0;
+  text-align:center;
+  &-title{
+    margin-bottom: 10px;
+    color:#fff;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    .point{
+      color: #ffae44;
+    }
+  }
+
+  &-quick-link{
+    width: 126px;
+    height: 30px;
+    padding:0 10px;
+    line-height: 25px;
+    color:#fff;
+    font-size: 0.875rem;
+    border: 1px solid #fff;
+    border-radius:20px;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: left;
+
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      left:95px;
+    }
+  }
+}
+
+.tab{
+  &-main{
+    width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    &-list{
+      display: inline-block;
+      @extend %clearfix;
+      &-item{
+        float: left;
+        &-link{
+          width: 208px;
+          height: 50px;
+          line-height: 50px;
+          color: #fff;
+          font-weight: 700;
+          display: inline-block;
+          border: 2px solid rgba(255, 255, 255, .5);
+          box-sizing: border-box;
+          font-size: 1.5rem;
+          &.on{
+            background:#fff;
+            color: #42519e;
+          }
+          &.left{
+            border-top-left-radius: 5px;
+            border-bottom-left-radius:5px;
+            border-right:none;
+          }
+          &.right{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius:5px;
+            border-left:none;
+          }
+        }
+      }
+    }
+  }
+
+  &-sub{
+    position:absolute;
+    bottom:0;
+    text-align: center;
+    &-list{
+      @extend %clearfix;
+      &-item {
+        float: left;
+        &-link{
+          width: 574px;
+          height: 72px;
+          line-height:72px;
+          background:rgba(66, 81, 158, .9);
+          color: #fff;
+          font-size: 	1.375rem;
+          font-weight:300;
+          display: inline-block;
+          &.on{
+            color: #42519e;
+            background: #fff;
+            font-weight: 700;
+             }
+          }
+        &+.tab-sub-list-item{
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}
+
+.search-flight-detail{
+  margin-bottom:20px;
+  display: inline-block;
+  &-option{
+    float: left;
+    margin-right:15px;
+    input[type="radio"].radio{
+      display: none;
+      & + .search-option-btn{
+        height: 60px;
+        padding:0 18px;
+        line-height: 60px;
+        cursor: pointer;
+        display: block;
+        background: #fff;
+        border: 1px solid #a5a7aa;
+        box-sizing: border-box;
+        color: #666;
+        font-size: 1rem;
+        float: left;
+        &:after{
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          z-index: -1;
+        }
+      }
+      &:checked + .search-option-btn {
+        cursor: default;
+        color: #343951;
+        font-weight: 800;
+        border: 1px solid #323648;
+        &:after{
+          left: 0;
+        }
+      }
+    }
+  }
+  &-select{
+    height: 60px;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    float: left;
+
+    &-article{
+      width: 186px;
+      height: 58px;
+      padding:18px 10px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      border: none;
+      border-right: 1px solid #d9d9d9;
+      vertical-align: bottom;
+      float: left;
+    }
+    &-airplane{
+      width: 189px;
+      height:58px;
+      padding:0 10px;
+      background: #fcfbe8;
+      border: none;
+      box-sizing: border-box;
+      font-size: 1rem;
+      float: left;
+    }
+    &-btn{
+      width: 62px;
+      height: 58px;
+      padding:20px;
+      border:none;
+      vertical-align: bottom;
+      background:#323648;
+      text-indent: -9999px;
+      display: inline-block;
+
+    }
+  }
+}
+
+.search-flight{
+  padding: 35px 0;
+  border-top: 1px solid #a5a7aa;
+  text-align: center;
+
+  &-search{
+    display:inline-block;
+    font-size: 1.875rem;
+    color: #444;
+    @extend %clearfix;
+
+    &-txt{
+      display:block;
+      margin-right:20px;
+      float:left;
+      position:relative;
+      top:15px;
+    }
+    &-option{
+      display:block;
+      height:58px;
+      width: 180px;
+      padding: 0 15px;
+      margin-right:20px;
+      float:left;
+      font-size: 1.125rem;
+      color: #666;
+      border: 1px solid #d9d9d9;
+    }
+    &-btn{
+      display:block;
+      width: 130px;
+      height: 58px;
+      padding-left:40px;
+      float:left;
+      line-height:1;
+      font-size: 1.625rem;
+      color: #fff;
+      background: #323648;
+      border: none;
+
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        right:60px;
+        top:4px;
+      }
+    }
+  }
+}
+
+.search-airline{
+  &-head{
+    text-align: center;
+    &-title{
+      margin-bottom: 20px;
+      color: #fff;
+      font-size: 2.375rem;
+      font-family:'nanumsq', sans-serif;
+      font-weight: 300;
+    }
+  }
+  &-name{
+    display:table;
+    margin: 0 auto;
+
+    @extend %clearfix;
+
+    &-option{
+      width: 182px;
+      height: 58px;
+      padding: 0 15px;
+      line-height: 1;
+      border: none;
+      font-size: 1.125rem;
+      float: left;
+    }
+    &-txt{
+      width: 323px;
+      height: 58px;
+      padding: 0 15px;
+      border: 0;
+      font-size: 1.25rem;
+      color: #666;
+      font-weight: 300;
+      border-left:1px solid #d9d9d9;
+      float: left;
+    }
+    &-btn{
+      width: 132px;
+      height: 58px;
+      padding-left: 15px;
+      background:#42519e;
+      border: none;
+      color: #fff;
+      font-size: 1.625rem;
+      line-height: 1;
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        top:1px;
+        right:85px;
+      }
+    }
+  }
+}
+
+.update{
+  margin-bottom: 20px;
+  text-align: right;
+  &-time{
+    font-size: 0.875rem;
+    color: #666;
+    margin-right: 10px;
+  }
+  &-refresh{
+    height: 26px;
+    padding: 0 10px  0 25px;
+    line-height: 21px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    font-size:0.8125rem;
+    color: #666;
+    &.ico{
+      text-indent:0;
+    }
+    &.ico:after{
+      right: 60px;
+      top:6px;
+    }
+  }
+}
+
+// layer popup
+.layer{
+  width: 680px;
+  height: 938px;
+  border: 4px solid #42519e;
+  overflow-y: scroll;
+  &-area{
+    padding: 35px 30px;
+  }
+  &-title{
+    padding-bottom: 20px;
+    border-bottom: 2px solid #42519e;
+    font-size: 1.875rem;
+    color: #42519e;
+  }
+  &-close{
+    display: block;
+    width: 31px;
+    height: 31px;
+    background:url(/static/ap/images/ico_layer_close.png ) center no-repeat;
+    text-indent: -99999em;
+    position:relative;
+    top: -56px;
+    left: 95%;
+    }
+  &-article{
+    margin-bottom:30px;
+    &-title{
+      margin-bottom: 20px;
+      font-size:1.25rem;
+      font-weight: 800;
+    }
+    &-input{
+      width: 100%;
+      height: 59px;
+      font-size: 1.25rem;
+      text-align: center;
+      color: #666;
+      background: #fcfbe8;
+      border: 1px solid #d9d9d9;
+    }
+    &-box{
+      width: 602px;
+      height: 148px;
+      padding: 20px 15px;
+      border: 1px solid #e2e5e9;
+      background: #f5f6f7;
+      overflow-y: scroll;
+      &-sub{
+        margin-bottom: 7px;
+        font-size:1.125rem ;
+       }
+      &-txt{
+        font-size:1rem ;
+      }
+    }
+  }
+  .list1{
+    font-size:1rem;
+    letter-spacing:-0.02rem;
+  }
+  .info-desc{
+    font-size: 0.875rem;
+  }
+}
+
+.enter{
+  width: 100%;
+  padding: 20px 0 30px;
+  text-align: center;
+  background: #f5f6f7;
+  border-top: 1px solid #e2e5e9;
+  &-btn{
+    width: 200px;
+    height: 46px;
+    font-size: 1.25rem;
+    color: #fff;
+    background: #323648;
+    border: 0;
+    border-radius: 30px;
+  }
+}
+

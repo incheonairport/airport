@@ -1,0 +1,522 @@
+.table-like{
+  display:table;
+  width:100%;
+
+  caption{
+    display:none;
+  }
+
+  &.vt-dark{
+
+    .caption-like{
+      display:none;
+    }
+
+    .tr-like{
+      &.flight-info-detail{
+        .td-like{
+          height: 186px;
+          border: 0;
+          position: relative;
+          &:after{
+            height: 124px;
+            content: "";
+            display:block;
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+            position: absolute;
+            top:35px;
+            right:0;
+          }
+          &:nth-child(3){
+            &:after{
+              display:none;
+            }
+          }
+          &.share-close{
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+          }
+
+        }
+      }
+    }
+
+    .th-like{
+      display:table-cell;
+      padding:18px 0 16px;
+      border-right:1px solid #474a5b;
+      background:#323648;
+      font-size:1rem;
+      font-weight:400;
+      color:#fff;
+      text-align:center;
+      vertical-align:middle;
+
+      &:last-child{
+        border-right:0;
+      }
+
+      &.half{
+        padding:12px;
+      }
+
+      &.sub{
+        padding:6px 0 8px;
+        border:{
+          top:1px solid #212535;
+          right:1px solid #212535;
+        }
+        background:#4d5164;
+        font-size:0.875rem;
+
+        &:last-child{
+          border-right:0;
+        }
+      }
+
+    }
+
+    .td-like{
+      display:table-cell;
+      padding:19px 20px 16px;
+      line-height:1.4;
+      border:{
+        right:1px solid #f2f4f7;
+        top:1px solid #d9d9d9;
+        bottom:1px solid #d9d9d9;
+      }
+      vertical-align:middle;
+
+      &.center{
+        text-align:center;
+      }
+
+      &:last-child{
+        border-right:1px solid #d9d9d9;
+      }
+      .btn-newsflash{
+        width: 30px;
+        height: 30px;
+        border: 0;
+        background: #fff;
+        text-indent:-999em ;
+        background: url(/static/ap/images/ico_mobile_sms.png ) 50% no-repeat;
+      }
+      &.share-close{
+        padding: 0;
+      }
+    }
+    .td-pop{
+      height: 186px;
+      position:relative;
+      float: right;
+      margin-top: -310px;
+      display:none;
+      &-close-btn{
+        position: absolute;
+        top:15px;
+        z-index: 1;
+        cursor: pointer;
+        &.ico{
+          &:after {
+            background-position:-207px -61px;
+            width: 20px;
+            height:20px;
+            top:0px;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+.flight-info{
+
+  &-basic{
+    margin-top:10px;
+    &-link{
+      display: block;
+      &:hover {
+        border: 1px solid #13141a;
+        box-sizing: border-box;
+        .td-like{
+          border-top:0;
+          border-bottom:0;
+        }
+      }
+      .flight{
+        text-align: center;
+      }
+    }
+    &-status{
+      position:relative;
+      .time-chnaged{
+        font-size: 1.5rem;
+      }
+      .time-due{
+        font-size: 	0.875rem;
+        color: #4f73bc;
+        text-decoration:line-through;
+      }
+
+      &:after{
+        content:"";
+        display:block;
+        width:4px;
+        height:calc( 100% + 2px );
+        position:absolute;
+        top:-1px;
+        left:0;
+      }
+
+      &.departure,
+      &.boarding-closed{
+        &:after{
+          background:#323648;
+        }
+      }
+      &.delay{
+        &:after{
+          background:#d43e41;
+        }
+      }
+
+      &.boarding-on{
+        &:after{
+          background:#42519e;
+        }
+      }
+      &.boarding-closing{
+        &:after{
+          background:#2c8179;
+        }
+      }
+      &.boarding-ready{
+        &:after{
+          background:#a5a7aa;
+        }
+      }
+    }
+    .situation-info {
+      width: 70px;
+      height: 28px;
+      margin: 0 auto;
+      line-height: 26px;
+      display: block;
+      color: #fff;
+      font-size: 0.875rem;
+      border-radius: 5px;
+      &.delay{
+        background: #d43e41;
+      }
+      &.boarding-on{
+        background: #42519e;
+      }
+      &.boarding-closing{
+        background: #2c8179;
+      }
+    }
+  }
+
+  &-detail{
+    height: 186px;
+    background: url(/static/ap/images/img_flight_info_detail_bg.jpg) no-repeat;
+    &-heading{
+      @extend %clearfix;
+      &-title{
+        color: #fff;
+        font-weight: 900;
+        float: left;
+        .view-way{
+          margin-left: 10px;
+          padding: 4px 10px;
+          font-size: 0.75rem;
+          font-weight:400;
+          position: relative;
+          bottom:3px;
+          color: #fff;
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          border-radius: 20px;
+        }
+      }
+      &-desc{
+        font-size:0.875rem;
+        color: #fff;
+        float: right;
+        margin-top: 5px;
+        .strong{
+          color: #ffae44;
+        }
+      }
+    }
+
+    &-airline{
+      @extend %clearfix;
+      text-align: center;
+      padding-top: 30px;
+      background:url(/static/ap/images/ico_airplane_arrow_departure.png) 50% 40px no-repeat;
+      .flight-info-detail{
+        &-country{
+          color: #ffae44;
+          font-size: 1.25rem;
+        }
+        &-date{
+          color: #999;
+          font-size: 	0.875rem;
+
+        }
+      }
+      &.arrival{
+        background:url(/static/ap/images/ico_airplane_arrow_arrival.png) 50% 40px no-repeat;
+      }
+    }
+
+
+    &-way{
+      margin-top: 30px;
+      .way-list{
+        display: block;
+        @extend %clearfix;
+        &-item{
+          min-width: 66px;
+          text-align: center;
+          float: left;
+          &-heading{
+            line-height: 1.2;
+            font-size: 0.8125rem;
+            color: #ccc;
+            display: block;
+            @extend %clearfix;
+          }
+          &-content{
+            padding: 0 19px;
+            font-size: 1.25rem;
+            color: #fff;
+            @extend %clearfix;
+            display:block;
+          }
+          &.ico{
+            text-indent:0;
+            &:after {
+              background-position: -147px -63px;
+              width: 22px;
+              height: 22px;
+              left: auto;
+              right: -10px;
+              top: auto;
+              bottom:0;
+            }
+          }
+        }
+        &.arrival{
+         .way-list-item {
+           margin-right:25px;
+           &.ico{
+             &:after {
+               right: -25px;
+             }
+           }
+         }
+        }
+      }
+    }
+
+
+    &-dest{
+      color: #fff;
+      @extend %clearfix;
+      .dest{
+        &-weather{
+          margin-top:45px;
+          float: left;
+          &-img{
+            float: left;
+          }
+          &-temp{
+            width: 120px;
+            float: left;
+            font-size: 1.75rem;
+            .min-temp{
+              float: left;
+            }
+            .celsius{
+              font-size: 1rem;
+              position: relative;
+              top: -9px;
+            }
+          }
+        }
+        &-date{
+          margin-top: 45px;
+          font-size:0.875rem;
+          text-align: center;
+          float: right;
+        }
+      }
+    }
+    &-share{
+      height: 93px;
+      line-height:145px;
+      color: #999;
+      font-size: 0.75rem;
+      display: block;
+      cursor: pointer;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+      &.ico{
+        text-indent: 0;
+        &:after {
+          background-position:-37px -185px;
+          width: 32px;
+          height: 32px;
+          top:-10px;
+        }
+      }
+    }
+    &-close{
+      height: 93px;
+      display: block;
+      cursor: pointer;
+      text-align: center;
+      &.ico{
+        &:after {
+          background-position:-89px -185px;
+          width: 32px;
+          height: 32px;
+          top: 0px;
+        }
+      }
+    }
+    &-sns{
+      @extend %clearfix;
+      width:205px;
+      height: 186px;
+      padding: 70px 25px 0;
+      background: #fff;
+      border:{
+        right:1px solid #d9d9d9;
+        bottom:1px solid #d9d9d9;
+      }
+      .sns-item{
+        width: 75px;
+        height: 70px;
+        float: left;
+        &-link{
+          display: block;
+          text-align: center;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+}
+
+.ico-sns {
+  display: inline-block;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url(/static/ap/images/spr_ico_sns.png) no-repeat;
+  }
+
+  &.telegram:after {
+    background-position:-141px -12px;
+    width: 35px;
+    height: 35px;
+    top:-62px;
+  }
+  &.mail:after {
+    background-position:-206px -12px;
+    width: 35px;
+    height: 35px;
+    top:-62px;
+  }
+  &.sms:after {
+    background-position:-141px -57px;
+    width: 35px;
+    height: 35px;
+    top:-62px;
+  }
+  &.copy:after {
+    background-position: -206px -57px;
+    width: 35px;
+    height: 35px;
+    top:-62px;
+  }
+}
+
+
+.ap-basic{
+
+  &-title{
+    background:#323648;
+    margin-bottom: 10px;
+
+    @extend %clearfix;
+
+    &-details{
+      float:left;
+      font-size:1rem;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0;
+
+      &+.ap-basic-title-details{
+        border-left: 1px solid #474a5b;
+        box-sizing: border-box;
+      }
+      /*width type*/
+      &.xxxx-s{
+        width:80px;
+      }
+      &.xxx-s{
+        width:90px;
+      }
+      &.xx-s{
+        width:95px;
+      }
+      &.x-s{
+        width:100px;
+      }
+      &.small{
+        width:110px;
+      }
+      &.medium{
+        width:130px;
+      }
+      &.large{
+        width:140px;
+      }
+      &.x-l{
+        width:150px;
+      }
+      &.xx-l{
+        width:160px;
+      }
+      &.xxx-l{
+        width:195px;
+      }
+      &.xxxx-l{
+        width:200px;
+      }
+      &.big{
+        width:265px;
+      }
+      &.greater{
+        width:300px;
+      }
+      &.biggest{
+        width:360px;
+      }
+    }
+  }
+}

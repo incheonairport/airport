@@ -28,7 +28,7 @@
   display:block;
   width:31px;
   height:31px;
-  background:url(../images/ico_back_to_home.png) no-repeat;
+  background:url(/static/ap/images/ico_back_to_home.png) no-repeat;
   text-indent:-99999em;
   position:absolute;
   top:50px;
@@ -89,6 +89,11 @@
         border-right: 1px solid #d9d9d9;
       }
     }
+
+    tr.on{
+      background:#f3f4f8;
+    }
+
     th{
       padding:19px 0 16px;
       font-size:1rem;
@@ -140,6 +145,57 @@
       }
       &.color-o{
         border-left: 4px solid #dd7714;
+      }
+
+      & .board-list-link{
+        font-size:1.125rem;
+        transition:all .2s;
+        &:hover{
+          color:#999;
+        }
+        &.lock{
+          &:after{
+            content:"";
+            display:inline-block;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -45px -52px;
+            width: 13px;
+            height: 17px;
+            margin-left:14px;
+            vertical-align:-1px;
+          }
+        }
+
+        &.good{
+          &:before{
+            content:"";
+            display:inline-block;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -52px -89px;
+            width: 24px;
+            height: 24px;
+            margin-right:12px;
+            vertical-align:-5px;
+          }
+        }
+
+        &.bad{
+          &:before{
+            content:"";
+            display:inline-block;
+            background:url(/static/ap/images/spr_ico_crud.png) no-repeat -16px -89px;
+            width: 24px;
+            height: 24px;
+            margin-right:12px;
+            vertical-align:-5px;
+          }
+        }
+      }
+    }
+
+    &.board-list{
+      font-size:1rem;
+      & td{
+        border-right:0;
+        padding:23px 20px;
       }
     }
 
@@ -228,6 +284,10 @@
       line-height:1.4;
       font-weight:700;
       vertical-align:middle;
+      &.left{
+        text-align: left;
+        padding-left: 20px;
+      }
     }
 
     td{
@@ -248,6 +308,8 @@
 
 }
 
+
+
 .tab{
 
   &-nav{
@@ -258,6 +320,7 @@
       &-item{
         width:25%;
         float:left;
+        cursor:pointer;
       }
 
       &-link{
@@ -282,6 +345,45 @@
       }
     }
 
+  }
+
+  &-area{
+    position:relative;
+
+    &-heading{
+      display:block;
+      height:54px;
+      background:#f2f2f2;
+      border:1px solid #d9d9d9;
+      border-bottom-color:#42519e;
+
+      position:absolute;
+      top:0;
+
+      font-size:1.25rem;
+      font-weight:300;
+      color:#666;
+      line-height:54px;
+      text-align:center;
+      cursor:pointer;
+
+      &.on{
+        border:2px solid #42519e;
+        border-bottom:none;
+        background:#fff;
+        font-weight:700;
+        color:#42519e;
+      }
+    }
+
+    &-content{
+      display:none;
+      padding-top:54px;
+
+      &.on{
+        display:block;
+      }
+    }
   }
 
 }
@@ -309,7 +411,7 @@
       content:"";
       display:block;
       height:116px;
-      background:url(../images/spr_ico_stuff.png) no-repeat;
+      background:url(/static/ap/images/spr_ico_stuff.png) no-repeat;
       position:absolute;
       top:40px;
       left:40px;
@@ -358,7 +460,7 @@
     width:15px;
     height:15px;
     margin-left:8px;
-    background:url(../images/spr_ico_ox.png) no-repeat;
+    background:url(/static/ap/images/spr_ico_ox.png) no-repeat;
     position:relative;
     top:7px;
     text-indent:-99999em;
@@ -387,7 +489,7 @@
     left:0;
     bottom:0;
     margin:auto;
-    background: url(../images/spr_ico_global.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_global.png) no-repeat;
   }
 
   &.arrow-normal-right:after{
@@ -463,7 +565,7 @@
   height:50px;
   background:#fff;
   padding:0 45px 0 20px;
-  line-height:50px;
+  line-height:45px;
   border:1px solid #666;
   font-weight:600;
   transition:all .4s;
@@ -489,7 +591,7 @@
   height:30px;
   background:#fff;
   padding:0 32px 0 12px;
-  line-height:30px;
+  line-height:25px;
   border:1px solid #d9d9d9;
   border-radius:50px;
   font-size:0.875rem;
@@ -542,6 +644,9 @@ strong{
 em{
   font-style: normal;
   color:#41519e;
+  &.color{
+    color:#d43e41;
+  }
 }
 
 .font-normal{
@@ -666,8 +771,12 @@ em{
       position:relative;
       width:calc(50% - 12px);
       margin-right:24px;
-
-      &:nth-child(even){
+        &.wide{
+          float: none;
+          width: 100%;
+          margin-right: 0;
+        }
+        &:nth-child(even){
         margin-right:0;
       }
       .list-img{
@@ -689,6 +798,9 @@ em{
         text-align:center;
         position:relative;
         top:-40px;
+        &.left{
+          text-align: left;
+        }
 
         .article-num{
           display:block;
@@ -769,7 +881,7 @@ em{
     top: 0;
     left: 0;
     margin: auto;
-    background: url(../images/spr_ico_text.png) no-repeat;
+    background: url(/static/ap/images/spr_ico_text.png) no-repeat;
   }
 
   &.icon {
@@ -810,6 +922,18 @@ em{
     &-another:after {
       background-position: -199px -293px;
     }
+    &-maglev-train1:after {
+      background-position: -11px -387px;
+    }
+    &-maglev-train2:after {
+      background-position: -105px -387px;
+    }
+    &-maglev-train3:after {
+      background-position: -198px -387px;
+    }
+    &-maglev-train4:after {
+      background-position: -11px -480px;
+    }
   }
 
   &-title {
@@ -834,7 +958,7 @@ em{
   //width: 1152px;
   height: 240px;
   text-align: center;
-  background: url(../images/img_sub_layer_banner_bg_01.jpg) no-repeat;
+  background: url(/static/ap/images/img_sub_layer_banner_bg_01.jpg) no-repeat;
   position:relative;
 
   &-title{
@@ -864,11 +988,19 @@ em{
   }
 
   &.bg2{
-    background:url(../images/img_sub_layer_banner_bg_00.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_00.jpg) no-repeat;
   }
 
   &.bg3{
-    background:url(../images/img_sub_layer_banner_bg_02.jpg) no-repeat;
+    background:url(/static/ap/images/img_sub_layer_banner_bg_02.jpg) no-repeat;
+  }
+
+  &.bg4{
+    background:url(/static/ap/images/img_sub_layer_banner_bg_03.jpg) no-repeat;
+  }
+
+  &.bg5{
+    background:url(/static/ap/images/img_sub_layer_banner_bg_04.jpg) no-repeat;
   }
 
 }
@@ -879,6 +1011,16 @@ em{
 
     &:last-child{
       padding:0 0 0 12px;
+    }
+  }
+}
+
+%normal-3{
+  .inner-col{
+    width:calc(33.33% - 16px)!important;
+    margin-left:24px;
+    &:first-child{
+      margin-left:0;
     }
   }
 }
@@ -902,12 +1044,28 @@ em{
   &.double{
     .inner-col{
       width:50%;
+      &.w-auto{
+        width: auto;
+        padding-right:24px;
+      }
       &.w70{
         width: 70%;
         padding-right:24px;
       }
       &.w30{
         width: 30%;
+      }
+      &.calc-w466-l{
+        width: calc(100% - 466px);
+        padding-left:24px;
+      }
+      &.calc-w466-r{
+        width: calc(100% - 466px);
+        padding-right:24px;
+      }
+      &.w466{
+        width: 466px;
+        padding:0;
       }
     }
   }
@@ -936,6 +1094,10 @@ em{
     @extend %gutter;
   }
 
+  &.normal-3{
+    @extend %normal-3;
+  }
+
 }
 
 // margin-bottom:13px;
@@ -943,9 +1105,14 @@ em{
   margin-bottom:7px;
 }
 
-// margin-top:20px
+// text margin-top:20px
 .mt10, %mt10{
   margin-top:10px;
+}
+
+// margin-top:20px;
+.mt20, %mt20{
+  margin-top:20px;
 }
 
 // text margin-top:40px;
@@ -1070,7 +1237,7 @@ em{
     // 활성화 스타일링
     &.on{
       border-bottom:1px solid #d9d9d9;
-      border-color:#a5a7aa;
+      border-top-color:#a5a7aa;
       &+.board-list{
         border-top:0;
       }
@@ -1138,7 +1305,7 @@ em{
   &.col-4{
     .step2-list-item{
       width:calc(25% - 18px);
-      min-height:458px;
+      min-height:480px;
     }
   }
 
@@ -1219,4 +1386,226 @@ em{
   }
 }
 
+.text-color-o{
+  color:#dd7714;
+}
+.text-color-g{
+  color:#2c8279;
+}
+.text-color-b{
+  color:#41519e;
+}
+b.text-bold{
+  font-weight:900;
+}
 
+// 이벤트 게시판 상세
+
+.borad-view{
+  .view-head{
+    padding:25px 30px;
+    border-bottom:1px solid #a5a7aa;
+    &-tit{
+      display:inline;
+      font-size:1.375rem;
+      font-weight:900;
+    }
+    &-date{
+      display:inline;
+      float:right;
+    }
+    &-info{
+      @extend %clearfix;
+      margin-top:16px;
+      font-size:1rem;
+      .info-tit{
+        float:left;
+        margin-right:10px;
+      }
+      .info-desc{
+        float:left;
+        &:after{
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 16px;
+          margin: auto 20px;
+          background: #d9d9d9;
+          vertical-align:middle;
+        }
+        &:last-child:after{
+          display:none;
+        }
+      }
+    }
+  }
+  .view-body{
+    padding:30px 30px 70px;
+  }
+  .view-file{
+    @extend %clearfix;
+    border-top:1px solid #d9d9d9;
+    padding:30px;
+    .file-group-text{
+      float:left;
+      width:124px;
+      color:#002222;
+      font-size:1rem;
+      line-height:1.7;
+    }
+    .file-list{
+      float:left;
+      &-item{
+
+      }
+      &-link{
+        color:#666;
+        font-size:1rem;
+      }
+    }
+    .crud-ico{
+      text-indent:0;
+      &:after{
+        left:-22px;
+        right:auto;
+        bottom:4px;
+      }
+    }
+  }
+  .reply-box{
+    background:#f2f4f7;
+    padding:40px;
+    border:1px solid #d9d9d9;
+    margin-bottom:30px;
+    .reply-head{
+      @extend %clearfix;
+      margin-bottom:30px;
+      &-tit{
+        float:left;
+        padding-left:20px;
+        font-weight:900;
+        text-indent:0;
+        line-height:1;
+        &:after{
+          right:auto
+        }
+      }
+      &-info{
+        float:right;
+        @extend %clearfix;
+        font-size:1rem;
+        .info-tit{
+          float:left;
+          margin-right:10px;
+          color:#002222;
+        }
+        .info-desc{
+          float:left;
+          color:#444;
+          &:after{
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 16px;
+            margin: auto 20px;
+            background: #d9d9d9;
+            vertical-align:middle;
+          }
+          &:last-child:after{
+            display:none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 게시판내 사용되는 아이콘
+.crud-ico{
+  display:inline-block;
+  position:relative;
+  text-indent:-999em;
+  &:after{
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+    background: url(/static/ap/images/spr_ico_crud.png) no-repeat;
+  }
+
+  &.file-hwp:after{
+    background-position:-19px -18px;
+    width: 14px;
+    height: 17px;
+  }
+
+  &.file-txt:after{
+    background-position:-44px -18px;
+    width: 15px;
+    height: 17px;
+  }
+
+  &.file-img:after{
+    background-position:-70px -18px;
+    width: 13px;
+    height: 17px;
+  }
+
+  &.file-xlsx:after{
+    background-position:-94px -18px;
+    width: 14px;
+    height: 17px;
+  }
+
+  &.file-ppt:after{
+    background-position:-119px -18px;
+    width: 14px;
+    height: 17px;
+  }
+
+  &.file-pdf:after{
+     background-position:-144px -18px;
+     width: 14px;
+     height: 17px;
+   }
+
+  &.arrow-reply:after{
+    background-position:-19px -56px;
+    width: 12px;
+    height: 13px;
+  }
+
+  &.lock:after{
+    background-position:-45px -52px;
+    width: 13px;
+    height: 17px;
+  }
+
+  &.good:after{
+    background-position:-52px -89px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &.bad:after{
+    background-position:-16px -89px;
+    width: 24px;
+    height: 24px;
+  }
+
+}
+
+// float
+.f{
+  &-left{
+    float:left;
+  }
+
+  &-right{
+    float:right;
+  }
+}

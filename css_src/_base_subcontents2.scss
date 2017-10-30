@@ -1,0 +1,806 @@
+// top 지도영역
+.rough-map{
+  min-height:420px;
+  height:420px;
+  background-size: cover;
+  &-tit{
+    position:absolute;
+    top:54px;
+    font-family: nanumsq, sans-serif;
+    font-size:2.875rem;
+    font-weight:300;
+    line-height:1.1;
+  }
+  &.arrival{
+    background:url(/static/ap/images/img_sub_visual_stepleave.jpg) center no-repeat;
+  }
+}
+// top 타이틀
+.sub-top{
+  min-height:300px;
+  height:300px;
+  background-size: cover;
+  text-align:center;
+  &-inner{
+    display:table;
+    width:100%;
+    height:100%;
+  }
+  &-descbox{
+    display:table-cell;
+    font-family: nanumsq, sans-serif;
+    color:#fff;
+    font-size:2.5rem;
+    font-weight:300;
+    vertical-align:middle;
+    &-text{
+      line-height:1.2;
+    }
+    &-tit{
+      font-size:3.125rem;
+    }
+    &-sub{
+      font-size:1.375rem;
+      font-family: roboto, spoqa, sans-serif;
+    }
+  }
+  &-btn-group{
+    height:auto;
+    margin-top:28px;
+    & .btn-type-down:first-child{
+      margin-right:14px;
+    }
+  }
+  &-linkbox{
+    display:block;
+    height:122px;
+    background:rgba(0,0,0,.2);
+    border:2px solid rgba(222,227,235,.2);
+    font-size:1.625rem;
+    line-height:122px;
+    &-text{
+      position:relative;
+      &:before{
+        content:'';
+        display:inline-block;
+        background: url(/static/ap/images/spr_ico_bgset.png) no-repeat -253px -40px;
+        width: 34px;
+        height: 34px;
+        position: relative;
+        top: 8px;
+        margin-right: 10px;
+      }
+    }
+
+    .btn-type-small{
+      vertical-align:middle;
+    }
+  }
+  &.type2{
+    .sub-top-descbox{
+      display:block;
+      padding-top:70px;
+    }
+  }
+  &.type3{
+    height:350px;
+    .sub-top-descbox{
+      display:block;
+      padding-top:70px;
+      .sub-top-descbox-text{
+        .sub-top-descbox-tit{
+          font-size:4.375rem;
+          .text-georgia{
+            font-size:6.125rem;
+          }
+        }
+        .btn-type-infolink{
+          margin-left:8px;
+          vertical-align: super;
+        }
+      }
+    }
+  }
+  &.type4{
+    height:420px;
+    .sub-top-descbox{
+      .sub-top-descbox-text{
+        font-family:roboto, sans-serif;
+        &:after{
+          content:'';
+          display:block;
+          width:2px;
+          height:40px;
+          background:#fff;
+          margin:28px auto;
+        }
+        .sub-top-descbox-tit{
+          font-size:5.625rem;
+          font-weight:900;
+          line-height:1;
+        }
+        .sub-top-descbox-sub{
+          display:block;
+          font-size:1.75rem;
+
+        }
+        .btn-type-infolink{
+          margin-left:8px;
+          vertical-align: super;
+        }
+      }
+
+    }
+  }
+
+  &.bg1{
+    background:url(/static/ap/images/img_base_top01.jpg) center no-repeat;
+  }
+  &.bg2{
+    background:url(/static/ap/images/img_base_top02.jpg) center no-repeat;
+  }
+  &.bg3{
+    background:url(/static/ap/images/img_base_top03.jpg) center no-repeat;
+  }
+  &.bg4{
+    background:url(/static/ap/images/img_base_top04.jpg) center no-repeat;
+  }
+  &.bg5{
+    background:url(/static/ap/images/img_base_top05.jpg) center no-repeat;
+  }
+}
+// bg 컨텐츠
+.section-bg{
+  height:420px;
+  background:url(/static/ap/images/bg_section01.jpg) center no-repeat;
+  &-inner{
+    @extend %clearfix;
+    display:table;
+    height:100%;
+    //화면분할
+    &.split{
+      float:left;
+      width:50%;
+    }
+    &.bgcolor-b{
+      background:rgba(66,81,158,.6);
+      padding-left:108px;
+    }
+  }
+  &-contents{
+    display:table-cell;
+    vertical-align:middle;
+  }
+  &-list{
+    @extend %clearfix;
+    margin-top:34px;
+    &.col-4{
+      .section-bg-list-item{
+        width:calc(25% - 18px);
+      }
+    }
+    &.col-5{
+      .section-bg-list-item{
+        width:calc(20% - 19px);
+      }
+    }
+    &-item{
+      float:left;
+      display:table;
+      background:rgba(0,0,0,.25);
+      padding:27px;
+      margin-left:24px;
+      border:2px solid rgba(222,227,235,.5);
+      &:first-child{
+        margin-left:0;
+      }
+    }
+    &-inner{
+      display:table-cell;
+      vertical-align:middle;
+      text-align:center;
+      & .btn-type-small{
+        margin-top:20px;
+        min-width:126px;
+      }
+    }
+    &-tit{
+      font-family: nanumsq, sans-serif;
+      color:#fff;
+      font-size:1.625rem;
+      font-weight:300;
+    }
+  }
+  &.tour-info{
+    background:url(/static/ap/images/bg_tourinfo.jpg);
+    height:510px;
+  }
+  &-head{
+    display:block;
+    font-family: nanumsq, sans-serif;
+    color:#fff;
+    font-size:2.875rem;
+    font-weight:300;
+    text-align:center;
+    &:after{
+      content:'';
+      display:block;
+      width:40px;
+      height:2px;
+      background:#fff;
+      margin:30px auto;
+    }
+  }
+  &-desc{
+    color:#fff;
+    line-height:1.5;
+    text-align:center;
+    &.left{
+      text-align:left;
+    }
+  }
+  &-sublist{
+    color:#fff;
+    &-tit{
+      font-size:1.375rem;
+      font-weight:700;
+      margin-top:20px;
+    }
+    &-desc{
+      padding-top:8px;
+      line-height:1.5;
+    }
+  }
+  .btn-type-infolink{
+    margin-bottom:30px;
+  }
+  .contents-sub-head{
+    padding:0!important;
+    .clip-white{
+      &:after{
+        margin:20px auto 0;
+      }
+    }
+  }
+}
+// boxmodel
+.boxmodel{
+  // boxmodel list style
+  margin-left:-24px;
+  &-list{
+    @extend %clearfix;
+    display:table;
+    width:calc(100% + 50px);
+    border-spacing:24px 15px;
+    //margin-top:30px;
+    //background:red;
+    &-head{
+      font-family: nanumsq, sans-serif;
+      font-size:2.125rem;
+      font-weight:400;
+      text-align:center;
+
+      &.reverse{
+        &:after{
+          display:none
+        }
+
+        &:before{
+          content:'';
+          display:block;
+          height:79px;
+          margin:18px auto 0 auto;
+          background: url(/static/ap/images/spr_ico_ac_submain.png) no-repeat;
+        }
+
+        /* 임산부 유아 동반 */
+        &.pregnantwoman:before{
+          background-position:-587px -118px;
+          width:58px;
+        }
+
+        /* 어린이 동반 */
+        &.child:before{
+          background-position:-690px -112px;
+          width:58px;
+        }
+
+        /* 교통약자 동반 */
+        &.traffickingweak:before{
+          background-position:-50px -215px;
+          width:55px;
+        }
+
+        /* 애완동물 동반 */
+        &.pet:before{
+          background-position:-171px -216px;
+          width:56px;
+        }
+      }
+
+      &:after{
+        content:'';
+        display:block;
+        height:79px;
+        margin:18px auto 0 auto;
+        background: url(/static/ap/images/spr_ico_ac_submain.png) no-repeat;
+      }
+
+      &.noicon:after{
+        display:none;
+      }
+
+      /* 터미널도착 */
+      &.arrival:after{
+        background-position:-34px -38px;
+        width:88px;
+      }
+
+      /* 탑승수속 */
+      &.procedure:after{
+        background-position:-158px -43px;
+        width:70px;
+      }
+
+      /* 수하물 */
+      &.baggage:after{
+        background-position:-265px -32px;
+        width:55px;
+      }
+
+      /* 세관신고 */
+      &.customs:after{
+        background-position:-359px -36px;
+        width:57px;
+      }
+
+      /* 출국장 이동 및 입국장 */
+      &.leave:after{
+        background-position:-453px -29px;
+        width:86px;
+      }
+
+      /* 보안검색 */
+      &.security:after{
+        background-position:-570px -28px;
+        width:90px;
+      }
+
+      /* 출국심사 및 입국심사 */
+      &.screening:after{
+        background-position:-696px -27px;
+        width:51px;
+      }
+
+      /* 인천국제공항 돡 */
+      &.incheon-arrival:after{
+        background-position:-34px -125px;
+        width:88px;
+      }
+
+      /* 신고서 작성 */
+      &.statement:after{
+        background-position:-176px -125px;
+        width:44px;
+      }
+
+      /* 세관검사 */
+      &.examination:after{
+        background-position:-274px -125px;
+        width:57px;
+      }
+
+      /* 비자 */
+      &.visa:after{
+        background-position:-361px -126px;
+        width:57px;
+      }
+
+      /* 국제운전면허증 */
+      &.certification:after{
+        background-position:-459px -117px;
+        width:73px;
+      }
+
+      /* 버스 */
+      &.bus:after{
+        background-position:-270px -217px;
+        width:52px;
+      }
+
+      /* 콜밴 */
+      &.callvan:after{
+        background-position:-355px -220px;
+        width:53px;
+      }
+
+      /* 공항철도 */
+      &.airtrack:after{
+        background-position:-466px -207px;
+        width:73px;
+      }
+    }
+    &-item{
+      display:table-cell;
+      vertical-align:top;
+      height:100%;
+      padding:40px 30px 20px;
+      width:33.33%;
+      height:352px; // 최소값 지정
+      background:#fff;
+      border: 1px solid #dee3eb;
+      margin-left:24px;
+      &:first-child{
+        margin-left:0;
+      }
+    }
+    &-num{
+      display:block;
+      position:relative;
+      margin:-16px 0 40px;
+      color:#97a4b9;
+      font-size:1.25rem;
+      font-weight:300;
+      text-align:center;
+      &:before{
+        content:'';
+        display:block;
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:130px;
+        height:1px;
+        background:#dbdfe6;
+      }
+      &:after{
+        content:'';
+        display:block;
+        position:absolute;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:130px;
+        height:1px;
+        background:#dbdfe6;
+      }
+    }
+    &-support{
+      font-size:1.25rem;
+    }
+    &-desc{
+      color:#000;
+      line-height:1.7;
+      text-align:center ;
+    }
+    &-item.img{
+      border:none;
+      &.leave{
+        background:url(/static/ap/images/img_step_leave.jpg);
+      }
+      &.entry{
+        background:url(/static/ap/images/img_step_entry.jpg);
+      }
+      .boxmodel-list-head{
+        color:#fff;
+        font-size:2.875rem;
+        font-weight:500;
+        margin-top:80px;
+        &:after{
+          display:none
+        }
+      }
+      .boxmodel-list-desc{
+        max-width:306px;
+        color:#fff;
+        font-size:1.125rem;
+        font-weight:300;
+        text-transform:uppercase;
+        margin-top:6px;
+      }
+    }
+    &-item.color{
+      background:#f2f4f7;
+    }
+    &-item.color2{
+      background:#f3f4f8;
+    }
+    &-item.text-left{
+      & .boxmodel-list-desc{
+        text-align:left;
+      }
+    }
+    &-item.text-small{
+      color:#444;
+      font-size:1rem;
+      letter-spacing:-1px;
+    }
+    &-item.list-end{
+      width:66.66%;
+      color:#b7c0ce;
+      font-size:2.225rem;
+      text-align:center;
+      position:relative;
+      .list-end-content{
+        //height:56px;
+        //position:absolute;
+        //top:0;
+        //bottom:0;
+        //right:0;
+        //left:0;
+        //margin:auto;
+        line-height:352px; // for ie
+      }
+    }
+    &-item.col-2{
+      width:50%;
+    }
+  }
+  // boxmodel button layout
+  &-btn-group{
+    height:38px;
+    margin-bottom:4px;
+    line-height:38px;
+
+    &.col-2{
+      border:1px solid #d9e0ea;
+      border-radius:4px;
+      overflow:hidden;
+      & .boxmodel-btn-link{
+        float:left;
+        width:50%;
+        border:none;
+        border-radius:0;
+        &:first-child{
+          border-right:1px solid #d9e0ea;
+        }
+      }
+    }
+
+    &.row-2{
+      height:80px;
+      line-height:80px;
+    }
+
+    &.row-3{
+      height:66px;
+      line-height:66px;
+    }
+  }
+  // boxmodel sub button style
+  &-btn-groupsub{
+    display: block;
+    max-width: 306px;
+    margin: auto;
+    background: #f8f8f8;
+    border: 1px solid #d9e0ea;
+    border-radius: 4px;
+    font-size: 1.125rem;
+    overflow:hidden;
+    &-tit{
+      display:inline-block;
+      width: 100%;
+      height: 38px;
+      background:#fff;
+      border-bottom:1px solid #d9d9d9;
+      line-height:38px;
+      text-indent:20px;
+      font-weight:600;
+    }
+    & .list2{
+      width:100%;
+      padding:8px 0 8px 20px;
+      line-height:1.7;
+      transition:all .2s;
+      &-link{
+        width:100%;
+        height:100%;
+        text-indent:0px;
+        font-weight:600;
+        &.ico:after{
+          left:auto;
+          right:20px;
+        }
+        &:hover{
+          color:#999;
+        }
+      }
+    }
+  }
+  // boxmodel button style
+  &-btn-link{
+    display:block;
+    position: relative;
+    max-width:306px;
+    height:100%;
+    margin:auto;
+    background:#fff;
+    border:1px solid #d9e0ea;
+    border-radius:4px;
+    font-size:1.125rem;
+    font-weight:600;
+    text-indent:20px;
+    transition:all .2s;
+    &:hover{
+      background:#f2f4f7;
+    }
+    &.ico:after{
+      left:auto;
+      right:20px;
+    }
+
+    .link-guide{
+      color:#666;
+      font-size:1rem;
+      vertical-align:1px;
+
+    }
+  }
+}
+//button
+.btn-type{
+  &-infolink{
+    height:50px;
+    padding:0 60px 0 20px;
+    line-height:50px;
+    border:2px solid #fff;
+    color:#fff;
+    font-size:1.25rem;
+    font-weight:400;
+    cursor: pointer;
+    &:hover{
+      border-color:rgba(255,255,255,.4);
+      color:#ffae44;
+      &:after{
+        opacity:.4;
+      }
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:18px;
+      }
+    }
+  }
+  &-normal{
+    min-width:192px;
+    height:50px;
+    background:#fff;
+    padding:0 45px 0 20px;
+    line-height:50px;
+    border:1px solid #666;
+    font-weight:600;
+    cursor: pointer;
+    &.point{
+      background:#42519e;
+      border:none;
+      color:#fff;
+    }
+    &:hover{
+
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:18px;
+      }
+    }
+  }
+  &-round-under{
+    min-width:198px;
+    height:47px;
+    line-height:47px;
+    padding:0 32px 0 22px;
+    background:none;
+    border:2px solid #d9d9d9;
+    border-radius:50px;
+    color:#fff;
+    font-size:1.125rem;
+    text-align: left;
+    text-indent:0;
+    cursor: pointer;
+    &:hover{
+      border-color:rgba(255,255,255,.4);
+      &:after{
+        opacity:.4;
+      }
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:22px;
+      }
+    }
+  }
+  &-small{
+    min-width:146px;
+    height:30px;
+    background:#fff;
+    padding:0 32px 0 12px;
+    line-height:30px;
+    border:1px solid #d9d9d9;
+    border-radius:50px;
+    font-size:0.875rem;
+    font-weight:400;
+    cursor: pointer;
+    &.point{
+      background:#f2f2f2;
+    }
+    &.under{
+      background:none;
+      color:#fff;
+      &:hover{
+        border-color:rgba(255,255,255,.4);
+        color:#ffae44;
+        &:after{
+          opacity:.4;
+        }
+      }
+    }
+    &.detail{
+      padding:0 58px 0 14px;
+      min-width:110px;
+    }
+
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:14px;
+      }
+    }
+  }
+  &-down{
+    height:70px;
+    padding:0 96px 0 20px;
+    background:rgba(0,0,0,.2);
+    border:2px solid rgba(242,244,247,.5);
+    color:#fff;
+    font-size:1.5rem;
+    font-weight:600;
+    line-height:70px;
+    cursor: pointer;
+    &:hover{
+      color:rgba(255,255,255,.4);
+      color:#ffae44;
+      &:after{
+        opacity:.5;
+      }
+    }
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:16px;
+      }
+    }
+  }
+}
+
+.guide-desc{
+  display:block;
+  color:#666;
+  font-size:1rem;
+  line-height:1.6;
+
+  &.color{
+    color:#d43e41;
+  }
+
+  &.mark{
+    text-indent:-20px;
+    padding-left:20px;
+
+    &:before{
+      content:"※";
+    }
+  }
+}
+.footer-graft{
+  margin-bottom:-120px;
+}

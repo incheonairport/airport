@@ -1,0 +1,932 @@
+// slide banner
+.slide-banner{
+  width:1152px;
+  margin:auto;
+  position:relative;
+  &-wrap{
+    width:1152px;
+    height:160px;
+    overflow:hidden;
+  }
+  &-list{
+    width:3456px;
+    height:100%;
+    @extend %clearfix;
+    &-item{
+      width:1152px;
+      height:100%;
+      float:left;
+      .slide-ad01{
+        background:url(/static/ap/images/img_slide_banner01.jpg) no-repeat;
+      }
+    }
+    &-link{
+      display:block;
+      width:100%;
+      height:100%;
+      padding:36px 96px 0;
+      color:#fff;
+    }
+    &-desc{
+      display:block;
+      font-size:1.625rem;
+      line-height:1;
+    }
+    &-strong{
+      font-size:2.75rem;
+    }
+    .color-y{
+      color:#ffaa20;
+    }
+  }
+  &-btn{
+    display:block;
+    width:48px;
+    height:58px;
+    background:rgba(0,0,0,.8);
+    position:absolute;
+    bottom:30px;
+    &.slide-left{
+      left:0;
+    }
+    &.slide-right{
+      right:0;
+    }
+  }
+}
+// fixed banner
+.fix-banner{
+  @extend %clearfix;
+  height:140px;
+  border:1px solid #ddd;
+  &-col{
+    width:50%;
+    height:100%;
+    float:left;
+    position:relative;
+    font-weight:900;
+    color:#666;
+    &-textgroup{
+      position:absolute;
+      top:20px;
+      left:26px;
+    }
+    &-subtit{
+      display:block;
+      font-size:1rem;
+      text-transform: uppercase;
+    }
+    &-tit{
+      display:block;
+      margin-top:6px;
+      font-size:1.75rem;
+    }
+    &-view{
+      position: absolute;
+      right:20px;
+      bottom:20px;
+      font-size:0.875rem;
+    }
+    .color-g{
+      color:#e6cd9c;
+    }
+    .color-o{
+      color:#dd7714;
+    }
+    .color-w{
+      color:#fff;
+    }
+
+    &.fix-ad01{
+      background:url(/static/ap/images/img_fix_banner01.jpg) no-repeat;
+    }
+    &.fix-ad02{
+      background:url(/static/ap/images/img_fix_banner02.jpg) no-repeat;
+    }
+  }
+  &-link{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  &-img{
+    width:100%;
+    vertical-align:bottom;
+  }
+}
+// 쇼핑식당 배경
+.bg-type1{
+  min-height:420px;
+  height:420px;
+  background-size: cover;
+  @extend %clearfix;
+  .inner-section{
+    position:relative;
+    height:100%;
+  }
+  &-iconlist{
+    @extend %clearfix;
+    position: absolute;
+    right:0;
+    top: 80px;
+    float: right;
+    &-item{
+      float:left;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+      &:first-child{
+        border-left:0;
+      }
+    }
+  }
+  &-bgico {
+    display: inline-block;
+    height:76px;
+    margin:0 18px;
+    position: relative;
+    line-height:128px;
+    color:#fff;
+    font-weight:900;
+    &:hover{
+      opacity:.8;
+    }
+    &:after {
+      content: '';
+      display: block;
+      margin: 0 auto 16px;
+      background: url(/static/ap/images/spr_ico_bgset.png) no-repeat;
+      position: absolute;
+      top: 4px;
+      right: 0;
+      left: 0;
+    }
+    &.shopping:after {
+      background-position: -169px -38px;
+      width: 50px;
+      height: 35px;
+    }
+    &.event:after {
+      background-position: -30px -34px;
+      width: 44px;
+      height: 43px;
+    }
+    &.map:after {
+      background-position: -102px -35px;
+      width: 43px;
+      height: 41px;
+    }
+  }
+  &-tit{
+    font-family: nanumsq, sans-serif;
+    color:#fff;
+    font-size:3rem;
+    font-weight:300;
+    line-height:1.1;
+    position:absolute;
+    top:54px;
+    strong{
+      font-family: roboto, sans-serif;
+      font-size:5.125rem;
+      text-transform:uppercase;
+    }
+  }
+  &-banner{
+    width:100%;
+    position: absolute;
+    bottom: 30px;
+    left:0;
+  }
+  &.food{
+    background:url(/static/ap/images/bg_shopping.jpg) center no-repeat;
+  }
+}
+// 필터
+.filter{
+  position:relative;
+  &.on{
+    .filter-service-detail{
+      display:block;
+    }
+  }
+  &.white{
+    border-bottom:1px solid #000;
+    .filter-service-field{
+      padding:20px 0;
+      border:0;
+      background:#fff;
+
+    }
+  }
+  &-service{
+    @extend %clearfix;
+    background:#fff;
+    &.on{
+      height:34px;
+    }
+    &-head{
+      height:46px;
+      margin-bottom:16px;
+      line-height:46px;
+      @extend %clearfix;
+
+      &-box{
+        float:left;
+        .field-radiomain{
+          display:none;
+        }
+        &.base{
+          margin-left:30px;
+        }
+        &.field-search{
+          @extend %clearfix;
+          float:right;
+          height:47px;
+          .responsive-form-box{
+            float:left;
+            border-bottom:1px solid #000;
+          }
+          .btn-detail{
+            float:left;
+          }
+        }
+      }
+    }
+    &-field{
+      padding:20px;
+      background:#f2f2f2;
+      border:1px solid #d9d9d9;
+      &.off{
+        display:none;
+      }
+    }
+    &-detail{
+      display:none;
+      width:100%;
+      background:#fff;
+      border:1px solid #a5a7aa;
+      position:absolute;
+      top:45px;
+      left:0;
+      z-index:2;
+      &-head{
+        padding:20px 30px;
+        background:#f2f2f2;
+        border-bottom:1px solid #d9d9d9;
+      }
+      &-close{
+        width:25px;
+        height:25px;
+        background:none;
+        position:absolute;
+        top: 20px;
+        right:20px;
+        border:0;
+        &:hover{
+          opacity:.5;
+        }
+      }
+      &-result{
+        overflow:auto;
+        max-height:194px;
+        padding:20px 30px 40px;
+        & .brand-list{
+          @extend %clearfix;
+          &-item{
+            width:16%;
+            float:left;
+          }
+          &-link{
+            color:#666;
+            font-size:1rem;
+            &.on{
+              color:#000;
+              font-weight:700;
+            }
+            &:hover{
+              color:#000;
+              font-weight:700;
+            }
+          }
+        }
+        &:after{
+          content:'';
+          display:block;
+          width:90%;
+          height:20px;
+          background:#fff;
+          position:absolute;
+          bottom:0;
+          left:0;
+        }
+      }
+    }
+    &-option{
+      border:0;
+      background:#666;
+      text-indent:0;
+      color:#fff;
+      font-size:0.875rem;
+      padding:4px 14px 4px 30px;
+      position:absolute;
+      bottom:-1px;
+      right:0;
+      &:after{
+        right:auto;
+        left:10px;
+      }
+      &:hover{
+        background:#777;
+      }
+      &.on{
+        &:after{
+          background-position:-440px -67px;
+        }
+      }
+    }
+  }
+}
+// 박스모델2
+.boxmodel2{
+  // 리스트형
+  @extend %clearfix;
+  &-list{
+    &.simple{
+      .boxmodel2-list-table{
+        td,th{
+          padding:6px 0!important;
+        }
+        td{
+          .text-info{
+            font-size:1rem;
+            line-height:1.2;
+            display: -webkit-box;
+            overflow: hidden;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-box-orient: vertical;
+            box-orient: vertical;
+            height:2.4rem;
+          }
+        }
+      }
+    }
+    &-item{
+      margin-top:20px;
+      position:relative;
+      border:1px solid #d9d9d9;
+      &:first-child{
+        margin-top:0;
+      }
+      .boxmodel2-list-detail{
+        display:none
+      }
+      &.on{
+        .boxmodel2-list-detail{
+          display:block;
+        }
+        .btn-type-small{
+          color:#fff;
+          background:#333649;
+          line-height:1;
+          &:after{
+            background-position:-460px -67px;
+          }
+        }
+      }
+      // boxmodel2-list-item 에 다음 클래스 추가시 24시간 마크 생성
+      &.todclock{
+        &:after{
+          content:'24h';
+          position:absolute;
+          top:20px;
+          right:20px;
+          display:block;
+          width:50px;
+          height:50px;
+          border-radius:50%;
+          line-height:50px;
+          border:4px solid #d43e41;
+          color:#d43e41;
+          font-weight:900;
+          text-align:center;
+        }
+      }
+    }
+    &-box{
+      img{
+        vertical-align:bottom;
+      }
+      @extend %clearfix;
+      padding:30px;
+      &-split{
+        float:left;
+
+        &.col-1{
+          width:370px;
+        }
+        &.col-2{
+          padding-left:40px;
+          width: calc(100% - 370px);
+        }
+      }
+    }
+    &-detail{
+      @extend %clearfix;
+      background:#f3f4f8;
+      border-top:1px solid #d9d9d9;
+      padding:30px;
+      &-split{
+        float:left;
+
+        &.col-1{
+          width:calc(100% - 596px);
+          padding-right:40px;
+        }
+        &.col-2{
+          width: 596px;;
+        }
+      }
+    }
+    &-table{
+
+      tr{
+        border-top:1px solid #f3f4f8;
+        &:first-child{
+          border-top:none;
+        }
+      }
+      td,th{
+        font-size:1rem;
+        padding:12px 0;
+        text-align:left;
+      }
+      td{
+        &.position{
+          position:relative;
+          .btn-type-small{
+            position: absolute;
+            top: 0;
+            bottom:0;
+            right:0;
+            margin:auto;
+
+          }
+        }
+
+      }
+      th{
+        font-size:1rem;
+        font-weight:900;
+      }
+    }
+    &-tit{
+      display:block ;
+      font-size:1.5rem;
+      font-weight:900;
+      padding-bottom:10px;
+    }
+    &-subtit{
+      display:block;
+      padding-top:20px;
+      font-weight:900;
+    }
+    &-info{
+      @extend %clearfix;
+      margin-top:20px;
+      &-tit{
+        min-width:132px;
+        margin-right:20px;
+        float: left;
+      }
+    }
+  }
+  // 썸네일형
+  &-filter{
+    @extend %clearfix;
+    &-btngroup{
+      margin:24px 0;
+      float:right;
+      .ico{
+        width:22px;
+        height:22px;
+        display:inline-block;
+        border:0;
+        background:none;
+        margin-left:20px;
+        &:hover{
+          opacity:.8;
+        }
+        &.view-list.on{
+         &:after{
+          background-position:-401px -189px;
+         }
+        }
+        &.view-thumbnail.on{
+          &:after{
+            background-position:-275px -189px;
+          }
+        }
+      }
+    }
+  }
+  &-thumbnail{
+    @extend %clearfix;
+    margin-left:-24px;
+    &-item{
+      width:calc(33.33% - 24px);
+      margin:30px 0 0 24px;
+      border:1px solid #d9d9d9;
+      float:left;
+      position:relative;
+    }
+    &-link{
+      &:hover{
+        .boxmodel2-thumbnail-cover{
+          display:block;
+          z-index:3;
+        }
+      }
+    }
+    &-box{
+      img{
+        width:100%;
+        vertical-align:bottom;
+      }
+      &-split{
+        &.row-2{
+          padding:18px 34px;
+          .boxmodel2-desc{
+            font-size:1rem;
+            display: -webkit-box;
+            overflow: hidden;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-box-orient: vertical;
+            box-orient: vertical;
+            height:5.6rem;
+          }
+          .boxmodel2-map-link{
+            display:block;
+            font-size:0.875rem;
+            display: -webkit-box;
+            overflow: hidden;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-box-orient: vertical;
+            box-orient: vertical;
+            height:5.4rem;
+            &:before{
+              content:'';
+              display:block;
+              width:20px;
+              height:1px;
+              background:#666;
+              margin:22px 0;
+            }
+            &:after{
+              display:none
+            }
+          }
+        }
+      }
+    }
+    &-cover{
+      display:none;
+      width:100%;
+      height:100%;
+      background:url(/static/ap/images/ico_thumbnail_hover.png) center no-repeat rgba(0,0,0,.8);
+      position:absolute;
+      top:0;
+      left:0;
+      text-align:center;
+      z-index:2;
+      &-text{
+        display:block;
+        left:0;
+        right:0;
+        bottom:146px;
+        margin:auto;
+        position:absolute;
+        color:#fff;
+      }
+    }
+  }
+  &-map-link{
+    &:after{
+      content:'';
+      display:inline-block;
+      background: url(/static/ap/images/spr_ico_global.png) no-repeat -113px -134px;
+      width: 24px;
+      height: 24px;
+      vertical-align:middle;
+      margin-left:8px;
+      position: relative;
+      bottom: 1px;
+    }
+  }
+  &-maintit{
+    font-size:1.625rem;
+    line-height:1;
+  }
+  &-desc{
+    line-height:1.4;
+  }
+  &-imggroup{
+    position:relative;
+    &-mark{
+      position:absolute;
+      top:0;
+      left:0;
+      color:#fff;
+      font-size:0.875rem;
+      padding:4px 10px;
+      &.green{
+        background:#2c8179;
+      }
+      &.brown{
+        background:#604f3c;
+      }
+      &.red{
+        background:#d43e41;
+      }
+      &.blue{
+        background:#41519f;
+      }
+    }
+  }
+  .color-lb{
+    color:#4674c9;
+  }
+}
+
+
+// 이미지형태 체크박스 그룹
+.base {
+  &-group{
+    display:inline;
+    vertical-align:sub;
+    &-align{
+      display: inline-block;
+      position: relative;
+      bottom: 2px;
+    }
+  }
+  &-check {
+    width: 26px;
+    height: 26px;
+    margin-right: 0.5rem;
+    &:checked {
+      &.ico:after {
+        background-position: -272px -294px;
+        width: 26px;
+        height: 26px;
+      }
+    }
+    &-label {
+      position: relative;
+      top: -5px;
+      cursor: pointer;
+      & + .agree-radio {
+        margin-left: 40px;
+      }
+    }
+  }
+}
+// 체크박스 / 라디오박스 스타일
+.field{
+  @extend %clearfix;
+  .field-check,
+  .field-radio{
+    display:none;
+    & + .field-check-label,
+    & + .field-radio-label{
+      display: block;
+      padding:6px 10px;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      color: #666;
+      font-size:0.875rem;
+      float: left;
+      cursor: pointer;
+    }
+    &:checked + .field-check-label,
+    &:checked + .field-radio-label {
+      background:#000;
+      color:#fff;
+      border: 1px solid #000;
+    }
+  }
+  .field-radiomain{
+    & + .field-radiomain-label{
+      display:inline-block;
+      color:#666;
+      font-size: 1.625rem;
+      cursor: pointer;
+      &:before{
+        content:'';
+        display:inline-block;
+        width: 1px;
+        height:20px;
+        background:#d9d9d9;
+        margin:0 18px;
+      }
+    }
+    &:checked + .field-radiomain-label {
+      color:#222;
+      font-weight:900;
+
+    }
+  }
+  &-division{
+    float:left;
+    &:first-child{
+      .field-radiomain-label:before{
+        display:none;
+      }
+    }
+    &.col-2{
+      width: calc(100% - 170px);
+      .field-radio-label{
+        margin-bottom:10px;
+      }
+    }
+  }
+  &-search{
+    &-btn{
+      display:inline-block;
+      text-align:left;
+      text-indent:10px;
+      width:130px;
+      height:100%;
+      line-height:1;
+      border:1px solid #2c8279;
+      background:#1e1e1e;
+      color:#fff;
+      font-size:1rem;
+      &:after{
+        left:auto;
+        right:12px;
+      }
+      &.on{
+        &:after{
+          background-position:-460px -67px;
+        }
+      }
+      &:hover{
+        background:#333;
+      }
+    }
+  }
+  &-group{
+    @extend %clearfix;
+    display:block;
+    margin-top:10px;
+    label{
+      margin-right:6px;
+    }
+    &:first-child{
+      margin-top:0;
+    }
+
+    &.brand{
+      .field-radio-label{
+        padding:0;
+        min-width:32px;
+        min-height:30px;
+        border:1px solid #666;
+        color:#000;
+        font-size:1rem;
+        font-weight:600;
+        line-height:30px;
+        vertical-align:middle;
+        text-align:center;
+        box-sizing:border-box;
+        &.pd10{
+          padding:0 10px;
+        }
+      }
+    }
+
+    &.big{
+      margin:30px 0 20px;
+      border-left:1px solid #666;
+      .field-radio-label{
+        padding:10px 30px;
+        border:1px solid #666;
+        border-left:0;
+        color:#000;
+        font-weight:600;
+        vertical-align:middle;
+        text-align:center;
+        box-sizing:border-box;
+        margin-right:0;
+      }
+    }
+
+    &-tit{
+      min-width:150px;
+      margin-right:20px;
+      float:left;
+      font-size:1.25rem;
+      font-weight:900;
+      line-height:28px;
+    }
+  }
+}
+// 버튼 공통
+button{
+  cursor:pointer
+}
+
+// 버튼+인풋 영역 스타일 및 너비값제어
+.responsive-form-box{
+  position:relative;
+  &-area{
+    width:100%;
+    height:100%;
+  }
+  // 휴대폰전송버튼
+  &.send{
+    width:368px;
+    height:50px;
+    padding-right:58px;
+    input{
+      width:100%;
+      height:100%;
+      box-sizing:border-box;
+      border:1px solid #a5a7aa;
+      border-right:0;
+      font-size:1.125rem;
+      font-weight:300;
+      text-indent:20px;
+    }
+    .responsive-form-box-btn{
+      width:58px;
+      height:100%;
+      border:1px solid #2c8279;
+      background:#2c8279;
+      color:#fff;
+      font-size:0.875rem;
+    }
+  }
+  // 검색버튼
+  &.search{
+    width:280px;
+    padding-right:50px;
+    input{
+      width:100%;
+      height:100%;
+      box-sizing:border-box;
+      border:0;
+      color:#666;
+      font-size:1.125rem;
+      font-weight:300;
+    }
+    .gnb-search{
+      position:absolute;
+      right:0;
+      top:0;
+      bottom:0;
+      margin:auto;
+      width:50px;
+      height:100%;
+      border:none;
+      background:none;
+      &:hover{
+        opacity:.5;
+      }
+    }
+  }
+  &-hide{
+    display:none;
+  }
+  &-btn{
+    position:absolute;
+    right:0;
+    top:0;
+  }
+}
+//배경과 겹침부분 포지셔닝
+.position-box108{
+  margin-top:-108px;
+}
+.position-box70{
+  margin-top:-70px;
+  .filter-service{
+    .filter-service-field{
+      padding:30px;
+    }
+  }
+}
+
+.label-hide{
+  display:none;
+}

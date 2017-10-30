@@ -39,7 +39,7 @@ gulp.task('reload:watch', function() {
  * build default
  */
 
-// site html build including header/footer
+// build site html including header/footer
 gulp.task('build:include:html', function(){
   gulp.src("html_src/*.html")
       .pipe(include())
@@ -47,7 +47,7 @@ gulp.task('build:include:html', function(){
       .pipe(gulp.dest("html/"));
 });
 
-// guide html build including header/footer
+// build guide html including header/footer
 gulp.task('build:include:guide', function(){
   gulp.src("guide_src/*.html")
       .pipe(include())
@@ -61,7 +61,7 @@ gulp.task('build:sass:dev', function(){
       .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest('css/'));
+      .pipe(gulp.dest('../static/ap/css/'));
 });
 
 // build js compress
@@ -73,7 +73,7 @@ gulp.task('build:jsCompress', function(){
           min : '.min.js'
         }
       }))
-      .pipe(gulp.dest('js'));
+      .pipe(gulp.dest('../static/ap/js'));
 });
 
 /**
@@ -88,7 +88,7 @@ gulp.task('seperate:build:fileListJson', function() {
 // copy js library file
 gulp.task('seperate:copy:jsLib', function() {
   return gulp.src('js_src/lib/*.*')
-      .pipe(gulp.dest('js/lib/'));
+      .pipe(gulp.dest('../static/ap/js/lib/'));
 });
 
 // copy file list json
@@ -101,35 +101,41 @@ gulp.task('seperate:copy:fileListJson', function(){
  * release
  */
 
+// release site html
 gulp.task('release:html', function(){
   return gulp.src('html/*.*')
-      .pipe(gulp.dest('release/html/'));
+      .pipe(gulp.dest('../release/ap/html/'));
 });
 
+// release guide html
 gulp.task('release:guide', function(){
   return gulp.src('guide/*.*')
-      .pipe(gulp.dest('release/guide/'));
+      .pipe(gulp.dest('../release/ap/guide/'));
 });
 
+// release sass
 gulp.task('release:sass', function(){
   return gulp.src('css_src/*.scss')
       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-      .pipe(gulp.dest('release/css/'));
+      .pipe(gulp.dest('../release/static/ap/css/'));
 });
 
+// release js
 gulp.task('release:js', function(){
-  return gulp.src('js/**')
-      .pipe(gulp.dest('release/js/'));
+  return gulp.src('../static/ap/js/**')
+      .pipe(gulp.dest('../release/static/ap/js/'));
 });
 
+// release images
 gulp.task('release:images', function(){
-  return gulp.src('images/*.*')
-      .pipe(gulp.dest('release/images/'));
+  return gulp.src('../static/ap/images/*.*')
+      .pipe(gulp.dest('../release/static/ap/images/'));
 });
 
+// release fonts
 gulp.task('release:fonts', function(){
-  return gulp.src('fonts/**')
-      .pipe(gulp.dest('release/fonts/'));
+  return gulp.src('../static/ap/fonts/**')
+      .pipe(gulp.dest('../release/static/ap/fonts/'));
 });
 
 
@@ -137,6 +143,6 @@ gulp.task('release:fonts', function(){
  * run task
  */
 
-gulp.task('default', ['build:include:html', 'build:include:guide', 'build:sass:dev', 'build:jsCompress', 'reload:livereload', 'reload:watch']);
+gulp.task('default', ['build:include:html', 'build:include:guide', 'build:sass:dev', 'build:jsCompress', 'reload:watch']);
 
 gulp.task('release', ['release:html', 'release:guide', 'release:sass', 'release:js', 'release:images', 'release:fonts']);
