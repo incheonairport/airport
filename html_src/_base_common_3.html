@@ -96,9 +96,10 @@
           </div>
 
           <div class="input-box base">
-            <input type="checkbox" name="main-todclock" id="main-todclock" class="" value="" checked>
-            <label class="" for="main-todclock">24시간</label>
+            <input type="checkbox" name="search" id="main-todclock" class="checkbox" value="todclock" checked >
+            <label class="checkbox-label ico" for="main-todclock">24시간</label>
           </div>
+
         </div>
         <!-- 2차 필터 검색 -->
         <div class="filter-terminal-search-depth2">
@@ -531,7 +532,76 @@
       <div class="filter-service-field on">
         <div class="field">
           <span class="filter-service-field-tit">나의환승정보</span>
-          AP_DB_03.html
+
+          <div class="calculator mt20">
+            <div class="timesetting-date f-left">
+              <span class="timesetting-subtit">도착</span>
+              <input type="text" class="timesetting-date-day f-left" readonly placeholder="2017.08.21(월)">
+              <button class="timesetting-date-calendar ico  f-left">날짜 선택</button>
+              <select class="timesetting-date-option  f-left">
+                <option>시간 선택</option>
+              </select>
+              <select class="timesetting-date-option f-left">
+                <option>분 선택</option>
+              </select>
+            </div>
+            <div class="timesetting-date f-right">
+              <span class="timesetting-subtit">출발</span>
+              <input type="text" class="timesetting-date-day f-left" readonly placeholder="2017.08.21(월)">
+              <button class="timesetting-date-calendar ico  f-left">날짜 선택</button>
+              <select class="timesetting-date-option f-left">
+                <option>시간 선택</option>
+              </select>
+              <select class="timesetting-date-option f-left">
+                <option>분 선택</option>
+              </select>
+            </div>
+          </div>
+          <table class="table hr" summary="주차요금 계산 설정 표입니다.">
+            <caption>주차요금 계산 설절 안내표</caption>
+            <colgroup>
+              <col style="width:20%">
+              <col style="width:80%">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th class="center">
+                터미널
+              </th>
+              <td class="pd-resize">
+                <select class="timesetting-date-option resize">
+                  <option>시간 선택</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th class="center">
+                분류
+              </th>
+              <td>
+                <div class="radio-type2">
+                  <input type="radio" name="option" id="option1" class="radio-type2-radio" value="yes" checked />
+                  <label class="radio-type2-label ico" for="option1">제1 여객 터미널</label>
+                  <input type="radio" name="option" id="option2" class="radio-type2-radio" value="no" />
+                  <label class="radio-type2-label ico" for="option2">제 2여객터미널</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="center">
+                차종
+              </th>
+              <td>
+                <div class="radio-type2">
+                  <input type="radio" name="option" id="option3" class="radio-type2-radio" value="yes" checked />
+                  <label class="radio-type2-label ico" for="option3">제1 여객 터미널</label>
+                  <input type="radio" name="option" id="option4" class="radio-type2-radio" value="no" />
+                  <label class="radio-type2-label ico" for="option4">제 2여객터미널</label>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -745,9 +815,9 @@
               <input type="radio" name="air-terminal" id="air-terminal-2" class="field-radio" value="air-terminal-2">
               <label class="field-radio-label" for="air-terminal-2">제 2터미널</label>
 
-              <div class="base-align">
-                <input type="checkbox" name="todclock" id="todclock" class="" value="" checked>
-                <label class="" for="todclock">24시간</label>
+              <div class="input-box base">
+                <input type="checkbox" name="search" id="main-todclock" class="checkbox" value="todclock" checked >
+                <label class="checkbox-label ico" for="main-todclock">24시간</label>
               </div>
             </div>
           </div>
@@ -1015,6 +1085,29 @@
         </li>
 
       </ul> <!-- thumbnail style -->
+    </div>
+
+
+    <div class="guidebox">
+
+      <div class="guidebox-col col-1">
+        <h4 class="guidebox-tit">식물 검역에 관한 문의처 안내</h4>
+      </div>
+
+      <div class="guidebox-col col-2">
+        <ul class="list1 guidebox-list">
+          <li class="list1-item">농림축산검역본부 홈페이지</li>
+          <li class="list1-item">휴대 동식물 수출검역실: 032-740-2077</li>
+          <li class="list1-item">화물 식물검역: 032-740-2074</li>
+          <li class="list1-item">우편 식물검역: 032-740-2088</li>
+        </ul>
+      </div>
+
+      <div class="guidebox-col col-3">
+        <div class="guidebox-desc">농림축산검역본부</div>
+        <a href="#" class="btn-type-small under ico arrow-middle-right">홈페이지 바로가기</a>
+      </div>
+
     </div>
   </section>
 </section>

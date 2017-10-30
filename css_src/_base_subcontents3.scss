@@ -224,11 +224,12 @@
         .field-radiomain{
           display:none;
         }
-        //&.base{
-        //  margin-left:30px;
-        //  position: relative;
-        //  top: 4px;
-        //}
+        &.base{
+          margin-left:30px;
+          & label:after{
+            top: 14px;
+          }
+        }
         .field-division{
           &:before{
             content:'';
@@ -924,6 +925,14 @@
   .filter-service-field{
     padding:30px;
   }
+  .base{
+    position: relative;
+    top: 4px;
+    left: 6px;
+    & label:after{
+      padding-top: 4px;
+    }
+  }
 }
 // etc
 .ft20{
@@ -935,4 +944,164 @@ button{
 }
 .label-hide{
   display:none;
+}
+
+/*주차요금계산기*/
+.calculator{
+  width: 100%;
+  padding: 20px;
+  background: #323648;
+  @extend %clearfix;
+}
+
+/*날짜및시간설정*/
+.timesetting{
+  &-date{
+    .timesetting-subtit{
+      display:block;
+      color:#fff;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    &-day{
+      width: 140px;
+      height: 56px;
+      padding: 0;
+      border: 1px solid #d9d9d9;
+      border-right: 0;
+      font-size: 1rem;
+      padding-left: 10px;
+      color: #666;
+    }
+    &-calendar{
+      width: 46px;
+      height: 58px;
+      border: 1px solid #d9d9d9;
+      border-left: 0;
+      background: #fff;
+      &:after{
+        background-position:-97px -92px;
+        width: 20px;
+        height: 20px;
+      }
+      +.timesetting-date-option{
+        border-left: 0;
+      }
+    }
+    &-option{
+      width: 170px;
+      height: 58px;
+      font-size: 1rem;
+      padding-left: 10px;
+      border: 1px solid #d9d9d9;
+      color: #666;
+      +.timesetting-date-option{
+        border-left: 0;
+      }
+    }
+  }
+  &-dash{
+    margin: 0 auto;
+    padding-left: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.375rem;
+    line-height: 58px;
+  }
+}
+
+.guidebox{
+  display:table;
+  width:100%;
+
+  &-col{
+    display:table-cell;
+    width:33.33%;
+
+    &.col-1{
+      padding:40px 40px 0;
+      border:1px solid #d9d9d9;
+      border-right:none;
+    }
+
+    &.col-2{
+      padding:40px 0;
+      border-top:1px solid #d9d9d9;
+      border-bottom:1px solid #d9d9d9;
+    }
+
+    &.col-3{
+      background:#333649;
+      text-align:center;
+      position:relative;
+      vertical-align:middle;
+    }
+
+    &-row{
+      width:100%;
+      height:50%;
+      position:absolute;
+      top:0;
+      left:0;
+
+      &.fix{
+        position:relative;
+        height:135px;
+      }
+
+      &:last-child{
+        border-top:1px solid #484a5c;
+        top:auto;
+        bottom:0;
+      }
+
+      &-inner{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+      }
+    }
+
+  }
+
+  &-tit{
+    font-family: nanumsq, sans-serif;
+    font-size:1.25rem;
+    font-weight:600;
+    line-height: 1.5;
+  }
+
+  &-list{
+    .list1-item{
+      margin-bottom:8px;
+      font-size:1rem;
+
+      &:last-child{
+        margin-bottom:0;
+      }
+
+      &:before{
+        font-size:1.25rem;
+        top:-4px;
+      }
+    }
+  }
+
+  &-desc{
+    color:#fff;
+    font-size:1.25rem;
+    font-weight:600;
+    margin-bottom:18px;
+    white-space:nowrap;
+  }
+
+}
+
+.resize{
+  width:365px;
+  height:50px;
+}
+.pd-resize{
+  padding: 8px 20px 7px !important
 }
