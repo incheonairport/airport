@@ -49,7 +49,7 @@
       line-height: 20px;
       text-align: center;
 
-      &:hover::after
+      &:hover::after, &.on::after
       {
         content: '';
         display: block;
@@ -61,24 +61,19 @@
         left: 0;
         right: 0;
       }
-
       &:before{
         content: '';
         display: block;
         margin: 0 auto 19px;
         background: url("/static/ap/images/spr_ico_sub_tab.png")no-repeat;
       }
-      &.question{
+      &.question {
         &:before{
           background-position: 0 0;
           width: 51px;
           height: 52px;
         }
-
-        &:hover:before{
-          background-position: 0 -52px;
-        }
-        &.on:before{
+        &:hover:before, &.on:before{
           background-position: 0 -52px;
         }
       }
@@ -89,7 +84,7 @@
           width: 42px;
           height: 52px;
         }
-        &:hover:before{
+        &:hover:before, &.on:before{
           background-position: -71px -52px;
         }
       }
@@ -112,56 +107,54 @@
           width: 45px;
           height: 52px;
         }
-        &:hover:before{
+        &:hover:before, &.on:before{
           background-position: -193px -52px;
         }
       }
 
-      &.lostproperty{
+      &.lost-property{
         &:before{
           background-position: -248px 0;
           width: 56px;
           height: 52px;
         }
-        &:hover:before{
+        &:hover:before, &.on:before{
           background-position: -248px -52px;
         }
       }
 
-      &.anadvisorypanel{
+      &.advisory-panel{
         &:before{
           background-position: -319px 0;
           width: 54px;
           height: 52px;
         }
-        &:hover:before{
+        &:hover:before, &.on:before{
           background-position: -319px -52px;
         }
       }
 
-      &.damagerelief{
+      &.damage-relief{
         &:before{
           background-position: -386px 0;
           width: 51px;
           height: 52px;
         }
-        &:hover:before{
+        &:hover:before, &.on:before{
           background-position: -386px -52px;
         }
       }
 
-      &:hover{
+      &:hover, &.on{
         color: #42519e;
         font-weight: 900;
       }
-
     }
-
   }
 }
 
 //질문 문의 검색
-.search-CustomerCenter{
+.search-cs{
 
   &-box{
     width: 100%;
@@ -252,10 +245,6 @@
 
 }
 
-strong.color{
-  color: #41519e;
-}
-
 //다운로드 버튼타입
 .btn-type-small{
   &.download{
@@ -273,7 +262,7 @@ strong.color{
 }
 
 //로그인스타일
-.login-anadvisorypanel{
+.login1{
   &-box{
     height: 232px;
     border: 1px solid #d9d9d9;
@@ -384,125 +373,114 @@ strong.color{
 
 //레이어팝업(주소검색)
 .address-layer{
-  height: 900px;
-}
-
-.layer-article{
-  &.address{
-    margin-bottom: 0;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #d9d9d9;
-  }
-}
-
-.search-address{
-
-  &-head{
-    display: block;
-    text-align: center;
-    width: 100%;
-    @extend %clearfix;
-
-    &-title{
-      display: none;
+  &.layer-article{
+    &.address{
+      margin-bottom: 0;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #d9d9d9;
     }
   }
+  .search-address{
 
-  &-name {
-    display: inline-block;
-    margin: 19px auto;
-    @extend %clearfix;
+    &-head{
+      display: block;
+      text-align: center;
+      width: 100%;
+      @extend %clearfix;
 
-    &-label{
-      float: left;
-      margin-right: 31px;
-      line-height: 58px;
-      font-family: spoqa, sans-serif;
-      font-weight: 900;
-    }
-
-    &-txt {
-      width: 403px;
-      height: 56px;
-      padding: 0 15px;
-      border: 1px solid #666666;
-      border-right: 0;
-      float: left;
-    }
-    &-btn {
-      width: 62px;
-      height: 58px;
-      background: #323648;
-      border: none;
-      float: left;
-      &:after{
-        background-position:-74px -134px;
-        width: 22px;
-        height: 22px;
+      &-title{
+        display: none;
       }
     }
-  }
 
-}
 
-.layer-article-input.search-address{
-  width: 429px;
-  height: 56px;
-  padding: 0 20px;
-  text-align: left;
-  border: 1px solid #d9d9d9;
-  border-right: 0;
-  float: left;
-}
+    &-name {
+      display: inline-block;
+      margin: 19px auto;
+      @extend %clearfix;
 
-.address-select {
-  &-title {
-    margin: 20px 0;
-    font-family: spoqa, sans-serif;
-    font-weight: 700;
-    color: #666666;
-
-    & > strong {
-      font-family: spoqa, sans-serif;
-      font-weight: 700;
-      color: #222222;
-    }
-  }
-
-  &-box {
-    width: 100%;
-    height: 320px;
-    border: 1px solid #e2e5e9;
-    overflow: scroll;
-  }
-}
-
-.table{
-    &.address-list-table{
-
-      &>colgroup>col{
-        height: 78px;
-      }
-
-      &>tbody{
+      &-label{
+        float: left;
+        margin-right: 31px;
+        line-height: 58px;
         font-family: spoqa, sans-serif;
-        font-weight: 700;
-        color: #444444;
+        font-weight: 900;
+      }
 
-        &>tr{
-          line-height: 26px;
-          &>th {
-            padding: 10px 19px;
-            text-align: left;
-          }
-          &>td{
-            vertical-align: middle;
+      &-txt {
+        width: 403px;
+        height: 56px;
+        padding: 0 15px;
+        border: 1px solid #666666;
+        border-right: 0;
+        float: left;
+      }
+      &-btn {
+        width: 62px;
+        height: 58px;
+        background: #323648;
+        border: none;
+        float: left;
+        &:after{
+          background-position:-74px -134px;
+          width: 22px;
+          height: 22px;
         }
       }
+    }
+  }
 
+  .layer-article-input.search-address{
+    width: 429px;
+    height: 56px;
+    padding: 0 20px;
+    text-align: left;
+    border: 1px solid #d9d9d9;
+    border-right: 0;
+    float: left;
+  }
+
+  .address-select {
+    &-title {
+      margin: 20px 0;
+      font-weight: 700;
+      color: #666666;
+      .number{
+        color: #222222;
+      }
+    }
+
+    &-box {
+      width: 100%;
+      height: 320px;
+      border: 1px solid #e2e5e9;
+      overflow-y: scroll;
+    }
+    &-link{
+      width: 100%;
+      font-size: 1.125rem;
+      display: inline-block;
+      border: 1px solid #fff;
+
+      @extend %clearfix;
+
+      .address-code{
+        float: left;
+        padding: 20px;
+      }
+      .zip-code{
+        float: right;
+        padding: 30px;
+      }
+      &:hover{
+        border: 1px solid #444;
+      }
     }
   }
 }
+
+
+
 
 %gutter{
   .inner-col{
@@ -681,12 +659,12 @@ strong.color{
   }
   // 제목부분
   .board-list-head{
-    padding:26px 0;
+
     .board-list-tit{
-      display:block;
       width:100%;
       height:100%;
-
+      padding:26px 0;
+      display:block;
       font-size:1.25rem;
       text-indent:0;
       &:after{
@@ -1112,34 +1090,52 @@ strong.color{
   }
 }
 
-
-/* link type select box */
-
-/*고객센터 글 작성 목적*/
-.select-link{
-  &.object-link{
-    width:220px;
-    height:50px;
-    &-font{
-      font-size:1rem;
-    }
-  }
-  .ico:before{
-    display:none;
-  }
-}
-.select-list{
-  &.object-list{
+//input
+.user-text{
+ width: 250px;
+  height: 50px;
+  padding: 0 15px;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  &.wide{
     width: 100%;
-    top: 50px;
-    &-item{
-      font-size:1rem;
+  }
+  &.height{
+    height:200px;
+    padding:15px;
+  }
+}
+
+/*고객센터 글 작성 목적*/
+.object-list{
+  width:220px;
+  height:50px;
+  padding: 0 15px;
+  border: 1px solid #d9d9d9;
+  font-size: 1rem;
+
+  &option{
+    font-size: 1rem;
+  }
+}
+
+.timesetting-date{
+  &.low{
+    .timesetting-date-day,
+    .timesetting-date-option{
+      width: 220px;
+      height:50px;
+      box-sizing: border-box;
+    }
+    .timesetting-date-calendar
+    {
+      height:50px;
     }
   }
 }
-/*고객센터 글 작성 목적*/
 
-/*주소검색*/
+/*주소검색 첨부*/
 .search-customer{
   &-address{
     width:957px;
@@ -1161,7 +1157,8 @@ strong.color{
   &-link{
     min-width:145px;
     height:50px;
-    padding:15px 20px;
+    line-height: 50px;
+    padding: 0 20px;
     background-color: #f2f2f2;
     border: 1px solid #d9d9d9;
     font-weight: 900;
@@ -1170,7 +1167,7 @@ strong.color{
     &.small{
       min-width:84px;
       height:26px;
-      padding:5px 20px;
+      line-height:26px;
       font-size: 0.8125rem;
       font-weight:700;
       color: #666;
@@ -1251,10 +1248,11 @@ strong.color{
   font-size: 1.625rem;
 }
 
-.fontbold{
-  font-weight: 900;
-}
-
 .fontregular{
   font-weight: 700;
+}
+
+
+button, a {
+  cursor: pointer;
 }
