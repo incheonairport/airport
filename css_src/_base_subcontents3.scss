@@ -439,11 +439,6 @@
         display:none;
       }
     }
-    &-tit{
-      display:block;
-      margin-top:40px;
-      font-size:1.625rem;
-    }
   }
 }
 // 체크/라디오 그룹
@@ -590,6 +585,14 @@
       }
       .boxmodel2-maintit{
         margin-bottom:10px;
+      }
+      .boxmodel2-table{
+        &-tit{
+          width:56px;
+        }
+        &-desc{
+          width:calc(100% - 56px);
+        }
       }
     }
     &-item{
@@ -885,6 +888,9 @@
       &.blue{
         background:#41519f;
       }
+      &.gray{
+        background:#444;
+      }
     }
   }
   .color-lb{
@@ -996,9 +1002,9 @@ button{
       border-left: 0;
       background: #fff;
       &:after{
-        background-position:-97px -92px;
-        width: 20px;
-        height: 20px;
+        background-position:-99px -96px;
+        width: 17px;
+        height: 16px;
       }
       +.timesetting-date-option{
         border-left: 0;
@@ -1007,6 +1013,7 @@ button{
     &-option{
       width: 170px;
       height: 58px;
+      background:#fff;
       font-size: 1rem;
       padding-left: 10px;
       border: 1px solid #d9d9d9;
@@ -1029,6 +1036,7 @@ button{
 .guidebox{
   display:table;
   width:100%;
+  height:200px;
 
   &-col{
     display:table-cell;
@@ -1120,4 +1128,15 @@ button{
 }
 .pd-resize{
   padding: 8px 20px 7px !important
+}
+
+.btn-center{
+  display:table;
+  margin:auto;
+  padding:20px 0 60px;
+  .btn-type-small{
+    min-width:166px;
+    position:absolute;
+    right:0;
+  }
 }
