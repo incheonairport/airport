@@ -19,6 +19,12 @@
       .slide-ad01{
         background:url(/static/ap/images/img_slide_banner01.jpg) no-repeat;
       }
+      .slide-ad02{
+        background:url(/static/ap/images/img_slide_banner02.jpg) no-repeat;
+      }
+      .slide-ad03{
+        background:url(/static/ap/images/img_slide_banner03.jpg) no-repeat;
+      }
     }
     &-link{
       display:block;
@@ -37,6 +43,9 @@
     }
     .color-y{
       color:#ffaa20;
+    }
+    .color-b{
+      color:#222222;
     }
   }
   &-btn{
@@ -197,6 +206,12 @@
   }
   &.food{
     background:url(/static/ap/images/bg_shopping.jpg) center no-repeat;
+  }
+  &.dutyfree{
+    background: url("/static/ap/images/bg_shopping_01.jpg") center no-repeat;
+  }
+  &.shopping{
+    background: url("/static/ap/images/bg_shopping_02.jpg") center no-repeat;
   }
 }
 // 필터
@@ -796,6 +811,7 @@
     margin-bottom:18px;
     font-size:1.625rem;
     line-height:1;
+    font-weight: 600;
     &+.boxmodel2-column{
       border-top:0;
     }
