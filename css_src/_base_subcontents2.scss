@@ -812,6 +812,16 @@
       content:"※";
     }
   }
+  &.mark2{
+    text-indent:-20px;
+    padding-left:20px;
+
+    &:before{
+      content:"*";
+      position: relative;
+      top: 4px;
+    }
+  }
 }
 .footer-graft{
   margin-bottom:-120px;

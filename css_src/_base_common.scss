@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
+  &:last-child{
+    margin-bottom:120px
+  }
 }
 
 #top-contents{
@@ -703,6 +706,9 @@ em{
       & td{
         border-right:0;
         padding:23px 20px;
+        &.no-data-found{
+          padding: 130px 20px;
+        }
       }
     }
 

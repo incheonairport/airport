@@ -413,9 +413,9 @@
 // layer popup
 .layer{
   width: 680px;
-  height: 938px;
+  max-height: 938px;
   border: 4px solid #42519e;
-  overflow-y: scroll;
+  overflow-y:auto;
   &-area{
     padding: 35px 30px;
   }
