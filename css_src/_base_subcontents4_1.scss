@@ -1,598 +1,86 @@
-%gutter{
-  .inner-col{
-    padding:0 12px 0 0;
+.sub-menu-tab{
+  &-iconlist{
+   margin: 0 auto;
 
-    &:last-child{
-      padding:0 0 0 12px;
-    }
-  }
-}
+    &.mypage-iconlist{
+      width: 622px;
 
-%normal-3{
-  .inner-col{
-    width:calc(33.33% - 16px)!important;
-    margin-left:24px;
-    &:first-child{
-      margin-left:0;
-    }
-  }
-}
 
-.multi-col{
-  position:relative;
-  @extend %clearfix;
-
-  .inner-col{
-    float:left;
-    text-align:justify;
-
-    &.btn-right{
-      position: absolute;
-      right:0;
-      bottom:0;
-      text-align: right;
-    }
-  }
-
-  &.double{
-    .inner-col{
-      width:50%;
-      &.w-auto{
-        width: auto;
-        padding-right:24px;
-      }
-      &.w70{
-        width: 70%;
-        padding-right:24px;
-      }
-      &.w30{
-        width: 30%;
-      }
-      &.calc-w466-l{
-        width: calc(100% - 466px);
-        padding-left:24px;
-      }
-      &.calc-w466-r{
-        width: calc(100% - 466px);
-        padding-right:24px;
-      }
-      &.w466{
-        width: 466px;
-        padding:0;
-      }
-    }
-  }
-
-  &.triple{
-    .inner-col{
-      width:33.33%;
-    }
-  }
-
-  &.line{
-    &:before{
-      content:"";
-      display:block;
-      width:1px;
-      height:100%;
-      background:#d9d9d9;
-      position:absolute;
-      top:0;
-      left:50%;
-    }
-    @extend %gutter;
-  }
-
-  &.gutter{
-    @extend %gutter;
-  }
-
-  &.normal-3{
-    @extend %normal-3;
-  }
-
-}
-
-.section-banner{
-  height: 322px;
-  padding-top: 85px;
-  text-align: center;
-  color: #fff;
-  &-title{
-    margin-bottom:20px;
-    font-size:2rem;
-    color: #fff;
-    .big{
-      font-size: 3.125rem;
-      line-height:1;
-    }
-  }
-  &-txt{
-    margin-bottom:10px;
-    .big{
-      font-size: 3.125rem;
-      line-height:1;
-    }
-  }
-  &-link{
-    border-radius: 30px;
-    padding: 0 100px 0 20px;
-  }
-  &.faq1{
-    background: url(/static/ap/images/bg_banner_faq_01.jpg ) no-repeat;
-  }
-  &.faq2{
-    background: url(/static/ap/images/bg_banner_faq_02.jpg ) no-repeat;
-  }
-  &.commend{
-    background: url(/static/ap/images/bg_banner_commend.jpg ) no-repeat;
-  }
-  &.wide{
-    width: 100%;
-  }
-}
-
-// 슬라이드형 게시판 목록
-.board-slide{
-  .board-list{
-    //padding:0 30px;
-    border-top:1px solid #d9d9d9;
-    border-bottom:0;
-    &:last-child{
-      border-bottom:1px solid #d9d9d9;
-    }
-    // 활성화 스타일링
-    &.on{
-      border-bottom:1px solid #d9d9d9;
-      border-top-color:#a5a7aa;
-      &+.board-list{
-        border-top:0;
-      }
-      .board-list-head{
-        border-bottom:1px solid #d9d9d9;
-        .board-list-tit{
-          &:after{
-            transform:rotate(180deg);
-          }
-        }
-      }
-      .board-list-body{
-        display:block;
-      }
-    }
-  }
-  // 제목부분
-  .board-list-head{
-    padding:26px 0;
-    .board-list-tit{
-      display:block;
-      width:100%;
-      height:100%;
-
-      font-size:1.25rem;
-      text-indent:0;
-      &:after{
-        left:auto;
-        right:30px;
-        transition:all .4s;
-      }
-      &-inner{
-        display:block;
-        padding:0 80px 0 30px;
-        line-height:1.5;
-
-      }
-      .board-list-category{
-        width: 150px;
-        line-height:1.5;
-        font-size:1.25rem;
-        text-align: center;
-        display:inline-block;
-        float: left;
-      }
-    }
-  }
-  // 내용부분
-  .board-list-body{
-    display:none;
-    background:#f2f4f7;
-    padding:30px;
-    .board-list-desc{
-      color:#444;
-    }
-    .board-list-link{
-      color:#4674c9;
-      line-height:1.7;
-    }
-  }
-}
-
-// 이벤트 게시판 상세
-.borad-view{
-  .view-head{
-    padding:25px 30px;
-    border-bottom:1px solid #a5a7aa;
-    &-tit{
-      display:inline;
-      font-size:1.375rem;
-      font-weight:900;
-    }
-    &-date{
-      display:inline;
-      float:right;
-    }
-    &-info{
-      @extend %clearfix;
-      margin-top:16px;
-      font-size:1rem;
-      .info-tit{
-        float:left;
-        margin-right:10px;
-      }
-      .info-desc{
-        float:left;
-        &:after{
-          content: "";
-          display: inline-block;
-          width: 1px;
-          height: 16px;
-          margin: auto 20px;
-          background: #d9d9d9;
-          vertical-align:middle;
-        }
-        &:last-child:after{
-          display:none;
-        }
-      }
-    }
-  }
-  .view-body{
-    padding:30px 30px 70px;
-  }
-  .view-file{
-    @extend %clearfix;
-    border-top:1px solid #d9d9d9;
-    padding:30px;
-    .file-group-text{
-      float:left;
-      width:124px;
-      color:#002222;
-      font-size:1rem;
-      line-height:1.7;
-    }
-    .file-list{
-      float:left;
-      &-item{
-
-      }
-      &-link{
-        color:#666;
-        font-size:1rem;
-      }
-    }
-    .crud-ico{
-      text-indent:0;
-      &:after{
-        left:-22px;
-        right:auto;
-        bottom:4px;
-      }
-    }
-  }
-  .reply-box{
-    background:#f2f4f7;
-    padding:40px;
-    border:1px solid #d9d9d9;
-    margin-bottom:30px;
-    .reply-head{
-      @extend %clearfix;
-      margin-bottom:30px;
-      &-tit{
-        float:left;
-        padding-left:20px;
-        font-weight:900;
-        text-indent:0;
-        line-height:1;
-        &:after{
-          right:auto
-        }
-      }
-      &-info{
-        float:right;
-        @extend %clearfix;
-        font-size:1rem;
-        .info-tit{
-          float:left;
-          margin-right:10px;
-          color:#002222;
-        }
-        .info-desc{
-          float:left;
-          color:#444;
-          &:after{
-            content: "";
-            display: inline-block;
-            width: 1px;
-            height: 16px;
-            margin: auto 20px;
-            background: #d9d9d9;
-            vertical-align:middle;
-          }
-          &:last-child:after{
-            display:none;
-          }
-        }
-      }
-    }
-  }
-}
-
-// 게시판내 사용되는 아이콘
-.crud-ico{
-  display:inline-block;
-  position:relative;
-  text-indent:-999em;
-  &:after{
-    content:'';
-    display:block;
-    position:absolute;
-    top:0;
-    right:0;
-    left:0;
-    bottom:0;
-    margin:auto;
-    background: url(/static/ap/images/spr_ico_crud.png) no-repeat;
-  }
-
-  &.file-hwp:after{
-    background-position:-19px -18px;
-    width: 14px;
-    height: 17px;
-  }
-
-  &.file-txt:after{
-    background-position:-44px -18px;
-    width: 15px;
-    height: 17px;
-  }
-
-  &.file-img:after{
-    background-position:-70px -18px;
-    width: 13px;
-    height: 17px;
-  }
-
-  &.file-xlsx:after{
-    background-position:-94px -18px;
-    width: 14px;
-    height: 17px;
-  }
-
-  &.file-ppt:after{
-    background-position:-119px -18px;
-    width: 14px;
-    height: 17px;
-  }
-
-  &.file-pdf:after{
-    background-position:-144px -18px;
-    width: 14px;
-    height: 17px;
-  }
-
-  &.arrow-reply:after{
-    background-position:-19px -56px;
-    width: 12px;
-    height: 13px;
-  }
-
-  &.lock:after{
-    background-position:-45px -52px;
-    width: 13px;
-    height: 17px;
-  }
-
-  &.good:after{
-    background-position:-52px -89px;
-    width: 24px;
-    height: 24px;
-  }
-
-  &.bad:after{
-    background-position:-16px -89px;
-    width: 24px;
-    height: 24px;
-  }
-
-}
-
-// pagenation list
-.pagenation{
-  display: table;
-  margin: 0 auto;
-  @extend %clearfix;
-  .ico{
-    width:44px;
-    height:44px;
-    border:1px solid #d9d9d9;
-    border-left:0;
-    float:left;
-
-    &.first{
-      border-left:1px solid #d9d9d9;
-      &:after{
-        left:-1px
-      }
     }
 
-    &.prev{
-      &:after{
-        left:-1px
-      }
-    }
 
-    &.next{
-      border-left:1px solid #d9d9d9;
-      &:after{
-        right:-1px
-      }
-    }
-
-    &.last{
-      &:after{
-        right:-1px
-      }
-    }
-
-    // 더이상 페이지가 없을 때 클래스
-    &.default{
-      pointer-events:none;
-      &:after{
-        opacity:.5;
-      }
-    }
-
-    &:hover{
-      &:after{
-        opacity:.5;
-      }
-    }
-  }
-
-  &-list{
-    float:left;
-    margin:0 20px;
-    @extend %clearfix;
-    &-item{
-      &:first-child{
-        border-left:1px solid #d9d9d9;
-      }
-      &:hover{
-        background:#42519e;
-        border-color:#42519e;
-        .pagenation-list-link{
-          color:#fff;
-        }
-      }
-      // 활성화 클래스
-      &.on{
-        background:#42519e;
-        border-color:#42519e;
-        .pagenation-list-link{
-          color:#fff;
-        }
-      }
-      float:left;
-      width:44px;
-      height:44px;
-      border:1px solid #d9d9d9;
-      border-left:0;
-      position:relative;
-    }
     &-link{
-      display:block;
-      width:100%;
-      height:100%;
-      line-height:44px;
-      text-align:center;
-    }
-  }
-}
+      &.contact-us{
+        &.on{
 
-.font26, %font26{
-  font-size: 1.625rem;
-}
-
-.faq-category{
-  &-list{
-    border:{
-      right:1px solid #d9d9d9;
-      bottom: 2px solid #222;
-    }
-    @extend %clearfix;
-    &-item{
-      width: 20%;
-      float: left;
-      .select-category{
-        display: none;
-        &-label{
-          padding: 10px 20px;
-          display: block;
-          border-left:1px solid #d9d9d9;
-          border-top:1px solid #d9d9d9;
-          &.ico{
-            text-indent: 0;
-            &:after{
-              background-position:-164px -32px;
-              width: 13px;
-              height: 11px;
-              right:20px;
-              left:auto;
-            }
-          }
         }
-        &:checked + .select-category-label{
-          background: #42519e;
-          color: #fff;
-          &.ico:after{
-            background-position:-192px -32px;
-            width: 13px;
-            height: 11px;
-            right:20px;
-            left:auto;
-          }
+
+        &:before{
+          background-position: 0px -159px;
+          width: 52px;
+          height: 52px;
+        }
+
+        &:hover:before{
+          background-position:0px -102px;
         }
       }
+
+      &.complain{
+        &:before{
+          background-position: -67px -159px;
+          width: 50px;
+          height: 52px;
+        }
+
+        &:hover:before{
+          background-position:-67px -103px;
+        }
+      }
+
+      &.privacy{
+        &:before{
+          background-position: -129px -161px;
+          width: 49px;
+          height: 54px;
+        }
+
+        &:hover:before{
+          background-position:-129px -104px;
+        }
+      }
+
+      &.delete-member{
+        &:before{
+          background-position: -192px -160px;
+          width: 52px;
+          height: 54px;
+        }
+
+        &:hover:before{
+          background-position:-192px -103px;
+        }
+      }
+
+
     }
   }
 }
 
-.today-box{
-  padding: 20px 0;
-  background: #f2f4f7;
-  .praise, .inconvenience {
-    height: 68px;
-    line-height: 68px;
-    text-align: center;
-    position: relative;
-    &-title{
-      font-size: 1.25rem;
-      display: block;
-    }
-    &-no{
-      font-size: 2.25rem;
-      position: relative;
-      top:5px;
-      &.red{
-        color: #d43e41;
-      }
-    }
-  }
-  .emoticon:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right:0;
-    left:0;
-    bottom: 0;
-    margin: auto;
-    background: url(/static/ap/images/spr_big_emoticon.png) no-repeat;
-  }
-  .praise-title:after{
-    background-position: -10px -10px;
-    width: 50px;
-    height: 58px;
-    top:20px;
-    left:150px;
-    right:auto;
-  }
-  .inconvenience-title:after{
-    background-position: -77px -10px;
-    width: 50px;
-    height: 58px;
-    top:20px;
-    left:150px;
-    right:auto;
-  }
+
+.contact-list{
+  width:1152px;
+  margin: 0 auto;
 }
+
+
+.mypage-pagenation{
+  margin-top:40px;
+}
+
+.mapage-text-box{
+  width: 1152px;
+  height: 171px;
+  margin: 60px  auto;
+}
+

@@ -160,6 +160,8 @@ $(function(){
 
     });
 
+    console.log(count[2]);
+
     $('.progress-all .progress-bar').css({width: Math.floor(count[7] / (count[2]-count[11]) * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7] / (count[2]-count[11]) * 100) + '%</div>');
 
     $('.all-work').text( (count[2]-count[11]) + 'p');

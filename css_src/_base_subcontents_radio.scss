@@ -31,6 +31,12 @@
     &+.radio-type1-radio{
       margin-left:40px;
     }
+    &.font18{
+      font-size: 1.125rem;
+    }
+  }
+  &.left{
+    text-align: left;
   }
 }
 
@@ -49,7 +55,6 @@
     }
   }
   &-label{
-    width: 200px;
     height: 27px;
     padding:0 20px 0 40px;
     font-size: 1rem;
@@ -60,7 +65,7 @@
         background-position:-130px -293px;
         width: 27px;
         height: 27px;
-        top:-12px;
+        top:-8px;
         left:0;
         right:auto;
         display: block;
@@ -69,6 +74,10 @@
     &+.radio-type1-radio{
       margin-left:40px;
     }
+  }
+  .radio-box{
+    display:inline-block;
+    width:196px;
   }
 }
 

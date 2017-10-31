@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
+  &:last-child{
+    margin-bottom:120px
+  }
 }
 
 #top-contents{
@@ -532,8 +535,11 @@ em{
 .list1{
   &-item{
     padding-left:12px;
+    margin-top:8px;
     position:relative;
-
+    &:first-child{
+      margin-top:0;
+    }
     &:before{
       content: "·";
       font-size: 	1.625rem;
@@ -703,6 +709,9 @@ em{
       & td{
         border-right:0;
         padding:23px 20px;
+        &.no-data-found{
+          padding: 130px 20px;
+        }
       }
     }
 
@@ -724,6 +733,7 @@ em{
       font-size:1rem;
       font-weight:400;
       color:#fff;
+      line-height:1.4;
       background:#323648;
       border-right:1px solid #474a5b;
       vertical-align:middle;
