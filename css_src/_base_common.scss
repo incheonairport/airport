@@ -532,8 +532,11 @@ em{
 .list1{
   &-item{
     padding-left:12px;
+    margin-top:8px;
     position:relative;
-
+    &:first-child{
+      margin-top:0;
+    }
     &:before{
       content: "·";
       font-size: 	1.625rem;
@@ -724,6 +727,7 @@ em{
       font-size:1rem;
       font-weight:400;
       color:#fff;
+      line-height:1.4;
       background:#323648;
       border-right:1px solid #474a5b;
       vertical-align:middle;
