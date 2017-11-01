@@ -3,9 +3,6 @@
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
-  &:last-child{
-    margin-bottom:120px
-  }
 }
 
 #top-contents{
@@ -900,6 +897,10 @@ em{
 // margin-top:60px;
 .mt60, %mt60{
   margin-top:60px;
+}
+
+.ml10, %ml10{
+  margin-left: 10px;
 }
 
 // float
