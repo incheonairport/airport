@@ -83,7 +83,7 @@
       <tbody>
       <tr>
         <th class="left">
-          <span class="imp"> 작성목적</span>
+          <span class="imp">작성목적</span>
         </th>
         <td>
           고객제안
@@ -91,16 +91,16 @@
       </tr>
       <tr>
         <th class="left">
-          <span class="imp">작성자구분</span>
+          <label class="imp" for="category">작성자구분</label>
         </th>
         <td>
-          <select class="object-list">
+          <select id="category" class="object-list" title="대분류">
             <option>선택</option>
             <option>공항이용</option>
             <option>공항운영</option>
             <option>공항참여</option>
           </select>
-          <select class="object-list">
+          <select class="object-list" title="소분류">
             <option>선택</option>
             <option>공항이용</option>
             <option>공항운영</option>
@@ -114,10 +114,10 @@
       </tr>
       <tr>
         <th class="left">
-          <span class="imp">국적</span>
+          <label class="imp" for="nationality">국적</label>
         </th>
         <td>
-          <select class="object-list">
+          <select id="nationality" class="object-list">
             <option>선택</option>
           </select>
         </td>
@@ -204,19 +204,19 @@
       </tr>
       <tr>
         <th class="left">
-          이용일시
+          <label for="usage-date">이용일시</label>
         </th>
         <td class="user">
           <div class="timesetting-date low">
-            <input type="text" class="timesetting-date-day f-left" readonly="" placeholder="2017.08.21(월)">
-            <button class="timesetting-date-calendar ico f-left">날짜 선택</button>
-            <select class="timesetting-date-option f-left">
+            <input type="text" id="usage-date" class="timesetting-date-day f-left" readonly="" placeholder="2017.08.21(월)" title="선택한 날짜가 표시됩니다.">
+            <button class="timesetting-date-calendar ico f-left" title="클릭하면 날짜를 선택할 수 있는 달력이 표시됩니다.">날짜 선택</button>
+            <select class="timesetting-date-option f-left" title="시간을 선택할 수 있는 목록입니다.">
               <option>시간 선택</option>
             </select>
-            <select class="timesetting-date-option f-left">
+            <select class="timesetting-date-option f-left" title="분을 선택할 수 있는 목록입니다.">
               <option>분 선택</option>
             </select>
-            <input type="text" class="user-text" placeholder="항공편 입력">
+            <input type="text" class="user-text" placeholder="항공편 입력" title="이용한 항공편을 입력해주세요.">
           </div>
         </td>
       </tr>
