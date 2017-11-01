@@ -919,7 +919,6 @@
 		<!--//주소검색-->
 
 		<!--1단 글상자-->
-
 		<div class="text-box">
 			<div class="text-box-headline-col">
 				<h4 class="text-box-headline font20">글 작성 시 유의사항 안내</h4>
@@ -935,7 +934,6 @@
 		<!--//1단 글상자-->
 
 		<!--2단 글상자-->
-
 		<div class="text-box">
 			<div class="text-box-headline-col">
 				<span class="ico headline-ico">경고</span>
@@ -960,10 +958,204 @@
 				</div>
 			</div>
 		</div>
-
 		<!--//2단 글상자-->
 
+		<table class="table hr" summary="불편/칭찬 글 작성 대한 안내입니다.">
+			<caption>불편/칭찬 글 작성 안내표</caption>
+			<colgroup>
+				<col style="width:20%">
+				<col style="width:80%">
+			</colgroup>
+			<tbody>
+			<tr>
+				<th class="left">
+					<label for="purpose" class="important">작성목적</label>
+				</th>
+				<td>
+					<select class="object-list" id="purpose">
+						<option>칭찬·격려</option>
+						<option>불평·불만</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th class="left">
+					<label class="important" for="category">작성자구분</label>
+				</th>
+				<td>
+					<select class="object-list" id="category" title="대분류">
+						<option>선택</option>
+						<option>공항이용</option>
+						<option>공항운영</option>
+						<option>공항참여</option>
+					</select>
+					<select class="object-list" title="소분류">
+						<option>선택</option>
+						<option>공항이용</option>
+						<option>공항운영</option>
+						<option>공항참여</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th class="left">작성자</th>
+				<td>박준영</td>
+			</tr>
+			<tr>
+				<th class="left">
+					<label for="nationality" class="important">국적</label>
+				</th>
+				<td>
+					<select class="object-list" id="nationality">
+						<option>선택</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th class="left">휴대전화번호</th>
+				<td>010-1111-1234</td>
+			</tr>
+			<tr>
+				<th class="left">이메일</th>
+				<td>asdf@gali.com</td>
+			</tr>
+			<tr>
+				<th class="left">
+					<label for="address" class="important">주소</label>
+				</th>
+				<td>
+					<div class="user-input">
+						<input type="text" class="user-input-text" id="address" title="주소입력창입니다">
+						<button class="user-input-link font16" title="버튼을 누르면 주소 검색이 가능합니다">주소검색</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th class="left">
+					정보 수정하기
+				</th>
+				<td>
+					<a class="user-input-link font16">개인정보 수정 페이지로 이동</a>
+				</td>
+			</tr>
+			<tr>
+				<th class="left">
+					<label for="title" class="important">제목</label>
+				</th>
+				<td>
+					<input type="text" class="user-text wide" id="title">
+				</td>
+			</tr>
+			<tr>
+				<th class="left">
+					<label for="content" class="important">내용</label>
+				</th>
+				<td>
+          <textarea class="user-text wide height" id="content">
+          </textarea>
+				</td>
+			</tr>
+			<tr>
+				<th class="left">
+					SMS 수신설정
+				</th>
+				<td>
+					<input type="checkbox" name="search" id="sms" class="checkbox" value="yes" checked="">
+					<label class="checkbox-label ico" for="sms">고객의 소리 답변 여부를 SMS로 받겠습니다.</label>
+				</td>
+			</tr>
+			<tr>
+				<th class="left">
+					답변 수신설정
+				</th>
+				<td>
+					<input type="checkbox" name="search" id="search-option1" class="checkbox" value="email" checked="checked">
+					<label class="checkbox-label ico" for="search-option1">이메일</label>
+					<input type="checkbox" name="search" id="search-option2" class="checkbox" value="sms">
+					<label class="checkbox-label ico" for="search-option2">SMS</label>
+					<input type="checkbox" name="search" id="search-option3" class="checkbox" value="no">
+					<label class="checkbox-label ico" for="search-option3">답변불필요</label>
 
+				</td>
+			</tr>
+			<tr>
+				<th class="left">
+					<label for="use-date">이용일시</label>
+				</th>
+				<td class="user">
+					<div class="timesetting-date low">
+						<input type="text" class="timesetting-date-day f-left" readonly="" placeholder="2017.08.21(월)" id="use-date" title="이용날짜를 선택하면 출력됩니다">
+						<button class="timesetting-date-calendar ico f-left" title="클릭시 날짜를 선택할 수 있는 달력이 나옵니다" >날짜 선택</button>
+						<select class="timesetting-date-option f-left" title="시간을 선택할 수 있는 리스트입니다">
+							<option>시간 선택</option>
+						</select>
+						<select class="timesetting-date-option f-left" title="분을 선택할 수 있는 리스트입니다.">
+							<option>분 선택</option>
+						</select>
+						<input type="text" class="user-text" placeholder="항공편 입력" title="이용하신 항공편을 입력하실 수 있습니다">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th class="left">
+					첨부파일
+				</th>
+				<td>
+					<div class="user-input">
+						<input type="file" class="user-text wide">
+					</div>
+					<ul class="list1 mt10 font16">
+						<li class="list1-item">
+							<strong>첨부가능 파일 목록 :</strong> txt, jpg, jpeg, gif, bmp, png, doc, docx, xls, ppt, pptx, hwp, rtf, zip, rar, pdf
+						</li>
+						<li class="list1-item">
+							<strong>첨부가능 용량 :</strong> 10Mbyt
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="left">
+					<div class="multi-col double">
+						<div class="inner-col w70">
+							<div class="radio-type1 left">
+								<input type="radio" name="option1" id="option1" class="radio-type1-radio" value="yes" checked="">
+								<label class="radio-type1-label ico font18" for="option1">'개인정보 수집 및 이용'에 동의하시고 등록하시겠습니까? (필수)</label>
+							</div>
+						</div>
+
+						<div class="inner-col w20 btn-right">
+							<a class="search-customer-link small font13">전문보기</a>
+						</div>
+					</div>
+					<div class="multi-col double mt20">
+						<div class="inner-col w70">
+							<div class="radio-type1 left">
+								<input type="radio" name="option2" id="option2" class="radio-type1-radio" value="yes">
+								<label class="radio-type1-label ico font18" for="option2">'개인정보 제3자 제공 동의'에 동의하시고 등록하시겠습니까? (필수)</label>
+							</div>
+						</div>
+
+						<div class="inner-col w20 btn-right">
+							<a class="search-customer-link small font13">전문보기</a>
+						</div>
+					</div>
+					<div class="multi-col double mt20">
+						<div class="inner-col w70">
+							<div class="radio-type1 left">
+								<input type="radio" name="option3" id="option3" class="radio-type1-radio" value="yes">
+								<label class="radio-type1-label ico font18" for="option3">'개인정보취급 위탁(시스템 운영)'에 동의하시고 등록 하시겠습니까? (필수)</label>
+							</div>
+						</div>
+
+						<div class="inner-col w20 btn-right">
+							<a class="search-customer-link small font13">전문보기</a>
+						</div>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
 	</div>
 
 </section>
