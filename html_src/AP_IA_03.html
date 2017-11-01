@@ -1,5 +1,6 @@
 <!--=include _include/_base_header.html -->
 <section id="top-contents" class="contents">
+  <!--위치-->
   <div class="location">
     <div class="location-btn">
       <button type="button" class="location-btn-minus ico"></button>
@@ -9,35 +10,36 @@
     <div class="location-bar">
       <ul class="location-bar-nav">
         <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
-        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">고객센터</a></li>
-        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">자주하는 질문/문의</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">마이페이지</a></li>
+        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">상담문의 내역</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--//위치-->
+  <div class="inner-section">
+    <!--서브타이틀-->
+    <div class="contents-sub-head">
+      <h2 class="contents-sub-head-title">마이페이지</h2>
+      <p class="contents-sub-head-article">회원님의 다양한 정보를 확인/관리 하실 수 있습니다.</p>
+    </div>
+    <!--//서브타이틀-->
+  </div>
+
+  <!-- 서브메뉴 탭 -->
+  <div class="sub-menu-tab">
+    <div class="inner-section">
+      <ul class="sub-menu-tab-iconlist mypage-iconlist">
+        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link contact-us on">상담문의<br/>내역</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link complain">전자민원<br>내역</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link privacy">개인정보<br/>수정</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link delete-member">회원탈퇴</a></li>
       </ul>
     </div>
   </div>
 
   <div class="inner-section">
-    <div class="contents-sub-head">
-      <h2 class="contents-sub-head-title">고객센터</h2>
-      <p class="contents-sub-head-article">안녕하세요. 인천국제공항 고객센터입니다. 무엇을 도와드릴까요?</p>
-    </div>
-  </div>
-  <!-- 서브메뉴 탭 -->
-  <div class="sub-menu-tab">
-    <div class="inner-section">
-      <ul class="sub-menu-tab-iconlist">
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link question">자주하는<br/>질문/문의</a></li>
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link appraisal on">불편/칭찬</a></li>
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link suggestion">고객제안</a></li>
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link phone">전화번호<br/>안내</a></li>
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link lost-property">유실물<br/>관리소</a></li>
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link advisory-panel">고객정책<br/>자문단</a></li>
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link damage-relief">공항 이용자<br/> 피해구제 절차</a></li>
-      </ul>
-    </div>
-  </div>
-  <!-- //서브메뉴 탭 -->
-  <div class="inner-section mt40">
-    <h2 class="heading-level1 center">불평/칭찬</h2>
+    <!-- 고객센터 및 마이페이지 리스트 스타일 -->
+    <h2 class="heading-level1 center mt40">상담문의 내역</h2>
 
     <!--글상자-->
     <div class="text-box">
@@ -72,8 +74,8 @@
       </div>
 
     </div>
-    <table class="table hr" summary="불편/칭찬 글 작성 대한 안내입니다.">
-      <caption>불편/칭찬 글 작성 안내표</caption>
+    <table class="table hr" summary="상담문의 글 작성 대한 안내입니다.">
+      <caption>상담문의 글 작성 안내표</caption>
       <colgroup>
         <col style="width:20%">
         <col style="width:80%">
@@ -84,10 +86,7 @@
           <span class="imp"> 작성목적</span>
         </th>
         <td>
-          <select class="object-list">
-            <option>칭찬·격려</option>
-            <option>불평·불만</option>
-          </select>
+          고객제안
         </td>
       </tr>
       <tr>
@@ -128,7 +127,7 @@
         <td>010-1111-1234</td>
       </tr>
       <tr>
-        <th class="left">이메일</th>
+        <th class="left"><span class="imp">이메일</span></th>
         <td>asdf@gali.com</td>
       </tr>
       <tr>
@@ -144,10 +143,23 @@
       </tr>
       <tr>
         <th class="left">
+          <span class="imp">공개여부</span>
+        </th>
+        <td>
+          <div class="radio-type2">
+            <input type="radio" name="open" id="open1" class="radio-type2-radio" value="yes" checked="">
+            <label class="radio-type2-label ico" for="open1">공개</label>
+            <input type="radio" name="open" id="open2" class="radio-type2-radio" value="no">
+            <label class="radio-type2-label ico" for="open2">비공개</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th class="left">
           정보 수정하기
         </th>
         <td>
-          <a class="search-customer-link font16">개인정보 수정 페이지로 이동</a>
+          <a class="user-input-link font16">개인정보 수정 페이지로 이동</a>
         </td>
       </tr>
       <tr>
@@ -178,7 +190,7 @@
       </tr>
       <tr>
         <th class="left">
-         답변 수신설정
+          답변 수신설정
         </th>
         <td>
           <input type="checkbox" name="search" id="search-option1" class="checkbox" value="email" checked="checked">
@@ -192,7 +204,7 @@
       </tr>
       <tr>
         <th class="left">
-         이용일시
+          이용일시
         </th>
         <td class="user">
           <div class="timesetting-date low">
@@ -210,11 +222,11 @@
       </tr>
       <tr>
         <th class="left">
-         첨부파일
+          첨부파일
         </th>
         <td>
           <div class="user-input">
-            <input type="text" class="user-input-text">
+            <input type="text" class="user-input-address-text">
             <button type="button" class="user-input-link font16">찾아보기</button>
           </div>
           <ul class="list1 mt10 font16">
@@ -238,7 +250,7 @@
             </div>
 
             <div class="inner-col w20 btn-right">
-              <a class="search-customer-link small font13">전문보기</a>
+              <a class="user-input-link small font13">전문보기</a>
             </div>
           </div>
           <div class="multi-col double mt20">
@@ -250,7 +262,7 @@
             </div>
 
             <div class="inner-col w20 btn-right">
-              <a class="search-customer-link small font13">전문보기</a>
+              <a class="user-input-link small font13">전문보기</a>
             </div>
           </div>
           <div class="multi-col double mt20">
@@ -262,7 +274,7 @@
             </div>
 
             <div class="inner-col w20 btn-right">
-              <a class="search-customer-link small font13">전문보기</a>
+              <a class="user-input-link small font13">전문보기</a>
             </div>
           </div>
         </td>
@@ -309,5 +321,4 @@
 
   </div>
 </section>
-
-<!--=include _include/_base_footer.html -->
+ <!--=include _include/_base_footer.html -->
