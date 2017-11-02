@@ -416,7 +416,7 @@
   }
 }
 
-.packing{
+.inner-tab{
   .btn-type-tab{
     min-width: 130px;
     height: 40px;
@@ -626,6 +626,39 @@
         }
       }
     }
+    &.self-checkin{
+      width: 1002px;
+      .departure-step-list-article{
+        &:after {
+          content: '';
+          display: block;
+          width: 116px;
+          height:116px;
+          position: absolute;
+          top:-320px;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/ap/images/spr_ico_self_checkin.png) no-repeat;
+        }
+        &.step-1:after{
+          background-position: -16px -16px;
+        }
+        &.step-2:after{
+          background-position: -154px -16px;
+        }
+        &.step-3:after{
+          background-position: -292px -16px;
+        }
+        &.step-4:after{
+          background-position: -16px -152px;
+        }
+        &.step-5:after{
+          background-position: -154px -152px;
+        }
+      }
+    }
     &-article{
       width: 200px;
       height: 200px;
@@ -637,6 +670,9 @@
       display: inline-block;
       position: relative;
     }
+  }
+  &.self-checkin{
+    background: url(/static/ap/images/bg_self_checkin_step.jpg) no-repeat;
   }
 }
 
