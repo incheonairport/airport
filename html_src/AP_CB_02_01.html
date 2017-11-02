@@ -291,8 +291,8 @@
       <div class="slide-banner-wrap mt40">
         <ul class="slide-banner-list">
           <li class="slide-banner-list-item">
-            <a href="#" class="slide-banner-list-link slide-ad01">
-              <span class="slide-banner-list-desc">피부 재충전을 위한</span>
+            <a href="#" class="slide-banner-list-link slide-ad03">
+              <span class="slide-banner-list-desc color-b">피부 재충전을 위한</span>
               <span class="slide-banner-list-strong color-b">샤넬 르 리프트 리추얼</span>
             </a>
           </li>
@@ -481,39 +481,4 @@
 
   </div>
 </section>
-<script>
-  $(document).ready(function(){
-    filterEvent(); // 필터 관련 펼치기 이벤트
-    boxmodelEvent(); // 박스모델 세부사항 펼치기 이벤트
-  });
-
-  function boxmodelEvent(){
-    var listItem = $('.boxmodel2-list-item');
-    $('.boxmodel2-list-item .btn-type-small').on('click', function(){
-      $(this).parents(listItem).toggleClass('on');
-      if($(this).parents(listItem).hasClass('on')) {
-        $(this).text('닫기');
-      } else {
-        $(this).text('펼치기');
-      }
-    });
-  }
-
-  function filterEvent(){
-    $('.filter .filter-brand-search-btn').on('click', function(){
-      $(this).toggleClass('on');
-      $(this).parents('.filter').toggleClass('on');
-    });
-
-    $('.filter .base-close').on('click', function(){
-      $(this).parents('.filter').removeClass('on');
-    });
-
-    $('.filter .filter-option').on('click', function(){
-      $(this).toggleClass('on');
-      $(this).next('.filter-service-field').toggleClass('on');
-      //$(this).next('.filter-service-field').toggleClass('off');
-    });
-  }
-</script>
 <!--=include _include/_base_footer.html -->
