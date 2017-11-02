@@ -11,7 +11,7 @@
       <ul class="location-bar-nav">
         <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
         <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">마이페이지</a></li>
-        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">전자민원 내역</a></li>
+        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">개인정보 수정</a></li>
       </ul>
     </div>
   </div>
@@ -69,7 +69,7 @@
     </div>
 
 
-    <table class="table hr privacy-table" summary="개인정보 수정에 대한 안내입니다.">
+    <table class="table hr writing" summary="개인정보 수정에 대한 안내입니다.">
       <caption>개인정보 수정</caption>
       <colgroup>
         <col style="width:20%">
@@ -87,31 +87,42 @@
       </tr>
       <tr>
         <th class="left">
-          비밀번호
+          <span class="important">비밀번호</span>
         </th>
 
-        <td>
-          <div class="password-change-table1">
-            <p class="password-change-table-old">현재 비밀번호</p>
-            <input type="text" class="user-text password-change-text">
+        <td class="left">
+          <div>
+            <label class="password-change" for="old-password">현재 비밀번호</label>
+            <input type="text" id="old-password" class="user-text password-change-text1">
           </div>
 
-          <div>
-            <div class="password-change-table2">
-              <p class="password-change-table-new">새 비밀번호</p>
-              <input type="text" class="user-text password-change-text">
+          <div class="multi-col double mt10">
+            <div class="inner-col">
+              <label class="password-change" for="new-password">새 비밀번호</label>
+              <input type="text" id="new-password" class="user-text password-change-text2">
             </div>
-
-            <div class="password-change-table2">
-              <p class="password-change-table-new">새 비밀번호 확인</p>
-              <input type="text" class="user-text password-change-text">
+            <div class="inner-col">
+              <label class="password-change" for="new-password-check">새 비밀번호 확인</label>
+              <input type="text" id="new-password-check" class="user-text password-change-text2">
             </div>
           </div>
 
-          <div>
-            <p>※ 띄어쓰기 없는 영문 대·소문자, 숫자, 특수문자 포함 10~20자 사용 가능합니다.</p>
-            <p>※ 아이디, 생년월일, 동일한 연속문자, 숫자, 사용 불가능합니다.</p>
-            <p>※ 비밀번호 변경 시에만 입력하세요.</p>
+          <!--<div class="password-change-table2">-->
+            <!--<div>-->
+              <!--<p class="password-change-table-new important font16">새 비밀번호</p>-->
+              <!--<input type="text" class="user-text password-change-text">-->
+            <!--</div>-->
+
+            <!--<div>-->
+              <!--<p class="password-change-table-new important font16">새 비밀번호 확인</p>-->
+              <!--<input type="text" class="user-text password-change-text">-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <div class="mt20">
+            <p class="font14 password-info">※ 띄어쓰기 없는 영문 대·소문자, 숫자, 특수문자 포함 10~20자 사용 가능합니다.</p>
+            <p class="font14 password-info">※ 아이디, 생년월일, 동일한 연속문자, 숫자, 사용 불가능합니다.</p>
+            <p class="font14 password-info">※ 비밀번호 변경 시에만 입력하세요.</p>
           </div>
 
         </td>
@@ -119,35 +130,35 @@
 
 
 
-      <tr class="privacy-table-tr">
+      <tr>
         <th class="left">
-          휴대전화번호
+          <label class="important" for="phone-number">휴대전화번호</label>
         </th>
-        <td class="privacy-table-td">
-          <input type="text" class="search-customer-text privacy-text">
+        <td>
+          <input type="text" id="phone-number" class="user-text privacy-text" placeholder="010-1111-1234">
         </td>
       </tr>
       <tr>
         <th class="left">
-          이메일
+          <label class="important" for="e-mail">이메일</label>
         </th>
         <td>
-          <input type="text" class="search-customer-text privacy-text">
+          <input type="text" id="e-mail" class="user-text privacy-text" placeholder="abc1234@gmail.com">
         </td>
       </tr>
 
       <tr>
         <th class="left">
-          생년월일
+          <label for="date-of-birth">생년월일</label>
         </th>
         <td>
-          <select class="select-link object-link privacy-link">
+          <select class="select-link object-link privacy-link" id="date-of-birth" title="목록을 누르시면 년도를 설정할 수 있습니다.">
             <option>1992년</option>
           </select>
-          <select class="select-link object-link privacy-link">
+          <select class="select-link object-link privacy-link"  title="목록을 누르시면 달을 설정할 수 있습니다">
             <option>9월</option>
           </select>
-          <select class="select-link object-link privacy-link">
+          <select class="select-link object-link privacy-link" title="목록을 누르시면 날짜를 설정할 수 있습니다">
             <option>14일</option>
           </select>
         </td>

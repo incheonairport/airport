@@ -179,7 +179,7 @@
 
 .select-link{
   &.privacy-link{
-    width:145px;
+    width:131px;
     height: 50px;
   }
 }
@@ -216,6 +216,32 @@
   }
 }
 
+.user-text{
+  &.privacy-text{
+    width:403px;
+    height: 50px;
+  }
+}
 
+.password-change{
+  font-size: 1rem;
+  margin-right: 15px;
+}
 
+.password-change-text1{
+
+  width: 290px;
+  height: 50px;
+}
+
+.password-change-text2{
+  margin-left: 15px;
+  width: 290px;
+  height: 50px;
+}
+
+.password-info{
+  font-size: 0.875rem;
+  color: #666;
+}
 
