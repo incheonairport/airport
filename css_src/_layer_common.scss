@@ -565,7 +565,7 @@
   height:50px;
   background:#fff;
   padding:0 45px 0 20px;
-  line-height:45px;
+  line-height:50px;
   border:1px solid #666;
   font-weight:600;
   transition:all .4s;
@@ -821,7 +821,11 @@ em{
 .list1{
   &-item{
     padding-left:12px;
+    margin-top:8px;
     position:relative;
+    &:first-child{
+      margin-top:0
+    }
 
     &:before{
       content: "·";

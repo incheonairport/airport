@@ -1,3 +1,31 @@
+// bg-movie
+.bg-include{
+  height:621px;
+  &.bg1{
+    background:url(/static/ap/images/bg_movie01.jpg) no-repeat;
+  }
+  &-inner{
+    display:table;
+    width:100%;
+    height:100%;
+    text-align:center;
+    &-box{
+      display:table-cell;
+      vertical-align: middle;
+    }
+  }
+  &-video{
+    width:854px;
+    height:480px;
+    margin:auto;
+    background:#000;
+    &-iframe{
+      width:100%;
+      height:100%;
+    }
+  }
+}
+
 // slide banner
 .slide-banner{
   width:1152px;
@@ -60,6 +88,9 @@
     }
     &.slide-right{
       right:0;
+    }
+    &:hover{
+      background:rgba(0,0,0,.5);
     }
   }
 }

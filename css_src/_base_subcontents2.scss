@@ -158,6 +158,16 @@
   &.bg5{
     background:url(/static/ap/images/img_base_top05.jpg) center no-repeat;
   }
+  &.bg6{
+    background:url(/static/ap/images/img_base_top07.jpg) center no-repeat;
+    &.type3{
+      height:420px;
+      position:relative;
+      .sub-top-descbox{
+        padding-top:100px;
+      }
+    }
+  }
 }
 // bg 컨텐츠
 .section-bg{

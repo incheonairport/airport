@@ -82,46 +82,5 @@
     </div>
   </div>
 </footer>
-
-<!-- 제이쿼리 테스트 -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-  $(document).ready(function(){
-    gnb(); // gnb
-    selectLinkTypeEvent(); // 링크타입 셀렉트박스 이벤트
-  });
-
-  function gnb(){
-    $('.gnb-depth1-link').on('mouseenter', function(){
-      $('.gnb').addClass('on');
-    });
-
-    $('.gnb').on('mouseleave', function(){
-      $('.gnb').removeClass('on');
-    });
-  }
-
-  function selectLinkTypeEvent(){
-    $('.select-link-default').on('click', function(){
-      $(this).toggleClass('on');
-      $(this).next('.select-list').toggleClass('on');
-    });
-
-    $('.select-list .select-list-link').on('click',function(){
-      $(this).parents('.select-list').removeClass('on')
-      $(this).parents('.select-list').prev('.select-link-default').removeClass('on');
-    });
-
-    // document 클릭시 remove class...
-    $(document).mouseup(function (e) {
-      var container = $('.select-list');
-      if (!container.is(e.target) && container.has(e.target).length === 0){
-        container.removeClass('on');
-        $('.select-link-default').removeClass('on');
-      }
-    });
-
-  }
-</script>
 </body>
 </html>
