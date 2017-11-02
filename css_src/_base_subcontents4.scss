@@ -821,6 +821,20 @@
   }
 }
 
+//글작성 게시판 추가
+.table{
+  &.hr.writing{
+    td{
+      padding:10px 20px;
+      height: 70px;
+      line-height: 1;
+      &.agreement-offer{
+        padding:25px 20px;
+      }
+    }
+  }
+}
+
 // 게시판내 사용되는 아이콘
 .crud-ico{
   display:inline-block;
@@ -1110,9 +1124,10 @@
     width:957px;
     &-text{
       width:810px;
-      height:46px;
+      height:50px;
       font-size:1rem;
       border: 1px solid #d9d9d9;
+      box-sizing: border-box;
       float:left;
     }
     &-link{
@@ -1137,7 +1152,7 @@
   }
 }
 
-/*고객센터 select*/
+/*select*/
 .object-list{
   width:250px;
   height:50px;
@@ -1166,7 +1181,7 @@
 }
 
 
-/*2단 글상자*/
+/*글상자*/
 .text-box{
   width:100%;
   border: 1px solid #d9d9d9;
@@ -1178,7 +1193,7 @@
   }
 
   &-headline-col{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
 
@@ -1204,7 +1219,7 @@
   }
 
 }
-/*2단 글상자*/
+/*글상자*/
 
 .text{
   &-left{
@@ -1233,7 +1248,6 @@
   font-size: 1.625rem;
 }
 
-
 /*글작성 필수아이콘*/
 .table {
   th, td {
@@ -1250,7 +1264,6 @@
     }
   }
 }
-
 
 button, a {
   cursor: pointer;

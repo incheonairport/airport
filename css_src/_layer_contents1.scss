@@ -408,41 +408,6 @@
   }
 }
 
-.parking-option {
-  width: 27px;
-  height: 27px;
-  margin-right: 8px;
-  vertical-align: text-bottom;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  &:checked {
-    &.parking-option:after {
-      background-position: -177px -293px;
-      width: 27px;
-      height: 27px;
-    }
-  }
-
-  &-label {
-    min-width: 145px;
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    top: -2px;
-  }
-  &.ico:after {
-    background-position: -129px -293px;
-    width: 27px;
-    height: 27px;
-  }
-}
-
 .parking-fee{
   font-size: 1.375rem;
   strong{

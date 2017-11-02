@@ -74,7 +74,7 @@
       </div>
 
     </div>
-    <table class="table hr" summary="불편/칭찬 글 작성 대한 안내입니다.">
+    <table class="table hr writing" summary="불편/칭찬 글 작성 대한 안내입니다.">
       <caption>불편/칭찬 글 작성 안내표</caption>
       <colgroup>
         <col style="width:20%">
@@ -196,7 +196,7 @@
         <th class="left">
           <label for="use-date">이용일시</label>
         </th>
-        <td class="user">
+        <td>
           <div class="timesetting-date low">
             <input type="text" class="timesetting-date-day f-left" readonly="" placeholder="2017.08.21(월)" id="use-date" title="이용날짜를 선택하면 출력됩니다">
             <button class="timesetting-date-calendar ico f-left" title="클릭시 날짜를 선택할 수 있는 달력이 나옵니다" >날짜 선택</button>
@@ -212,11 +212,11 @@
       </tr>
       <tr>
         <th class="left">
-          첨부파일
+          <label for="file">첨부파일</label>
         </th>
         <td>
           <div class="user-input">
-            <input type="file" class="user-text wide">
+            <input type="file" class="user-text wide" id="file">
           </div>
           <ul class="list1 mt10 font16">
             <li class="list1-item">
@@ -229,7 +229,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2" class="left">
+        <td colspan="2" class="left agreement-offer">
           <div class="multi-col double">
             <div class="inner-col w70">
               <div class="radio-type1 left">
