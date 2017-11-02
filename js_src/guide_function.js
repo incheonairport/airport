@@ -10,7 +10,24 @@ $(function(){
 
   var $record = $('.file-list tbody tr');
 
-  var count = new Array(12).fill(0);
+  var count = {
+
+    work : 0,
+    primary : 0,
+    category : 0,
+    cancel : 0,
+    html : 0,
+    dev : 0,
+    board : 0,
+    link : 0,
+    extra : 0,
+    doneWork : 0,
+    doneHtml : 0,
+    doneDev : 0,
+    doneBoard : 0
+
+  };
+
   var pageCount = 1;
 
   // each data split filename and ext
@@ -38,15 +55,19 @@ $(function(){
 
       if( $children.eq(7).text().indexOf('*') >= 0){
 
-        childrenText = 'extra-';
+        childrenText = 'extra-page';
+
+      } else if( $children.eq(0).text() != '' ){
+
+        childrenText = childrenText ? 'primary-category ' + $children.eq(6).text().toLowerCase() + '-page' : 'primary-category '
 
       } else {
 
-        childrenText = childrenText ? childrenText + '-' : childrenText;
+        childrenText = childrenText ? childrenText + '-page' : childrenText + 'category';
 
       }
 
-      $record.addClass(childrenText + 'category');
+      $record.addClass(childrenText);
 
     }
 
@@ -55,33 +76,39 @@ $(function(){
   // find same filename and put link html code or X
   function compareFile($record){
 
-    if(!$record.hasClass('cancel') && !$record.hasClass('category') && !$record.hasClass('link-category')){
+    if(!$record.hasClass('cancel') && !$record.hasClass('category') && !$record.hasClass('link-page')){
 
-      for(var j=0; j<item.length; j++){
+      if( $record.attr('class').indexOf('page') >= 0 ){
 
-        if( $record.children('td:nth-child(8)').text() == item[j] ) {
+        for(var j=0; j<item.length; j++){
 
-          $record.prepend('<td>'+ pageCount +'</td>');
-          $record.addClass('done').append('<td class="center"><a href="../html/' + item[j] + '.html" class="list-link" target="blank"> DONE </a></td>');
-          itemFlag[j] = true;
-          pageCount++;
-          break;
+          if( $record.children('td:nth-child(8)').text() == item[j] ) {
 
-        } else if( $record.children('td:nth-child(8)').text().indexOf('*') >= 0 ){
-
-          $record.prepend('<td></td>');
-          $record.append('<td></td>');
-          break;
-
-        } else {
-
-          if( j == item.length-1 ){
             $record.prepend('<td>'+ pageCount +'</td>');
-            $record.append('<td class="center">X</td>');
+            $record.addClass('done').append('<td class="center"><a href="../html/' + item[j] + '.html" class="list-link" target="blank"> DONE </a></td>');
+            itemFlag[j] = true;
             pageCount++;
-          }
+            break;
 
+          } else if( $record.children('td:nth-child(8)').text().indexOf('*') >= 0 ){
+
+            $record.prepend('<td></td>');
+            $record.append('<td></td>');
+            break;
+
+          } else {
+
+            if( j == item.length-1 ){
+              $record.prepend('<td>'+ pageCount +'</td>');
+              $record.append('<td class="center">X</td>');
+              pageCount++;
+            }
+          }
         }
+
+      } else {
+        $record.prepend('<td></td>');
+        $record.append('<td></td>');
       }
 
     } else {
@@ -101,80 +128,105 @@ $(function(){
     console.log(fileData);
   }
 
-  // write each count number
-  function outputProgress() {
+  function countProgress(){
 
     $record.each(function () {
 
       var className = $(this).attr('class');
 
-      if (className == 'cancel') {
+      if (className == 'primary-category') {
 
-        // number of cancel page
-        count[0]++;
+        // number of primary category
+        count.primary++;
 
       } else if (className == 'category') {
 
         // number of category
-        count[1]++;
+        count.category++;
 
-      } else {
+      } else if ( className == 'cancel' ) {
+
+        count.cancel++;
+
+      }
+
+      if( className.toLowerCase().indexOf('page') >= 0 ) {
 
         // number of working page
-        count[2]++;
+        count.work++;
 
         if (className.toLowerCase().indexOf('html') >= 0) {
           // number of html page
-          count[3]++;
+          count.html++;
+
         } else if (className.toLowerCase().indexOf('develop') >= 0) {
           // number of develop page
-          count[4]++;
+          count.dev++;
+
         } else if (className.toLowerCase().indexOf('board') >= 0) {
           // number of board page
-          count[5]++;
+          count.board++;
+
         } else if (className.toLowerCase().indexOf('link') >= 0) {
           // number of link
-          count[6]++;
+          count.link++;
+
         } else if( className.toLowerCase().indexOf('extra') >= 0 ){
-          // number of extra
-          count[11]++;
-        }
+          // number of extra page
+          count.extra++;
 
-        if (className.toLowerCase().indexOf('done') >= 0) {
-          // number of done page
-          count[7]++;
-
-          if (className.toLowerCase().indexOf('html') >= 0) {
-            // number of done html page
-            count[8]++;
-          } else if (className.toLowerCase().indexOf('develop') >= 0) {
-            // number of done develop page
-            count[9]++;
-          } else if (className.toLowerCase().indexOf('board') >= 0) {
-            // number of done board page
-            count[10]++;
-          }
         }
 
       }
 
+      if (className.toLowerCase().indexOf('done') >= 0) {
+        // number of done page
+        count.doneWork++;
+
+        if (className.toLowerCase().indexOf('html') >= 0) {
+
+          // number of done html page
+          count.doneHtml++;
+
+        } else if (className.toLowerCase().indexOf('develop') >= 0) {
+
+          // number of done develop page
+          count.doneDev++;
+
+        } else if (className.toLowerCase().indexOf('board') >= 0) {
+
+          // number of done board page
+          count.doneBoard++;
+
+        }
+      }
+
     });
 
-    console.log(count[2]);
+    count.work = count.work - count.link - count.extra;
 
-    $('.progress-all .progress-bar').css({width: Math.floor(count[7] / (count[2]-count[11]) * 100) + '%'}).html('<div class="progress-percent">' + Math.floor(count[7] / (count[2]-count[11]) * 100) + '%</div>');
+  }
 
-    $('.all-work').text( (count[2]-count[11]) + 'p');
-    $('.done-work .progress-bar').css({width: Math.floor(count[7] / (count[2]-count[11]) * 100) + '%'}).html('<div class="progress-percent">' + (count[7] - count[11]) + 'p</div>');
+  // write each count number
+  function outputProgress() {
 
-    $('.all-work-html').text(count[3] + 'p');
-    $('.done-work-html .progress-bar').css({width: Math.floor(count[8] / count[3] * 100) + '%'}).html('<div class="progress-percent">' + count[8] + 'p</div>');
+    countProgress();
 
-    $('.all-work-board').text(count[4] + 'p');
-    $('.done-work-board .progress-bar').css({width: Math.floor(count[9] / count[4] * 100) + '%'}).html('<div class="progress-percent">' + count[9] + 'p</div>');
+    console.log( count);
 
-    $('.all-work-develop').text(count[5] + 'p');
-    $('.done-work-develop .progress-bar').css({width: Math.floor(count[10] / count[5] * 100) + '%'}).html('<div class="progress-percent">' + count[10] + 'p</div>');
+    $('.progress-all .progress-bar').css({width:Math.floor( count.doneWork / count.work * 100 ) + '%'}).html('<div class="progress-percent">' + Math.floor( count.doneWork / count.work * 100 ) + '%</div>');
+
+    $('.all-work').text( count.work + 'p');
+    $('.done-work .progress-bar').css({width: Math.floor( count.doneWork / count.work * 100 ) + '%'}).html('<div class="progress-percent">' + count.doneWork + 'p</div>');
+
+    $('.all-work-html').text(count.html + 'p');
+    $('.done-work-html .progress-bar').css({width: Math.floor( count.doneHtml / count.html * 100 ) + '%'}).html('<div class="progress-percent">' + count.doneHtml + 'p</div>');
+
+    $('.all-work-board').text(count.board + 'p');
+    $('.done-work-board .progress-bar').css({width: Math.floor( count.doneBoard / count.board * 100) + '%'}).html('<div class="progress-percent">' + count.doneBoard + 'p</div>');
+
+    $('.all-work-develop').text(count.dev + 'p');
+    $('.done-work-develop .progress-bar').css({width: Math.floor( count.doneDev / count.dev * 100) + '%'}).html('<div class="progress-percent">' + count.doneDev + 'p</div>');
   }
 
   /**
@@ -217,7 +269,7 @@ $(function(){
     if( showCategory == undefined ){
       $('.file-list tbody tr').removeClass('hide');
     } else {
-      $('.file-list tbody tr.' + showCategory + '-category').removeClass('hide');
+      $('.file-list tbody tr.' + showCategory + '-page').removeClass('hide');
     }
 
   });
@@ -235,7 +287,7 @@ $(function(){
     if( showCategory == undefined ){
       $('.file-list tbody tr.done').removeClass('hide');
     } else {
-      $('.file-list tbody tr.' + showCategory + '-category.done').removeClass('hide');
+      $('.file-list tbody tr.' + showCategory + '-page.done').removeClass('hide');
     }
 
   });

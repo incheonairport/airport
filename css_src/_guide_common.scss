@@ -350,9 +350,19 @@ table{
 
         &.cancel{
           background:#7e3b3b;
+          padding:0;
+
+          td{
+            padding:0;
+            color:#999;
+          }
         }
 
-        &.link-category{
+        &.primary-category{
+          background:coral;
+        }
+
+        &.link-page{
           background:skyblue;
         }
 

@@ -57,3 +57,82 @@ $(function(){
 
 
 });
+
+$(document).ready(function(){
+  $("#viewhidden1").click(function() {
+    status1 = $("#hidden1").css("display");
+    if (status1 == "none") {
+      $("#hidden1").css("display","");
+      $("#hidden2").css("display","none");
+      $("#hidden3").css("display","none");
+      $("#hidden4").css("display","none");
+      $("#hidden5").css("display","none");
+      $("#hidden6").css("display","none");
+    }
+  });
+
+  $("#viewhidden2").click(function() {
+    status1 = $("#hidden2").css("display");
+    if (status1 == "none") {
+      $("#hidden1").css("display","none");
+      $("#hidden2").css("display","");
+      $("#hidden3").css("display","none");
+      $("#hidden4").css("display","none");
+      $("#hidden5").css("display","none");
+      $("#hidden6").css("display","none");
+    }
+  });
+
+  $("#viewhidden3").click(function() {
+    status1 = $("#hidden3").css("display");
+    if (status1 == "none") {
+      $("#hidden1").css("display","none");
+      $("#hidden2").css("display","none");
+      $("#hidden3").css("display","");
+      $("#hidden4").css("display","none");
+      $("#hidden5").css("display","none");
+      $("#hidden6").css("display","none");
+    }
+    else {
+      $("#hidden3").css("display","none");
+    }
+  });
+
+  $("#viewhidden4").click(function() {
+    status1 = $("#hidden4").css("display");
+    if (status1 == "none") {
+      $("#hidden1").css("display","none");
+      $("#hidden2").css("display","none");
+      $("#hidden3").css("display","none");
+      $("#hidden4").css("display","");
+      $("#hidden5").css("display","none");
+      $("#hidden6").css("display","none");
+    }
+  });
+
+  $("#viewhidden5").click(function() {
+    status1 = $("#hidden5").css("display");
+    if (status1 == "none") {
+      $("#hidden1").css("display","none");
+      $("#hidden2").css("display","none");
+      $("#hidden3").css("display","none");
+      $("#hidden4").css("display","none");
+      $("#hidden5").css("display","");
+      $("#hidden6").css("display","none");
+    }
+
+  });
+
+  $("#viewhidden6").click(function() {
+    status1 = $("#hidden6").css("display");
+    if (status1 == "none") {
+      $("#hidden1").css("display","none");
+      $("#hidden2").css("display","none");
+      $("#hidden3").css("display","none");
+      $("#hidden4").css("display","none");
+      $("#hidden5").css("display","none");
+      $("#hidden6").css("display","");
+    }
+  });
+
+});

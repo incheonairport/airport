@@ -74,7 +74,7 @@
       </div>
 
     </div>
-    <table class="table hr" summary="상담문의 글 작성 대한 안내입니다.">
+    <table class="table hr writing" summary="상담문의 글 작성 대한 안내입니다.">
       <caption>상담문의 글 작성 안내표</caption>
       <colgroup>
         <col style="width:20%">
@@ -83,7 +83,7 @@
       <tbody>
       <tr>
         <th class="left">
-          <span class="imp">작성목적</span>
+          <span class="important">작성목적</span>
         </th>
         <td>
           고객제안
@@ -91,7 +91,7 @@
       </tr>
       <tr>
         <th class="left">
-          <label class="imp" for="category">작성자구분</label>
+          <label class="important" for="category">작성자구분</label>
         </th>
         <td>
           <select id="category" class="object-list" title="대분류">
@@ -114,7 +114,7 @@
       </tr>
       <tr>
         <th class="left">
-          <label class="imp" for="nationality">국적</label>
+          <label class="important" for="nationality">국적</label>
         </th>
         <td>
           <select id="nationality" class="object-list">
@@ -127,23 +127,23 @@
         <td>010-1111-1234</td>
       </tr>
       <tr>
-        <th class="left"><span class="imp">이메일</span></th>
+        <th class="left"><span class="important">이메일</span></th>
         <td>asdf@gali.com</td>
       </tr>
       <tr>
         <th class="left">
-          <span class="imp">주소</span>
+          <label for="=address" class="important">주소</label>
         </th>
         <td>
           <div class="user-input">
-            <input type="text" class="user-input-text">
+            <input type="text" id="=address" class="user-input-text">
             <a class="user-input-link font16">주소검색</a>
           </div>
         </td>
       </tr>
       <tr>
         <th class="left">
-          <span class="imp">공개여부</span>
+          <span class="important">공개여부</span>
         </th>
         <td>
           <div class="radio-type2">
@@ -164,18 +164,18 @@
       </tr>
       <tr>
         <th class="left">
-          <span class="imp">제목</span>
+          <label for="title" class="important">제목</label>
         </th>
         <td>
-          <input type="text" class="user-text wide">
+          <input id="title" type="text" class="user-text wide">
         </td>
       </tr>
       <tr>
         <th class="left">
-          <span class="imp">내용</span>
+          <label for="content" class="important">내용</label>>
         </th>
         <td>
-          <textarea class="user-text wide height">
+          <textarea class="user-text wide height" id="content">
           </textarea>
         </td>
       </tr>
@@ -222,12 +222,12 @@
       </tr>
       <tr>
         <th class="left">
-          첨부파일
+          <label for="find-file">첨부파일</label>
         </th>
         <td>
           <div class="user-input">
-            <input type="text" class="user-input-address-text">
-            <button type="button" class="user-input-link font16">찾아보기</button>
+            <input type="file" id="find-file" title="버튼을 누르시면 파일을 불러올 수 있고 파일의 제목이 표시됩니다." class="user-input-address-text">
+
           </div>
           <ul class="list1 mt10 font16">
             <li class="list1-item">
@@ -240,7 +240,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2" class="left">
+        <td colspan="2" class="left agreement-offer">
           <div class="multi-col double">
             <div class="inner-col w70">
               <div class="radio-type1 left">

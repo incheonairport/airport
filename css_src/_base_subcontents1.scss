@@ -404,8 +404,8 @@
       text-indent:0;
     }
     &.ico:after{
-      right: 60px;
-      top:6px;
+      right: 52px;
+      top:5px;
     }
   }
 }
@@ -657,8 +657,129 @@
   }
 }
 
-.table-scroll{
-  height: 62px;
-  overflow: scroll;
+.table-article{
+
+  &-box{
+    height: 192px;
+    overflow: scroll;
+  }
+
+}
+
+.table-guide{
+  @extend %clearfix;
+
+  &-btn{
+    display: block;
+    float: left;
+    width: 183px;
+    height: 25px;
+    background: 0;
+    border: 0;
+    @extend %clearfix;
+
+    &-text{
+      line-height: 24px;
+      height: 25px;
+      color: #666666;
+      display: block;
+      font-size: 1rem;
+      float: left;
+    }
+  }
+
+  &-ico{
+    float: left;
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &-list{
+    float: right;
+  }
+
+  &-item{
+    width: 130px;
+    float: left;
+    font-family: spoqa, sans-serif;
+    font-weight: 700;
+    color: #666666;
+
+    &.blue:before{
+      content: '';
+      display: block;
+      float: left;
+      margin-right: 9px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #4674c9;
+    }
+
+    &.green:before{
+      content: '';
+      display: block;
+      float: left;
+      margin-right: 9px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #2c8179;
+    }
+
+    &.yellow:before{
+      content: '';
+      display: block;
+      float: left;
+      margin-right: 9px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ffae44;
+    }
+
+    &.brown:before{
+      content: '';
+      display: block;
+      float: left;
+      margin-right: 9px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #dd7714;
+    }
+
+    &.red:before{
+      content: '';
+      display: block;
+      float: left;
+      margin-right: 9px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #d43e41;
+    }
+  }
+}
+
+.bg-blue{
+  background: #4674c9;
+}
+
+.bg-green{
+  background: #2c8179;
+}
+
+.bg-yellow{
+  background: #ffae44;
+}
+
+.bg-brown{
+  background: #dd7714;
+}
+
+.bg-red{
+  background: #d43e41;
 }
 

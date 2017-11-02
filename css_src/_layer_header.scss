@@ -3,12 +3,30 @@
   max-width:500px;
   height:100%;
   padding-top:232px;
-  background:url(/static/ap/images/bg_layer_header.png) no-repeat left bottom;
-  background-size:cover;
+  background-size:cover!important;
   box-sizing:border-box;
   position:fixed;
   overflow:auto;
   z-index:99999;
+  &.start{ // 출발
+    background:url(/static/ap/images/bg_layer_header_01.jpg) no-repeat left bottom;
+  }
+  &.arrive{ // 도착
+    background:url(/static/ap/images/bg_layer_header_02.jpg) no-repeat left bottom;
+  }
+  &.traffic-parking{ // 교통/주차
+    background:url(/static/ap/images/bg_layer_header_03.jpg) no-repeat left bottom;
+  }
+  &.shopping-restaurant{ // 쇼핑/식당
+    background:url(/static/ap/images/bg_layer_header_04.jpg) no-repeat left bottom;
+  }
+  &.airport-services{ // 공항서비스
+    background:url(/static/ap/images/bg_layer_header_05.jpg) no-repeat left bottom;
+  }
+  &.transfer{ // 환승
+    background:url(/static/ap/images/bg_layer_header.png) no-repeat left bottom;
+  }
+
 
   &-heading{
     margin-bottom:75px;
@@ -53,6 +71,9 @@
         bottom:0;
         left:0;
       }
+    }
+    &:hover{
+      color:rgba(255,255,255,.5);
     }
   }
 

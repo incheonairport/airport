@@ -34,48 +34,6 @@
   background:url(/static/ap/images/img_maglev_train_tour.jpg) no-repeat;
 }
 
-// 기존 버튼 디자인
-.ico {
-  display: inline-block;
-  position: relative;
-  text-indent: -999em;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    background: url(/static/ap/images/spr_ico_global.png) no-repeat;
-  }
-  &.update-refresh:after{
-    background-position:-31px -98px;
-    width: 20px;
-    height: 20px;
-  }
-  &.search-area-btn:after {
-    background-position: -74px -134px;
-    width: 22px;
-    height: 22px;
-  }
-  &.btn-download:after {
-    background-position: -68px -98px;
-    width: 22px;
-    height: 22px;
-  }
-  &.btn-download.big:after {
-    background-position: -355px -136px;
-    width: 28px;
-    height: 22px;
-  }
-  &.bus-stop:after {
-    background-position: -89px -63px;
-    width: 22px;
-    height: 22px;
-  }
-}
 .update{
   text-align: right;
   margin-bottom: 20px;
@@ -438,6 +396,7 @@
   width: 440px;
   height: 50px;
   padding: 0 10px;
+  font-size: 1rem;
   color: #666;
   background: #fcfbe8;
   border: 1px solid #d9d9d9;
@@ -466,6 +425,8 @@
       border: 1px solid #666;
       box-sizing: border-box;
       float: left;
+      font-size: 1rem;
+      color: #666;
     }
     &-btn {
       width: 62px;

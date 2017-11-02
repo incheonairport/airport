@@ -238,41 +238,4 @@
 
 	</div>
 </section>
-
-<script>
-	$(document).ready(function(){
-		filterEvent(); // 필터 관련 펼치기 이벤트
-		boxmodelEvent(); // 박스모델 세부사항 펼치기 이벤트
-	});
-
-	function boxmodelEvent(){
-		var listItem = $('.boxmodel2-list-item');
-		$('.boxmodel2-list-item .btn-type-small').on('click', function(){
-			$(this).parents(listItem).toggleClass('on');
-			if($(this).parents(listItem).hasClass('on')) {
-				$(this).text('닫기');
-			} else {
-				$(this).text('펼치기');
-			}
-		});
-	}
-
-	function filterEvent(){
-		$('.filter .filter-brand-search-btn').on('click', function(){
-			$(this).toggleClass('on');
-			$(this).parents('.filter').toggleClass('on');
-		});
-
-		$('.filter .base-close').on('click', function(){
-			$(this).parents('.filter').removeClass('on');
-		});
-
-		$('.filter .filter-option').on('click', function(){
-			$(this).toggleClass('on');
-			$(this).next('.filter-service-field').toggleClass('on');
-			//$(this).next('.filter-service-field').toggleClass('off');
-		});
-	}
-</script>
-
 <!--=include _include/_base_footer.html -->

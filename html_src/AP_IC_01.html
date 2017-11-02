@@ -11,7 +11,7 @@
       <ul class="location-bar-nav">
         <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
         <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">마이페이지</a></li>
-        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">전자민원 내역</a></li>
+        <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">개인정보 수정</a></li>
       </ul>
     </div>
   </div>
@@ -68,7 +68,7 @@
       </div>
 
     </div>
-    <table class="table hr privacy-table" summary="개인정보 수정에 대한 안내입니다.">
+    <table class="table hr privacy-table writing" summary="개인정보 수정에 대한 안내입니다.">
       <caption>개인정보 수정</caption>
       <colgroup>
         <col style="width:20%">
@@ -94,33 +94,33 @@
       </tr>
       <tr class="privacy-table-tr">
         <th class="left">
-          휴대전화번호
+          <label for="phone-number" class="important">휴대전화번호</label>
         </th>
         <td class="privacy-table-td">
-          <input type="text" class="search-customer-text privacy-text">
+          <input type="text" id="phone-number" class="user-text privacy-text">
         </td>
       </tr>
       <tr>
         <th class="left">
-          이메일
+          <label class="important" for="e-mail">이메일</label>
         </th>
         <td>
-          <input type="text" class="search-customer-text privacy-text">
+          <input type="text" id="e-mail" class="user-text privacy-text">
         </td>
       </tr>
 
       <tr>
         <th class="left">
-          생년월일
+          <label for="date-of-birth">생년월일</label>
         </th>
         <td>
-          <select class="select-link object-link privacy-link">
+          <select class="select-link object-link privacy-link" id="date-of-birth" title="목록을 누르시면 년도를 설정할 수 있습니다.">
             <option>1992년</option>
           </select>
-          <select class="select-link object-link privacy-link">
+          <select class="select-link object-link privacy-link" title="목록을 누르시면 달을 설정할 수 있습니다.">
             <option>9월</option>
           </select>
-          <select class="select-link object-link privacy-link">
+          <select class="select-link object-link privacy-link" title="목록을 누르시면 날짜를 설정할 수 있습니다.">
             <option>14일</option>
           </select>
         </td>
