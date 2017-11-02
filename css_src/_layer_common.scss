@@ -476,6 +476,7 @@
 
 }
 
+// 기존 버튼 디자인
 .ico{
   display:inline-block;
   position:relative;
@@ -558,6 +559,32 @@
     height: 19px;
   }
 
+  &.update-refresh:after{
+    background-position:-31px -98px;
+    width: 20px;
+    height: 20px;
+  }
+  &.search-area-btn:after {
+    background-position: -74px -134px;
+    width: 22px;
+    height: 22px;
+  }
+  &.btn-download:after {
+    background-position: -68px -98px;
+    width: 22px;
+    height: 22px;
+  }
+  &.btn-download.big:after {
+    background-position: -355px -136px;
+    width: 28px;
+    height: 22px;
+  }
+  &.bus-stop:after {
+    background-position: -89px -63px;
+    width: 22px;
+    height: 22px;
+  }
+
 }
 
 .btn-type-normal{
@@ -565,7 +592,7 @@
   height:50px;
   background:#fff;
   padding:0 45px 0 20px;
-  line-height:45px;
+  line-height:50px;
   border:1px solid #666;
   font-weight:600;
   transition:all .4s;
@@ -821,7 +848,11 @@ em{
 .list1{
   &-item{
     padding-left:12px;
+    margin-top:8px;
     position:relative;
+    &:first-child{
+      margin-top:0
+    }
 
     &:before{
       content: "·";

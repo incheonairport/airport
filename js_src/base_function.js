@@ -125,3 +125,86 @@ $(function(){
 
 
 });
+
+$(document).ready(function(){
+
+  gnb(); // gnb
+  selectLinkTypeEvent(); // 링크타입 셀렉트박스 이벤트
+  filterEvent(); // 필터 관련 펼치기 이벤트 :: 기본타압3
+  boxmodelEvent(); // 박스모델 세부사항 펼치기 이벤트 :: 기본타압3
+  slideButtonEvent(); // 해당 여객터미널 컨텐츠 슬라이딩 이벤트 AP_DC
+
+  function gnb(){
+    $('.gnb-depth1-link').on('mouseenter', function(){
+      $('.gnb').addClass('on');
+    });
+
+    $('.gnb').on('mouseleave', function(){
+      $('.gnb').removeClass('on');
+    });
+  }
+  function selectLinkTypeEvent(){
+    $('.select-link-default').on('click', function(){
+      $(this).toggleClass('on');
+      $(this).next('.select-list').toggleClass('on');
+    });
+
+    $('.select-list .select-list-link').on('click',function(){
+      $(this).parents('.select-list').removeClass('on')
+      $(this).parents('.select-list').prev('.select-link-default').removeClass('on');
+    });
+
+    // document 클릭시 remove class...
+    $(document).mouseup(function (e) {
+      var container = $('.select-list');
+      if (!container.is(e.target) && container.has(e.target).length === 0){
+        container.removeClass('on');
+        $('.select-link-default').removeClass('on');
+      }
+    });
+
+  }
+  function boxmodelEvent(){
+    var listItem = $('.boxmodel2-list-item');
+    $('.boxmodel2-list-item .btn-type-small').on('click', function(){
+      $(this).parents(listItem).toggleClass('on');
+      if($(this).parents(listItem).hasClass('on')) {
+        $(this).text('닫기');
+      } else {
+        $(this).text('펼치기');
+      }
+    });
+  }
+  function filterEvent(){
+    $('.filter .filter-brand-search-btn').on('click', function(){
+      $(this).toggleClass('on');
+      $(this).parents('.filter').toggleClass('on');
+    });
+
+    $('.filter .base-close').on('click', function(){
+      $(this).parents('.filter').removeClass('on');
+    });
+
+    $('.filter .filter-option').on('click', function(){
+      $(this).toggleClass('on');
+      $(this).next('.filter-service-field').toggleClass('on');
+      //$(this).next('.filter-service-field').toggleClass('off');
+    });
+  }
+  function slideButtonEvent(){
+    $('.btn-terminal1').on('click', function(){
+      $('html,body').animate({
+        scrollTop: $('.terminal1').offset().top - 120
+      }, 'slow');
+    });
+
+    $('.btn-terminal2').on('click', function(){
+      $('html,body').animate({
+        scrollTop: $('.terminal2').offset().top - 120
+      }, 'slow');
+    });
+  }
+});
+
+
+
