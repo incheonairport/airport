@@ -26,8 +26,8 @@
     <div class="inner-section">
       <ul class="sub-menu-tab-iconlist">
         <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link question">자주하는<br/>질문/문의</a></li>
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link appraisal on">불편/칭찬</a></li>
-        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link suggestion">고객제안</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link appraisal">불편/칭찬</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link suggestion on">고객제안</a></li>
         <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link phone">전화번호<br/>안내</a></li>
         <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link lost-property">유실물<br/>관리소</a></li>
         <li class="sub-menu-tab-iconlist-item"><a href="#" class="sub-menu-tab-iconlist-link advisory-panel">고객정책<br/>자문단</a></li>
@@ -37,14 +37,14 @@
   </div>
   <!-- //서브메뉴 탭 -->
   <div class="inner-section mt40">
-    <h2 class="heading-level1 center">불평/칭찬</h2>
+    <h2 class="heading-level1 center">고객제안</h2>
 
     <!--글상자-->
     <div class="text-box">
       <div class="text-box-headline-col">
         <h4 class="text-box-headline font20">글 작성 시 유의사항 안내</h4>
       </div>
-      <ul class="list1 mt10">
+      <ul class="list1">
         <li class="list1-item">
           비공개 사항으로 작성된 내용은 작성자 본인만 볼 수 있습니다.
         </li>
@@ -74,8 +74,9 @@
       </div>
 
     </div>
-    <table class="table hr" summary="불편/칭찬 글 작성 대한 안내입니다.">
-      <caption>불편/칭찬 글 작성 안내표</caption>
+
+    <table class="table hr" summary="고객제안 글 작성 대한 안내입니다.">
+      <caption>고객제안 작성</caption>
       <colgroup>
         <col style="width:20%">
         <col style="width:80%">
@@ -83,13 +84,10 @@
       <tbody>
       <tr>
         <th class="left">
-          <label for="purpose" class="important">작성목적</label>
+          작성목적
         </th>
         <td>
-          <select class="object-list" id="purpose">
-            <option>칭찬·격려</option>
-            <option>불평·불만</option>
-          </select>
+          고객제안
         </td>
       </tr>
       <tr>
@@ -130,17 +128,30 @@
         <td>010-1111-1234</td>
       </tr>
       <tr>
-        <th class="left">이메일</th>
+        <th class="left"><span class="important">이메일</span></th>
         <td>asdf@gali.com</td>
       </tr>
       <tr>
         <th class="left">
-          <label for="address" class="important">주소</label>
+          <label for="address">주소</label>
         </th>
         <td>
           <div class="user-input">
             <input type="text" class="user-input-text" id="address" title="주소입력창입니다">
             <button class="user-input-link font16" title="버튼을 누르면 주소 검색이 가능합니다">주소검색</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th class="left">
+          공개여부
+        </th>
+        <td>
+          <div class="radio-type2">
+            <input type="radio" name="open" id="open1" class="radio-type2-radio" value="yes" checked="">
+            <label class="radio-type2-label ico" for="open1">공개</label>
+            <input type="radio" name="open" id="open2" class="radio-type2-radio" value="no">
+            <label class="radio-type2-label ico" for="open2">비공개</label>
           </div>
         </td>
       </tr>

@@ -1,19 +1,27 @@
-.sub-menu-tab{
-  &-iconlist{
-   margin: 0 auto;
+.sub-menu-tab {
+  &-iconlist {
+    margin: 0 auto;
 
-    &.mypage-iconlist{
+    &.mypage-iconlist {
       width: 622px;
-
-
     }
 
+    &-link {
 
-    &-link{
-      &.contact-us{
-        &.on{
+      &:hover::after,
+      &.on:after{
+        content: '';
+        display: block;
+        width: 96px;
+        height: 4px;
+        background: #323648;
+        position: absolute;
+        top: 158px;
+        left: 0;
+        right: 0;
+      }
 
-        }
+      &.contact-us {
 
         &:before{
           background-position: 0px -159px;
@@ -21,9 +29,11 @@
           height: 52px;
         }
 
-        &:hover:before{
+        &:hover:before,
+        &.on:before{
           background-position:0px -102px;
         }
+
       }
 
       &.complain{
@@ -62,8 +72,8 @@
         }
       }
 
-
     }
+
   }
 }
 
@@ -74,13 +84,164 @@
 }
 
 
-.mypage-pagenation{
-  margin-top:40px;
+.sub-menu-tab{
+  &-iconlist{
+    &-link{
+      &.contact-us{
+
+        &:before{
+          background-position: 0px -159px;
+          width: 52px;
+          height: 52px;
+        }
+
+        &:hover:before {
+          background-position:0px -102px;
+        }
+
+      }
+
+      &.complain{
+        &:before{
+          background-position: -67px -159px;
+          width: 50px;
+          height: 52px;
+        }
+
+        &:hover:before,
+        &.on:before{
+          background-position:-67px -103px;
+        }
+      }
+
+    }
+  }
 }
 
-.mapage-text-box{
+.mypage-pagenation{
+  margin-top:40px;
+  margin-bottom: 60px;
+}
+
+.mypage-text-box{
   width: 1152px;
   height: 171px;
-  margin: 60px  auto;
+  margin: 0 auto;
+}
+
+.complain-arrow{
+  right: -931px;
+  width: 190px;
+  height: 50px;
+  margin-bottom: 60px;
+}
+
+
+.sub-menu-tab{
+  &-iconlist{
+    &-link{
+
+      &.complain{
+        &:before{
+          background-position: -67px -159px;
+          width: 50px;
+          height: 52px;
+        }
+
+        &:hover:before{
+          background-position:-67px -103px;
+        }
+      }
+
+      &.privacy{
+        &:before{
+          background-position: -129px -161px;
+          width: 49px;
+          height: 54px;
+        }
+
+        &:hover:before,
+        &.on:before{
+          background-position:-129px -104px;
+        }
+      }
+
+    }
+  }
+}
+
+
+.search-customer-text{
+   &.privacy-text{
+     width:50%;
+   }
+ }
+
+.select-link{
+  &.privacy-link{
+    width:131px;
+    height: 50px;
+  }
+}
+
+.sub-menu-tab{
+  &-iconlist{
+    &-link{
+
+      &.privacy{
+        &:before{
+          background-position: -129px -161px;
+          width: 49px;
+          height: 54px;
+        }
+
+        &:hover:before {
+          background-position:-129px -104px;
+        }
+      }
+
+      &.delete-member{
+        &:before{
+          background-position: -192px -160px;
+          width: 52px;
+          height: 54px;
+        }
+
+        &:hover:before,
+        &.on:before{
+          background-position:-192px -103px;
+        }
+      }
+    }
+  }
+}
+
+.user-text{
+  &.privacy-text{
+    width:403px;
+    height: 50px;
+  }
+}
+
+.password-change{
+  font-size: 1rem;
+  margin-right: 15px;
+}
+
+.password-change-text1{
+
+  width: 290px;
+  height: 50px;
+}
+
+.password-change-text2{
+  margin-left: 15px;
+  width: 290px;
+  height: 50px;
+}
+
+.password-info{
+  font-size: 0.875rem;
+  color: #666;
 }
 
