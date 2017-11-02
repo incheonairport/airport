@@ -499,11 +499,17 @@ mark{
   display:inline-block;
   color:#fff;
   font-size:1.125rem;
-  font-weight:300;
+  font-weight:700;
   line-height:1;
   background:#323648;
   padding:3px 6px;
   margin-bottom:4px;
+  &.color-r{
+    background:#d43e41;
+  }
+  &.color-b{
+    background:#515fa5;
+  }
 }
 
 strong{
