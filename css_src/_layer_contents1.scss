@@ -34,48 +34,6 @@
   background:url(/static/ap/images/img_maglev_train_tour.jpg) no-repeat;
 }
 
-// 기존 버튼 디자인
-.ico {
-  display: inline-block;
-  position: relative;
-  text-indent: -999em;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    background: url(/static/ap/images/spr_ico_global.png) no-repeat;
-  }
-  &.update-refresh:after{
-    background-position:-31px -98px;
-    width: 20px;
-    height: 20px;
-  }
-  &.search-area-btn:after {
-    background-position: -74px -134px;
-    width: 22px;
-    height: 22px;
-  }
-  &.btn-download:after {
-    background-position: -68px -98px;
-    width: 22px;
-    height: 22px;
-  }
-  &.btn-download.big:after {
-    background-position: -355px -136px;
-    width: 28px;
-    height: 22px;
-  }
-  &.bus-stop:after {
-    background-position: -89px -63px;
-    width: 22px;
-    height: 22px;
-  }
-}
 .update{
   text-align: right;
   margin-bottom: 20px;
@@ -405,41 +363,6 @@
 .to-calculate{
   .btn-type-normal{
     font-size: 	1.125rem;
-  }
-}
-
-.parking-option {
-  width: 27px;
-  height: 27px;
-  margin-right: 8px;
-  vertical-align: text-bottom;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  &:checked {
-    &.parking-option:after {
-      background-position: -177px -293px;
-      width: 27px;
-      height: 27px;
-    }
-  }
-
-  &-label {
-    min-width: 145px;
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    top: -2px;
-  }
-  &.ico:after {
-    background-position: -129px -293px;
-    width: 27px;
-    height: 27px;
   }
 }
 

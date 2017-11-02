@@ -476,6 +476,7 @@
 
 }
 
+// 기존 버튼 디자인
 .ico{
   display:inline-block;
   position:relative;
@@ -556,6 +557,32 @@
     background-position:-319px -60px;
     width: 20px;
     height: 19px;
+  }
+
+  &.update-refresh:after{
+    background-position:-31px -98px;
+    width: 20px;
+    height: 20px;
+  }
+  &.search-area-btn:after {
+    background-position: -74px -134px;
+    width: 22px;
+    height: 22px;
+  }
+  &.btn-download:after {
+    background-position: -68px -98px;
+    width: 22px;
+    height: 22px;
+  }
+  &.btn-download.big:after {
+    background-position: -355px -136px;
+    width: 28px;
+    height: 22px;
+  }
+  &.bus-stop:after {
+    background-position: -89px -63px;
+    width: 22px;
+    height: 22px;
   }
 
 }
