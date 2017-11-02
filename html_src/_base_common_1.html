@@ -386,8 +386,8 @@
           </div>
         </div>
         <div class="layer-article">
-          <h5 class="layer-article-title ">시간대별 예상 승객 수</h5>
-          <div class="filter-terminal-search-depth3">
+          <h5 class="layer-article-title">시간대별 예상 승객 수</h5>
+          <div class="">
             <div class="field">
               <div class="field-group big crowded">
                 <input type="radio" name="product" id="crowded-today" class="field-radio" value="brand2-product" checked>
@@ -398,9 +398,10 @@
               </div>
             </div>
           </div>
-          <div class="layer-article">
+
+          <div class="table-article">
             <table class="table vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
-              <caption>시간대별 예상 승객 수</caption>
+              <caption>시간대별 예상 승객 수 구분</caption>
               <colgroup>
                 <col style="width:16%" />
                 <col style="width:21%" />
@@ -419,9 +420,10 @@
               </thead>
             </table>
           </div>
-          <div class="layer-article-box">
+
+          <div class="table-article-box">
             <table class="table vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
-              <caption>시간대별 예상 승객 수</caption>
+              <caption>시간대별 예상 승객 수 데이터</caption>
               <colgroup>
                 <col style="width:16%" />
                 <col style="width:21%" />
@@ -429,24 +431,24 @@
                 <col style="width:21%" />
                 <col style="width:21%" />
               </colgroup>
-              <tbody class="table-scroll">
+              <tbody>
               <tr>
-                <td class="center">
+                <td scope="col" class="center">
                   오후4시
                 </td>
-                <td colspan="2">
+                <td scope="col" colspan="2">
                   <strong>100</strong>명
                 </td>
 
-                <td colspan="3">
+                <td scope="col" colspan="3">
                   <strong>100</strong> 명
                 </td>
 
-                <td colspan="4">
+                <td scope="col" colspan="4">
                   <strong>100</strong> 명
                 </td>
 
-                <td colspan="5">
+                <td scope="col" colspan="5">
                   <strong>2,556</strong> 명
                 </td>
               </tr>
@@ -532,6 +534,23 @@
               </tr>
               </tbody>
             </table>
+          </div>
+
+          <div class="table-guide mt20">
+
+            <button type="button" name="button" title="클릭하면 기준시간당 승객 수 가이드가 나타납니다." class="table-guide-btn">
+              <span class="table-guide-btn-text">기준시간당 승객 수</span>
+              <span class="table-guide-ico ico warning">가이드자세히보기</span>
+            </button>
+
+            <ul class="table-guide-list">
+              <li class="table-guide-item blue font14">원활</li>
+              <li class="table-guide-item green font14">보통</li>
+              <li class="table-guide-item yellow font14">약간혼잡</li>
+              <li class="table-guide-item brown font14">혼잡</li>
+              <li class="table-guide-item red font14">매우혼잡</li>
+            </ul>
+
           </div>
         </div>
       </div>

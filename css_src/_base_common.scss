@@ -374,6 +374,12 @@
     width: 22px;
     height: 22px;
   }
+
+  &.warning:after{
+    background-position:-400px -136px;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* link type select box */
