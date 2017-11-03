@@ -300,17 +300,16 @@
     }
   }
 }
+
 // boxmodel
 .boxmodel{
-  // boxmodel list style
-  margin-left:-24px;
+
   &-list{
     @extend %clearfix;
     display:table;
-    width:calc(100% + 50px);
-    border-spacing:24px 15px;
-    //margin-top:30px;
-    //background:red;
+    width:100%;
+    height:100%;
+    margin-bottom:30px;
     &-head{
       font-family: nanumsq, sans-serif;
       font-size:2.125rem;
@@ -463,24 +462,122 @@
         width:67px;
       }
     }
+
     &-item{
       display:table-cell;
-      vertical-align:top;
       height:100%;
-      padding:40px 30px 20px;
-      width:33.33%;
-      height:352px; // 최소값 지정
-      background:#fff;
-      border: 1px solid #dee3eb;
-      margin-left:24px;
-      &:first-child{
-        margin-left:0;
+      vertical-align:top;
+      overflow:auto;
+      &-inner{
+        //height:352px; // 기본값 지정
+        height:100%;
+        padding:24px 30px 20px;
+        background:#fff;
+        border: 1px solid #dee3eb;
+
+        &.color{
+          background:#f2f4f7;
+        }
+
+        &.img{
+          border:none;
+          &.leave{
+            background:url(/static/ap/images/img_step_leave.jpg);
+          }
+          &.entry{
+            background:url(/static/ap/images/img_step_entry.jpg);
+          }
+          &.domestic-interchange{
+            background: url(/static/ap/images/img_domestic_interchange.png);
+          }
+
+          .boxmodel-list-head{
+            color:#fff;
+            font-size:2.875rem;
+            font-weight:500;
+            margin-top:80px;
+            &:after{
+              display:none
+            }
+          }
+          .boxmodel-list-desc{
+            max-width:306px;
+            color:#fff;
+            font-size:1.125rem;
+            font-weight:300;
+            text-transform:uppercase;
+            margin-top:6px;
+          }
+        }
+      }
+      &.text-left{
+        & .boxmodel-list-desc{
+          text-align:left;
+        }
+      }
+      &.text-small{
+        color:#444;
+        font-size:1rem;
+        letter-spacing:-1px;
+      }
+      &.list-end{
+        width:66.66%;
+        color:#b7c0ce;
+        font-size:2.225rem;
+        text-align:center;
+        position:relative;
+        .list-end-content{
+          //height:56px;
+          //position:absolute;
+          //top:0;
+          //bottom:0;
+          //right:0;
+          //left:0;
+          //margin:auto;
+          line-height:352px; // for ie
+        }
+      }
+      &.col-1{
+        width:100%;
+      }
+      &.col-2{
+        width:50%;
+
+        .boxmodel-list-item-inner{
+          margin-right:12px;
+        }
+
+        &:last-child{
+          .boxmodel-list-item-inner{
+            margin-left:12px;
+            margin-right:0;
+          }
+        }
+      }
+      &.col-3{
+        width:33.3333333%;
+        .boxmodel-list-item-inner{
+          margin-right:12px;
+        }
+
+        &:nth-child(2){
+          .boxmodel-list-item-inner{
+            margin-left:12px;
+          }
+        }
+
+        &:last-child{
+          .boxmodel-list-item-inner{
+            margin-left:12px;
+            margin-right:0;
+          }
+        }
       }
     }
     &-num{
       display:block;
       position:relative;
-      margin:-16px 0 40px;
+      margin-bottom:40px;
       color:#97a4b9;
       font-family:nanumsq, sans-serif;
       font-weight:400;
@@ -577,6 +674,8 @@
     }
     &-item.col-2{
       width:50%;
+      line-height:1.7;
+      text-align:center
     }
   }
   // boxmodel button layout
@@ -676,10 +775,175 @@
       color:#666;
       font-size:1rem;
       vertical-align:1px;
-
     }
   }
 }
+
+.boxmodel-list-item{
+  &.leave{
+    &.domestic-flights{
+      background: url(/static/ap/images/img_domestic_flights.png);
+    }
+  }
+}
+
+.list-heading{
+  font-family: nanumsq, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+
+  &:after{
+    width:150px;
+    height: 150px;
+    background: url(/static/ap/images/img_domestic_flights.png);
+  }
+}
+
+.icon-check{
+  display: block;
+  height: 155px;
+  padding: 15px 0 0 90px;
+  position: relative;
+
+  &-title{
+    font-weight: 700;
+    margin-bottom: -11px;
+  }
+
+}
+
+.boxmodel-list-item-inner{
+  &.leave-check{
+    padding: 24px 30px 0;
+  }
+
+  .icon-passport{
+    width:245px;
+    margin-left:50px;
+    float: left;
+
+    &:after{
+      width: 155px;
+      height: 155px;
+      background: url(/static/ap/images/spr_ico_check.png) -12px -21px;
+    }
+
+    .icontxt-title{
+      &.tit-passport{
+        font-family: 'nanumsq', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 400;
+        text-align: center;
+        padding-top: 45px;
+      }
+    }
+  }
+
+  .list1{
+    &.col-right{
+      width: 680px;
+      float: left;
+    }
+  }
+
+  .col-btn{
+    &-link{
+      margin-right: -3px;
+    }
+  }
+
+
+
+}
+
+// icon text
+.icontxt {
+  display:block;
+  height:74px;
+  padding:15px 0 0 90px;
+  position:relative;
+
+  &:after {
+    content:"";
+    display: block;
+    width: 74px;
+    height: 74px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    background: url(/static/ap/images/spr_ico_text.png) no-repeat;
+  }
+
+
+  &.icon {
+    &-type1:after {
+      background-position: -11px -10px;
+    }
+    &-type2:after {
+      background-position: -105px -10px;
+    }
+    &-type3:after {
+      background-position: -199px -10px;
+    }
+    &-type4:after {
+      background-position: -11px -105px;
+    }
+    &-type5:after {
+      background-position: -105px -105px;
+    }
+    &-type6:after {
+      background-position: -199px -105px;
+    }
+    &-type7:after {
+      background-position: -11px -199px;
+    }
+    &-type8:after {
+      background-position: -105px -199px;
+    }
+    &-type9:after {
+      background-position: -199px -199px;
+    }
+    &-koreanair:after {
+      background-position: -11px -293px;
+    }
+    &-asiana:after {
+      background-position: -105px -293px;
+    }
+    &-another:after {
+      background-position: -199px -293px;
+    }
+    &-maglev-train1:after {
+      background-position: -11px -387px;
+    }
+    &-maglev-train2:after {
+      background-position: -105px -387px;
+    }
+    &-maglev-train3:after {
+      background-position: -198px -387px;
+    }
+    &-maglev-train4:after {
+      background-position: -11px -480px;
+    }
+  }
+
+  &-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+
+    &.list1-item{
+      line-height:1;
+    }
+  }
+  &-info {
+    font-weight: 400;
+
+    &.list1-item{
+      line-height:1;
+    }
+  }
+}
+
 //button
 .btn-type{
   &-infolink{
