@@ -6,6 +6,7 @@
   &-tit{
     position:absolute;
     top:54px;
+    color:#fff;
     font-family: nanumsq, sans-serif;
     font-size:2.875rem;
     font-weight:300;
@@ -42,6 +43,10 @@
     &-sub{
       font-size:1.375rem;
       font-family: roboto, spoqa, sans-serif;
+    }
+    &.center{
+      text-align: center;
+      display: block;
     }
   }
   &-btn-group{
@@ -173,6 +178,7 @@
 .section-bg{
   height:420px;
   background:url(/static/ap/images/bg_section01.jpg) center no-repeat;
+  position: relative;
   &-inner{
     @extend %clearfix;
     display:table;
@@ -286,6 +292,13 @@
       }
     }
   }
+  &.parking-info{
+    background:url(/static/ap/images/bg_parking_info.jpg);
+    height:420px;
+    .section-bg-inner{
+     height: 350px;
+    }
+  }
 }
 // boxmodel
 .boxmodel{
@@ -356,13 +369,13 @@
 
       /* 터미널도착 */
       &.arrival:after{
-        background-position:-34px -38px;
+        background-position:-34px -34px;
         width:88px;
       }
 
       /* 탑승수속 */
       &.procedure:after{
-        background-position:-158px -43px;
+        background-position:-158px -34px;
         width:70px;
       }
 
@@ -396,7 +409,7 @@
         width:51px;
       }
 
-      /* 인천국제공항 돡 */
+      /* 인천국제공항 도착 */
       &.incheon-arrival:after{
         background-position:-34px -125px;
         width:88px;
@@ -443,6 +456,12 @@
         background-position:-466px -207px;
         width:73px;
       }
+
+      /* 출국 전 준비 new */
+      &.departure-ready:after{
+        background-position:-583px -210px;
+        width:67px;
+      }
     }
     &-item{
       display:table-cell;
@@ -463,32 +482,25 @@
       position:relative;
       margin:-16px 0 40px;
       color:#97a4b9;
-      font-size:1.25rem;
-      font-weight:300;
+      font-family:nanumsq, sans-serif;
+      font-weight:400;
       text-align:center;
-      &:before{
+      &:before, &:after{
         content:'';
         display:block;
         position:absolute;
-        left:0;
         top:0;
         bottom:0;
         margin:auto;
-        width:130px;
+        width:calc(50% - 22px);
         height:1px;
         background:#dbdfe6;
       }
+      &:before{
+        left:0;
+      }
       &:after{
-        content:'';
-        display:block;
-        position:absolute;
         right:0;
-        top:0;
-        bottom:0;
-        margin:auto;
-        width:130px;
-        height:1px;
-        background:#dbdfe6;
       }
     }
     &-support{
@@ -496,7 +508,7 @@
     }
     &-desc{
       color:#000;
-      line-height:1.7;
+      line-height:1.5;
       text-align:center ;
     }
     &-item.img{
@@ -541,8 +553,13 @@
       font-size:1rem;
       letter-spacing:-1px;
     }
-    &-item.list-end{
+    &-item.col-two-thirs{
       width:66.66%;
+    }
+    &-item.col-1{
+      width:100%;
+    }
+    &-item.list-end{
       color:#b7c0ce;
       font-size:2.225rem;
       text-align:center;

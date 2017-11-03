@@ -132,7 +132,7 @@ $(document).ready(function(){
   selectLinkTypeEvent(); // 링크타입 셀렉트박스 이벤트
   filterEvent(); // 필터 관련 펼치기 이벤트 :: 기본타압3
   boxmodelEvent(); // 박스모델 세부사항 펼치기 이벤트 :: 기본타압3
-  slideButtonEvent(); // 해당 여객터미널 컨텐츠 슬라이딩 이벤트 AP_DC
+  //slideButtonEvent(); // 해당 여객터미널 컨텐츠 슬라이딩 이벤트 AP_DC
 
   function gnb(){
     $('.gnb-depth1-link').on('mouseenter', function(){
@@ -191,19 +191,19 @@ $(document).ready(function(){
       //$(this).next('.filter-service-field').toggleClass('off');
     });
   }
-  function slideButtonEvent(){
-    $('.btn-terminal1').on('click', function(){
-      $('html,body').animate({
-        scrollTop: $('.terminal1').offset().top - 120
-      }, 'slow');
-    });
-
-    $('.btn-terminal2').on('click', function(){
-      $('html,body').animate({
-        scrollTop: $('.terminal2').offset().top - 120
-      }, 'slow');
-    });
-  }
+  //function slideButtonEvent(){
+  //  $('.btn-terminal1').on('click', function(){
+  //    $('html,body').animate({
+  //      scrollTop: $('.terminal1').offset().top - 120
+  //    }, 'slow');
+  //  });
+  //
+  //  $('.btn-terminal2').on('click', function(){
+  //    $('html,body').animate({
+  //      scrollTop: $('.terminal2').offset().top - 120
+  //    }, 'slow');
+  //  });
+  //}
 });
 
 
