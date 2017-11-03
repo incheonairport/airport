@@ -375,6 +375,7 @@
 }
 
 .inner-tab{
+  @extend %clearfix;
   .btn-type-tab{
     min-width: 130px;
     height: 40px;
@@ -637,13 +638,70 @@
   }
 }
 
+.maglev-train-line {
+  height: 274px;
+  padding-top:0;
+  background: url(/static/ap/images/bg_maglev_train_line.png) no-repeat;
+  border: 1px solid #f3f4f8;
+  @extend %clearfix;
+  &-list {
+    width: 835px;
+    margin: 0 auto;
+    position: relative;
+    top:180px;
+    &-article {
+      width: 153px;
+      height: 200px;
+      float: left;
+      &:first-child{
+        width: 140px;
+        a{
+          text-align: left;
+          padding-left: 5px;
+        }
+      }
+      &:last-child{
+        width:80px;
+        a{
+          text-align: right;
+        }
+      }
+      &-link{
+        text-align: center;
+        position: relative;
+        display: block;
+        &:after {
+          content: '';
+          display: block;
+          width: 153px;
+          height:140px;
+          position: absolute;
+          top:0px;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/ap/images/spr_ico_maglev_train_line.png) no-repeat;
+        }
+        &.step-1:after{
+          background-position: 0 0;
+          top:-180px;
+        }
+        &.station:after{
+         background-position: -138px 0;
+         top:-184px;
+          width: 137px;
+        }
+      }
+    }
+  }
+}
 
 
 .font20, %font20{
   font-size: 1.25rem;
 
 }
-
 
 button{
   cursor: pointer;

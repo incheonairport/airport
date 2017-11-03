@@ -137,13 +137,9 @@
     margin-top:10px;
     &-link{
       display: block;
+      outline: 1px solid transparent;
       &:hover {
-        border: 1px solid #13141a;
-        box-sizing: border-box;
-        .td-like{
-          border-top:0;
-          border-bottom:0;
-        }
+        outline: 1px solid #13141a;
       }
       .flight{
         text-align: center;
