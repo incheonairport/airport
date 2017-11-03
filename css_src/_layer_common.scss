@@ -915,8 +915,8 @@ em{
     background: url(/static/ap/images/spr_ico_text.png) no-repeat;
   }
 
-  &.icon {
 
+  &.icon {
     &-type1:after {
       background-position: -11px -10px;
     }
@@ -982,7 +982,6 @@ em{
       line-height:1;
     }
   }
-
 }
 
 .banner{
