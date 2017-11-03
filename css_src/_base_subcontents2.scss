@@ -44,6 +44,10 @@
       font-size:1.375rem;
       font-family: roboto, spoqa, sans-serif;
     }
+    &.center{
+      text-align: center;
+      display: block;
+    }
   }
   &-btn-group{
     height:auto;
@@ -174,6 +178,7 @@
 .section-bg{
   height:420px;
   background:url(/static/ap/images/bg_section01.jpg) center no-repeat;
+  position: relative;
   &-inner{
     @extend %clearfix;
     display:table;
@@ -285,6 +290,13 @@
       &:after{
         margin:20px auto 0;
       }
+    }
+  }
+  &.parking-info{
+    background:url(/static/ap/images/bg_parking_info.jpg);
+    height:420px;
+    .section-bg-inner{
+     height: 350px;
     }
   }
 }

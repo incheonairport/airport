@@ -1,7 +1,6 @@
 .contents{
   width: 100%;
   min-width: 1200px;
-  margin: 0 auto;
 }
 
 .location{
@@ -412,17 +411,18 @@
 
 // layer popup
 .layer{
-  width: 680px;
-  max-height: 938px;
+  width: 550px;
+  max-height: 684px;
   border: 4px solid #42519e;
   overflow-y:auto;
   &-area{
-    padding: 20px 20px 30px;
+    padding: 20px;
   }
   &-title{
     padding-bottom: 18px;
     border-bottom: 2px solid #42519e;
     font-size: 1.5rem;
+    font-family: 'nanumsq', sans-serif;
     color: #42519e;
   }
   &-close{
@@ -436,23 +436,24 @@
     left: 95%;
     }
   &-article{
-    margin-bottom:30px;
+    margin-bottom:20px;
     &-title{
       margin-bottom: 20px;
-      font-size:1.25rem;
-      font-weight: 800;
+      font-size:1.125rem;
+      font-weight: 900;
     }
     &-input{
       width: 100%;
-      height: 59px;
-      font-size: 1.25rem;
+      height: 50px;
+      font-size: 1rem;
       text-align: center;
       color: #666;
       background: #fcfbe8;
       border: 1px solid #d9d9d9;
+      box-sizing: border-box;
     }
     &-box{
-      width: 602px;
+      width: 500px;
       height: 148px;
       padding: 20px 15px;
       border: 1px solid #e2e5e9;
@@ -460,16 +461,31 @@
       overflow-y: scroll;
       &-sub{
         margin-bottom: 7px;
-        font-size:1.125rem ;
+        font-size:0.875rem;
        }
       &-txt{
-        font-size:1rem ;
+        font-size:0.875rem;
       }
+    }
+    p{
+      font-size: 1rem;
+    }
+    button{
+      height: 50px;
+      font-size: 1.5rem;
     }
   }
   .list1{
-    font-size:1rem;
+    font-size:0.875rem;
     letter-spacing:-0.02rem;
+    &-item:before{
+      top: -12px;
+    }
+  }
+  .radio-type1{
+    &-label{
+      font-size: 1rem;
+    }
   }
   .info-desc{
     font-size: 0.875rem;
@@ -483,9 +499,9 @@
   background: #f5f6f7;
   border-top: 1px solid #e2e5e9;
   &-btn{
-    width: 200px;
-    height: 46px;
-    font-size: 1.25rem;
+    width: 180px;
+    height: 40px;
+    font-size: 	1.125rem;
     color: #fff;
     background: #323648;
     border: 0;

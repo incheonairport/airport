@@ -260,6 +260,9 @@
       &:last-child{
         border-right:0;
       }
+      &.no-padding{
+        padding:19px 0 16px;
+      }
     }
   }
 
@@ -960,10 +963,10 @@ em{
       background-position: -105px -387px;
     }
     &-maglev-train3:after {
-      background-position: -198px -387px;
+      background-position: -199px -387px
     }
     &-maglev-train4:after {
-      background-position: -11px -480px;
+      background-position: -11px -481px;
     }
   }
 
@@ -1032,6 +1035,9 @@ em{
 
   &.bg5{
     background:url(/static/ap/images/img_sub_layer_banner_bg_04.jpg) no-repeat;
+  }
+  &.government-center{
+    background:url(/static/ap/images/img_sub_layer_banner_government_center.jpg) no-repeat;
   }
 
 }
