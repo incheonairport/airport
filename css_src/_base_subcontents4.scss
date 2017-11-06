@@ -1278,9 +1278,11 @@ button, a {
 
 .lost-found{
   @extend %clearfix;
+
   .ir-technique{
     text-indent: -99999em;
   }
+
   .lost-box{
     width: 50%;
     height: 698px;
@@ -1295,7 +1297,6 @@ button, a {
       background: url(/static/ap/images/img_lost-and-found_02.png) no-repeat right;
     }
   }
-
 }
 
 

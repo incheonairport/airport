@@ -359,10 +359,10 @@
 
   <!-- 추가레이어팝업 -->
 
-  <div class="layer2">
-    <div class="layer2-area">
-      <div class="layer2-article">
-        <h4 class="layer2-title">출국장 혼잡도 한 눈에 보기</h4>
+  <div class="layer size">
+    <div class="layer-area">
+      <div class="layer-article">
+        <h4 class="layer-title">출국장 혼잡도 한 눈에 보기</h4>
         <a href="#" class="layer-close">닫기</a>
         <div class="tab-area">
           <h5 class="tab-area-heading on">제1 여객터미널</h5>
@@ -370,7 +370,7 @@
           <div class="tab-area-content on">
             <div class="update mt20">
               <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
-              <button type="button" class="update-refresh ico">새로고침</button>
+              <button type="button" class="update-refresh size ico">새로고침</button>
             </div>
             <img src="/static/ap/images/img_temp_06.png" alt="" />
           </div>
@@ -385,155 +385,146 @@
             <img src="/static/ap/images/img_temp_06.png" alt="" />
           </div>
         </div>
-        <div class="layer-article">
-          <h5 class="layer-article-title">시간대별 예상 승객 수</h5>
-          <div class="">
-            <div class="field">
-              <div class="field-group big crowded">
-                <input type="radio" name="product" id="crowded-today" class="field-radio" value="brand2-product" checked>
-                <label class="field-radio-label pd10 crowded" for="crowded-today">오늘</label>
 
-                <input type="radio" name="product" id="crowded-tomorrow" class="field-radio" value="brand2-product">
-                <label class="field-radio-label crowded" for="crowded-tomorrow">내일</label>
+        <div class="layer-article">
+
+          <div class="layer-article mt20 clearfix">
+            <h5 class="layer-article-title float">시간대별 예상 승객 수</h5>
+            <div class="field2">
+              <div class="field2-group big crowded">
+                <input type="radio" name="product" id="crowded-today" class="field2-radio" value="crowded-today" checked>
+                <label class="field2-radio-label pd10 crowded" for="crowded-today">오늘</label>
+
+                <input type="radio" name="product" id="crowded-tomorrow" class="field2-radio" value="crowded-tomorrow">
+                <label class="field2-radio-label crowded" for="crowded-tomorrow">내일</label>
               </div>
             </div>
           </div>
 
           <div class="table-article">
-            <table class="table vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
-              <caption>시간대별 예상 승객 수 구분</caption>
-              <colgroup>
-                <col style="width:16%" />
-                <col style="width:21%" />
-                <col style="width:21%" />
-                <col style="width:21%" />
-                <col style="width:21%" />
-              </colgroup>
-              <thead>
-              <tr>
-                <th scope="col">시간</th>
-                <th scope="col" colspan="2">5번 출국장</th>
-                <th scope="col" colspan="3">4번 출국장</th>
-                <th scope="col" colspan="4">3번 출국장</th>
-                <th scope="col" colspan="5">2번 출국장</th>
-              </tr>
-              </thead>
-            </table>
-          </div>
+            <div class="table-article-box">
+              <table class="table vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
+                <caption>시간대별 예상 승객 수 구분</caption>
+                <colgroup>
+                  <col style="width:16%" />
+                  <col style="width:21%" />
+                  <col style="width:21%" />
+                  <col style="width:21%" />
+                  <col style="width:21%" />
+                </colgroup>
+                <thead>
+                <tr>
+                  <th scope="col">시간</th>
+                  <th scope="col" colspan="2">5번 출국장</th>
+                  <th scope="col" colspan="3">4번 출국장</th>
+                  <th scope="col" colspan="4">3번 출국장</th>
+                  <th scope="col" colspan="5">2번 출국장</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td scope="col" class="center">
+                    오후4시
+                  </td>
+                  <td scope="col" colspan="2">
+                    <strong>100</strong>명
+                  </td>
 
-          <div class="table-article-box">
-            <table class="table vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
-              <caption>시간대별 예상 승객 수 데이터</caption>
-              <colgroup>
-                <col style="width:16%" />
-                <col style="width:21%" />
-                <col style="width:21%" />
-                <col style="width:21%" />
-                <col style="width:21%" />
-              </colgroup>
-              <tbody>
-              <tr>
-                <td scope="col" class="center">
-                  오후4시
-                </td>
-                <td scope="col" colspan="2">
-                  <strong>100</strong>명
-                </td>
+                  <td scope="col" colspan="3">
+                    <strong>100</strong> 명
+                  </td>
 
-                <td scope="col" colspan="3">
-                  <strong>100</strong> 명
-                </td>
+                  <td scope="col" colspan="4">
+                    <strong>100</strong> 명
+                  </td>
 
-                <td scope="col" colspan="4">
-                  <strong>100</strong> 명
-                </td>
+                  <td scope="col" colspan="5">
+                    <strong>2,556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후5시
+                  </td>
+                  <td colspan="2">
+                    <strong>14</strong>명
+                  </td>
 
-                <td scope="col" colspan="5">
-                  <strong>2,556</strong> 명
-                </td>
-              </tr>
-              <tr>
-                <td class="center">
-                  오후5시
-                </td>
-                <td colspan="2">
-                  <strong>14</strong>명
-                </td>
+                  <td colspan="3">
+                    <strong>14</strong> 명
+                  </td>
 
-                <td colspan="3">
-                  <strong>14</strong> 명
-                </td>
+                  <td colspan="4">
+                    <strong>14</strong> 명
+                  </td>
 
-                <td colspan="4">
-                  <strong>14</strong> 명
-                </td>
+                  <td colspan="5">
+                    <strong>1,556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후6시
+                  </td>
+                  <td colspan="2">
+                    <strong>0</strong>명
+                  </td>
 
-                <td colspan="5">
-                  <strong>1,556</strong> 명
-                </td>
-              </tr>
-              <tr>
-                <td class="center">
-                  오후6시
-                </td>
-                <td colspan="2">
-                  <strong>0</strong>명
-                </td>
+                  <td colspan="3">
+                    <strong>0</strong> 명
+                  </td>
 
-                <td colspan="3">
-                  <strong>0</strong> 명
-                </td>
+                  <td colspan="4">
+                    <strong>0</strong> 명
+                  </td>
 
-                <td colspan="4">
-                  <strong>0</strong> 명
-                </td>
+                  <td colspan="5">
+                    <strong>556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후7시
+                  </td>
+                  <td colspan="2">
+                    <strong>0</strong>명
+                  </td>
 
-                <td colspan="5">
-                  <strong>556</strong> 명
-                </td>
-              </tr>
-              <tr>
-                <td class="center">
-                  오후7시
-                </td>
-                <td colspan="2">
-                  <strong>0</strong>명
-                </td>
+                  <td colspan="3">
+                    <strong>0</strong> 명
+                  </td>
 
-                <td colspan="3">
-                  <strong>0</strong> 명
-                </td>
+                  <td colspan="4">
+                    <strong>0</strong> 명
+                  </td>
 
-                <td colspan="4">
-                  <strong>0</strong> 명
-                </td>
+                  <td colspan="5">
+                    <strong>0</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후7시
+                  </td>
+                  <td colspan="2">
+                    <strong>0</strong>명
+                  </td>
 
-                <td colspan="5">
-                  <strong>0</strong> 명
-                </td>
-              </tr>
-              <tr>
-                <td class="center">
-                  오후7시
-                </td>
-                <td colspan="2">
-                  <strong>0</strong>명
-                </td>
+                  <td colspan="3">
+                    <strong>0</strong> 명
+                  </td>
 
-                <td colspan="3">
-                  <strong>0</strong> 명
-                </td>
+                  <td colspan="4">
+                    <strong>0</strong> 명
+                  </td>
 
-                <td colspan="4">
-                  <strong>0</strong> 명
-                </td>
-
-                <td colspan="5">
-                  <strong>0</strong> 명
-                </td>
-              </tr>
-              </tbody>
-            </table>
+                  <td colspan="5">
+                    <strong>0</strong> 명
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <div class="table-guide mt20">
