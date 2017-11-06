@@ -60,7 +60,7 @@
     display:block;
     height:122px;
     background:rgba(0,0,0,.2);
-    border:2px solid rgba(222,227,235,.6);
+    border: 2px solid rgba(222,227,235,.6);
     font-size:1.625rem;
     line-height:122px;
     &-text{
@@ -487,8 +487,16 @@
           &.entry{
             background:url(/static/ap/images/img_step_entry.jpg);
           }
-          &.domestic-interchange{
-            background: url(/static/ap/images/img_domestic_interchange.png);
+          &.domestic-interchange_01{
+            background: url(/static/ap/images/img_domestic_interchange_01.jpg);
+          }
+
+          &.domestic-interchange_02{
+            background: url(/static/ap/images/img_domestic_interchange_02.jpg);
+          }
+
+          &.domestic-flights{
+            background: url(/static/ap/images/img_domestic_flights.jpg);
           }
 
           .boxmodel-list-head{
@@ -737,7 +745,7 @@
       &-link{
         width:100%;
         height:100%;
-        text-indent:0px;
+        text-indent:0;
         font-weight:600;
         &.ico:after{
           left:auto;
@@ -779,25 +787,15 @@
   }
 }
 
-.boxmodel-list-item{
-  &.leave{
-    &.domestic-flights{
-      background: url(/static/ap/images/img_domestic_flights.png);
-    }
+
+.boxmodel-list{
+  &.box-border{
+    border-bottom: 1px solid #c5cad2;
+    padding-bottom: 30px;
   }
 }
 
-.list-heading{
-  font-family: nanumsq, sans-serif;
-  font-size: 1.75rem;
-  font-weight: 500;
 
-  &:after{
-    width:150px;
-    height: 150px;
-    background: url(/static/ap/images/img_domestic_flights.png);
-  }
-}
 
 .icon-check{
   display: block;
@@ -817,24 +815,45 @@
     padding: 24px 30px 0;
   }
 
-  .icon-passport{
-    width:245px;
-    margin-left:50px;
-    float: left;
+  .icon-check{
 
-    &:after{
-      width: 155px;
-      height: 155px;
-      background: url(/static/ap/images/spr_ico_check.png) -12px -21px;
+    &-txt{
+      font-family: 'nanumsq', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 400;
     }
 
-    .icontxt-title{
-      &.tit-passport{
-        font-family: 'nanumsq', sans-serif;
-        font-size: 1.75rem;
-        font-weight: 400;
-        text-align: center;
-        padding-top: 45px;
+    &-passport{
+      height: 160px;
+      padding: 70px 0 0 225px;
+
+      &:after{
+        width: 155px;
+        height: 165px;
+        background: url(/static/ap/images/spr_ico_check.png) -12px -21px;
+      }
+
+    }
+
+    &-visa{
+      height: 160px;
+      padding: 60px 0 0 225px;
+
+      &:after{
+        width: 155px;
+        height: 165px;
+        background: url(/static/ap/images/spr_ico_check.png) -181px -21px;
+      }
+    }
+
+    &-international-driver-license{
+      height: 160px;
+      padding: 50px 0 0 200px;
+
+      &:after{
+        width: 155px;
+        height: 165px;
+        background: url(/static/ap/images/spr_ico_check.png) -349px -21px
       }
     }
   }
@@ -847,14 +866,30 @@
   }
 
   .col-btn{
-    &-link{
+    &-link1{
       margin-right: -3px;
+      text-align: center;
+    }
+
+    &-link2{
+      text-align: center;
+      width: 100%;
+    }
+
+    &-link3{
+      margin-right: -3px;
+      text-align: center;
+      width:33.333333%;
     }
   }
 
-
-
 }
+
+
+
+
+
+
 
 // icon text
 .icontxt {
@@ -1106,6 +1141,12 @@
 
     &:before{
       content:"※";
+    }
+
+    &-center{
+      text-indent: 0;
+      padding: 0 0;
+      text-align: center;
     }
   }
   &.mark2{
