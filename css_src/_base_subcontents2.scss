@@ -1,11 +1,15 @@
 // top 지도영역
 .rough-map{
   min-height:420px;
-  height:420px;
   background-size: cover;
+  padding-top: 60px;
+  .congestion{
+    top:60px;
+    border-left:0;
+  }
   &-tit{
     position:absolute;
-    top:54px;
+    top:0px;
     color:#fff;
     font-family: nanumsq, sans-serif;
     font-size:2.875rem;
@@ -481,14 +485,15 @@
 
         &.img{
           border:none;
+          background-size:cover!important;
           &.leave{
-            background:url(/static/ap/images/img_step_leave.jpg);
+            background:url(/static/ap/images/bg_step_leave.jpg);
           }
           &.entry{
-            background:url(/static/ap/images/img_step_entry.jpg);
+            background:url(/static/ap/images/bg_step_entry.jpg);
           }
           &.domestic-interchange{
-            background: url(/static/ap/images/img_domestic_interchange.png);
+            background: url(/static/ap/images/bg_domestic_interchange.png);
           }
 
           .boxmodel-list-head{
@@ -535,6 +540,13 @@
           //left:0;
           //margin:auto;
           line-height:352px; // for ie
+        }
+      }
+      &.col-full{
+        width:100%;
+        .boxmodel-list-item-inner {
+          border-right: 0;
+          border-left: 0;
         }
       }
       &.col-1{
@@ -829,7 +841,7 @@
     }
 
     .icontxt-title{
-      &.tit-passport{
+      &-tit{
         font-family: 'nanumsq', sans-serif;
         font-size: 1.75rem;
         font-weight: 400;
@@ -849,6 +861,7 @@
   .col-btn{
     &-link{
       margin-right: -3px;
+      text-align:center;
     }
   }
 
