@@ -17,7 +17,7 @@
     line-height:1.1;
   }
   &.arrival{
-    background:url(/static/ap/images/img_sub_visual_stepleave.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_sub_visual_stepleave.jpg) center no-repeat;
   }
 }
 // top 타이틀
@@ -64,7 +64,7 @@
     display:block;
     height:122px;
     background:rgba(0,0,0,.2);
-    border:2px solid rgba(222,227,235,.6);
+    border: 2px solid rgba(222,227,235,.6);
     font-size:1.625rem;
     line-height:122px;
     &-text{
@@ -153,22 +153,22 @@
   }
 
   &.bg1{
-    background:url(/static/ap/images/img_base_top01.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top01.jpg) center no-repeat;
   }
   &.bg2{
-    background:url(/static/ap/images/img_base_top02.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top02.jpg) center no-repeat;
   }
   &.bg3{
-    background:url(/static/ap/images/img_base_top03.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top03.jpg) center no-repeat;
   }
   &.bg4{
-    background:url(/static/ap/images/img_base_top04.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top04.jpg) center no-repeat;
   }
   &.bg5{
-    background:url(/static/ap/images/img_base_top05.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top05.jpg) center no-repeat;
   }
   &.bg6{
-    background:url(/static/ap/images/img_base_top07.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top07.jpg) center no-repeat;
     &.type3{
       height:420px;
       position:relative;
@@ -211,7 +211,7 @@
     }
     &.col-5{
       .section-bg-list-item{
-        width:calc(20% - 19px);
+        width:calc(20% - 20px);
         padding:27px 0;
       }
       .section-bg-list-tit{
@@ -301,6 +301,19 @@
     height:420px;
     .section-bg-inner{
      height: 350px;
+    }
+    &+.inner-tab .tab-area{
+      top: -54px;
+      &-heading{
+        border:none;
+        background: #3e4b91;
+        color:#fff;
+        &.on{
+          background:#fff;
+          color: #42519e;
+          font-weight:800;
+        }
+      }
     }
   }
 }
@@ -492,8 +505,17 @@
           &.entry{
             background:url(/static/ap/images/bg_step_entry.jpg);
           }
-          &.domestic-interchange{
-            background: url(/static/ap/images/bg_domestic_interchange.png);
+
+          &.domestic-interchange_01{
+            background: url(/static/ap/images/bg_domestic_interchange_01.jpg);
+          }
+
+          &.domestic-interchange_02{
+            background: url(/static/ap/images/bg_domestic_interchange_02.jpg);
+          }
+
+          &.domestic-flights{
+            background: url(/static/ap/images/bg_domestic_flights.jpg);
           }
 
           .boxmodel-list-head{
@@ -623,10 +645,10 @@
     &-item.img{
       border:none;
       &.leave{
-        background:url(/static/ap/images/img_step_leave.jpg);
+        background:url(/static/ap/images/bg_step_leave.jpg);
       }
       &.entry{
-        background:url(/static/ap/images/img_step_entry.jpg);
+        background:url(/static/ap/images/bg_step_entry.jpg);
       }
       .boxmodel-list-head{
         color:#fff;
@@ -749,7 +771,7 @@
       &-link{
         width:100%;
         height:100%;
-        text-indent:0px;
+        text-indent:0;
         font-weight:600;
         &.ico:after{
           left:auto;
@@ -791,25 +813,15 @@
   }
 }
 
-.boxmodel-list-item{
-  &.leave{
-    &.domestic-flights{
-      background: url(/static/ap/images/img_domestic_flights.png);
-    }
+
+.boxmodel-list{
+  &.box-border{
+    border-bottom: 1px solid #c5cad2;
+    padding-bottom: 30px;
   }
 }
 
-.list-heading{
-  font-family: nanumsq, sans-serif;
-  font-size: 1.75rem;
-  font-weight: 500;
 
-  &:after{
-    width:150px;
-    height: 150px;
-    background: url(/static/ap/images/img_domestic_flights.png);
-  }
-}
 
 .icon-check{
   display: block;
@@ -829,24 +841,44 @@
     padding: 24px 30px 0;
   }
 
-  .icon-passport{
-    width:245px;
-    margin-left:50px;
-    float: left;
-
-    &:after{
-      width: 155px;
-      height: 155px;
-      background: url(/static/ap/images/spr_ico_check.png) -12px -21px;
+  .icon-check{
+    &-txt{
+      font-family: 'nanumsq', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 400;
     }
 
-    .icontxt-title{
-      &-tit{
-        font-family: 'nanumsq', sans-serif;
-        font-size: 1.75rem;
-        font-weight: 400;
-        text-align: center;
-        padding-top: 45px;
+    &-passport{
+      height: 160px;
+      padding: 70px 0 0 225px;
+
+      &:after{
+        width: 155px;
+        height: 165px;
+        background: url(/static/ap/images/spr_ico_check.png) -12px -21px;
+      }
+
+    }
+
+    &-visa{
+      height: 160px;
+      padding: 60px 0 0 225px;
+
+      &:after{
+        width: 155px;
+        height: 165px;
+        background: url(/static/ap/images/spr_ico_check.png) -181px -21px;
+      }
+    }
+
+    &-international-driver-license{
+      height: 160px;
+      padding: 50px 0 0 200px;
+
+      &:after{
+        width: 155px;
+        height: 165px;
+        background: url(/static/ap/images/spr_ico_check.png) -349px -21px
       }
     }
   }
@@ -859,15 +891,30 @@
   }
 
   .col-btn{
-    &-link{
+    &-link1{
       margin-right: -3px;
-      text-align:center;
+      text-align: center;
+    }
+
+    &-link2{
+      text-align: center;
+      width: 100%;
+    }
+
+    &-link3{
+      margin-right: -3px;
+      text-align: center;
+      width:33.333333%;
     }
   }
 
-
-
 }
+
+
+
+
+
+
 
 // icon text
 .icontxt {
@@ -1119,6 +1166,12 @@
 
     &:before{
       content:"※";
+    }
+
+    &-center{
+      text-indent: 0;
+      padding: 0 0;
+      text-align: center;
     }
   }
   &.mark2{

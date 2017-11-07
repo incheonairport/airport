@@ -1269,36 +1269,37 @@ button, a {
   cursor: pointer;
 }
 
-.ir-technique{
-  text-indent: -99999em;
-}
 
 .relief{
-  background: url(/static/ap/images/img_relief_01.png) no-repeat;
+  background: url(/static/ap/images/digr_relief_01.png) no-repeat;
   width: 1151px;
   height: 591px;
 }
 
 .lost-found{
   @extend %clearfix;
-  padding-bottom: 55px;
-  border-bottom: 8px solid #ff7f7f;
-}
 
-.lost-box{
-  width: 50%;
-  height: 698px;
-
-  &.found{
-    float: left;
-    background: url(/static/ap/images/img_lost-and-found_01.png) no-repeat left;
+  .ir-technique{
+    text-indent: -99999em;
   }
 
-  &.belongings{
-    float: left;
-    background: url(/static/ap/images/img_lost-and-found_02.png) no-repeat right;
+  .lost-box{
+    width: 50%;
+    height: 698px;
+
+    &.found{
+      float: left;
+      background: url(/static/ap/images/digr_lost_and_found_01.png) no-repeat left;
+    }
+
+    &.belongings{
+      float: left;
+      background: url(/static/ap/images/digr_lost_and_found_02.png) no-repeat right;
+    }
   }
 }
+
+
 
 
 

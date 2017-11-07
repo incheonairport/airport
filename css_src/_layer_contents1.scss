@@ -26,12 +26,12 @@
 /*자기부상열차*/
 .maglev-train{
   height:240px;
-  background:url(/static/ap/images/img_maglev_train.jpg) no-repeat;
+  background:url(/static/ap/images/bg_maglev_train.jpg) no-repeat;
 }
 /*자기부상열차견학*/
 .maglev-train-tour{
   height:240px;
-  background:url(/static/ap/images/img_maglev_train_tour.jpg) no-repeat;
+  background:url(/static/ap/images/bg_maglev_train_tour.jpg) no-repeat;
 }
 
 .update{
@@ -62,7 +62,7 @@
 
 /*버스검색*/
 .bussearch{
-  background:url(/static/ap/images/img_layer_search_bg.jpg) no-repeat;
+  background:url(/static/ap/images/bg_layer_search.jpg) no-repeat;
   padding: 58px 141px;
   &-title{
     color: #fff;
@@ -676,7 +676,7 @@
           width: 153px;
           height:140px;
           position: absolute;
-          top:0px;
+          top:0;
           right: 0;
           left: 0;
           bottom: 0;
