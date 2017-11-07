@@ -45,13 +45,13 @@
       height:100%;
       float:left;
       .slide-ad01{
-        background:url(/static/ap/images/img_slide_banner01.jpg) no-repeat;
+        background:url(/static/ap/images/bg_slide_banner01.jpg) no-repeat;
       }
       .slide-ad02{
-        background:url(/static/ap/images/img_slide_banner02.jpg) no-repeat;
+        background:url(/static/ap/images/bg_slide_banner02.jpg) no-repeat;
       }
       .slide-ad03{
-        background:url(/static/ap/images/img_slide_banner03.jpg) no-repeat;
+        background:url(/static/ap/images/bg_slide_banner03.jpg) no-repeat;
       }
     }
     &-link{
@@ -138,10 +138,10 @@
     }
 
     &.fix-ad01{
-      background:url(/static/ap/images/img_fix_banner01.jpg) no-repeat;
+      background:url(/static/ap/images/bg_fix_banner01.jpg) no-repeat;
     }
     &.fix-ad02{
-      background:url(/static/ap/images/img_fix_banner02.jpg) no-repeat;
+      background:url(/static/ap/images/bg_fix_banner02.jpg) no-repeat;
     }
   }
   &-link{
@@ -239,10 +239,10 @@
     background:url(/static/ap/images/bg_shopping.jpg) center no-repeat;
   }
   &.dutyfree{
-    background: url("/static/ap/images/bg_shopping_01.jpg") center no-repeat;
+    background: url(/static/ap/images/bg_shopping_01.jpg) center no-repeat;
   }
   &.shopping{
-    background: url("/static/ap/images/bg_shopping_02.jpg") center no-repeat;
+    background: url(/static/ap/images/bg_shopping_02.jpg) center no-repeat;
   }
 }
 // 필터
@@ -273,7 +273,7 @@
         &.base{
           margin-left:30px;
           & label:after{
-            top: 0px;
+            top: 0;
           }
         }
         .field-division{
@@ -442,7 +442,7 @@
     font-size:0.875rem;
     padding:4px 14px 4px 30px;
     position:absolute;
-    bottom:0px;
+    bottom:0;
     right:0;
     z-index:4;
     &:after{

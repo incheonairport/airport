@@ -1271,7 +1271,7 @@ button, a {
 
 
 .relief{
-  background: url(/static/ap/images/img_relief_01.png) no-repeat;
+  background: url(/static/ap/images/digr_relief_01.png) no-repeat;
   width: 1151px;
   height: 591px;
 }
@@ -1289,12 +1289,12 @@ button, a {
 
     &.found{
       float: left;
-      background: url(/static/ap/images/img_lost-and-found_01.png) no-repeat left;
+      background: url(/static/ap/images/digr_lost_and_found_01.png) no-repeat left;
     }
 
     &.belongings{
       float: left;
-      background: url(/static/ap/images/img_lost-and-found_02.png) no-repeat right;
+      background: url(/static/ap/images/digr_lost_and_found_02.png) no-repeat right;
     }
   }
 }
