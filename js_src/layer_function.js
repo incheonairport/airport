@@ -135,4 +135,32 @@ $(document).ready(function(){
     }
   });
 
+
+function LayerGnbEvent(){
+  $('.layer-gnb-mobile-btn').on('click',function(){
+    $('.header').animate({left:0},350);
+    $('.mobile-header').addClass('active');
+  });
+
+  $('.layer-gnb-mobile-btn-close').on('click',function(){
+    $('.header').animate({left: -100 + '%'},350);
+    $('.mobile-header').removeClass('active');
+  });
+
+  $(window).on('resize', function(){
+    var widthSize = window.outerWidth;
+    if (widthSize <= 899) {
+      $('.header').animate({left: -100 + '%'},0);
+      $('.mobile-header').removeClass('active');
+    } else if (widthSize > 899) {
+      $('.header').animate({left:0},0);
+    }
+  });
+} LayerGnbEvent();
+
+
+
+
+
+
 });

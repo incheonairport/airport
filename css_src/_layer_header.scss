@@ -78,3 +78,16 @@
   }
 
 }
+
+
+// mobile button open / close
+.layer-gnb{
+  &-mobile-btn{
+    display:none;
+  }
+  &-mobile-btn-close{
+    display:none;
+  }
+}
+
+

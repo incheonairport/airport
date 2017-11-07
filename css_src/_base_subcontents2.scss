@@ -17,7 +17,7 @@
     line-height:1.1;
   }
   &.arrival{
-    background:url(/static/ap/images/img_sub_visual_stepleave.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_sub_visual_stepleave.jpg) center no-repeat;
   }
 }
 // top 타이틀
@@ -153,22 +153,22 @@
   }
 
   &.bg1{
-    background:url(/static/ap/images/img_base_top01.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top01.jpg) center no-repeat;
   }
   &.bg2{
-    background:url(/static/ap/images/img_base_top02.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top02.jpg) center no-repeat;
   }
   &.bg3{
-    background:url(/static/ap/images/img_base_top03.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top03.jpg) center no-repeat;
   }
   &.bg4{
-    background:url(/static/ap/images/img_base_top04.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top04.jpg) center no-repeat;
   }
   &.bg5{
-    background:url(/static/ap/images/img_base_top05.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top05.jpg) center no-repeat;
   }
   &.bg6{
-    background:url(/static/ap/images/img_base_top07.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_base_top07.jpg) center no-repeat;
     &.type3{
       height:420px;
       position:relative;
@@ -507,15 +507,15 @@
           }
 
           &.domestic-interchange_01{
-            background: url(/static/ap/images/img_domestic_interchange_01.jpg);
+            background: url(/static/ap/images/bg_domestic_interchange_01.jpg);
           }
 
           &.domestic-interchange_02{
-            background: url(/static/ap/images/img_domestic_interchange_02.jpg);
+            background: url(/static/ap/images/bg_domestic_interchange_02.jpg);
           }
 
           &.domestic-flights{
-            background: url(/static/ap/images/img_domestic_flights.jpg);
+            background: url(/static/ap/images/bg_domestic_flights.jpg);
           }
 
           .boxmodel-list-head{
@@ -645,10 +645,10 @@
     &-item.img{
       border:none;
       &.leave{
-        background:url(/static/ap/images/img_step_leave.jpg);
+        background:url(/static/ap/images/bg_step_leave.jpg);
       }
       &.entry{
-        background:url(/static/ap/images/img_step_entry.jpg);
+        background:url(/static/ap/images/bg_step_entry.jpg);
       }
       .boxmodel-list-head{
         color:#fff;
