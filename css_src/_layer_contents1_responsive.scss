@@ -1,0 +1,115 @@
+// 1740 <
+///////////////////////////////////////////////
+@media all and (max-width:1739px) {
+  // 스탭3
+  .departure-step{
+    &-list{
+      min-height:auto;
+      margin:auto;
+      padding:30px;
+      width: 100%!important;
+      .departure-step-list-article {
+        height:200px;
+        font-size:1rem;
+      }
+
+      &.check-in{
+
+        .departure-step-list-article{
+          width:33.33%;
+        }
+      }
+      &.self{
+        .departure-step-list-article{
+          width:25%;
+        }
+      }
+      &.quarantine{
+        .departure-step-list-article{
+          width:25%;
+          &.step-3{
+            height:200px;
+          }
+          &.step-4{
+            height:176px;
+          }
+        }
+      }
+      &.self-checkin{
+        .departure-step-list-article{
+          width:25%;
+        }
+      }
+      &-article{
+        color: #fff;
+        font-size: 1.25rem;
+      }
+    }
+    //&.self-checkin{
+    //  background: url(/static/ap/images/bg_self_checkin_step.jpg) no-repeat;
+    //}
+  }
+}
+///////////////////////////////////////////////
+
+
+
+
+// 1260 <
+@media all and (max-width:1259px) {
+  // 스탭3
+  .departure-step{
+    &-list{
+      .departure-step-list-article {
+        width:50%!important;
+        height:200px;
+      }
+
+      &.check-in{
+        .departure-step-list-article{
+          &.step-3{
+            height:146px;
+          }
+
+        }
+      }
+      &.self{
+        .departure-step-list-article{
+          &.step-5{
+            height:176px;
+          }
+        }
+      }
+      &.quarantine{
+        .departure-step-list-article{
+          &.step-3{
+            height:176px;
+          }
+          &.step-4{
+            height:176px;
+          }
+
+        }
+      }
+      &.self-checkin{
+        .departure-step-list-article{
+          &.step-5{
+            height:176px;
+          }
+        }
+      }
+    }
+  }
+}
+///////////////////////////////////////////////
+
+
+
+
+
+// 780 <
+@media all and (max-width:780px) {
+
+
+}
+///////////////////////////////////////////////

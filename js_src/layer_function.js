@@ -149,10 +149,10 @@ function LayerGnbEvent(){
 
   $(window).on('resize', function(){
     var widthSize = window.outerWidth;
-    if (widthSize <= 899) {
+    if (widthSize <= 780) {
       $('.header').animate({left: -100 + '%'},0);
       $('.mobile-header').removeClass('active');
-    } else if (widthSize > 899) {
+    } else if (widthSize > 780) {
       $('.header').animate({left:0},0);
     }
   });
