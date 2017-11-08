@@ -689,7 +689,7 @@ em{
 .guidebox{
   display:table;
   width:100%;
-
+  @extend %clearfix;
   &-col{
     display:table-cell;
     width:33.33%;
@@ -711,6 +711,13 @@ em{
       text-align:center;
       position:relative;
       vertical-align:middle;
+
+      &.fix{
+        .guidebox-col-row{
+          position:relative;
+          height:135px;
+        }
+      }
     }
 
     &-row{
@@ -720,10 +727,6 @@ em{
       top:0;
       left:0;
 
-      &.fix{
-        position:relative;
-        height:135px;
-      }
 
       &:last-child{
         border-top:1px solid #484a5c;
@@ -989,10 +992,10 @@ em{
 
 .banner{
   //width: 1152px;
-  height: 240px;
+  min-height: 240px;
   text-align: center;
-  background: url(/static/ap/images/bg_sub_layer_banner_bg_01.jpg) no-repeat;
-  position:relative;
+  background: url(/static/ap/images/bg_sub_layer_banner_bg_01.jpg) no-repeat center;
+  background-size: cover;
 
   &-title{
     color: #ffae44;
@@ -1007,17 +1010,17 @@ em{
     font-size: 1.25rem;
     font-weight: 300;
     text-align:center;
-  }
-
-  &:after{
-    content:"";
-    display:block;
-    border-top: 1px solid #b7b2a9;
-    width: 50px;
-    position:absolute;
-    top:125px;
-    left:50%;
-    margin-left:-25px;
+    position:relative;
+    &:after{
+      content:"";
+      display:block;
+      border-top: 1px solid #b7b2a9;
+      width: 50px;
+      position:absolute;
+      top:-15px;
+      left:50%;
+      margin-left:-25px;
+    }
   }
 
   &.bg2{
@@ -1452,6 +1455,7 @@ b.text-bold{
     }
     &-info{
       @extend %clearfix;
+      display: block;
       margin-top:16px;
       font-size:1rem;
       .info-tit{
@@ -1500,9 +1504,8 @@ b.text-bold{
       }
     }
     .crud-ico{
-      text-indent:0;
+      text-indent:24px;
       &:after{
-        left:-22px;
         right:auto;
         bottom:4px;
       }
@@ -1513,6 +1516,7 @@ b.text-bold{
     padding:40px;
     border:1px solid #d9d9d9;
     margin-bottom:30px;
+    position: relative;
     .reply-head{
       @extend %clearfix;
       margin-bottom:30px;

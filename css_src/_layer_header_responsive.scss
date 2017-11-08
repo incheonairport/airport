@@ -1,39 +1,35 @@
-// 1740px < => contents : 1200 layout
+// 1740 <
 ///////////////////////////////////////////////
 @media all and (max-width:1739px) {
-
-}
-///////////////////////////////////////////////
-
-
-
-
-// 1400px < => header : 1200 layout
-///////////////////////////////////////////////
-@media all and (max-width:1399px) {
   .header{
-    max-width:260px;
+    max-width:330px;
   }
 }
 ///////////////////////////////////////////////
 
 
-
-
-// 1200px < => contents : mobile ( % )
+// 1260 <
 ///////////////////////////////////////////////
-@media all and (max-width:1199px) {
+@media all and (max-width:1259px) {
+  .header{
+    max-width:260px;
+  }
+  .gnb{
+    &-item{
+      margin-bottom:18px;
+    }
+    &-link{
+      font-size:1.125em;
+    }
+  }
 
 }
 ///////////////////////////////////////////////
 
 
-
-
-
-// 900px < => header : mobile
+// 780 <
 ///////////////////////////////////////////////
-@media all and (max-width:899px) {
+@media all and (max-width:780px) {
 
   // header
   .header{
@@ -48,14 +44,6 @@
       &-sub{
         //font-size:1rem;
       }
-    }
-  }
-  .gnb{
-    &-item{
-      margin-bottom:18px;
-    }
-    &-link{
-      font-size:1.143em;
     }
   }
 
