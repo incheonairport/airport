@@ -1,43 +1,39 @@
 // 1740 <
-///////////////////////////////////////////////
 @media all and (max-width:1739px) {
-  // 스탭3
+
+}
+
+
+// 1560 <
+@media all and (max-width:1559px) {
+  // step3
   .departure-step{
     &-list{
-      min-height:auto;
+      min-height:inherit;
       margin:auto;
       padding:30px;
       width: 100%!important;
       .departure-step-list-article {
         height:200px;
-        font-size:1rem;
       }
-
       &.check-in{
-
         .departure-step-list-article{
           width:33.33%;
         }
       }
       &.self{
         .departure-step-list-article{
-          width:25%;
+          width:20%;
         }
       }
       &.quarantine{
         .departure-step-list-article{
           width:25%;
-          &.step-3{
-            height:200px;
-          }
-          &.step-4{
-            height:176px;
-          }
         }
       }
       &.self-checkin{
         .departure-step-list-article{
-          width:25%;
+          width:20%;
         }
       }
       &-article{
@@ -45,32 +41,38 @@
         font-size: 1.25rem;
       }
     }
-    //&.self-checkin{
-    //  background: url(/static/ap/images/bg_self_checkin_step.jpg) no-repeat;
-    //}
   }
 }
-///////////////////////////////////////////////
-
-
 
 
 // 1260 <
 @media all and (max-width:1259px) {
-  // 스탭3
+
+}
+
+
+// 1024 <
+@media all and (max-width:1024px) {
+
+}
+
+
+// 780 <
+@media all and (max-width:780px) {
+  // step3
   .departure-step{
+    background-size: cover;
     &-list{
       .departure-step-list-article {
         width:50%!important;
+        font-size:1rem;
         height:200px;
       }
-
       &.check-in{
         .departure-step-list-article{
           &.step-3{
             height:146px;
           }
-
         }
       }
       &.self{
@@ -88,7 +90,6 @@
           &.step-4{
             height:176px;
           }
-
         }
       }
       &.self-checkin{
@@ -101,15 +102,3 @@
     }
   }
 }
-///////////////////////////////////////////////
-
-
-
-
-
-// 780 <
-@media all and (max-width:780px) {
-
-
-}
-///////////////////////////////////////////////

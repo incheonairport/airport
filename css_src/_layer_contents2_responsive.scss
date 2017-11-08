@@ -1,0 +1,117 @@
+// 1740 <
+@media all and (max-width:1739px) {
+
+}
+
+
+// 1560 <
+@media all and (max-width:1559px) {
+  // button position
+  .font-normal{
+    display:inline-block;
+  }
+  .btn-type-small{
+    &.position{
+      margin:10px 0;
+      display:inline-block;
+      position:relative;
+      top:0;
+    }
+  }
+
+  // logo list
+  .company-wrap{
+    .company-list{
+      &-item{
+        width:calc(33.33% - 13px);
+        &:nth-child(3n){
+          margin-right:0;
+        }
+        &:nth-child(5n){
+          margin-right:11px;
+        }
+      }
+    }
+  }
+}
+
+
+// 1260 <
+@media all and (max-width:1259px) {
+
+}
+
+
+// 1024 <
+@media all and (max-width:1024px) {
+
+}
+
+
+// 780 <
+@media all and (max-width:780px) {
+  // logo list
+  .company-wrap{
+    .company-list{
+      &-item{
+        margin-right:0;
+        width:100%;
+        text-align:center;
+        img{
+          width:50%;
+        }
+      }
+    }
+  }
+
+  // 버튼포지션
+  .btn-type-small{
+    &.position{
+      display:table-caption;
+    }
+  }
+
+  // etc
+  .minh427{
+    min-height:inherit;
+  }
+  .minh452{
+    min-height:inherit;
+  }
+
+  // IR infographics
+  .info-graphic{
+    background-size:100%!important;
+    &.baggage1{
+      background:url(/static/ap/images/digr_info_graphic01.png) no-repeat #323648;
+    }
+    &.baggage2{
+      background:url(/static/ap/images/digr_info_graphic02.png) no-repeat #323648;
+    }
+    &.baggage3{
+      background:url(/static/ap/images/digr_info_graphic03.png) no-repeat #323648;
+    }
+    &.packing{
+      height:330px;
+      background:url(/static/ap/images/digr_info_graphic04_m.png) no-repeat #323648;
+    }
+  }
+
+  // go link box
+  .link-box{
+    padding:20px 0;
+    height:auto;
+    &-link{
+      line-height:1.5;
+      strong + span{
+        display:block;
+      }
+      .link-strong{
+        font-size:22px;
+      }
+      .nowlink{
+        display:none;
+      }
+    }
+  }
+}
