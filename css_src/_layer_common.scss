@@ -1024,22 +1024,28 @@ em{
   }
 
   &.bg2{
-    background:url(/static/ap/images/bg_sub_layer_banner_bg_00.jpg) no-repeat;
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_00.jpg) no-repeat center;
+    background-size: cover;
   }
 
   &.bg3{
-    background:url(/static/ap/images/bg_sub_layer_banner_bg_02.jpg) no-repeat;
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_02.jpg) no-repeat center;
+    background-size: cover;
   }
 
   &.bg4{
-    background:url(/static/ap/images/bg_sub_layer_banner_bg_03.jpg) no-repeat;
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_03.jpg) no-repeat center;
+    background-size: cover;
   }
 
   &.bg5{
-    background:url(/static/ap/images/bg_sub_layer_banner_bg_04.jpg) no-repeat;
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_04.jpg) no-repeat center;
+    background-size: cover;
   }
   &.government-center{
-    background:url(/static/ap/images/bg_sub_layer_banner_government_center.jpg) no-repeat;
+    background:url(/static/ap/images/bg_sub_layer_banner_government_center.jpg) no-repeat center;
+    background-size: cover;
+
   }
 
 }
