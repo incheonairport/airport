@@ -1,5 +1,12 @@
 $(function(){
 
+  console.log(navigator.userAgent);
+
+});
+
+
+$(function(){
+
   // function
   function tabAction(){
     var tabWidth = 0;
@@ -10,12 +17,23 @@ $(function(){
 
       $tabWrap.each(function(){
 
-        tabWidth = 100 / $(this).find('.tab-nav-list-item').length;
+        if( $('html').hasClass('mobile') ){
 
+          tabWidth = 100 / Math.ceil( $(this).find('.tab-nav-list-item').length / 2 );
 
-        $(this).find('.tab-nav-list-item').css({
-          width: tabWidth + '%'
-        });
+          $(this).find('.tab-nav-list-item').css({
+            width: tabWidth + '%'
+          });
+
+        } else {
+
+          tabWidth = 100 / $(this).find('.tab-nav-list-item').length;
+
+          $(this).find('.tab-nav-list-item').css({
+            width: tabWidth + '%'
+          });
+
+        }
 
       });
 
