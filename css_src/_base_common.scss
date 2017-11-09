@@ -165,6 +165,7 @@
     background-position: -34px -134px;
     width: 22px;
     height: 27px;
+    top:4px;
   }
 
   &.arrow-infolin-right_w:after{
@@ -805,7 +806,7 @@ em{
         background: #2f4985;
         border:5px solid #2f4985;
         border-radius: 20px;
-        font-size: 0px;
+        font-size: 0;
         position: relative;
         top: -5px;
         &.weekend{

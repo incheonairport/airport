@@ -25,12 +25,10 @@
 // 배너bg
 /*자기부상열차*/
 .maglev-train{
-  height:240px;
   background:url(/static/ap/images/bg_maglev_train.jpg) no-repeat;
 }
 /*자기부상열차견학*/
 .maglev-train-tour{
-  height:240px;
   background:url(/static/ap/images/bg_maglev_train_tour.jpg) no-repeat;
 }
 
@@ -488,39 +486,39 @@
   }
 }
 
-/*step*/
+// 스탭3
 .departure-step{
-  height: 240px;
-  padding-top: 30px;
   background: url(/static/ap/images/bg_departure_step.jpg) no-repeat;
-  @extend %clearfix;
   &-list{
-    margin: 0 auto;
-    position: relative;
-    top: 125px;
+    @extend %clearfix;
+    min-height:204px;
+    margin:auto;
+    padding:30px 0 20px;
+
+    .departure-step-list-article {
+      &:before {
+        content: '';
+        display: block;
+        width: 116px;
+        height: 116px;
+        margin: 0 auto 14px auto;
+      }
+    }
+
     &.check-in{
       width: 602px;
       .departure-step-list-article{
-        &:after {
-          content: '';
-          display: block;
-          width: 116px;
-          height:116px;
-          position: absolute;
-          top:-320px;
-          right: 0;
-          left: 0;
-          bottom: 0;
-          margin: auto;
+        width:33.33%;
+        &:before {
           background: url(/static/ap/images/spr_ico_check_in.png) no-repeat;
         }
-        &.step-1:after{
+        &.step-1:before{
           background-position: -16px -16px;
          }
-        &.step-2:after{
+        &.step-2:before{
           background-position: -154px -16px;
         }
-        &.step-3:after{
+        &.step-3:before{
           background-position: -292px -16px;
         }
       }
@@ -528,32 +526,23 @@
     &.self{
       width: 1002px;
       .departure-step-list-article{
-        &:after {
-          content: '';
-          display: block;
-          width: 116px;
-          height:116px;
-          position: absolute;
-          top:-320px;
-          right: 0;
-          left: 0;
-          bottom: 0;
-          margin: auto;
+        width:20%;
+        &:before {
           background: url(/static/ap/images/spr_ico_self_bag_drop.png) no-repeat;
         }
-        &.step-1:after{
+        &.step-1:before{
           background-position: -16px -16px;
         }
-        &.step-2:after{
+        &.step-2:before{
           background-position: -154px -16px;
         }
-        &.step-3:after{
+        &.step-3:before{
           background-position: -292px -16px;
         }
-        &.step-4:after{
+        &.step-4:before{
           background-position: -16px -152px;
         }
-        &.step-5:after{
+        &.step-5:before{
           background-position: -154px -152px;
         }
       }
@@ -561,29 +550,20 @@
     &.quarantine{
       width: 802px;
       .departure-step-list-article{
-        &:after {
-          content: '';
-          display: block;
-          width: 116px;
-          height:116px;
-          position: absolute;
-          top:-320px;
-          right: 0;
-          left: 0;
-          bottom: 0;
-          margin: auto;
+        width:25%;
+        &:before {
           background: url(/static/ap/images/spr_ico_quarantine.png) no-repeat;
         }
-        &.step-1:after{
+        &.step-1:before{
           background-position: -16px -16px;
         }
-        &.step-2:after{
+        &.step-2:before{
           background-position: -154px -16px;
         }
-        &.step-3:after{
+        &.step-3:before{
           background-position: -292px -16px;
         }
-        &.step-4:after{
+        &.step-4:before{
           background-position: -16px -152px;
         }
       }
@@ -591,39 +571,29 @@
     &.self-checkin{
       width: 1002px;
       .departure-step-list-article{
-        &:after {
-          content: '';
-          display: block;
-          width: 116px;
-          height:116px;
-          position: absolute;
-          top:-320px;
-          right: 0;
-          left: 0;
-          bottom: 0;
-          margin: auto;
+        width:20%;
+        &:before {
           background: url(/static/ap/images/spr_ico_self_checkin.png) no-repeat;
         }
-        &.step-1:after{
+        &.step-1:before{
           background-position: -16px -16px;
         }
-        &.step-2:after{
+        &.step-2:before{
           background-position: -154px -16px;
         }
-        &.step-3:after{
+        &.step-3:before{
           background-position: -292px -16px;
         }
-        &.step-4:after{
+        &.step-4:before{
           background-position: -16px -152px;
         }
-        &.step-5:after{
+        &.step-5:before{
           background-position: -154px -152px;
         }
       }
     }
     &-article{
       width: 200px;
-      height: 200px;
       color: #fff;
       font-size: 1.25rem;
       line-height: 1.5;
@@ -639,7 +609,6 @@
 }
 
 .maglev-train-line {
-  height: 274px;
   padding-top:0;
   background: url(/static/ap/images/bg_maglev_train_line.png) no-repeat;
   border: 1px solid #f3f4f8;
@@ -676,7 +645,7 @@
           width: 153px;
           height:140px;
           position: absolute;
-          top:0px;
+          top:0;
           right: 0;
           left: 0;
           bottom: 0;

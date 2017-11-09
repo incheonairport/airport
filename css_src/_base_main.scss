@@ -1,0 +1,200 @@
+.main{
+
+  &-visual{
+    position:relative;
+
+    &-wrap{
+      height:100%;
+      z-index:90;
+    }
+
+    &-item{
+      width:100%;
+      height:100%;
+
+      position:absolute;
+      top:0;
+      left:0;
+    }
+
+    &-search{
+      width:100%;
+      height:210px;
+      padding-top:43px;
+      background:url(/static/ap/images/bg_main_flight_search.png) no-repeat;
+
+      position:absolute;
+      bottom:0;
+      left:0;
+
+      color:#fff;
+      text-align:center;
+
+      z-index:100;
+
+      @extend %clearfix;
+
+      &-inner{
+        display:inline-block;
+        margin-right:100px;
+      }
+
+      &-title{
+        margin:52px 25px auto auto;
+        font-size:1.75rem;
+        font-weight:300;
+        float:left;
+      }
+
+      &-flight{
+        width:370px;
+        padding-top:45px;
+        float:left;
+        position:relative;
+
+        &-area{
+          //position:relative;
+
+          .area{
+            &-tab{
+              width:183px;
+              height:30px;
+              padding-right:15px;
+              border-bottom:1px solid #aec5fb;
+
+              position:absolute;
+              top:0;
+
+              font-size:1.25rem;
+              font-weight:300;
+              color:#aec5fb;
+              text-align:center;
+
+              &.on{
+                border-color:#fff;
+                color:#fff;
+              }
+
+              &:before{
+                content:"";
+                display:inline-block;
+                width:37px;
+                height:15px;
+                background:url(/static/ap/images/spr_ico_main_visual_search_flight.png) no-repeat;
+              }
+
+              &.departure{
+                left:0;
+
+                &.on:before{
+                  background-position:0 0;
+                }
+
+                &:before{
+                  margin-right:5px;
+                  background-position:0 -25px;
+                }
+              }
+
+              &.arrival{
+                right:0;
+
+                &.on:before{
+                  background-position:-51px 0;
+                }
+
+                &:before{
+                  margin-right:5px;
+                  background-position:-51px -25px;
+                }
+              }
+            }
+
+            &-form{
+              display:none;
+              position:relative;
+              padding-bottom:15px;
+              border-bottom:1px solid #fff;
+
+              &.on{
+                display:block;
+              }
+
+              &-input{
+                display:block;
+                width:100%;
+                height:40px;
+                background:transparent url(/static/ap/images/bg_search_flight_place_holder.png) no-repeat 20px center;
+                border:none;
+
+                font-size:1rem;
+                font-weight:300;
+                color:#fff;
+
+                &:focus{
+                  background-image:none;
+                }
+              }
+
+              &-button{
+                width:25px;
+                height:25px;
+
+                position:absolute;
+                top:8px;
+                right:-30px;
+
+                background:transparent url(/static/ap/images/ico_main_visual_search.png) no-repeat;
+                border:0;
+
+                text-indent:-99999em;
+              }
+
+            }
+          }
+        }
+      }
+
+      &-weather{
+        position:absolute;
+        top:84px;
+        left:50%;
+        transform:translateX(350px);
+        padding-left:45px;
+
+        @extend %clearfix;
+
+        .weather{
+          &-image{
+            float:left;
+          }
+
+          &-temperature{
+            float:left;
+            margin:16px auto auto 15px;
+          }
+        }
+
+        &:before{
+          content:"";
+          display:block;
+          width:1px;
+          height:72px;
+          background:#fff;
+          position:absolute;
+          top:-12px;
+          left:0;
+          opacity:0.2;
+        }
+      }
+
+      &-desc{
+        margin-top:11px;
+        font-size:0.8125rem;
+        color:#a0a5be;
+      }
+    }
+
+  }
+
+}

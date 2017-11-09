@@ -103,14 +103,18 @@ gulp.task('seperate:copy:fileListJson', function(){
 
 // release site html
 gulp.task('release:html', function(){
-  return gulp.src('html/*.*')
-      .pipe(gulp.dest('../release/ap/html/'));
+  gulp.src("html_src/*.html")
+      .pipe(include())
+      .on('error', console.log)
+      .pipe(gulp.dest("../release/ap/html/"));
 });
 
 // release guide html
 gulp.task('release:guide', function(){
-  return gulp.src('guide/*.*')
-      .pipe(gulp.dest('../release/ap/guide/'));
+  gulp.src("guide_src/*.html")
+      .pipe(include())
+      .on('error', console.log)
+      .pipe(gulp.dest("../release/ap/guide/"));
 });
 
 // release sass
@@ -122,7 +126,13 @@ gulp.task('release:sass', function(){
 
 // release js
 gulp.task('release:js', function(){
-  return gulp.src('../static/ap/js/**')
+  gulp.src('js_src/*.js')
+      .pipe(minify({
+        ext:{
+          src : '.debug.js',
+          min : '.min.js'
+        }
+      }))
       .pipe(gulp.dest('../release/static/ap/js/'));
 });
 

@@ -38,11 +38,11 @@
   height:200px;
   padding-top: 90px;
   &.departure{
-    background:url(/static/ap/images/img_sub_visual_departure.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_sub_visual_departure.jpg) center no-repeat;
     background-size: cover;
   }
   &.airline{
-    background:url(/static/ap/images/img_sub_visual_airline.jpg) center no-repeat;
+    background:url(/static/ap/images/bg_sub_visual_airline.jpg) center no-repeat;
     background-size: cover;
   }
 }
@@ -154,6 +154,12 @@
         margin-right:10px;
       }
 
+      &.primary-category{
+        &:before{
+          background:coral;
+        }
+      }
+
       &.category{
 
         &:before{
@@ -164,7 +170,7 @@
       &.cancel{
 
         &:before{
-          background:#ffae4a;
+          background:#7e3b3b;
         }
       }
 

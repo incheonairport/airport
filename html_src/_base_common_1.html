@@ -362,38 +362,39 @@
   <div class="layer size">
     <div class="layer-area">
       <div class="layer-article">
-        <h4 class="layer-title">출국장 혼잡도 한 눈에 보기</h4>
+        <h4 class="layer-title title2">출국장 혼잡도 한 눈에 보기</h4>
         <a href="#" class="layer-close">닫기</a>
+      </div>
         <div class="tab-area">
           <h5 class="tab-area-heading on">제1 여객터미널</h5>
 
           <div class="tab-area-content on">
-            <div class="update mt20">
+            <div class="update mt20 mb10">
               <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
               <button type="button" class="update-refresh size ico">새로고침</button>
             </div>
-            <img src="/static/ap/images/img_temp_06.png" alt="" />
+            <img src="/static/ap/images/map_departure_congestion_02.png" alt="출국장 혼잡도 지도 이미지" class="imgbox" />
           </div>
 
           <h5 class="tab-area-heading">제2 여객터미널</h5>
 
           <div class="tab-area-content">
-            <div class="update mt20">
+            <div class="update mt20 mb10">
               <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
               <button type="button" class="update-refresh ico">새로고침</button>
             </div>
-            <img src="/static/ap/images/img_temp_06.png" alt="" />
+            <img src="/static/ap/images/map_departure_congestion_01.png" alt="출국장 혼잡도 지도 이미지" class="imgbox" />
           </div>
         </div>
 
-        <div class="layer-article">
 
-          <div class="layer-article mt20 clearfix">
+
+          <div class="layer-article article2 clearfix">
             <h5 class="layer-article-title float">시간대별 예상 승객 수</h5>
             <div class="field2">
               <div class="field2-group big crowded">
                 <input type="radio" name="product" id="crowded-today" class="field2-radio" value="crowded-today" checked>
-                <label class="field2-radio-label pd10 crowded" for="crowded-today">오늘</label>
+                <label class="field2-radio-label crowded" for="crowded-today">오늘</label>
 
                 <input type="radio" name="product" id="crowded-tomorrow" class="field2-radio" value="crowded-tomorrow">
                 <label class="field2-radio-label crowded" for="crowded-tomorrow">내일</label>
@@ -401,16 +402,13 @@
             </div>
           </div>
 
-          <div class="table-article">
-            <div class="table-article-box">
-              <table class="table vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
+          <div class="table2-article">
+            <div class="table2-article-box">
+              <table class="table table2 vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
                 <caption>시간대별 예상 승객 수 구분</caption>
                 <colgroup>
                   <col style="width:16%" />
-                  <col style="width:21%" />
-                  <col style="width:21%" />
-                  <col style="width:21%" />
-                  <col style="width:21%" />
+                  <col span="2" style="width:25%" />
                 </colgroup>
                 <thead>
                 <tr>
@@ -525,28 +523,64 @@
                 </tbody>
               </table>
             </div>
+            <div class="table-guide mt20">
+              <button type="button" name="button" title="클릭하면 기준시간당 승객 수 가이드가 나타납니다." class="table-guide-btn">
+                <span class="table-guide-btn-text">기준시간당 승객 수</span>
+                <span class="table-guide-ico ico warning">가이드자세히보기</span>
+              </button>
+
+              <div class="layer-area table-guide-pop-up">
+                <div class="layer-article">
+                  <h4 class="laye-articler-title title2 color-b">혼잡도기준</h4>
+                  <a href="#" class="layer-close close2">닫기</a>
+                </div>
+                <ul class="table-guide-pop-up-depth">
+                  <li class="table-guide-pop-up-depth-list font14">
+                    <dl class="table-guide-pop-up-list">
+                      <dt class="table-guide-pop-up-item blue">원활</dt>
+                      <dd class="table-guide-pop-up-item">~6,500 명</dd>
+                    </dl>
+                  </li>
+                  <li class="table-guide-pop-up-depth-list font14">
+                    <dl class="table-guide-pop-up-list">
+                      <dt class="table-guide-pop-up-item green">보통</dt>
+                      <dd class="table-guide-pop-up-item">6,500 ~ 7,100 명</dd>
+                    </dl>
+                  </li>
+                  <li class="table-guide-pop-up-depth-list font14">
+                    <dl class="table-guide-pop-up-list">
+                      <dt class="table-guide-pop-up-item yellow">약간혼잡</dt>
+                      <dd class="table-guide-pop-up-item">7,100 ~ 7,500명</dd>
+                    </dl>
+                  </li>
+                  <li class="table-guide-pop-up-depth-list font14">
+                    <dl class="table-guide-pop-up-list">
+                      <dt class="table-guide-pop-up-item brown">혼잡</dt>
+                      <dd class="table-guide-pop-up-item">7,500명 초과  7,100명 초과 2시간 지속</dd>
+                    </dl>
+                  </li>
+                  <li class="table-guide-pop-up-depth-list font14">
+                    <dl class="table-guide-pop-up-list">
+                      <dt class="table-guide-pop-up-item red">매우혼잡</dt>
+                      <dd class="table-guide-pop-up-item">7,100명 초과 3시간 지속  7,500명 초과 2시간 지속</dd>
+                    </dl>
+                  </li>
+                </ul>
+              </div>
+
+              <ul class="table-guide-list">
+                <li class="table-guide-item blue font14">원활</li>
+                <li class="table-guide-item green font14">보통</li>
+                <li class="table-guide-item yellow font14">약간혼잡</li>
+                <li class="table-guide-item brown font14">혼잡</li>
+                <li class="table-guide-item red font14">매우혼잡</li>
+              </ul>
+
+            </div>
           </div>
-
-          <div class="table-guide mt20">
-
-            <button type="button" name="button" title="클릭하면 기준시간당 승객 수 가이드가 나타납니다." class="table-guide-btn">
-              <span class="table-guide-btn-text">기준시간당 승객 수</span>
-              <span class="table-guide-ico ico warning">가이드자세히보기</span>
-            </button>
-
-            <ul class="table-guide-list">
-              <li class="table-guide-item blue font14">원활</li>
-              <li class="table-guide-item green font14">보통</li>
-              <li class="table-guide-item yellow font14">약간혼잡</li>
-              <li class="table-guide-item brown font14">혼잡</li>
-              <li class="table-guide-item red font14">매우혼잡</li>
-            </ul>
-
-          </div>
-        </div>
-      </div>
     </div>
   </div>
+
 
   <!-- //추가레이어팝업 -->
 </section>

@@ -6,8 +6,11 @@
   background-size:cover!important;
   box-sizing:border-box;
   position:fixed;
+  top:0;
+  left:0;
   overflow:auto;
   z-index:99999;
+
   &.start{ // 출발
     background:url(/static/ap/images/bg_layer_header_01.jpg) no-repeat left bottom;
   }
@@ -52,7 +55,7 @@
   &-link{
     display:inline-block;
     //height:28px;
-    font-size:1.25em;
+    font-size:1.25rem;
     font-weight:300;
     color:#fff;
     position:relative;
@@ -78,3 +81,16 @@
   }
 
 }
+
+
+// mobile button open / close
+.layer-gnb{
+  &-mobile-btn{
+    display:none;
+  }
+  &-mobile-btn-close{
+    display:none;
+  }
+}
+
+
