@@ -302,18 +302,20 @@
     .section-bg-inner{
      height: 350px;
     }
-    &+.inner-tab .tab-area{
-      top: -54px;
-      &-heading{
-        border:none;
-        background: #3e4b91;
-        color:#fff;
-        &.on{
-          background:#fff;
-          color: #42519e;
-          font-weight:800;
-        }
-      }
+  }
+}
+
+.inner-tab{
+  position: relative;
+  top: -54px;
+  &-heading{
+    border:none;
+    background: #3e4b91;
+    color:#fff;
+    &.on{
+      background:#fff;
+      color: #42519e;
+      font-weight:800;
     }
   }
 }
@@ -1043,7 +1045,7 @@
     text-align:left;
     &.point{
       background:#42519e;
-      border:none;
+      border:1px solid #fff;
       color:#fff;
     }
     &:hover{
