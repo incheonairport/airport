@@ -1,41 +1,33 @@
-// 1740px < => contents : 1200 layout
-///////////////////////////////////////////////
+// 1740 <
 @media all and (max-width:1739px) {
+  .header{
+    max-width:330px;
+  }
+}
+
+
+// 1560 <
+@media all and (max-width:1559px) {
 
 }
-///////////////////////////////////////////////
 
 
-
-
-// 1400px < => header : 1200 layout
-///////////////////////////////////////////////
-@media all and (max-width:1399px) {
+// 1260 <
+@media all and (max-width:1259px) {
   .header{
     max-width:260px;
   }
 }
-///////////////////////////////////////////////
 
 
-
-
-// 1200px < => contents : mobile ( % )
-///////////////////////////////////////////////
-@media all and (max-width:1199px) {
+// 1024 <
+@media all and (max-width:1024px) {
 
 }
-///////////////////////////////////////////////
 
 
-
-
-
-// 900px < => header : mobile
-///////////////////////////////////////////////
-@media all and (max-width:899px) {
-
-  // header
+// 780 <
+@media all and (max-width:780px) {
   .header{
     width:70%;
     padding-top: 136px;
@@ -46,19 +38,21 @@
       margin-bottom:36px;
       font-size:2.143em;
       &-sub{
-        //font-size:1rem;
+        display:block;
+        margin-top:10px;
+        font-size:1.325rem;
       }
     }
+
   }
   .gnb{
     &-item{
       margin-bottom:18px;
     }
     &-link{
-      font-size:1.143em;
+      font-size:1.125em;
     }
   }
-
   // mobile gnb...
   .mobile-header{
     width:100%;
@@ -82,7 +76,6 @@
       }
     }
   }
-
   // mobile button open / close
   .layer-gnb{
     &-mobile-btn{
@@ -136,6 +129,4 @@
       text-indent:-99999em;
     }
   }
-
 }
-///////////////////////////////////////////////

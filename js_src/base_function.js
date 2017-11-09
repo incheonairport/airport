@@ -78,11 +78,25 @@ $(function(){
 
       $tabWrap.each(function(){
 
-        tabWidth = 100 / $(this).find('.tab-nav-list-item').length;
+        if( $(html).hasClass('mobile') ){
 
-        $(this).find('.tab-nav-list-item').css({
-          width: tabWidth + '%'
-        });
+          tabWidth = 100 / Math.ceil( $(this).find('.tab-nav-list-item').length / 2 );
+
+          console.log(tabWidth);
+
+          $(this).find('.tab-nav-list-item').css({
+            width: tabWidth + '%'
+          });
+
+        } else {
+
+          tabWidth = 100 / $(this).find('.tab-nav-list-item').length;
+
+          $(this).find('.tab-nav-list-item').css({
+            width: tabWidth + '%'
+          });
+
+        }
 
       });
 
