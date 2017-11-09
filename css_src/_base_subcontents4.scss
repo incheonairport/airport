@@ -180,23 +180,34 @@
       font-weight: 900;
       margin-right: 25px;
     }
+    &.option{
+      left: 40%;
+    }
   }
-
+  &-option{
+    width:200px;
+    height: 56px;
+    padding: 0 15px;
+    color: #666;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    float: left;
+  }
   &-name {
     display: block;
     float: left;
-
     &-txt {
       width: 403px;
       height: 56px;
       padding: 0 15px;
-      border: 1px solid #666666;
+      border: 1px solid #666;
+      box-sizing: border-box;
       border-right: 0;
       float: left;
     }
     &-btn {
       width: 62px;
-      height: 58px;
+      height: 56px;
       background: #42519e;
       border: none;
       float: left;
@@ -1269,18 +1280,19 @@ button, a {
   cursor: pointer;
 }
 
-
 .relief{
   background: url(/static/ap/images/img_relief_01.png) no-repeat;
   width: 1151px;
   height: 591px;
-}
-
-.lost-found{
-  @extend %clearfix;
   .ir-technique{
     text-indent: -99999em;
   }
+}
+
+
+
+.lost-found{
+  @extend %clearfix;
   .lost-box{
     width: 50%;
     height: 698px;
@@ -1299,6 +1311,35 @@ button, a {
 }
 
 
+/*회원가입*/
+.now-join-step{
+  padding: 40px;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: center;
+  &-ico{
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      background: url(/static/ap/images/spr_ico_join.png) no-repeat;
+
+    }
+    &.finish{
+      padding-top:87px;
+      &:after{
+        background-position: -122px -10px;
+        width: 112px;
+        height:96px;
+      }
+    }
+
+  }
+}
 
 
 
