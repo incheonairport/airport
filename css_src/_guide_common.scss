@@ -154,6 +154,12 @@
         margin-right:10px;
       }
 
+      &.primary-category{
+        &:before{
+          background:coral;
+        }
+      }
+
       &.category{
 
         &:before{
@@ -164,7 +170,7 @@
       &.cancel{
 
         &:before{
-          background:#ffae4a;
+          background:#7e3b3b;
         }
       }
 

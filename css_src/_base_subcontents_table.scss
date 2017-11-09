@@ -148,7 +148,7 @@
     }
     &-status{
       position:relative;
-      .time-chnaged{
+      .time-changed{
         font-size: 1.5rem;
       }
       .time-due{
@@ -168,28 +168,33 @@
       }
 
       &.departure,
-      &.boarding-closed{
+      &.boarding-closed,
+      &.type-dark{
         &:after{
           background:#323648;
         }
       }
-      &.delay{
+      &.delay,
+      &.type-red{
         &:after{
           background:#d43e41;
         }
       }
 
-      &.boarding-on{
+      &.boarding-on,
+      &.type-blue{
         &:after{
           background:#42519e;
         }
       }
-      &.boarding-closing{
+      &.boarding-closing,
+      &.type-cyan{
         &:after{
           background:#2c8179;
         }
       }
-      &.boarding-ready{
+      &.boarding-ready,
+      &.type-gray{
         &:after{
           background:#a5a7aa;
         }
@@ -204,14 +209,27 @@
       color: #fff;
       font-size: 0.875rem;
       border-radius: 5px;
-      &.delay{
+      &.delay,
+      &.type-red{
         background: #d43e41;
       }
-      &.boarding-on{
+      &.boarding-on,
+      &.type-blue{
         background: #42519e;
       }
-      &.boarding-closing{
+      &.boarding-closing,
+      &.type-cyan{
         background: #2c8179;
+      }
+    }
+    &-no-result{
+      width:100% !important;
+      height:89px;
+      line-height:89px;
+      border:1px solid #d9d9d9;
+
+      &.center{
+        text-align:center;
       }
     }
   }
