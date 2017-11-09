@@ -25,12 +25,10 @@
 // 배너bg
 /*자기부상열차*/
 .maglev-train{
-  height:240px;
   background:url(/static/ap/images/bg_maglev_train.jpg) no-repeat;
 }
 /*자기부상열차견학*/
 .maglev-train-tour{
-  height:240px;
   background:url(/static/ap/images/bg_maglev_train_tour.jpg) no-repeat;
 }
 
@@ -611,7 +609,6 @@
 }
 
 .maglev-train-line {
-  height: 274px;
   padding-top:0;
   background: url(/static/ap/images/bg_maglev_train_line.png) no-repeat;
   border: 1px solid #f3f4f8;
