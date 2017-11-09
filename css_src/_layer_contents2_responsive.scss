@@ -81,19 +81,26 @@
 
   // IR infographics
   .info-graphic{
-    background-size:100%!important;
+
     &.baggage1{
-      background:url(/static/ap/images/digr_info_graphic01.png) no-repeat #323648;
+      background:url(/static/ap/images/digr_info_graphic01.png) no-repeat #323648 -109px center;
+      height:150px;
+      background-size:200%;
     }
     &.baggage2{
-      background:url(/static/ap/images/digr_info_graphic02.png) no-repeat #323648;
+      background:url(/static/ap/images/digr_info_graphic02.png) no-repeat #323648 0 center;
+      height:150px;
+      background-size:100%;
     }
     &.baggage3{
-      background:url(/static/ap/images/digr_info_graphic03.png) no-repeat #323648;
+      background:url(/static/ap/images/digr_info_graphic03.png) no-repeat #323648 0 center;
+      height:150px;
+      background-size:100%;
     }
     &.packing{
       height:330px;
       background:url(/static/ap/images/digr_info_graphic04_m.png) no-repeat #323648;
+      background-size:100%;
     }
   }
 
@@ -107,7 +114,7 @@
         display:block;
       }
       .link-strong{
-        font-size:22px;
+        font-size:1.125rem;
       }
       .nowlink{
         display:none;

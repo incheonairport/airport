@@ -37,7 +37,13 @@
     &-heading{
       margin-bottom:36px;
       font-size:2.143em;
+      &-sub{
+        display:block;
+        margin-top:10px;
+        font-size:1.325rem;
+      }
     }
+
   }
   .gnb{
     &-item{

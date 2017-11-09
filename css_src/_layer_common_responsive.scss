@@ -273,6 +273,18 @@
     }
   }
 
+  p{
+    span{
+      display: inline-grid;
+    }
+    a,button{
+      display:inline-block;
+      margin:10px 0;
+    }
+    .ml20{
+      margin-left:0;
+    }
+  }
   //tab :: 2배수경우 4개까지 50% , 6개 이상부터 33.33% 추후 스크립트 조절 판단필요
   .tab{
     &-nav{
@@ -283,6 +295,7 @@
         &-link{
           border-bottom-color:#d9d9d9;
           font-size:1rem;
+          letter-spacing:-1px;
           &.on{
             border-bottom:2px solid #42519e;
           }
@@ -307,7 +320,16 @@
     br{
       display:none;
     }
+
+    a,button{
+      display:table;
+      margin:10px 0;
+    }
+    .ml20{
+      margin-left:0;
+    }
   }
+
 
   // button
   .btn-type-normal{
@@ -352,6 +374,9 @@
   .table{
     &.vt{
       &.board-list{
+        overflow: visible;
+        white-space: normal;
+        display: table;
         td{
           span{
             font-size:0.8125rem;
@@ -389,34 +414,35 @@
         }
       }
     }
+    &.vt,
     &.vt-dark{
       overflow-x:auto;
       overflow-y: hidden;
       white-space: nowrap;
       display: inline-block;
-      // optional - enable iOS momentum scrolling
-      -webkit-overflow-scrolling: touch;
-      // scrolling shadows
-      background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%) 100% center;
-      background-size: 20px 100%, 20px 100%;
-      background-attachment: scroll, scroll;
-      background-repeat: no-repeat;
-      td:first-child,
-      tbody tr:first-child,
-      td:last-child,
-      tbody tr:last-child{
-        background-repeat: no-repeat;
-        background-size: 20px 100%;
-      }
-      td:first-child,
-      tbody tr:first-child,{
-        background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-      }
-      td:last-child,
-      tbody tr:last-child{
-        background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-        background-position: 100% 0;
-      }
+      //// optional - enable iOS momentum scrolling
+      //-webkit-overflow-scrolling: touch;
+      //// scrolling shadows
+      //background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%) 100% center;
+      //background-size: 20px 100%, 20px 100%;
+      //background-attachment: scroll, scroll;
+      //background-repeat: no-repeat;
+      //td:first-child,
+      //tbody tr:first-child,
+      //td:last-child,
+      //tbody tr:last-child{
+      //  background-repeat: no-repeat;
+      //  background-size: 20px 100%;
+      //}
+      //td:first-child,
+      //tbody tr:first-child,{
+      //  background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+      //}
+      //td:last-child,
+      //tbody tr:last-child{
+      //  background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+      //  background-position: 100% 0;
+      //}
     }
     &.hr{
       word-break:break-all;
@@ -426,7 +452,9 @@
       th{
         min-width:80px;
         line-height:1.4;
+        letter-spacing: -1px;
         font-weight:900;
+        padding:0 11px;
       }
     }
   }
@@ -555,15 +583,18 @@
       margin-bottom:20px;
       font-size:1.563rem;
       font-weight:400;
+      line-height:1.4;
     }
     &-level2{
       font-size:1.25rem;
       letter-spacing: -0.03rem;
+      line-height:1.4;
     }
     &-level3{
       margin-bottom:10px;
       font-size:1.125rem;
       font-weight:900;
+      line-height:1.4;
     }
     &-level4{
       margin-bottom:10px;
@@ -705,6 +736,9 @@
 
   // board view
   .borad-view{
+    overflow: visible!important;
+    white-space: normal!important;
+    display: table!important;
     .view-head{
       padding:25px 0;
       &-tit{
