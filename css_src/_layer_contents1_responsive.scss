@@ -63,39 +63,114 @@
   .departure-step{
     background-size: cover;
     &-list{
+      padding: 30px 10px 0;
       .departure-step-list-article {
         width:50%!important;
-        font-size:1rem;
-        height:200px;
+        font-size:0.925rem;
+        height:130px;
+
       }
       &.check-in{
         .departure-step-list-article{
           &.step-3{
-            height:146px;
+            height:122px;
+          }
+          &:before{
+            width:58px;
+            height:58px;
+            background-size: 213px 75px;
+          }
+          &.step-1:before{
+            background-position: -8px -8px;
+          }
+          &.step-2:before{
+            background-position: -77px -8px;
+          }
+          &.step-3:before{
+            background-position: -146px -8px;
           }
         }
       }
       &.self{
         .departure-step-list-article{
           &.step-5{
-            height:176px;
+            height:152px;
+          }
+          &:before{
+            width:58px;
+            height:58px;
+            background-size: 213px 142px;
+          }
+          &.step-1:before{
+            background-position: -8px -8px;
+          }
+          &.step-2:before{
+            background-position: -77px -8px;
+          }
+          &.step-3:before{
+            background-position: -146px -8px;
+          }
+          &.step-4:before{
+            background-position: -8px -76px;
+          }
+          &.step-5:before{
+            background-position: -77px -76px;
           }
         }
       }
       &.quarantine{
         .departure-step-list-article{
           &.step-3{
-            height:176px;
+            height:122px;
           }
           &.step-4{
-            height:176px;
+            height:142px;
+          }
+
+          &:before{
+            width:58px;
+            height:58px;
+            background-size: 213px 142px;
+          }
+          &.step-1:before{
+            background-position: -8px -8px;
+          }
+          &.step-2:before{
+            background-position: -77px -8px;
+          }
+          &.step-3:before{
+            background-position: -146px -8px;
+          }
+          &.step-4:before{
+            background-position: -8px -76px;
           }
         }
       }
       &.self-checkin{
         .departure-step-list-article{
           &.step-5{
-            height:176px;
+            height:142px;
+          }
+
+          &:before{
+            width:58px;
+            height:58px;
+            background-size: 213px 142px;
+          }
+          &.step-1:before{
+            background-position: -8px -8px;
+          }
+          &.step-2:before{
+            background-position: -77px -8px;
+          }
+          &.step-3:before{
+            background-position: -146px -8px;
+          }
+          &.step-4:before{
+            background-position: -8px -76px;
+          }
+          &.step-5:before{
+            background-position: -77px -76px;
           }
         }
       }
