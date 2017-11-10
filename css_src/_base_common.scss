@@ -239,6 +239,12 @@
     height: 12px;
   }
 
+  &.arrow-normal-left:after{
+    background-position:-214px -32px;
+    width: 8px;
+    height: 12px;
+  }
+
   &.arrow-point-right:after{
     background-position:-129px -64px;
     width: 8px;
