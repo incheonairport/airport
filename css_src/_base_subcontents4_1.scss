@@ -178,7 +178,7 @@
     width:131px;
     height: 50px;
     font-size: 1rem;
-    padding: 0px 10px;
+    padding: 0 10px;
     border: 1px solid #d9d9d9;
   }
 }
@@ -245,6 +245,10 @@
 }
 
 .layer{
+  width: 595px;
+  max-height: 684px;
+
+
   &-title{
     &.login{
       font-size: 2.75rem;
@@ -252,10 +256,126 @@
       text-align: center;
       font-family: 'nanumsq', sans-serif;
       color: #222;
+      padding:0;
+      border:none;
+    }
+  }
+
+  &-sub{
+    font-size:1.125rem;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  &-close{
+    &.login{
+      display: block;
+      width: 31px;
+      height: 31px;
+      background: url(/static/ap/images/ico_layer_close.png) center no-repeat;
+      text-indent: -99999em;
+      position: absolute;
+      top: -45px;
+      left: 95%;
+
+    }
+  }
+
+  &-input{
+
+    &-text{
+      width:345px;
+      height: 50px;
+    }
+
+  }
+
+  &-btn{
+    float: left;
+    &-login{
+      width:190px;
+      height: 110px;
+      //margin-left: 81px;
+      background: #42519e;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+  }
+
+  &-login{
+    &-area{
+      @extend %clearfix;
+    }
+  }
+
+}
+
+.log-in{
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 20px;
+}
+
+.find-info{
+  &-list{
+    margin: 10px 0;
+  }
+
+  &-item{
+    float:left;
+  }
+
+  &-link{
+    font-size: 1rem;
+    color:#444;
+
+    &.id{
+      margin-right: 5px;
+
+    }
+
+    &.pw{
+      padding-left: 5px;
     }
   }
 }
 
+.sign-in{
+  padding-bottom: 20px;
+
+
+
+  &-title{
+    font-size: 1.125rem;
+    color: #444;
+  }
+
+  &-txt{
+    font-size: 1rem;
+    color: #444;
+  }
+
+  &-btn{
+    width: 99px;
+    height: 40px;
+    background-color: #fff;
+    color: #666;
+    border: 1px solid #a6a7ab;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  &-col1{
+    float: left;
+  }
+
+  &-col2{
+    float: left;
+
+  }
+}
 
 
 
