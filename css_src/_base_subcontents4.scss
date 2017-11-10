@@ -1138,6 +1138,14 @@
     height:200px;
     padding:15px;
   }
+  &.email{
+    width: 146px;
+    margin-left: 5px;
+    &:first-child{
+      margin-left: 0;
+      margin-right: 5px;
+    }
+  }
 }
 /*파일 첨부, 주소 검색*/
 .user{
@@ -1171,9 +1179,9 @@
       }
     }
     &.id{
-      width: 400px;
+      width: 410px;
       .user-input-text{
-        width: 250px;
+        width: 263px;
         float:left;
       }
     }
@@ -1191,6 +1199,10 @@
   vertical-align: top;
   &option{
     font-size: 1rem;
+  }
+  &.email{
+    width: 146px;
+    margin-left: 5px;
   }
 }
 /*이용일시*/
