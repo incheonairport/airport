@@ -4,6 +4,12 @@ $(function(){
   function isMobile(){
     if(navigator.userAgent.indexOf('Mobile') != -1){
       $('html').addClass('mobile');
+      $('select').addClass('mac-select');
+    }
+  }
+  function isOS(){
+    if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+      $('select').addClass("mac");
     }
   }
   function tabAction(){
@@ -82,8 +88,11 @@ $(function(){
   }
 
 
+
+
   // running
   isMobile(); // PC and Mobile check
+  isOS(); // OS check
   tabAction(); // tab.length width auto divide event
 });
 
@@ -160,7 +169,7 @@ $(document).ready(function(){
       }
     });
   }
-  function LayerGnbEvent(){
+  function layerGnbEvent(){
     $('.layer-gnb-mobile-btn').on('click',function(){
       $('.header').animate({left:0},350);
       $('.mobile-header').addClass('active');
@@ -181,9 +190,13 @@ $(document).ready(function(){
       }
     });
   }
+  function macSelectReStyle(){
+
+  }
 
 
   // ready function running
   tableOperationEvent(); // AP_DC_07_02.html train operation tab event
-  LayerGnbEvent(); // Layer popup mobile header event
+  layerGnbEvent(); // Layer popup mobile header event
+  macSelectReStyle(); // mac select box rounding remove
 });

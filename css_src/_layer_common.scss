@@ -1655,3 +1655,10 @@ b.text-bold{
     float:right;
   }
 }
+
+
+select.mac{
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+  background:url(/static/ap/images/ico_mac_arrow.png) no-repeat 94% center #fff;
+}

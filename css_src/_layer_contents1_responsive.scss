@@ -42,6 +42,40 @@
       }
     }
   }
+  // infographics
+  .customs_inspection{
+    height:300px;
+    background-size:100%!important;
+    background:#333649 url(/static/ap/images/digr_customs_inspection_procedure.png) no-repeat center;
+  }
+
+  .digr_airport_railroad{
+    height:200px;
+    background-size:100%!important;
+    background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
+  }
+
+  // date time setting
+  .timesetting{
+    &-date{
+      &.f-left,
+      &.f-right{
+        float:none;
+      }
+      &-day{
+        width:calc(33.333% - 46px);
+      }
+      &-calendar{
+        width: 46px;
+      }
+      &-option{
+        width: 33.333%;
+      }
+    }
+    &-dash{
+      float:none;
+    }
+  }
 }
 
 
@@ -59,6 +93,10 @@
 
 // 780 <
 @media all and (max-width:780px) {
+  .timesetting-date-calendar:after{
+    //right:20px;
+  }
+
   // step3
   .departure-step{
     background-size: cover;
@@ -175,4 +213,132 @@
       }
     }
   }
+
+  // infographics
+  .customs_inspection{
+    height:150px;
+    background-size:120%!important;
+  }
+  .digr_airport_railroad{
+    height:68px;
+    background-size:100%!important;
+    background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
+  }
+
+  // date time setting
+  .timesetting{
+    &-date{
+      &.f-left,
+      &.f-right{
+        float:none;
+      }
+      &-day{
+        width:calc(100% - 46px);
+      }
+      &-calendar{
+        width: 46px;
+      }
+      &-option{
+        width:100%;
+        border-top:0;
+        border-left:1px solid #d9d9d9!important;
+      }
+    }
+    &-dash{
+      float:none;
+    }
+  }
+
+  // input
+  .input-bg{
+    width: 100%;
+    height: 56px;
+  }
+
+  // car search
+  .search-box {
+    height:80px;
+    width: 100%;
+    background:none;
+    border:0;
+    padding: 0;
+    &-area{
+      display:block;
+      &-title {
+        float: none;
+        position: static;
+        margin-right:0;
+        margin-bottom:10px;
+      }
+      &-input {
+        width: calc(100% - 40px);
+        height: 40px;
+      }
+      &-btn {
+        width: 40px;
+        height: 40px;
+
+      }
+    }
+  }
+
+  // font control
+  .font20, %font20{
+    font-size: 1rem;
+  }
+
+  // inner tab
+  .inner-tab{
+    .btn-type-tab{
+      min-width: 50%;
+      height:54px;
+      line-height:54px;
+      padding:0;
+      text-align:center;
+    }
+  }
+
+  // reflash button
+  .update{
+    &-time{
+      font-size: 1rem;
+    }
+    &-refresh{
+      width:100%;
+      font-size:1rem;
+      font-weight:700;
+      line-height: 40px;
+      height: 40px;
+      margin-top:10px;
+    }
+  }
+
+  // parking box
+  /*주차장혼잡도*/
+  .congested{
+    width: 100%;
+    padding: 30px 30px 40px;
+    margin-top:-3px ;
+    border: 1px solid #d9d9d9;
+    &-parkinglot{
+      font-size: 1.125rem;
+      float: left;
+      padding: 5px 0;
+    }
+    &-info{
+      padding: 5px 12px;
+      border: 1px solid;
+      border-radius: 20px;
+      float: right;
+      font-size:0.825rem;
+    }
+
+
+
+  }
+
 }
+
+
+
+

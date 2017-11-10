@@ -137,6 +137,12 @@
 
 // 1260 <
 @media all and (max-width:1259px) {
+  // common
+  table{
+    .btn-type-small{
+      min-width:inherit;
+    }
+  }
   // layout
   .contents{
     min-width:calc(100% - 260px);
@@ -218,6 +224,10 @@
     .inner-col{
       width: 100%!important;
       float:none;
+      &.btn-right{
+        position: static;
+        text-align: left;
+      }
     }
     &.double{
       .inner-col{
@@ -339,6 +349,13 @@
     padding:0;
     line-height:50px;
     text-align:center!important;
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:10px;
+      }
+    }
   }
   .btn-type-small{
     min-width:200px;
@@ -351,6 +368,10 @@
   // guide text
   .guide-desc{
     font-size:0.825rem;
+    &.mark{
+     text-indent:0;
+      padding-left:0;
+    }
   }
 
   // icon text
@@ -382,7 +403,7 @@
           span{
             font-size:0.8125rem;
           }
-          padding: 8px 0px;
+          padding: 8px 0;
           & .board-list-link{
             font-size:1rem;
             &.lock{
@@ -421,7 +442,6 @@
       overflow-y: hidden;
       white-space: nowrap;
       display: inline-block;
-      -webkit-overflow-scrolling: touch;
       th{
         text-align: left;
         padding-left: 10px;
@@ -434,7 +454,12 @@
       }
     }
     &.hr{
-      word-break:break-all;
+      .radio-box{
+        margin-top:10px;
+        &:first-child{
+          margin-top:0;
+        }
+      }
       br{
         display:none;
       }
@@ -444,6 +469,9 @@
         letter-spacing: -1px;
         font-weight:900;
         padding:0 11px;
+      }
+      td{
+        padding: 14px 6px 16px;
       }
     }
   }
@@ -922,4 +950,8 @@
       }
     }
   }
+
+
+
+
 }

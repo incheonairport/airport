@@ -69,6 +69,17 @@ $(function(){
 $(function(){
 
   // function
+  function isMobile(){
+    if(navigator.userAgent.indexOf('Mobile') != -1){
+      $('html').addClass('mobile');
+      $('select').addClass('mac-select');
+    }
+  }
+  function isOS(){
+    if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+      $('select').addClass("mac");
+    }
+  }
   function tabAction(){
     var tabWidth = 0;
     var $tabWrap;
@@ -135,6 +146,8 @@ $(function(){
   }
 
   // run
+  isMobile(); // PC and Mobile check
+  isOS(); // OS check
   tabAction();
 
 
