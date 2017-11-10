@@ -42,6 +42,7 @@
       }
     }
   }
+
   // infographics
   .customs_inspection{
     height:300px;
@@ -76,12 +77,59 @@
       float:none;
     }
   }
+  .maglev-train{
+    background-size: cover;
+  }
+  .bussearch{
+    background-size: cover;
+    padding: 58px 50px;
+    &-title{
+      font-size: 1.125rem;
+    }
+    .search-area{
+      &-txt{
+        width: 400px;
+        font-size:1rem;
+      }
+      &-btn{
+        font-size: 1.125rem;
+        &.ico:after{
+          top:0;
+          right:66px;
+        }
+      }
+    }
+  }
 }
-
 
 // 1260 <
 @media all and (max-width:1259px) {
-
+  .bussearch{
+    background-size: cover;
+    padding: 50px 135px;
+    &-title{
+      font-size: 1.5rem;
+      float: none;
+      text-align: center;
+    }
+    .search-area{
+      &-txt{
+        width: 350px;
+        font-size:1rem;
+      }
+      &-btn{
+        width: 90px;
+        font-size: 1.125rem;
+        &.ico{
+          text-indent:-99999em;
+        }
+        &.ico:after{
+          top:0;
+          right:0;
+        }
+      }
+    }
+  }
 }
 
 
@@ -314,7 +362,6 @@
   }
 
   // parking box
-  /*주차장혼잡도*/
   .congested{
     width: 100%;
     padding: 30px 30px 40px;
@@ -336,8 +383,44 @@
 
 
   }
-
+  .btn-download{
+    &.big{
+      font-size: 1rem;
+      &.ico{
+        &:after{
+          left: 220px;
+        }
+      }
+    }
+  }
+  .bussearch{
+    background-size: cover;
+    padding: 10px 10px;
+    &-title{
+      font-size: 1rem;
+      float: none;
+      text-align: center;
+    }
+    .search-area{
+      &-txt{
+        width: 80%;
+        font-size:0.8125rem;
+      }
+      &-btn{
+        width: 20%;
+        font-size: 1.125rem;
+        &.ico{
+          text-indent:-99999em;
+        }
+        &.ico:after{
+          top:0;
+          right:0;
+        }
+      }
+    }
+  }
 }
+
 
 
 
