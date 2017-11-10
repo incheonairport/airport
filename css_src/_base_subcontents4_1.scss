@@ -343,8 +343,6 @@
 .sign-in{
   padding-bottom: 20px;
 
-
-
   &-title{
     font-size: 1.125rem;
     color: #444;
@@ -377,6 +375,20 @@
   }
 }
 
+.user-text{
+  &.email-wide{
+    width: 85%;
+    margin: 10px 0;
+  }
+}
+
+.contents{
+  &.border{
+
+    border-bottom: 1px solid #b7c0ce;
+  }
+
+}
 
 
 
