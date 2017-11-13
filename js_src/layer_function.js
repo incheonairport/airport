@@ -193,16 +193,39 @@ $(document).ready(function(){
   }
   function layerCloseEvent(){
     $('.lp-close').on('click', function(e){
-      window.opener='Self';
       window.close();
+      self.close();
+      window.opener = window.location.href;
+      self.close();
+      window.open('about:blank','_self').close();
       e.preventDefault();
     });
+  }
+  function layerTabStringEvent(){
+    var tabLink = $('.tab-nav-list-item > .tab-nav-list-link');
+    var tabStringLength = tabLink.text();
+        tabStringLength = tabStringLength.length;
+
+    var innerTabLink = $('.btn-type-tab');
+    var InnerTabStringLength = innerTabLink.text();
+        InnerTabStringLength = InnerTabStringLength.length;
+
+    if(tabStringLength > 24){
+      tabLink.addClass('active');
+    } else if(InnerTabStringLength > 14){
+      innerTabLink.addClass('active');
+    }
+
+
+
+    console.log(tabStringLength);
   }
 
   // ready function running
   tableOperationEvent(); // AP_DC_07_02.html train operation tab event
   layerGnbEvent(); // [LP] Layer popup mobile header event
   layerCloseEvent(); // [LP] Layer popup close event
+  layerTabStringEvent(); // tab string length css control
 
 });
 
