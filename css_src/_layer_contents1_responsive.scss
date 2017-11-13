@@ -121,6 +121,7 @@
 
 
   /*버스지역*/
+  //버스 지역
   .local {
     &-list {
       &-item {
@@ -138,8 +139,13 @@
     }
     &-town {
       &-item {
+        width:16%;
+        font-size:1rem;
+        &:nth-child(6){
+          border-right:0;
+        }
         &:nth-child(8){
-          border-right: none;
+          border-right:1px solid #d9d9d9;
         }
         &:last-child{
           border-right: none;
@@ -151,6 +157,36 @@
       }
     }
   }
+  //.local {
+  //  &-list {
+  //    &-item {
+  //      width:9.09%;
+  //      &:last-child{
+  //      }
+  //      &-link {
+  //        &.on {
+  //          &:after{
+  //
+  //          }
+  //        }
+  //      }
+  //    }
+  //  }
+  //  &-town {
+  //    &-item {
+  //      &:nth-child(8){
+  //        border-right: none;
+  //      }
+  //      &:last-child{
+  //        border-right: none;
+  //      }
+  //      &-link {
+  //        &.on {
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
 }
 
 // 1260 <
@@ -194,52 +230,6 @@
   .local {
     &-list {
       &-item {
-        width:9.09%;
-        &:last-child{
-        }
-        &-link {
-          &.on {
-            &:after{
-
-            }
-          }
-        }
-      }
-    }
-    &-town {
-      &-item {
-        width:16%;
-        font-size:1rem;
-        &:nth-child(6){
-          border-right:0;
-        }
-        &:nth-child(8){
-          border-right:1px solid #d9d9d9;
-        }
-        &:last-child{
-          border-right: none;
-        }
-        &-link {
-          &.on {
-          }
-        }
-      }
-    }
-  }
-}
-
-
-// 1024 <
-@media all and (max-width:1024px) {
-
-}
-
-
-// 780 <
-@media all and (max-width:780px) {
-  .local {
-    &-list {
-      &-item {
         width:33.333%;
         border-bottom:1px solid #d9d9d9;
         &:nth-child(3n){
@@ -280,6 +270,20 @@
       }
     }
   }
+
+
+}
+
+
+// 1024 <
+@media all and (max-width:1024px) {
+
+}
+
+
+// 780 <
+@media all and (max-width:780px) {
+
 
   .timesetting-date-calendar:after{
     //right:20px;
@@ -489,8 +493,17 @@
       height:54px;
       line-height:54px;
       padding:0;
-      font-size:0.825rem;
+      font-size:1rem;
       text-align:center;
+    }
+    .btn-type-tab{
+      &.active{
+        width: 50%;
+        height: auto;
+        min-height: 66px;
+        padding: 10px;
+        line-height: 1.4;
+      }
     }
   }
 
