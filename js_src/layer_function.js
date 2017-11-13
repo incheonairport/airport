@@ -181,14 +181,18 @@ $(document).ready(function(){
     });
 
     $(window).on('resize', function(){
-      var widthSize = window.outerWidth;
+      var widthSize = window.innerWidth;
+
       if (widthSize <= 780) {
-        $('.header').animate({left: -100 + '%'},0);
-        $('.mobile-header').removeClass('active');
+        if( !$('.mobile-header').hasClass('active') ){
+          $('.header').css({left: '-100%'});
+        }
+
       } else if (widthSize > 780) {
-        $('.header').animate({left:0},0);
+        $('.header').css({left:0});
+        $('.mobile-header').removeClass('active');
       }
-    });
+    }).resize();
   }
   function macSelectReStyle(){
 

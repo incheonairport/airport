@@ -78,7 +78,18 @@
     }
   }
   .maglev-train{
-    background-size: cover;
+    &-line{
+      &-list {
+        &:after {
+          left: 100px;
+        }
+        &-article{
+          &-link {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
   }
   .bussearch{
     background-size: cover;
@@ -126,6 +137,15 @@
         &.ico:after{
           top:0;
           right:0;
+        }
+      }
+    }
+  }
+  .maglev-train{
+    &-line{
+      &-list {
+        &:after {
+          left: 90px;
         }
       }
     }
@@ -415,6 +435,78 @@
         &.ico:after{
           top:0;
           right:0;
+        }
+      }
+    }
+  }
+
+  .maglev-train-line{
+    padding: 46px 40px 40px;
+    border: 1px solid #f3f4f8;
+    position: relative;
+    //background: url(/static/ap/images/bg_maglev_train_line_02.png) no-repeat;
+    //background-size: cover;
+    //min-height: 500px;
+    &-list{
+      width: 100%;
+      min-height: 415px;
+      position: relative;
+      &:before{
+        content: '';
+        display: block;
+        width: 50%;
+        height: 150px;
+        border: 5px solid #ffae43;
+        border-left: 0;
+        position: absolute;
+        top: 50px;
+        left: 25%;
+      }
+
+      &:after{
+        content: '';
+        display: block;
+        width: 50%;
+        height: 150px;
+        background: 0;
+        border: 5px solid #ffae43;
+        border-right: 0;
+        border-top: 0;
+        position: absolute;
+        top: 205px;
+        left: 25%;
+      }
+      &-article{
+        float: none;
+        width: 50%;
+        position: absolute;
+        margin-top: 130px;
+        background: white;
+        &:nth-child(2){
+          right: 0;
+          top: 0;
+          margin-top: 85px;
+        }
+        &:nth-child(3){
+          right: 0;
+          top: 110px;
+        }
+        &:nth-child(4){
+          left: 0;
+          top: 110px;
+        }
+        &:nth-child(5){
+          left: 0;
+          top: 260px;
+        }
+        &:nth-child(6){
+          right: 0;
+          top: 260px;
+        }
+        &-link{
+          &.station:before{
+            top: -50px;
+          }
         }
       }
     }
