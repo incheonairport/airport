@@ -43,25 +43,6 @@
     }
   }
 
-  // infographics
-  .customs_inspection{
-    height:300px;
-    background-size:100%!important;
-    background:#333649 url(/static/ap/images/digr_customs_inspection_procedure.png) no-repeat center;
-  }
-
-  .digr_airport_railroad{
-    height:200px;
-    background-size:100%!important;
-    background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
-  }
-
-  /*KTX 노선도*/
-  .digr_ktx_route{
-    height:200px;
-    background-size:100%!important;
-    background: url(/static/ap/images/digr_ktx_route.png) no-repeat;
-  }
 
   // date time setting
   .timesetting{
@@ -411,17 +392,14 @@
 
   // infographics
   .customs_inspection{
-    height:150px;
-    background-size:120%!important;
+    height:200px;
   }
   .digr_airport_railroad{
-    height:68px;
-    background-size:100%!important;
-    background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
+    height:200px;
   }
 
   .digr_ktx_route{
-    height:90px;
+    height:200px;
   }
 
   // date time setting

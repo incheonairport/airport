@@ -3,7 +3,8 @@
 .customs_inspection{
     height:400px;
     text-indent:-999em;
-    background:#333649 url(/static/ap/images/digr_customs_inspection_procedure.png) no-repeat;
+    background:url(/static/ap/images/digr_customs_inspection_procedure.png) center no-repeat #333649;
+    background-size:contain;
 }
 
 
@@ -11,14 +12,17 @@
 .digr_airport_railroad{
   height:274px;
   text-indent:-999em;
-  background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
+  background: url(/static/ap/images/digr_airport_railroad.png) center no-repeat #f3f4f8;
+  background-size:contain;
 }
 
 /*KTX 노선도*/
 .digr_ktx_route{
   height:274px;
   text-indent:-999em;
-  background: url(/static/ap/images/digr_ktx_route.png) no-repeat;
+  background: url(/static/ap/images/digr_ktx_route.png) center no-repeat #fff;
+  background-size:contain;
+  border:1px solid #dcdcdc;
 }
 
 

@@ -219,10 +219,6 @@ $(document).ready(function(){
     } else if(InnerTabStringLength > 14){
       innerTabLink.addClass('active');
     }
-
-
-
-    console.log(tabStringLength);
   }
 
   // ready function running

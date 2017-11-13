@@ -32,15 +32,23 @@
           width: 100%;
           padding-right:0;
         }
-        //&.w30{
-        //  margin-top: 10px;
-        //  width: 100%;
-        //  img{
-        //    width: 50%;
-        //    float: left;
-        //    margin-top: 0;
-        //  }
-        //}
+        &.w30{
+          &.full{
+            width:30%;
+            margin-top:0;
+            img{
+              width:100%;
+              vertical-align:top;
+            }
+          }
+          margin-top: 10px;
+          width: 100%;
+          img{
+            width: 50%;
+            float: left;
+            margin-top: 0;
+          }
+        }
       }
     }
 

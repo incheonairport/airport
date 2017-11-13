@@ -37,17 +37,21 @@
   text-indent:-999em;
   margin-bottom:34px;
   &.baggage1{
-    background:url(/static/ap/images/digr_info_graphic01.png) no-repeat #323648;
+    background:url(/static/ap/images/digr_info_graphic01.png) center no-repeat #323648;
+    background-size:contain;
   }
   &.baggage2{
-    background:url(/static/ap/images/digr_info_graphic02.png) no-repeat #323648;
+    background:url(/static/ap/images/digr_info_graphic02.png) center no-repeat #323648;
+    background-size:contain;
   }
   &.baggage3{
-    background:url(/static/ap/images/digr_info_graphic03.png) no-repeat #323648;
+    background:url(/static/ap/images/digr_info_graphic03.png) center no-repeat #323648;
+    background-size:contain;
   }
   &.packing{
     height:330px;
-    background:url(/static/ap/images/digr_info_graphic04.png) no-repeat #323648;
+    background:url(/static/ap/images/digr_info_graphic04.png) center no-repeat #323648;
+    background-size:contain;
   }
 }
 
