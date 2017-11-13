@@ -187,3 +187,15 @@ $(document).ready(function(){
   tableOperationEvent(); // AP_DC_07_02.html train operation tab event
   LayerGnbEvent(); // Layer popup mobile header event
 });
+
+$(function(){
+
+  $('.gnb-item').eq(p).find('.gnb-link').addClass('on');
+
+  $('.back-to-home').on('click', function(){
+
+    window.close();
+
+  });
+
+});

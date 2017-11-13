@@ -6,7 +6,7 @@
 }
 
 #top-contents{
-  margin-top:126px;
+  margin-top:101px;
 }
 
 %clearfix:after,
@@ -153,19 +153,6 @@
     background-position:-351px -65px;
     width: 7px;
     height: 10px;
-  }
-
-  &.gnb-map:after{
-    background-position:-154px -131px;
-    width: 22px;
-    height: 27px;
-  }
-
-  &.gnb-search:after {
-    background-position: -34px -134px;
-    width: 22px;
-    height: 27px;
-    top:4px;
   }
 
   &.arrow-infolin-right_w:after{
@@ -398,8 +385,8 @@
     background: none;
     padding: 0;
     color: #666;
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 0.8125rem;
+    font-weight: 300;
     line-height: 0;
     text-align: left;
     text-indent: 10px;
@@ -422,7 +409,7 @@
       border: none;
 
       &:after {
-        transition: all .4s;
+        transition: transform .4s;
       }
 
       &:before {

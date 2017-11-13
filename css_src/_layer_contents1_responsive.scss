@@ -66,7 +66,7 @@
       padding: 30px 10px 0;
       .departure-step-list-article {
         width:50%!important;
-        font-size:0.925rem;
+        font-size:0.825rem;
         height:130px;
 
       }
@@ -168,6 +168,9 @@
           }
           &.step-4:before{
             background-position: -8px -76px;
+          }
+          &.step-5:before{
+            background-position: -77px -76px;
           }
 
 
