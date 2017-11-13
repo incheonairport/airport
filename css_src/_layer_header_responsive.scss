@@ -16,6 +16,18 @@
 @media all and (max-width:1259px) {
   .header{
     max-width:260px;
+    &-heading{
+      margin-bottom:75px;
+      font-family:nanumsq, sans-serif;
+      font-size:2.125em;
+      font-weight:400;
+      color:#fff;
+      text-align:center;
+
+      &-sub{
+        font-size:1.75rem;
+      }
+    }
   }
 }
 
@@ -29,14 +41,16 @@
 // 780 <
 @media all and (max-width:780px) {
   .header{
-    width:70%;
+    //width:70%;
     padding-top: 136px;
     max-width:400px;
+    min-width:260px;
+
     //left:-100%;
     z-index:9999;
     &-heading{
       margin-bottom:36px;
-      font-size:2.143em;
+      font-size:2.125rem;
       &-sub{
         display:block;
         margin-top:10px;

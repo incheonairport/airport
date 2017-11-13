@@ -141,7 +141,9 @@
             height: 16px;
             content: '';
             position:absolute;
-            left:43px;
+            left:0;
+            right:0;
+            margin:auto;
             top: 45px;
             background: #323648;
             z-index: 1;
@@ -166,7 +168,7 @@
       border-right: 1px solid #d9d9d9;
       text-align: center;
       margin-bottom:20px;
-      &:nth-child(8){
+      &:nth-child(8n){
         border-right: none;
       }
       &:last-child{

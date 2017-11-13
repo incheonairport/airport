@@ -12,11 +12,15 @@
 
 @import "jquery.bxslider";
 
+@import "jquery-ui.min";
+
 @import "base_common";
+@import "base_common_responsive";
 
 @import "base_main";
 
 @import "base_subcontents1";
+@import "base_subcontents1_responsive";
 
 @import "base_subcontents2";
 
@@ -31,5 +35,7 @@
 @import "base_subcontents_radio";
 @import "base_subcontents_radio_responsive";
 
+@import "base_terms";
 
 @import "base_footer";
+@import "base_footer_responsive";

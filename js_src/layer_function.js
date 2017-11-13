@@ -4,7 +4,6 @@ $(function(){
   function isMobile(){
     if(navigator.userAgent.indexOf('Mobile') != -1){
       $('html').addClass('mobile');
-      $('select').addClass('mac-select');
     }
   }
   function isOS(){
@@ -12,6 +11,8 @@ $(function(){
       $('select').addClass("mac");
     }
   }
+
+
   function tabAction(){
     var tabWidth = 0;
     var $tabWrap;
@@ -92,7 +93,7 @@ $(function(){
 
   // running
   isMobile(); // PC and Mobile check
-  isOS(); // OS check
+  //isOS(); // OS check
   tabAction(); // tab.length width auto divide event
 });
 
@@ -194,13 +195,29 @@ $(document).ready(function(){
       }
     }).resize();
   }
-  function macSelectReStyle(){
-
+  function layerCloseEvent(){
+    $('.lp-close').on('click', function(e){
+      window.opener='Self';
+      window.close();
+      e.preventDefault();
+    });
   }
-
 
   // ready function running
   tableOperationEvent(); // AP_DC_07_02.html train operation tab event
-  layerGnbEvent(); // Layer popup mobile header event
-  macSelectReStyle(); // mac select box rounding remove
+  layerGnbEvent(); // [LP] Layer popup mobile header event
+  layerCloseEvent(); // [LP] Layer popup close event
+
+});
+
+$(function(){
+
+  $('.gnb-item').eq(p).find('.gnb-link').addClass('on');
+
+  $('.back-to-home').on('click', function(){
+
+    window.close();
+
+  });
+
 });

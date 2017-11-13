@@ -56,6 +56,13 @@
     background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
   }
 
+  /*KTX 노선도*/
+  .digr_ktx_route{
+    height:200px;
+    background-size:100%!important;
+    background: url(/static/ap/images/digr_ktx_route.png) no-repeat;
+  }
+
   // date time setting
   .timesetting{
     &-date{
@@ -111,6 +118,39 @@
       }
     }
   }
+
+
+  /*버스지역*/
+  .local {
+    &-list {
+      &-item {
+        width:9.09%;
+        &:last-child{
+        }
+        &-link {
+          &.on {
+            &:after{
+
+            }
+          }
+        }
+      }
+    }
+    &-town {
+      &-item {
+        &:nth-child(8){
+          border-right: none;
+        }
+        &:last-child{
+          border-right: none;
+        }
+        &-link {
+          &.on {
+          }
+        }
+      }
+    }
+  }
 }
 
 // 1260 <
@@ -141,11 +181,47 @@
       }
     }
   }
-  .maglev-train{
-    &-line{
-      &-list {
-        &:after {
-          left: 90px;
+  .maglev-train {
+  &-line {
+    &-list {
+      &:after {
+        left: 90px;
+      }
+    }
+  }
+}
+  /*버스지역*/
+  .local {
+    &-list {
+      &-item {
+        width:9.09%;
+        &:last-child{
+        }
+        &-link {
+          &.on {
+            &:after{
+
+            }
+          }
+        }
+      }
+    }
+    &-town {
+      &-item {
+        width:16%;
+        font-size:1rem;
+        &:nth-child(6){
+          border-right:0;
+        }
+        &:nth-child(8){
+          border-right:1px solid #d9d9d9;
+        }
+        &:last-child{
+          border-right: none;
+        }
+        &-link {
+          &.on {
+          }
         }
       }
     }
@@ -161,6 +237,50 @@
 
 // 780 <
 @media all and (max-width:780px) {
+  .local {
+    &-list {
+      &-item {
+        width:33.333%;
+        border-bottom:1px solid #d9d9d9;
+        &:nth-child(3n){
+          border-right:0;
+        }
+        &:last-child{
+          border-right:1px solid #d9d9d9;
+        }
+        &-link {
+          font-size:0.9rem;
+          &.on {
+            &:after{
+              display:none;
+            }
+          }
+        }
+      }
+    }
+    &-town {
+      padding:10px;
+      border-top:0;
+      &-item {
+        margin-bottom:10px;
+        width:33.33%;
+        font-size:1rem;
+        border:0;
+        &:nth-child(8n){
+          border-right:0;
+        }
+        &:last-child{
+          border-right: none;
+        }
+        &-link {
+          font-size:0.9rem;
+          &.on {
+          }
+        }
+      }
+    }
+  }
+
   .timesetting-date-calendar:after{
     //right:20px;
   }
@@ -172,7 +292,7 @@
       padding: 30px 10px 0;
       .departure-step-list-article {
         width:50%!important;
-        font-size:0.925rem;
+        font-size:0.825rem;
         height:130px;
 
       }
@@ -275,6 +395,9 @@
           &.step-4:before{
             background-position: -8px -76px;
           }
+          &.step-5:before{
+            background-position: -77px -76px;
+          }
 
 
         }
@@ -291,6 +414,10 @@
     height:68px;
     background-size:100%!important;
     background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
+  }
+
+  .digr_ktx_route{
+    height:90px;
   }
 
   // date time setting
@@ -362,6 +489,7 @@
       height:54px;
       line-height:54px;
       padding:0;
+      font-size:0.825rem;
       text-align:center;
     }
   }
@@ -413,11 +541,40 @@
       }
     }
   }
-  .bussearch{
-    background-size: cover;
-    padding: 10px 10px;
+
+  table{
+    .btn-download{
+      width: auto;
+      padding-left:20px;
+      padding-right:10px;
+    }
+  }
+  .notice-box{
+    //padding:0;
+    //border:0;
+    margin-bottom:0;
     &-title{
-      font-size: 1rem;
+      width:auto;
+      border-right: 0;
+      text-align: center;
+      font-size: 1.125rem;
+      font-weight: 900;
+      float:none;
+      position:static;
+      line-height:2;
+    }
+    &-txt{
+      margin-left:0;
+      float:none;
+      text-align:center;
+    }
+  }
+  .bussearch{
+    margin-top:-60px;
+    background-size: cover;
+    padding: 10px 10px 40px;
+    &-title{
+      font-size: 1.125rem;
       float: none;
       text-align: center;
     }

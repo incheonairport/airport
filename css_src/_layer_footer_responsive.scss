@@ -1,0 +1,14 @@
+// 780 <
+@media all and (max-width:780px) {
+  // LP close
+  .lp-close {
+    display:block;
+    background: url(/static/ap/images/spr_ico_global.png) no-repeat -143px -189px;
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    top: 20px;
+    right: 15px;
+    z-index:9998;
+  }
+}
