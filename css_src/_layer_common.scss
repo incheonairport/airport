@@ -24,16 +24,7 @@
   }
 }
 
-.back-to-home{
-  display:block;
-  width:31px;
-  height:31px;
-  background:url(/static/ap/images/ico_back_to_home.png) no-repeat;
-  text-indent:-99999em;
-  position:absolute;
-  top:50px;
-  right:50px;
-}
+
 
 .heading{
 
@@ -328,7 +319,7 @@
 
       &-link{
         display:block;
-        height:54px;
+        min-height:54px;
         background:#f2f2f2;
         border:1px solid #d9d9d9;
         border-bottom-color:#42519e;
@@ -923,53 +914,100 @@ em{
 
 
   &.icon {
-    &-type1:after {
-      background-position: -11px -10px;
+    &-type1{
+      &:after {
+        background-position: -11px -10px;
+      }
     }
-    &-type2:after {
-      background-position: -105px -10px;
+
+    &-type2{
+      &:after {
+        background-position: -105px -10px;
+      }
     }
-    &-type3:after {
-      background-position: -199px -10px;
+
+    &-type3{
+      &:after {
+        background-position: -199px -10px;
+      }
     }
-    &-type4:after {
+
+    &-type4{
+      &:after {
       background-position: -11px -105px;
+      }
     }
-    &-type5:after {
-      background-position: -105px -105px;
+
+    &-type5{
+      &:after {
+        background-position: -105px -105px;
+      }
     }
-    &-type6:after {
-      background-position: -199px -105px;
+
+    &-type6{
+      &:after {
+        background-position: -199px -105px;
+      }
     }
-    &-type7:after {
-       background-position: -11px -199px;
-     }
-    &-type8:after {
-      background-position: -105px -199px;
+
+    &-type7{
+      &:after {
+        background-position: -11px -199px;
+      }
+   }
+
+    &-type8{
+      &:after {
+        background-position: -105px -199px;
+      }
     }
-    &-type9:after {
-      background-position: -199px -199px;
+
+    &-type9{
+      &:after {
+        background-position: -199px -199px;
+      }
     }
-    &-koreanair:after {
-      background-position: -11px -293px;
+
+    &-koreanair{
+      &:after {
+        background-position: -11px -293px;
+      }
     }
-    &-asiana:after {
-      background-position: -105px -293px;
+
+    &-asiana{
+      &:after {
+        background-position: -105px -293px;
+      }
     }
-    &-another:after {
-      background-position: -199px -293px;
+
+    &-another{
+      &:after {
+        background-position: -199px -293px;
+      }
     }
-    &-maglev-train1:after {
-      background-position: -11px -387px;
+
+    &-maglev-train1{
+      &:after {
+        background-position: -11px -387px;
+      }
     }
-    &-maglev-train2:after {
-      background-position: -105px -387px;
+
+    &-maglev-train2{
+      &:after {
+        background-position: -105px -387px;
+      }
     }
-    &-maglev-train3:after {
-      background-position: -199px -387px
+
+    &-maglev-train3{
+      &:after {
+          background-position: -199px -387px
+      }
     }
-    &-maglev-train4:after {
-      background-position: -11px -481px;
+
+    &-maglev-train4{
+      &:after {
+        background-position: -11px -481px;
+      }
     }
   }
 
@@ -1655,3 +1693,18 @@ b.text-bold{
     float:right;
   }
 }
+
+
+//select.mac{
+//  -webkit-border-radius: 0;
+//  -moz-border-radius: 0;
+//  -ms-border-radius: 0;
+//  border-radius: 0;
+//
+//  -webkit-appearance: none;
+//  -moz-appearance: none;
+//  -ms-appearance: none;
+//  appearance: none;
+//
+//  background:url(/static/ap/images/ico_mac_arrow.png) no-repeat 94% center #fff;
+//}

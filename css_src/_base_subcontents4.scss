@@ -544,6 +544,16 @@
       &.w30{
         width: 30%;
       }
+
+      &.w60{
+        width: 60%;
+      }
+
+      &.w40{
+        width: 40%;
+        padding-left:27px;
+      }
+
       &.w80{
         width: 80%;
       }
@@ -1128,6 +1138,14 @@
     height:200px;
     padding:15px;
   }
+  &.email{
+    width: 146px;
+    margin-left: 5px;
+    &:first-child{
+      margin-left: 0;
+      margin-right: 5px;
+    }
+  }
 }
 /*파일 첨부, 주소 검색*/
 .user{
@@ -1160,7 +1178,15 @@
         color: #666;
       }
     }
+    &.id{
+      width: 410px;
+      .user-input-text{
+        width: 263px;
+        float:left;
+      }
+    }
   }
+
 }
 
 /*select*/
@@ -1170,9 +1196,13 @@
   padding: 0 15px;
   border: 1px solid #d9d9d9;
   font-size: 1rem;
-
+  vertical-align: top;
   &option{
     font-size: 1rem;
+  }
+  &.email{
+    width: 146px;
+    margin-left: 5px;
   }
 }
 /*이용일시*/
@@ -1346,32 +1376,159 @@ button, a {
 
 
 /*회원가입*/
-.now-join-step{
-  padding: 40px;
-  border-bottom: 1px solid #d9d9d9;
-  text-align: center;
-  &-ico{
-    &:after{
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      margin: auto;
-      background: url(/static/ap/images/spr_ico_join.png) no-repeat;
-
-    }
-    &.finish{
-      padding-top:87px;
-      &:after{
-        background-position: -122px -10px;
-        width: 112px;
-        height:96px;
+.join{
+  &-service{
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+    &-list{
+      @extend %clearfix;
+      &-item{
+        width: 214px;
+        height: 214px;
+        margin:0 20px 50px 0;
+        padding-top: 160px;
+        float: left;
+        font-size: 1rem;
+        position: relative;
+        background: #f6f7fa;
+        border-radius: 50%;
+        color: #333649;
+        &:last-child{
+          margin-right: 0;
+        }
+        &.two{
+          padding-top: 138px;
+          line-height: 1.5;
+        }
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: auto;
+          margin: auto;
+          background:url(/static/ap/images/spr_ico_join_service.png) no-repeat;
+        }
+        &.sms:before{
+          background-position: -10px -10px;
+          width: 214px;
+          height: 214px;
+        }
+        &.lost:before{
+          background-position: -246px -10px;
+          width: 214px;
+          height: 214px;
+        }
+        &.tour:before{
+          background-position: -482px -10px;
+          width: 214px;
+          height: 214px;
+        }
+        &.cs:before{
+          background-position: -710px -10px;
+          width: 214px;
+          height: 214px;
+        }
+        &.application:before{
+          background-position: -950px -10px;
+          width: 214px;
+          height: 214px;
+        }
       }
     }
+  }
+  &-agree{
 
+    &-article{
+      border-bottom: 1px solid #d9d9d9;
+      padding: 30px 20px;
+    }
+    &-all{
+      padding: 30px 20px 0;
+    }
+  }
+
+  &-membership{
+    .password-change{
+      width: 100px;
+      display: inline-block;
+    }
+  }
+
+  &-ipin-btn{
+    margin-top: 60px;
+    text-align: center;
+    .btn-type-normal{
+      width: 355px;
+    }
+    &-simple{
+      margin-top: 5px;
+      .btn-type-normal{
+        width: 177px;
+        padding: 10px;
+      }
+    }
+  }
+
+  &-step-btn{
+    margin-top: 40px;
+    text-align: center;
+    .btn-type-normal{
+      min-width: 176px;
+      &.left{
+        padding: 0 20px 0 45px;
+        text-align: right;
+        &.ico:after {
+          left: 18px;
+          right: auto;
+        }
+      }
+    }
+  }
+
+  &-step-procedure{
+    height: 315px;
+    padding:40px;
+    border-bottom: 1px solid #d9d9d9;
+    position: relative;
+    display: block;
+    &-ico{
+      padding-top:130px;
+      text-align: center;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: auto;
+        margin: auto;
+        background: url(/static/ap/images/spr_ico_join.png) no-repeat;
+
+      }
+      &.finish{
+        &:before{
+          background-position: -122px -10px;
+          width: 112px;
+          height:96px;
+          top: 40px;
+        }
+      }
+      &.certification{
+        margin-top: 30px;
+        position: relative;
+        display: block;
+        &:before{
+          background-position: -12px -13px;
+          width:90px;
+          height:90px;
+        }
+      }
+    }
   }
 }
 

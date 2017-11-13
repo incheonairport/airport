@@ -61,6 +61,7 @@
 /*버스검색*/
 .bussearch{
   background:url(/static/ap/images/bg_layer_search.jpg) no-repeat;
+  background-size: cover;
   padding: 58px 141px;
   &-title{
     color: #fff;
@@ -140,7 +141,9 @@
             height: 16px;
             content: '';
             position:absolute;
-            left:43px;
+            left:0;
+            right:0;
+            margin:auto;
             top: 45px;
             background: #323648;
             z-index: 1;
@@ -165,7 +168,7 @@
       border-right: 1px solid #d9d9d9;
       text-align: center;
       margin-bottom:20px;
-      &:nth-child(8){
+      &:nth-child(8n){
         border-right: none;
       }
       &:last-child{
@@ -302,7 +305,7 @@
 /*주차요금계산기*/
 .calculator{
   width: 100%;
-  height: 98px;
+  min-height: 98px;
   padding: 20px;
   background: #323648;
   @extend %clearfix;
@@ -311,6 +314,10 @@
 /*날짜및시간설정*/
 .timesetting{
   &-date{
+    &.f-left,
+    &.f-right{
+      height:56px;
+    }
     &-day{
       width: 140px;
       height: 56px;
@@ -323,7 +330,7 @@
     }
     &-calendar{
       width: 46px;
-      height: 58px;
+      height: 56px;
       border: 1px solid #d9d9d9;
       border-left: 0;
       background: #fff;
@@ -338,7 +345,7 @@
     }
     &-option{
       width: 170px;
-      height: 58px;
+      height: 56px;
       font-size: 1rem;
       padding-left: 10px;
       border: 1px solid #d9d9d9;
@@ -347,6 +354,7 @@
         border-left: 0;
       }
     }
+
   }
   &-dash{
     margin: 0 auto;

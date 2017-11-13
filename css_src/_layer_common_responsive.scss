@@ -26,8 +26,33 @@
         }
       }
     }
+    &.double{
+      .inner-col{
+        &.w-auto{
+          width: 100%;
+          padding-right:0;
+        }
+        &.w30{
+          margin-top: 10px;
+          width: 100%;
+          img{
+            width: 50%;
+            float: left;
+            margin-top: 0;
+          }
+        }
+      }
+    }
 
     &.triple{
+      &.normal-3{
+        .inner-col{
+          &:last-child{
+            margin-top:0;
+          }
+        }
+      }
+
       .inner-col{
         width:50%;
         &:last-child{
@@ -132,11 +157,50 @@
       }
     }
   }
+  // banner
+  .banner{
+    width: 100%;
+    padding: 25px;
+    min-height: inherit;
+    &-title{
+      width: 100%;
+      font-size: 2.75rem;
+      padding-top: 0;
+      margin: 0 auto;
+      text-align: center;
+      strong{
+        display: inline-block;
+      }
+      &:after{
+        top: 115px;
+      }
+    }
+    &-text{
+      br{
+        display: none;
+      }
+    }
+  }
+
+  .icontxt{
+    br{
+      display:none;
+    }
+    .icontxt-info{
+      padding-right:20px;
+    }
+  }
 }
 
 
 // 1260 <
 @media all and (max-width:1259px) {
+  // common
+  table{
+    .btn-type-small{
+      min-width:inherit;
+    }
+  }
   // layout
   .contents{
     min-width:calc(100% - 260px);
@@ -183,6 +247,9 @@
       white-space:nowrap;
     }
   }
+
+  // icon text
+
 }
 
 
@@ -190,7 +257,7 @@
 @media all and (max-width:1024px) {
   // layout
   .inner-contents{
-    padding:0 15px 30px;
+    padding:65px 15px 30px;
   }
 }
 
@@ -218,17 +285,42 @@
     .inner-col{
       width: 100%!important;
       float:none;
+      &.btn-right{
+        position: static;
+        text-align: left;
+      }
     }
     &.double{
+      p{
+        text-align:left;
+      }
       .inner-col{
         width:100%;
         &:last-child{
           margin-top:20px;
         }
+        &.w30{
+          margin-top: 10px;
+          img{
+            width: 100%;
+            &:last-child{
+              margin-top: 10px;
+            }
+          }
+        }
       }
     }
 
     &.triple{
+      &.normal-3{
+        .inner-col{
+          width:100%!important;
+          &:last-child{
+            margin-top:20px;
+          }
+        }
+      }
+
       .inner-col{
         width:100%;
         &:first-child{
@@ -294,8 +386,11 @@
           //width:50%!important;
         }
         &-link{
+          //height:auto;
+          padding:14px 10px;
+          line-height:1.4;
           border-bottom-color:#d9d9d9;
-          font-size:1rem;
+          font-size:0.825rem;
           letter-spacing:-1px;
           &.on{
             border-bottom:2px solid #42519e;
@@ -339,6 +434,13 @@
     padding:0;
     line-height:50px;
     text-align:center!important;
+    &.ico{
+      text-indent:0;
+      &:after{
+        left:auto;
+        right:10px;
+      }
+    }
   }
   .btn-type-small{
     min-width:200px;
@@ -351,6 +453,10 @@
   // guide text
   .guide-desc{
     font-size:0.825rem;
+    &.mark{
+     text-indent:0;
+      padding-left:0;
+    }
   }
 
   // icon text
@@ -373,6 +479,9 @@
 
   // table
   .table{
+    &.table-block{
+      display:table!important;
+    }
     &.vt{
       &.board-list{
         overflow: visible;
@@ -382,7 +491,7 @@
           span{
             font-size:0.8125rem;
           }
-          padding: 8px 0px;
+          padding: 8px 0;
           & .board-list-link{
             font-size:1rem;
             &.lock{
@@ -421,7 +530,6 @@
       overflow-y: hidden;
       white-space: nowrap;
       display: inline-block;
-      -webkit-overflow-scrolling: touch;
       th{
         text-align: left;
         padding-left: 10px;
@@ -434,7 +542,12 @@
       }
     }
     &.hr{
-      word-break:break-all;
+      .radio-box{
+        margin-top:10px;
+        &:first-child{
+          margin-top:0;
+        }
+      }
       br{
         display:none;
       }
@@ -444,6 +557,9 @@
         letter-spacing: -1px;
         font-weight:900;
         padding:0 11px;
+      }
+      td{
+        padding: 14px 6px 16px;
       }
     }
   }
@@ -591,15 +707,7 @@
     }
   }
 
-  // LP close
-  .back-to-home {
-    background: url(/static/ap/images/spr_ico_global.png) no-repeat -143px -189px;
-    position: fixed;
-    width:25px;
-    height:25px;
-    top: 20px;
-    right: 15px;
-  }
+
 
   // stuff box
   .stuff{
@@ -922,4 +1030,8 @@
       }
     }
   }
+
+
+
+
 }

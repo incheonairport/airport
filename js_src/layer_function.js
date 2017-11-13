@@ -6,6 +6,13 @@ $(function(){
       $('html').addClass('mobile');
     }
   }
+  function isOS(){
+    if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+      $('select').addClass("mac");
+    }
+  }
+
+
   function tabAction(){
     var tabWidth = 0;
     var $tabWrap;
@@ -82,8 +89,11 @@ $(function(){
   }
 
 
+
+
   // running
   isMobile(); // PC and Mobile check
+  //isOS(); // OS check
   tabAction(); // tab.length width auto divide event
 });
 
@@ -160,7 +170,7 @@ $(document).ready(function(){
       }
     });
   }
-  function LayerGnbEvent(){
+  function layerGnbEvent(){
     $('.layer-gnb-mobile-btn').on('click',function(){
       $('.header').animate({left:0},350);
       $('.mobile-header').addClass('active');
@@ -181,9 +191,29 @@ $(document).ready(function(){
       }
     });
   }
-
+  function layerCloseEvent(){
+    $('.lp-close').on('click', function(e){
+      window.opener='Self';
+      window.close();
+      e.preventDefault();
+    });
+  }
 
   // ready function running
   tableOperationEvent(); // AP_DC_07_02.html train operation tab event
-  LayerGnbEvent(); // Layer popup mobile header event
+  layerGnbEvent(); // [LP] Layer popup mobile header event
+  layerCloseEvent(); // [LP] Layer popup close event
+
+});
+
+$(function(){
+
+  $('.gnb-item').eq(p).find('.gnb-link').addClass('on');
+
+  $('.back-to-home').on('click', function(){
+
+    window.close();
+
+  });
+
 });

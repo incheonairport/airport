@@ -1,0 +1,34 @@
+// 1260 <
+@media all and (max-width:1259px) {
+  .inner-section{
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+// 780 <
+@media all and (max-width:780px) {
+  .inner-section{
+    padding: 0 15px;
+  }
+
+  // reset font
+  article, aside, details, figcaption, figure,
+  footer, header, menu, nav, section {
+    font-size:1rem;
+  }
+
+  // float
+  .f{
+    &-left{
+      float:none;
+    }
+
+    &-right{
+      float:none;
+    }
+  }
+
+}
+
+

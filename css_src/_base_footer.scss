@@ -128,11 +128,23 @@
     }
   }
 
+  .incheon-select{
+    @extend %clearfix;
+    width:100%;
+  }
+
   .incheon-etc{
     @extend %clearfix;
     .web-mark{
-      float:left;
+      display:inline-block;
       margin-right:20px;
+    }
+    .google-play-mark{
+      display:inline-block;
+      height:45px;
+      img{
+        height:100%;
+      }
     }
     .footer-shortcut{
       float:right;
