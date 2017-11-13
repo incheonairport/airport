@@ -17,14 +17,14 @@
 
 .terms_info {
   float:left;
-  width:320px;
+  width:33.333%;
   overflow:hidden;
 }
 
 .terms_info li span {
   width:70px;
   margin-bottom:22px;
-  font-size:14px;
+  font-size:1rem;
   display:inline-block;
 }
 
@@ -57,10 +57,9 @@
 
 .terms_tit {
   margin:40px 0;
-  font-size:18px;
+  font-size:1.25rem;
   color:#333;
-  font-weight:bold;
-  text-align:center;
+  font-weight:800;
   line-height:40px;
 }
 
@@ -70,7 +69,6 @@
 
 .terms_sub_tit {
   margin-bottom:17px;
-  font-size:14px;
   color:#333;
   font-weight:bold;
   line-height:14px;
@@ -79,4 +77,40 @@
 .terms_sub_txt {
   display:block;
   margin:5px 0 20px 16px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.tbl_st01 {
+  width:100%;
+  border-top:1px solid #c7c4c7;
+  border-spacing:0;
+  border-collapse:collapse;}
+.tbl_st01 caption{
+  display: none;
+}
+.tbl_st01 thead th{
+  padding:0 10px;
+  color:#383838;
+  line-height:38px;
+  font-weight:800;
+  background:#ececec;
+  border-right:1px solid #dadada;
+  border-bottom:1px solid #dadada;
+  text-align:center;}
+.tbl_st01 thead th:last-child {
+  border-right:0;
+}
+.tbl_st01 tbody td, .tbl_st01 tbody th {
+  padding:5px 10px;
+  line-height:1.5;
+  font-size: 1.125rem;
+  border-right:1px solid #dadada;
+  border-bottom:1px solid #dadada;
+  text-align:center;}
+.tbl_st01 tbody td:last-child {
+  border-right:0;
+}
+.link_underline{
+  line-height:1.7;
 }
