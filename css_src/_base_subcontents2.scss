@@ -329,6 +329,10 @@
     width:100%;
     height:100%;
     margin-bottom:30px;
+    &.box-border{
+      border-bottom: 1px solid #dee3eb;
+      padding-bottom: 30px;
+    }
     &-head{
       font-family: nanumsq, sans-serif;
       font-size:2.125rem;
@@ -486,7 +490,7 @@
       display:table-cell;
       height:100%;
       vertical-align:top;
-      overflow:auto;
+      //overflow:auto;
       &-inner{
         //height:352px; // 기본값 지정
         height:100%;
@@ -575,6 +579,32 @@
       }
       &.col-1{
         width:100%;
+        .leave-check{
+          border-right:0;
+          border-left:0;
+          padding: 24px 30px 0;
+          .col-btn{
+            width:100%;
+            margin-bottom:-2px;
+            @extend %clearfix;
+            a{
+              text-align: center;
+              border: 1px solid #f2f4f7;
+            }
+            &-link1{
+              float:left;
+              width:20%;
+            }
+            &-link2{
+              width: 100%;
+            }
+
+            &-link3{
+              float:left;
+              width:33.33%;
+            }
+          }
+        }
       }
       &.col-2{
         width:50%;
@@ -644,38 +674,33 @@
       line-height:1.5;
       text-align:center ;
     }
-    &-item.img{
-      border:none;
-      &.leave{
-        background:url(/static/ap/images/bg_step_leave.jpg);
-      }
-      &.entry{
-        background:url(/static/ap/images/bg_step_entry.jpg);
-      }
-      .boxmodel-list-head{
-        color:#fff;
-        font-size:2.875rem;
-        font-weight:500;
-        margin-top:80px;
-        &:after{
-          display:none
-        }
-      }
-      .boxmodel-list-desc{
-        max-width:306px;
-        color:#fff;
-        font-size:1.125rem;
-        font-weight:300;
-        text-transform:uppercase;
-        margin-top:6px;
-      }
-    }
-    &-item.color{
-      background:#f2f4f7;
-    }
-    &-item.color2{
-      background:#f3f4f8;
-    }
+    //&-item.img{
+    //  border:none;
+    //  &.leave{
+    //    background:url(/static/ap/images/bg_step_leave.jpg);
+    //  }
+    //  &.entry{
+    //    background:url(/static/ap/images/bg_step_entry.jpg);
+    //  }
+    //  .boxmodel-list-head{
+    //    color:#fff;
+    //    font-size:2.875rem;
+    //    font-weight:500;
+    //    margin-top:80px;
+    //    &:after{
+    //      display:none
+    //    }
+    //  }
+    //  .boxmodel-list-desc{
+    //    max-width:306px;
+    //    color:#fff;
+    //    font-size:1.125rem;
+    //    font-weight:300;
+    //    text-transform:uppercase;
+    //    margin-top:6px;
+    //  }
+    //}
+
     &-item.text-left{
       & .boxmodel-list-desc{
         text-align:left;
@@ -688,6 +713,9 @@
     }
     &-item.col-two-thirs{
       width:66.66%;
+      .boxmodel-list-item-inner{
+        margin-left: 12px;
+      }
     }
     &-item.col-1{
       width:100%;
@@ -818,100 +846,36 @@
 
 
 .boxmodel-list{
-  &.box-border{
-    border-bottom: 1px solid #c5cad2;
-    padding-bottom: 30px;
-  }
-}
-
-
-
-.icon-check{
-  display: block;
-  height: 155px;
-  padding: 15px 0 0 90px;
-  position: relative;
-
-  &-title{
-    font-weight: 700;
-    margin-bottom: -11px;
-  }
 
 }
 
-.boxmodel-list-item-inner{
-  &.leave-check{
-    padding: 24px 30px 0;
-  }
 
-  .icon-check{
-    &-txt{
-      font-family: 'nanumsq', sans-serif;
-      font-size: 1.75rem;
-      font-weight: 400;
-    }
-
-    &-passport{
-      height: 160px;
-      padding: 70px 0 0 225px;
-
-      &:after{
-        width: 155px;
-        height: 165px;
-        background: url(/static/ap/images/spr_ico_check.png) -12px -21px;
-      }
-
-    }
-
-    &-visa{
-      height: 160px;
-      padding: 60px 0 0 225px;
-
-      &:after{
-        width: 155px;
-        height: 165px;
-        background: url(/static/ap/images/spr_ico_check.png) -181px -21px;
-      }
-    }
-
-    &-international-driver-license{
-      height: 160px;
-      padding: 50px 0 0 200px;
-
-      &:after{
-        width: 155px;
-        height: 165px;
-        background: url(/static/ap/images/spr_ico_check.png) -349px -21px
-      }
-    }
-  }
-
-  .list1{
-    &.col-right{
-      width: 680px;
-      float: left;
-    }
-  }
-
-  .col-btn{
-    &-link1{
-      margin-right: -3px;
-      text-align: center;
-    }
-
-    &-link2{
-      text-align: center;
-      width: 100%;
-    }
-
-    &-link3{
-      margin-right: -3px;
-      text-align: center;
-      width:33.333333%;
-    }
-  }
-
-}
+//
+//.icon-check{
+//  display: block;
+//  height: 155px;
+//  padding: 15px 0 0 90px;
+//  position: relative;
+//
+//  &-title{
+//    font-weight: 700;
+//    margin-bottom: -11px;
+//  }
+//
+//}
+//
+//.boxmodel-list-item-inner{
+//
+//  //.list1{
+//  //  &.col-right{
+//  //    width: 680px;
+//  //    float: left;
+//  //  }
+//  //}
+//
+//
+//
+//}
 
 
 
@@ -921,90 +885,47 @@
 
 // icon text
 .icontxt {
-  display:block;
-  height:74px;
-  padding:15px 0 0 90px;
-  position:relative;
-
-  &:after {
+  display:table;
+  width:100%;
+  height:100%;
+  &:before {
     content:"";
-    display: block;
-    width: 74px;
-    height: 74px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: auto;
-    background: url(/static/ap/images/spr_ico_text.png) no-repeat;
+    display: table;
+    width: 155px;
+    height: 155px;
+    background: url(/static/ap/images/spr_ico_check.png) no-repeat;
   }
 
-
-  &.icon {
-    &-type1:after {
-      background-position: -11px -10px;
-    }
-    &-type2:after {
-      background-position: -105px -10px;
-    }
-    &-type3:after {
-      background-position: -199px -10px;
-    }
-    &-type4:after {
-      background-position: -11px -105px;
-    }
-    &-type5:after {
-      background-position: -105px -105px;
-    }
-    &-type6:after {
-      background-position: -199px -105px;
-    }
-    &-type7:after {
-      background-position: -11px -199px;
-    }
-    &-type8:after {
-      background-position: -105px -199px;
-    }
-    &-type9:after {
-      background-position: -199px -199px;
-    }
-    &-koreanair:after {
-      background-position: -11px -293px;
-    }
-    &-asiana:after {
-      background-position: -105px -293px;
-    }
-    &-another:after {
-      background-position: -199px -293px;
-    }
-    &-maglev-train1:after {
-      background-position: -11px -387px;
-    }
-    &-maglev-train2:after {
-      background-position: -105px -387px;
-    }
-    &-maglev-train3:after {
-      background-position: -198px -387px;
-    }
-    &-maglev-train4:after {
-      background-position: -11px -480px;
-    }
-  }
-
-  &-title {
-    font-weight: 700;
-    margin-bottom: 10px;
-
-    &.list1-item{
-      line-height:1;
-    }
-  }
-  &-info {
+  &-title{
+    width:100%;
+    display:table-cell;
+    vertical-align:middle;
+    height:100%;
+    text-align: center;
+    font-family: 'nanumsq', sans-serif;
+    font-size: 1.75rem;
     font-weight: 400;
+    line-height:1.3;
 
-    &.list1-item{
-      line-height:1;
+  }
+  &.icon-check-passport{
+    &:before{
+      background-position: -12px -21px;
     }
   }
+
+  &.icon-check-visa{
+    &:before{
+      background-position: -181px -21px;
+    }
+  }
+
+  &.icon-check-international-driver-license{
+    &:before{
+      background-position: -349px -21px
+    }
+  }
+
 }
 
 //button
@@ -1187,4 +1108,9 @@
       top: 4px;
     }
   }
+}
+
+.boxsize-auto{
+  min-height:inherit!important;
+  height:auto!important;
 }

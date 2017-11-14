@@ -141,7 +141,10 @@
     }
     .google-play-mark{
       display:inline-block;
-      height:45px;
+      height:30px;
+      position:relative;
+      bottom:8px;
+      right:-14px;
       img{
         height:100%;
       }
