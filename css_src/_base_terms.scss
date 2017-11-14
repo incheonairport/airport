@@ -90,24 +90,27 @@
   display: none;
 }
 .tbl_st01 thead th{
-  padding:0 10px;
+  padding:5px 10px;
   color:#383838;
-  line-height:38px;
-  font-weight:800;
+  line-height:1.7;
+  font-weight:700;
   background:#ececec;
   border-right:1px solid #dadada;
   border-bottom:1px solid #dadada;
-  text-align:center;}
+  text-align:center;
+}
 .tbl_st01 thead th:last-child {
   border-right:0;
 }
 .tbl_st01 tbody td, .tbl_st01 tbody th {
   padding:5px 10px;
   line-height:1.5;
-  font-size: 1.125rem;
+  font-size: 1rem;
   border-right:1px solid #dadada;
   border-bottom:1px solid #dadada;
-  text-align:center;}
+  text-align:center;
+  vertical-align: middle;
+}
 .tbl_st01 tbody td:last-child {
   border-right:0;
 }
@@ -118,4 +121,15 @@
 .mail_box {
   padding: 60px 0 40px 264px;
   background: url(/static/ap/images/img_mail.png) no-repeat 107px 54px;
+}
+
+.ml8{
+  margin-left: 8px;
+}
+.pl75{
+  padding-left: 75px;
+}
+
+.mgb0 {
+  margin-bottom: 0px !important;
 }
