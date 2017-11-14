@@ -762,7 +762,7 @@
     height: 36px
   }
   thead th{
-    width: 177px;
+    width: 179px;
   }
   thead th:first-child{
     width: 135px;
@@ -775,7 +775,7 @@
     height: 100%;
   }
   tbody td{
-    width: 872px;
+    width: 854px;
     text-align: center;
   }
 }
@@ -970,4 +970,5 @@
 
 .imgbox{
   width: 100%;
+  vertical-align: top;
 }
