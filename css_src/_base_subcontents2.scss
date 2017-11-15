@@ -52,6 +52,21 @@
       text-align: center;
       display: block;
     }
+    &.path-departure{
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+    }
+    &.airline-city{
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+    }
+    &.immigration-procedure{
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+    }
   }
   &-btn-group{
     height:auto;
@@ -201,6 +216,15 @@
     display:table-cell;
     vertical-align:middle;
   }
+  &-contents2{
+    display:inline-block;
+    float: left;
+    margin-left: 40px;
+    .logo-text{
+      font-size: 0.875rem;
+      color: #ffffff;
+    }
+  }
   &-list{
     @extend %clearfix;
     margin-top:34px;
@@ -249,6 +273,20 @@
     background:url(/static/ap/images/bg_tourinfo.jpg);
     height:510px;
   }
+  &.airline-city{
+    background:url(/static/ap/images/bg_airline_city.jpg);
+    height: 240px;
+    margin-bottom: 20px;
+    .section-bg-inner{
+      .section-bg-contents{
+        .section-bg-head{
+          &:after{
+            margin: 30px auto 0;
+          }
+        }
+      }
+    }
+  }
   &-head{
     display:block;
     font-family: nanumsq, sans-serif;
@@ -263,6 +301,22 @@
       height:2px;
       background:#fff;
       margin:30px auto;
+    }
+  }
+  &-head2{
+    display:block;
+    font-family: nanumsq, sans-serif;
+    color:#fff;
+    font-size:1.125rem;
+    font-weight:300;
+    &:after{
+      content:'';
+      display:block;
+      width:80%;
+      height:1px;
+      margin-top: 10px;
+      background:#5c626f;
+      opacity: 0.3;
     }
   }
   &-desc{
@@ -1113,4 +1167,59 @@
 .boxsize-auto{
   min-height:inherit!important;
   height:auto!important;
+}
+
+.logo-list{
+  @extend %clearfix;
+  &-item{
+    float: left;
+    font-size: 0.875rem;
+    text-indent: -99999em;
+    display: block;
+    background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+    margin-left: 15px;
+    &:first-child{
+      margin-left: 0;
+    }
+    &.asiana{
+      width: 93px;
+      background-position: 0 0;
+    }
+    &.jejuair{
+      width: 53px;
+      background-position: -108px 0;
+    }
+    &.jinair{
+      width: 67px;
+      background-position: -186px 0;
+    }
+    &.tway{
+      width: 30px;
+      background-position: -276px 0;
+    }
+    &.eastar{
+      width: 64px;
+      background-position: -334px 0;
+    }
+    &.airseoul{
+      width: 76px;
+      background-position: -423px 0;
+    }
+    &.koreanair{
+      width: 85px;
+      background-position: 0 -27px;
+    }
+    &.airfrance{
+      width: 92px;
+      background-position: -98px -28px;
+    }
+    &.klm{
+      width: 28px;
+      background-position: -208px -28px;
+    }
+    &.delta{
+      width: 70px;
+      background-position: -249px -27px;
+    }
+  }
 }
