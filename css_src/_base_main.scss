@@ -168,6 +168,10 @@
 
           text-indent:-99999em;
 
+          &.play{
+            background-position:-16px 0;
+          }
+
         }
 
         .paging{

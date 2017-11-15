@@ -182,27 +182,50 @@ $(document).ready(function(){
     });
 
     $(window).on('resize', function(){
-      var widthSize = window.outerWidth;
+      var widthSize = window.innerWidth;
+
       if (widthSize <= 780) {
-        $('.header').animate({left: -100 + '%'},0);
-        $('.mobile-header').removeClass('active');
+        if( !$('.mobile-header').hasClass('active') ){
+          $('.header').css({left: '-100%'});
+        }
+
       } else if (widthSize > 780) {
-        $('.header').animate({left:0},0);
+        $('.header').css({left:0});
+        $('.mobile-header').removeClass('active');
       }
-    });
+    }).resize();
   }
   function layerCloseEvent(){
     $('.lp-close').on('click', function(e){
-      window.opener='Self';
       window.close();
+      self.close();
+      window.opener = window.location.href;
+      self.close();
+      window.open('about:blank','_self').close();
       e.preventDefault();
     });
+  }
+  function layerTabStringEvent(){
+    var tabLink = $('.tab-nav-list-item > .tab-nav-list-link');
+    var tabStringLength = tabLink.text();
+        tabStringLength = tabStringLength.length;
+
+    var innerTabLink = $('.btn-type-tab');
+    var InnerTabStringLength = innerTabLink.text();
+        InnerTabStringLength = InnerTabStringLength.length;
+
+    if(tabStringLength > 24){
+      tabLink.addClass('active');
+    } else if(InnerTabStringLength > 14){
+      innerTabLink.addClass('active');
+    }
   }
 
   // ready function running
   tableOperationEvent(); // AP_DC_07_02.html train operation tab event
   layerGnbEvent(); // [LP] Layer popup mobile header event
   layerCloseEvent(); // [LP] Layer popup close event
+  layerTabStringEvent(); // tab string length css control
 
 });
 

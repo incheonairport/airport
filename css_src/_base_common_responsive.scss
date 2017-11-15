@@ -1,21 +1,29 @@
 // 1260 <
 @media all and (max-width:1259px) {
   .inner-section{
-    width: 100%;
+    //width: 100%;
+    min-width:1152px;
     padding: 0 15px;
   }
 }
 
-// 780 <
-@media all and (max-width:780px) {
+// 1024 <
+@media all and (max-width:1023px) {
   .inner-section{
+    width: 100%;
+    min-width:inherit;
     padding: 0 15px;
   }
+}
+
+
+// 640 <
+@media all and (max-width:639px) {
 
   // reset font
   article, aside, details, figcaption, figure,
   footer, header, menu, nav, section {
-    font-size:1rem;
+    font-size:1rem!important;
   }
 
   // float
@@ -29,6 +37,8 @@
     }
   }
 
+  mark{
+    font-size:1rem;
+  }
+
 }
-
-

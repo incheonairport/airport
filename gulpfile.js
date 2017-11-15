@@ -15,6 +15,8 @@ var fileData = require('gulp-pub-list');
 
 var minify = require('gulp-minify');
 
+var concat = require('gulp-concat');
+
 /**
  * reload
  */
@@ -65,8 +67,9 @@ gulp.task('build:sass:dev', function(){
 });
 
 // build js compress
-gulp.task('build:jsCompress', function(){
-  gulp.src('js_src/*.js')
+gulp.task('build:js:compress', function(){
+  gulp.src(['js_src/common.class.js', 'js_src/base_*.js'])
+      .pipe(concat('base_function.js'))
       .pipe(minify({
         ext:{
           src : '.debug.js',
@@ -74,6 +77,27 @@ gulp.task('build:jsCompress', function(){
         }
       }))
       .pipe(gulp.dest('../static/ap/js'));
+
+  gulp.src(['js_src/common.class.js', 'js_src/layer_*.js'])
+      .pipe(concat('layer_function.js'))
+      .pipe(minify({
+        ext:{
+          src : '.debug.js',
+          min : '.min.js'
+        }
+      }))
+      .pipe(gulp.dest('../static/ap/js'));
+
+  gulp.src(['js_src/common.class.js', 'js_src/guide_*.js'])
+      .pipe(concat('guide_function.js'))
+      .pipe(minify({
+        ext:{
+          src : '.debug.js',
+          min : '.min.js'
+        }
+      }))
+      .pipe(gulp.dest('../static/ap/js'));
+
 });
 
 /**
@@ -117,6 +141,12 @@ gulp.task('release:guide', function(){
       .pipe(gulp.dest("../release/ap/guide/"));
 });
 
+// release file list json
+gulp.task('release:copy:fileListJson', function(){
+  return gulp.src('guide_src/*.json')
+      .pipe(gulp.dest('../release/ap/guide/'));
+});
+
 // release sass
 gulp.task('release:sass', function(){
   return gulp.src('css_src/*.scss')
@@ -125,15 +155,42 @@ gulp.task('release:sass', function(){
 });
 
 // release js
-gulp.task('release:js', function(){
-  gulp.src('js_src/*.js')
+gulp.task('release:js:compress', function(){
+  gulp.src(['js_src/common.class.js', 'js_src/base_*.js'])
+      .pipe(concat('base_function.js'))
       .pipe(minify({
         ext:{
           src : '.debug.js',
           min : '.min.js'
         }
       }))
-      .pipe(gulp.dest('../release/static/ap/js/'));
+      .pipe(gulp.dest('../static/ap/js'));
+
+  gulp.src(['js_src/common.class.js', 'js_src/layer_*.js'])
+      .pipe(concat('layer_function.js'))
+      .pipe(minify({
+        ext:{
+          src : '.debug.js',
+          min : '.min.js'
+        }
+      }))
+      .pipe(gulp.dest('../static/ap/js'));
+
+  gulp.src(['js_src/common.class.js', 'js_src/guide_*.js'])
+      .pipe(concat('guide_function.js'))
+      .pipe(minify({
+        ext:{
+          src : '.debug.js',
+          min : '.min.js'
+        }
+      }))
+      .pipe(gulp.dest('../static/ap/js'));
+});
+
+// release js library file
+gulp.task('release:copy:jsLib', function() {
+  return gulp.src('js_src/lib/*.*')
+      .pipe(gulp.dest('../release/static/ap/js/lib'));
 });
 
 // release images
@@ -153,6 +210,6 @@ gulp.task('release:fonts', function(){
  * run task
  */
 
-gulp.task('default', ['build:include:html', 'build:include:guide', 'build:sass:dev', 'build:jsCompress', 'reload:watch']);
+gulp.task('default', ['build:include:html', 'build:include:guide', 'build:sass:dev', 'build:js:compress', 'reload:watch']);
 
-gulp.task('release', ['release:html', 'release:guide', 'release:sass', 'release:js', 'release:images', 'release:fonts']);
+gulp.task('release', ['release:html', 'release:guide', 'release:copy:fileListJson', 'release:sass', 'release:js:compress', 'release:copy:jsLib', 'release:images', 'release:fonts']);

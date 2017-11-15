@@ -33,6 +33,14 @@
           padding-right:0;
         }
         &.w30{
+          &.full{
+            width:30%;
+            margin-top:0;
+            img{
+              width:100%;
+              vertical-align:top;
+            }
+          }
           margin-top: 10px;
           width: 100%;
           img{
@@ -248,7 +256,13 @@
     }
   }
 
-  // icon text
+  .table-col{
+    width:100%!important;
+    padding:0!important;
+    &:first-child{
+      margin-bottom:20px;
+    }
+  }
 
 }
 
@@ -378,22 +392,22 @@
       margin-left:0;
     }
   }
-  //tab :: 2배수경우 4개까지 50% , 6개 이상부터 33.33% 추후 스크립트 조절 판단필요
+
   .tab{
     &-nav{
       &-list{
-        &-item{
-          //width:50%!important;
-        }
         &-link{
-          //height:auto;
-          padding:14px 10px;
-          line-height:1.4;
+          height:54px;
           border-bottom-color:#d9d9d9;
-          font-size:0.825rem;
+          font-size:1rem;
           letter-spacing:-1px;
           &.on{
             border-bottom:2px solid #42519e;
+          }
+          &.active{
+            height:74px;
+            padding:14px 10px;
+            line-height:1.4;
           }
         }
       }
@@ -481,6 +495,7 @@
   .table{
     &.table-block{
       display:table!important;
+      white-space: normal!important;
     }
     &.vt{
       &.board-list{
@@ -494,6 +509,11 @@
           padding: 8px 0;
           & .board-list-link{
             font-size:1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 86%;
+            display: block;
             &.lock{
               &:after{
               }
@@ -1032,6 +1052,19 @@
   }
 
 
+  .text-color-o,.text-color-g,.text-color-b{
+    font-size:0.825rem;
+  }
 
+
+  .board-list{
+    th{
+      text-align: center!important;
+      padding:19px 0 16px 0!important;
+    }
+    td.center{
+      text-align: center!important;
+    }
+  }
 
 }

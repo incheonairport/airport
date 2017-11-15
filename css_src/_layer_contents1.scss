@@ -3,7 +3,8 @@
 .customs_inspection{
     height:400px;
     text-indent:-999em;
-    background:#333649 url(/static/ap/images/digr_customs_inspection_procedure.png) no-repeat;
+    background:url(/static/ap/images/digr_customs_inspection_procedure.png) center no-repeat #333649;
+    background-size:contain;
 }
 
 
@@ -11,14 +12,17 @@
 .digr_airport_railroad{
   height:274px;
   text-indent:-999em;
-  background: url(/static/ap/images/digr_airport_railroad.png) no-repeat;
+  background: url(/static/ap/images/digr_airport_railroad.png) center no-repeat #f3f4f8;
+  background-size:contain;
 }
 
 /*KTX 노선도*/
 .digr_ktx_route{
   height:274px;
   text-indent:-999em;
-  background: url(/static/ap/images/digr_ktx_route.png) no-repeat;
+  background: url(/static/ap/images/digr_ktx_route.png) center no-repeat #fff;
+  background-size:contain;
+  border:1px solid #dcdcdc;
 }
 
 
@@ -227,7 +231,7 @@
     font-size: 1.375rem;
     &.ico{
       &:after{
-        top:0px;
+        top:0;
         left:260px;
       }
     }
@@ -616,58 +620,161 @@
   }
 }
 
-.maglev-train-line {
-  padding-top:0;
-  background: url(/static/ap/images/bg_maglev_train_line.png) no-repeat;
+//.maglev-train-line {
+//  padding: 46px 40px 40px;
+//  min-height: 240px;
+//  background: url(/static/ap/images/bg_maglev_train_line.png) no-repeat;
+//  border: 1px solid #f3f4f8;
+//  &-list {
+//    width: 100%;
+//    margin: 0 auto;
+//    position: relative;
+//    padding-top: 80px;
+//    @extend %clearfix;
+//    &-article {
+//      width: 153px;
+//      //height: 200px;
+//      float: left;
+//      &:first-child{
+//        //width: 140px;
+//        a{
+//          text-align: left;
+//        }
+//      }
+//      &-link{
+//        text-align: center;
+//        display: block;
+//        &:before {
+//          content: '';
+//          display: block;
+//          width: 153px;
+//          height:140px;
+//          margin: auto;
+//          background: url(/static/ap/images/spr_ico_maglev_train_line.png) no-repeat;
+//        }
+//        &.step-1:before{
+//          background-position: 0 0;
+//          position: absolute;
+//          bottom: 30px;
+//          left: 0;
+//        }
+//        &.station:before{
+//          background-position: -137px 0;
+//          width: 130px;
+//          position: absolute;
+//          bottom: 30px;
+//        }
+//      }
+//    }
+//  }
+//}
+
+//.maglev-train-line{
+//  padding: 46px 40px 40px;
+//  min-height: 240px;
+//  border: 1px solid #f3f4f8;
+//  position: relative;
+//  &-list{
+//    width: 100%;
+//    position: relative;
+//    @extend %clearfix;
+//    &:after{
+//      content: '';
+//      display: block;
+//      width: 80%;
+//      height: 5px;
+//      background: #ffae43;
+//      margin: 0 auto;
+//      position: absolute;
+//      top: 50%;
+//    }
+//    &-article{
+//      float: left;
+//      width: 16.666%;
+//      position: relative;
+//      z-index: 10;
+//      text-align: center;
+//      &-link{
+//        padding-top: 80px;
+//        &:before {
+//          content: '';
+//          display: block;
+//          width: 153px;
+//          height:140px;
+//          margin: auto;
+//          background: url(/static/ap/images/spr_ico_maglev_train_line.png) no-repeat;
+//        }
+//        &.step-1:before{
+//          width: 153px;
+//          height: 140px;
+//          background-position: 0 0;
+//          position: absolute;
+//          bottom: 30px;
+//          left: 0;
+//        }
+//        &.station:before{
+//          background-position: -179px -67px;
+//          width: 42px;
+//          height: 41px;
+//          bottom: 30px;
+//        }
+//      }
+//    }
+//  }
+//}
+
+.maglev-train-line{
+  padding: 46px 40px 40px;
+  min-height: 240px;
   border: 1px solid #f3f4f8;
-  @extend %clearfix;
-  &-list {
-    width: 835px;
-    margin: 0 auto;
+  position: relative;
+  &-list{
+    width: 100%;
+    min-height: 154px;
     position: relative;
-    top:180px;
-    &-article {
-      width: 153px;
-      height: 200px;
+    @extend %clearfix;
+    &:after{
+      content: '';
+      display: block;
+      width: 80%;
+      height: 5px;
+      background: #ffae43;
+      margin: 0 auto;
+      position: absolute;
+      top: 60px;
+      left: 120px;
+    }
+    &-article{
       float: left;
-      &:first-child{
-        width: 140px;
-        a{
-          text-align: left;
-          padding-left: 5px;
-        }
-      }
-      &:last-child{
-        width:80px;
-        a{
-          text-align: right;
-        }
-      }
+      width: 16.666%;
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      margin-top: 130px;
       &-link{
-        text-align: center;
-        position: relative;
-        display: block;
-        &:after {
+        &:before {
           content: '';
           display: block;
-          width: 153px;
-          height:140px;
-          position: absolute;
-          top:0;
-          right: 0;
-          left: 0;
-          bottom: 0;
           margin: auto;
           background: url(/static/ap/images/spr_ico_maglev_train_line.png) no-repeat;
         }
-        &.step-1:after{
+        &.step-1:before{
+          width: 153px;
+          height: 140px;
           background-position: 0 0;
-          top:-180px;
+          position: absolute;
+          top: -160px;
+          left: 50%;
+          margin-left: -46px;
         }
-        &.station:after{
-         background-position: -138px 0;
-         top:-184px;
-          width: 137px;
+        &.station:before{
+          background-position: -179px -67px;
+          width: 42px;
+          height: 41px;
+          position: absolute;
+          top: -90px;
+          left: 50%;
+          margin-left: -20px;
         }
       }
     }
