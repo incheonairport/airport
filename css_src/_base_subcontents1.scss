@@ -146,6 +146,7 @@
           &.on{
             background:#fff;
             color: #42519e;
+            font-weight: 900;
           }
           &.left{
             border-top-left-radius: 5px;
@@ -602,7 +603,7 @@
       top:0;
 
       font-size:1.25rem;
-      font-weight:300;
+      font-weight:400;
       color:#666;
       line-height:54px;
       text-align:center;
@@ -612,7 +613,7 @@
         border:2px solid #42519e;
         border-bottom:none;
         background:#fff;
-        font-weight:700;
+        font-weight:900;
         color:#42519e;
       }
     }

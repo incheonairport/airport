@@ -1,9 +1,12 @@
-// 1024 >
+// 1024
 @media all and (max-width:1023px) {
   // boxmodel
   .boxmodel {
     &-list {
       display: block;
+      &-head{
+        font-size:1.825rem;
+      }
       &-item {
         float: left;
         display: table;
@@ -170,26 +173,116 @@
     }
   }
 
-  // top 타이틀
+  // top visual
   .sub-top{
     &-descbox{
       font-size:2.5rem;
       &-tit{
         font-size:2.5rem;
-        line-height:1.7;
       }
+    }
+  }
+
+  // middle visual
+  .section-bg{
+    height:inherit!important;
+    background-size:cover!important;
+    &-inner{
+      &.split{
+        float:none;
+        width:100%;
+        height:50%;
+        padding:60px 15px;
+      }
+      &.bgcolor-b{
+        text-align:center;
+        padding:60px 15px;
+      }
+    }
+    &-list{
+      margin-top:30px;
+      &.col-4{
+        .section-bg-list-item{
+          width:calc(50% - 9px);
+          &:nth-child(3n){
+            margin-left:0;
+          }
+        }
+      }
+      &.col-5{
+        .section-bg-list-item{
+          width:calc(33.33% - 8px);
+          padding:27px 0;
+          &:nth-child(4n){
+            margin-left:0;
+          }
+        }
+        .section-bg-list-tit{
+        }
+      }
+      &-item{
+        margin-bottom:12px;
+        margin-left:12px;
+        &:first-child{
+          margin-left:0;
+        }
+      }
+      &-inner{
+        display:table-cell;
+        vertical-align:middle;
+        text-align:center;
+        & .btn-type-small{
+          margin-top:20px;
+          min-width:126px;
+        }
+      }
+      &-tit{
+
+      }
+    }
+    &-desc{
+      &.left{
+        text-align:center;
+      }
+    }
+    &-sublist{
+      border-top:2px solid #fff;
+      margin:20px auto auto;
+      &-tit{
+        margin-top:20px;
+      }
+    }
+    .contents-sub-head{
+      padding:0!important;
+      .clip-white{
+        &:after{
+          margin:20px auto 0;
+        }
+      }
+    }
+    &.parking-info{
+      height:540px;
+      background-size:cover;
+      .section-bg-inner{
+        height: inherit;
+      }
+    }
+    &.tour-info{
+
+
     }
   }
 }
 
 
-// 780 >
+// 780
 @media all and (max-width:780px) {
   // boxmodel
   .boxmodel {
     &-list {
       &-item {
         &.col-1 {
+          margin-bottom:-1px;
           .leave-check {
             padding: 20px 0 0;
             .col-btn {
@@ -220,10 +313,9 @@
       padding:20px 0 ;
     }
   }
-
 }
 
-// 640 >
+// 640
 @media all and (max-width:640px) {
   // boxmodel
   .boxmodel{
@@ -283,7 +375,7 @@
             .boxmodel-list-head {
               margin:auto;
               float:none;
-              width:auyto;
+              width:auto;
               min-height:inherit;
               &.callvan{
                 margin-top:0;
@@ -392,29 +484,50 @@
     }
   }
 
+  // top visual
   .sub-top{
-    padding:0 15px;
+    min-height:inherit;
+    height:inherit!important;
+    padding:60px 15px;
     &-descbox{
       font-size:1.5rem;
       line-height:1.4;
+      &.center{
+        span{
+          padding: 0 20px;
+          display: block;
+        }
+      }
       &-text{
 
       }
       &-tit{
         font-size:1.5rem;
         line-height:1.4;
+        display: inline-block;
+        padding: 0 20px;
       }
       &-sub{
         font-size:1rem;
       }
     }
     &-linkbox{
-      height:122px;
+      height:inherit;
       font-size:1rem;
-      line-height:122px;
+      line-height:inherit;
+      border:none;
+      background:none;
+      .btn-type-round-under{
+        margin-top:20px;
+      }
+    }
+    &.type2{
+      .sub-top-descbox{
+        padding-top:0;
+      }
     }
     &.type3{
-      height:350px;
+
       .sub-top-descbox{
         display:block;
         padding-top:52px;
@@ -433,7 +546,7 @@
       }
     }
     &.type4{
-      height:420px;
+
       .sub-top-descbox{
         .sub-top-descbox-text{
           font-family:roboto, sans-serif;
@@ -463,6 +576,84 @@
 
       }
     }
+  }
+
+  // middle visual
+  .section-bg{
+    &-inner{
+      &.split{
+        br{
+          display:none;
+        }
+        height:40%;
+      }
+      &.bgcolor-b{
+        height:60%;
+      }
+    }
+    &-list{
+      margin-top:30px;
+      &.col-4{
+        .section-bg-list-item{
+          width:100%;
+          padding:14px 20px;
+        }
+      }
+      &.col-5{
+        .section-bg-list-item{
+          width:100%;
+          padding:14px 20px;
+        }
+        .section-bg-list-tit{
+          font-size:1.125rem;
+          font-weight:700;
+        }
+      }
+      &-item{
+        margin-bottom:-2px;
+        margin-left:0;
+      }
+      &-inner{
+        display:table-cell;
+        vertical-align:middle;
+        text-align:center;
+        & .btn-type-small{
+          margin-top:8px;
+          width:100px;
+        }
+      }
+      &-tit{
+        font-size:1.125rem;
+        font-weight:700;
+      }
+    }
+    &-head{
+      font-size:1.5rem;
+      &:after{
+        margin:20px auto;
+      }
+    }
+    &-desc{
+      font-size:1rem;
+      &.left{
+        text-align:center;
+      }
+    }
+    &-sublist{
+      &-tit{
+        font-size:1rem;
+      }
+      &-desc{
+        font-size:0.825rem;
+        br{
+          display:block!important;
+        }
+      }
+    }
+    .btn-type-infolink{
+      margin-bottom:30px;
+    }
+
   }
 
   // icon text
@@ -534,6 +725,7 @@
     }
   }
 
+  //common
   .guide-desc{
     font-size:0.825rem;
     line-height:1.4;
@@ -567,7 +759,39 @@
       }
     }
   }
+  .inner-tab{
+    position: static;
+    margin-top:20px;
+    &-heading{
+      border:none;
+      background: #3e4b91;
+      color:#fff;
+      &.on{
+        background:#fff;
+        color: #42519e;
+        font-weight:800;
+      }
+    }
+  }
 
+  // top map visual
+  .rough-map{
+    height:400px;
+    min-height:400px;
+    .congestion{
+      top:60px;
+      border-left:0;
+    }
+    &-tit{
+      position:static;
+      display: inherit;
+      text-align:center;
+      font-size:1.5rem;
+      font-weight:400;
+    }
+    &.arrival{
+    }
+  }
 }
 
 

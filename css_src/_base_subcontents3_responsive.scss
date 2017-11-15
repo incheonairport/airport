@@ -1,0 +1,153 @@
+// 1024
+@media all and (max-width:1023px) {
+  // guide box
+  .guidebox {
+    &-col {
+      width: 33.33%;
+      &.col-1 {
+        width: 25%;
+        padding: 20px 20px 0;
+      }
+
+      &.col-2 {
+        padding: 20px;
+        width: 43%;
+      }
+
+      &.col-3 {
+        width: 32%;
+        a {
+          min-width: 155px;
+          font-size: 0.875rem;
+        }
+      }
+    }
+    &-list {
+      .list1-item {
+        font-size: 1rem;
+        &:before {
+          font-size: 1rem;
+        }
+      }
+    }
+    &-desc {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      white-space: nowrap;
+    }
+  }
+}
+
+// 640
+@media all and (max-width:640px) {
+  // bg-movie
+  .bg-include{
+    padding:60px 15px;
+    height:inherit;
+    &-video{
+      width:100%;
+      height:inherit;
+    }
+  }
+
+  // guide box
+  .guidebox{
+    display:table;
+    width:100%;
+
+    &-col{
+      display:table-cell;
+      width:33.33%;
+
+      &.col-1{
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 20px;
+        border-bottom:none;
+        border-right: 1px solid #d9d9d9;
+      }
+
+      &.col-2{
+        display: block;
+        float: left;
+        width: 100%;
+        padding:0 20px 20px;
+        border: 1px solid #d9d9d9;
+        border-top:none;
+        border-bottom:none;
+      }
+
+      &.col-3{
+        width: 100%;
+        float: left;
+        padding: 40px;
+        display: block;
+        background:#333649;
+        &.fix{
+          padding: 0;
+          .guidebox-col-row{
+            height:154px;
+          }
+        }
+      }
+
+      &-row{
+        width:100%;
+        height:50%;
+        position:absolute;
+        top:0;
+        left:0;
+
+        &:last-child{
+          border-top:1px solid #484a5c;
+          top:auto;
+          bottom:0;
+        }
+
+        &-inner{
+          position:absolute;
+          top:50%;
+          left:50%;
+          transform:translate(-50%, -50%);
+        }
+      }
+
+    }
+
+    &-tit{
+      font-family: nanumsq, sans-serif;
+      font-size:1.125rem;
+      font-weight:600;
+      line-height: 1.5;
+    }
+
+    &-list{
+      .list1-item{
+        margin-bottom:8px;
+        font-size:1rem;
+
+        &:last-child{
+          margin-bottom:0;
+        }
+
+        &:before{
+          font-size:1.25rem;
+          top:-4px;
+        }
+      }
+    }
+
+    &-desc{
+      color:#fff;
+      font-size:1.25rem;
+      font-weight:600;
+      margin-bottom:18px;
+      white-space:nowrap;
+    }
+
+  }
+}
+

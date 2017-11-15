@@ -1,10 +1,4 @@
-// 1740 <
-@media all and (max-width:1739px) {
-
-}
-
-
-// 1560 <
+// 1560
 @media all and (max-width:1559px) {
   // step3
   .departure-step{
@@ -170,7 +164,7 @@
   //}
 }
 
-// 1260 <
+// 1260
 @media all and (max-width:1259px) {
   .bussearch{
     background-size: cover;
@@ -255,21 +249,8 @@
 
 }
 
-
-// 1024 <
-@media all and (max-width:1024px) {
-
-}
-
-
-// 780 <
+// 780
 @media all and (max-width:780px) {
-
-
-  .timesetting-date-calendar:after{
-    //right:20px;
-  }
-
   // step3
   .departure-step{
     background-size: cover;
@@ -390,42 +371,6 @@
     }
   }
 
-  // infographics
-  .customs_inspection{
-    height:200px;
-  }
-  .digr_airport_railroad{
-    height:200px;
-  }
-
-  .digr_ktx_route{
-    height:200px;
-  }
-
-  // date time setting
-  .timesetting{
-    &-date{
-      &.f-left,
-      &.f-right{
-        float:none;
-      }
-      &-day{
-        width:calc(100% - 46px);
-      }
-      &-calendar{
-        width: 46px;
-      }
-      &-option{
-        width:100%;
-        border-top:0;
-        border-left:1px solid #d9d9d9!important;
-      }
-    }
-    &-dash{
-      float:none;
-    }
-  }
-
   // input
   .input-bg{
     width: 100%;
@@ -533,6 +478,7 @@
     }
   }
 
+  // etc
   table{
     .btn-download{
       width: auto;
@@ -587,7 +533,6 @@
       }
     }
   }
-
   .maglev-train-line{
     padding: 46px 40px 40px;
     border: 1px solid #f3f4f8;
@@ -658,6 +603,42 @@
         }
       }
     }
+  }
+  .timesetting{
+    &-date{
+      &.f-left,
+      &.f-right{
+        float:none;
+      }
+      &-day{
+        width:calc(100% - 46px);
+      }
+      &-calendar{
+        width: 46px;
+      }
+      &-option{
+        width:100%;
+        border-top:0;
+        border-left:1px solid #d9d9d9!important;
+      }
+    }
+    &-dash{
+      float:none;
+    }
+  }
+  .timesetting-date-calendar:after{
+    //right:20px;
+  }
+
+  // infographics
+  .customs_inspection{
+    height:200px;
+  }
+  .digr_airport_railroad{
+    height:200px;
+  }
+  .digr_ktx_route{
+    height:200px;
   }
 }
 

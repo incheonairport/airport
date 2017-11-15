@@ -1,6 +1,6 @@
-// 1024 >
+// 1024
 @media all and (max-width:1023px) {
-
+  // layout
   .multi-col{
     &.double{
       .inner-col{
@@ -53,12 +53,17 @@
   }
 }
 
-// 780 >
+// 780
 @media all and (max-width:780px) {
+  // layout
   .multi-col{
     position:relative;
     .inner-col{
+      margin-top:10px;
       float:none;
+      &:first-child{
+        margin-top:0;
+      }
       &.btn-right{
         position: absolute;
         right:0;
@@ -84,6 +89,20 @@
       &:before{
         display:none;
       }
+    }
+  }
+
+  // heading
+  .heading{
+    &-level1{
+    }
+    &-level2{
+    }
+    &-level3{
+      margin-bottom:10px;
+      font-size:1rem;
+    }
+    &-level4{
     }
   }
 }
