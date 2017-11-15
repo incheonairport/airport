@@ -232,6 +232,9 @@
     &.center{
       text-align: center;
     }
+    &.personal-info-heading{
+      float: left;
+    }
   }
 
   &-level2{
@@ -1530,6 +1533,10 @@ button, a {
       }
     }
   }
+}
+
+.personal-info{
+  @extend %clearfix;
 }
 
 
