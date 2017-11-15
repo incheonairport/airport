@@ -916,12 +916,14 @@ em{
 
   &.icon {
     &-type1{
+
       &:after {
         background-position: -11px -10px;
       }
     }
 
     &-type2{
+      margin-left: 10px;
       &:after {
         background-position: -105px -10px;
       }
@@ -1009,7 +1011,63 @@ em{
       &:after {
         background-position: -11px -481px;
       }
+
     }
+
+    &-aquatic-product1{
+      &:after{
+        background-position: -104px -481px;
+      }
+    }
+
+    &-aquatic-product2{
+      &:after{
+        background-position: -199px -481px;
+      }
+    }
+
+    &-aquatic-product3{
+      &:after{
+        background-position: -10px -575px;
+      }
+    }
+
+    &-aquatic-product4{
+      &:after{
+        background-position: -105px -575px;
+      }
+    }
+
+    &-animal-product1{
+      &:after{
+        background-position: -10px -668px;
+      }
+    }
+
+    &-animal-product2{
+      &:after{
+        background-position: -106px -669px;
+      }
+    }
+
+    &-animal-product3{
+      &:after{
+        background-position: -198px -668px;
+      }
+    }
+
+    &-animal-product4{
+      &:after{
+        background-position: -10px -761px;
+      }
+    }
+
+    &-animal-product5{
+      &:after{
+        background-position:-105px -762px;
+      }
+    }
+
   }
 
   &-title {
@@ -1209,6 +1267,10 @@ em{
   margin-top:40px;
 }
 
+// margin-top:40px;
+.mt60, %mt60{
+  margin-top:40px;
+}
 // element img text center
 .text-center {
   text-align: center
