@@ -10,6 +10,11 @@
         min-height: 440px;
         overflow: inherit;
         &-inner{
+          &.img{
+            .boxmodel-list-desc{
+              max-width:inherit;
+            }
+          }
         }
         &.list-end {
           width: 50%;
@@ -69,29 +74,40 @@
               clear: both;
             }
             .boxmodel-list-head {
+              width:55%;
+              float:left;
+              min-height:176px;
+              &.callvan{
+                margin-top:33px;
+                min-height:100px;
+              }
             }
             .boxmodel-btn-group {
-              width:calc(50% - 4px);
-              margin-right:4px;
-              float:left;
-              .boxmodel-btn-link {
-                width: 100%;
-              }
+              width:45%;
+              float:right;
               &.mt10{
                 margin-top:0;
               }
-              //&:nth-child(2n){
-              //  margin-right:0;
-              //}
             }
             .boxmodel-list-desc {
               display: inline-block;
-              width:100%;
+              width:45%;
+              margin-bottom:10px;
+              text-align:left;
+              float:right;
+            }
+            .guide-desc{
+              float: right;
+              text-align: left;
+              width: 45%;
             }
             .boxmodel-list-desc.mt10 {
               margin-top:0;
             }
             .boxmodel-list-desc.mt20 {
+              margin-top:0;
+            }
+            .boxmodel-list-desc.mt40 {
               margin-top:0;
             }
             .boxmodel-list-support{
@@ -144,18 +160,71 @@
       max-width: 100%;
     }
     &-btn-group{
-      &.odd{
-        width:100%!important;
+      &.exclusive{
+        height:66px;
+        line-height:66px;
       }
     }
     .guide-desc{
       text-align:center;
     }
   }
+
+  // top 타이틀
+  .sub-top{
+    &-descbox{
+      font-size:2.5rem;
+      &-tit{
+        font-size:2.5rem;
+        line-height:1.7;
+      }
+    }
+  }
 }
+
 
 // 780 >
 @media all and (max-width:780px) {
+  // boxmodel
+  .boxmodel {
+    &-list {
+      &-item {
+        &.col-1 {
+          .leave-check {
+            padding: 20px 0 0;
+            .col-btn {
+              &-link1 {
+                width: 100%;
+              }
+              &-link3 {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // icon text
+  .icontxt {
+    display:block;
+
+    &:before {
+      display: block;
+      margin:auto;
+    }
+    &-title{
+      display:block;
+      font-size: 1.5rem;
+      padding:20px 0 ;
+    }
+  }
+
+}
+
+// 640 >
+@media all and (max-width:640px) {
   // boxmodel
   .boxmodel{
     &-list{
@@ -204,19 +273,6 @@
             br{display:block!important;}
           }
         }
-        &.col-1{
-          .leave-check{
-            padding: 20px 0 0;
-            .col-btn{
-              &-link1{
-                width:100%;
-              }
-              &-link3{
-                width:100%;
-              }
-            }
-          }
-        }
         &.col-3{
           width:50%;
           margin-top:0;
@@ -224,12 +280,33 @@
             width:100%;
             min-height:inherit;
             margin-top:0;
-            .boxmodel-list-head{
+            .boxmodel-list-head {
               margin:auto;
               float:none;
+              width:auyto;
+              min-height:inherit;
+              &.callvan{
+                margin-top:0;
+                min-height:inherit;
+              }
               &:after{
                 margin: 18px auto 0 auto;
               }
+            }
+            .boxmodel-btn-group {
+              width:auto;
+              float:none;
+            }
+            .boxmodel-list-desc {
+              display:block;
+              width:auto;
+              text-align:center;
+              float:none;
+            }
+            .guide-desc{
+              float:none;
+              text-align:center;
+              width:auto;
             }
             .boxmodel-btn-group{
               width:100%;
@@ -244,7 +321,7 @@
               margin-top:10px;
             }
             .boxmodel-list-desc.mt20{
-              margin-top:20px
+              margin-top:0
             }
           }
         }
@@ -290,6 +367,10 @@
         height:38px;
         line-height:38px;
       }
+      &.exclusive{
+        height:38px;
+        line-height:38px;
+      }
     }
 
     .boxmodel-list-desc.mt10.even{
@@ -311,8 +392,78 @@
     }
   }
 
+  .sub-top{
+    padding:0 15px;
+    &-descbox{
+      font-size:1.5rem;
+      line-height:1.4;
+      &-text{
 
+      }
+      &-tit{
+        font-size:1.5rem;
+        line-height:1.4;
+      }
+      &-sub{
+        font-size:1rem;
+      }
+    }
+    &-linkbox{
+      height:122px;
+      font-size:1rem;
+      line-height:122px;
+    }
+    &.type3{
+      height:350px;
+      .sub-top-descbox{
+        display:block;
+        padding-top:52px;
+        .sub-top-descbox-text{
+          .sub-top-descbox-tit{
+            font-size:2rem;
+            .text-georgia{
+              font-size:3rem;
+            }
+          }
+          .btn-type-infolink{
+            margin-left:0;
+            margin-top:10px;
+          }
+        }
+      }
+    }
+    &.type4{
+      height:420px;
+      .sub-top-descbox{
+        .sub-top-descbox-text{
+          font-family:roboto, sans-serif;
+          &:after{
+            content:'';
+            display:block;
+            width:2px;
+            height:40px;
+            background:#fff;
+            margin:20px auto;
+          }
+          .sub-top-descbox-tit{
+            font-size:3rem;
+            font-weight:900;
+            line-height:1;
+          }
+          .sub-top-descbox-sub{
+            display:block;
+            font-size:1.5rem;
 
+          }
+          .btn-type-infolink{
+            margin-left:8px;
+            vertical-align: super;
+          }
+        }
+
+      }
+    }
+  }
 
   // icon text
   .icontxt {
@@ -384,7 +535,6 @@
   }
 
   .guide-desc{
-
     font-size:0.825rem;
     line-height:1.4;
 

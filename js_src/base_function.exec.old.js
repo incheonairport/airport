@@ -567,12 +567,11 @@ $(function(){
       var boxmodelLinkLength = boxmodelLinkBtn.length;
 
 
-      if(boxmodelLinkLength % 2 == 1){
-        boxmodelLinkBtn.addClass('odd');
-      } else if(boxmodelLinkLength % 2 == 0){
-
+      if(boxmodelLinkLength === 1){
+        boxmodelLinkBtn.addClass('exclusive');
       }
     });
+    
   }
 
   function boxmodelResize(){
