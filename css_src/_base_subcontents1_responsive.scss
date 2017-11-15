@@ -1,8 +1,176 @@
-// 1024 <
+// 1024
 @media all and (max-width:1023px) {
+  // layout
   .contents{
     width: 100%;
     min-width: 100%;
+  }
+}
+
+// 640
+@media all and (max-width:640px) {
+  // contents visual
+  .contents-visual{
+    min-height:inherit;
+    height:inherit;
+    padding: 60px 0 0;
+    background-size: cover!important;
+    &.search-airline{
+      padding:60px 0 0;
+    }
+    &.facilities{
+      padding:60px 0;
+      .search-airline-name{
+       margin-bottom:30px;
+      }
+    }
+  }
+  .congestion{
+    border-left:0;
+    padding-left:0;
+    float: none;
+    position:static;
+    margin-bottom:40px;
+    &-title{
+      font-size: 1.125rem;
+    }
+
+    &-quick-link{
+      width: 126px;
+      height: 30px;
+      padding:0 10px;
+      line-height: 30px;
+      color:#fff;
+      font-size: 0.875rem;
+      border: 1px solid #fff;
+      border-radius:20px;
+      box-sizing: border-box;
+      display: inline-block;
+      text-align: left;
+
+      &.ico{
+        text-indent:0;
+      }
+      &.ico:after{
+        left:95px;
+      }
+    }
+  }
+
+  // common
+  .tab{
+    &-main{
+      width:100%;
+      height: 142px;
+      &-list{
+        width:100%;
+        &-item{
+          width:50%;
+          &-link{
+            width:100%;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, .5);
+            font-size: 1.125rem;
+          }
+        }
+      }
+    }
+
+    &-sub{
+      &-list{
+        &-item {
+          float: left;
+          width:50%;
+          &-link{
+            font-size: 	1.125rem;
+          }
+          &+.tab-sub-list-item{
+            margin-left:0;
+          }
+        }
+      }
+    }
+  }
+  .tab{
+    &-nav{
+      //&-list{
+      //  &-item{
+      //    width:25%;
+      //    float:left;
+      //    cursor:pointer;
+      //  }
+      //
+      //  &-link{
+      //    display:block;
+      //    height:54px;
+      //    background:#f2f2f2;
+      //    border:1px solid #d9d9d9;
+      //    border-bottom-color:#42519e;
+      //    font-size:1.25rem;
+      //    font-weight:300;
+      //    color:#666;
+      //    line-height:54px;
+      //    text-align:center;
+      //
+      //    &.on{
+      //      border:2px solid #42519e;
+      //      border-bottom:none;
+      //      background:#fff;
+      //      font-weight:700;
+      //      color:#42519e;
+      //    }
+      //  }
+      //}
+    }
+    &-area{
+      height: 100%;
+      left:0;
+
+      &-heading{
+        border:2px solid #d9d9d9;
+        font-size:1rem;
+        &.on{
+          border-bottom:2px solid #42519e;
+        }
+      }
+    }
+  }
+
+  // search
+  .search-airline{
+    &-head{
+      &-title{
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+    }
+    &-name{
+      display:inherit;
+      margin-bottom:92px;
+      &-option{
+        width:100%;
+        height: 58px;
+        font-size: 1rem;
+        margin-bottom:10px;
+      }
+      &-txt{
+        width:calc(100% - 58px);
+        height: 58px;
+        font-size: 1rem;
+      }
+      &-btn{
+        width: 58px;
+        padding-left:0;
+        &.ico{
+          text-indent:-999em;
+        }
+        &.ico:after{
+          top: 0;
+          right: 0;
+        }
+      }
+    }
   }
 }
 

@@ -1,14 +1,20 @@
-// 1260 <
+// 1260
 @media all and (max-width:1259px) {
+  // layout
   .inner-section{
     //width: 100%;
     min-width:1152px;
     padding: 0 15px;
+    &.section-bg-inner{
+      min-width: inherit;
+      padding: 60px 15px;
+    }
   }
 }
 
-// 1024 <
+// 1024
 @media all and (max-width:1023px) {
+  // layout
   .inner-section{
     width: 100%;
     min-width:inherit;
@@ -16,8 +22,7 @@
   }
 }
 
-
-// 640 <
+// 640
 @media all and (max-width:639px) {
 
   // reset font
@@ -26,7 +31,7 @@
     font-size:1rem!important;
   }
 
-  // float
+  // common
   .f{
     &-left{
       float:none;
@@ -36,9 +41,204 @@
       float:none;
     }
   }
-
   mark{
     font-size:1rem;
   }
+  .font14, %font14{
 
+  }
+  .font16, %font16{
+
+  }
+  .font24, %font24{
+
+  }
+  .mt10, %mt10{
+    margin-top:10px;
+  }
+  .mt20, %mt20{
+    margin-top:20px;
+  }
+  .mt25, %mt25{
+    margin-top:20px;
+  }
+  .mt30, %mt30{
+
+  }
+  .mt35, %mt35{
+    margin-top:20px;
+  }
+  .mt40, %mt40{
+    margin-top:20px;
+  }
+  .mt55, %mt55{
+    margin-top:0;
+  }
+  .mt60, %mt60{
+    margin-top:20px;
+  }
+  .mt100, %mt100{
+    margin-top:20px;
+  }
+  .ml10, %ml10{
+    margin-left: 10px;
+  }
+
+  // layout
+  .article{
+    margin-bottom:30px;
+    &:last-child{
+      margin-bottom:0;
+    }
+    &-head{
+      margin-bottom:10px;
+      font-size:1.125rem;
+      font-weight:700;
+    }
+  }
+
+  // contents sub
+  .contents-sub{
+    &-head{
+      &-title{
+        font-size:2rem;
+        &-lv3{
+          font-size:2rem;
+        }
+      }
+      &.clip, &.clip-white{
+        padding:20px 0 10px;
+        &:after, &:before{
+          height:24px;
+        }
+        &.up{
+          &:before{
+
+          }
+        }
+        //&.down{
+        //  padding:20px 0 10px;
+        //  &:after{
+        //    margin:20px auto 0;
+        //  }
+        //}
+      }
+      &.clip-white{
+        .contents-sub-head-title-lv3{
+          font-size:1.5rem;
+          font-weight:400;
+        }
+        &.up{
+          &:before{
+
+          }
+        }
+        &.down{
+          color:#fff;
+          &:after{
+
+          }
+        }
+      }
+      &-article{
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // table
+  .table{
+    &.table-block{
+      display:table!important;
+      white-space: normal!important;
+    }
+    &.vt{
+      &.board-list{
+        overflow: visible;
+        white-space: normal;
+        display: table;
+        td{
+          span{
+            font-size:0.8125rem;
+          }
+          padding: 8px 0;
+          & .board-list-link{
+            font-size:1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 86%;
+            display: block;
+            &.lock{
+              &:after{
+              }
+            }
+            &.good{
+              &:before{
+              }
+            }
+          }
+        }
+
+        th{
+          font-size: 0.815rem;
+        }
+        colgroup {
+          col{
+            &:first-child{
+              width:20%!important;
+            }
+            &:last-child{
+              width:20%!important;
+            }
+            width:60%!important;
+          }
+        }
+        .mobile{
+          display:none;
+        }
+      }
+    }
+    &.vt,
+    &.vt-dark{
+      overflow-x:auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      th{
+        text-align: left;
+        padding-left: 10px;
+        &.sub{
+          padding:12px;
+        }
+      }
+      td{
+        padding: 19px 10px 16px;
+      }
+      td.center{
+        text-align: left;
+      }
+    }
+    &.hr{
+      .radio-box{
+        margin-top:10px;
+        &:first-child{
+          margin-top:0;
+        }
+      }
+      br{
+        display:none;
+      }
+      th{
+        min-width:80px;
+        line-height:1.4;
+        letter-spacing: -1px;
+        font-weight:900;
+        padding:0 11px;
+      }
+      td{
+        padding: 14px 6px 16px;
+      }
+    }
+  }
 }
