@@ -2,7 +2,7 @@ $(function(){
 
   // table like
 
-  var TableLike = function(){
+  var TableLike = new function(){
 
     var $table = $('.table-like');
     var tableNum = $table.length;
@@ -50,10 +50,7 @@ $(function(){
 
     }
 
-  };
-
-  var t;
-  t = new TableLike();
+  }; //v
 
   $('.flight-info-basic-link').on('click', function(e){
     //console.log(586567);
@@ -74,7 +71,7 @@ $(function(){
       $('html').addClass('mobile');
       $('select').addClass('mac-select');
     }
-  }
+  } //v
   function tabAction(){
     var tabWidth = 0;
     var $tabWrap;
@@ -138,7 +135,7 @@ $(function(){
       $(this).addClass('on').next('.tab-area-content').addClass('on')
 
     });
-  }
+  } //v
 
   // run
   isMobile(); // PC and Mobile check
@@ -149,22 +146,6 @@ $(function(){
 
 $(document).ready(function(){
 
-  gnb(); // gnb
-  selectLinkTypeEvent(); // 링크타입 셀렉트박스 이벤트
-  filterEvent(); // 필터 관련 펼치기 이벤트 :: 기본타압3
-  boxmodelEvent(); // 박스모델 세부사항 펼치기 이벤트 :: 기본타압3
-  //slideButtonEvent(); // 해당 여객터미널 컨텐츠 슬라이딩 이벤트 AP_DC
-
-  function gnb(){
-
-    $('.gnb-depth1-link').on('mouseenter', function(){
-      $('.gnb').addClass('on');
-    });
-
-    $('.gnb').on('mouseleave', function(){
-      $('.gnb').removeClass('on');
-    });
-  }
   function selectLinkTypeEvent(){
     $('.select-link-default').on('click', function(){
       $(this).toggleClass('on');
@@ -185,7 +166,7 @@ $(document).ready(function(){
       }
     });
 
-  }
+  } //v
   function boxmodelEvent(){
     var listItem = $('.boxmodel2-list-item');
     $('.boxmodel2-list-item .btn-type-small').on('click', function(){
@@ -196,7 +177,7 @@ $(document).ready(function(){
         $(this).text('펼치기');
       }
     });
-  }
+  } //v
   function filterEvent(){
     $('.filter .filter-brand-search-btn').on('click', function(){
       $(this).toggleClass('on');
@@ -212,7 +193,14 @@ $(document).ready(function(){
       $(this).next('.filter-service-field').toggleClass('on');
       //$(this).next('.filter-service-field').toggleClass('off');
     });
-  }
+  } //v
+
+  gnb(); // gnb
+  selectLinkTypeEvent(); // 링크타입 셀렉트박스 이벤트
+  filterEvent(); // 필터 관련 펼치기 이벤트 :: 기본타압3
+  boxmodelEvent(); // 박스모델 세부사항 펼치기 이벤트 :: 기본타압3
+  //slideButtonEvent(); // 해당 여객터미널 컨텐츠 슬라이딩 이벤트 AP_DC
+
   //function slideButtonEvent(){
   //  $('.btn-terminal1').on('click', function(){
   //    $('html,body').animate({
@@ -228,6 +216,7 @@ $(document).ready(function(){
   //}
 });
 
+// main visual
 $(function(){
 
   var currentIndex = 0;
@@ -246,7 +235,7 @@ $(function(){
 
   function initClass(){
     $('.header, .gnb').addClass( $('.full-page-content').find('.section').eq(0).data('gnb-color') );
-  }
+  } //v
 
   function setClassVisual(index){
     $('.header').attr('class', 'header ' + $visualItem.eq(index).data('gnb-color') );
@@ -267,7 +256,7 @@ $(function(){
 
     paging();
 
-  }
+  } //v
 
   function paging(){
 
@@ -276,7 +265,7 @@ $(function(){
 
     for(var i=0; i<$visualItem.length; i++){
 
-      $paging.append('<li class="paging-item"><a href="#" class="paging-link">' + (i+1) + '</a></li>');
+      $paging.append('<li class="paging-item"><div href="#" class="paging-link">' + (i+1) + '</div></li>');
 
     }
 
@@ -284,7 +273,7 @@ $(function(){
     $pageItem.removeClass('on');
     $pageItem.eq(0).find('.paging-link').addClass('on');
 
-  }
+  } //v
 
   function timeBar(){
     var barStretch = 0;
@@ -331,7 +320,7 @@ $(function(){
 
   }
 
-  function moveLeft(){
+  function moveLeft(auto){
 
     if( nextIndex >= $visualItem.length ){
       nextIndex = 0;
@@ -340,7 +329,31 @@ $(function(){
     $visualItem.eq(currentIndex).stop().animate({left:'-100%'}, imageMovingTime, easingType);
     $visualItem.eq(nextIndex).css({left:'100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
       clearInterval(timeID2);
-      timeBar();
+      if(auto){
+        timeBar();
+      }
+      textMotion();
+    });
+
+    $pageItem.find('.paging-link').removeClass('on');
+    $pageItem.eq(nextIndex).find('.paging-link').addClass('on');
+
+    currentIndex = nextIndex;
+
+  }
+
+  function moveRight(auto){
+
+    if( nextIndex <= -1 ){
+      nextIndex = $visualItem.length-1;
+    }
+
+    $visualItem.eq(currentIndex).stop().animate({left:'100%'}, imageMovingTime, easingType);
+    $visualItem.eq(nextIndex).css({left:'-100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
+      clearInterval(timeID2);
+      if(auto){
+        timeBar();
+      }
       textMotion();
     });
 
@@ -355,13 +368,28 @@ $(function(){
 
     timeID = setInterval(function(){
       nextIndex = currentIndex + 1;
-      moveLeft();
+      moveLeft(true);
+
       if( useVisualClass ){
         setClassVisual(nextIndex);
       }
     }, imageIntervalTime);
+
+    setPlayButtonClass('pause');
   }
 
+  function stopRolling(){
+
+    clearInterval(timeID);
+
+    setPlayButtonClass('play');
+
+  }
+
+  function setPlayButtonClass(status){
+    $('.play-button').attr('class', 'play-button');
+    $('.play-button').addClass(status);
+  }
 
   // running
   init();
@@ -371,8 +399,6 @@ $(function(){
   setTimeout(function(){
     textMotion();
   }, 1000);
-
-
 
   function sectionBgInit(){
 
@@ -462,7 +488,60 @@ $(function(){
 
   });
 
-});
+  $('.arrow.prev').on('click', function(){
+
+    stopRolling();
+    clearInterval(timeID2);
+
+    if( !$visualItem.is(':animated') ){
+      nextIndex = currentIndex - 1;
+      moveRight(false);
+    }
+
+    if( useVisualClass ){
+      setClassVisual(nextIndex);
+    }
+
+  });
+
+  $('.arrow.next').on('click', function(){
+
+    stopRolling();
+    clearInterval(timeID2);
+
+    if( !$visualItem.is(':animated') ){
+      nextIndex = currentIndex + 1;
+      moveLeft(false);
+    }
+
+    if( useVisualClass ){
+      setClassVisual(nextIndex);
+    }
+
+  });
+
+  $('.play-button').on('click', function(){
+
+    if( $(this).hasClass('pause') ){
+      stopRolling();
+      clearInterval(timeID2);
+    } else {
+      timeBar();
+      autoRolling();
+    }
+
+  });
+
+}); //v
+
+// calendar popup
+$(function(){
+
+  var CalendarPopup = function(){
 
 
+
+  }
+
+}); //v
 
