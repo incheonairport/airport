@@ -871,6 +871,246 @@ em{
 
   }
 
+  &.pop-up-table{
+    width: 100%;
+    border-top:1px solid #b3b3b3;
+    border-bottom:1px solid #e3e3e3;
+    font-size: 0.75rem;
+    font-weight: 700;
+    th{
+      border-bottom:1px solid #b3b3b3;
+      padding: 5px 0;
+    }
+    td{
+      padding: 5px 12px;
+      border-top:1px solid #e3e3e3;
+      position: relative;
+      vertical-align: middle;
+    }
+    .floor-number{
+      font-size: 1.125rem;
+      color: #6d6d6d;
+    }
+    .bg-blue1{
+      background: #e8eaf6;
+    }
+    .bg-gray2{
+      background: #f9f9f9;
+    }
+    .bg-blue{
+      background: #42519e;
+      color: white;
+    }
+    .color-b{
+      color: #42519e;
+    }
+    .center{
+      text-align: center;
+      line-height: 1rem;
+    }
+    .line:after{
+      content: '';
+      display: block;
+      background: url(/static/ap/images/ico_terminal_interconnection_line.png)no-repeat;
+      background-size: 100%;
+      width: 120px;
+      height: 3px;
+      position: absolute;
+      top: 19px;
+      left: -3px;
+      z-index: 10;
+    }
+    .line2:after{
+      content: '';
+      display: block;
+      background: url(/static/ap/images/ico_terminal_interconnection_line.png)no-repeat;
+      background-size: 100%;
+      width: 120px;
+      height: 3px;
+      position: absolute;
+      top: 24px;
+      left: -3px;
+      z-index: 10;
+    }
+    .position{
+      display: block;
+      position: absolute;
+      top: 13px;
+      left: -68px;
+      width: 82px;
+      height: 18px;
+      background: #7f7f7f;
+      color: white;
+      text-align: center;
+      padding: 1px 0;
+    }
+    .right{
+      text-align: right;
+    }
+    .icon{
+      &:after{
+        content: '';
+        display: block;
+        background: url(/static/ap/images/spr_terminal_interconnection.png)no-repeat;
+      }
+      &:before{
+        content: '';
+        display: block;
+        background: url(/static/ap/images/spr_terminal_interconnection.png)no-repeat;
+        position: absolute;
+      }
+      &.bus{
+        &:before{
+          top: 8px;
+          left: 12px;
+          width: 40px;
+          height: 26px;
+        }
+      }
+      &.ktx{
+        &:after{
+          width: 58px;
+          height: 26px;
+          background-position: -40px 0;
+          margin: 0 auto;
+        }
+      }
+      &.park{
+        &:after{
+          width: 15px;
+          height: 26px;
+          background-position: -100px 0;
+          margin: 0 auto;
+        }
+      }
+    }
+    .padding{
+      padding: 5px 0;
+    }
+  }
+  &.pop-up-table2{
+    width: 100%;
+    border-top:1px solid #b3b3b3;
+    border-bottom:1px solid #e3e3e3;
+    font-size: 0.75rem;
+    font-weight: 700;
+    th{
+      border-bottom:1px solid #b3b3b3;
+      padding: 5px 0;
+    }
+    td{
+      padding: 5px 12px;
+      border-top:1px solid #e3e3e3;
+      position: relative;
+      vertical-align: middle;
+    }
+    tbody{
+      tr:nth-child(4){
+        height: 48px;
+      }
+    }
+    .floor-number{
+      font-size: 1.125rem;
+      color: #6d6d6d;
+    }
+    .bg-blue1{
+      background: #d9eeef;
+    }
+    .bg-gray2{
+      background: #f9f9f9;
+    }
+    .bg-blue{
+      background: #328486;
+      color: white;
+    }
+    .color-b{
+      color: #42519e;
+    }
+    .center{
+      text-align: center;
+      line-height: 1rem;
+    }
+    .line:after{
+      content: '';
+      display: block;
+      background: url(/static/ap/images/ico_terminal_interconnection_line.png)no-repeat;
+      background-size: 100%;
+      width: 120px;
+      height: 3px;
+      position: absolute;
+      top: 19px;
+      left: -7px;
+      z-index: 10;
+    }
+    .line2:after{
+      content: '';
+      display: block;
+      background: url(/static/ap/images/ico_terminal_interconnection_line.png)no-repeat;
+      background-size: 100%;
+      width: 120px;
+      height: 3px;
+      position: absolute;
+      top: 24px;
+      left: -7px;
+      z-index: 10;
+    }
+    .position{
+      display: block;
+      position: absolute;
+      top: 13px;
+      left: -68px;
+      width: 82px;
+      height: 18px;
+      background: #7f7f7f;
+      color: white;
+      text-align: center;
+      padding: 1px 0;
+    }
+    .right{
+      text-align: right;
+    }
+    .icon{
+      &:after{
+        content: '';
+        display: block;
+        background: url(/static/ap/images/spr_terminal_interconnection.png)no-repeat;
+      }
+      &:before{
+        content: '';
+        display: block;
+        background: url(/static/ap/images/spr_terminal_interconnection.png)no-repeat;
+        position: absolute;
+      }
+      &.bus{
+        &:before{
+          top: 8px;
+          left: 12px;
+          width: 40px;
+          height: 26px;
+          background-position: 0 -28px;
+        }
+      }
+      &.ktx{
+        &:after{
+          width: 58px;
+          height: 26px;
+          background-position: -40px 0;
+          margin: 0 auto;
+        }
+      }
+      &.park{
+        &:after{
+          width: 15px;
+          height: 26px;
+          background-position: -100px 0;
+          margin: 0 auto;
+        }
+      }
+    }
+    .padding{
+      padding: 5px 0;
+    }
+  }
 }
 
 //font-size
