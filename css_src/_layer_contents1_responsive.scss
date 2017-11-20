@@ -62,7 +62,7 @@
   .maglev-train{
     &-line{
       &-list {
-        &:after {
+        &:before {
           left: 100px;
         }
         &-article{
@@ -162,6 +162,30 @@
   //    }
   //  }
   //}
+  //.route-bus-stop{
+  //  width: 100%;
+  //  height: 400px;
+  //  background: url(/static/ap/images/bg_route_bus_area_search_t1_02.png)no-repeat;
+  //  background-size: 100%;
+  //  position: relative;
+  //  &-ico-box{
+  //    display: block;
+  //    position: absolute;
+  //    width: 529px;
+  //    height: 89px;
+  //    top: 50%;
+  //    left: 50%;
+  //    margin: -69px -276px;
+  //  }
+  //  .exit{
+  //    display: none;
+  //    text-indent: -99999em;
+  //    background: url(/static/ap/images/ico_route_bus_area_search_t1.png)no-repeat;
+  //    width: 22px;
+  //    height: 42px;
+  //    position: absolute;
+  //  }
+  //}
 }
 
 // 1260
@@ -195,7 +219,7 @@
   .maglev-train {
   &-line {
     &-list {
-      &:after {
+      &:before {
         left: 90px;
       }
     }
@@ -547,9 +571,10 @@
       &:before{
         content: '';
         display: block;
-        width: 50%;
-        height: 150px;
+        width: 49.5%;
+        height: 155px;
         border: 5px solid #ffae43;
+        background: 0;
         border-left: 0;
         position: absolute;
         top: 50px;
@@ -560,21 +585,20 @@
         content: '';
         display: block;
         width: 50%;
-        height: 150px;
+        height: 155px;
         background: 0;
         border: 5px solid #ffae43;
         border-right: 0;
         border-top: 0;
         position: absolute;
         top: 205px;
-        left: 25%;
+        left: 24.5%;
       }
       &-article{
         float: none;
         width: 50%;
         position: absolute;
         margin-top: 130px;
-        background: white;
         &:nth-child(2){
           right: 0;
           top: 0;

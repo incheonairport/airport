@@ -34,7 +34,7 @@ gulp.task('reload:watch', function() {
   gulp.watch('html_src/**', ['build:include:html', 'reload:livereload']);
   gulp.watch('guide_src/**', ['build:include:guide', 'reload:livereload']);
   gulp.watch('css_src/**', ['build:sass:dev', 'reload:livereload']);
-  gulp.watch('js_src/**', ['build:jsCompress', 'reload:livereload']);
+  gulp.watch('js_src/**', ['build:js:compress', 'reload:livereload']);
 });
 
 /**
@@ -164,7 +164,7 @@ gulp.task('release:js:compress', function(){
           min : '.min.js'
         }
       }))
-      .pipe(gulp.dest('../static/ap/js'));
+      .pipe(gulp.dest('../release/static/ap/js'));
 
   gulp.src(['js_src/common.class.js', 'js_src/layer_*.js'])
       .pipe(concat('layer_function.js'))
@@ -174,7 +174,7 @@ gulp.task('release:js:compress', function(){
           min : '.min.js'
         }
       }))
-      .pipe(gulp.dest('../static/ap/js'));
+      .pipe(gulp.dest('../release/static/ap/js'));
 
   gulp.src(['js_src/common.class.js', 'js_src/guide_*.js'])
       .pipe(concat('guide_function.js'))
@@ -184,7 +184,7 @@ gulp.task('release:js:compress', function(){
           min : '.min.js'
         }
       }))
-      .pipe(gulp.dest('../static/ap/js'));
+      .pipe(gulp.dest('../release/static/ap/js'));
 });
 
 // release js library file

@@ -15,7 +15,7 @@
     .tr-like{
       &.flight-info-detail{
         .td-like{
-          height: 186px;
+          height: 185px;
           border: 0;
           position: relative;
           &:after{
@@ -106,23 +106,37 @@
       }
     }
     .td-pop{
-      height: 186px;
-      position:relative;
-      float: right;
-      margin-top: -186px;
       display:none;
+      height: 185px;
+
+      position:absolute;
+      top:0;
+      right:0;
+
+      &.on{
+        display:block;
+      }
+
       &-close-btn{
+        display:block;
+        width:12px;
+        height:12px;
+        padding:0;
+        background:none;
+        border:none;
+
         position: absolute;
         top:15px;
         right: 15px;
+
         z-index: 1;
         cursor: pointer;
+
         &.ico{
           &:after {
-            background-position:-207px -61px;
-            width: 20px;
-            height:20px;
-            top:0px;
+            background-position:-210px -64px;
+            width: 12px;
+            height:12px;
           }
         }
       }
@@ -140,7 +154,18 @@
       display: block;
       outline: 1px solid transparent;
       &:hover {
-        outline: 1px solid #13141a;
+        //outline: 1px solid #13141a;
+
+        >.td-like{
+          border:{
+            top-color:#13141a;
+            bottom-color:#13141a;
+          }
+
+          &:last-child{
+            border-right-color:#13141a;
+          }
+        }
       }
       .flight{
         text-align: center;
@@ -235,8 +260,15 @@
   }
 
   &-detail{
-    height: 186px;
+    display:none;
+    height: 185px;
     background: url(/static/ap/images/bg_flight_info_detail_bg.jpg) no-repeat;
+    position:relative;
+
+    &.on{
+      display:block;
+    }
+
     &-heading{
       @extend %clearfix;
       &-title{
@@ -287,7 +319,6 @@
       }
     }
 
-
     &-way{
       margin-top: 30px;
       .way-list{
@@ -337,7 +368,6 @@
       }
     }
 
-
     &-dest{
       color: #fff;
       @extend %clearfix;
@@ -370,12 +400,16 @@
         }
       }
     }
+
     &-share{
+      display: block;
+      width:100%;
       height: 93px;
+      background:none;
+      border:none;
       line-height:145px;
       color: #999;
       font-size: 0.75rem;
-      display: block;
       cursor: pointer;
       text-align: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -386,40 +420,59 @@
           background-position:-37px -185px;
           width: 32px;
           height: 32px;
-          top:-10px;
+          //top:-10px;
+          margin-top:25px;
+          //position:absolute;
+          //top:50%;
+          //left:50%;
+          //transform:translate(-50%, -60%);
         }
       }
     }
+
     &-close{
-      height: 93px;
       display: block;
+      width:100%;
+      height: 93px;
+      background:none;
+      border:none;
       cursor: pointer;
       text-align: center;
       &.ico{
         &:after {
-          background-position:-89px -185px;
-          width: 32px;
-          height: 32px;
-          top: 0px;
+          background-position:-95px -188px;
+          width: 25px;
+          height: 25px;
+          //position:absolute;
+          //top:50%;
+          //left:50%;
+          //transform:translate(-50%, -50%);
         }
       }
     }
+
     &-sns{
       @extend %clearfix;
       width:205px;
-      height: 186px;
-      padding: 70px 25px 0;
+      height: 185px;
+      padding: 27px 25px 23px;
       background: #fff;
       border:{
         right:1px solid #d9d9d9;
         bottom:1px solid #d9d9d9;
       }
       .sns-item{
-        width: 75px;
-        height: 70px;
         float: left;
+        margin-bottom:15px;
+
         &-link{
           display: block;
+          width:75px;
+          //height:70px;
+          padding-top:40px;
+
+          position:relative;
+
           text-align: center;
           font-size: 0.875rem;
         }
@@ -436,35 +489,36 @@
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
+    //right: 0;
+    left: 50%;
+    transform:translate(-50%);
+    //bottom: 0;
+    //margin: auto;
     background: url(/static/ap/images/spr_ico_sns.png) no-repeat;
   }
 
-  &.telegram:after {
-    background-position:-141px -12px;
+  &.kakao:after {
+    background-position:-11px -11px;
     width: 35px;
     height: 35px;
-    top:-62px;
+    //top:-62px;
   }
   &.mail:after {
     background-position:-206px -12px;
     width: 35px;
     height: 35px;
-    top:-62px;
+    //top:-62px;
   }
-  &.sms:after {
-    background-position:-141px -57px;
+  &.line:after {
+    background-position:-76px -11px;
     width: 35px;
     height: 35px;
-    top:-62px;
+    //top:-62px;
   }
   &.copy:after {
     background-position: -206px -57px;
     width: 35px;
     height: 35px;
-    top:-62px;
+    //top:-62px;
   }
 }
