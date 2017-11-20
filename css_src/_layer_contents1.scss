@@ -730,10 +730,9 @@
   position: relative;
   &-list{
     width: 100%;
-    min-height: 154px;
     position: relative;
     @extend %clearfix;
-    &:after{
+    &:before{
       content: '';
       display: block;
       width: 80%;
@@ -777,6 +776,117 @@
           margin-left: -20px;
         }
       }
+    }
+  }
+}
+
+.route-bus-line{
+  width: 1152px;
+  height: 400px;
+  //background: url(/static/ap/images/bg_route_bus_area_search_t1_01.png)no-repeat;
+  position: relative;
+  &-list{
+    width: 100%;
+    position: relative;
+    &-article{
+      //-webkit-transform: rotate(-45deg);
+      //-ms-transform: rotate(-45deg);
+      //position: absolute;
+      z-index: 10;
+      font-size: 0.875rem;
+
+      &:after{
+        content:"";
+        display:block;
+        width:17px;
+        height:17px;
+        border:3px solid #41519e;
+        border-radius:50%;
+        box-sizing:border-box;
+      }
+
+
+    }
+  }
+}
+
+.route-bus-stop{
+  display: block;
+  width: 100%;
+  height: 400px;
+  background: url(/static/ap/images/bg_route_bus_area_search_t1_02.png)no-repeat;
+  background-size: 100%;
+  position: relative;
+  &-ico-box{
+    display: block;
+    position: absolute;
+    width: 529px;
+    height: 89px;
+    top: 50%;
+    left: 50%;
+    margin: -69px -276px;
+  }
+  .exit{
+    text-indent: -99999em;
+    background: url(/static/ap/images/ico_route_bus_area_search_t1.png)no-repeat;
+    width: 22px;
+    height: 42px;
+    position: absolute;
+    &.exit-1{
+      top: 0;
+      left: 16px;
+    }
+    &.exit-2{
+      top: 12px;
+      left: 58px;
+    }
+    &.exit-3{
+      top: 20px;
+      left: 96px;
+    }
+    &.exit-4{
+      top: 30px;
+      left: 135px;
+    }
+    &.exit-5{
+      top: 34px;
+      left: 172px;
+    }
+    &.exit-6{
+      top: 37px;
+      left: 207px;
+    }
+    &.exit-7{
+      top: 38px;
+      left: 240px;
+    }
+    &.exit-8{
+      top: 38px;
+      left: 274px;
+    }
+    &.exit-9{
+      top: 37px;
+      left: 307px;;
+    }
+    &.exit-10{
+      top: 34px;
+      left: 342px;
+    }
+    &.exit-11{
+      top: 30px;
+      left: 381px;
+    }
+    &.exit-12{
+      top: 20px;
+      left: 420px;
+    }
+    &.exit-13{
+      top: 12px;
+      left: 458px;
+    }
+    &.exit-14{
+      top: 0;
+      left: 496px;
     }
   }
 }
