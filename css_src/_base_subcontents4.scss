@@ -578,6 +578,15 @@
         width: 466px;
         padding:0;
       }
+
+      &.login1{
+        width:345px;
+      }
+
+      &.login2{
+        width:200px;
+        padding-left:10px;
+      }
     }
   }
 
@@ -599,6 +608,11 @@
       left:50%;
     }
     @extend %gutter;
+  }
+
+  &.log-in{
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 20px;
   }
 
   &.gutter{
