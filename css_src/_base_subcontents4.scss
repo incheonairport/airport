@@ -95,7 +95,7 @@
           width: 54px;
           height: 52px;
         }
-        &:hover:before &.on:before{
+        &:hover:before, &.on:before{
           background-position: -131px -52px;
         }
 
@@ -1144,7 +1144,7 @@
 .user-text{
  width: 250px;
   height: 50px;
-  padding: 0 15px;
+  padding: 0 10px;
   font-size: 1rem;
   border: 1px solid #d9d9d9;
   box-sizing: border-box;
@@ -1199,6 +1199,8 @@
       width: 410px;
       .user-input-text{
         width: 263px;
+        padding: 0 10px;
+        border-right: 0;
         float:left;
       }
     }

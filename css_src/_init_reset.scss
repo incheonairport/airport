@@ -31,6 +31,10 @@ footer, header, menu, nav, section {
 html{
   font-size:16px;
   overflow-y:scroll;
+
+  &.open-layer{
+    overflow:hidden;
+  }
 }
 body {
   line-height: 1;
@@ -40,6 +44,10 @@ body {
   color:#444;
   overflow-y:scroll;
   position:relative;
+
+  &.open-layer{
+    overflow:hidden;
+  }
 }
 ol, ul {
   list-style: none;

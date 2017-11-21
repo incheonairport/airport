@@ -1,4 +1,13 @@
-/**
- * FileList Class
- */
+/***************
+ * Guide Class *
+ ***************/
+
+
+$(function(){
+
+  /**
+   * FileList Class
+   */
+
+});
 

@@ -1,3 +1,7 @@
+/**************
+ * Base Class *
+ **************/
+
 var TableLike;
 
 $(function(){
@@ -231,3 +235,5 @@ $(function(){
   };
 
 });
+
+
