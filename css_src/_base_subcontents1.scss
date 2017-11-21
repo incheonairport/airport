@@ -437,7 +437,7 @@
 .layer{
   display:none;
   width: 550px;
-  max-height: 684px;
+  //max-height: 684px;
   border: 4px solid #42519e;
   background:#fff;
   position:absolute;
@@ -472,7 +472,7 @@
 
       width:100%;
       height:100%;
-      background:rgba(0,0,0,0.8);
+      background:rgba(0,0,0,0.90);
 
       position:absolute;
       top:0;
@@ -484,7 +484,7 @@
 
   &.size{
     width: 912px;
-    max-height: 827px;
+    //max-height: 827px;
   }
 
   &.address-layer{

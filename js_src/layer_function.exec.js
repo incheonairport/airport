@@ -1,3 +1,14 @@
+/*******************
+ * Layer Execution *
+ *******************/
+
+$(function(){
+
+
+
+});
+
+/*
 $(function(){
 
   // define
@@ -206,7 +217,7 @@ $(document).ready(function(){
 $(function(){
 
   // lnb show per page
-  $('.gnb-item').eq(p).find('.gnb-link').addClass('on');
+  //$('.gnb-item').eq(p).find('.gnb-link').addClass('on');
 
   // window close
   $('.back-to-home').on('click', function(){
@@ -216,3 +227,4 @@ $(function(){
   });
 
 });
+*/
