@@ -2,6 +2,11 @@
 @media all and (max-width:1023px) {
   // boxmodel
   .boxmodel {
+    &.parking{
+      .boxmodel-list-item{
+        min-height:inherit;
+      }
+    }
     &-list {
       display: block;
       &-head{
