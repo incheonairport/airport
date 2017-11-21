@@ -1,7 +1,11 @@
 .tab-sub.terms{
-  .tab-sub-list-item-link{
-    width: 230px;
+  .tab-sub-list-item{
+    width:calc(20% - 4px);
+    &:first-child{
+      margin-left:2px;
+    }
   }
+
 }
 
 .terms_box {
