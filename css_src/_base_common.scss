@@ -227,7 +227,8 @@
   }
 
   &.arrow-normal-left:after{
-    background-position:-214px -32px;
+    background-position: -101px -64px;
+    transform: rotate(180deg);
     width: 8px;
     height: 12px;
   }

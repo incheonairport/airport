@@ -134,6 +134,10 @@
         }
       }
     }
+    .inner-section{
+      position:relative;
+      height:100%;
+    }
   }
   &.type4{
     height:420px;
@@ -191,6 +195,14 @@
         padding-top:100px;
       }
     }
+  }
+
+  &.bg7 {
+  background: url(/static/ap/images/bg_parking_info.jpg) center no-repeat;
+  }
+  &.bg8{
+    background:url(/static/ap/images/bg_immigration_procedure.jpg) center no-repeat;
+
   }
 }
 // bg 컨텐츠
@@ -315,7 +327,7 @@
       width:80%;
       height:1px;
       margin-top: 10px;
-      background:#5c626f;
+      background:#fff;
       opacity: 0.3;
     }
   }
@@ -376,6 +388,14 @@
 
 // boxmodel
 .boxmodel{
+  &.parking{
+    .boxmodel-list-item{
+      //height:400px;
+      .boxmodel-list-item-inner{
+        padding: 30px 30px 20px;
+      }
+    }
+  }
 
   &-list{
     @extend %clearfix;
@@ -538,6 +558,42 @@
       &.departure-ready:after{
         background-position:-583px -210px;
         width:67px;
+      }
+
+      /* 주차대행안내 */
+      &.valet-service:after{
+        background-position:-698px -207px;
+        width:49px;
+      }
+
+      /* 주차요금안내 */
+      &.parking-fee:after{
+        background-position:-55px -319px;
+        width:52px;
+      }
+
+      /* 주차요금계산기 */
+      &.parking-fee-calculator:after{
+        background-position:-169px -319px;
+        width:58px;
+      }
+
+      /* 내차위치찾기 */
+      &.car-position:after{
+        background-position:-264px -311px;
+        width:58px;
+      }
+
+      /* 주차장혼잡도보기 */
+      &.parking-congestion:after{
+        background-position:-353px -308px;
+        width:56px;
+      }
+
+      /* 주차장안내 */
+      &.parking-info:after{
+        background-position:-485px -305px;
+        width:39px;
       }
     }
 

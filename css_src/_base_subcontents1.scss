@@ -92,9 +92,6 @@
   &.departure-procedures{
     background:url(/static/ap/images/bg_departure_procedures.jpg) center no-repeat;
   }
-  &.immigration-procedure{
-    background:url(/static/ap/images/bg_immigration_procedure.jpg) center no-repeat;
-  }
 }
 
 .congestion{
@@ -191,6 +188,7 @@
         float: left;
         width:calc(50% - 2px);
         height: 72px;
+        margin-left: 4px;
         &-link{
           width:100%;
           height:100%;
@@ -206,8 +204,8 @@
             font-weight: 800;
              }
           }
-        &+.tab-sub-list-item{
-          margin-left: 4px;
+        &:first-child{
+          margin-left:0;
         }
       }
     }
