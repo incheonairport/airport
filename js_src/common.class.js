@@ -61,23 +61,31 @@ $(function(){
 
   CalendarPopup = new function(){
 
-    // call jquery-ui api when loading
-    $('.timesetting-date-day').datepicker({
-      showMonthAfterYear : true,
-      showOtherMonths : true,
-      selectOtherMonths : true,
+    var $setDateInput = $('.timesetting-date-day');
 
-      prevText : 'p',
-      nextText : 'n',
-      dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
-      dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
-      dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
-      monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12']
-    });
+    if( $setDateInput.length != 0 ){
+      $('.timesetting-date-day').datepicker({
+        showMonthAfterYear : true,
+        showOtherMonths : true,
+        selectOtherMonths : true,
+
+        prevText : 'p',
+        nextText : 'n',
+        dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+        dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+        dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+        monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12']
+      });
+    }
+
+    // call jquery-ui api when loading
+
 
     this.showDatePicker = function(type){
 
-      $('.timesetting-date-day').datepicker(type);
+      $setDateInput = $('.timesetting-date-day');
+
+      $setDateInput.datepicker(type);
 
     }
 
