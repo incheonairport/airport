@@ -893,6 +893,18 @@ em{
 .imgbox{
   width: 100%;
   vertical-align:top;
+  &.level2{
+    background: #42519e;
+  }
+  &.level4{
+    background: #d43e41;
+  }
+  &.level3{
+    background: #dd7714;
+  }
+  &.level1{
+    background: #2c8179;
+  }
 }
 
 .icontxt {
@@ -1761,6 +1773,7 @@ b.text-bold{
   max-width: 1152px;
   overflow-x: auto;
 }
+
 
 
 //select.mac{
