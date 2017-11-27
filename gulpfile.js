@@ -156,7 +156,7 @@ gulp.task('release:sass', function(){
 
 // release js
 gulp.task('release:js:compress', function(){
-  gulp.src(['js_src/common.class.js', 'js_src/base_*.js', 'common.exec.js'])
+  gulp.src(['js_src/common*.js', 'js_src/base*.js'])
       .pipe(concat('base_function.js'))
       .pipe(minify({
         ext:{
@@ -166,7 +166,7 @@ gulp.task('release:js:compress', function(){
       }))
       .pipe(gulp.dest('../release/static/ap/js'));
 
-  gulp.src(['js_src/common.class.js', 'js_src/layer_*.js', 'common.exec.js'])
+  gulp.src(['js_src/common*.js', 'js_src/layer*.js'])
       .pipe(concat('layer_function.js'))
       .pipe(minify({
         ext:{
@@ -176,7 +176,7 @@ gulp.task('release:js:compress', function(){
       }))
       .pipe(gulp.dest('../release/static/ap/js'));
 
-  gulp.src(['js_src/common.class.js', 'js_src/guide_*.js', 'common.exec.js'])
+  gulp.src(['js_src/common*.js', 'js_src/guide*.js'])
       .pipe(concat('guide_function.js'))
       .pipe(minify({
         ext:{
