@@ -154,62 +154,68 @@ $(function(){
 
   CalendarPopup = new function(){
 
-    var $setDateInput = $('.timesetting-date-day');
+    this.loadDatePicker = function(){
 
-    // set datepicker when loading
-    if( $setDateInput.length != 0 ){
+      var $setDateInput = $('.timesetting-date-day');
 
-      if( $setDateInput.hasClass('js-from-input') ){
+      // set datepicker when loading
+      if( $setDateInput.length != 0 ){
 
-        $('.js-from-input').datepicker({
-          showMonthAfterYear : true,
-          showOtherMonths : true,
-          selectOtherMonths : true,
+        if( $setDateInput.hasClass('js-from-input') ){
 
-          prevText : 'p',
-          nextText : 'n',
-          dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
-          dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
-          dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
-          monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12']
-        });
+          $('.js-from-input').datepicker({
+            showMonthAfterYear : true,
+            showOtherMonths : true,
+            selectOtherMonths : true,
 
-        $('.js-to-input').datepicker({
-          showMonthAfterYear : true,
-          showOtherMonths : true,
-          selectOtherMonths : true,
+            prevText : 'p',
+            nextText : 'n',
+            dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+            monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12']
+          });
 
-          prevText : 'p',
-          nextText : 'n',
-          dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
-          dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
-          dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
-          monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12']
-        });
+          $('.js-to-input').datepicker({
+            showMonthAfterYear : true,
+            showOtherMonths : true,
+            selectOtherMonths : true,
 
-      } else {
+            prevText : 'p',
+            nextText : 'n',
+            dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+            monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12']
+          });
 
-        $setDateInput.datepicker({
-          showMonthAfterYear : true,
-          showOtherMonths : true,
-          selectOtherMonths : true,
+        } else {
 
-          prevText : 'p',
-          nextText : 'n',
-          dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
-          dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
-          dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
-          monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12']
-        });
+          $setDateInput.datepicker({
+            showMonthAfterYear : true,
+            showOtherMonths : true,
+            selectOtherMonths : true,
 
+            prevText : 'p',
+            nextText : 'n',
+            dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+            monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12']
+          });
+
+        }
       }
-    }
+
+    };
 
     this.showDatePicker = function($this, type){
 
       $this.datepicker(type);
 
-    }
+    };
+
+    this.loadDatePicker();
 
   };
 
