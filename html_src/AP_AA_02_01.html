@@ -68,19 +68,28 @@
         <label for="tomorrow" class="search-option-btn">내일</label>
       </div>
       <div class="search-flight-detail-select">
-        <select class="search-flight-detail-select-article">
+        <label class="label-hide" for="start-date">출발날짜</label>
+        <select id="start-date" class="search-flight-detail-select-article">
           <option>2017.08.21(월)</option>
         </select>
-        <select class="search-flight-detail-select-article">
+
+        <label class="label-hide" for="start-time">출발시간</label>
+        <select id="start-time" class="search-flight-detail-select-article">
           <option>00:00~00:59</option>
         </select>
-        <select class="search-flight-detail-select-article">
+
+        <label class="label-hide" for="start-destination">목적지 선택</label>
+        <select id="start-destination" class="search-flight-detail-select-article">
           <option>목적지 선택</option>
         </select>
-        <select class="search-flight-detail-select-article">
+
+        <label class="label-hide" for="start-airline">항공사 선택</label>
+        <select id="start-airline" class="search-flight-detail-select-article">
           <option>항공사 선택</option>
         </select>
-        <input type="text" class="search-flight-detail-select-airplane" placeholder="편명입력">
+
+        <label class="label-hide" for="start-flightname">편명입력</label>
+        <input id="start-flightname" type="text" class="search-flight-detail-select-airplane" placeholder="편명입력">
         <button type="button" class="search-flight-detail-select-btn ico">검색</button>
       </div>
     </div>
