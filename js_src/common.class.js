@@ -2,13 +2,54 @@
  * Common Class *
  ****************/
 
-var LineTab, SelectBox, LayerPopup, CalendarPopup;
+var VendorDevice, LineTab, SelectBox, LayerPopup, CalendarPopup, ShowHide;
 
 $(function(){
 
   /**
    * VendorDevice Class
    */
+
+  VendorDevice = new function(){
+
+    var ua = navigator.userAgent;
+
+    var checkMobile = function(){
+      if(ua.indexOf('Mobile') != -1){
+        $('html').addClass('mobile');
+      }
+    };
+
+    var checkBrowser = function(){
+
+      if(ua.toLowerCase().indexOf('safari') != -1){
+
+        if(ua.toLowerCase().indexOf('chrome') != -1){
+          $('html').addClass('chrome');
+        } else {
+          $('html').addClass('safari');
+        }
+
+      }
+
+      if(ua.toLowerCase().indexOf('firefox') != -1){
+        $('html').addClass('firefox');
+      }
+
+    };
+
+    var checkOS = function(){
+
+      if( ua.toLowerCase().indexOf('os x') != -1 ){
+
+      }
+
+    };
+
+    checkMobile();
+    checkBrowser();
+
+  };
 
   /**
    * LineTab Class
@@ -112,10 +153,6 @@ $(function(){
   };
 
   /**
-   * showHide Class ?
-   */
-
-  /**
    * LayerPopup Class
    */
 
@@ -216,6 +253,32 @@ $(function(){
     };
 
     this.loadDatePicker();
+
+  };
+
+  /**
+   * ShowHide Class
+   */
+
+  ShowHide = new function(){
+
+    this.showHideContent = function(showType, indexNum, $tableNode){
+
+      console.log(1);
+
+      if(showType){
+        $tableNode.eq(indexNum).addClass('on');
+      } else {
+        $tableNode.eq(indexNum).removeClass('on')
+      }
+
+    };
+
+    this.hideAllContent = function( $tableNode ){
+
+      $tableNode.removeClass('on');
+
+    };
 
   };
 
