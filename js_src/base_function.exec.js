@@ -9,40 +9,44 @@ $(function(){
    */
 
   // set full page
-  if( FullPage.$mainFullPageContent.length > 0 ){
 
-    FullPage.sectionBgInit();
+  (function(){
 
-    FullPage.$mainFullPageContent.fullpage({
-      //scrollBar: true,
-      scrollingSpeed: 1000,
+    if( FullPage.$mainFullPageContent.length > 0 ){
 
-      afterLoad: function(anchor, firstSectionIndex){
+      FullPage.sectionBgInit();
 
-        HeaderGnb.setClass(firstSectionIndex-1, MainVisual.getNextVisualIndex());
+      FullPage.$mainFullPageContent.fullpage({
+        //scrollBar: true,
+        scrollingSpeed: 1000,
 
-      },
+        afterLoad: function(anchor, firstSectionIndex){
 
-      onLeave: function(currentSectionIndex, nextSectionIndex, direction){
+          HeaderGnb.setClass(firstSectionIndex-1, MainVisual.getNextVisualIndex());
 
-        if( direction == 'down' ){
+        },
 
-          FullPage.sectionBgDown(nextSectionIndex-1);
+        onLeave: function(currentSectionIndex, nextSectionIndex, direction){
 
-        } else {
+          if( direction == 'down' ){
 
-          FullPage.sectionBgUp(currentSectionIndex-1);
+            FullPage.sectionBgDown(nextSectionIndex-1);
+
+          } else {
+
+            FullPage.sectionBgUp(currentSectionIndex-1);
+
+          }
+
+          HeaderGnb.setClass(nextSectionIndex-1, MainVisual.getNextVisualIndex());
 
         }
 
-        HeaderGnb.setClass(nextSectionIndex-1, MainVisual.getNextVisualIndex());
+      });
 
-      }
+    }
 
-    });
-
-  }
-
+  })();
 
   /**
    * event
@@ -212,6 +216,30 @@ $(function(){
 
   })();
 
+  function responsiveBoxmodelLink(){
+
+    // boxmodel height same
+    $('.boxmodel-list').each(function(){
+      var $this = $(this);
+      var boxModel = $this.find('.boxmodel-list-item');
+      var boxModelHeight = boxModel.height();
+      $this.find('.boxmodel-list-item').height(boxModelHeight);
+    });
+
+  }
+
+  function boxmodelResize(){
+    $(window).on('resize', function(){
+      var widthSize = window.innerWidth;
+      if (widthSize > 780) {
+        console.log('sdfsaf');
+        $('.boxmodel-list-item.col-1').addClass('boxsize-auto');
+      }
+    });
+  }
+
+  boxmodelResize();
+  responsiveBoxmodelLink();
 
 });
 

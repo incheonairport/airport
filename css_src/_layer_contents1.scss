@@ -752,6 +752,9 @@
       text-align: center;
       margin-top: 130px;
       &-link{
+        border:none;
+        background:none;
+        font-size:1rem;
         &:before {
           content: '';
           display: block;
@@ -777,6 +780,14 @@
           margin-left: -20px;
         }
       }
+    }
+  }
+
+  &-time-table{
+    display:none;
+
+    &.on{
+      display:block;
     }
   }
 }
