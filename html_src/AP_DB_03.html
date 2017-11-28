@@ -7,23 +7,25 @@
     <article class="article">
       <div class="calculator">
         <div class="timesetting-date f-left">
-          <input type="text" class="timesetting-date-day js-from-input f-left" readonly placeholder="2017.08.21(월)">
+          <label for="start-day" class="label-hide">주차 시작일</label>
+          <input type="text" class="timesetting-date-day js-from-input f-left" readonly placeholder="2017.08.21(월)" id="start-day">
           <button class="timesetting-date-calendar ico js-from-button  f-left">날짜 선택</button>
-          <select class="timesetting-date-option  f-left">
+          <select class="timesetting-date-option  f-left" title="주차 시작 시간을 선택 해 주세요">
             <option>시간 선택</option>
           </select>
-          <select class="timesetting-date-option f-left">
+          <select class="timesetting-date-option f-left" title="주차 시작 분을 선택 해 주세요">
             <option>분 선택</option>
           </select>
         </div>
         <p class="timesetting-dash f-left"><strong>~</strong></p>
         <div class="timesetting-date f-right">
-          <input type="text" class="timesetting-date-day js-to-input f-left" readonly placeholder="2017.08.21(월)">
+          <label for="end-day" class="label-hide">주차 종료일</label>
+          <input type="text" class="timesetting-date-day js-to-input f-left" readonly placeholder="2017.08.21(월)" id="end-day">
           <button class="timesetting-date-calendar ico  js-to-button f-left">날짜 선택</button>
-          <select class="timesetting-date-option f-left">
+          <select class="timesetting-date-option f-left"  title="주차 종료 시간을 선택 해 주세요">
             <option>시간 선택</option>
           </select>
-          <select class="timesetting-date-option f-left">
+          <select class="timesetting-date-option f-left" title="주차 종료 분을 선택 해 주세요">
             <option>분 선택</option>
           </select>
         </div>
@@ -36,7 +38,7 @@
         </colgroup>
         <tbody>
         <tr>
-          <th class="center">
+          <th scope="row" class="center">
             터미널
           </th>
           <td>
@@ -53,7 +55,7 @@
           </td>
         </tr>
         <tr>
-          <th class="center">
+          <th scope="row" class="center">
             분류
           </th>
           <td>
@@ -70,7 +72,7 @@
           </td>
         </tr>
         <tr>
-          <th class="center">
+          <th scope="row" class="center">
             차종
           </th>
           <td>
@@ -87,7 +89,7 @@
           </td>
         </tr>
         <tr>
-          <th class="center">
+          <th scope="row" class="center">
             감면대상
           </th>
           <td>
@@ -119,7 +121,7 @@
         </colgroup>
         <tbody>
         <tr>
-          <th class="center parking-fee">
+          <th scope="row" class="center parking-fee">
             <strong>2,251</strong> 원
           </th>
           <td>

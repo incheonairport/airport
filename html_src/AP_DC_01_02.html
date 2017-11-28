@@ -16,9 +16,9 @@
     <article class="article">
       <!--검색-->
       <div class="bussearch">
-          <h3 class="bussearch-title">버스 노선 검색</h3>
+          <label for="bus" class="bussearch-title">버스 노선 검색</label>
           <div class="search-area">
-              <input type="text" class="search-area-txt" placeholder="목적지 또는 출발지명을 입력하세요">
+              <input type="text" class="search-area-txt" id="bus" placeholder="목적지 또는 출발지명을 입력하세요">
               <button type="button" class="search-area-btn ico">검색</button>
           </div>
       </div>
@@ -68,10 +68,10 @@
         </colgroup>
         <tbody>
         <tr>
-          <th rowspan="2">공항행</th>
+          <th scope="row" rowspan="2">공항행</th>
           <td class="center">첫차</td>
           <td class="center">04:00</td>
-          <th rowspan="2">종점행</th>
+          <th scope="row" rowspan="2">종점행</th>
           <td class="center">첫차</td>
           <td class="center">4A(04:55), 10B(04:59)</td>
         </tr>
@@ -82,15 +82,15 @@
           <td class="center">4A(22:17), 10B(22:21)</td>
         </tr>
         <tr>
-          <th>배차간격</th>
+          <th scope="row">배차간격</th>
           <td class="center" colspan="2">20~30분</td>
-          <th>소요시간</th>
+          <th scope="row">소요시간</th>
           <td class="center" colspan="2">50~85분</td>
         </tr>
         <tr>
-          <th>버스유형</th>
+          <th scope="row">버스유형</th>
           <td class="center" colspan="2">리무진고급</td>
-          <th>요금</th>
+          <th scope="row">요금</th>
           <td class="center" colspan="2">14,000원(현금 15,000원)</td>
         </tr>
         </tbody>

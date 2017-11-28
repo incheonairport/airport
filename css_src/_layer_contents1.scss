@@ -362,7 +362,7 @@
   }
   &-dash{
     margin: 0 auto;
-    padding-left: 15px;
+    padding-left:20px;
     text-align: center;
     color: #fff;
     font-size: 1.375rem;
@@ -900,4 +900,11 @@
 
 button{
   cursor: pointer;
+}
+
+.label-hide{
+  position: absolute;
+  left: -999em;
+  width: 1em;
+  overflow: hidden;
 }

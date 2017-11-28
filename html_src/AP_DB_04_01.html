@@ -46,33 +46,33 @@
         </colgroup>
         <tbody>
         <tr>
-          <th class="left">
-            휴대전화번호
+          <th scope="row" class="left">
+            <label for="phone">휴대전화번호</label>
           </th>
           <td>
-            <input type="text" placeholder="휴대전화번호 입력" class="input-bg">
+            <input type="text" placeholder="휴대전화번호 입력" class="input-bg" id="phone">
           </td>
         </tr>
         <tr>
-          <th class="left">
-            차량번호
+          <th scope="row" class="left">
+            <label for="car">차량번호</label>
           </th>
           <td>
-            <input type="text" placeholder="예)서울 11가 1234"  class="input-bg">
+            <input type="text" placeholder="예)서울 11가 1234"  class="input-bg" id="car">
           </td>
         </tr>
         <tr>
-          <th class="left">
-            SMS 받을 시간
+          <th scope="row" class="left">
+            <label for="sms">SMS 받을 시간</label>
           </th>
           <td>
             <div class="timesetting-date">
-              <input type="text" class="timesetting-date-day f-left" readonly placeholder="2017.08.21(월)">
+              <input type="text" class="timesetting-date-day f-left" readonly placeholder="2017.08.21(월)" id="sms">
               <button class="timesetting-date-calendar ico f-left">날짜 선택</button>
-              <select class="timesetting-date-option f-left">
+              <select class="timesetting-date-option f-left" title="sms를 받을 시간을 선택해 주세여">
                 <option>시간 선택</option>
               </select>
-              <select class="timesetting-date-option f-left">
+              <select class="timesetting-date-option f-left" title="sms를 받을 분을 선택해 주세요">
                 <option>분 선택</option>
               </select>
             </div>
