@@ -362,7 +362,7 @@
   }
   &-dash{
     margin: 0 auto;
-    padding-left: 15px;
+    padding-left:20px;
     text-align: center;
     color: #fff;
     font-size: 1.375rem;
@@ -752,6 +752,9 @@
       text-align: center;
       margin-top: 130px;
       &-link{
+        border:none;
+        background:none;
+        font-size:1rem;
         &:before {
           content: '';
           display: block;
@@ -777,6 +780,14 @@
           margin-left: -20px;
         }
       }
+    }
+  }
+
+  &-time-table{
+    display:none;
+
+    &.on{
+      display:block;
     }
   }
 }
@@ -900,4 +911,11 @@
 
 button{
   cursor: pointer;
+}
+
+.label-hide{
+  position: absolute;
+  left: -999em;
+  width: 1em;
+  overflow: hidden;
 }

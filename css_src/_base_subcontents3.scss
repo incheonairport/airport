@@ -997,7 +997,10 @@
 }
 
 .label-hide{
-  display:none;
+  position:absolute;
+  left:-999em;
+  width:1em;
+  overflow: hidden;
 }
 
 /*주차요금계산기*/

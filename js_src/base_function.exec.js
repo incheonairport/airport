@@ -9,40 +9,44 @@ $(function(){
    */
 
   // set full page
-  if( FullPage.$mainFullPageContent.length > 0 ){
 
-    FullPage.sectionBgInit();
+  (function(){
 
-    FullPage.$mainFullPageContent.fullpage({
-      //scrollBar: true,
-      scrollingSpeed: 1000,
+    if( FullPage.$mainFullPageContent.length > 0 ){
 
-      afterLoad: function(anchor, firstSectionIndex){
+      FullPage.sectionBgInit();
 
-        HeaderGnb.setClass(firstSectionIndex-1, MainVisual.getNextVisualIndex());
+      FullPage.$mainFullPageContent.fullpage({
+        //scrollBar: true,
+        scrollingSpeed: 1000,
 
-      },
+        afterLoad: function(anchor, firstSectionIndex){
 
-      onLeave: function(currentSectionIndex, nextSectionIndex, direction){
+          HeaderGnb.setClass(firstSectionIndex-1, MainVisual.getNextVisualIndex());
 
-        if( direction == 'down' ){
+        },
 
-          FullPage.sectionBgDown(nextSectionIndex-1);
+        onLeave: function(currentSectionIndex, nextSectionIndex, direction){
 
-        } else {
+          if( direction == 'down' ){
 
-          FullPage.sectionBgUp(currentSectionIndex-1);
+            FullPage.sectionBgDown(nextSectionIndex-1);
+
+          } else {
+
+            FullPage.sectionBgUp(currentSectionIndex-1);
+
+          }
+
+          HeaderGnb.setClass(nextSectionIndex-1, MainVisual.getNextVisualIndex());
 
         }
 
-        HeaderGnb.setClass(nextSectionIndex-1, MainVisual.getNextVisualIndex());
+      });
 
-      }
+    }
 
-    });
-
-  }
-
+  })();
 
   /**
    * event
@@ -211,7 +215,6 @@ $(function(){
     });
 
   })();
-
 
 });
 

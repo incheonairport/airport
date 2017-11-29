@@ -196,6 +196,9 @@
       }
     }
   }
+  &.path-departure{
+    background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) center no-repeat;
+  }
 
   &.bg7 {
   background: url(/static/ap/images/bg_parking_info.jpg) center no-repeat;
@@ -1224,10 +1227,10 @@
   }
 }
 
-.boxsize-auto{
-  min-height:inherit!important;
-  height:auto!important;
-}
+//.boxsize-auto{
+//  min-height:inherit!important;
+//  height:auto!important;
+//}
 
 .logo-list{
   @extend %clearfix;
