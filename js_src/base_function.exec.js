@@ -216,31 +216,6 @@ $(function(){
 
   })();
 
-  function responsiveBoxmodelLink(){
-
-    // boxmodel height same
-    $('.boxmodel-list').each(function(){
-      var $this = $(this);
-      var boxModel = $this.find('.boxmodel-list-item');
-      var boxModelHeight = boxModel.height();
-      $this.find('.boxmodel-list-item').height(boxModelHeight);
-    });
-
-  }
-
-  function boxmodelResize(){
-    $(window).on('resize', function(){
-      var widthSize = window.innerWidth;
-      if (widthSize > 780) {
-        console.log('sdfsaf');
-        $('.boxmodel-list-item.col-1').addClass('boxsize-auto');
-      }
-    });
-  }
-
-  boxmodelResize();
-  responsiveBoxmodelLink();
-
 });
 
 

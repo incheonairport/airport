@@ -335,10 +335,10 @@ $(function(){
 
   // tab
 
-  $('.tab-sub-list-link').on('click', function(e){
+  $('.tab-sub-list-item-link').on('click', function(e){
     e.preventDefault();
 
-    var $tab = $('.tab-sub-list-link');
+    var $tab = $('.tab-sub-list-item-link');
     var $tabContents = $('.tab-contents');
 
     var index = $tab.index( $(this) );

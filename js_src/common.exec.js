@@ -16,13 +16,13 @@ $(function(){
 
     });
 
-    $('.js-from-button').on('click', function(){
+    $('body').on('click', '.js-from-button', function(){
 
       CalendarPopup.showDatePicker($(this), 'show');
 
     });
 
-    $('.js-to-button').on('click', function(){
+    $('body').on('click', '.js-to-button', function(){
 
       CalendarPopup.showDatePicker($(this), 'show');
 
