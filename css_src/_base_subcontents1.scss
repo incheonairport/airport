@@ -540,8 +540,9 @@
     border:0;
     text-indent: -99999em;
     position:absolute;
-    top: 20px;
-    right:20px;
+    z-index: 99999;
+    top: 5%;
+    right: 30px;
     padding:0;
 
     &.close2{
