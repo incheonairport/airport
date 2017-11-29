@@ -497,12 +497,69 @@
 
 /* quick menu */
 .quick{
-  width:50px;
-  height:100px;
-  background:#333;
+  //background:#333;
+  width:73px;
   position:fixed;
+  z-index: 10;
+  top:30%;
   right:0;
-  color:#fff;
+  border-radius: 20px;
+  //color:#fff;
+
+  &-menu-list{
+    background: #272936;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    &-item{
+      padding: 15px 0;
+      text-align: center;
+      line-height: 1.2;
+
+      &.top{
+        padding-bottom: 5px;
+      }
+    }
+    &-link{
+      color:rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+
+      &:before{
+        content: '';
+        display: block;
+        margin: 0 auto 5px;
+        background: url(/static/ap/images/spr_ico_quick.png) no-repeat;
+      }
+
+      &.cyber-airport:before{
+        background-position: -132px 0;
+        width: 43px;
+        height: 19px;
+      }
+
+      &.view-airport:before{
+        background-position: -35px 0;
+        width: 43px;
+        height: 16px;
+      }
+
+      &.move-terminal:before{
+        background-position: -99px 0;
+        width: 23px;
+        height: 18px;
+      }
+
+      &.my-terminal:before{
+        background-position: 0 0;
+        width: 16px;
+        height: 21px;
+      }
+    }
+
+    &-top{
+      color:rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+    }
+  }
 }
 
 mark{

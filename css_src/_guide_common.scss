@@ -37,6 +37,8 @@
 .contents-visual{
   height:200px;
   padding-top: 90px;
+  position:relative;
+
   &.departure{
     background:url(/static/ap/images/bg_sub_visual_departure.jpg) center no-repeat;
     background-size: cover;
@@ -44,6 +46,11 @@
   &.airline{
     background:url(/static/ap/images/bg_sub_visual_airline.jpg) center no-repeat;
     background-size: cover;
+  }
+
+  .inner-section{
+    height:100%;
+    position:relative;
   }
 }
 
@@ -95,34 +102,36 @@
   }
 
   &-sub{
+    width:100%;
+    position:absolute;
+    left:0;
+    bottom:0;
     text-align: center;
-    margin-bottom: 30px;
-
     &-list{
-      //margin-top: 81px;
-
+      width:100%;
       @extend %clearfix;
-
       &-item {
         float: left;
-        background:rgba(66, 81, 158, .9);
-        font-size: 	1.375rem;
-        font-weight:300;
-        line-height:72px;
+        width:calc(50% - 2px);
         height: 72px;
-        & a{
+        margin-left: 4px;
+        &-link{
+          width:100%;
+          height:100%;
+          line-height:72px;
+          background:rgba(66, 81, 158, .9);
           color: #fff;
+          font-size: 	1.25rem;
+          font-weight:300;
           display: inline-block;
-          width: 574px;
-        }
-        &.on{
-          background: #fff;
-          font-weight: 700;
-          & a{ color: #42519e;
+          &.on{
+            color: #42519e;
+            background: #fff;
+            font-weight: 800;
           }
         }
-        &+.tab-sub-list-item{
-          margin-left: 4px;
+        &:first-child{
+          margin-left:0;
         }
       }
     }
@@ -255,6 +264,18 @@
       background-color:#2c8179;
     }
   }
+
+  &-iframe{
+    .progress-bar{
+      background-color:darkolivegreen;
+    }
+  }
+
+  &-link{
+    .progress-bar{
+      background-color:skyblue;
+    }
+  }
 }
 
 .progress{
@@ -352,6 +373,9 @@ table{
 
         &.category{
           background:#999;
+          td{
+            padding:0;
+          }
         }
 
         &.cancel{
@@ -366,11 +390,26 @@ table{
 
         &.primary-category{
           background:coral;
+          td{
+            padding:0;
+          }
         }
 
         &.link-page{
           background:skyblue;
+          td{
+            padding:0;
+          }
         }
+
+        //&.iframe-page{
+        //  background:darkolivegreen;
+        //
+        //  td{
+        //    padding:0;
+        //    color:#999;
+        //  }
+        //}
 
         &:hover{
           background:#ffae44;
@@ -422,13 +461,17 @@ table{
     }
 
     td{
-      padding:10px 5px 8px;
+      padding:7px 5px 5px;
       font-size:0.625rem;
       font-weight:700;
       line-height:1.4;
       border-right:1px solid #f2f4f7;
       border-top:1px solid #d9d9d9;
       vertical-align:middle;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 100px;
 
       &.center{
         text-align:center;
@@ -441,6 +484,11 @@ table{
 
       &:last-child{
         border-right:0;
+      }
+
+      >.note{
+        background:#ff0000;
+        color:#fff;
       }
     }
   }

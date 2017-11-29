@@ -16,19 +16,22 @@ $(function(){
 
   var count = {
 
-    work : 0,
-    primary : 0,
-    category : 0,
-    cancel : 0,
-    html : 0,
-    dev : 0,
-    board : 0,
-    link : 0,
-    extra : 0,
+    allWork : 0,
+    allPrimary : 0,
+    allCategory : 0,
+    allCancel : 0,
+    allHtml : 0,
+    allDev : 0,
+    allBoard : 0,
+    allLink : 0,
+    allExtra : 0,
+    allIframe : 0,
+
     doneWork : 0,
     doneHtml : 0,
     doneDev : 0,
-    doneBoard : 0
+    doneBoard : 0,
+    doneIframe : 0
 
   };
 
@@ -54,6 +57,7 @@ $(function(){
     if($children.has('s').length){
 
       $record.addClass('cancel');
+      $children.eq(7).text('');
 
     } else {
 
@@ -61,9 +65,10 @@ $(function(){
 
         childrenText = 'extra-page';
 
-      } else if( $children.eq(0).text() != '' ){
+      } else if( $children.length == 1 && $children.eq(0).text() != '' ){
 
-        childrenText = childrenText ? 'primary-category ' + $children.eq(6).text().toLowerCase() + '-page' : 'primary-category '
+        //childrenText = childrenText ? 'primary-category ' + $children.eq(6).text().toLowerCase() + '-page' : 'primary-category '
+        childrenText = 'primary-category ';
 
       } else {
 
@@ -141,43 +146,47 @@ $(function(){
       if (className == 'primary-category') {
 
         // number of primary category
-        count.primary++;
+        count.allPrimary++;
 
       } else if (className == 'category') {
 
         // number of category
-        count.category++;
+        count.allCategory++;
 
       } else if ( className == 'cancel' ) {
 
-        count.cancel++;
+        count.allCancel++;
 
       }
 
       if( className.toLowerCase().indexOf('page') >= 0 ) {
 
         // number of working page
-        count.work++;
+        count.allWork++;
 
         if (className.toLowerCase().indexOf('html') >= 0) {
           // number of html page
-          count.html++;
+          count.allHtml++;
 
         } else if (className.toLowerCase().indexOf('develop') >= 0) {
           // number of develop page
-          count.dev++;
+          count.allDev++;
 
         } else if (className.toLowerCase().indexOf('board') >= 0) {
           // number of board page
-          count.board++;
+          count.allBoard++;
 
         } else if (className.toLowerCase().indexOf('link') >= 0) {
           // number of link
-          count.link++;
+          count.allLink++;
 
         } else if( className.toLowerCase().indexOf('extra') >= 0 ){
           // number of extra page
-          count.extra++;
+          count.allExtra++;
+
+        } else if( className.toLowerCase().indexOf('iframe') >= 0 ){
+          // number of iframe page
+          count.allIframe++;
 
         }
 
@@ -202,12 +211,17 @@ $(function(){
           // number of done board page
           count.doneBoard++;
 
+        } else if (className.toLowerCase().indexOf('iframe') >= 0) {
+
+          // number of done iframe page
+          count.doneIframe++;
+
         }
       }
 
     });
 
-    count.work = count.work - count.link - count.extra;
+    count.allWork = count.allWork - count.allLink - count.allExtra;
 
   }
 
@@ -216,21 +230,27 @@ $(function(){
 
     countProgress();
 
-    console.log( count);
+    console.log(count);
 
-    $('.progress-all .progress-bar').css({width:Math.floor( count.doneWork / count.work * 100 ) + '%'}).html('<div class="progress-percent">' + Math.floor( count.doneWork / count.work * 100 ) + '%</div>');
+    $('.progress-all .progress-bar').css({width:Math.floor( count.doneWork / count.allWork * 100 ) + '%'}).html('<div class="progress-percent">' + Math.floor( count.doneWork / count.allWork * 100 ) + '%</div>');
 
-    $('.all-work').text( count.work + 'p');
-    $('.done-work .progress-bar').css({width: Math.floor( count.doneWork / count.work * 100 ) + '%'}).html('<div class="progress-percent">' + count.doneWork + 'p</div>');
+    $('.all-work').text( count.allWork + 'p');
+    $('.done-work .progress-bar').css({width: Math.floor( count.doneWork / count.allWork * 100 ) + '%'}).html('<div class="progress-percent">' + count.doneWork + 'p</div>');
 
-    $('.all-work-html').text(count.html + 'p');
-    $('.done-work-html .progress-bar').css({width: Math.floor( count.doneHtml / count.html * 100 ) + '%'}).html('<div class="progress-percent">' + count.doneHtml + 'p</div>');
+    $('.all-work-html').text(count.allHtml + 'p');
+    $('.done-work-html .progress-bar').css({width: Math.floor( count.doneHtml / count.allHtml * 100 ) + '%'}).html('<div class="progress-percent">' + count.doneHtml + 'p</div>');
 
-    $('.all-work-board').text(count.board + 'p');
-    $('.done-work-board .progress-bar').css({width: Math.floor( count.doneBoard / count.board * 100) + '%'}).html('<div class="progress-percent">' + count.doneBoard + 'p</div>');
+    $('.all-work-board').text(count.allBoard + 'p');
+    $('.done-work-board .progress-bar').css({width: Math.floor( count.doneBoard / count.allBoard * 100) + '%'}).html('<div class="progress-percent">' + count.doneBoard + 'p</div>');
 
-    $('.all-work-develop').text(count.dev + 'p');
-    $('.done-work-develop .progress-bar').css({width: Math.floor( count.doneDev / count.dev * 100) + '%'}).html('<div class="progress-percent">' + count.doneDev + 'p</div>');
+    $('.all-work-develop').text(count.allDev + 'p');
+    $('.done-work-develop .progress-bar').css({width: Math.floor( count.doneDev / count.allDev * 100) + '%'}).html('<div class="progress-percent">' + count.doneDev + 'p</div>');
+
+    $('.all-work-iframe').text(count.allIframe + 'p');
+    $('.done-work-iframe .progress-bar').css({width: Math.floor( count.doneIframe / count.allIframe * 100) + '%'}).html('<div class="progress-percent">' + count.doneIframe + 'p</div>');
+
+    $('.all-work-link').text(count.allLink + 'p');
+    $('.done-work-link .progress-bar').css({width: Math.floor( count.allLink / count.allLink * 100) + '%'}).html('<div class="progress-percent">' + count.allLink + 'p</div>');
   }
 
   /**
@@ -305,13 +325,9 @@ $(function(){
 
       window.open($(this).find('.list-link').attr('href'));
 
-    } else if( $(this).hasClass('cancel') ){
-
-      alert('제작이 취소된 페이지 입니다')
-
     } else {
 
-      alert('준비 중 입니다.');
+      alert('제작 페이지가 아닙니다.');
 
     }
 
@@ -319,10 +335,10 @@ $(function(){
 
   // tab
 
-  $('.tab-sub-list-link').on('click', function(e){
+  $('.tab-sub-list-item-link').on('click', function(e){
     e.preventDefault();
 
-    var $tab = $('.tab-sub-list-link');
+    var $tab = $('.tab-sub-list-item-link');
     var $tabContents = $('.tab-contents');
 
     var index = $tab.index( $(this) );

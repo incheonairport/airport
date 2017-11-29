@@ -196,6 +196,9 @@
       }
     }
   }
+  &.path-departure{
+    background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) center no-repeat;
+  }
 
   &.bg7 {
   background: url(/static/ap/images/bg_parking_info.jpg) center no-repeat;
@@ -404,8 +407,8 @@
     height:100%;
     margin-bottom:30px;
     &.box-border{
-      border-bottom: 1px solid #dee3eb;
-      padding-bottom: 30px;
+      border-top: 1px solid #dee3eb;
+      padding-top: 30px;
     }
     &-head{
       font-family: nanumsq, sans-serif;
@@ -1221,10 +1224,10 @@
   }
 }
 
-.boxsize-auto{
-  min-height:inherit!important;
-  height:auto!important;
-}
+//.boxsize-auto{
+//  min-height:inherit!important;
+//  height:auto!important;
+//}
 
 .logo-list{
   @extend %clearfix;
