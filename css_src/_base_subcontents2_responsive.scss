@@ -38,6 +38,8 @@
           }
         }
         &.col-1 {
+          min-height:inherit;
+          height:auto;
           .leave-check{
             .col-btn{
               &-link1{
