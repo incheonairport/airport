@@ -192,6 +192,7 @@
     border: 1px solid #666;
     box-sizing: border-box;
     float: left;
+    font-size:1rem;
   }
   &-name {
     display: block;
@@ -199,11 +200,13 @@
     &-txt {
       width: 403px;
       height: 56px;
+      line-height:56px;
       padding: 0 15px;
       border: 1px solid #666;
       box-sizing: border-box;
       border-right: 0;
       float: left;
+      font-size: 1rem;
     }
     &-btn {
       width: 62px;
@@ -311,10 +314,12 @@
     &-txt {
       width: 259px;
       height: 58px;
+      line-height:58px;
       padding: 0 15px;
       border: 1px solid #d9d9d9;
       border-right: 0;
       float: left;
+      font-size:1rem;
     }
     &-btn {
       width: 108px;
@@ -449,6 +454,7 @@
   .layer-article-input.search-address{
     width: 360px;
     height: 50px;
+    line-height:50px;
     padding: 0 20px;
     text-align: left;
     border: 1px solid #d9d9d9;
@@ -1145,6 +1151,7 @@
 .user-text{
  width: 250px;
   height: 50px;
+  line-height:50px;
   padding: 0 10px;
   font-size: 1rem;
   border: 1px solid #d9d9d9;
@@ -1170,7 +1177,7 @@
   &-input{
     width:957px;
     &-text{
-      width:810px;
+      width:800px;
       height:50px;
       font-size:1rem;
       border: 1px solid #d9d9d9;

@@ -271,6 +271,7 @@
     &-airplane{
       width: 189px;
       height:58px;
+      line-height:58px;
       padding:0 10px;
       background: #fcfbe8;
       border: none;
@@ -540,7 +541,7 @@
     text-indent: -99999em;
     position:absolute;
     z-index: 99999;
-    top: 5%;
+    top: 20px;
     right: 30px;
     padding:0;
 
