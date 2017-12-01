@@ -888,6 +888,9 @@
     height: 36px
   }
   thead th{
+    &.wid{
+      width: 358px;
+    }
     width: 179px;
   }
   thead th:first-child{
@@ -902,6 +905,23 @@
   }
   tbody td{
     text-align: center;
+    strong{
+      &.blue{
+        color:#4674c9;
+      }
+      &.green{
+        color:#2c8179;
+      }
+      &.yellow{
+        color:#ffae44;
+      }
+      &.brown{
+        color:#dd7714;
+      }
+      &.red{
+        color:#d43e41;
+      }
+    }
   }
 }
 
@@ -1267,3 +1287,161 @@
 .color-g{
   color: #328386;
 }
+
+.map-departure-congestion01{
+  position: relative;
+  background: url(/static/ap/images/map_departure_congestion_01.png) no-repeat;
+  height: 352px;
+  background-size: 100%;
+}
+
+.map-departure-congestion02{
+  position: relative;
+  background: url(/static/ap/images/map_departure_congestion_02.png) no-repeat;
+  height: 352px;
+  background-size: 100%;
+}
+
+.congestion{
+  &-mark1{
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    top: 171px;
+    left: 310px;
+  }
+  &-mark2{
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    top: 153px;
+    left: 358px;
+  }
+  &-mark3{
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    top: 153px;
+    left: 454px;
+  }
+  &-mark4{
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    top: 171px;
+    left: 504px;
+  }
+  &-mark5{
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    top: 190px;
+    left: 359px;
+  }
+  &-mark6{
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    top: 190px;
+    left: 460px;
+  }
+  &-mark{
+    &-number{
+      font-weight: 700;
+      line-height: 1.7;
+      font-size: 0.75rem;
+      text-align: center;
+      width: 50px;
+      height: 25px;
+      box-sizing: border-box;
+      background: #ffffff;
+      border: 2px solid #7d7d7d;
+      border-radius: 23px;
+      position: relative;
+      margin-bottom: 6px;
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 2;
+        left: 15px;
+        bottom: -13px;
+        width: 0;
+        height: 0;
+        border-top:6px solid #ffffff;
+        border-bottom:8px solid transparent;
+        border-right: 8px solid transparent;
+        border-left: 8px solid  transparent;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 13px;
+        bottom: -18px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top:8px solid #7d7d7d;
+        border-bottom:10px solid transparent;
+        border-right: 10px solid transparent;
+        border-left: 10px solid  transparent;
+      }
+    }
+    &-color{
+      display: block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      color: #ffffff;
+      margin: 0 auto;
+      &.blue{
+        background: #4674c9;
+      }
+      &.green{
+        background: #2c8179;
+      }
+      &.yellow{
+        background: #ffae44;
+      }
+      &.brown{
+        background: #dd7714;
+      }
+      &.red{
+        background: #d43e41;
+      }
+    }
+  }
+}
+
+.inner-tab2{
+  @extend %clearfix;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  .btn-type-tab{
+    box-sizing: border-box;
+    min-width: 120px;
+    height: 32px;
+    padding: 4px 20px;
+    border: 1px solid #666;
+    color: #444;
+    background: #ffffff;
+    float: left;
+    text-align: center;
+    font-size: 0.875rem;
+    &.on{
+      border: 0;
+      color: #fff;
+      background: #222;
+    }
+    &+.btn-type-tab{
+      margin: 0;
+    }
+  }
+}
+
+
