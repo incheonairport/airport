@@ -796,20 +796,24 @@
 }
 
 .route-bus-line{
-  width: 1152px;
-  height: 400px;
-  //background: url(/static/ap/images/bg_route_bus_area_search_t1_01.png)no-repeat;
-  position: relative;
+  width: 976px;
+  height: 165px;
+  background: url(/static/ap/images/bg_route_bus_area_search_t1_01.png)no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -82.5px -488px;
   &-list{
     width: 100%;
     position: relative;
     &-article{
       //-webkit-transform: rotate(-45deg);
       //-ms-transform: rotate(-45deg);
-      //position: absolute;
+      position: absolute;
+      top: 0;
+      left: 0;
       z-index: 10;
       font-size: 0.875rem;
-
       &:after{
         content:"";
         display:block;
@@ -818,6 +822,7 @@
         border:3px solid #41519e;
         border-radius:50%;
         box-sizing:border-box;
+        background: #f2f4f7;
       }
 
 
@@ -827,7 +832,7 @@
 
 .route-bus-stop{
   display: block;
-  width: 100%;
+  width: 1152px;
   height: 400px;
   background: url(/static/ap/images/bg_route_bus_area_search_t1_02.png)no-repeat;
   background-size: 100%;
