@@ -325,6 +325,7 @@
     &-day{
       width: 140px;
       height: 56px;
+      line-height:56px;
       padding: 0;
       border: 1px solid #d9d9d9;
       border-right: 0;
@@ -407,6 +408,7 @@
 .input-bg{
   width: 440px;
   height: 50px;
+  line-height: 50px;
   padding: 0 10px;
   font-size: 1rem;
   color: #666;
@@ -433,6 +435,7 @@
     &-input {
       width: 406px;
       height: 58px;
+      line-height:58px;
       padding: 10px;
       border: 1px solid #666;
       box-sizing: border-box;
