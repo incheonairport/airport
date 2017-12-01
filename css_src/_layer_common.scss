@@ -1789,8 +1789,11 @@ b.text-bold{
 }
 
 .overflow{
+  position: relative;
   max-width: 1152px;
+  height: 400px;
   overflow-x: auto;
+  background: #f2f4f7;
 }
 
 
