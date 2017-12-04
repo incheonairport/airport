@@ -23,7 +23,7 @@ var concat = require('gulp-concat');
 
 // livereload
 gulp.task('reload:livereload', function(){
-  gulp.src(['html/*', 'guide/*', 'css/*', 'js/*', '*'])
+  gulp.src(['html/*', 'css/*', 'js/*', '*'])
       .pipe( livereload() );
 });
 
@@ -31,9 +31,8 @@ gulp.task('reload:livereload', function(){
 gulp.task('reload:watch', function() {
   livereload.listen();
   gulp.watch('*', ['reload:livereload']);
-  gulp.watch('html_src/**', ['build:include:html', 'reload:livereload']);
-  gulp.watch('guide_src/**', ['build:include:guide', 'reload:livereload']);
   gulp.watch('css_src/**', ['build:sass:dev', 'reload:livereload']);
+  gulp.watch('html_src/**', ['build:include:html', 'reload:livereload']);
   gulp.watch('js_src/**', ['build:js:compress', 'reload:livereload']);
 });
 
@@ -41,20 +40,12 @@ gulp.task('reload:watch', function() {
  * build default
  */
 
-// build site html including header/footer
+// build html including header/footer
 gulp.task('build:include:html', function(){
   gulp.src("html_src/*.html")
       .pipe(include())
       .on('error', console.log)
       .pipe(gulp.dest("html/"));
-});
-
-// build guide html including header/footer
-gulp.task('build:include:guide', function(){
-  gulp.src("guide_src/*.html")
-      .pipe(include())
-      .on('error', console.log)
-      .pipe(gulp.dest("guide/"));
 });
 
 // build sass for dev
@@ -68,6 +59,7 @@ gulp.task('build:sass:dev', function(){
 
 // build js compress
 gulp.task('build:js:compress', function(){
+
   gulp.src(['js_src/common*.js', 'js_src/base*.js'])
       .pipe(concat('base_function.js'))
       .pipe(minify({
@@ -80,16 +72,6 @@ gulp.task('build:js:compress', function(){
 
   gulp.src(['js_src/common*.js', 'js_src/layer*.js'])
       .pipe(concat('layer_function.js'))
-      .pipe(minify({
-        ext:{
-          src : '.debug.js',
-          min : '.min.js'
-        }
-      }))
-      .pipe(gulp.dest('../static/ap/js'));
-
-  gulp.src(['js_src/common*.js', 'js_src/guide*.js'])
-      .pipe(concat('guide_function.js'))
       .pipe(minify({
         ext:{
           src : '.debug.js',
@@ -117,34 +99,21 @@ gulp.task('seperate:copy:jsLib', function() {
 
 // copy file list json
 gulp.task('seperate:copy:fileListJson', function(){
-  return gulp.src('guide_src/*.json')
-      .pipe(gulp.dest('guide/'));
+  return gulp.src('data_src/*.json')
+      .pipe(concat('ap_file_data.json'))
+      .pipe(gulp.dest('../static/guide/data'));
 });
 
 /**
  * release
  */
 
-// release site html
+// release html
 gulp.task('release:html', function(){
   gulp.src("html_src/*.html")
       .pipe(include())
       .on('error', console.log)
       .pipe(gulp.dest("../release/ap/html/"));
-});
-
-// release guide html
-gulp.task('release:guide', function(){
-  gulp.src("guide_src/*.html")
-      .pipe(include())
-      .on('error', console.log)
-      .pipe(gulp.dest("../release/ap/guide/"));
-});
-
-// release file list json
-gulp.task('release:copy:fileListJson', function(){
-  return gulp.src('guide_src/*.json')
-      .pipe(gulp.dest('../release/ap/guide/'));
 });
 
 // release sass
@@ -176,15 +145,6 @@ gulp.task('release:js:compress', function(){
       }))
       .pipe(gulp.dest('../release/static/ap/js'));
 
-  gulp.src(['js_src/common*.js', 'js_src/guide*.js'])
-      .pipe(concat('guide_function.js'))
-      .pipe(minify({
-        ext:{
-          src : '.debug.js',
-          min : '.min.js'
-        }
-      }))
-      .pipe(gulp.dest('../release/static/ap/js'));
 });
 
 // release js library file
@@ -210,6 +170,6 @@ gulp.task('release:fonts', function(){
  * run task
  */
 
-gulp.task('default', ['build:include:html', 'build:include:guide', 'build:sass:dev', 'build:js:compress', 'reload:watch']);
+gulp.task('default', ['build:include:html', 'build:sass:dev', 'build:js:compress', 'reload:watch']);
 
-gulp.task('release', ['release:html', 'release:guide', 'release:copy:fileListJson', 'release:sass', 'release:js:compress', 'release:copy:jsLib', 'release:images', 'release:fonts']);
+gulp.task('release', ['release:html', 'release:sass', 'release:js:compress', 'release:copy:jsLib', 'release:images', 'release:fonts']);
