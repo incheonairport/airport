@@ -874,7 +874,7 @@ em{
       content: "·";
       font-size: 	1.625rem;
       position:absolute;
-      top:-6px;
+      top:-8px;
       left:0;
     }
   }
@@ -1796,7 +1796,9 @@ b.text-bold{
   overflow-y:hidden;
 }
 
-
+button{
+  border-radius: 0;
+}
 
 //select.mac{
 //  -webkit-border-radius: 0;
