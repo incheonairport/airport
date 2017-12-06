@@ -11,21 +11,21 @@
 			<ul class="location-bar-nav">
 				<li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link home ico">home</a></li>
 				<li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link">쇼핑·식당</a></li>
-				<li class="location-bar-nav-item"><a href="" class="location-bar-nav-item-link">일반 쇼핑</a></li>
+				<li class="location-bar-nav-item"><a href="" class="location-bar-nav-item-link">면세점 쇼핑</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="inner-section">
 		<div class="contents-sub-head">
-			<h2 class="contents-sub-head-title">일반 쇼핑</h2>
+			<h2 class="contents-sub-head-title">면세점 쇼핑</h2>
 			<p class="contents-sub-head-article">고품격 쇼핑공간, 편리한 쇼핑시설, 더 많은 브랜드,더 많은 스타일</p>
 		</div>
 	</div>
-	<div class="bg-banner shopping">
+	<div class="bg-banner dutyfree">
 		<div class="inner-section">
       <span class="bg-banner-tit">
         Incheon Airport<br />
-        <strong>SHOPPING</strong>
+        <strong>DUTY FREE</strong>
       </span>
 
 			<ul class="bg-banner-iconlist">
@@ -33,7 +33,10 @@
 					<a href="" class="bg-banner-bgico event">이벤트</a>
 				</li>
 				<li class="bg-banner-iconlist-item">
-					<a href="" class="bg-banner-bgico map">일반매장 쇼핑맵</a>
+					<a href="" class="bg-banner-bgico map">면세점 쇼핑맵</a>
+				</li>
+				<li class="bg-banner-iconlist-item">
+					<a href="" class="bg-banner-bgico shopping">쇼핑가이드</a>
 				</li>
 			</ul>
 
@@ -45,21 +48,21 @@
 					<div class="slide-banner-wrap">
 						<ul class="slide-banner-list">
 							<li class="slide-banner-list-item">
-								<a href="" class="slide-banner-list-link slide-ad03">
+								<a href="" class="slide-banner-list-link slide-ad02">
 									<span class="slide-banner-list-desc color-b">피부 재충전을 위한</span>
 									<span class="slide-banner-list-strong color-b">샤넬 르 리프트 리추얼</span>
 								</a>
 							</li>
 
 							<li class="slide-banner-list-item">
-								<a href="" class="slide-banner-list-link slide-ad03">
+								<a href="" class="slide-banner-list-link slide-ad02">
 									<span class="slide-banner-list-desc color-b">피부 재충전을 위한</span>
 									<span class="slide-banner-list-strong color-b">샤넬 르 리프트 리추얼</span>
 								</a>
 							</li>
 
 							<li class="slide-banner-list-item">
-								<a href="" class="slide-banner-list-link slide-ad03">
+								<a href="" class="slide-banner-list-link slide-ad02">
 									<span class="slide-banner-list-desc color-b">피부 재충전을 위한</span>
 									<span class="slide-banner-list-strong color-b">샤넬 르 리프트 리추얼</span>
 								</a>
@@ -87,13 +90,8 @@
 				<div class="filter-terminal-search-depth1">
 					<div class="input-box field">
 						<div class="field-division">
-							<input type="radio" name="main-terminal" id="main-terminal-all" class="field-radiomain" value="main-terminal-all" checked>
-							<label for="main-terminal-all" class="field-radiomain-label" title="클릭하면 전체에서 검색이 가능합니다.">전체</label>
-						</div>
-
-						<div class="input-box field-division">
-							<input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="main-terminal-1">
-							<label for="main-terminal-2" class="field-radiomain-label" title="클릭하면 제2 여객터미널에서 검색이 가능합니다.">제1 여객터미널</label>
+							<input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="main-terminal-1" checked>
+							<label for="main-terminal-1" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">제1 여객터미널</label>
 						</div>
 
 						<div class="input-box field-division">
@@ -111,32 +109,77 @@
 				<!-- 2차 필터 검색 -->
 				<div class="filter-terminal-search-depth2">
 					<div class="field">
+						<div class="field-group">
+							<input type="radio" name="air-area" id="air-all" class="field-radio" value="air-all" checked>
+							<label class="field-radio-label" for="air-all">전체</label>
+
+							<input type="radio" name="air-area" id="air-terminalB1" class="field-radio" value="air-terminalB1">
+							<label class="field-radio-label" for="air-terminalB1">여객터미널 B1</label>
+
+							<input type="radio" name="air-area" id="air-terminal2F" class="field-radio" value="air-terminal2F">
+							<label class="field-radio-label" for="air-terminal2F">여객터미널 2F</label>
+
+							<input type="radio" name="air-area" id="air-passTerminal3F" class="field-radio" value="air-passTerminal3F">
+							<label class="field-radio-label" for="air-passTerminal3F">패스여객터미널 3F</label>
+
+							<input type="radio" name="air-area" id="air-terminal4F" class="field-radio" value="air-terminal4F">
+							<label class="field-radio-label" for="air-terminal4F">여객터미널 4F</label>
+
+							<input type="radio" name="air-area" id="air-trafficCenterB1" class="field-radio" value="air-trafficCenterB1">
+							<label class="field-radio-label" for="air-trafficCenterB1">교통센터 B1</label>
+
+							<input type="radio" name="air-area" id="air-boarding3F" class="field-radio" value="air-boarding3F">
+							<label class="field-radio-label" for="air-boarding3F">탑승동 3F</label>
+						</div>
 
 						<div class="field-group">
 							<input type="radio" name="shop-area" id="shop-all" class="field-radio" value="shop-all" checked>
 							<label class="field-radio-label" for="shop-all">전체</label>
 
+							<input type="radio" name="shop-area" id="shop-boutique" class="field-radio" value="shop-boutique">
+							<label class="field-radio-label" for="shop-boutique">부티크</label>
+
 							<input type="radio" name="shop-area" id="shop-cosmetics" class="field-radio" value="shop-cosmetics">
-							<label class="field-radio-label" for="shop-cosmetics">화장품</label>
+							<label class="field-radio-label" for="shop-cosmetics">화장품/향수</label>
 
 							<input type="radio" name="shop-area" id="shop-fashion" class="field-radio" value="shop-fashion">
 							<label class="field-radio-label" for="shop-fashion">패션/액세서리</label>
 
-							<input type="radio" name="shop-area" id="shop-convenience" class="field-radio" value="shop-convenience">
-							<label class="field-radio-label" for="shop-convenience">편의점/포장식품</label>
-
-							<input type="radio" name="shop-area" id="shop-bookstore" class="field-radio" value="shop-bookstore">
-							<label class="field-radio-label" for="shop-bookstore">서점</label>
-
-							<input type="radio" name="shop-area" id="shop-travel" class="field-radio" value="shop-travel">
-							<label class="field-radio-label" for="shop-travel">여행용품점</label>
+							<input type="radio" name="shop-area" id="shop-alcoholic" class="field-radio" value="shop-alcoholic">
+							<label class="field-radio-label" for="shop-alcoholic">주류/담배</label>
 
 							<input type="radio" name="shop-area" id="shop-gift" class="field-radio" value="shop-gift">
-							<label class="field-radio-label" for="shop-gift">기념품</label>
+							<label class="field-radio-label" for="shop-gift">기프트</label>
 
-							<input type="radio" name="shop-area" id="shop-flower" class="field-radio" value="shop-flower">
-							<label class="field-radio-label" for="shop-flower">꽃</label>
+							<input type="radio" name="shop-area" id="shop-electronics" class="field-radio" value="shop-electronics">
+							<label class="field-radio-label" for="shop-electronics">전자제품</label>
 
+							<input type="radio" name="shop-area" id="shop-food" class="field-radio" value="shop-food">
+							<label class="field-radio-label" for="shop-food">식품</label>
+
+							<input type="radio" name="shop-area" id="shop-record" class="field-radio" value="shop-record">
+							<label class="field-radio-label" for="shop-record">음반/서적</label>
+
+							<input type="radio" name="shop-area" id="shop-korean" class="field-radio" value="shop-korean">
+							<label class="field-radio-label" for="shop-korean">한류상품</label>
+						</div>
+					</div>
+				</div>
+				<!-- 3차 (2차에서 3차가 있다면) 필터 검색 -->
+				<div class="filter-terminal-search-depth3">
+					<div class="field">
+						<div class="field-group big">
+							<input type="radio" name="product" id="product-all" class="field-radio" value="brand2-product" checked>
+							<label class="field-radio-label pd10" for="product-all">전체</label>
+
+							<input type="radio" name="product" id="product-souvenir" class="field-radio" value="brand2-product">
+							<label class="field-radio-label" for="product-souvenir">기념품</label>
+
+							<input type="radio" name="product" id="product-toy" class="field-radio" value="brand2-product">
+							<label class="field-radio-label" for="product-toy">유아&middot;완구</label>
+
+							<input type="radio" name="product" id="product-flower" class="field-radio" value="brand2-product">
+							<label class="field-radio-label" for="product-flower">꽃</label>
 						</div>
 					</div>
 				</div>
@@ -387,7 +430,7 @@
 						<div class="boxmodel2-list-box-split col-1">
 							<div class="boxmodel2-imggroup">
 								<span class="boxmodel2-imggroup-mark green">금융·통신</span>
-								<img src="/static/ap/images/img_normal_shopping_01.jpg" class="imgbox" alt="일반쇼핑 이미지">
+								<img src="/static/ap/images/img_dutyfree_shopping_01.jpg" class="imgbox" alt="면세점쇼핑 이미지">
 							</div>
 						</div>
 
@@ -448,7 +491,7 @@
 							</div>
 						</div>
 						<div class="boxmodel2-list-detail-split col-2">
-							<img src="/static/ap/images/map_normal_shopping_02.jpg" class="imgbox" alt="일반쇼핑 지도 이미지">
+							<img src="/static/ap/images/map_dutyfree_shopping_02.jpg" class="imgbox" alt="면세점쇼핑 지도 이미지">
 						</div>
 					</div>
 				</li>
@@ -457,7 +500,7 @@
 						<div class="boxmodel2-list-box-split col-1">
 							<div class="boxmodel2-imggroup">
 								<span class="boxmodel2-imggroup-mark brown">인터넷비즈니스</span>
-								<img src="/static/ap/images/img_normal_shopping_03.jpg" class="imgbox" alt="일반쇼핑 이미지">
+								<img src="/static/ap/images/img_dutyfree_shopping_03.jpg" class="imgbox" alt="면세점쇼핑 이미지">
 							</div>
 						</div>
 
@@ -492,7 +535,7 @@
 					</div>
 
 					<div class="boxmodel2-list-detail">
-						<span class="boxmodel2-list-tit">시설소개</span>
+						<span class="boxmodel2-list-tit">매장소개</span>
 						<div class="boxmodel2-list-detail-split col-1">
 
 
@@ -518,7 +561,7 @@
 							</div>
 						</div>
 						<div class="boxmodel2-list-detail-split col-2">
-							<img src="/static/ap/images/map_normal_shopping_04.jpg" class="imgbox" alt="일반쇼핑 지도 이미지">
+							<img src="/static/ap/images/map_dutyfree_shopping_04.jpg" class="imgbox" alt="면세점쇼핑 지도 이미지">
 						</div>
 					</div>
 				</li>
@@ -528,7 +571,7 @@
 						<div class="boxmodel2-list-box-split col-1">
 							<div class="boxmodel2-imggroup">
 								<span class="boxmodel2-imggroup-mark brown">인터넷비즈니스</span>
-								<img src="/static/ap/images/img_normal_shopping_05.jpg" class="imgbox" alt="일반쇼핑 이미지">
+								<img src="/static/ap/images/img_dutyfree_shopping_05.jpg" class="imgbox" alt="면세점쇼핑 이미지">
 							</div>
 						</div>
 
@@ -563,7 +606,7 @@
 					</div>
 
 					<div class="boxmodel2-list-detail">
-						<span class="boxmodel2-list-tit">시설소개</span>
+						<span class="boxmodel2-list-tit">매장소개</span>
 						<div class="boxmodel2-list-detail-split col-1">
 
 
@@ -589,7 +632,7 @@
 							</div>
 						</div>
 						<div class="boxmodel2-list-detail-split col-2">
-							<img src="/static/ap/images/map_normal_shopping_06.jpg" class="imgbox" alt="일반쇼핑 지도 이미지">
+							<img src="/static/ap/images/map_dutyfree_shopping_06.jpg" class="imgbox" alt="면세점쇼핑 지도 이미지">
 						</div>
 					</div>
 				</li>
