@@ -1,16 +1,16 @@
 // 1260
-@media all and (max-width:1259px) {
-  // layout
-  .inner-section{
-    //width: 100%;
-    min-width:1152px;
-    padding: 0 15px;
-    &.section-bg-inner{
-      min-width: inherit;
-      padding: 60px 15px;
-    }
-  }
-}
+//@media all and (max-width:1259px) {
+//  // layout
+//  .inner-section{
+//    //width: 100%;
+//    min-width:1152px;
+//    padding: 0 15px;
+//    &.section-bg-inner{
+//      min-width: inherit;
+//      padding: 60px 15px;
+//    }
+//  }
+//}
 
 // 1024
 @media all and (max-width:1023px) {
@@ -30,7 +30,6 @@
   footer, header, menu, nav, section {
     font-size:1rem!important;
   }
-
   // common
   .f{
     &-left{
