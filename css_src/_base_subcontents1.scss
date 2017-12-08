@@ -215,6 +215,7 @@
   margin-bottom:20px;
   display: inline-block;
   &-option{
+    @extend %clearfix;
     float: left;
     margin-right:15px;
     input[type="radio"].radio{
@@ -490,7 +491,7 @@
   }
 
   &.login-area{
-    width: auto;
+    width: 600px;
   }
 
   &-area{
@@ -956,6 +957,8 @@
       height: 24px;
     }
 
+
+
     &-pop-up{
       display: none;
       position: absolute;
@@ -985,59 +988,32 @@
           width: 100px;
           margin-left: 0;
         }
-
-        &.blue:before{
+        &:before{
           content: '';
           display: block;
-          float: left;
-          margin-right: 9px;
           width: 24px;
           height: 24px;
+          float: left;
+          margin-right: 9px;
           border-radius: 50%;
+        }
+        &.blue:before{
           background: #4674c9;
         }
 
         &.green:before{
-          content: '';
-          display: block;
-          float: left;
-          margin-right: 9px;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
           background: #2c8179;
         }
 
         &.yellow:before{
-          content: '';
-          display: block;
-          float: left;
-          margin-right: 9px;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
           background: #ffae44;
         }
 
         &.brown:before{
-          content: '';
-          display: block;
-          float: left;
-          margin-right: 9px;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
           background: #dd7714;
         }
 
         &.red:before{
-          content: '';
-          display: block;
-          float: left;
-          margin-right: 9px;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
           background: #d43e41;
         }
       }
@@ -1049,65 +1025,39 @@
     }
 
     &-item{
-      width: 85px;
+      //width: 85px;
       margin-left: 45px;
       float: left;
       font-family: spoqa, sans-serif;
       font-weight: 700;
       color: #666666;
 
-      &.blue:before{
+      &:before{
         content: '';
         display: block;
-        float: left;
-        margin-right: 9px;
         width: 24px;
         height: 24px;
+        float: left;
+        margin-right: 9px;
         border-radius: 50%;
+      }
+      &.blue:before{
         background: #4674c9;
       }
 
       &.green:before{
-        content: '';
-        display: block;
-        float: left;
-        margin-right: 9px;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
         background: #2c8179;
       }
 
       &.yellow:before{
-        content: '';
-        display: block;
-        float: left;
-        margin-right: 9px;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
         background: #ffae44;
       }
 
       &.brown:before{
-        content: '';
-        display: block;
-        float: left;
-        margin-right: 9px;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
         background: #dd7714;
       }
 
       &.red:before{
-        content: '';
-        display: block;
-        float: left;
-        margin-right: 9px;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
         background: #d43e41;
       }
     }
@@ -1248,8 +1198,7 @@
   margin-left: 20px;
   margin-bottom: 20px;
   .layer-article-title{
-    font-size: 1.25rem;
-    font-weight: 700;
+
     &:after{
       content: '';
       display: block;
@@ -1288,63 +1237,69 @@
 .color-g{
   color: #328386;
 }
-
+.map-absolute-area{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  margin:auto;
+  display:block;
+}
 .map-departure-congestion01{
   position: relative;
-  background: url(/static/ap/images/map_departure_congestion_01.png) no-repeat;
+  background:#f3f4f8;
+  width:100%;
   height: 352px;
-  background-size: 100%;
+  & .map-absolute-area{
+      width:439px;
+      height:301px;
+      background: url(/static/ap/images/map_departure_congestion_01.png) no-repeat center;
+  }
 }
 
 .map-departure-congestion02{
   position: relative;
-  background: url(/static/ap/images/map_departure_congestion_02.png) no-repeat;
+  background:#f3f4f8;
+  width:100%;
   height: 352px;
-  background-size: 100%;
+  & .map-absolute-area{
+    width:476px;
+    height:313px;
+    background: url(/static/ap/images/map_departure_congestion_02.png) no-repeat center;
+  }
 }
 
 .congestion{
   &-mark1{
-    width: 50px;
-    height: 55px;
     position: absolute;
-    top: 171px;
-    left: 310px;
+    top: 159px;
+    left: 99px;
   }
   &-mark2{
-    width: 50px;
-    height: 55px;
     position: absolute;
-    top: 153px;
-    left: 358px;
+    top: 143px;
+    left: 149px;
   }
   &-mark3{
-    width: 50px;
-    height: 55px;
     position: absolute;
-    top: 153px;
-    left: 454px;
+    top: 143px;
+    right: 152px;
   }
   &-mark4{
-    width: 50px;
-    height: 55px;
     position: absolute;
-    top: 171px;
-    left: 504px;
+    top: 159px;
+    right: 106px;
   }
   &-mark5{
-    width: 50px;
-    height: 55px;
     position: absolute;
-    top: 190px;
-    left: 359px;
+    top: 179px;
+    left: 160px;
   }
   &-mark6{
-    width: 50px;
-    height: 55px;
     position: absolute;
-    top: 190px;
-    left: 460px;
+    top: 179px;
+    right: 161px;
   }
   &-mark{
     &-number{
@@ -1352,7 +1307,7 @@
       line-height: 1.7;
       font-size: 0.75rem;
       text-align: center;
-      width: 50px;
+      min-width: 50px;
       height: 25px;
       box-sizing: border-box;
       background: #ffffff;
@@ -1360,6 +1315,7 @@
       border-radius: 23px;
       position: relative;
       margin-bottom: 6px;
+      z-index:2;
       &:after{
         content: '';
         display: block;
