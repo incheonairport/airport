@@ -8,6 +8,45 @@ $(function(){
    * loading
    */
 
+  // set full page
+
+  (function(){
+
+    if( FullPage.$mainFullPageContent.length > 0 ){
+
+      FullPage.sectionBgInit();
+
+      FullPage.$mainFullPageContent.fullpage({
+        //scrollBar: true,
+        scrollingSpeed: 1000,
+
+        afterLoad: function(anchor, firstSectionIndex){
+
+          HeaderGnb.setClass(firstSectionIndex-1, MainVisual.getNextVisualIndex());
+
+        },
+
+        onLeave: function(currentSectionIndex, nextSectionIndex, direction){
+
+          if( direction == 'down' ){
+
+            FullPage.sectionBgDown(nextSectionIndex-1);
+
+          } else {
+
+            FullPage.sectionBgUp(currentSectionIndex-1);
+
+          }
+
+          HeaderGnb.setClass(nextSectionIndex-1, MainVisual.getNextVisualIndex());
+
+        }
+
+      });
+
+    }
+
+  })();
 
   /**
    * event
@@ -23,6 +62,28 @@ $(function(){
     $('.gnb').on('mouseleave', function(){
       $('.gnb').removeClass('on');
     });
+
+    $('.header, .gnb').on({
+
+      'mouseenter' : function(){
+        $('.header').attr('class', 'header');
+        $('.gnb').attr('class', 'gnb');
+      },
+
+      'mouseleave' : function(){
+        if(HeaderGnb.getCurrentMainSectionIndex()==0){
+
+          HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), MainVisual.getNextVisualIndex());
+
+        } else {
+
+          HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex());
+
+        }
+      }
+
+    });
+
 
 
     // Layer Popup 닫기
