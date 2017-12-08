@@ -194,7 +194,11 @@
   .section-bg{
     height:inherit!important;
     background-size:cover!important;
+    &.airline-city{
+      padding:60px 0;
+    }
     &-inner{
+      padding:60px 15px;
       &.split{
         float:none;
         width:100%;
@@ -247,6 +251,11 @@
 
       }
     }
+    &-head2{
+      &:after{
+        width:50%;
+      }
+    }
     &-desc{
       &.left{
         text-align:center;
@@ -277,6 +286,11 @@
     &.tour-info{
 
 
+    }
+    &-contents2{
+      width:100%;
+      float: none;
+      margin-bottom:30px;
     }
   }
 }
@@ -640,6 +654,12 @@
         margin:20px auto;
       }
     }
+    &-head2{
+      text-align:center;
+      &:after{
+        width:100%;
+      }
+    }
     &-desc{
       font-size:1rem;
       &.left{
@@ -659,6 +679,21 @@
     }
     .btn-type-infolink{
       margin-bottom:30px;
+    }
+    &-contents2{
+      width:100%;
+      float: none;
+      margin-left: 0;
+      margin-bottom:30px;
+      text-align:center;
+      .logo-text{
+        &.mt20{
+          margin-top:10px;
+        }
+      }
+      .logo-list{
+        display:inline-block;
+      }
     }
 
   }
