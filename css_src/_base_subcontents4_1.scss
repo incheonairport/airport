@@ -10,15 +10,17 @@
 
       &:hover::after,
       &.on:after{
+
         content: '';
         display: block;
         width: 96px;
         height: 4px;
         background: #323648;
-        position: absolute;
-        top: 158px;
+        position: relative;
+        top: 46px;
         left: 0;
         right: 0;
+        bottom: auto;
       }
 
       &.contact-us {
@@ -247,6 +249,7 @@
 .find-info{
   &-list{
     margin: 10px 0;
+    @extend %clearfix;
   }
 
   &-item{

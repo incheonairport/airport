@@ -9,10 +9,436 @@
   .search-flight-detail{
     min-width:1152px;
   }
+
+  .search-flight{
+    min-width:1152px;
+  }
 }
 
 // 640
 @media all and (max-width:640px) {
+  // 검색창 input
+  .search-flight{
+    min-width:100%;
+    &-search{
+      width:100%;
+      font-size:1.125rem;
+      font-weight:700;
+      &-txt{
+        width:100%;
+        margin-right:0;
+        position:static;
+        padding:10px 0;
+      }
+      &-option{
+        width:100%;
+        height:50px;
+        text-align:center;
+      }
+      &-btn{
+        width:50px;
+        height:50px;
+        &.ico{
+          text-indent:-9999px;
+        }
+        &.ico:after{
+          top:0;
+          left:0;
+          right:0;
+          bottom:0;
+          margin:auto;
+        }
+      }
+      .search-flight-search-txt+.search-flight-search-btn{
+        width:100%;
+        font-size:1rem;
+        padding:0;
+        &.ico{
+          text-indent:0;
+        }
+        &.ico:after{
+          display:none;
+        }
+      }
+    }
+  }
+  //filter search
+  .search-flight-detail{
+    min-width:100%;
+    &-option{
+      float: none;
+      margin-right:0;
+      margin-bottom:10px;
+      input[type="radio"].radio{
+        & + .search-option-btn{
+          width:50%;
+          text-align:center;
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+    }
+    &-select{
+      height: auto;
+      float: none;
+      &-article{
+        width: 50%;
+
+        padding:14px 10px;
+        border-bottom:1px solid #d9d9d9;
+        &:nth-child(4n){
+          border-right:0;
+        }
+      }
+      &-airplane{
+        width: 50%;
+      }
+      &-btn{
+        width: 50%;
+      }
+    }
+  }
+  // 서브 탭
+  .inner-tab2{
+    width:100%;
+    position: static;
+    .btn-type-tab{
+      box-sizing: border-box;
+      width:50%;
+      height: 40px;
+    }
+  }
+
+
+  // 팝업 지도 기능 이미지1
+  .map-departure-congestion01{
+    height:240px;
+    .map-absolute-area{
+      width: 268px;
+      height: 184px;
+      background-size:contain;
+    }
+  }
+  // 팝업 지도 기능 이미지2
+  .map-departure-congestion02{
+    height:240px;
+    & .map-absolute-area{
+      width: 268px;
+      height: 184px;
+      background-size:contain;
+    }
+  }
+  // 팝업 지도 기능 포인터
+  .congestion{
+    &-mark1{
+      top: 87px;
+      left: 55px;
+    }
+    &-mark2{
+      top: 75px;
+      left: 83px;
+    }
+    &-mark3{
+      top: 74px;
+      right: 83px;
+    }
+    &-mark4{
+      top: 87px;
+      right: 54px;
+    }
+    &-mark5{
+      top: 91px;
+      left: 79px;
+    }
+    &-mark6{
+      top: 91px;
+      right: 79px;
+    }
+    &-mark{
+      &-color{
+        width: 14px;
+        height: 14px;
+        font-size:0.75rem;
+        line-height:14px;
+      }
+    }
+  }
+  // 스크롤 테이블
+  .table2{
+    &.vt-dark{
+      font-size: 0.875rem;
+      line-height: 2.6;
+      th{
+        text-align:center;
+      }
+      td{
+        text-align:center!important;
+      }
+    }
+  }
+  .table-guide{
+    &-btn{
+      width:100%;
+      float: none;
+      padding: 0;
+      &-text{
+        font-size: 0.825rem;
+      }
+    }
+
+    &-ico{
+      float:right;
+      margin-left:0;
+    }
+
+    &-pop-up{
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      margin-bottom:20px;
+      background: #fff;
+      border: 2px solid #42519e;
+      &-depth{
+      }
+      &-list{
+        margin-bottom: 10px;
+      }
+      &-item{
+        &:first-child{
+          width: 70px;
+        }
+        font-size: 0.825rem;
+        letter-spacing: -1px;
+        margin-left:0;
+        float: left;
+        line-height: 1;
+        &:before{
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    &-list{
+      float: none;
+      display:inline-block;
+      margin-top:20px;
+    }
+
+    &-item{
+      margin-bottom:6px;
+      margin-left: 10px;
+      line-height:1;
+      &:first-child{
+        margin-left:0;
+      }
+      &:before{
+        width: 14px;
+        height: 14px;
+      }
+
+    }
+  }
+
+  // layer popup
+  .layer{
+    .list1-item{
+      br{
+        display:none;
+      }
+    }
+    width: 100%;
+    height:100%;
+    border:0;
+    position:fixed;
+    top:0;
+    left:0;
+    transform:none;
+    overflow:auto;
+    &-wrap{
+      position:absolute;
+    }
+    &.size{
+      width: 100%;
+    }
+    &.address-layer{
+      width: 100%;
+    }
+    &.login-area{
+      width: 100%;
+    }
+    &-area{
+      padding: 15px;
+    }
+    &-title{
+      padding-bottom: 14px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #42519e;
+      font-size: 1rem;
+      &.login{
+        font-size: 2rem;
+      }
+    }
+    &-sub{
+      font-size:1rem!important;
+    }
+    &-input-text.user-text{
+      width:100%;
+      height: 50px;
+    }
+    &-close{
+      width: 16px;
+      height: 16px;
+      top: 16px;
+      right: 15px;
+    }
+    &-article{
+      margin-bottom:20px;
+      position: relative;
+      &-title{
+        margin-bottom: 14px;
+        font-size:0.9375rem;
+        &.float{
+          margin: 0;
+          float: none;
+          line-height: 32px;
+        }
+      }
+      &-input{
+        width: 100%;
+        height: 50px;
+      }
+      &-box{
+        width: 100%;
+        height: 124px;
+        padding:14px;
+        &-sub{
+          margin-bottom: 7px;
+          font-size:0.875rem;
+        }
+        &-txt{
+          font-size:0.875rem;
+        }
+      }
+      p{
+        font-size: .75rem;
+        font-weight:700;
+      }
+      button{
+        height: 50px;
+        font-size: 1.5rem;
+      }
+      &.article2{
+        margin-bottom: 10px;
+        margin-top: 15px;
+      }
+    }
+    .info-desc{
+      font-size: 0.75rem;
+    }
+    .inner-col{
+      text-align:center;
+    }
+    &-btn{
+      float: left;
+      &-login{
+        width:100%;
+        height: 50px;
+        font-size: 1rem;
+      }
+    }
+  }
+  // layer popup :: footer
+  .enter{
+    padding: 20px 15px;
+    background:#fff;
+    border-top:0;
+    &-btn{
+      width: 100%;
+    }
+  }
+
+  .article3{
+    width: 100%;
+    float: none;
+    margin-bottom: 30px;
+  }
+
+  .article5{
+    width: 100%;
+    float: none;
+    margin:0;
+  &:first-child{
+    margin-left: 0;
+  }
+    .layer-article-title{
+      float: none;
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding-bottom: 10px;
+      position: relative;
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 410px;
+        height: 1px;
+        background: #b3b3b3;
+      }
+    }
+    .ir-technique{
+      text-indent: -99999em;
+      display: block;
+    }
+    .bus-stop1{
+      background: url(/static/ap/images/bg_terminal_interconnection_03.png)no-repeat;
+      width: 425px;
+      height: 460px;
+    }
+    .bus-stop2{
+      background: url(/static/ap/images/bg_terminal_interconnection_04.png)no-repeat;
+      width: 425px;
+      height: 460px;
+    }
+  }
+
+  .article4{
+    width:100%;
+    float:none;
+    margin-left:0;
+    margin-bottom: 30px;
+    .layer-article-title{
+
+      &:after{
+        content: '';
+        display: block;
+        width: 325px;
+        height: 1px;
+        background: #b3b3b3;
+      }
+    }
+    .airline1{
+      background: url(/static/ap/images/bg_terminal_interconnection_01.png)no-repeat;
+      width:100%;
+      height: 243px;
+      float: none;
+      display:block;
+    }
+    .airline2{
+      background: url(/static/ap/images/bg_terminal_interconnection_02.png)no-repeat;
+      width:100%;
+      height: 244px;
+      float: none;
+      display:block;
+    }
+    .ir-technique{
+      text-indent: -99999em;
+      display: block;
+    }
+  }
+
   // contents visual
   .contents-visual{
     min-height:inherit;
@@ -37,6 +463,9 @@
     margin-bottom:40px;
     &-title{
       font-size: 1.125rem;
+      br{
+        display:none
+      }
     }
 
     &-quick-link{
@@ -176,5 +605,38 @@
       }
     }
   }
+
+  .update{
+    margin-bottom: 10px;
+    text-align: left;
+    overflow:hidden;
+    &-time{
+      line-height:26px;
+    }
+    &-refresh{
+      float:right;
+      width:26px;
+      padding:0;
+      line-height:inherit;
+      border-radius:50%;
+      &.ico{
+        text-indent:-9999px;
+      }
+      &.ico:after{
+        top:3px;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+      }
+    }
+    &.mb10{
+      margin-bottom: 10px;
+    }
+  }
+
+
 }
+
+
 
