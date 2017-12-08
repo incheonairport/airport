@@ -1,6 +1,15 @@
 
 // 780 <
 @media all and (max-width:780px) {
+  .footer-graft{
+    .multi-col {
+      .inner-col {
+        margin-top: 0;
+      }
+    }
+  }
+
+
   .footer{
     margin-top:20px;
     &-align.left{

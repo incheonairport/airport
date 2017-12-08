@@ -13,6 +13,30 @@
   .search-flight{
     min-width:1152px;
   }
+
+  .contents-visual{
+    &.departure-procedures{
+      margin-bottom:30px;
+      height:inherit;
+      padding-top:3em;
+    }
+  }
+
+  .local {
+    &-list {
+      &-item {
+        width: 14.2857%;
+      }
+    }
+    &-town {
+      padding: 30px 15px;
+      &-item {
+        width:33.33%;
+        border:0;
+        margin:0;
+      }
+    }
+  }
 }
 
 // 640
@@ -24,6 +48,8 @@
       width:100%;
       font-size:1.125rem;
       font-weight:700;
+      border:1px solid #d9d9d9;
+      padding:15px;
       &-txt{
         width:100%;
         margin-right:0;
@@ -442,7 +468,7 @@
   // contents visual
   .contents-visual{
     min-height:inherit;
-    height:inherit;
+    //height:240px;
     padding: 60px 0 0;
     background-size: cover!important;
     &.search-airline{
@@ -634,7 +660,38 @@
       margin-bottom: 10px;
     }
   }
+  .local {
+    &-list {
+      &-item {
+        width: 33.33%;
+        border-right: 1px solid #d9d9d9;
+        border-top: 1px solid #d9d9d9;
+        &:last-child{
+          width:100%;
+        }
+        &:nth-child(3n){
+          border-right:0;
+        }
+        &-link{
+          font-size:0.875rem;
+          &:after{
+            display:none;
+          }
+        }
+      }
+    }
+    &-town {
+      padding:20px 1;
+      &-item {
+        text-align:left;
+        padding-right:0;
+        &-link{
+          font-size:0.875rem;
 
+        }
+      }
+    }
+  }
 
 }
 
