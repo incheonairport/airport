@@ -247,6 +247,7 @@
 .find-info{
   &-list{
     margin: 10px 0;
+    @extend %clearfix;
   }
 
   &-item{
