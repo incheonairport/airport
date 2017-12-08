@@ -1152,7 +1152,7 @@
 
 //input
 .user-text{
- width: 250px;
+  width: 250px;
   height: 50px;
   line-height:50px;
   padding: 0 10px;
@@ -1167,12 +1167,9 @@
     padding:15px;
   }
   &.email{
-    width: 146px;
+    width:140px;
     margin-left: 5px;
-    &:first-child{
-      margin-left: 0;
-      margin-right: 5px;
-    }
+    margin-right: 5px;
   }
 }
 /*파일 첨부, 주소 검색*/
@@ -1231,8 +1228,8 @@
     font-size: 1rem;
   }
   &.email{
-    width: 146px;
-    margin-left: 5px;
+    width: 157px;
+    margin-right: 8px;
   }
 }
 /*이용일시*/
