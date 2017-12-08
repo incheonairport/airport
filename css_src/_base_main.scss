@@ -10,6 +10,7 @@
   &-visual{
     position:relative;
     overflow:hidden;
+    //height:1000px;
 
     &-wrap{
       height:100%;
@@ -185,14 +186,23 @@
           &-item{
             float:left;
             margin-right:10px;
+            width:11px;
+            height:11px;
+            border:2px solid #333;
+            border-radius:50%;
+            position:relative;
+            overflow:hidden;
           }
           &-link{
             display:block;
             width:11px;
             height:11px;
-            border:2px solid #333;
-            border-radius:50%;
+            //border:2px solid #333;
+            //border-radius:50%;
             text-indent:-99999em;
+            position:absolute;
+            left:-2px;
+            bottom:-2px;
 
             &.on{
               background:#333333;
@@ -394,13 +404,15 @@
 }
 
 .section{
+  height:1000px;
+  position:relative;
 
   &-main{
     &-bg{
       width:100%;
       height:100%;
       position:absolute;
-      top:-480px;
+      top:0;
       left:0;
     }
 

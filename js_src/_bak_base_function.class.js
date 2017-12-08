@@ -12,8 +12,23 @@ $(function(){
 
   Index = function(){
 
+    //this.$mainSection = $('.full-page-content .section');
     this.$mainVisualItem = $('.main-visual-item');
+    //this.$mainFullPageContent = $('.full-page-content');
+    this.currentMainSectionIndex = 0;
     this.easingType = 'easeInOutExpo';
+
+    this.setCurrentMainSectionIndex = function(currentIndex){
+
+      this.currentMainSectionIndex = currentIndex;
+
+    };
+
+    this.getCurrentMainSectionIndex = function(){
+
+      return this.currentMainSectionIndex;
+
+    };
 
   };
 
@@ -25,7 +40,83 @@ $(function(){
 
     Index.apply(this);
 
+    var $visualItem = this.$mainVisualItem;
+    //var $mainSection = this.$mainSection;
+    //var $fullPageContent = this.$mainFullPageContent;
 
+
+    var _initClass = function(){
+      $('.header, .gnb').addClass( $fullPageContent.find('.section').eq(0).data('gnb-color') );
+    };
+
+    var _setClassVisual = function(index){
+      //console.log('set visual index : ' + index);
+      $('.header').attr('class', 'header ' + $visualItem.eq(index).data('gnb-color') );
+      $('.gnb').attr('class', 'gnb ' + $visualItem.eq(index).data('gnb-color') );
+    };
+
+    var _setClassSection = function(index){
+      $('.header').attr('class', 'header ' + $mainSection.eq(index).data('gnb-color') );
+      $('.gnb').attr('class', 'gnb ' + $mainSection.eq(index).data('gnb-color') );
+      //console.log('set section index : ' + index);
+    };
+
+    this.setClass = function(setClassSectionIndex, setClassVisualIndex){
+
+      //console.log('section index : ' + setClassSectionIndex);
+      //console.log('visual index : ' + setClassVisualIndex);
+
+      this.setCurrentMainSectionIndex(setClassSectionIndex);
+
+      if( setClassSectionIndex == 0 ){
+
+        //console.log('set visual');
+        _setClassVisual(setClassVisualIndex);
+
+      } else {
+
+        //console.log('set section');
+        _setClassSection(setClassSectionIndex);
+
+      }
+
+    };
+
+    _initClass();
+
+  };
+
+  /**
+   * FullPage Class
+   */
+
+  FullPage = new function(){
+
+    Index.apply(this);
+
+    this.sectionBgInit = function(){
+
+      $('.full-page-content .section-main-bg').css({
+        top:-480
+      });
+
+    };
+
+    this.sectionBgDown = function(sectionNextIndex){
+
+      this.$mainSection.eq(sectionNextIndex).find('.section-main-bg').animate({
+        top:0
+      }, 1000, 'easeOutQuad');
+
+    };
+
+    this.sectionBgUp = function(sectionPrevIndex){
+
+      this.$mainSection.eq(sectionPrevIndex).find('.section-main-bg').delay(100).animate({
+        top:-480
+      }, 900, 'easeOutQuad');
+
+    };
 
   };
 
@@ -44,10 +135,13 @@ $(function(){
     var $visualItem = this.$mainVisualItem;
     var easingType = this.easingType;
 
+    //var $mainSection = $('.full-page-content .section');
+    //var mainSectionIndex = 0;
+
     var $pageItem;
 
     var timeID, timeID2;
-    var imageMovingTime = 1000;
+    var imageMovingTime = 3000;
     var imageIntervalTime = 10000;
     var barStretchTime = 10;
 
@@ -70,10 +164,8 @@ $(function(){
 
     var _initPosition = function(){
 
-      //$visualItem.css({left:'100%'}).eq(0).css({left:0});
-      //$visualItem.eq( $visualItem.length-1 ).css({left:'-100%'});
-
-      $visualItem.hide().eq(0).show();
+      $visualItem.css({left:'100%'}).eq(0).css({left:0});
+      $visualItem.eq( $visualItem.length-1 ).css({left:'-100%'});
 
     };
 
@@ -130,8 +222,8 @@ $(function(){
       var unitLength = 100 / ( (imageIntervalTime-imageMovingTime) / barStretchTime );
 
       timeID2 = setInterval(function(){
-        $('.paging-link.on').css({height:(150 - barStretch) + '%'});
-        //barStretch += unitLength;
+        $('.main-visual-control-bar').css({width:barStretch + '%'});
+        barStretch += unitLength;
       }, barStretchTime);
 
     };
@@ -140,23 +232,14 @@ $(function(){
       $('.play-button').attr('class', 'play-button').addClass(status);
     };
 
-    // public
     this.moveLeft = function(auto){
 
       if( nextVisualIndex >= $visualItem.length ){
         nextVisualIndex = 0;
       }
 
-      //$visualItem.eq(currentVisualIndex).stop().animate({left:'-100%'}, imageMovingTime, easingType);
-      $visualItem.eq(currentVisualIndex).stop().fadeOut(imageMovingTime, easingType);
-      //$visualItem.eq(nextVisualIndex).css({left:'100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
-      //  clearInterval(timeID2);
-      //  if(auto){
-      //    _timeBar();
-      //  }
-      //  _textMotion();
-      //});
-      $visualItem.eq(nextVisualIndex).stop().fadeIn(imageMovingTime, easingType, function(){
+      $visualItem.eq(currentVisualIndex).stop().animate({left:'-100%'}, imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).css({left:'100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
         clearInterval(timeID2);
         if(auto){
           _timeBar();
@@ -202,7 +285,7 @@ $(function(){
         nextVisualIndex = currentVisualIndex + 1;
         _moveLeft(true);
 
-        //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
+        HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
       }, imageIntervalTime);
 
@@ -214,8 +297,9 @@ $(function(){
 
       nextVisualIndex = currentVisualIndex + 1;
       this.moveLeft(false);
+      //console.log('rollleft : ' + nextVisualIndex);
 
-      //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
+      HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
 
     };
@@ -224,8 +308,9 @@ $(function(){
 
       nextVisualIndex = currentVisualIndex - 1;
       this.moveRight(false);
+      //console.log('rollright : ' + nextVisualIndex);
 
-      //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
+      HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
     };
 
@@ -252,6 +337,8 @@ $(function(){
       return nextVisualIndex;
 
     };
+
+    // public
 
 
     // running in constructor when loading
