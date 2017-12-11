@@ -1,149 +1,171 @@
 <!--=include _include/_base_header.html -->
 
-<div id="fullpage" class="full-page-content">
+<section class="section main-visual">
 
-  <section class="section main-visual" data-gnb-color="white">
+  <div class="main-visual-wrap">
+    <div class="main-visual-item" data-gnb-color="white" style="background-image:url(/static/ap/images/bg_main_visual_01.jpg)">
+      <div class="visual-text-box">
+        <h3 class="visual-text white grand-open">2018.01.18</h3>
+        <h3 class="visual-text white grand-open">Grand Open</h3>
+        <div class="visual-text white grand-open"><strong>제2 여객터미널 그랜드 오픈</strong>으로 인천공항이 다시 한 번 도약합니다.</div>
+      </div>
+    </div>
+    <div class="main-visual-item" data-gnb-color="dark" style="background-image:url(/static/ap/images/bg_main_visual_02.jpg)">
+      <div class="visual-text-box">
+        <div class="visual-text blue">Incheon Airport</div>
+        <div class="visual-text blue">세상을 설레게 만드는 것은 당신입니다.</div>
+      </div>
+    </div>
+    <div class="main-visual-item" data-gnb-color="white" style="background-image:url(/static/ap/images/bg_main_visual_03.jpg)">
+      <div class="visual-text-box">
+        <div class="visual-text white">Incheon Airport</div>
+        <div class="visual-text white">시간, 공간, 사람을 하나로 이어주는 인천국제공항</div>
+      </div>
+    </div>
+    <div class="main-visual-item" data-gnb-color="white" style="background-image:url(/static/ap/images/bg_main_visual_04.jpg)">
+      <div class="visual-text-box">
+        <div class="visual-text black">Incheon Airport</div>
+        <div class="visual-text black">사람과 사람을 잇는 인천국제공항</div>
+      </div>
+    </div>
+    <div class="main-visual-item" data-gnb-color="dark" style="background-image:url(/static/ap/images/bg_main_visual_05.jpg)">
+      <div class="visual-text-box">
+        <div class="visual-text white">Incheon Airport</div>
+        <div class="visual-text white">여행의 설렘을 인천국제공항과 함께</div>
+      </div>
+    </div>
+  </div>
 
-    <div class="main-visual-wrap">
-      <div class="main-visual-item" data-gnb-color="white" style="background-image:url(/static/ap/images/bg_main_visual_01.jpg)">
+  <div class="main-visual-control">
+    <div class="main-visual-control-arrow">
+      <button type="button" class="arrow prev">이전</button>
+      <button type="button" class="arrow next">다음</button>
+    </div>
+    <div class="main-visual-control-paging">
+      <button type="button" class="play-button pause">일시정지</button>
+    </div>
+    <div class="main-visual-control-bar"></div>
+  </div>
 
-        <div class="visual-text-box">
-          <div class="visual-text white grand-open">2018.01.18</div>
-          <div class="visual-text white grand-open">Grand Open</div>
-          <div class="visual-text white grand-open"><strong>제2 여객터미널 그랜드 오픈</strong>으로 인천공항이 다시 한 번 도약합니다.</div>
-        </div>
+  <div class="main-visual-search">
 
-      </div>
-      <div class="main-visual-item" data-gnb-color="dark" style="background-image:url(/static/ap/images/bg_main_visual_02.jpg)">
-        <div class="visual-text-box">
-          <div class="visual-text blue">Incheon Airport</div>
-          <div class="visual-text blue">세상을 설레게 만드는 것은 당신입니다.</div>
-        </div>
-      </div>
-      <div class="main-visual-item" data-gnb-color="white" style="background-image:url(/static/ap/images/bg_main_visual_03.jpg)">
-        <div class="visual-text-box">
-          <div class="visual-text white">Incheon Airport</div>
-          <div class="visual-text white">시간, 공간, 사람을 하나로 이어주는 인천국제공항</div>
-        </div>
-      </div>
-      <div class="main-visual-item" data-gnb-color="white" style="background-image:url(/static/ap/images/bg_main_visual_04.jpg)">
-        <div class="visual-text-box">
-          <div class="visual-text black">Incheon Airport</div>
-          <div class="visual-text black">사람과 사람을 잇는 인천국제공항</div>
-        </div>
-      </div>
-      <div class="main-visual-item" data-gnb-color="dark" style="background-image:url(/static/ap/images/bg_main_visual_05.jpg)">
-        <div class="visual-text-box">
-          <div class="visual-text white">Incheon Airport</div>
-          <div class="visual-text white">여행의 설렘을 인천국제공항과 함께</div>
-        </div>
+    <div class="main-visual-search-inner">
+      <div class="main-visual-search-title">운항검색</div>
+
+      <div class="main-visual-search-flight">
+
+        <dl class="main-visual-search-flight-area">
+          <dt class="area-tab departure on"><label for="search-departure">출발</label></dt>
+          <dd class="area-form on">
+            <input type="text" id="search-departure" class="area-form-input" />
+            <button type="button" class="area-form-button">검색</button>
+          </dd>
+        </dl>
+
+        <dl class="main-visual-search-flight-area">
+          <dt class="area-tab arrival"><label for="search-arrival">도착</label></dt>
+          <dd class="area-form">
+            <input type="text" id="search-arrival" class="area-form-input" />
+            <button type="button" class="area-form-button">검색</button>
+          </dd>
+        </dl>
+
+        <p class="main-visual-search-desc">※ 전체 운항시간표는 우측의 검색버튼을 클릭하면 보실 수 있습니다.</p>
+
       </div>
     </div>
 
-    <div class="main-visual-control">
-      <div class="main-visual-control-arrow">
-        <button type="button" class="arrow prev">이전</button>
-        <button type="button" class="arrow next">다음</button>
-      </div>
-      <div class="main-visual-control-paging">
-        <button type="button" class="play-button pause">일시정지</button>
-      </div>
-      <div class="main-visual-control-bar"></div>
+    <div class="main-visual-search-weather">
+      <div class="weather-image"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
+      <div class="weather-temperature">27<span class="celsius">℃</span></div>
     </div>
 
-    <div class="main-visual-search">
+  </div>
 
-      <div class="main-visual-search-inner">
-        <div class="main-visual-search-title">운항검색</div>
+</section>
 
-        <div class="main-visual-search-flight">
+<section class="section" style="background-image:url(/static/ap/images/bg_main_visual_01.jpg)">
+  <div class="section-main-content">
 
-          <dl class="main-visual-search-flight-area">
-            <dt class="area-tab departure on"><label for="search-departure">출발</label></dt>
-            <dd class="area-form on">
-              <input type="text" id="search-departure" class="area-form-input" />
-              <button type="button" class="area-form-button">검색</button>
-            </dd>
-          </dl>
 
-          <dl class="main-visual-search-flight-area">
-            <dt class="area-tab arrival"><label for="search-arrival">도착</label></dt>
-            <dd class="area-form">
-              <input type="text" id="search-arrival" class="area-form-input" />
-              <button type="button" class="area-form-button">검색</button>
-            </dd>
-          </dl>
 
-          <p class="main-visual-search-desc">※ 전체 운항시간표는 우측의 검색버튼을 클릭하면 보실 수 있습니다.</p>
+  </div>
+</section>
 
-        </div>
-      </div>
+<section class="section" style="background-image:url(/static/ap/images/bg_main_section_02.jpg)">
+  <div class="section-main-content">
+    <img src="/static/ap/images/temp_main_section_02.png" alt=""/>
+  </div>
+</section>
 
-      <div class="main-visual-search-weather">
-        <div class="weather-image"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
-        <div class="weather-temperature">27<span class="celsius">℃</span></div>
-      </div>
+<section class="section auto-height footer-graft">
 
+  <div class="bottom-banner">
+
+    <ul class="bottom-banner-list">
+
+      <li class="bottom-banner-item">
+        <a href="" class="bottom-banner-link">
+          <img src="/static/ap/images/img_main_bottom_banner_01.jpg" alt="자동 수화물 위탁" />
+        </a>
+      </li>
+
+      <li class="bottom-banner-item">
+        <a href="" class="bottom-banner-link">
+          <img src="/static/ap/images/img_main_bottom_banner_02.jpg" alt="주차요금 모바일앱 결제서비스" />
+        </a>
+      </li>
+
+      <li class="bottom-banner-item">
+        <a href="" class="bottom-banner-link">
+          <img src="/static/ap/images/img_main_bottom_banner_03.jpg" alt="출국심사인 날인생략" />
+        </a>
+      </li>
+
+      <li class="bottom-banner-item">
+        <a href="" class="bottom-banner-link">
+          <img src="/static/ap/images/img_main_bottom_banner_04.jpg" alt="2017 세계항공컨퍼런스 2017.9.5 ~ 9.7" />
+        </a>
+      </li>
+
+      <li class="bottom-banner-item">
+        <a href="" class="bottom-banner-link">
+          <img src="/static/ap/images/img_main_bottom_banner_01.jpg" alt="자동 수화물 위탁" />
+        </a>
+      </li>
+
+      <li class="bottom-banner-item">
+        <a href="" class="bottom-banner-link">
+          <img src="/static/ap/images/img_main_bottom_banner_02.jpg" alt="주차요금 모바일앱 결제서비스" />
+        </a>
+      </li>
+
+      <li class="bottom-banner-item">
+        <a href="" class="bottom-banner-link">
+          <img src="/static/ap/images/img_main_bottom_banner_03.jpg" alt="출국심사인 날인생략" />
+        </a>
+      </li>
+
+      <li class="bottom-banner-item">
+        <a href="" class="bottom-banner-link">
+          <img src="/static/ap/images/img_main_bottom_banner_04.jpg" alt="2017 세계항공컨퍼런스 2017.9.5 ~ 9.7" />
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <div class="bottom-banner-control">
+    <div class="bottom-banner-control-arrow">
+      <button type="button" class="arrow prev end">이전</button>
+      <button type="button" class="arrow next">다음</button>
     </div>
-
-  </section>
-
-  <section class="section" data-gnb-color="dark">
-    <div class="section-main-bg" style="background-image:url(/static/ap/images/bg_main_section_01.jpg)">
-      <!--<iframe src="https://www.youtube.com/embed/eep7Joqxuuo?rel=0&controls=0&showinfo=0&autoplay=1&mute=1&loop=1&playlist=eep7Joqxuuo" frameborder="0" style="width:100%;height:100%"></iframe>-->
-      <video data-autoplay>
-        <source src="/static/ap/images/video.mp4" type="video/mp4">
-      </video>
-      <div style="position:absolute;width:100%;height:100%;top:0;left:0;"></div>
+    <div class="bottom-banner-control-paging">
+      <button type="button" class="play-button pause">일시정지</button>
     </div>
-    <div class="section-main-content">
-      <img src="/static/ap/images/temp_main_section_01.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)" alt=""/>
-    </div>
-  </section>
+  </div>
 
-  <section class="section" data-gnb-color="white">
-    <div class="section-main-bg" style="background-image:url(/static/ap/images/bg_main_section_02.jpg)"></div>
-    <div class="section-main-content">
-      <img src="/static/ap/images/temp_main_section_02.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)" alt=""/>
-    </div>
-  </section>
+</section>
 
-  <section class="section fp-auto-height" data-gnb-color="white">
-
-    <div class="section-main-bottom-banner footer-graft">
-      <img src="/static/ap/images/temp_main_section_03.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)" alt=""/>
-    </div>
-
-    <!--<ul class="bottom-banner footer-graft">-->
-
-      <!--<li class="bottom-banner-item">-->
-        <!--<a href="" class="bottom-banner-link">-->
-          <!--<img src="/static/ap/images/img_main_bottom_banner_01.jpg" alt="자동 수화물 위탁" />-->
-        <!--</a>-->
-      <!--</li>-->
-
-      <!--<li class="bottom-banner-item">-->
-        <!--<a href="" class="bottom-banner-link">-->
-          <!--<img src="/static/ap/images/img_main_bottom_banner_02.jpg" alt="주차요금 모바일앱 결제서비스" />-->
-        <!--</a>-->
-      <!--</li>-->
-
-      <!--<li class="bottom-banner-item">-->
-        <!--<a href="" class="bottom-banner-link">-->
-          <!--<img src="/static/ap/images/img_main_bottom_banner_03.jpg" alt="출국심사인 날인생략" />-->
-        <!--</a>-->
-      <!--</li>-->
-
-      <!--<li class="bottom-banner-item">-->
-        <!--<a href="" class="bottom-banner-link">-->
-          <!--<img src="/static/ap/images/img_main_bottom_banner_04.jpg" alt="2017 세계항공컨퍼런스 2017.9.5 ~ 9.7" />-->
-        <!--</a>-->
-      <!--</li>-->
-
-    <!--</ul>-->
-
-    <!--=include _include/_base_footer.html -->
-
-  </section>
-
-</div>
+<!--=include _include/_base_footer.html -->

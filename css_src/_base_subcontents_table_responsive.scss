@@ -1,8 +1,6 @@
 // 1024
 @media all and (max-width:1023px) {
-  .table-like{
-    min-width:1152px;
-  }
+
 }
 
 // 640
@@ -19,79 +17,48 @@
       }
       .tr-like{
         &.flight-info-basic{
+          position:relative;
           display:inline-block;
+          width:100%;
           border:1px solid #d9d9d9;
           border-top:0;
         }
-        &.flight-info-detail{
-          .td-like{
-            height:auto;
-            border: 0;
-            position: relative;
-            &:after{
-              height: 124px;
-              content: "";
-              display:block;
-              border-left: 1px solid rgba(255, 255, 255, 0.15);
-              position: absolute;
-              top:35px;
-              right:0;
-            }
-            &:nth-child(3){
-              &:after{
-                display:none;
-              }
-            }
-            &.share-close{
-              border-left: 1px solid rgba(255, 255, 255, 0.15);
-            }
-
-          }
-        }
+        //&.flight-info-detail{
+        //  .td-like{
+        //    height:auto;
+        //    border: 0;
+        //    position: relative;
+        //    &:after{
+        //      height: 124px;
+        //      content: "";
+        //      display:block;
+        //      border-left: 1px solid rgba(255, 255, 255, 0.15);
+        //      position: absolute;
+        //      top:35px;
+        //      right:0;
+        //    }
+        //    &:nth-child(3){
+        //      &:after{
+        //        display:none;
+        //      }
+        //    }
+        //    &.share-close{
+        //      border-left: 1px solid rgba(255, 255, 255, 0.15);
+        //    }
+        //
+        //  }
+        //}
       }
 
       .th-like{
-        display:table-cell;
-        padding:18px 0 16px;
-        border-right:1px solid #474a5b;
-        background:#323648;
-        font-size:1rem;
-        font-weight:400;
-        color:#fff;
-        text-align:center;
-        vertical-align:middle;
-
-        &:last-child{
-          border-right:0;
-        }
-
-        &.half{
-          padding:12px;
-        }
-
-        &.sub{
-          padding:6px 0 8px;
-          border:{
-            top:1px solid #212535;
-            right:1px solid #212535;
-          }
-          background:#4d5164;
-          font-size:0.875rem;
-
-          &:last-child{
-            border-right:0;
-          }
-        }
-
+       display:none;
       }
 
       .td-like{
-        &.mobile{
-          display:none;
-        }
-        width:50%!important;
-        float:left;
-        padding:20px;
+        display:inline-block;
+        //float:left;
+        padding:16px;
+        font-size:1.25rem;
         border:{
           right:0;
           top:0;
@@ -100,16 +67,12 @@
         &.center{
           text-align:left;
         }
-
         &:last-child{
           border-right:0;
         }
         .btn-newsflash{
 
         }
-      }
-      .td-pop{
-
       }
 
     }
@@ -120,9 +83,47 @@
   }
 
   .flight-info-basic{
-    .flight-info-basic-status{
-      &:nth-child(2),&:nth-child(5){
+    .td-like{
+      &:first-child,&:nth-child(2){
+        width:100%!important;
+      }
+      &:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:last-child{
+        width:auto!important;
+      }
+      &:nth-child(2){
+        padding:14px 14px 0;
+      }
+      &:nth-child(3){
+        padding:0 14px 14px;
+      }
+      &:nth-child(4){
+        position: absolute;
+        top: 17px;
+        right: 96px;
+        padding:0;
+      }
+      &:nth-child(5){
         display:none;
+      }
+      &:nth-child(6){
+        display:none;
+      }
+      &:nth-child(7){
+        display:inline-block;
+        width:60px!important;
+        line-height:28px;
+        text-align:center!important;
+        font-size:0.875rem;
+        position:absolute;
+        top:18px;
+        right:15px;
+        padding:0;
+      }
+      &:last-child{
+        position: absolute;
+        bottom: 24px;
+        right: 30px;
+        padding:0;
       }
     }
   }
@@ -132,14 +133,22 @@
   .flight-info{
 
     &-basic{
-      margin-top:10px;
+
       &-link{
         .flight{
+          font-size:1rem;
           text-align: left;
+          .flight-info-basic-flight-number{
+            float:right;
+          }
+          .flight-info-basic-flight-name{
+            display:inline-block;
+            margin-right:14px;
+          }
         }
       }
       &-status{
-        position:relative;
+        border-bottom:1px solid #d9d9d9!important;
         .time-changed{
           display:inline-block;
         }
@@ -147,63 +156,27 @@
           display:inline-block;
           margin-left:4px;
         }
-
         &:after{
-          content:"";
-          display:block;
           width:100%;
           height:4px;
-          position:absolute;
-          top:-1px;
+          top:0;
           left:0;
         }
-      }
-      .situation-info {
-        width: 70px;
-        height: 28px;
-        margin: 0 auto;
-        line-height: 29px;
-        display: block;
-        color: #fff;
-        font-size: 0.875rem;
-        border-radius: 5px;
-        &.delay,
-        &.type-red{
-          background: #d43e41;
-        }
-        &.boarding-on,
-        &.type-blue{
-          background: #42519e;
-        }
-        &.boarding-closing,
-        &.type-cyan{
-          background: #2c8179;
-        }
+
       }
       &-no-result{
-        width:100% !important;
-        height:89px;
-        line-height:89px;
-        border:1px solid #d9d9d9;
-
-        &.center{
-          text-align:center;
-        }
+        border:0;
+        border-top:1px solid #d9d9d9;
       }
     }
 
+    // detail
     &-detail{
       display:none;
       height: 185px;
       background: url(/static/ap/images/bg_flight_info_detail_bg.jpg) no-repeat;
       position:relative;
-
-      &.on{
-        display:block;
-      }
-
       &-heading{
-          
         &-title{
           color: #fff;
           font-weight: 900;
@@ -258,7 +231,7 @@
           display: block;
             
           &-item{
-            min-width: 66px;
+            //min-width: 66px;
             text-align: center;
             float: left;
             &-heading{

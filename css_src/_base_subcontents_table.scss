@@ -301,17 +301,17 @@
     &-airline{
       @extend %clearfix;
       text-align: center;
-      padding-top: 30px;
+      padding-top: 20px;
       background:url(/static/ap/images/ico_airplane_arrow_departure.png) 50% 40px no-repeat;
       .flight-info-detail{
         &-country{
           color: #ffae44;
-          font-size: 1.25rem;
+          font-size: 1rem;
         }
         &-date{
           color: #999;
-          font-size: 	0.875rem;
-
+          font-size:0.75rem;
+          margin-top: 5px;
         }
       }
       &.arrival{

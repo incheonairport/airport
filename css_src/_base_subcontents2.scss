@@ -648,7 +648,7 @@
             }
           }
           .boxmodel-list-desc{
-            max-width:306px;
+            //max-width:306px;
             color:#fff;
             font-size:1.125rem;
             font-weight:300;
@@ -891,7 +891,7 @@
   // boxmodel sub button style
   &-btn-groupsub{
     display: block;
-    max-width: 306px;
+    //max-width: 306px;
     margin: auto;
     background: #f8f8f8;
     border: 1px solid #d9e0ea;
@@ -932,7 +932,7 @@
   &-btn-link{
     display:block;
     position: relative;
-    max-width:306px;
+    //max-width:306px;
     height:100%;
     margin:auto;
     background:#fff;
@@ -1281,5 +1281,39 @@
       width: 70px;
       background-position: -249px -27px;
     }
+  }
+}
+
+// 기타 (에러 등 별도)페이지
+.etc-page{
+  text-align:center;
+  margin-top:280px;
+  &-article{
+    display:inline-block;
+    max-width:600px;
+    .btn-type-normal{
+      margin-top:60px;
+    }
+  }
+  &-heading{
+    font-size:2.375rem;
+    &:before{
+      display:block;
+      content:'';
+      width:154px;
+      height:154px;
+      border-radius:50%;
+      margin:0 auto 40px auto;
+    }
+    &.error:before{
+      background:url(/static/ap/images/ico_error.png) center no-repeat #f8f8f8;
+    }
+  }
+  &-desc{
+    margin-top:30px;
+    font-size:0.9375rem;
+  }
+  &-link{
+    color:#42519e;
   }
 }

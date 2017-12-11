@@ -1,23 +1,29 @@
 //sub-menu-tab type
+.search-result-tab{
+  .sub-menu-tab-iconlist-item{
+    padding:0 18px;
+  }
+}
 .sub-menu-tab{
   width: 100%;
   height: 162px;
   border-bottom: 1px solid #d9d9d9;
-
   &-iconlist{
+    display: table;
+    margin:auto;
+
     @extend %clearfix;
 
-
     &-item{
-      float: left;
+      display: table-cell;
       text-align: center;
-      margin:0 41px 0 41px;
+      padding:0 41px;
       position: relative;
 
       &:after{
         position: absolute;
         top: 0;
-        right: -41px;
+        right:0;
         content: '';
         display: block;
         width: 1px;
@@ -38,7 +44,12 @@
       }
     }
 
-
+    .result-num{
+      display:block;
+      color: #42519e;
+      font-weight: 900;
+      margin-top:6px;
+    }
     &-link{
       display: inline-block;
       width: 94px;
@@ -49,17 +60,20 @@
       line-height: 20px;
       text-align: center;
 
-      &:hover::after, &.on::after
+
+      &:hover::after,
+      &.on::after
       {
         content: '';
         display: block;
         width: 96px;
         height: 4px;
         background: #323648;
-        position: absolute;
-        top: 158px;
+        position: relative;
+        top: 46px;
         left: 0;
         right: 0;
+        bottom: auto;
       }
       &:before{
         content: '';
@@ -145,10 +159,153 @@
         }
       }
 
-      &:hover, &.on{
+      &:hover,
+      &.on{
         color: #42519e;
         font-weight: 900;
       }
+
+      &.contact-us {
+        &:before{
+          background-position: 0px -159px;
+          width: 52px;
+          height: 52px;
+        }
+
+        &:hover:before,
+        &.on:before{
+          background-position:0px -102px;
+        }
+
+      }
+
+      &.complain{
+        &:before{
+          background-position: -67px -159px;
+          width: 50px;
+          height: 52px;
+        }
+
+        &:hover:before{
+          background-position:-67px -103px;
+        }
+      }
+
+      &.privacy{
+        &:before{
+          background-position: -129px -161px;
+          width: 49px;
+          height: 54px;
+        }
+
+        &:hover:before{
+          background-position:-129px -104px;
+        }
+      }
+
+      &.delete-member{
+        &:before{
+          background-position: -192px -160px;
+          width: 52px;
+          height: 54px;
+        }
+
+        &:hover:before{
+          background-position:-192px -103px;
+        }
+      }
+
+      &.search-all:before{ //전체
+        background-position:0 -257px;
+        width: 43px;
+        height: 40px;
+      }
+
+      &.search-start:before{ //출발
+        background-position:-61px -259px;
+        width: 66px;
+        height: 33px;
+      }
+
+      &.search-arrive:before{ // 도착
+        background-position:-145px -254px;
+        width: 66px;
+        height: 37px;
+      }
+
+      &.search-transfer:before{ // 환승
+        background-position:-232px -251px;
+        width: 38px;
+        height: 46px;
+      }
+
+      &.search-traffic:before{ // 교통주차
+        background-position:-294px -254px;
+        width: 44px;
+        height: 44px;
+      }
+
+      &.search-shopping:before{ // 쇼핑식당
+        background-position:-362px -253px;
+        width: 37px;
+        height: 44px;
+      }
+
+      &.search-service:before{ // 공항서비스
+        background-position:-4px -314px;
+        width: 47px;
+        height: 44px;
+      }
+
+      &.search-map:before{ // 공항지도
+        background-position:-79px -312px;
+        width: 37px;
+        height: 43px;
+      }
+
+      &.search-center:before{ // 고객센터
+        background-position:-161px -314px;
+        width: 40px;
+        height: 40px;
+      }
+
+      &.search-intro:before{ // 공항소개
+        background-position:-229px -308px;
+        width: 45px;
+        height: 47px;
+      }
+
+      &.search-cyber:before{ // 사이버홍보실
+        background-position:-295px -315px;
+        width: 52px;
+        height: 39px;
+      }
+
+      &.search-participation:before{ // 고객참여
+        background-position:-370px -310px;
+        width: 44px;
+        height: 45px;
+      }
+
+      &.search-business:before{ // 주요사업
+        background-position:-6px -375px;
+        width: 46px;
+        height: 38px;
+      }
+
+      &.search-task:before{ // 업무지원
+        background-position:-74px -372px;
+        width: 46px;
+        height: 40px;
+      }
+
+      &.search-careers:before{ // 인재채용
+        background-position:-156px -372px;
+        width: 47px;
+        height: 40px;
+      }
+
+
     }
   }
 }
@@ -157,7 +314,6 @@
 .search-cs{
 
   &-box{
-    width: 100%;
     height: 99px;
     background: #323648;
     position: relative;
@@ -586,14 +742,14 @@
         padding:0;
       }
 
-      &.login1{
-        width:345px;
-      }
-
-      &.login2{
-        width:200px;
-        padding-left:10px;
-      }
+      //&.login1{
+      //  width:345px;
+      //}
+      //
+      //&.login2{
+      //  width:200px;
+      //  padding-left:10px;
+      //}
     }
   }
 
@@ -810,9 +966,8 @@
       }
     }
     .crud-ico{
-      text-indent:0;
+      text-indent:24px;
       &:after{
-        left:-22px;
         right:auto;
         bottom:4px;
       }
@@ -1149,7 +1304,7 @@
 
 //input
 .user-text{
- width: 250px;
+  width: 250px;
   height: 50px;
   line-height:50px;
   padding: 0 10px;
@@ -1164,12 +1319,13 @@
     padding:15px;
   }
   &.email{
-    width: 146px;
+    width:140px;
     margin-left: 5px;
-    &:first-child{
-      margin-left: 0;
-      margin-right: 5px;
-    }
+    margin-right: 5px;
+  }
+  &.email-wide{
+    width: 85%;
+    margin-bottom: 10px;
   }
 }
 /*파일 첨부, 주소 검색*/
@@ -1228,8 +1384,8 @@
     font-size: 1rem;
   }
   &.email{
-    width: 146px;
-    margin-left: 5px;
+    width: 157px;
+    margin-right: 8px;
   }
 }
 /*이용일시*/

@@ -1,5 +1,6 @@
 .inner-section{
   width: 1200px;
+  min-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
@@ -505,6 +506,7 @@
   right:0;
   border-radius: 20px;
   //color:#fff;
+  z-index:99999;
 
   &-menu-list{
     background: #272936;
@@ -576,6 +578,9 @@ mark{
   }
   &.color-b{
     background:#515fa5;
+  }
+  &.color-g{
+    background: #2c8279;
   }
 }
 
@@ -1257,4 +1262,8 @@ em{
 
 button{
   border-radius: 0;
+}
+
+select{
+  background:#fff;
 }

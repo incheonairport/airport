@@ -2,7 +2,7 @@
  * Base Class *
  **************/
 
-var Index, HeaderGnb, FullPage, TableLike, MainVisual, BoxModel;
+var Index, HeaderGnb, FullPage, TableLike, MainVisual, BottomBanner, BoxModel;
 
 $(function(){
 
@@ -12,23 +12,8 @@ $(function(){
 
   Index = function(){
 
-    this.$mainSection = $('.full-page-content .section');
     this.$mainVisualItem = $('.main-visual-item');
-    this.$mainFullPageContent = $('.full-page-content');
-    this.currentMainSectionIndex = 0;
     this.easingType = 'easeInOutExpo';
-
-    this.setCurrentMainSectionIndex = function(currentIndex){
-
-      this.currentMainSectionIndex = currentIndex;
-
-    };
-
-    this.getCurrentMainSectionIndex = function(){
-
-      return this.currentMainSectionIndex;
-
-    };
 
   };
 
@@ -40,83 +25,7 @@ $(function(){
 
     Index.apply(this);
 
-    var $visualItem = this.$mainVisualItem;
-    var $mainSection = this.$mainSection;
-    var $fullPageContent = this.$mainFullPageContent;
 
-
-    var _initClass = function(){
-      $('.header, .gnb').addClass( $fullPageContent.find('.section').eq(0).data('gnb-color') );
-    };
-
-    var _setClassVisual = function(index){
-      //console.log('set visual index : ' + index);
-      $('.header').attr('class', 'header ' + $visualItem.eq(index).data('gnb-color') );
-      $('.gnb').attr('class', 'gnb ' + $visualItem.eq(index).data('gnb-color') );
-    };
-
-    var _setClassSection = function(index){
-      $('.header').attr('class', 'header ' + $mainSection.eq(index).data('gnb-color') );
-      $('.gnb').attr('class', 'gnb ' + $mainSection.eq(index).data('gnb-color') );
-      //console.log('set section index : ' + index);
-    };
-
-    this.setClass = function(setClassSectionIndex, setClassVisualIndex){
-
-      //console.log('section index : ' + setClassSectionIndex);
-      //console.log('visual index : ' + setClassVisualIndex);
-
-      this.setCurrentMainSectionIndex(setClassSectionIndex);
-
-      if( setClassSectionIndex == 0 ){
-
-        //console.log('set visual');
-        _setClassVisual(setClassVisualIndex);
-
-      } else {
-
-        //console.log('set section');
-        _setClassSection(setClassSectionIndex);
-
-      }
-
-    };
-
-    _initClass();
-
-  };
-
-  /**
-   * FullPage Class
-   */
-
-  FullPage = new function(){
-
-    Index.apply(this);
-
-    this.sectionBgInit = function(){
-
-      $('.full-page-content .section-main-bg').css({
-        top:-480
-      });
-
-    };
-
-    this.sectionBgDown = function(sectionNextIndex){
-
-      this.$mainSection.eq(sectionNextIndex).find('.section-main-bg').animate({
-        top:0
-      }, 1000, 'easeOutQuad');
-
-    };
-
-    this.sectionBgUp = function(sectionPrevIndex){
-
-      this.$mainSection.eq(sectionPrevIndex).find('.section-main-bg').delay(100).animate({
-        top:-480
-      }, 900, 'easeOutQuad');
-
-    };
 
   };
 
@@ -135,13 +44,10 @@ $(function(){
     var $visualItem = this.$mainVisualItem;
     var easingType = this.easingType;
 
-    //var $mainSection = $('.full-page-content .section');
-    //var mainSectionIndex = 0;
-
     var $pageItem;
 
     var timeID, timeID2;
-    var imageMovingTime = 3000;
+    var imageMovingTime = 1000;
     var imageIntervalTime = 10000;
     var barStretchTime = 10;
 
@@ -164,8 +70,7 @@ $(function(){
 
     var _initPosition = function(){
 
-      $visualItem.css({left:'100%'}).eq(0).css({left:0});
-      $visualItem.eq( $visualItem.length-1 ).css({left:'-100%'});
+      $visualItem.hide().eq(0).show();
 
     };
 
@@ -175,6 +80,7 @@ $(function(){
 
       _initPaging();
 
+      _timeBar(true);
 
       setTimeout(function(){
         _textMotion();
@@ -216,15 +122,23 @@ $(function(){
 
     };
 
-    var _timeBar = function(){
+    var _timeBar = function(auto){
+
+      clearInterval(timeID2);
 
       var barStretch = 0;
-      var unitLength = 100 / ( (imageIntervalTime-imageMovingTime) / barStretchTime );
+      var unitLength = 100 / ( imageIntervalTime / barStretchTime );
 
-      timeID2 = setInterval(function(){
-        $('.main-visual-control-bar').css({width:barStretch + '%'});
-        barStretch += unitLength;
-      }, barStretchTime);
+      $('.paging-link.on').css({height:(100 - barStretch) + '%'});
+
+      if(auto){
+
+        timeID2 = setInterval(function(){
+          $('.paging-link.on').css({height:(100 - barStretch) + '%'});
+          barStretch += unitLength;
+        }, barStretchTime);
+
+      }
 
     };
 
@@ -232,40 +146,21 @@ $(function(){
       $('.play-button').attr('class', 'play-button').addClass(status);
     };
 
-    this.moveLeft = function(auto){
+    // public
+    this.fade = function(){
 
       if( nextVisualIndex >= $visualItem.length ){
+
         nextVisualIndex = 0;
-      }
 
-      $visualItem.eq(currentVisualIndex).stop().animate({left:'-100%'}, imageMovingTime, easingType);
-      $visualItem.eq(nextVisualIndex).css({left:'100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
-        clearInterval(timeID2);
-        if(auto){
-          _timeBar();
-        }
-        _textMotion();
-      });
+      } else if( nextVisualIndex <= -1 ){
 
-      $pageItem.find('.paging-link').removeClass('on');
-      $pageItem.eq(nextVisualIndex).find('.paging-link').addClass('on');
-
-      currentVisualIndex = nextVisualIndex;
-
-    };
-
-    this.moveRight = function(auto){
-
-      if( nextVisualIndex <= -1 ){
         nextVisualIndex = $visualItem.length-1;
+
       }
 
-      $visualItem.eq(currentVisualIndex).stop().animate({left:'100%'}, imageMovingTime, easingType);
-      $visualItem.eq(nextVisualIndex).css({left:'-100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
-        clearInterval(timeID2);
-        if(auto){
-          _timeBar();
-        }
+      $visualItem.eq(currentVisualIndex).stop().fadeOut(imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).stop().fadeIn(imageMovingTime, easingType, function(){
         _textMotion();
       });
 
@@ -278,39 +173,40 @@ $(function(){
 
     this.rollAuto = function(){
 
-      var _moveLeft = this.moveLeft;
+      var _fade = this.fade;
 
       timeID = setInterval(function(){
 
         nextVisualIndex = currentVisualIndex + 1;
-        _moveLeft(true);
+        _fade();
 
-        HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
+        _timeBar(true);
+
+        //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
       }, imageIntervalTime);
 
-      _timeBar();
       _setPlayButtonClass('pause');
+
     };
 
     this.rollLeft = function(){
 
       nextVisualIndex = currentVisualIndex + 1;
-      this.moveLeft(false);
-      //console.log('rollleft : ' + nextVisualIndex);
+      this.fade();
+      _timeBar(false);
 
-      HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
-
+      //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
     };
 
     this.rollRight = function(){
 
       nextVisualIndex = currentVisualIndex - 1;
-      this.moveRight(false);
-      //console.log('rollright : ' + nextVisualIndex);
+      this.fade();
+      _timeBar(false);
 
-      HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
+      //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
     };
 
@@ -338,12 +234,58 @@ $(function(){
 
     };
 
-    // public
-
-
     // running in constructor when loading
     _init();
     this.rollAuto();
+
+  };
+
+  /**
+   * BottomBanner Class
+   */
+
+  BottomBanner = new function(){
+
+    var $bannerItem = $('.bottom-banner-item');
+    var $pageItem;
+
+    var _initPaging = function(){
+
+      var $paging = $('<ul class="paging-visual"></ul>');
+      var pageNumber = Math.ceil( $bannerItem.length / 4 );
+
+      $('.bottom-banner-control-paging').prepend($paging);
+
+      for(var i=0; i<pageNumber; i++){
+        $paging.append('<li class="paging-item"><div class="paging-link">' + (i+1) + '</div></li>');
+      }
+
+      $pageItem = $('.paging-item');
+      $pageItem.removeClass('on');
+      $pageItem.eq(0).find('.paging-link').addClass('on');
+
+    };
+
+    var _init = function(){
+
+      var itemWidth = 0;
+      var listWidth = 0;
+
+      $bannerItem.each(function(i){
+
+        itemWidth = $(this).width() + parseInt( $(this).css('margin-right') );
+
+        listWidth += itemWidth;
+
+      });
+
+      $('.bottom-banner-list').width(listWidth);
+
+    };
+
+    _init();
+
+    _initPaging();
 
   };
 
