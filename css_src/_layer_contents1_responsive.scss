@@ -78,6 +78,7 @@
     padding: 58px 50px;
     &-title{
       font-size: 1.125rem;
+      display:block;
     }
     .search-area{
       &-txt{
@@ -415,14 +416,16 @@
         position: static;
         margin-right:0;
         margin-bottom:10px;
+        display:block;
+        font-size:1.125rem;
       }
       &-input {
-        width: calc(100% - 40px);
-        height: 40px;
+        width: calc(100% - 50px);
+        height: 50px;
       }
       &-btn {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
 
       }
     }
@@ -541,11 +544,13 @@
     }
     .search-area{
       &-txt{
-        width: 80%;
+        width:calc(100% - 50px);
+        height:50px;
         font-size:0.8125rem;
       }
       &-btn{
-        width: 20%;
+        width:50px;
+        height:50px;
         font-size: 1.125rem;
         &.ico{
           text-indent:-99999em;
@@ -662,6 +667,10 @@
     height:200px;
   }
   .digr_ktx_route{
+    height:200px;
+  }
+
+  .digr-city-airport-terminal-kwangmyung{
     height:200px;
   }
 }
