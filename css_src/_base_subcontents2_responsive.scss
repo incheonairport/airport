@@ -198,7 +198,7 @@
       padding:60px 0;
     }
     &-inner{
-      padding:60px 15px;
+      //padding:60px 15px;
       &.split{
         float:none;
         width:100%;
@@ -286,6 +286,9 @@
     &.tour-info{
 
 
+    }
+    &-contents{
+      padding:60px 0;
     }
     &-contents2{
       width:100%;
@@ -686,6 +689,8 @@
       margin-left: 0;
       margin-bottom:30px;
       text-align:center;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding:15px;
       .logo-text{
         &.mt20{
           margin-top:10px;

@@ -934,6 +934,9 @@ em{
   }
 }
 
+p.icontxt{
+  padding:0 0 0 90px;
+}
 .icontxt {
   display:block;
   min-height:74px;
@@ -955,7 +958,6 @@ em{
 
   &.icon {
     &-type1{
-
       &:after {
         background-position: -11px -10px;
       }
@@ -1007,6 +1009,24 @@ em{
     &-type9{
       &:after {
         background-position: -199px -199px;
+      }
+    }
+
+    &-type10{
+      &:after {
+        background-position: -198px -575px;
+      }
+    }
+
+    &-type11{
+      &:after {
+        background-position: -198px -762px;
+      }
+    }
+
+    &-type12{
+      &:after {
+        background-position: -10px -853px;
       }
     }
 

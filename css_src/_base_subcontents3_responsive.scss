@@ -183,7 +183,7 @@
 }
 
 // 640
-@media all and (max-width:640px) {
+@media all and (max-width:639px) {
   .position-box108{
     margin-top:0;
   }
@@ -207,6 +207,7 @@
     &-iconlist{
       position: static;
       float: none;
+      margin-bottom:30px;
       &-item{
         width:100%;
         text-align:center;
@@ -268,7 +269,7 @@
   // slide banner
   .slide-banner{
     &-wrap{
-      height:120px;
+      height:130px;
     }
     &-list{
       &-link{
@@ -295,6 +296,7 @@
   }
   .filter{
     min-width:100%;
+    height:360px;
     &.on{
       .filter-brand-search-detail{
         display:block;
@@ -302,35 +304,47 @@
     }
     // 터미널검색
     &-terminal-search{
+
       &-heading{
         display:block;
         height:0;
         text-indent:-9999px;
       }
       &-depth1{
-        height:46px;
-        margin-bottom:16px;
-        line-height:46px;
+        position:static;
+        top:0;
+        left:0;
+        height:auto;
+        line-height:inherit;
 
         .input-box{
-          float:left;
+          width:100%;
+          .field-division{
+            border:1px solid #d9d9d9;
+            width:33.33%;
+            padding:10px 0;
+            text-align:center;
+            border-left:0;
+            &:first-child{
+              border-left:1px solid #d9d9d9;
+            }
+          }
+
+
           .field-radiomain{
             display:none;
           }
           &.base{
-            margin-left:30px;
+
+            margin-left:0;
+            margin-top:10px;
             & label:after{
               top: 0;
             }
           }
           .field-division{
             &:before{
-              content:'';
-              display:inline-block;
-              width: 1px;
-              height:20px;
-              background:#d9d9d9;
-              margin:0 18px;
+              display:none;
             }
             &:first-child{
               &:before{
@@ -341,9 +355,11 @@
         }
       }
       &-depth2{
-        padding:20px;
-        background:#f2f2f2;
-        border:1px solid #d9d9d9;
+        position:absolute;
+        top:196px;
+        padding:0px;
+        background:none;
+        border:0;
         &.off{
           display:none;
         }
@@ -352,19 +368,9 @@
     // 브랜드검색
     &-brand-search{
       &-btn{
-        position:static;
-        &:after{
-          left:auto;
-          right:12px;
-        }
-        &.on{
-          &:after{
-            background-position:-460px -67px;
-          }
-        }
-        &:hover{
-          background:#333;
-        }
+        width:100%;
+        text-align:center;
+        top:140px;
       }
       &-detail{
         display:none;
@@ -376,143 +382,85 @@
         left:0;
         z-index:2;
         &-head{
-          padding:20px 30px;
-          background:#f2f2f2;
-          border-bottom:1px solid #d9d9d9;
-        }
-        &-close{
-          width:25px;
-          height:25px;
-          background:none;
-          position:absolute;
-          top: 20px;
-          right:20px;
-          border:0;
-          &:hover{
-            opacity:.5;
-          }
+          padding:10px;
         }
         &-result{
-          overflow:auto;
-          max-height:194px;
-          padding:20px 30px 40px;
+          max-height:140px;
+          padding:10px;
           & .brand-list{
-
             &-item{
-              width:16%;
-              float:left;
+              width:100%;
+              float:none;
             }
             &-link{
-              color:#666;
               font-size:1rem;
-              &.on{
-                color:#000;
-                font-weight:700;
-              }
-              &:hover{
-                color:#000;
-                font-weight:700;
-              }
             }
           }
-          &:after{
-            content:'';
-            display:block;
-            width:90%;
-            height:20px;
-            background:#fff;
-            position:absolute;
-            bottom:0;
-            left:0;
-          }
+        }
+        &-close{
+          top: 10px;
         }
       }
+
     }
     // 매장검색
     &-store-search{
-
-      width:280px;
-      height:40px;
-      border-bottom:1px solid #000;
-      position:static;
-      top:0;
-      right:150px;
-      &-input{
-        width:100%;
-        height:100%;
-        padding-right:50px;
-        input{
-          width:100%;
-          height:100%;
-          border:0;
-          background:none;
-          color: #666;
-          font-size: 1.125rem;
-          font-weight: 300;
-          line-height:40px;
-        }
-      }
-      &-icon{
-        width:50px;
-        height:100%;
-        position:relative;
-        top:0;
-        right:0;
-        .ico{
-          width:100%;
-          height:100%;
-          border:0;
-          background:none;
-          &:after{
-            right:-14px;
-          }
-        }
-      }
-    }
-    // 검색옵션
-    &-option{
-      border:0;
-      background:#666;
-      text-indent:0;
-      color:#fff;
-      font-size:0.875rem;
-      padding:4px 14px 4px 30px;
-      position:absolute;
-      bottom:0;
+      width:100%;
+      height:50px;
+      top:80px;
       right:0;
-      z-index:4;
-      &:after{
-        right:auto;
-        left:10px;
-      }
-      &:hover{
-        background:#777;
-      }
-      &.on{
-        &:after{
-          background-position:-440px -67px;
-        }
-      }
     }
-    // layout
-    &-service-field{
-
-      background:#fff;
-      padding:42px 0 20px 0;
-      position:relative;
-      border-bottom:1px solid #000;
-      &.on{
-        .field{
-          display:none;
-        }
-      }
-    }
+    //// 검색옵션
+    //&-option{
+    //  border:0;
+    //  background:#666;
+    //  text-indent:0;
+    //  color:#fff;
+    //  font-size:0.875rem;
+    //  padding:4px 14px 4px 30px;
+    //  position:absolute;
+    //  bottom:0;
+    //  right:0;
+    //  z-index:4;
+    //  &:after{
+    //    right:auto;
+    //    left:10px;
+    //  }
+    //  &:hover{
+    //    background:#777;
+    //  }
+    //  &.on{
+    //    &:after{
+    //      background-position:-440px -67px;
+    //    }
+    //  }
+    //}
+    //// layout
+    //&-service-field{
+    //
+    //  background:#fff;
+    //  padding:42px 0 20px 0;
+    //  position:relative;
+    //  border-bottom:1px solid #000;
+    //  &.on{
+    //    .field{
+    //      display:none;
+    //    }
+    //  }
+    //}
   }
   // 체크/라디오 그룹
   .field{
     .field-radio{
       & + .field-radio-label{
-
+        width:33.33%;
+        margin-right:0;
+        border-left:0;
+        text-align:center;
+        border-right:0;
+        font-size:0.75rem;
+        margin-bottom:-1px;
+        letter-spacing:-2px;
       }
       &:checked + .field-radio-label {
 
@@ -520,22 +468,11 @@
     }
     .field-radiomain{
       & + .field-radiomain-label{
-        font-size: 1rem;
+        font-size:0.825rem;
       }
     }
     &-division{
-      &:first-child{
-        .field-radiomain-label:before{
-        }
-      }
-      &.col-2{
-        .field-radio-label{
-        }
-      }
-    }
-    &-division{
-      float:none;
-      width:100%;
+
       &:first-child{
         .field-radiomain-label:before{
           display:none;
@@ -550,7 +487,23 @@
     }
     &-group{
       &.big{
+        margin:0;
         .field-radio-label{
+
+        }
+      }
+
+      &.brand{
+        .field-radio-label{
+          padding:0;
+          width:12.444%!important;
+          margin-bottom:0;
+          border-bottom:0!important;
+          font-size:0.75rem;
+          border-left:0;
+          &.pd10{
+            width:auto!important;
+          }
         }
       }
 
@@ -559,6 +512,7 @@
         font-size:1rem;
       }
     }
+
   }
   .boxmodel2{
     min-width:100%;
@@ -722,8 +676,8 @@
       padding:0;
       input{
         height:40px;
-        margin-bottom:4px;
         border-right:1px solid #a5a7aa;
+        border-bottom:0;
       }
       .responsive-form-box-btn{
         width:100%;
