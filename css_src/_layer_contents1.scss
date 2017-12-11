@@ -4,7 +4,6 @@
     height:400px;
     text-indent:-999em;
     background:url(/static/ap/images/digr_customs_inspection_procedure.png) center no-repeat #333649;
-    background-size:contain;
 }
 
 
@@ -13,7 +12,6 @@
   height:274px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_airport_railroad.png) center no-repeat #f3f4f8;
-  background-size:contain;
 }
 
 /*KTX 노선도*/
@@ -21,7 +19,6 @@
   height:274px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_ktx_route.png) center no-repeat #fff;
-  background-size:contain;
   border:1px solid #dcdcdc;
 }
 
@@ -34,6 +31,12 @@
 /*자기부상열차견학*/
 .maglev-train-tour{
   background:url(/static/ap/images/bg_maglev_train_tour.jpg) no-repeat;
+}
+
+.digr-city-airport-terminal-kwangmyung{
+  background:url(/static/ap/images/digr_city_airport_terminal_kwangmyung.png) no-repeat;
+  text-indent: -99999em;
+  height: 386px;
 }
 
 .update{
@@ -64,27 +67,28 @@
 
 /*버스검색*/
 .bussearch{
-  background:url(/static/ap/images/bg_layer_search.jpg) no-repeat;
-  background-size: cover;
-  padding: 58px 141px;
+  //background:url(/static/ap/images/bg_layer_search.jpg) no-repeat;
+  //background-size: cover;
+  padding: 40px 0;
+  text-align:center;
   &-title{
-    color: #fff;
+    line-height:58px;
+    padding-right:60px;
     font-size: 1.5rem;
-    float: left;
-    margin: 20px;
+    font-weight:700;
   }
   .search-area{
-
+      display:inline-block;
       @extend %clearfix;
-
     &-txt{
+      float:left;
       width: 505px;
       height: 58px;
       border: 0;
       padding: 0 15px;
-      border-left:1px solid #d9d9d9;
-      float: left;
+      border:1px solid #666;
       font-size:1.125rem;
+
     }
     &-btn{
       background:#42519e;
@@ -93,14 +97,13 @@
       font-size: 1.625rem;
       width: 132px;
       height: 58px;
-      line-height: 1;
-      padding-left: 15px;
+      padding-left: 30px;
       &.ico{
         text-indent:0;
       }
       &.ico:after{
         top:3px;
-        right:88px;
+        right:62px;
       }
     }
   }
@@ -109,26 +112,20 @@
 /*버스지역*/
 .local {
   width: 100%;
-
+  border:1px solid #a5a7aa;
   &-list {
-    border-left: 1px solid #a5a7aa;
-    border-right: 1px solid #a5a7aa;
-
     @extend %clearfix;
-
     &-item {
-      width: 104.5px;
-      border-right: 1px solid #d9d9d9;
+      width:9.09%;
+      border-left: 1px solid #a5a7aa;
       float: left;
-      &:last-child{
-        border-right: none;
+      &:first-child{
+        border-left:0;
       }
       &-link {
         height: 58px;
         display: block;
-        background: #fff;
         font-size: 1rem;
-        font-weight: 300;
         color: #666;
         text-align: center;
         line-height: 58px;
@@ -137,7 +134,7 @@
           color: #fff;
           background: #323648;
           border: 1px solid #323648;
-          font-weight: 800;
+          font-weight: 700;
           position: relative;
 
           &:after{
@@ -159,8 +156,8 @@
   }
 
   &-town {
-    padding: 30px 30px 20px;
-    border: 1px solid #a5a7aa;
+    padding: 30px 20px 20px;
+    border-top: 1px solid #a5a7aa;
     background: #f2f2f2;
 
     @extend %clearfix;
@@ -169,7 +166,7 @@
       width: 12.5%;
       height: 30px;
       float: left;
-      border-right: 1px solid #d9d9d9;
+      border-right: 1px solid #a5a7aa;
       text-align: center;
       margin-bottom:20px;
       &:nth-child(8n){
@@ -183,7 +180,7 @@
         &.on {
           color: #41519e;
           border-bottom:2px solid #41519e;
-          font-weight: 800;
+          font-weight: 700;
         }
       }
     }
@@ -483,7 +480,6 @@
 /*노선버스공지*/
 .notice-box{
   padding: 20px;
-  margin-bottom: 20px;
   border: 1px solid #d9d9d9;
   @extend %clearfix;
   &-title{
@@ -493,18 +489,38 @@
     font-size: 1.125rem;
     font-weight: 900;
     float: left;
-    position: relative;
-    top:5px;
   }
   &-txt{
     margin-left: 30px;
     float: left;
+    color:#3f4d94;
   }
 }
 
 // 스탭3
 .departure-step{
   background: url(/static/ap/images/bg_departure_step.jpg) no-repeat;
+  &.background-no{
+    background: none;
+    .departure-step-list-article{
+      color: #666;
+      &:before {
+        border: 1px solid #a6a7ab;
+        border-radius: 50%;
+      }
+      &.ico{
+        &:after{
+          width: 29px;
+          height: 23px;
+          background-position:-41px -345px;
+          top: 25%;
+          left: auto;
+          right: 0px;
+          bottom: auto;
+        }
+      }
+    }
+  }
   &-list{
     @extend %clearfix;
     min-height:204px;
@@ -540,9 +556,9 @@
       }
     }
     &.self{
-      width: 1002px;
       .departure-step-list-article{
         width:20%;
+        height: 200px;
         &:before {
           background: url(/static/ap/images/spr_ico_self_bag_drop.png) no-repeat;
         }
@@ -585,9 +601,9 @@
       }
     }
     &.self-checkin{
-      width: 1002px;
       .departure-step-list-article{
         width:20%;
+        height: 200px;
         &:before {
           background: url(/static/ap/images/spr_ico_self_checkin.png) no-repeat;
         }

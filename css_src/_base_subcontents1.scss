@@ -91,6 +91,9 @@
   &.departure-procedures{
     background:url(/static/ap/images/bg_departure_procedures.jpg) center no-repeat;
   }
+  &.global-search{
+    background:url(/static/ap/images/bg_global_search.jpg) center no-repeat;
+  }
 }
 
 .congestion{
@@ -358,11 +361,44 @@
     }
   }
   &-name{
+    &.global{
+      position: relative;
+      bottom: 30px;
+    }
     display:table;
     margin: 0 auto;
-
     @extend %clearfix;
+    .checkbox-label{
+      margin-left:32px;
+      color:#fff;
+      position:relative;
+      bottom:4px;
+    }
+    .checkbox:checked + label {
+      color: #fff;
+    }
+    &-tag{
+      margin-top:8px;
+      text-align:left;
+      .search-tag-item{
+        display:inline-block;
+        margin-left:20px;
+        &:first-child{
+          margin-left:0;
+        }
+      }
+      .search-tag-link{
+        color:#fff;
+        font-size:1rem;
+      }
 
+    }
+    &-result{
+      display:block;
+      text-align:right;
+      color:#fff;
+      font-size:1rem;
+    }
     &-option{
       width: 182px;
       height: 58px;
@@ -382,22 +418,25 @@
       font-weight: 300;
       border-left:1px solid #d9d9d9;
       float: left;
+      &.wide{
+        width:520px;
+      }
     }
     &-btn{
       width: 132px;
       height: 58px;
-      padding-left: 15px;
+      padding-left: 30px;
       background:#42519e;
       border: none;
       color: #fff;
       font-size: 1.625rem;
-      line-height: 1;
+      line-height: 58px;
       &.ico{
         text-indent:0;
       }
       &.ico:after{
         top:1px;
-        right:85px;
+        right:62px;
       }
     }
   }

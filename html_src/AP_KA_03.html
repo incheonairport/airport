@@ -38,24 +38,20 @@
         <p class="text-center" title="email-find">
           회원가입 당시 입력한 이름과 E-mail 주소로 일치하는 계정을 찾습니다.
         </p>
-        <div class="text-center">
-          <label for="user-id">
-            <input type="text" id="user-id" class="user-text email-wide" placeholder="회원 ID를 입력하세요">
-          </label>
+        <div class="text-center mt10">
+          <label for="user-id" class="label-hide">회원 ID 입력</label>
+          <input type="text" id="user-id" class="user-text email-wide" placeholder="회원 ID를 입력하세요">
 
-          <label for="name">
-            <input type="text" id="name" class="user-text email-wide" placeholder="이름을 입력하세요">
-          </label>
+          <label for="name" class="label-hide">회원 이름 입력</label>
+          <input type="text" id="name" class="user-text email-wide" placeholder="이름을 입력하세요">
 
-          <label for="email-find">
-            <input type="text" id="email-find" class="user-text email">
-            @
-            <input type="text" id="e-mail-account" class="user-text email" title="메일계정 직접 입력하실 수 있습니다">
-            <select class="object-list email" title="메일계정을 선택할 수 있는 리스트입니다">
-              <option>선택</option>
-            </select>
-          </label>
-
+          <label for="email-find" class="label-hide">메일계정 입력</label>
+          <input type="text" id="email-find" class="user-text email">
+          @
+          <input type="text" id="e-mail-account" class="user-text email" title="메일계정 직접 입력하실 수 있습니다">
+          <select class="object-list email" title="메일계정을 선택할 수 있는 리스트입니다">
+            <option>선택</option>
+          </select>
         </div>
         <div class="text-center mt35">
           <a href="" class="btn-type-normal point ico arrow-point-right"><strong>임시 비밀번호 발송</strong></a>

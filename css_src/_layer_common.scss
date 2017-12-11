@@ -338,14 +338,14 @@
 
       &-link{
         display:block;
-        min-height:54px;
+        padding:10px 5px;
+        line-height:1.5;
         background:#f2f2f2;
         border:1px solid #d9d9d9;
         border-bottom-color:#42519e;
         font-size:1.25rem;
         font-weight:300;
         color:#666;
-        line-height:54px;
         text-align:center;
 
         &.on{
@@ -672,6 +672,14 @@
       content:"※";
     }
   }
+  &.mark2{
+    text-indent:-20px;
+    padding-left:20px;
+
+    &:before{
+      content:"*";
+    }
+  }
 }
 
 strong{
@@ -714,6 +722,10 @@ em{
       padding:40px 0;
       border-top:1px solid #d9d9d9;
       border-bottom:1px solid #d9d9d9;
+      &.wide{
+        width:66.666%;
+        border-right:1px solid #d9d9d9;
+      }
     }
 
     &.col-3{
@@ -926,6 +938,9 @@ em{
   }
 }
 
+p.icontxt{
+  padding:0 0 0 90px;
+}
 .icontxt {
   display:block;
   min-height:74px;
@@ -947,7 +962,6 @@ em{
 
   &.icon {
     &-type1{
-
       &:after {
         background-position: -11px -10px;
       }
@@ -999,6 +1013,24 @@ em{
     &-type9{
       &:after {
         background-position: -199px -199px;
+      }
+    }
+
+    &-type10{
+      &:after {
+        background-position: -198px -575px;
+      }
+    }
+
+    &-type11{
+      &:after {
+        background-position: -198px -762px;
+      }
+    }
+
+    &-type12{
+      &:after {
+        background-position: -10px -853px;
       }
     }
 
@@ -1212,6 +1244,19 @@ em{
       bottom:0;
       text-align: right;
     }
+    &.img-center{
+      display: inline-block;
+      text-align: center;
+    }
+    .img-auto{
+      width:auto;
+    }
+    .img-caption{
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      font-size: 1rem;
+    }
   }
 
   &.double{
@@ -1240,6 +1285,7 @@ em{
         width: 466px;
         padding:0;
       }
+
     }
   }
 

@@ -38,11 +38,659 @@
       white-space: nowrap;
     }
   }
+
+  .boxmodel2{
+    min-width:1152px;
+    &-tab{
+      &-btngroup{
+      }
+    }
+    // 리스트형
+    &-list{
+      &.simple{
+        .boxmodel2-table{
+          padding:6px 0;
+        }
+        .boxmodel2-maintit{
+          margin-bottom:10px;
+        }
+        .boxmodel2-table{
+          &-tit{
+            width:56px;
+          }
+          &-desc{
+            width:calc(100% - 56px);
+          }
+        }
+      }
+      &-item{
+        margin-top:20px;
+        position:relative;
+        border:1px solid #d9d9d9;
+        &:first-child{
+          margin-top:0;
+        }
+        .boxmodel2-list-detail{
+          display:none
+        }
+        &.on{
+          .boxmodel2-list-detail{
+            display:block;
+          }
+          .btn-type-small{
+            color:#fff;
+            background:#333649;
+            line-height:1;
+            &:after{
+              background-position:-460px -67px;
+            }
+          }
+        }
+        // boxmodel2-list-item 에 다음 클래스 추가시 24시간 마크 생성
+        &.todclock{
+          &:after{
+            content:'24h';
+            position:absolute;
+            top:20px;
+            right:20px;
+            display:block;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            line-height:50px;
+            border:4px solid #d43e41;
+            color:#d43e41;
+            font-weight:900;
+            text-align:center;
+          }
+        }
+      }
+      &-box{
+        position:relative;
+        .btn-type-small{
+          position: absolute;
+          right:28px;
+          bottom:46px;
+        }
+        .imgbox{
+          vertical-align:bottom;
+        }
+         
+        padding:30px;
+        &-split{
+          float:left;
+          &.col-1{
+            //width:370px;
+          }
+          &.col-2{
+            padding-left:40px;
+            width: calc(100% - 370px);
+          }
+        }
+      }
+      &-detail{
+         
+        background:#f3f4f8;
+        border-top:1px solid #d9d9d9;
+        padding:30px;
+        &-split{
+          float:left;
+
+          &.col-1{
+            width:calc(100% - 596px);
+            padding-right:40px;
+          }
+          &.col-2{
+            width: 596px;;
+            .imgbox{
+              vertical-align:top;
+            }
+          }
+        }
+      }
+      &-tit{
+        display:block ;
+        font-size:1.5rem;
+        font-weight:900;
+        padding-bottom:10px;
+      }
+      &-subtit{
+        display:block;
+        font-weight:900;
+      }
+      &-info{
+         
+        &-tit{
+          min-width:132px;
+          margin-right:20px;
+          float: left;
+        }
+      }
+    }
+    // 썸네일형
+    &-thumbnail{
+      &-item{
+        width:calc(50% - 12px);
+        &:nth-child(2n){
+          margin-right:0!important;
+        }
+        &:nth-child(3n){
+          margin-right:24px;
+        }
+      }
+    }
+  }
 }
 
 // 640
-@media all and (max-width:640px) {
+@media all and (max-width:639px) {
+  .position-box108{
+    margin-top:0;
+  }
+  .position-box70{
+    margin-top:0;
+    .filter-service-field{
+      padding: 30px 0
+    }
+    .base{
+    }
+  }
+  .bg-banner{
+    min-width:100%;
+    background-size:cover!important;
+    min-height:inherit;
+    height:inherit;
+    padding:15px 0 0;
+    .inner-section{
+      padding:0;
+    }
+    &-iconlist{
+      position: static;
+      float: none;
+      margin-bottom:30px;
+      &-item{
+        width:100%;
+        text-align:center;
+        border:0;
+      }
+    }
+    &-bgico {
+      margin: 0;
+      font-weight:400;
+      line-height:90px;
+      height:70px;
+      &:hover{
+        opacity:.8;
+      }
+      &:after {
+        content: '';
+        display: block;
+        margin: 0 auto 10px;
+        background: url(/static/ap/images/spr_ico_bgset.png) no-repeat;
+        position: absolute;
+        top: 4px;
+        right: 0;
+        left: 0;
+      }
+      &.shopping:after {
+        background-position: -84px -19px;
+        background-size: 205px 200px;
+        width: 25px;
+        height: 18px;
+      }
+      &.event:after {
+        background-position: -15px -17px;
+        background-size: 205px 200px;
+        width: 22px;
+        height: 22px;
+      }
+      &.map:after {
+        background-position: -51px -17px;
+        background-size: 205px 200px;
+        width: 22px;
+        height: 21px;
+      }
+    }
+    &-tit{
+      display:block;
+      font-size:1.5rem;
+      position:static;
+      text-align:center;
+      margin:20px 0;
+      strong{
+        font-size:2rem;
+      }
+    }
+    &-banner{
+      width:100%;
+      position: static;
+    }
+  }
+  // slide banner
+  .slide-banner{
+    &-wrap{
+      height:130px;
+    }
+    &-list{
+      &-link{
 
+        padding:40px 15px;
+      }
+      &-desc{
+        width:100%;
+        text-align:center;
+        font-size:1rem;
+      }
+      &-strong{
+        display:block;
+        width:100%;
+        text-align:center;
+        font-size:1.125rem;
+        font-weight:700;
+      }
+    }
+    &-btn{
+      width:38px;
+      height:48px;
+    }
+  }
+  .filter{
+    min-width:100%;
+    height:360px;
+    &.on{
+      .filter-brand-search-detail{
+        display:block;
+      }
+    }
+    // 터미널검색
+    &-terminal-search{
+
+      &-heading{
+        display:block;
+        height:0;
+        text-indent:-9999px;
+      }
+      &-depth1{
+        position:static;
+        top:0;
+        left:0;
+        height:auto;
+        line-height:inherit;
+
+        .input-box{
+          width:100%;
+          .field-division{
+            border:1px solid #d9d9d9;
+            width:33.33%;
+            padding:10px 0;
+            text-align:center;
+            border-left:0;
+            &:first-child{
+              border-left:1px solid #d9d9d9;
+            }
+          }
+
+
+          .field-radiomain{
+            display:none;
+          }
+          &.base{
+
+            margin-left:0;
+            margin-top:10px;
+            & label:after{
+              top: 0;
+            }
+          }
+          .field-division{
+            &:before{
+              display:none;
+            }
+            &:first-child{
+              &:before{
+                display:none;
+              }
+            }
+          }
+        }
+      }
+      &-depth2{
+        position:absolute;
+        top:196px;
+        padding:0px;
+        background:none;
+        border:0;
+        &.off{
+          display:none;
+        }
+      }
+    }
+    // 브랜드검색
+    &-brand-search{
+      &-btn{
+        width:100%;
+        text-align:center;
+        top:140px;
+      }
+      &-detail{
+        display:none;
+        width:100%;
+        background:#fff;
+        border:1px solid #a5a7aa;
+        position:absolute;
+        top:45px;
+        left:0;
+        z-index:2;
+        &-head{
+          padding:10px;
+        }
+        &-result{
+          max-height:140px;
+          padding:10px;
+          & .brand-list{
+            &-item{
+              width:100%;
+              float:none;
+            }
+            &-link{
+              font-size:1rem;
+            }
+          }
+        }
+        &-close{
+          top: 10px;
+        }
+      }
+
+    }
+    // 매장검색
+    &-store-search{
+      width:100%;
+      height:50px;
+      top:80px;
+      right:0;
+    }
+    //// 검색옵션
+    //&-option{
+    //  border:0;
+    //  background:#666;
+    //  text-indent:0;
+    //  color:#fff;
+    //  font-size:0.875rem;
+    //  padding:4px 14px 4px 30px;
+    //  position:absolute;
+    //  bottom:0;
+    //  right:0;
+    //  z-index:4;
+    //  &:after{
+    //    right:auto;
+    //    left:10px;
+    //  }
+    //  &:hover{
+    //    background:#777;
+    //  }
+    //  &.on{
+    //    &:after{
+    //      background-position:-440px -67px;
+    //    }
+    //  }
+    //}
+    //// layout
+    //&-service-field{
+    //
+    //  background:#fff;
+    //  padding:42px 0 20px 0;
+    //  position:relative;
+    //  border-bottom:1px solid #000;
+    //  &.on{
+    //    .field{
+    //      display:none;
+    //    }
+    //  }
+    //}
+  }
+  // 체크/라디오 그룹
+  .field{
+    .field-radio{
+      & + .field-radio-label{
+        width:33.33%;
+        margin-right:0;
+        border-left:0;
+        text-align:center;
+        border-right:0;
+        font-size:0.75rem;
+        margin-bottom:-1px;
+        letter-spacing:-2px;
+      }
+      &:checked + .field-radio-label {
+
+      }
+    }
+    .field-radiomain{
+      & + .field-radiomain-label{
+        font-size:0.825rem;
+      }
+    }
+    &-division{
+
+      &:first-child{
+        .field-radiomain-label:before{
+          display:none;
+        }
+      }
+      &.col-2{
+        width:100%;
+        .field-radio-label{
+          margin-bottom:4px;
+        }
+      }
+    }
+    &-group{
+      &.big{
+        margin:0;
+        .field-radio-label{
+
+        }
+      }
+
+      &.brand{
+        .field-radio-label{
+          padding:0;
+          width:12.444%!important;
+          margin-bottom:0;
+          border-bottom:0!important;
+          font-size:0.75rem;
+          border-left:0;
+          &.pd10{
+            width:auto!important;
+          }
+        }
+      }
+
+      &-tit{
+        min-width:100%;
+        font-size:1rem;
+      }
+    }
+
+  }
+  .boxmodel2{
+    min-width:100%;
+    &-tab{
+      &-btngroup{
+      }
+    }
+    // 리스트형
+    &-list{
+      &.simple{
+        .boxmodel2-table{
+          padding:6px 0;
+        }
+        .boxmodel2-maintit{
+          margin-bottom:10px;
+        }
+        .boxmodel2-table{
+          &-tit{
+            width:56px;
+          }
+          &-desc{
+            width:calc(100% - 56px);
+          }
+        }
+      }
+      &-item{
+        margin-top:20px;
+        position:relative;
+        border:1px solid #d9d9d9;
+        &:first-child{
+          margin-top:0;
+        }
+        .boxmodel2-list-detail{
+          display:none
+        }
+        &.on{
+          .boxmodel2-list-detail{
+            display:block;
+          }
+          .btn-type-small{
+            color:#fff;
+            background:#333649;
+            line-height:1;
+            &:after{
+              background-position:-460px -67px;
+            }
+          }
+        }
+        // boxmodel2-list-item 에 다음 클래스 추가시 24시간 마크 생성
+        &.todclock{
+          &:after{
+            width:30px;
+            height:30px;
+            background:#fff;
+            line-height:30px;
+            border:3px solid #d43e41;
+            font-size:0.825rem;
+          }
+        }
+      }
+      &-box{
+        padding:15px;
+        .btn-type-small{
+          position: relative;
+          right:0;
+          bottom:0;
+          padding:0;
+        }
+        &-split{
+          float:none;
+          &.col-1{
+            width:100%;
+            margin-bottom:15px;
+          }
+          &.col-2{
+            padding-left:0;
+            width:100%;
+          }
+        }
+      }
+      &-detail{
+        padding:15px;
+        &-split{
+          display:block;
+          width:100%;
+          float:none;
+          &.col-1{
+            width:100%;
+            padding-right:0;
+            padding-bottom:30px;
+          }
+          &.col-2{
+            width:100%;
+          }
+        }
+      }
+    }
+    // 썸네일형
+    &-thumbnail{
+      &-item{
+        width:100%;
+        margin-right:0!important;
+      }
+      &-link{
+      }
+      &-box{
+        &-split{
+          &.row-2{
+            padding:15px;
+            .boxmodel2-desc{
+              font-size:1rem;
+            }
+            .boxmodel2-map-link{
+            }
+          }
+        }
+      }
+      &-cover{
+        display:none;
+      }
+    }
+    &-column{
+      border:0;
+      &.col-2{
+        .boxmodel2-table{
+          width:100%;
+          float:none;
+          &.w60{
+            width:100%;
+          }
+          &.w40{
+            width:100%;
+          }
+        }
+      }
+    }
+    &-table{
+      border-top:1px solid #f3f4f8;
+      &-tit{
+        width:auto;
+        float:none;
+      }
+      &-desc{
+        display:inline-block;
+        width:100%;
+        float:none;
+      }
+    }
+  }
+
+  .responsive-form-box{
+    position:static;
+    &-area{
+      width:100%;
+      height:100%;
+    }
+    // 휴대폰전송버튼
+    &.send{
+      width:100%;
+      height:auto;
+      padding:0;
+      input{
+        height:40px;
+        border-right:1px solid #a5a7aa;
+        border-bottom:0;
+      }
+      .responsive-form-box-btn{
+        width:100%;
+        height:40px;
+      }
+    }
+    &-hide{
+      display:none;
+    }
+    &-btn{
+      position:static;
+    }
+  }
   // bg-movie
   .bg-include{
     padding:60px 15px;
@@ -150,5 +798,7 @@
     }
 
   }
+
+
 }
 

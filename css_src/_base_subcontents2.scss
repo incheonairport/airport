@@ -1283,3 +1283,37 @@
     }
   }
 }
+
+// 기타 (에러 등 별도)페이지
+.etc-page{
+  text-align:center;
+  margin-top:280px;
+  &-article{
+    display:inline-block;
+    max-width:600px;
+    .btn-type-normal{
+      margin-top:60px;
+    }
+  }
+  &-heading{
+    font-size:2.375rem;
+    &:before{
+      display:block;
+      content:'';
+      width:154px;
+      height:154px;
+      border-radius:50%;
+      margin:0 auto 40px auto;
+    }
+    &.error:before{
+      background:url(/static/ap/images/ico_error.png) center no-repeat #f8f8f8;
+    }
+  }
+  &-desc{
+    margin-top:30px;
+    font-size:0.9375rem;
+  }
+  &-link{
+    color:#42519e;
+  }
+}
