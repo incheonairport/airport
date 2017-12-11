@@ -27,6 +27,21 @@
       }
     }
   }
+
+  .info-graphic{
+    &.baggage1{
+      background-size:contain;
+    }
+    &.baggage2{
+      background-size:contain;
+    }
+    &.baggage3{
+      background-size:contain;
+    }
+    &.packing{
+      background-size:contain;
+    }
+  }
 }
 
 
@@ -76,7 +91,6 @@
     }
     &.packing{
       background:url(/static/ap/images/digr_info_graphic04_m.png) center no-repeat #323648;
-      background-size:contain;
       height:400px;
     }
   }
@@ -136,4 +150,5 @@
   .video-box{
     height:188px;
   }
+
 }

@@ -1,9 +1,13 @@
 //sub-menu-tab type
+.search-result-tab{
+  .sub-menu-tab-iconlist-item{
+    padding:0 18px;
+  }
+}
 .sub-menu-tab{
   width: 100%;
   height: 162px;
   border-bottom: 1px solid #d9d9d9;
-
   &-iconlist{
     display: table;
     margin:auto;
@@ -40,7 +44,12 @@
       }
     }
 
-
+    .result-num{
+      display:block;
+      color: #42519e;
+      font-weight: 900;
+      margin-top:6px;
+    }
     &-link{
       display: inline-block;
       width: 94px;
@@ -51,7 +60,9 @@
       line-height: 20px;
       text-align: center;
 
-      &:hover::after, &.on::after
+
+      &:hover::after,
+      &.on::after
       {
         content: '';
         display: block;
@@ -148,7 +159,8 @@
         }
       }
 
-      &:hover, &.on{
+      &:hover,
+      &.on{
         color: #42519e;
         font-weight: 900;
       }
@@ -202,6 +214,98 @@
           background-position:-192px -103px;
         }
       }
+
+      &.search-all:before{ //전체
+        background-position:0 -257px;
+        width: 43px;
+        height: 40px;
+      }
+
+      &.search-start:before{ //출발
+        background-position:-61px -259px;
+        width: 66px;
+        height: 33px;
+      }
+
+      &.search-arrive:before{ // 도착
+        background-position:-145px -254px;
+        width: 66px;
+        height: 37px;
+      }
+
+      &.search-transfer:before{ // 환승
+        background-position:-232px -251px;
+        width: 38px;
+        height: 46px;
+      }
+
+      &.search-traffic:before{ // 교통주차
+        background-position:-294px -254px;
+        width: 44px;
+        height: 44px;
+      }
+
+      &.search-shopping:before{ // 쇼핑식당
+        background-position:-362px -253px;
+        width: 37px;
+        height: 44px;
+      }
+
+      &.search-service:before{ // 공항서비스
+        background-position:-4px -314px;
+        width: 47px;
+        height: 44px;
+      }
+
+      &.search-map:before{ // 공항지도
+        background-position:-79px -312px;
+        width: 37px;
+        height: 43px;
+      }
+
+      &.search-center:before{ // 고객센터
+        background-position:-161px -314px;
+        width: 40px;
+        height: 40px;
+      }
+
+      &.search-intro:before{ // 공항소개
+        background-position:-229px -308px;
+        width: 45px;
+        height: 47px;
+      }
+
+      &.search-cyber:before{ // 사이버홍보실
+        background-position:-295px -315px;
+        width: 52px;
+        height: 39px;
+      }
+
+      &.search-participation:before{ // 고객참여
+        background-position:-370px -310px;
+        width: 44px;
+        height: 45px;
+      }
+
+      &.search-business:before{ // 주요사업
+        background-position:-6px -375px;
+        width: 46px;
+        height: 38px;
+      }
+
+      &.search-task:before{ // 업무지원
+        background-position:-74px -372px;
+        width: 46px;
+        height: 40px;
+      }
+
+      &.search-careers:before{ // 인재채용
+        background-position:-156px -372px;
+        width: 47px;
+        height: 40px;
+      }
+
+
     }
   }
 }
@@ -210,8 +314,6 @@
 .search-cs{
 
   &-box{
-    min-width: 1152px;
-    width:100%;
     height: 99px;
     background: #323648;
     position: relative;
@@ -576,8 +678,6 @@
 }
 
 .multi-col{
-  min-width:1152px;
-  width:100%;
   position:relative;
   @extend %clearfix;
 
@@ -1108,8 +1208,6 @@
 }
 
 .faq-category{
-  min-width:1152px;
-  width:100%;
   &-list{
     border:{
       top: 2px solid #222;

@@ -157,8 +157,6 @@
 }
 // 쇼핑식당 배경
 .bg-banner{
-  min-width:1152px;
-  width:100%;
   min-height:420px;
   height:420px;
   background-size: cover;
@@ -252,7 +250,6 @@
 }
 // 필터
 .filter{
-  min-width:1152px;
   position:relative;
   &.on{
     .filter-brand-search-detail{

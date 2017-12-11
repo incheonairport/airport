@@ -40,13 +40,7 @@
         &.col-1 {
           min-height:inherit;
           height:auto;
-          .leave-check{
-            .col-btn{
-              &-link1{
-                width:33.33%;
-              }
-            }
-          }
+
         }
         &.col-2 {
           .boxmodel-list-item-inner {
@@ -190,157 +184,52 @@
     }
   }
 
-  // middle visual
-  .section-bg{
-    height:inherit!important;
-    background-size:cover!important;
-    &.airline-city{
-      padding:60px 0;
-    }
-    &-inner{
-      //padding:60px 15px;
-      &.split{
-        float:none;
-        width:100%;
-        height:50%;
-        padding:60px 15px;
-      }
-      &.bgcolor-b{
-        text-align:center;
-        padding:60px 15px;
-      }
-    }
-    &-list{
-      margin-top:30px;
-      &.col-4{
-        .section-bg-list-item{
-          width:calc(50% - 9px);
-          &:nth-child(3n){
-            margin-left:0;
-          }
-        }
-      }
-      &.col-5{
-        .section-bg-list-item{
-          width:calc(33.33% - 8px);
-          padding:27px 0;
-          &:nth-child(4n){
-            margin-left:0;
-          }
-        }
-        .section-bg-list-tit{
-        }
-      }
-      &-item{
-        margin-bottom:12px;
-        margin-left:12px;
-        &:first-child{
-          margin-left:0;
-        }
-      }
-      &-inner{
-        display:table-cell;
-        vertical-align:middle;
-        text-align:center;
-        & .btn-type-small{
-          margin-top:20px;
-          min-width:126px;
-        }
-      }
-      &-tit{
 
-      }
-    }
-    &-head2{
-      &:after{
-        width:50%;
-      }
-    }
-    &-desc{
-      &.left{
-        text-align:center;
-      }
-    }
-    &-sublist{
-      border-top:2px solid #fff;
-      margin:20px auto auto;
-      &-tit{
-        margin-top:20px;
-      }
-    }
-    .contents-sub-head{
-      padding:0!important;
-      .clip-white{
-        &:after{
-          margin:20px auto 0;
-        }
-      }
-    }
-    &.parking-info{
-      height:540px;
-      background-size:cover;
-      .section-bg-inner{
-        height: inherit;
-      }
-    }
-    &.tour-info{
-
-
-    }
-    &-contents{
-      padding:60px 0;
-    }
-    &-contents2{
-      width:100%;
-      float: none;
-      margin-bottom:30px;
-    }
-  }
 }
 
 
 // 780
 @media all and (max-width:780px) {
   // boxmodel
-  .boxmodel {
-    &-list {
-      &-item {
-        &.col-1 {
-          margin-bottom:-1px;
-          .leave-check {
-            padding: 20px 0 0;
-            .col-btn {
-              &-link1 {
-                width: 100%;
-              }
-              &-link3 {
-                width: 100%;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  //.boxmodel {
+  //  &-list {
+  //    &-item {
+  //      &.col-1 {
+  //        margin-bottom:-1px;
+  //        .leave-check {
+  //          padding: 20px 0 0;
+  //          .col-btn {
+  //            &-link1 {
+  //              width: 100%;
+  //            }
+  //            &-link3 {
+  //              width: 100%;
+  //            }
+  //          }
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
 
-  // icon text
-  .icontxt {
-    display:block;
-
-    &:before {
-      display: block;
-      margin:auto;
-    }
-    &-title{
-      display:block;
-      font-size: 1.5rem;
-      padding:20px 0 ;
-    }
-  }
+  //// icon text
+  //.icontxt {
+  //  display:block;
+  //
+  //  &:before {
+  //    display: block;
+  //    margin:auto;
+  //  }
+  //  &-title{
+  //    display:block;
+  //    font-size: 1.5rem;
+  //    padding:20px 0 ;
+  //  }
+  //}
 }
 
 // 640
-@media all and (max-width:640px) {
+@media all and (max-width:639px) {
   // boxmodel
   .boxmodel{
     &-list{
@@ -388,6 +277,22 @@
             }
             br{display:block!important;}
           }
+        }
+        &.col-1{
+          .leave-check{
+            .col-btn{
+              &-link1{
+                width:33.33%;
+              }
+              &-link1 {
+                width: 100%;
+              }
+              &-link3 {
+                width: 100%;
+              }
+            }
+        }
+
         }
         &.col-3{
           width:50%;
@@ -602,16 +507,29 @@
     }
   }
 
+
+
   // middle visual
   .section-bg{
+    height:inherit!important;
+    background-size:cover!important;
+    &.airline-city{
+      padding:60px 0;
+    }
     &-inner{
+      //padding:60px 15px;
       &.split{
+        float:none;
+        width:100%;
+        height:40%;
+        padding:60px 15px;
         br{
           display:none;
         }
-        height:40%;
       }
       &.bgcolor-b{
+        text-align:center;
+        padding:60px 15px;
         height:60%;
       }
     }
@@ -621,12 +539,18 @@
         .section-bg-list-item{
           width:100%;
           padding:14px 20px;
+          &:nth-child(3n){
+            margin-left:0;
+          }
         }
       }
       &.col-5{
         .section-bg-list-item{
           width:100%;
           padding:14px 20px;
+          &:nth-child(4n){
+            margin-left:0;
+          }
         }
         .section-bg-list-tit{
           font-size:1.125rem;
@@ -636,6 +560,9 @@
       &-item{
         margin-bottom:-2px;
         margin-left:0;
+        &:first-child{
+          margin-left:0;
+        }
       }
       &-inner{
         display:table-cell;
@@ -643,7 +570,7 @@
         text-align:center;
         & .btn-type-small{
           margin-top:8px;
-          width:100px;
+        width:100px;
         }
       }
       &-tit{
@@ -652,7 +579,7 @@
       }
     }
     &-head{
-      font-size:1.5rem;
+      font-size:1.5rem; 
       &:after{
         margin:20px auto;
       }
@@ -660,7 +587,7 @@
     &-head2{
       text-align:center;
       &:after{
-        width:100%;
+        width:50%;
       }
     }
     &-desc{
@@ -670,14 +597,32 @@
       }
     }
     &-sublist{
+      border-top:2px solid #fff;
+      margin:20px auto auto;
       &-tit{
         font-size:1rem;
+        margin-top:20px;
       }
       &-desc{
         font-size:0.825rem;
         br{
-          display:block!important;
+          display: block!important;
         }
+      }
+    }
+    .contents-sub-head{
+      padding:0!important;
+      .clip-white{
+        &:after{
+          margin:20px auto 0;
+        }
+      }
+    }
+    &.parking-info{
+      height:540px;
+      background-size:cover;
+      .section-bg-inner{
+        height: inherit;
       }
     }
     .btn-type-infolink{
@@ -685,11 +630,11 @@
     }
     &-contents2{
       width:100%;
-      float: none;
-      margin-left: 0;
+      float:none;
+      margin-left:0;
       margin-bottom:30px;
       text-align:center;
-      border: 1px solid rgba(255,255,255,0.5);
+      border:1px solid rgba(255,255,255,0.5);
       padding:15px;
       .logo-text{
         &.mt20{
@@ -700,13 +645,11 @@
         display:inline-block;
       }
     }
-
   }
 
   // icon text
   .icontxt {
     display:block;
-
     &:before {
       display: block;
       margin:auto;
@@ -839,6 +782,30 @@
     &.arrival{
     }
   }
+
+  .etc-page {
+    margin-top: 140px;
+    &-article {
+      .btn-type-normal {
+        margin-top: 30px;
+      }
+    }
+    &-heading {
+      font-size: 1.125rem;
+      &:before {
+        width: 144px;
+        height: 144px;
+      }
+    }
+    &-desc {
+      margin-top: 30px;
+      font-size: 0.9375rem;
+    }
+    &-link {
+      color: #42519e;
+    }
+  }
+
 }
 
 

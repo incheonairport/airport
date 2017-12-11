@@ -365,37 +365,31 @@
       display: block;
       &-item{
         display:block;
-        width:50%;
+        width:33.33%;
         float:left;
         text-align: center;
         padding:0;
         position: relative;
         margin:0;
-
-        &:nth-child(2n){
+        &:nth-child(3n){
           &:after{
             display:none;
           }
         }
-
         &:first-child{
           margin-left: 0;
         }
-
-
         &:last-child{
           margin-right: 0;
-
           &:after{
             display: none;
           }
         }
       }
 
-
       &-link{
         width: 100%;
-        height: 160px;
+        height: 130px;
         &:hover::after, &.on::after
         {
           display:none;

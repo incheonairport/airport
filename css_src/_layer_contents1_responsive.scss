@@ -74,19 +74,19 @@
     }
   }
   .bussearch{
-    background-size: cover;
-    padding: 58px 50px;
+    padding:30px 0;
     &-title{
-      font-size: 1.125rem;
       display:block;
+      padding-right:0;
+      width:100%;
     }
     .search-area{
+      width:100%;
       &-txt{
-        width: 400px;
+        width:calc(100% - 132px);
         font-size:1rem;
       }
       &-btn{
-        font-size: 1.125rem;
         &.ico:after{
           top:0;
           right:66px;
@@ -96,39 +96,17 @@
   }
 
 
-  /*버스지역*/
+
   //버스 지역
   .local {
-    &-list {
-      &-item {
-        width:9.09%;
-        &:last-child{
-        }
-        &-link {
-          &.on {
-            &:after{
-
-            }
-          }
-        }
-      }
-    }
     &-town {
       &-item {
-        width:16%;
-        font-size:1rem;
-        &:nth-child(6){
+        width:16.666%;
+        &:nth-child(6n){
           border-right:0;
         }
-        &:nth-child(8){
-          border-right:1px solid #d9d9d9;
-        }
-        &:last-child{
-          border-right: none;
-        }
-        &-link {
-          &.on {
-          }
+        &:nth-child(8n){
+          border-right:1px solid #a5a7aa;
         }
       }
     }
@@ -187,36 +165,26 @@
   //    position: absolute;
   //  }
   //}
+
+  // infographics
+  .customs_inspection{
+    background-size:contain;
+  }
+  .digr_airport_railroad{
+    background-size:contain;
+  }
+  .digr_ktx_route{
+    background-size:contain;
+  }
+
+  .digr-city-airport-terminal-kwangmyung{
+    background-size:contain;
+  }
 }
 
 // 1260
 @media all and (max-width:1259px) {
-  .bussearch{
-    background-size: cover;
-    padding: 50px 135px;
-    &-title{
-      font-size: 1.5rem;
-      float: none;
-      text-align: center;
-    }
-    .search-area{
-      &-txt{
-        width: 350px;
-        font-size:1rem;
-      }
-      &-btn{
-        width: 90px;
-        font-size: 1.125rem;
-        &.ico{
-          text-indent:-99999em;
-        }
-        &.ico:after{
-          top:0;
-          right:0;
-        }
-      }
-    }
-  }
+
   .maglev-train {
   &-line {
     &-list {
@@ -231,12 +199,12 @@
     &-list {
       &-item {
         width:33.333%;
-        border-bottom:1px solid #d9d9d9;
+        border-bottom:1px solid #a5a7aa;
         &:nth-child(3n){
           border-right:0;
         }
         &:last-child{
-          border-right:1px solid #d9d9d9;
+          border-right:1px solid #a5a7aa;
         }
         &-link {
           font-size:0.9rem;
@@ -515,38 +483,41 @@
   }
   .notice-box{
     //padding:0;
-    //border:0;
+    border:0;
+    padding:0;
     margin-bottom:0;
     &-title{
       width:auto;
       border-right: 0;
-      text-align: center;
       font-size: 1.125rem;
       font-weight: 900;
       float:none;
       position:static;
       line-height:2;
+      margin-bottom:10px;
     }
     &-txt{
+      display:block;
       margin-left:0;
       float:none;
+      border-bottom:1px solid #a5a7aa;
+      padding-bottom:10px;
       text-align:center;
     }
   }
   .bussearch{
-    margin-top:-60px;
-    background-size: cover;
-    padding: 10px 10px 40px;
     &-title{
       font-size: 1.125rem;
       float: none;
-      text-align: center;
+      font-weight:900;
+
     }
     .search-area{
       &-txt{
         width:calc(100% - 50px);
         height:50px;
         font-size:0.8125rem;
+
       }
       &-btn{
         width:50px;
