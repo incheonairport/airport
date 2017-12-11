@@ -1240,6 +1240,19 @@ p.icontxt{
       bottom:0;
       text-align: right;
     }
+    &.img-center{
+      display: inline-block;
+      text-align: center;
+    }
+    .img-auto{
+      width:auto;
+    }
+    .img-caption{
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      font-size: 1rem;
+    }
   }
 
   &.double{
@@ -1268,6 +1281,7 @@ p.icontxt{
         width: 466px;
         padding:0;
       }
+
     }
   }
 
