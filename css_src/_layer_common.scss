@@ -672,6 +672,14 @@
       content:"※";
     }
   }
+  &.mark2{
+    text-indent:-20px;
+    padding-left:20px;
+
+    &:before{
+      content:"*";
+    }
+  }
 }
 
 strong{

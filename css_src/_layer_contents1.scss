@@ -511,6 +511,27 @@
 // 스탭3
 .departure-step{
   background: url(/static/ap/images/bg_departure_step.jpg) no-repeat;
+  &.background-no{
+    background: none;
+    .departure-step-list-article{
+      color: #666;
+      &:before {
+        border: 1px solid #a6a7ab;
+        border-radius: 50%;
+      }
+      &.ico{
+        &:after{
+          width: 29px;
+          height: 23px;
+          background-position:-41px -345px;
+          top: 25%;
+          left: auto;
+          right: 0px;
+          bottom: auto;
+        }
+      }
+    }
+  }
   &-list{
     @extend %clearfix;
     min-height:204px;
@@ -546,9 +567,9 @@
       }
     }
     &.self{
-      width: 1002px;
       .departure-step-list-article{
         width:20%;
+        height: 200px;
         &:before {
           background: url(/static/ap/images/spr_ico_self_bag_drop.png) no-repeat;
         }
@@ -591,9 +612,9 @@
       }
     }
     &.self-checkin{
-      width: 1002px;
       .departure-step-list-article{
         width:20%;
+        height: 200px;
         &:before {
           background: url(/static/ap/images/spr_ico_self_checkin.png) no-repeat;
         }
