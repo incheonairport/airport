@@ -1273,6 +1273,13 @@ p.icontxt{
       &.w30{
         width: 30%;
       }
+      &.w65{
+        width: 65%;
+        padding-left: 25px;
+      }
+      &.w35{
+        width: 35%;
+      }
       &.calc-w466-l{
         width: calc(100% - 466px);
         padding-left:24px;
@@ -1285,7 +1292,6 @@ p.icontxt{
         width: 466px;
         padding:0;
       }
-
     }
   }
 
@@ -1348,9 +1354,21 @@ p.icontxt{
 .mt60, %mt60{
   margin-top:40px;
 }
-// element img text center
-.text-center {
-  text-align: center
+
+.ml10, %ml10{
+  margin-left:10px;
+}
+// element img text
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+    .btn-type-normal {
+      text-align: left;
+    }
+  }
 }
 
 

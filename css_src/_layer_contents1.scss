@@ -214,7 +214,7 @@
 .btn-download{
   width: 86px;
   height: 26px;
-  padding-left:15px;
+  padding-left:25px;
   line-height: 26px;
   border: 1px solid #d9d9d9;
   background:#f2f2f2;
@@ -968,4 +968,79 @@ button{
   left: -999em;
   width: 1em;
   overflow: hidden;
+}
+
+/*여행정보 검색창*/
+.search-right{
+  @extend %clearfix;
+  &-item{
+    float: right;
+    width: 280px;
+    border-bottom: 1px solid #000;
+    &-input{
+      width: 250px;
+      float: left;
+      border:none;
+      font-size: 1.125rem;
+    }
+    &-btn{
+      background: #fff;
+      border: none;
+      margin-bottom: 10px;
+      &.ico{
+        &:after{
+          background-position: -34px -134px;
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+  }
+}
+
+.travel-info{
+  margin-bottom:40px;
+  &-box{
+    margin-top: 20px;
+    padding: 30px;
+    border: 1px solid #d9d9d9;
+    &-title{
+      padding-bottom: 20px;
+      font-size:1.625rem;
+      border-bottom: 1px solid #f2f4f7;
+    }
+    &-day{
+      position: absolute;
+      top:10px;
+      right:0;
+    }
+    &-txt{
+      padding-top: 20px;
+      text-align: left;
+      word-break: keep-all;
+      font-size: 1rem;
+    }
+    .btn-type-small{
+      min-width: 110px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.travel-info-detail{
+  &-day{
+    font-size: 1rem;
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+  }
+  &-txt{
+    font-size: 1rem;
+    padding: 20px 0 60px;
+    border-bottom: 1px solid #a5a7aa;
+    p+p{
+      margin-top: 10px;
+    }
+  }
 }
