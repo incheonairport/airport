@@ -1125,8 +1125,18 @@
         left:50%;
         transform:translate(-50%, -50%);
       }
+
     }
 
+  }
+
+  &.h264{
+    height:264px;
+  }
+  & .guidebox-bottom{
+    margin-top: 38px;
+    padding-top: 30px;
+    border-top: 1px solid #484a5c;
   }
 
   &-tit{
