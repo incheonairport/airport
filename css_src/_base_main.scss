@@ -1,7 +1,15 @@
-.full-page-content{
-  >.section{
-    background-position:center top;
-    overflow:hidden;
+.section{
+  height:1000px;
+  position:relative;
+  background-repeat:no-repeat;
+  background-position:center top;
+
+  &.auto-height{
+    height:auto;
+  }
+
+  &.bg-fixed{
+    background-attachment:fixed;
   }
 }
 
@@ -414,170 +422,454 @@
 
   }
 
-}
+  &-content{
 
-.section{
-  height:1000px;
-  position:relative;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
 
-  &.auto-height{
-    height:auto;
-  }
+    &-heading{
 
-  &-main{
+      font-size:2.5rem;
+      font-weight:300;
+      text-align:center;
+      margin-bottom:72px;
 
-    &-content{
-
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-
-    }
-
-    &-bottom-banner{
-      height:180px;
       position:relative;
-    }
-  }
 
-}
-
-.bottom-banner{
-  width:990px;
-  padding:30px 0 50px;
-  margin:0 auto;
-  overflow:hidden;
-
-  &-list{
-    white-space: nowrap;
-    @extend %clearfix;
-  }
-
-  &-item{
-    margin-right:10px;
-    float:left;
-
-    &:last-child{
-      margin-right:0;
-    }
-  }
-
-  &-link{
-    display:block;
-
-    img{
-      display:block;
-    }
-  }
-
-  &-control{
-
-    &-arrow{
-      width:100%;
-      position:absolute;
-      top:50%;
-      left:0;
-      z-index:100;
-
-      >.arrow{
-        width:16px;
-        height:33px;
-        padding:0;
-        border:none;
-        background:url(/static/ap/images/spr_main_bottom_banner_arrow.png) no-repeat;
-
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translateY(-85%);
-
-        text-indent:-99999em;
-
-        &.prev{
-          margin-left:-541px;
-
-          &.end{
-            opacity:0.2;
-          }
-        }
-
-        &.next{
-          background-position:-26px 0;
-          margin-left:525px;
-
-          &.end{
-            opacity:0.2;
-          }
-        }
-      }
-    }
-
-    &-paging{
-      position:absolute;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      z-index:100;
-
-      @extend %clearfix;
-
-      .play-button{
+      &.sub-script:after{
+        content:"Manual For Travellers";
         display:block;
-        width:11px;
-        height:11px;
-        padding:0;
-        border:none;
-        border-radius:0;
 
-        float:left;
+        width:100%;
+        position:absolute;
+        bottom:-30px;
 
-        background:url(/static/ap/images/spr_ico_main_visual_play.png) no-repeat;
+        text-align:center;
+        font-family:roboto, sans-serif;
+        font-size:1.5rem;
+        font-weight:400;
+        color:#42519e;
+      }
 
-        text-indent:-99999em;
+      &.white{
+        color:#fff;
+      }
 
-        &.play{
-          background-position:-16px 0;
+    }
+
+  }
+
+  &-block{
+
+    width:1152px;
+    @extend %clearfix;
+
+    &-item{
+
+      width:368px;
+      float:left;
+      margin-right:24px;
+
+      &:last-child{
+        margin-right:0;
+      }
+
+      .heading{
+
+        &-group{
+          width:100%;
+          height:220px;
+          padding-top:90px;
+          text-align:center;
+          font-family:nanumsq, sans-serif;
+
+          &.prepare{
+            background:url(/static/ap/images/bg_main_block_item_01.jpg) no-repeat;
+          }
+
+          &.airport{
+            background:url(/static/ap/images/bg_main_block_item_02.jpg) no-repeat;
+          }
+
+          &.transfer{
+            background:url(/static/ap/images/bg_main_block_item_03.jpg) no-repeat;
+          }
+        }
+
+        color:#fff;
+        font-size:1.875rem;
+        font-weight:400;
+        margin-bottom:8px;
+
+        &-desc{
+          color:#fff;
+          font-size:0.875rem;
+          font-weight:300;
+          letter-spacing:1px;
         }
 
       }
 
-      .paging{
-
-        &-visual{
-          float:left;
-          @extend %clearfix;
-        }
+      .link-list{
+        width:100%;
+        height:245px;
+        padding:25px 20px;
+        border:1px solid #dee3eb;
+        border-top:0;
+        background:#fff;
 
         &-item{
-          float:left;
-          margin-right:10px;
-          width:11px;
-          height:11px;
-          border:2px solid #333;
-          border-radius:50%;
+
+          margin-bottom:12px;
           position:relative;
-          overflow:hidden;
+
+          @extend %clearfix;
+
+          &-title{
+            position:absolute;
+            top:0;
+            left:0;
+
+            font-family: 'nanumsq', sans-serif;
+            font-size:1.125rem;
+            font-weight:400;
+            color:#222;
+          }
 
         }
-        &-link{
-          display:block;
-          width:11px;
-          //height:11px;
-          height:100%;
-          //border:2px solid #333;
-          //border-radius:50%;
-          text-indent:-99999em;
-          position:absolute;
-          left:-2px;
-          bottom:0;
 
-          &.on{
-            background:#333333;
+        &-sub{
+          padding-left:130px;
+          float:left;
+
+          @extend %clearfix;
+
+          &-item{
+            float:left;
+
+            &:first-child{
+              width:130px;
+            }
+          }
+
+          &-link{
+            font-size:0.875rem;
+            color:#666;
+            position:relative;
+            top:-3px;
           }
         }
+
       }
+
     }
 
   }
+
+  &-guide{
+    width:1004px;
+    border:1px solid #dee3eb;
+    background:#fff;
+
+    @extend %clearfix;
+
+    &-item{
+      width:50%;
+      padding:30px;
+      float:left;
+
+      &:last-child{
+        border-left:1px solid #dee3eb;
+      }
+    }
+
+    .heading{
+
+      &-group{
+        width:440px;
+        height:174px;
+        padding-top:70px;
+
+        &.t1{
+          background:url(/static/ap/images/bg_main_guide_item_t1.jpg) no-repeat;
+        }
+
+        &.t2{
+          background:url(/static/ap/images/bg_main_guide_item_t2.jpg) no-repeat;
+        }
+      }
+
+      padding-top:10px;
+      position:relative;
+      text-align:center;
+      font-family:nanumsq, sans-serif;
+      font-size:1.75rem;
+      font-weight:400;
+
+      &:before{
+        content:"";
+        display:block;
+        width:36px;
+        height:1px;
+        background:#222;
+        position:absolute;
+        top:0;
+        left:50%;
+        transform:translateX(-50%);
+      }
+
+    }
+
+    .link{
+
+      &-list{
+
+        @extend %clearfix;
+
+        &-item{
+          width:50%;
+          height:60px;
+          padding-left:75px;
+          margin-top:20px;
+          float:left;
+          position:relative;
+          line-height:60px;
+
+          &:before{
+            content:"";
+            display:block;
+            width:60px;
+            height:60px;
+            position:absolute;
+            top:0;
+            left:0;
+          }
+
+          &.shopping{
+
+            &.t1:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 0;
+            }
+
+            &.t2:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px 0;
+            }
+
+          }
+
+          &.restaurant{
+
+            &.t1:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -70px 0;
+            }
+
+            &.t2:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -210px 0;
+            }
+
+          }
+
+          &.facilities{
+
+            &.t1:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 -80px;
+            }
+
+            &.t2:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px -80px;
+            }
+
+          }
+
+          &.convenience{
+
+            &.t1:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -70px -80px;
+            }
+
+            &.t2:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -210px -80px;
+            }
+
+          }
+
+          &.information{
+
+            &.t1:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 -160px;
+            }
+
+            &.t2:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px -160px;
+            }
+
+          }
+
+          &.currency{
+
+            &.t1:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -70px -160px;
+            }
+
+            &.t2:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -210px -160px;
+            }
+
+          }
+
+        }
+      }
+
+    }
+  }
+
+  &-banner{
+    width:990px;
+    padding:30px 0 50px;
+    margin:0 auto;
+    overflow:hidden;
+
+    &-list{
+      white-space: nowrap;
+      @extend %clearfix;
+    }
+
+    &-item{
+      margin-right:10px;
+      float:left;
+
+      &:last-child{
+        margin-right:0;
+      }
+    }
+
+    &-link{
+      display:block;
+
+      img{
+        display:block;
+      }
+    }
+
+    &-control{
+
+      &-arrow{
+        width:100%;
+        position:absolute;
+        top:50%;
+        left:0;
+        z-index:100;
+
+        >.arrow{
+          width:16px;
+          height:33px;
+          padding:0;
+          border:none;
+          background:url(/static/ap/images/spr_main_banner_arrow.png) no-repeat;
+
+          position:absolute;
+          top:50%;
+          left:50%;
+          transform:translateY(-85%);
+
+          text-indent:-99999em;
+
+          &.prev{
+            margin-left:-541px;
+
+            &.end{
+              opacity:0.2;
+            }
+          }
+
+          &.next{
+            background-position:-26px 0;
+            margin-left:525px;
+
+            &.end{
+              opacity:0.2;
+            }
+          }
+        }
+      }
+
+      &-paging{
+        position:absolute;
+        bottom:20px;
+        left:50%;
+        margin-left:451px;
+        z-index:100;
+
+        @extend %clearfix;
+
+        .play-button{
+          display:block;
+          width:20px;
+          height:19px;
+          padding:0;
+          border:none;
+          border-radius:0;
+
+          float:left;
+
+          background:url(/static/ap/images/spr_ico_main_banner_play_pause.png) no-repeat;
+
+          text-indent:-99999em;
+
+          &.play{
+            background-position:0 0;
+            margin-right:4px;
+          }
+
+          &.pause{
+            background-position:-24px 0;
+          }
+
+        }
+
+        .paging{
+
+          &-visual{
+            float:left;
+            @extend %clearfix;
+          }
+
+          &-item{
+            float:left;
+            margin-right:10px;
+            width:11px;
+            height:11px;
+            border:2px solid #333;
+            border-radius:50%;
+            position:relative;
+            overflow:hidden;
+
+          }
+          &-link{
+            display:block;
+            width:11px;
+            //height:11px;
+            height:100%;
+            //border:2px solid #333;
+            //border-radius:50%;
+            text-indent:-99999em;
+            position:absolute;
+            left:-2px;
+            bottom:0;
+
+            &.on{
+              background:#333333;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
 }
+
+
+

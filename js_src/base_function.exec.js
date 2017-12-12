@@ -46,12 +46,9 @@ $(function(){
 
       'mouseenter' : function(){
 
-        if( $(this).hasClass('fixed') ){
+        if( !$(this).hasClass('fixed') ){
 
-          $('.header, .gnb').addClass('show');
-
-        } else {
-
+          //$('.header, .gnb').addClass('show');
           $('.header, .gnb').addClass('bg');
 
         }
@@ -60,12 +57,9 @@ $(function(){
 
       'mouseleave' : function(){
 
-        if( $(this).hasClass('fixed') ){
+        if( !$(this).hasClass('fixed') && !$('.total-search').hasClass('show') ){
 
-          $('.header, .gnb').removeClass('show');
-
-        } else {
-
+          //$('.header, .gnb').removeClass('show');
           $('.header, .gnb').removeClass('bg');
 
         }
@@ -80,17 +74,29 @@ $(function(){
 
       e.stopPropagation();
 
-      if( $('.gnb').hasClass('fixed') ){
+      if( !$('.gnb').hasClass('fixed') ){
 
-        $('.header, .gnb').addClass('show');
-
-      } else {
-
+        //$('.header, .gnb').addClass('show');
         $('.header, .gnb').addClass('bg');
 
       }
 
       $('.gnb').addClass('on');
+
+    });
+
+    $('.header-search-btn').on('click', function(){
+
+      $('.total-search').addClass('show');
+      $('.header, .gnb').addClass('bg');
+
+    });
+
+    $('.total-search-close').on('click', function(){
+
+      $('.total-search').removeClass('show');
+
+      $(window).scroll();
 
     });
 
@@ -102,45 +108,71 @@ $(function(){
 
     $(window).on('scroll', function(){
 
-      var scrollAmount = ( $(this).scrollTop() / scrollHeight ) * 100;
+      if( !$('.total-search').hasClass('show') ){
 
-      if( $(this).scrollTop() >= 50 ){
+        var scrollAmount = ( $(this).scrollTop() / scrollHeight ) * 100;
 
-        $('.header, .gnb').addClass('fixed');
+        if( $(this).scrollTop() >= 50 ){
 
-
-      } else if( $(this).scrollTop() < 50 ){
-
-        $('.header, .gnb').removeClass('fixed');
-        $('.scroll-amount').css({width : 0});
-
-      }
-
-      if( $(this).scrollTop() >= 400 ){
-
-        $('.scroll-amount').css({width : scrollAmount + '%'});
-
-        if( $('html').hasClass('main') ){
-
-          $('.header, .gnb').addClass('bg down');
+          $('.header, .gnb').addClass('fixed');
 
 
-        } else {
+        } else if( $(this).scrollTop() < 50 ){
 
-          $('.header, .gnb').addClass('down');
+          $('.header, .gnb').removeClass('fixed');
+          $('.scroll-amount').css({width : 0});
 
         }
 
+        if( $(this).scrollTop() >= 400 ){
 
-      } else if( $(this).scrollTop() < 400 ){
+          $('.scroll-amount').css({width : scrollAmount + '%'});
 
-        if( $('html').hasClass('main') ){
+          if( $('html').hasClass('main') ){
 
-          $('.header, .gnb').removeClass('bg down');
+            $('.header, .gnb').addClass('bg down');
 
-        } else {
+          } else {
 
-          $('.header, .gnb').removeClass('down');
+            $('.header, .gnb').addClass('down');
+
+          }
+
+          $('.total-search').addClass('down');
+
+        } else if( $(this).scrollTop() < 400 ){
+
+          if( $('html').hasClass('main') ){
+
+            $('.header, .gnb').removeClass('bg down');
+
+          } else {
+
+            $('.header, .gnb').removeClass('down');
+
+          }
+
+          $('.total-search').removeClass('down');
+
+        }
+
+        if( $(this).scrollTop() >= 1000 ){
+
+          $('.section2').removeClass('bg-fixed');
+
+        } else if( $(this).scrollTop() < 1000 ){
+
+          $('.section2').addClass('bg-fixed');
+
+        }
+
+        if( $(this).scrollTop() >= 2000 ){
+
+          $('.section3').removeClass('bg-fixed');
+
+        } else if( $(this).scrollTop() < 2000 ){
+
+          $('.section3').addClass('bg-fixed');
 
         }
 
@@ -165,7 +197,7 @@ $(function(){
   // 메인 페이지 이벤트
   (function(){
 
-    $('.arrow.prev').on('click', function(){
+    $('.main-visual-control-arrow .arrow.prev').on('click', function(){
 
       MainVisual.rollStop();
 
@@ -177,7 +209,7 @@ $(function(){
 
     });
 
-    $('.arrow.next').on('click', function(){
+    $('.main-visual-control-arrow .arrow.next').on('click', function(){
 
       MainVisual.rollStop();
 
@@ -189,7 +221,7 @@ $(function(){
 
     });
 
-    $('.play-button').on('click', function(){
+    $('.main-visual-control-paging .play-button').on('click', function(){
 
       if( $(this).hasClass('pause') ){
 

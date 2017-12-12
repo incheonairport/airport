@@ -143,7 +143,7 @@ $(function(){
     };
 
     var _setPlayButtonClass = function(status){
-      $('.play-button').attr('class', 'play-button').addClass(status);
+      $('.main-visual-control-paging .play-button').attr('class', 'play-button').addClass(status);
     };
 
     // public
@@ -246,7 +246,7 @@ $(function(){
 
   BottomBanner = new function(){
 
-    var $bannerItem = $('.bottom-banner-item');
+    var $bannerItem = $('.main-banner-item');
     var $pageItem;
 
     var _initPaging = function(){
@@ -254,7 +254,7 @@ $(function(){
       var $paging = $('<ul class="paging-visual"></ul>');
       var pageNumber = Math.ceil( $bannerItem.length / 4 );
 
-      $('.bottom-banner-control-paging').prepend($paging);
+      $('.main-banner-control-paging').prepend($paging);
 
       for(var i=0; i<pageNumber; i++){
         $paging.append('<li class="paging-item"><div class="paging-link">' + (i+1) + '</div></li>');
@@ -279,13 +279,13 @@ $(function(){
 
       });
 
-      $('.bottom-banner-list').width(listWidth);
+      $('.main-banner-list').width(listWidth);
 
     };
 
     _init();
 
-    _initPaging();
+    //_initPaging();
 
   };
 
