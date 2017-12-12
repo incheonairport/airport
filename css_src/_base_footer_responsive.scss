@@ -84,7 +84,10 @@
       }
     }
     .incheon-etc{
-      width:238px;
+      .web-mark{
+        margin-right:0;
+      }
+      width:181px;
       margin: 20px auto;
       .footer-shortcut{
         float:none;
