@@ -82,16 +82,20 @@
   .info-graphic{
     &.baggage1{
       height:150px;
+      background-size:contain;
     }
     &.baggage2{
       height:180px;
+      background-size:contain;
     }
     &.baggage3{
       height:180px;
+      background-size:contain;
     }
     &.packing{
       background:url(/static/ap/images/digr_info_graphic04_m.png) center no-repeat #323648;
       height:400px;
+      background-size:contain;
     }
   }
 

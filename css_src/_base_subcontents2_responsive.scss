@@ -175,14 +175,14 @@
   }
 
   // top visual
-  .sub-top{
-    &-descbox{
-      font-size:2.5rem;
-      &-tit{
-        font-size:2.5rem;
-      }
-    }
-  }
+  //.sub-top{
+  //  &-descbox{
+  //    font-size:2.5rem;
+  //    &-tit{
+  //      font-size:2.5rem;
+  //    }
+  //  }
+  //}
 
 
 }
@@ -415,6 +415,9 @@
 
   // top visual
   .sub-top{
+    &-inner{
+      width:100%;
+    }
     min-height:inherit;
     height:inherit!important;
     padding:60px 15px;
@@ -587,7 +590,7 @@
     &-head2{
       text-align:center;
       &:after{
-        width:50%;
+        width:100%;
       }
     }
     &-desc{
@@ -634,7 +637,6 @@
       margin-left:0;
       margin-bottom:30px;
       text-align:center;
-      border:1px solid rgba(255,255,255,0.5);
       padding:15px;
       .logo-text{
         &.mt20{
@@ -645,6 +647,9 @@
         display:inline-block;
       }
     }
+  }
+  .section-bg-contents2+.congestion{
+    margin-bottom:0;
   }
 
   // icon text

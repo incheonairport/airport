@@ -155,6 +155,9 @@
       &.col-2 {
         padding: 20px;
         width: 43%;
+        &.wide{
+          width:75%;
+        }
       }
 
       &.col-3 {
@@ -618,6 +621,10 @@
         border: 1px solid #d9d9d9;
         border-top:none;
         border-bottom:none;
+        &.wide{
+          width:100%;
+          border-bottom:1px solid #d9d9d9;
+        }
       }
 
       &.col-3{
@@ -693,8 +700,6 @@
   // link box
   .linklist{
     &-img{
-      border:0;
-      border-bottom:1px solid #d9d9d9;
       float:none;
       width:100%;
       height:auto;
