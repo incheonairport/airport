@@ -353,7 +353,7 @@
   }
 
   &.fixed{
-    top:-101px;
+    top:-60px;
   }
 
 }
@@ -368,7 +368,7 @@
   position:fixed;
   top:60px;
   left:0;
-  z-index:9999;
+  z-index:99999;
 
   //transition:background .3s ease-out, color .3s ease-out;
   transition:all .3s ease-out;
@@ -496,6 +496,10 @@
     &.down{
       top:0;
       height:51px;
+
+      &.on{
+        height:288px;
+      }
     }
 
     &:after{
@@ -553,4 +557,152 @@
 
 }
 
+.total-search{
+  display:none;
+  width:100%;
+  background:#fff;
+  padding:30px 0;
+  border-bottom:1px solid #ddd;
 
+  position:fixed;
+  top:101px;
+  left:0;
+
+  text-align:center;
+
+  z-index:99999;
+
+  &-inner{
+    display:inline-block;
+  }
+
+  &-label{
+    font-family:nanumsq, sans-serif;
+    font-size:1.5rem;
+    font-weight:400;
+  }
+
+  &-input{
+    width:370px;
+    height:60px;
+    margin:0 20px;
+    background:transparent;
+    border:0;
+    border-bottom:2px solid #222;
+
+    font-size:1.25rem;
+  }
+
+  &-btn.ico{
+    width:22px;
+    height:27px;
+    padding:0;
+    border:0;
+    background:0;
+    &:after{
+      margin:0;
+      padding:0;
+      background-position: -34px -134px;
+      width: 22px;
+      height: 27px;
+      top: 4px;
+    }
+  }
+
+  &-close.ico{
+    width:25px;
+    height:25px;
+
+    padding:0;
+    border:0;
+    background:0;
+    position:absolute;
+    top:50%;
+    right:24px;
+    transform:translateY(-50%);
+
+    &:after{
+      margin:0;
+      padding:0;
+      background-position: -143px -189px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &.show{
+    display:block;
+  }
+
+  &.down{
+    top:51px;
+  }
+
+}
+
+/* quick menu */
+.quick{
+  //background:#333;
+  width:73px;
+  position:fixed;
+  top:30%;
+  right:0;
+  border-radius: 20px;
+  //color:#fff;
+  z-index:9999;
+
+  &-menu-list{
+    background: #272936;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    &-item{
+      padding: 15px 0;
+      text-align: center;
+      line-height: 1.2;
+
+      &.top{
+        padding-bottom: 5px;
+      }
+    }
+    &-link{
+      color:rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+
+      &:before{
+        content: '';
+        display: block;
+        margin: 0 auto 5px;
+        background: url(/static/ap/images/spr_ico_quick.png) no-repeat;
+      }
+
+      &.cyber-airport:before{
+        background-position: -132px 0;
+        width: 43px;
+        height: 19px;
+      }
+
+      &.view-airport:before{
+        background-position: -35px 0;
+        width: 43px;
+        height: 16px;
+      }
+
+      &.move-terminal:before{
+        background-position: -99px 0;
+        width: 23px;
+        height: 18px;
+      }
+
+      &.my-terminal:before{
+        background-position: 0 0;
+        width: 16px;
+        height: 21px;
+      }
+    }
+
+    &-top{
+      color:rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+    }
+  }
+}

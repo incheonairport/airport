@@ -8,13 +8,13 @@
 
 
 
-  .contents-visual{
-    &.departure-procedures{
-      margin-bottom:30px;
-      height:inherit;
-      padding-top:3em;
-    }
-  }
+  //.contents-visual{
+  //  &.departure-procedures{
+  //    margin-bottom:30px;
+  //    height:inherit;
+  //    padding-top:3em;
+  //  }
+  //}
 
   .local {
     &-list {
@@ -63,17 +63,23 @@
   // 검색창 input
   .search-flight{
     min-width:100%;
+    .search-flight-search-option+.search-flight-search-txt{
+      border-top:0;
+    }
     &-search{
       width:100%;
       font-size:1.125rem;
       font-weight:700;
-      border:1px solid #d9d9d9;
-      padding:15px;
+      background:#f8f8f8;
       &-txt{
         width:100%;
         margin-right:0;
         position:static;
-        padding:10px 0;
+        height:50px;
+        line-height:50px;
+        border:1px solid #d9d9d9;
+        border-bottom:0;
+        color:#999;
       }
       &-option{
         width:100%;
@@ -81,10 +87,11 @@
         text-align:center;
       }
       &-btn{
+        font-size:1.125rem;
         width:50px;
         height:50px;
         &.ico{
-          text-indent:-9999px;
+          text-indent:0;
         }
         &.ico:after{
           top:0;
@@ -96,10 +103,11 @@
       }
       .search-flight-search-txt+.search-flight-search-btn{
         width:100%;
-        font-size:1rem;
+        font-size:1.125rem;
         padding:0;
+        text-indent:14px;
         &.ico{
-          text-indent:0;
+
         }
         &.ico:after{
           display:none;
@@ -140,11 +148,29 @@
       &-airplane{
         height:50px;
         line-height:50px;
-        width: calc(100% - 50px);
+        width:100%;
       }
       &-btn{
-        width: 50px;
+        width:100%;
         height:50px;
+        &:after{
+          display:none;
+        }
+        &:before{
+          content:'검색';
+          display: block;
+          width:100%;
+          height:50px;
+          color:#fff;
+          font-size:1.125rem;
+          font-weight:700;
+          text-align: center;
+          text-indent:14px;
+          line-height:50px;
+          position:absolute;
+          top:0;
+          left:0;
+        }
       }
     }
   }
@@ -309,13 +335,14 @@
     }
 
     &-item{
-      margin-bottom:6px;
-      margin-left: 10px;
+      margin-left: 6px;
       line-height:1;
+      letter-spacing:-1px;
       &:first-child{
         margin-left:0;
       }
       &:before{
+        margin-right:4px;
         width: 14px;
         height: 14px;
       }
@@ -404,7 +431,7 @@
         }
       }
       p{
-        font-size: .75rem;
+        font-size: 0.75rem;
         font-weight:700;
       }
       button{

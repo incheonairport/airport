@@ -363,8 +363,13 @@
         }
       }
     }
-
+    &.long-word{
+      .tab-nav-list-link{
+        height: 90px;
+      }
+    }
   }
+
 
   &-area{
     position:relative;
