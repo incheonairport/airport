@@ -1443,21 +1443,23 @@
 
 .digr-incheon-airport-glance01{
   text-indent: -99999em;
-  background: url(/static/ap/images/digr_incheon_airport_glance01.png)no-repeat center 100%;
-  width: 859px;
+  background: url(/static/ap/images/digr_incheon_airport_glance01.png)no-repeat center;
   height: 555px;
 }
 .digr-incheon-airport-glance02 {
   text-indent: -99999em;
-  background: url(/static/ap/images/digr_incheon_airport_glance02.png) no-repeat center 100%;
-  width: 859px;
+  background: url(/static/ap/images/digr_incheon_airport_glance02.png) no-repeat center;
   height: 554px;
 }
 
 .digr-terminal-interconnection{
-  background: url(/static/ap/images/digr_terminal_interconnection.png) no-repeat center;
-  //width:859px;
-  height: 396px;
+  background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
+  //background-size: 833px 378px;
+  width: 833px;
+  height: 379px;
   text-indent:-999em;
 }
 
+.ir-technique{
+  text-indent:-999em;
+}
