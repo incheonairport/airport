@@ -246,6 +246,20 @@ $(function(){
 
   BottomBanner = new function(){
 
+    // private
+    var currentVisualIndex = 0;
+    var nextVisualIndex = 0;
+
+    var $visualItem = this.$mainVisualItem;
+    var easingType = this.easingType;
+
+    var $pageItem;
+
+    var timeID, timeID2;
+    var imageMovingTime = 1000;
+    var imageIntervalTime = 10000;
+    var barStretchTime = 10;
+
     var $bannerItem = $('.main-banner-item');
     var $pageItem;
 
@@ -280,6 +294,62 @@ $(function(){
       });
 
       $('.main-banner-list').width(listWidth);
+
+    };
+
+    this.moveLeft = function(auto){
+
+      if( nextVisualIndex >= $visualItem.length ){
+        nextVisualIndex = 0;
+      }
+
+      $visualItem.eq(currentVisualIndex).stop().animate({left:'-100%'}, imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).css({left:'100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
+        clearInterval(timeID2);
+        if(auto){
+          _timeBar();
+        }
+        _textMotion();
+      });
+
+      $pageItem.find('.paging-link').removeClass('on');
+      $pageItem.eq(nextVisualIndex).find('.paging-link').addClass('on');
+
+      currentVisualIndex = nextVisualIndex;
+
+    };
+
+    this.moveRight = function(auto){
+
+      if( nextVisualIndex <= -1 ){
+        nextVisualIndex = $visualItem.length-1;
+      }
+
+      $visualItem.eq(currentVisualIndex).stop().animate({left:'100%'}, imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).css({left:'-100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
+        clearInterval(timeID2);
+        if(auto){
+          _timeBar();
+        }
+        _textMotion();
+      });
+
+      $pageItem.find('.paging-link').removeClass('on');
+      $pageItem.eq(nextVisualIndex).find('.paging-link').addClass('on');
+
+      currentVisualIndex = nextVisualIndex;
+
+    };
+
+    this.rollAuto = function(){
+      var _fade = this.fade;
+
+      timeID = setInterval(function(){
+
+        nextVisualIndex = currentVisualIndex + 1;
+        _fade();
+
+      }, imageIntervalTime);
 
     };
 
