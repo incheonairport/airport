@@ -1876,7 +1876,7 @@ button{
 }
 
 // layer popup
-.lp-modal{
+.layer{
   &.find-my-terminal{
     min-width:642px;
   }
@@ -1910,7 +1910,7 @@ button{
       display:block;
       width:100%;
       height:100%;
-      background:rgba(0,0,0,0.50);
+      background:rgba(0,0,0,0.90);
       position:absolute;
       top:0;
       left:0;
@@ -1948,7 +1948,6 @@ button{
     font-size: 1.25rem;
     line-height:56px;
     border:0;
-
   }
   &-title{
     font-size:2.125rem;
