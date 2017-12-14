@@ -527,7 +527,12 @@
   &.size{
     width: 912px;
     //max-height: 827px;
+    &.max-height{
+      max-height: 890px;
+    }
   }
+
+
 
   &.address-layer{
     width: 600px;
@@ -1250,18 +1255,6 @@
       background: #b3b3b3;
     }
   }
-  .airline1{
-    background: url(/static/ap/images/bg_terminal_interconnection_01.png)no-repeat;
-    width: 317px;
-    height: 243px;
-    float: left;
-  }
-  .airline2{
-    background: url(/static/ap/images/bg_terminal_interconnection_02.png)no-repeat;
-    width: 317px;
-    height: 244px;
-    float: left;
-  }
   .ir-technique{
     text-indent: -99999em;
     display: block;
@@ -1442,4 +1435,16 @@
   }
 }
 
+.digr-incheon-airport-glance01{
+  text-indent: -99999em;
+  background: url(/static/ap/images/digr_incheon_airport_glance01.png)no-repeat center 100%;
+  width: 859px;
+  height: 555px;
+}
+.digr-incheon-airport-glance02{
+  text-indent: -99999em;
+  background: url(/static/ap/images/digr_incheon_airport_glance02.png)no-repeat center 100%;
+  width: 859px;
+  height: 554px;
+}
 
