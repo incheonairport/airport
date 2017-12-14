@@ -573,7 +573,6 @@
     &.self{
       .departure-step-list-article{
         width:20%;
-        height: 200px;
         &:before {
           background: url(/static/ap/images/spr_ico_self_bag_drop.png) no-repeat;
         }
@@ -618,7 +617,6 @@
     &.self-checkin{
       .departure-step-list-article{
         width:20%;
-        height: 200px;
         &:before {
           background: url(/static/ap/images/spr_ico_self_checkin.png) no-repeat;
         }

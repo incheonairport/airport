@@ -36,7 +36,9 @@ $(function(){
 
       'mouseleave' : function(){
 
-        $('.header, .gnb').removeClass('bg');
+        if( $('html').hasClass('main') ){
+          $('.header, .gnb').removeClass('bg');
+        }
 
       }
 
@@ -48,7 +50,6 @@ $(function(){
 
         if( !$(this).hasClass('fixed') ){
 
-          //$('.header, .gnb').addClass('show');
           $('.header, .gnb').addClass('bg');
 
         }
@@ -59,9 +60,9 @@ $(function(){
 
         if( !$(this).hasClass('fixed') && !$('.total-search').hasClass('show') ){
 
-          //$('.header, .gnb').removeClass('show');
-          $('.header, .gnb').removeClass('bg');
-
+          if( $('html').hasClass('main') ){
+            $('.header, .gnb').removeClass('bg');
+          }
         }
 
         $('.gnb').removeClass('on')

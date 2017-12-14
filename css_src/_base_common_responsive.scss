@@ -443,14 +443,12 @@
     }
     &.table.vt-dark tbody td {
       border:0;
-      padding: 10px 0;
+      padding: 5px 0;
       border-top:1px solid #d9d9d9!important;
       &:first-child{
         border-top:0;
         padding:4px;
         text-align:center;
-
-
         &:before{
           display:none;
         }

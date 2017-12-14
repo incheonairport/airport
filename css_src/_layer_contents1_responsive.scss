@@ -9,6 +9,11 @@
       width: 100%!important;
       .departure-step-list-article {
         height:200px;
+        &.ico{
+          &:after{
+            display:none;
+          }
+        }
       }
       &.check-in{
         .departure-step-list-article{

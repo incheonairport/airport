@@ -1875,6 +1875,123 @@ button{
   border-radius: 0;
 }
 
+// layer popup
+.lp-modal{
+  &.find-my-terminal{
+    min-width:642px;
+  }
+  display:none;
+  border: 4px solid #fefefe;
+  padding: 36px 36px 70px;
+  background:url(/static/ap/images/bg_lp_modal.jpg ) center no-repeat;
+  background-size:cover;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  overflow-y:auto;
+  z-index:10;
+  &.on{
+    display:block;
+  }
+  &-wrap{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:99999;
+    &.on{
+      display:block;
+    }
+    &:after{
+      content:"";
+      display:block;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.50);
+      position:absolute;
+      top:0;
+      left:0;
+    }
+  }
+  &-area{
+    text-align:center;
+  }
+  &-inputbox{
+    display:inline-block;
+    width:100%;
+    @extend %clearfix;
+    &-desc{
+      text-align:left;
+      color:#fff;
+      margin-top:10px;
+    }
+  }
+  &-search{
+    float:left;
+    width:calc(100% - 140px);
+    height:56px;
+    line-height:56px;
+    border: 0;
+    font-size: 1.125rem;
+    color: #666;
+    padding:0 30px;
+  }
+  &-check{
+    float:left;
+    width:140px;
+    height:56px;
+    background:#323648;
+    color:#fff;
+    font-size: 1.25rem;
+    line-height:56px;
+    border:0;
+
+  }
+  &-title{
+    font-size:2.125rem;
+    font-family: 'exo', sans-serif;
+    font-weight:700;
+    color: #ffae43;
+    text-align:center;
+    &:before{
+      content:'';
+      display:block;
+      width:49px;
+      height:60px;
+      background:url(/static/ap/images/ico_find_my_termimal.png ) center no-repeat;
+      margin:0 auto 26px;
+    }
+    &:after{
+      content:'';
+      display:block;
+      height:2px;
+      width:44px;
+      background:rgba(255,255,255,0.4);
+      margin: 26px auto 24px;
+    }
+  }
+  &-close{
+    display: block;
+    width: 25px;
+    height: 25px;
+    background:url(/static/ap/images/ico_lp_modal_close.png ) center no-repeat;
+    border:0;
+    text-indent: -99999em;
+    position:absolute;
+    z-index: 99999;
+    top: 20px;
+    right: 20px;
+    padding:0;
+    &:hover{
+      opacity:.7;
+    }
+  }
+}
+
+
 //select.mac{
 //  -webkit-border-radius: 0;
 //  -moz-border-radius: 0;
