@@ -18,49 +18,50 @@
 
 
     <article>
-      <div class="multi-col double">
-        <div class="inner-col w80">
-          <div class="search-map">
-            <div class="search-map-input small">
-              <div>
-                <div>
-                  <div class="form-layout">
-                    <label class="search-map-title" for="floor">층 선택</label>
-                    <div class="search-map-input-item">
-                      <select class="search-map-input-select small" id="floor" title="층을 선택해 주세요">
-                        <option>1F</option>
-                        <option>2F</option>
-                        <option>3F</option>
-                      </select>
-                    </div>
-                    <label class="search-map-title title2" for="main-category">분류 선택</label>
-                    <div class="search-map-input-item">
-                      <select class="search-map-input-select" id="main-category" title="카테고리의 대분류를 선택해 주세요">
-                        <option>공항서비스</option>
-                      </select>
-                    </div>
-                    <div class="search-map-input-item">
-                      <label class="search-map-title title2 d-none" for="middle-category">분류 선택</label>
-                      <select class="search-map-input-select" id="middle-category" title="카테고리의 중분류를 선택해 주세요">
-                        <option>금융/통신</option>
-                      </select>
-                    </div>
-                    <div class="search-map-input-item">
-                      <label class="search-map-title title2 d-none" for="small-category">분류 선택</label>
-                      <select class="search-map-input-select" id="small-category" title="카테고리의 소분류를 선택해 주세요">
-                        <option>은행</option>
-                        <option>한줄최대여덟자</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
+      <div class="multi-col search-map-box">
+        <div class="inner-col search-map-left">
+          <div>
+            <label class="search-map-title" for="floor">층 선택</label>
+            <div class="search-map-input-item">
+              <select class="search-map-input-select small" id="floor" title="층을 선택해 주세요">
+                <option>1F</option>
+                <option>2F</option>
+                <option>3F</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="search-map-title title2" for="object-category">항목 선택</label>
+            <div class="search-map-input-item">
+              <select class="search-map-input-select" id="object-category" title="층을 선택해 주세요">
+                <option>면세점 쇼핑</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="search-map-title title2" for="main-category">분류 선택</label>
+            <div class="search-map-input-item">
+              <select class="search-map-input-select" id="main-category" title="카테고리의 대분류를 선택해 주세요">
+                <option>공항서비스</option>
+              </select>
+            </div>
+            <div class="search-map-input-item">
+              <label class="search-map-title title2 d-none" for="middle-category">분류 선택</label>
+              <select class="search-map-input-select" id="middle-category" title="카테고리의 중분류를 선택해 주세요">
+                <option>금융/통신</option>
+              </select>
+            </div>
+            <div class="search-map-input-item">
+              <label class="search-map-title title2 d-none" for="small-category">분류 선택</label>
+              <select class="search-map-input-select" id="small-category" title="카테고리의 소분류를 선택해 주세요">
+                <option>은행</option>
+                <option>한줄최대여덟자</option>
+              </select>
             </div>
           </div>
         </div>
-        <div class="inner-col w20 search-map-right">
+
+        <div class="inner-col search-map-right">
           <input type="checkbox" name="search" id="search-option1" class="checkbox" value="yes" checked="">
           <label class="checkbox-label ico" for="search-option1">24시간</label>
           <button type="button" class="search-map-btn">검색</button>

@@ -1270,10 +1270,14 @@ p.icontxt{
       text-align: center;
     }
 
+    &.search-map-left{
+      width: 902px;
+    }
     &.search-map-right{
-      padding: 20px 0;
+      width: 249px;
       text-align: right;
     }
+
     .img-auto{
       width:auto;
     }
