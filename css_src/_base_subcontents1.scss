@@ -334,7 +334,17 @@
       color: #fff;
       background: #323648;
       border: none;
-
+      &.size{
+        width: 150px;
+        padding-left: 25px;
+        &.ico:after{
+          right:80px;
+          top:4px;
+        }
+      }
+      strong{
+        margin-left: 10px;
+      }
       &.ico{
         text-indent:0;
       }
@@ -987,6 +997,15 @@
 
   &.address-layer{
     width: 600px;
+    &.size{
+      width: 912px;
+    }
+    &.max-size{
+      width: 1145px;
+      &.max-height{
+        max-height: 890px;
+      }
+    }
   }
 
   &.login-area{
@@ -1133,8 +1152,19 @@
   .list1{
     font-size:0.875rem;
     letter-spacing:-0.02rem;
-    &-item:before{
-      top: -12px;
+    &-item {
+      &.font14{
+        line-height: 50px;
+        &:before {
+          top: -16px;
+        }
+      }
+    }
+
+    &-item{
+      &:before {
+        top: -12px;
+      }
     }
   }
 
@@ -1963,4 +1993,48 @@
     text-align: right;
     margin-top:10px;
   }
+}
+
+.layer-text{
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+.layer-text-box{
+  @extend %clearfix;
+  label{
+    display: inline-block;
+    width: 21%;
+    line-height: 50px;
+  }
+  input{
+    width: 75%;
+  }
+  .layer-text{
+    width: 119px;
+  }
+
+  &-right{
+    label{
+      display: inline-block;
+      width: 27%;
+      line-height: 50px;
+    }
+    @extend %clearfix;
+    .timesetting-date-day{
+      width: calc(70% - 46px);
+    }
+    .timesetting-date-calendar{
+      height: 56px;
+    }
+    .layer-text{
+      width: 154px;
+    }
+  }
+
 }
