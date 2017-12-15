@@ -23,11 +23,24 @@
       }
     }
   }
+
+  .layer-terminal-check-btn{
+    width:200px;
+    max-width:200px;
+    margin-left:-100px;
+  }
 }
 
 
 // 780
 @media all and (max-width:780px) {
+  .layer-terminal-check-btn{
+    width:160px;
+    max-width:200px;
+    margin-left:-80px;
+    top:10px;
+  }
+
   .header{
     width:70%;
     padding-top: 136px;
