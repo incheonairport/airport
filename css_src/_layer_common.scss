@@ -53,6 +53,16 @@
     font-size:1.125rem;
     font-weight:700;
     color:#42519e;
+
+    &.black{
+      color: #222;
+    }
+  }
+
+  &-level5{
+    font-size: 1rem;
+    font-weight:900;
+    margin-bottom:20px;
   }
 
 }
@@ -1259,6 +1269,15 @@ p.icontxt{
       display: inline-block;
       text-align: center;
     }
+
+    &.search-map-left{
+      width: 902px;
+    }
+    &.search-map-right{
+      width: 249px;
+      text-align: right;
+    }
+
     .img-auto{
       width:auto;
     }
@@ -1283,6 +1302,13 @@ p.icontxt{
       }
       &.w30{
         width: 30%;
+      }
+      &.w80{
+        width: 80%;
+        padding-right:24px;
+      }
+      &.w20{
+        width: 20%;
       }
       &.w65{
         width: 65%;
