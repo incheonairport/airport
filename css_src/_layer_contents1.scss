@@ -6,7 +6,6 @@
     background:url(/static/ap/images/digr_customs_inspection_procedure.png) center no-repeat #333649;
 }
 
-
 /*공항철도 노선도*/
 .digr_airport_railroad{
   height:274px;
@@ -48,9 +47,21 @@
   background:url(/static/ap/images/bg_maglev_train_tour.jpg) no-repeat;
 }
 
+.digr-city-airport-terminal-seoul{
+  background:url(/static/ap/images/digr_city_airport_terminal_seoul.png) no-repeat #333649 center;
+  text-indent: -999em;
+  height: 386px;
+}
+
+.digr-city-airport-terminal-samsung{
+  background:url(/static/ap/images/digr_city_airport_terminal_samsung.png) no-repeat #333649 center;
+  text-indent: -999em;
+  height: 386px;
+}
+
 .digr-city-airport-terminal-kwangmyung{
   background:url(/static/ap/images/digr_city_airport_terminal_kwangmyung.png) no-repeat #333649 center;
-  text-indent: -99999em;
+  text-indent: -999em;
   height: 386px;
 }
 
@@ -1183,5 +1194,28 @@ button{
 
   }
 
+}
+
+/*환승절차*/
+.transit-step{
+  @extend %clearfix;
+  .list3{
+    &-item{
+      float: left;
+     &.ico{
+       text-indent: 0em;
+       &:after{
+         background-position: -158px -65px;
+         width: 6px;
+         height: 10px;
+         right: -20px;
+         left: auto;
+       }
+     }
+      &+.list3-item{
+        margin-left: 30px;
+      }
+    }
+  }
 }
 
