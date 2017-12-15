@@ -435,7 +435,7 @@
   }
 }
 
-/*통합검색*/
+/*�넻�빀寃��깋*/
 .global-search{
   border-bottom: 1px solid #42519e;
 
@@ -993,6 +993,10 @@
     width: 600px;
   }
 
+  &.questionnaire{
+    width:1152px;
+  }
+
   &-area{
     padding: 20px;
     position: relative;
@@ -1067,6 +1071,11 @@
     margin-bottom:20px;
     position: relative;
     @extend %clearfix;
+
+    &.mb60{
+      margin-bottom: 60px;
+    }
+
     &-title{
       margin-bottom: 20px;
       font-size:1.125rem;
@@ -1915,4 +1924,37 @@
 
 .ir-technique{
   text-indent:-999em;
+}
+
+.question{
+
+  &-wrap{
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom: 16px;
+    padding-bottom: 20px;
+    @extend %clearfix;
+    &.last-question{
+      border: 0;
+      margin-bottom: 0;
+    }
+  }
+  &-num{
+    width: 63px;
+    height: 31px;
+    background: #333649;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    padding: 8px 0;
+    margin-right: 14px;
+    float:left;
+  }
+  &-txt{
+    margin-top: 6px;
+    float:left;
+  }
+  &-length{
+    text-align: right;
+    margin-top:10px;
+  }
 }
