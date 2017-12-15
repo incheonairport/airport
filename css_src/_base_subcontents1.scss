@@ -91,9 +91,6 @@
   &.departure-procedures{
     background:url(/static/ap/images/bg_departure_procedures.jpg) center no-repeat;
   }
-  &.global-search{
-    background:url(/static/ap/images/bg_global_search.jpg) center no-repeat;
-  }
 }
 
 .congestion{
@@ -361,10 +358,6 @@
     }
   }
   &-name{
-    &.global{
-      position: relative;
-      bottom: 30px;
-    }
     display:table;
     margin: 0 auto;
     @extend %clearfix;
@@ -442,8 +435,466 @@
   }
 }
 
-.search-global{
+/*통합검색*/
+.global-search{
+  border-bottom: 1px solid #42519e;
 
+  &-area{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    &-field{
+      display: inline-block;
+      @extend %clearfix;
+      &-txt{
+        width:520px;
+        height: 58px;
+        padding: 0 15px;
+        font-size: 1.25rem;
+        color: #666;
+        font-weight: 300;
+        border:4px solid #42519e;
+        float: left;
+      }
+      &-btn{
+        width: 132px;
+        height: 58px;
+        padding-left: 30px;
+        background:#42519e;
+        border: none;
+        color: #fff;
+        font-size: 1.625rem;
+        line-height: 58px;
+        float: left;
+        &.ico{
+          text-indent:0;
+          &:after{
+            background-position: -74px -134px;
+            width: 22px;
+            height: 22px;
+            top:1px;
+            right:62px;
+          }
+        }
+      }
+      .checkbox-label{
+       float: left;
+        margin: 15px 30px;
+      }
+    }
+  }
+  &-option{
+    width: 182px;
+    height: 58px;
+    padding: 0 15px;
+    line-height: 1;
+    border: none;
+    font-size: 1.125rem;
+    float: left;
+  }
+  &-tag{
+    margin:10px 0 30px 140px;
+    text-align:left;
+    &-item{
+      display:inline-block;
+      margin-left:20px;
+      &:first-child{
+        margin-left:0;
+      }
+      &-link{
+        color:#666;
+        font-size:1rem;
+      }
+    }
+  }
+  .tab-nav{
+    position: relative;
+    bottom: -1px;
+  }
+  &-word{
+    position: absolute;
+    right:175px;
+    padding: 30px 20px 20px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    &-title{
+      font-family: nanumsq, sans-serif;
+      font-weight: 700;
+      font-size:1.25rem;
+      margin-bottom: 20px;
+    }
+    &-list{
+      &-item{
+        &-link{
+          color: #323648;
+          .num{
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.875rem;
+            border: 1px solid #666;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .word-list-btn{
+      position: absolute;
+      top:30px;
+      right:20px;
+      &-link{
+        width: 20px;
+        display: inline-block;
+        position: relative;
+        text-indent: -999em;
+        &:after{
+          content: '';
+          display: block;
+          position:absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/ap/images/ico_btn_search_word.png) no-repeat;
+        }
+        &.pre{
+          float: left;
+          &:after{
+            background-position:0 0;
+            width: 19px;
+            height: 20px;
+          }
+        }
+        &.next{
+          &:after{
+            background-position:-19px 0;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+  &-result-tab{
+    display: block;
+    text-align: center;
+  }
+  &-category{
+    display:inline-block;
+    @extend %clearfix;
+    &-item{
+      float: left;
+      line-height: 1.2;
+
+      &+.global-search-category-item{
+        border-left: 1px solid #d9d9d9;
+      }
+      &-link{
+        width: 127px;
+        height: 60px;
+        padding: 10px 10px 10px 30px;
+        display:inline-block;
+        font-family: spoqa, sans-serif;
+        font-size: 1rem;
+        text-align: center;
+        position: relative;
+        .result-num{
+          color: #42519e;
+          font-weight: 800;
+          display: block;
+          text-align: center;
+        }
+        &:before{
+          content: '';
+          display:block;
+          padding-left: 5px;
+          margin: 0 auto;
+          position: absolute;
+          top:20px;
+          left:10px;
+          right:auto;
+          bottom:0;
+          background: url(/static/ap/images/spr_ico_global_search_category.png) no-repeat;
+        }
+        &.search-all{
+          &:before{
+            background-position:-21px -12px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.search-start{
+          &:before{
+            background-position:-64px -18px;
+            width: 24px;
+            height: 10px;
+          }
+        }
+        &.search-arrive{
+          &:before{
+            background-position:-110px -15px;
+            width: 22px;
+            height: 15px;
+          }
+        }
+        &.search-transfer{
+          &:before{
+            background-position:-158px -13px;
+            width: 16px;
+            height: 19px;
+          }
+        }
+        &.search-traffic{
+          &:before{
+            background-position:-191px -12px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.search-shopping{
+          &:before{
+            background-position:-230px -12px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.search-service{
+          &:before{
+            background-position:-318px -12px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.search-map{
+          &:before{
+            background-position: -272px -11px;
+            width: 22px;
+            height: 24px;
+
+          }
+        }
+        &.search-cs{
+          &:before{
+            background-position:-356px -12px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.search-co{
+          &:before{
+            background-position:-21px -52px;
+            width: 22px;
+            height:23px;
+          }
+        }
+        &.search-cyber{
+          &:before{
+            background-position:-64px -52px;
+            width: 31px;
+            height:23px;
+          }
+        }
+        &.search-client{
+          &:before{
+            background-position:-105px -49px;
+            width: 24px;
+            height:24px;
+          }
+        }
+        &.search-business{
+          &:before{
+            background-position:-155px -51px;
+            width: 26px;
+            height:20px;
+          }
+        }
+        &.search-support{
+          &:before{
+            background-position:-193px -51px;
+            width: 23px;
+            height:21px;
+          }
+        }
+        &.search-recruit{
+          &:before{
+            background-position: -232px -47px;
+            width: 23px;
+            height: 22px;
+          }
+        }
+      }
+
+    }
+    &.co{
+      .global-search-category-item-link{
+        width:150px ;
+      }
+    }
+  }
+
+  &-result{
+    width: 100%;
+    margin-top: 30px;
+    text-align: left;
+    &-box{
+      margin: 5px 0 30px;
+      border:1px solid #d9d9d9;
+      position: relative;
+      &-title{
+        font-size: 1.25rem;
+        font-weight: 800;
+        padding: 20px 30px;
+        border-bottom:1px solid #d9d9d9;
+      }
+      &-quick{
+        position: absolute;
+        top:15px;
+        right:20px;
+        &-list{
+          @extend %clearfix;
+          .box-quick{
+            &-title{
+
+              color: #666;
+              font-size: 1rem;
+              float: left;
+              margin-top: 8px;
+              margin-right: 10px;
+            }
+            &-item{
+              float: left;
+              .btn-type-small{
+                font-size: 0.875rem;
+                min-width: 95px;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+      &-ico{
+        display: inline-block;
+        position: relative;
+        text-indent: -999em;
+        padding-right: 15px;
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          top: 3px;
+          right: 0;
+          left: 0;
+          bottom: auto;
+          background: url(/static/ap/images/spr_ico_search_result_box.png) no-repeat;
+        }
+        &.map{
+          &:before{
+            background-position: -10px -10px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+        &.link{
+          &:before{
+            background-position: -44px -10px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+      .list1{
+        @extend %clearfix;
+        padding: 20px 30px;
+        &-item{
+          width: 33.333%;
+          float: left;
+          em{
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    .result-category{
+      padding-top: 30px;
+      &-article{
+        border-bottom: 1px solid #a5a7aa;
+        position: relative;
+        &-more{
+          position: absolute;
+          top: 37px;
+          right: 0;
+          font-size: 1rem;
+          display: inline-block;
+          padding-right:30px;
+          &:after{
+            content: '';
+            display:inline-block;
+            position: relative;
+            top: 0;
+            right:-10px;
+            left: auto;
+            bottom: 0;
+            margin: auto;
+            background: url(/static/ap/images/ico_arrow_result_category_btn.png) no-repeat;
+            width: 7px;
+            height: 13px;
+          }
+        }
+        .not-find{
+          padding: 40px 0;
+          text-align: center;
+          border-top: 1px solid #a5a7aa;
+        }
+      }
+      &-title{
+        padding:30px 30px 25px;
+        font-size: 1.25rem;
+        font-weight: 800;
+      }
+      .table.vt.borad-view{
+        border: none;
+        .reply-box{
+          border-left: none;
+          border-right: none;
+          border-bottom: none;
+          margin-bottom: 0;
+          .location-list{
+            @extend %clearfix;
+            &-item{
+              float: left;
+              display: inline-block;
+              position: relative;
+              padding-right: 20px;
+              &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                right:6px;
+                left: auto;
+                bottom: 0;
+                margin: auto;
+                background: url(/static/ap/images/ico_arrow_search_location_list.png) no-repeat;
+                width: 5px;
+                height: 9px;
+              }
+              &:last-child{
+                &:after{
+                  background: none;
+                }
+              }
+            }
+          }
+          .view-file{
+            border: none;
+            padding: 30px 0;
+          }
+        }
+      }
+    }
+  }
 }
 
 .update{
