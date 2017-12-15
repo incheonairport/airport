@@ -682,6 +682,24 @@
   }
 }
 
+.btn-type-event{
+  min-width:166px;
+  height:40px;
+  color:#fff;
+  background:#333649;
+  padding:0 45px 0 16px;
+  line-height:40px;
+  border:none;
+  font-size:1rem;
+  &.ico{
+    text-indent:0;
+    &:after{
+      left:auto;
+      right:18px;
+    }
+  }
+}
+
 .btn-type-small{
   min-width:146px;
   height:30px;
@@ -1287,6 +1305,19 @@ p.icontxt{
 }
 
 .multi-col{
+  .detail-mark{
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  &.heading-btn-align{
+    margin-bottom:40px;
+    @extend %clearfix;
+    .heading-level1{
+      margin-bottom:0;
+    }
+  }
   position:relative;
   @extend %clearfix;
 
