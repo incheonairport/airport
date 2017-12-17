@@ -2,7 +2,7 @@
  * Base Class *
  **************/
 
-var Index, HeaderGnb, FullPage, TableLike, MainVisual, BottomBanner, BoxModel;
+var Index, HeaderGnb, TableLike, MainVisual, TopPopup, BottomBanner, BoxModel;
 
 $(function(){
 
@@ -192,6 +192,8 @@ $(function(){
 
     this.rollLeft = function(){
 
+      this.rollStop();
+
       nextVisualIndex = currentVisualIndex + 1;
       this.fade();
       _timeBar(false);
@@ -201,6 +203,8 @@ $(function(){
     };
 
     this.rollRight = function(){
+
+      this.rollStop();
 
       nextVisualIndex = currentVisualIndex - 1;
       this.fade();
@@ -241,107 +245,71 @@ $(function(){
   };
 
   /**
-   * BottomBanner Class
+   * TopPopup Class
    */
 
-  BottomBanner = new function(){
+  TopPopup = new function(){
+
+    Index.apply(this);
 
     // private
-    var currentVisualIndex = 0;
-    var nextVisualIndex = 0;
-
-    var $visualItem = this.$mainVisualItem;
+    var $visualItem = $('.top-popup-item');
     var easingType = this.easingType;
 
-    var $pageItem;
+    var currentVisualIndex = 0;
+    var nextVisualIndex = 0;
+    var totalPage = $visualItem.length;
 
     var timeID, timeID2;
     var imageMovingTime = 1000;
     var imageIntervalTime = 10000;
-    var barStretchTime = 10;
 
-    var $bannerItem = $('.main-banner-item');
-    var $pageItem;
-
+    // private
     var _initPaging = function(){
 
-      var $paging = $('<ul class="paging-visual"></ul>');
-      var pageNumber = Math.ceil( $bannerItem.length / 4 );
+      $('.top-popup-control-paging-number').find('.current').text(currentVisualIndex+1);
+      $('.top-popup-control-paging-number').find('.total').text(totalPage);
 
-      $('.main-banner-control-paging').prepend($paging);
+    };
 
-      for(var i=0; i<pageNumber; i++){
-        $paging.append('<li class="paging-item"><div class="paging-link">' + (i+1) + '</div></li>');
-      }
+    var _initPosition = function(){
 
-      $pageItem = $('.paging-item');
-      $pageItem.removeClass('on');
-      $pageItem.eq(0).find('.paging-link').addClass('on');
+      $visualItem.hide().eq(0).show();
 
     };
 
     var _init = function(){
 
-      var itemWidth = 0;
-      var listWidth = 0;
+      _initPosition();
 
-      $bannerItem.each(function(i){
-
-        itemWidth = $(this).width() + parseInt( $(this).css('margin-right') );
-
-        listWidth += itemWidth;
-
-      });
-
-      $('.main-banner-list').width(listWidth);
+      _initPaging();
 
     };
 
-    this.moveLeft = function(auto){
+    // public
+    this.fade = function(){
 
       if( nextVisualIndex >= $visualItem.length ){
+
         nextVisualIndex = 0;
-      }
 
-      $visualItem.eq(currentVisualIndex).stop().animate({left:'-100%'}, imageMovingTime, easingType);
-      $visualItem.eq(nextVisualIndex).css({left:'100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
-        clearInterval(timeID2);
-        if(auto){
-          _timeBar();
-        }
-        _textMotion();
-      });
+      } else if( nextVisualIndex <= -1 ){
 
-      $pageItem.find('.paging-link').removeClass('on');
-      $pageItem.eq(nextVisualIndex).find('.paging-link').addClass('on');
-
-      currentVisualIndex = nextVisualIndex;
-
-    };
-
-    this.moveRight = function(auto){
-
-      if( nextVisualIndex <= -1 ){
         nextVisualIndex = $visualItem.length-1;
+
       }
 
-      $visualItem.eq(currentVisualIndex).stop().animate({left:'100%'}, imageMovingTime, easingType);
-      $visualItem.eq(nextVisualIndex).css({left:'-100%'}).stop().animate({left:0}, imageMovingTime, easingType, function(){
-        clearInterval(timeID2);
-        if(auto){
-          _timeBar();
-        }
-        _textMotion();
-      });
+      $visualItem.eq(currentVisualIndex).stop().fadeOut(imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).stop().fadeIn(imageMovingTime, easingType);
 
-      $pageItem.find('.paging-link').removeClass('on');
-      $pageItem.eq(nextVisualIndex).find('.paging-link').addClass('on');
+      $('.top-popup-control-paging-number').find('.current').text(nextVisualIndex+1);
 
       currentVisualIndex = nextVisualIndex;
 
     };
 
     this.rollAuto = function(){
+
       var _fade = this.fade;
 
       timeID = setInterval(function(){
@@ -353,9 +321,154 @@ $(function(){
 
     };
 
-    _init();
+    this.rollLeft = function(){
 
-    //_initPaging();
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex + 1;
+      this.fade();
+
+    };
+
+    this.rollRight = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex - 1;
+      this.fade();
+
+    };
+
+    this.rollStop = function(){
+
+      // stop rolling
+      clearInterval(timeID);
+
+    };
+
+    this.checkAnimate = function(){
+
+      return $visualItem.is(':animated');
+
+    };
+
+    // running in constructor when loading
+    _init();
+    this.rollAuto();
+
+  };
+
+  /**
+   * BottomBanner Class
+   */
+
+  BottomBanner = new function(){
+
+    // private
+    var currentVisualIndex = 0;
+    var nextVisualIndex = 0;
+
+    var easingType = this.easingType;
+
+    var timeID;
+    var imageMovingTime = 1000;
+    var imageIntervalTime = 3000;
+
+    var $bannerList = $('.main-banner-list');
+    var $bannerItem = $('.main-banner-item');
+
+    var itemWidth = 0;
+    var listWidth = 0;
+
+    var _init = function(){
+
+      $bannerItem.each(function(i){
+
+        itemWidth = $(this).width() + parseInt( $(this).css('margin-right') );
+
+        listWidth += itemWidth;
+
+      });
+
+      $bannerList.width(listWidth);
+
+    };
+
+    this.moveLeft = function(){
+
+      $bannerList.stop().animate({
+        left : -itemWidth
+      }, imageMovingTime, easingType, function(){
+        $('.main-banner-item:last-child').after($('.main-banner-item:first-child'));
+        $bannerList.css({left:0});
+      });
+
+      currentVisualIndex = nextVisualIndex;
+
+    };
+
+    this.moveRight = function(){
+
+      $('.main-banner-item:first-child').before($('.main-banner-item:last-child'));
+      $bannerList.css({left:-itemWidth});
+
+      $bannerList.stop().animate({
+        left : 0
+      }, imageMovingTime, easingType, function(){
+        //$bannerList.css({left:-itemWidth});
+      });
+
+      currentVisualIndex = nextVisualIndex;
+
+    };
+
+    this.rollAuto = function(){
+
+      var _moveLeft = this.moveLeft;
+
+      timeID = setInterval(function(){
+
+        nextVisualIndex = currentVisualIndex + 1;
+        _moveLeft();
+
+      }, imageIntervalTime);
+
+    };
+
+    this.rollLeft = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex + 1;
+      this.moveLeft();
+
+    };
+
+    this.rollRight = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex - 1;
+      this.moveRight();
+
+    };
+
+    this.rollStop = function(){
+
+      // stop rolling
+      clearInterval(timeID);
+
+    };
+
+    this.checkAnimate = function(){
+
+      return $bannerList.is(':animated');
+
+    };
+
+    _init();
+    this.rollAuto();
+
 
   };
 

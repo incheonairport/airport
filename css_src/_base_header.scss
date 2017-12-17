@@ -166,7 +166,7 @@
   }
 
   &.quick{
-    top:calc(30% + 200px);
+    //top:calc(30% + 200px);
   }
 }
 
@@ -815,7 +815,7 @@
     &-item{
       padding: 15px 0;
       text-align: center;
-      line-height: 1.2;
+      //line-height: 1.2;
 
       &.top{
         padding-bottom: 5px;
@@ -824,6 +824,7 @@
     &-link{
       color:rgba(255,255,255,0.5);
       font-size: 0.75rem;
+      display:block;
 
       &:before{
         content: '';
@@ -854,6 +855,18 @@
         background-position: 0 0;
         width: 16px;
         height: 21px;
+      }
+
+      &.online-reserve:before{
+        background-position: -188px 0;
+        width: 26px;
+        height: 26px;
+      }
+
+      &.travel-info:before{
+        background-position: -240px 0;
+        width: 26px;
+        height: 24px;
       }
     }
 
