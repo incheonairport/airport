@@ -206,7 +206,7 @@
   .detail-table{
     font-size:1rem;
     line-height:1.4;
-    padding:12px 0;
+    padding:10px 0;
     text-align:left;
     @extend %clearfix;
     &-tit{
@@ -227,8 +227,6 @@
   color:#fff;
   font-size:0.875rem;
   padding:6px 16px;
-  position:relative;
-  bottom:7px;
   &.green{
     background:#2c8179;
   }

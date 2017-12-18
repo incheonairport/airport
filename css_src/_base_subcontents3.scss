@@ -81,9 +81,11 @@
     display:block;
     width:48px;
     height:58px;
-    background:rgba(0,0,0,.8);
+    background:rgba(0,0,0,.5);
     position:absolute;
-    bottom:30px;
+    bottom:0;
+    top:0;
+    margin:auto;
     &.slide-left{
       left:0;
     }
@@ -168,7 +170,7 @@
   &-iconlist{
     @extend %clearfix;
     position: absolute;
-    right:0;
+    right:24px;
     top: 80px;
     float: right;
     &-item{
@@ -186,7 +188,7 @@
     position: relative;
     line-height:128px;
     color:#fff;
-    font-weight:900;
+    font-weight:700;
     &:hover{
       opacity:.8;
     }
@@ -196,7 +198,7 @@
       margin: 0 auto 16px;
       background: url(/static/ap/images/spr_ico_bgset.png) no-repeat;
       position: absolute;
-      top: 4px;
+      top: 0px;
       right: 0;
       left: 0;
     }
@@ -215,16 +217,33 @@
       width: 43px;
       height: 41px;
     }
+    &.survey:after {
+      background-position: -30px -113px;
+      width: 46px;
+      height: 40px;
+    }
+    &.coupon:after {
+      background-position: -100px -109px;
+      width: 54px;
+      height: 45px;
+    }
+    &.tip:after {
+      background-position: -100px -109px;
+      width: 54px;
+      height: 45px;
+    }
   }
   &-tit{
     font-family: 'roboto', sans-serif;
-    color:#fff;
+    color:rgba(255,255,255,0.5);
     font-size:3rem;
     font-weight:300;
     line-height:1.1;
     position:absolute;
     top:54px;
+
     strong{
+      color:#fff;
       font-family: roboto, sans-serif;
       font-size:5.125rem;
       text-transform:uppercase;
@@ -246,6 +265,11 @@
   }
   &.shopping{
     background: url(/static/ap/images/bg_shopping_02.jpg) center no-repeat;
+  }
+  &.transfer{
+    height:360px;
+    min-height:360px;
+    background: url(/static/ap/images/bg_transfer.jpg) center no-repeat;
   }
 }
 // 필터
@@ -979,7 +1003,7 @@
 }
 //배경과 겹침부분 포지셔닝
 .position-box108{
-  margin-top:-108px;
+  margin-top:-149px;
 }
 .position-box70{
   margin-top:-70px;

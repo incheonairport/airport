@@ -1235,6 +1235,13 @@
     width: 85%;
     margin-bottom: 10px;
   }
+  &.direct-input{
+    width:296px;
+    height:40px;
+  }
+  &.color-gr{
+    background: #f2f2f2;
+  }
 }
 /*파일 첨부, 주소 검색*/
 .user{

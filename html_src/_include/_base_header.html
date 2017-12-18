@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="/static/ap/css/base_style.css" />
   <script src="/static/ap/js/lib/jquery-3.2.1.min.js"></script>
   <script src="/static/ap/js/lib/jquery-ui.min.js"></script>
-  <script src="/static/ap/js/lib/jquery.fullpage.min.js"></script>
-  <script src="/static/ap/js/lib/jquery.bxslider.js"></script>
   <script src="/static/ap/js/base_function.debug.js"></script>
 </head>
 <body>
@@ -20,7 +18,52 @@
   </ul>
 </div>
 
-<aside class="top-popup"></aside>
+<aside class="top-popup">
+
+  <div class="top-popup-wrap">
+
+    <div class="top-popup-item">
+      <div style="position:absolute;top:0;left:0;font-size:20px;color:#fff;font-weight:bold;">1</div>
+      <div class="top-popup-article"><img src="/static/ap/images/img_top_popup_01.png" alt="제2여객터미널 Grand Opening 참석 안내 - 글로벌 리딩 도약을 위해 쉼없이 달려온 인천공항이 제2여개터미널을 오픈합니다." /></div>
+      <a href="" title="페이지 바로가기" class="top-popup-article"><img src="/static/ap/images/img_top_popup_02.png" alt="인천공항에서 궁중왕실을 재현하다!" /></a>
+    </div>
+
+    <div class="top-popup-item">
+      <div style="position:absolute;top:0;left:0;font-size:20px;color:#fff;font-weight:bold;">2</div>
+      <div class="top-popup-article"><img src="/static/ap/images/img_top_popup_01.png" alt="제2여객터미널 Grand Opening 참석 안내 - 글로벌 리딩 도약을 위해 쉼없이 달려온 인천공항이 제2여개터미널을 오픈합니다." /></div>
+      <a href="" title="페이지 바로가기" class="top-popup-article"><img src="/static/ap/images/img_top_popup_02.png" alt="인천공항에서 궁중왕실을 재현하다!" /></a>
+    </div>
+
+    <div class="top-popup-item">
+      <div style="position:absolute;top:0;left:0;font-size:20px;color:#fff;font-weight:bold;">3</div>
+      <div class="top-popup-article"><img src="/static/ap/images/img_top_popup_01.png" alt="제2여객터미널 Grand Opening 참석 안내 - 글로벌 리딩 도약을 위해 쉼없이 달려온 인천공항이 제2여개터미널을 오픈합니다." /></div>
+      <a href="" title="페이지 바로가기" class="top-popup-article"><img src="/static/ap/images/img_top_popup_02.png" alt="인천공항에서 궁중왕실을 재현하다!" /></a>
+    </div>
+
+  </div>
+
+  <div class="top-popup-control">
+
+    <div class="top-popup-control-arrow">
+      <button type="button" class="arrow prev">이전</button>
+      <button type="button" class="arrow next">다음</button>
+    </div>
+
+    <div class="top-popup-control-paging">
+      <div class="top-popup-control-paging-number">
+        <span class="current">1</span>
+        <span>/</span>
+        <span class="total">3</span>
+      </div>
+      <button type="button" class="play-button play">재생</button>
+      <button type="button" class="play-button pause">일시정지</button>
+    </div>
+
+  </div>
+
+  <button type="button" class="top-popup-toggle">POPUP ZONE <span>열기</span></button>
+
+</aside>
 
 <header class="header bg">
 
@@ -199,7 +242,7 @@
 
   <ul class="header-search">
     <li class="header-search-item">
-      <button type="button" class="header-search-btn ico gnb-map">지도검색</button>
+      <button type="button" class="header-search-btn ico gnb-map">공항지도</button>
     </li>
     <li class="header-search-item">
       <button type="button" class="header-search-btn ico gnb-search">검색</button>
@@ -221,10 +264,11 @@
 
 <nav class="quick">
   <ul class="quick-menu-list">
-    <li class="quick-menu-list-item"><a href="" class="quick-menu-list-link my-terminal">내 터미널<br>위치확인</a></li>
+    <li class="quick-menu-list-item"><a href="" class="quick-menu-list-link my-terminal">내 터미널<br>확인</a></li>
     <li class="quick-menu-list-item"><a href="" class="quick-menu-list-link view-airport">인천공항<br>한 눈에 보기</a></li>
     <li class="quick-menu-list-item"><a href="" class="quick-menu-list-link move-terminal">터미널 간<br>이동</a></li>
-    <li class="quick-menu-list-item"><a href="" class="quick-menu-list-link cyber-airport">사이버<br>에어포트</a></li>
+    <li class="quick-menu-list-item"><a href="" class="quick-menu-list-link online-reserve">온라인<br>예약</a></li>
+    <li class="quick-menu-list-item"><a href="" class="quick-menu-list-link travel-info">여행정보</a></li>
     <li class="quick-menu-list-item top"><a href="" class="quick-menu-list-top">TOP</a></li>
   </ul>
 </nav>

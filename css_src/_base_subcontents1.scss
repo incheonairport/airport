@@ -334,7 +334,17 @@
       color: #fff;
       background: #323648;
       border: none;
-
+      &.size{
+        width: 150px;
+        padding-left: 25px;
+        &.ico:after{
+          right:80px;
+          top:4px;
+        }
+      }
+      strong{
+        margin-left: 10px;
+      }
       &.ico{
         text-indent:0;
       }
@@ -435,7 +445,7 @@
   }
 }
 
-/*통합검색*/
+/*�넻�빀寃��깋*/
 .global-search{
   border-bottom: 1px solid #42519e;
 
@@ -987,10 +997,23 @@
 
   &.address-layer{
     width: 600px;
+    &.size{
+      width: 912px;
+    }
+    &.max-size{
+      width: 1145px;
+      &.max-height{
+        max-height: 890px;
+      }
+    }
   }
 
   &.login-area{
     width: 600px;
+  }
+
+  &.questionnaire{
+    width:1152px;
   }
 
   &-area{
@@ -1067,6 +1090,11 @@
     margin-bottom:20px;
     position: relative;
     @extend %clearfix;
+
+    &.mb60{
+      margin-bottom: 60px;
+    }
+
     &-title{
       margin-bottom: 20px;
       font-size:1.125rem;
@@ -1104,6 +1132,12 @@
     }
     p{
       font-size: 1rem;
+      &.font18{
+        font-size:1.125rem;
+      }
+      &.font20{
+        font-size:1.25rem;
+      }
     }
     button{
       height: 50px;
@@ -1118,8 +1152,19 @@
   .list1{
     font-size:0.875rem;
     letter-spacing:-0.02rem;
-    &-item:before{
-      top: -12px;
+    &-item {
+      &.font14{
+        line-height: 50px;
+        &:before {
+          top: -16px;
+        }
+      }
+    }
+
+    &-item{
+      &:before {
+        top: -12px;
+      }
     }
   }
 
@@ -1894,6 +1939,120 @@
   }
 }
 
+.site-map{
+  &-heading{
+    font-family: nanumsq, sans-serif;
+    font-size: 1.5rem;
+    color: #222;
+    padding-bottom:20px;
+
+   &:before{
+     content: '';
+     margin: 5px auto;
+     display: block;
+     background: url(/static/ap/images/spr_site_map.png) no-repeat;
+   }
+
+    &.site-leave:before{
+      width: 40px;
+      height: 36px;
+      background-position: 0 0;
+    }
+
+    &.site-arrival:before{
+      width: 41px;
+      height: 36px;
+      background-position: -47px 0;
+
+    }
+
+    &.site-transfer:before{
+      width: 33px;
+      height: 36px;
+      background-position: -97px 0;
+    }
+
+    &.site-traffic:before{
+      width: 35px;
+      height: 36px;
+      background-position: -138px 0;
+
+    }
+
+    &.site-shopping:before{
+      width: 35px;
+      height: 36px;
+      background-position: -177px 0;
+
+    }
+    &.site-service:before{
+      width: 38px;
+      height: 36px;
+      background-position: 0px -40px;
+
+    }
+
+    &.site-airport-map:before{
+      width: 38px;
+      height: 36px;
+      background-position: -47px -41px;
+    }
+
+    &.site-customer:before{
+      width: 38px;
+      height: 36px;
+      background-position: -94px -40px;
+
+    }
+
+    &.site-mypage:before{
+      width: 46px;
+      height: 36px;
+      background-position: -137px -40px;
+    }
+  }
+  &-list{
+    &-depth1{
+
+      @extend %clearfix;
+      &-item{
+        width:205px;
+        float:left;
+        text-align: center;
+        margin-right: 30px;
+
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+
+    }
+
+    &-depth2{
+      padding-top: 30px;
+      border-top: 1px solid #d9d9d9;
+      &-item{
+        padding: 5px 8px;
+
+      }
+
+      &-link{
+        font-weight: 700;
+        color: #222;
+
+        &:hover{
+          color: #41519e;
+          font-weight: 900;
+        }
+      }
+    }
+
+  }
+
+}
+
+
+
 .digr-incheon-airport-glance01{
   text-indent: -99999em;
   background: url(/static/ap/images/digr_incheon_airport_glance01.png)no-repeat center;
@@ -1915,4 +2074,81 @@
 
 .ir-technique{
   text-indent:-999em;
+}
+
+.question{
+
+  &-wrap{
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom: 16px;
+    padding-bottom: 20px;
+    @extend %clearfix;
+    &.last-question{
+      border: 0;
+      margin-bottom: 0;
+    }
+  }
+  &-num{
+    width: 63px;
+    height: 31px;
+    background: #333649;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    padding: 8px 0;
+    margin-right: 14px;
+    float:left;
+  }
+  &-txt{
+    margin-top: 6px;
+    float:left;
+  }
+  &-length{
+    text-align: right;
+    margin-top:10px;
+  }
+}
+
+.layer-text{
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+.layer-text-box{
+  @extend %clearfix;
+  label{
+    display: inline-block;
+    width: 21%;
+    line-height: 50px;
+  }
+  input{
+    width: 75%;
+  }
+  .layer-text{
+    width: 119px;
+  }
+
+  &-right{
+    label{
+      display: inline-block;
+      width: 27%;
+      line-height: 50px;
+    }
+    @extend %clearfix;
+    .timesetting-date-day{
+      width: calc(70% - 46px);
+    }
+    .timesetting-date-calendar{
+      height: 56px;
+    }
+    .layer-text{
+      width: 154px;
+    }
+  }
+
 }
