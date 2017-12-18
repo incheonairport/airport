@@ -1046,9 +1046,8 @@ button{
     }
     .btn-type-small{
       min-width: 110px;
-      position: absolute;
-      right: 0;
-      bottom: 0;
+      float: right;
+      margin-top: 10px;
     }
   }
 }
@@ -1202,6 +1201,10 @@ button{
   .list3{
     &-item{
       float: left;
+     &.no-float{
+        float: none;
+       display: inline-block;
+      }
      &.ico{
        text-indent: 0em;
        &:after{
