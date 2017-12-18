@@ -108,9 +108,7 @@ $(function(){
         $tabWrap.each(function() {
 
           calcTabWidth( $(this), '.tab-area-heading' );
-
           setTabWidth( $(this), '.tab-area-heading' );
-
           setTabPosition( $(this), '.tab-area-heading' );
 
         });
