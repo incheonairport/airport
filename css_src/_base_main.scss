@@ -60,43 +60,11 @@
             transform:translateY(-50%);
           }
 
-          &.grand-open{
-            &:nth-child(1){
-              font-family:nanumsq, sans-serif;
-              font-size:1.875rem;
-              font-style:italic;
-            }
-            &:nth-child(2){
-              margin-top:15px;
-              font-family:exo, sans-serif;
-              font-weight:900;
-              font-style:italic;
-              font-size:4.5rem;
-            }
-            &:nth-child(3){
-              margin-top:45px;
-              padding-top:30px;
-              position:relative;
-
-              &:after{
-                content:"";
-                display:block;
-                width:50px;
-                height:1px;
-                background:#fff;
-                position:absolute;
-                top:0;
-                left:50%;
-                transform:translateX(-50%);
-              }
-            }
-          }
-
           &:nth-child(1){
             position:relative;
             top:-20px;
 
-            font-size:4.375rem;
+            font-size:45rem;
             font-family:exo, sans-serif;
             font-weight:900;
             margin-bottom:10px;
@@ -113,9 +81,22 @@
           }
 
           &:nth-child(3){
+            margin-top:30px;
+            padding-top:30px;
             position:relative;
-            top:-20px;
             opacity:0;
+
+            &:after{
+              content:"";
+              display:block;
+              width:50px;
+              height:1px;
+              background:#fff;
+              position:absolute;
+              top:0;
+              left:50%;
+              transform:translateX(-50%);
+            }
           }
 
           &.white{
@@ -349,7 +330,8 @@
                 display:block;
                 width:100%;
                 height:40px;
-                background:transparent url(/static/ap/images/bg_search_flight_place_holder.png) no-repeat 20px center;
+                background:transparent;
+              //url(/static/ap/images/bg_search_flight_place_holder.png) no-repeat 20px center;
                 border:none;
 
                 font-size:1rem;
@@ -358,6 +340,19 @@
 
                 &:focus{
                   background-image:none;
+                }
+
+                &::-webkit-input-placeholder{
+                  color:#fff;
+                }
+                &::-moz-placeholder{
+                  color:#fff;
+                }
+                &:-ms-input-placeholder{
+                  color:#fff;
+                }
+                &:-moz-placeholder{
+                  color:#fff;
                 }
               }
 

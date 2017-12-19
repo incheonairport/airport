@@ -24,6 +24,8 @@
     left:50%;
     transform:translate(-50%, -50%);
 
+    text-indent:-99999em;
+
     &.opacity{
       opacity:0;
     }
@@ -31,9 +33,9 @@
     &:after{
       content:"";
       display:block;
-      width:77px;
-      height:29px;
-      background:url(/static/loading.gif) no-repeat;
+      width:150px;
+      height:56px;
+      background:url(/static/loading3.gif) no-repeat;
       position:absolute;
       top:0;
       left:0;
