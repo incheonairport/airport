@@ -1090,7 +1090,17 @@
     margin-bottom:20px;
     position: relative;
     @extend %clearfix;
-
+    .textarea{
+      width: 100%;
+      height: 100px;
+      padding: 0 10px;
+      line-height: 1.7;
+      text-align: left;
+      border: 1px solid #d9d9d9;
+      box-sizing: border-box;
+      color: #666;
+      font-family: roboto, spoqa, sans-serif;
+    }
     &.mb60{
       margin-bottom: 60px;
     }
