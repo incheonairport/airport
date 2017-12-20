@@ -25,6 +25,12 @@
   overflow:hidden;
 }
 
+.terms_info{
+  &:nth-child(3n){
+    padding-left:60px;
+  }
+}
+
 .terms_info li span {
   width:70px;
   margin-bottom:22px;
