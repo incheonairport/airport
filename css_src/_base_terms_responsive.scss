@@ -5,7 +5,11 @@
 
 // 640
 @media all and (max-width:639px) {
-
+  .terms_info{
+    &:nth-child(3n){
+      padding-left:0;
+    }
+  }
   .tab-sub.terms{
     position:static;
     .tab-sub-list-item{
