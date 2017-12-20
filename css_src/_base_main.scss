@@ -226,7 +226,7 @@
     &-search{
       width:100%;
       height:210px;
-      padding-top:43px;
+      padding-top:33px;
       background:url(/static/ap/images/bg_main_flight_search.png) no-repeat;
 
       position:absolute;
@@ -377,7 +377,7 @@
 
       &-weather{
         position:absolute;
-        top:84px;
+        top:75px;
         left:50%;
         transform:translateX(350px);
         padding-left:45px;
@@ -412,6 +412,69 @@
         margin-top:11px;
         font-size:0.8125rem;
         color:#a0a5be;
+        text-align:initial;
+        position:relative;
+
+        .airplane{
+          font-size:1.25rem;
+          color:#fff;
+
+          &-number{
+            color:#fff193;
+          }
+
+          &-info{
+            font-size:1rem;
+            color:#fff;
+            margin-top:7px;
+
+            .situation-info {
+              width: 70px;
+              height: 28px;
+              margin: 0 auto;
+              line-height: 29px;
+              display: inline-block;
+              color: #fff;
+              font-size: 0.875rem;
+              border-radius: 5px;
+              text-align:center;
+
+              &.delay,
+              &.type-red{
+                background: #d43e41;
+              }
+              &.boarding-on,
+              &.type-blue{
+                background: #42519e;
+              }
+              &.boarding-closing,
+              &.type-cyan{
+                background: #2c8179;
+              }
+              &.type-gray{
+                background: #999;
+              }
+
+            }
+
+            .date{
+              margin-right:10px;
+            }
+
+            &-close{
+              display:block;
+              width:22px;
+              height:22px;
+              border:0;
+              background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
+              position:absolute;
+              top:15px;
+              right:0;
+              text-indent:-99999em;
+            }
+
+          }
+        }
       }
     }
 
