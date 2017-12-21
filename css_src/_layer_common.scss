@@ -2066,14 +2066,21 @@ button{
   &-area{
     text-align:center;
   }
+  &-inputbox-btn{
+    background:#323648;
+    padding:6px 10px;
+    border-radius:50px;
+    font-size:0.825rem;
+    color:#fff;
+    transition:all .2s;
+  }
   &-inputbox{
     display:inline-block;
     width:100%;
     @extend %clearfix;
     &-desc{
-      text-align:left;
       color:#fff;
-      margin-top:10px;
+      margin:10px 0;
     }
   }
   &-search{
