@@ -44,6 +44,10 @@
     }
     &-tit{
       font-size:3.125rem;
+
+      &.small{
+        font-size: 2.5rem;
+      }
     }
     &-sub{
       font-size:1.375rem;
@@ -200,20 +204,23 @@
   &.path-departure{
     background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) center no-repeat;
   }
-
-  &.bg7 {
+  &.bg7{
   background: url(/static/ap/images/bg_parking_info.jpg) center no-repeat;
   }
   &.bg8{
     background:url(/static/ap/images/bg_immigration_procedure.jpg) center no-repeat;
-
   }
+
 }
 // bg 컨텐츠
 .section-bg{
   height:420px;
   background:url(/static/ap/images/bg_section01.jpg) center no-repeat;
   position: relative;
+  &.transfer-bg{
+    background:url(/static/ap/images/bg_transfer02.jpg) center no-repeat;
+  }
+
   &-inner{
     @extend %clearfix;
     display:table;
@@ -244,6 +251,12 @@
   &-list{
     @extend %clearfix;
     margin-top:34px;
+    &.col-2{
+      display: inline-block;
+      .section-bg-list-item{
+        width:270px;
+      }
+    }
     &.col-4{
       .section-bg-list-item{
         width:calc(25% - 18px);
@@ -416,6 +429,10 @@
       font-size:2.125rem;
       font-weight:400;
       text-align:center;
+
+      &.small{
+        font-size: 1.5rem;
+      }
 
       &.reverse{
         font-size:1.75rem;
@@ -599,6 +616,24 @@
         background-position:-485px -305px;
         width:39px;
       }
+
+      /* 환승 - 제1여객터미널에서 환승하기 */
+      &.terminal_first:after{
+        background-position: -342px -395px;
+        width: 110px;
+      }
+      /* 환승 - 탑승동에서 환승하기 */
+      &.terminal_passenger:after{
+        background-position: -55px -395px;
+        width: 116px;
+      }
+      /* 환승 - 제2여객터미널에서 환승하기 */
+      &.terminal-second:after{
+        background-position: -208px -395px;
+        width: 110px;
+      }
+
+
     }
 
     &-item{
@@ -943,6 +978,10 @@
     font-weight:600;
     text-indent:20px;
     transition:all .2s;
+
+    &.small{
+      font-size: 1rem;
+    }
     &:hover{
       background:#f2f4f7;
     }
