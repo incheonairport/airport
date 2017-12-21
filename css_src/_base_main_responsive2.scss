@@ -1,5 +1,35 @@
+
 // 640
 @media all and (max-width:639px) {
+
+  .main{
+    &-visual{
+      &-search{
+        height: 240px;
+        &-flight{
+          width: 100%;
+          &-area{
+            .area-tab{
+              width: 48%;
+            }
+            .area-form-button{
+              right: 0;
+            }
+          }
+        }
+        &-inner{
+          width: 100%;
+          padding: 0 35px;
+        }
+        &-title{
+          display: none;
+        }
+        &-weather{
+          display: none;
+        }
+      }
+    }
+  }
 
   .section2{
     background-size: cover;
