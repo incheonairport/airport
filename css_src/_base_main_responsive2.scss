@@ -4,22 +4,132 @@
 
   .main{
     &-visual{
+      height:100vh;
+      &-control{
+
+        &-arrow{
+          width:100%;
+          position:absolute;
+          top:50%;
+          left:0;
+          z-index:100;
+
+          >.arrow{
+            background-size: 79px 75px;
+            width: 37px;
+            height: 37px;
+            position:absolute;
+            top:calc(50% - 55px);
+            transform:translateY(-50%);
+
+            text-indent:-99999em;
+
+            &.prev{
+              left:15px;
+            }
+
+            &.next{
+              background-position:-42px 0;
+              right:15px;
+            }
+          }
+        }
+
+        &-paging{
+          position:absolute;
+          bottom:250px;
+          left:50%;
+          transform:translateX(-50%);
+          z-index:100;
+
+          .play-button{
+            display:block;
+            width:11px;
+            height:11px;
+            padding:0;
+            border:none;
+            border-radius:0;
+
+            float:left;
+
+            background:url(/static/ap/images/spr_ico_main_visual_play.png) no-repeat;
+
+            text-indent:-99999em;
+
+            &.play{
+              background-position:-16px 0;
+            }
+
+          }
+
+          .paging{
+
+            &-visual{
+              float:left;
+            }
+
+            &-item{
+              float:left;
+              margin-right:10px;
+              width:11px;
+              height:11px;
+              border:2px solid #333;
+              border-radius:50%;
+              position:relative;
+              overflow:hidden;
+            }
+            &-link{
+              display:block;
+              width:11px;
+              //height:11px;
+              height:100%;
+              //border:2px solid #333;
+              //border-radius:50%;
+              text-indent:-99999em;
+              position:absolute;
+              left:-2px;
+              bottom:0;
+
+              &.on{
+                background:#333333;
+              }
+            }
+          }
+        }
+
+        &-bar{
+          width:0;
+          height:3px;
+          background:#ffae44;
+          position:absolute;
+          bottom:207px;
+          left:0;
+          z-index:110;
+        }
+      }
       &-search{
         height: 240px;
         &-flight{
           width: 100%;
-          &-area{
-            .area-tab{
+          .area{
+            &-tab{
               width: 48%;
-            }
-            .area-form-button{
-              right: 0;
+              &.departure{
+                font-size:1rem;
+              }
+              &.arrival{
+                font-size:1rem;
+              }
+              .area-form-button{
+                right: 0;
+              }
             }
           }
+
         }
         &-inner{
           width: 100%;
-          padding: 0 35px;
+          padding: 0 15px;
         }
         &-title{
           display: none;
@@ -27,7 +137,20 @@
         &-weather{
           display: none;
         }
+        &-desc{
+          .airplane{
+            font-size:0.825rem;
+            &-info{
+              font-size:0.825rem;
+              .situation-info {
+                display:block;
+                margin-top:10px;
+              }
+            }
+          }
+        }
       }
+
     }
   }
 
