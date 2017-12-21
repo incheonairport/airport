@@ -117,7 +117,7 @@ $(function(){
 
     });
 
-    $('.header-search-btn').on('click', function(){
+    $('.gnb-search').on('click', function(){
 
       $('.total-search').addClass('show');
       $('.header, .gnb').addClass('bg');
