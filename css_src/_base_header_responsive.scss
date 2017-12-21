@@ -51,11 +51,12 @@
   }
 
   .header{
-    //display:none;
+    display:none;
     min-width: 0;
     position: fixed;
     z-index: 99999;
-    background:none!important;
+    //background:none!important;
+    background:#fff!important;
     &-search{
       display:none;
     }
@@ -67,7 +68,7 @@
 
     }
     &-util{
-      //display: none;
+      display: none;
       z-index: 99999;
       top:60px;
       right:auto;
@@ -149,17 +150,27 @@
       }
 
     }
-
+    &-logo{
+      &-link{
+        &:after{
+          background:url(/static/ap/images/logo.png) no-repeat;
+        }
+      }
+    }
   }
 
   .gnb{
-    height: 100%;
-    min-height: 60px;
-    width: 85%;
-    top: 0;
-    padding-top:0;
-    z-index: 9999;
-    background:#fff;
+    height: 51px;
+    top:0!important;
+    //display:none;
+    ul{display:none!important;}
+    //height: 100%;
+    //min-height: 60px;
+    //width: 85%;
+    //top: 0;
+    //padding-top:0;
+    //z-index: 9999;
+    background:#fff!important;
     &:after{
       display:none;
     }
@@ -208,8 +219,8 @@
     }
     &-mobile-btn{
       display: block;
-      top: 25px;
-      left: 25px;
+      top: 15px;
+      left: 15px;
       z-index:9999;
       //&:after{
       //  background: white;
@@ -225,5 +236,31 @@
 
 
   }
-
+  .header-search-btn.gnb-search:after{
+    background-position: -74px -134px;
+    width: 22px;
+    height: 27px;
+    top: 4px;
+  }
+  .gnb:before{
+    content: "";
+    display: block!important;
+    width: 190px;
+    height: 25px;
+    background: url(/static/ap/images/logo.png) no-repeat;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top:12px;
+    margin:auto;
+    z-index: 50;
+    opacity: 1;
+    background-size: 100%;
+  }
+  .gnb.fixed.bg:before{
+    right: 0;
+    left: 0;
+    margin:auto;
+    top:12px;
+  }
 }

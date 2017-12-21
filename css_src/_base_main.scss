@@ -225,7 +225,7 @@
 
     &-search{
       width:100%;
-      height:210px;
+      height:230px;
       padding-top:33px;
       background:url(/static/ap/images/bg_main_flight_search.png) no-repeat;
 
@@ -488,7 +488,7 @@
     transform:translate(-50%, -50%);
 
     &-heading{
-
+      color:#fff;
       font-size:2.5rem;
       font-weight:300;
       text-align:center;
@@ -930,5 +930,12 @@
 
 }
 
+.section2:after{
+  content:'';
+  display:block;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+}
 
 
