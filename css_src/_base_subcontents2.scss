@@ -212,6 +212,9 @@
   }
 
 }
+
+
+
 // bg 컨텐츠
 .section-bg{
   height:420px;
@@ -341,7 +344,7 @@
     &:after{
       content:'';
       display:block;
-      width:80%;
+      width:100%;
       height:1px;
       margin-top: 10px;
       background:#fff;
@@ -387,7 +390,34 @@
     }
   }
 }
-
+.top-notice{
+  display:inline-block;
+  width:860px;
+  margin:20px 0 0 40px;
+  .top-notice-desc{
+    letter-spacing:-1px;
+    padding-top:10px;
+    color:#fff;
+    font-size:0.825rem;
+    &:before{
+      content:'';
+      display:inline-block;
+      margin-right:8px;
+      background: url(/static/ap/images/ico_notice.png);
+      width: 17px;
+      height: 12px;
+    }
+  }
+  &:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
+    background: #fff;
+    opacity: 0.3;
+  }
+}
 .inner-tab{
   position: relative;
   top: -54px;
@@ -418,8 +448,20 @@
     @extend %clearfix;
     display:table;
     width:100%;
-    height:100%;
+    //height:100%;
     margin-bottom:30px;
+    &.h-472{
+      height:472px;
+    }
+    &.h-360{
+      height:360px;
+    }
+    &.h-420{
+      height:420px;
+    }
+    &.h-498{
+      height:498px;
+    }
     &.box-border{
       border-top: 1px solid #dee3eb;
       padding-top: 30px;
@@ -429,6 +471,7 @@
       font-size:2.125rem;
       font-weight:400;
       text-align:center;
+      line-height:1.4;
 
       &.small{
         font-size: 1.5rem;
@@ -1277,7 +1320,7 @@
     text-indent: -99999em;
     display: block;
     background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
-    margin-left: 15px;
+    margin-left: 20px;
     &:first-child{
       margin-left: 0;
     }
