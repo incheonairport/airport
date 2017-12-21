@@ -60,7 +60,7 @@
 .contents-visual{
   min-height:300px;
   height:300px;
-  padding-top: 90px;
+  padding-top: 70px;
   position:relative;
   background-size: cover;
   .inner-section{
@@ -91,6 +91,36 @@
   }
   &.departure-procedures{
     background:url(/static/ap/images/bg_departure_procedures.jpg) center no-repeat;
+  }
+
+  //&.bg1{
+  //  background:url(/static/ap/images/bg_base_top01.jpg) center no-repeat;
+  //}
+  //&.bg2{
+  //  background:url(/static/ap/images/bg_base_top02.jpg) center no-repeat;
+  //}
+  //&.bg3{
+  //  background:url(/static/ap/images/bg_base_top03.jpg) center no-repeat;
+  //}
+  &.bg4{
+    background:url(/static/ap/images/bg_base_top04.jpg) center no-repeat;
+  }
+  &.bg5{
+    background:url(/static/ap/images/bg_base_top05.jpg) center no-repeat;
+  }
+  //&.bg6{
+  //  background:url(/static/ap/images/bg_base_top07.jpg) center no-repeat;
+  //}
+  &.path-departure{
+    background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) center no-repeat;
+  }
+  //
+  //&.bg7 {
+  //  background: url(/static/ap/images/bg_parking_info.jpg) center no-repeat;
+  //}
+  &.bg8{
+    background:url(/static/ap/images/bg_immigration_procedure.jpg) center no-repeat;
+
   }
 }
 
@@ -941,6 +971,94 @@
 
 // layer popup
 .layer{
+  &.find-my-terminal{
+    min-width:642px;
+    overflow-y:auto;
+    border: 4px solid #fefefe;
+    padding: 36px 36px 70px;
+    background:url(/static/ap/images/bg_lp_modal.jpg ) center no-repeat;
+    background-size:cover;
+    .layer-area{
+      text-align:center;
+      padding:0;
+    }
+    .layer-title{
+      font-size:2.125rem;
+      font-family: 'exo', sans-serif;
+      font-weight:700;
+      color: #ffae43;
+      text-align:center;
+      border-bottom:0;
+      margin-bottom:0;
+      padding-bottom:0;
+      &:before{
+        content:'';
+        display:block;
+        width:49px;
+        height:60px;
+        background:url(/static/ap/images/ico_find_my_termimal.png ) center no-repeat;
+        margin:0 auto 26px;
+      }
+      &:after{
+        content:'';
+        display:block;
+        height:2px;
+        width:44px;
+        background:rgba(255,255,255,0.4);
+        margin: 26px auto 24px;
+      }
+    }
+    .layer-article{
+      margin-bottom:0;
+    }
+    .layer-close{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background:url(/static/ap/images/ico_lp_modal_close.png ) center no-repeat;
+      border:0;
+      text-indent: -99999em;
+      position:absolute;
+      z-index: 99999;
+      top: 20px;
+      right: 20px;
+      padding:0;
+      &:hover{
+        opacity:.7;
+      }
+    }
+    .layer-check{
+      float:left;
+      width:140px;
+      height:56px;
+      background:#323648;
+      color:#fff;
+      font-size: 1.25rem;
+      line-height:56px;
+      border:0;
+    }
+    .layer-search{
+      float:left;
+      width:calc(100% - 140px);
+      height:56px;
+      line-height:56px;
+      border: 0;
+      font-size: 1.125rem;
+      color: #666;
+      padding:0 30px;
+    }
+    .layer-inputbox{
+      display:inline-block;
+      width:100%;
+      @extend %clearfix;
+      &-desc{
+        text-align:left;
+        color:#fff;
+        margin-top:10px;
+      }
+    }
+
+  }
   display:none;
   width: 550px;
   //max-height: 684px;
@@ -2078,7 +2196,7 @@
 .digr-terminal-interconnection{
   background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
   //background-size: 833px 378px;
-  width: 833px;
+  //width: 833px;
   height: 379px;
   text-indent:-999em;
 }
