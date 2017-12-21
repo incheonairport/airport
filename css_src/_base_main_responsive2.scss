@@ -30,6 +30,14 @@
           margin-right: 0;
           margin-bottom: 30px;
 
+          .link{
+            &-list{
+              &-sub{
+                padding-left: calc(50% - 20px);
+              }
+            }
+          }
+
           .heading-group{
             height: auto;
             padding: 35px;
