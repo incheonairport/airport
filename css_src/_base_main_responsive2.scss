@@ -1,0 +1,54 @@
+// 640
+@media all and (max-width:639px) {
+
+  .section2{
+    background-size: cover;
+    height: auto;
+
+    .main{
+      &-content{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding: 35px 15px;
+        &-heading{
+          font-size: 1.25rem;
+        }
+      }
+      &-block{
+        width: 100%;
+
+        .link{
+          &-list{
+            height: auto;
+          }
+        }
+
+        &-item{
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 30px;
+
+          .heading-group{
+            height: auto;
+            padding: 35px;
+            .heading-desc{
+              padding: 0 30px;
+            }
+            &.prepare{
+             background-size: cover;
+            }
+            &.airport{
+              background-size: cover;
+            }
+            &.transfer{
+              background-size: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
