@@ -190,6 +190,16 @@
 
 // 780
 @media all and (max-width:780px) {
+  .top-notice{
+    width:100%;
+    margin:0;
+    .top-notice-desc{
+      margin-bottom:20px;
+    }
+    &:before{
+      display:none;
+    }
+  }
   // boxmodel
   //.boxmodel {
   //  &-list {
