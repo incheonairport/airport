@@ -2,6 +2,23 @@
  * Base Execution *
  ******************/
 
+  // loading
+(function(){
+
+  setTimeout(function(){
+    $('.loading-inner').removeClass('opacity');
+  }, 1000);
+
+  $(window).on('load', function(){
+    setTimeout(function(){
+      $('.loading').addClass('opacity').delay(1000).queue(function(){
+        $(this).addClass('none');
+      });
+    }, 3000);
+  })
+
+})();
+
 $(function(){
 
   /**
@@ -29,23 +46,6 @@ $(function(){
     $('.top-popup').data('open', false);
 
   }
-
-  // loading
-  (function(){
-
-    setTimeout(function(){
-      $('.loading-inner').removeClass('opacity');
-    }, 1000);
-
-    $(window).on('load', function(){
-      setTimeout(function(){
-        $('.loading').addClass('opacity').delay(1000).queue(function(){
-          $(this).addClass('none');
-        });
-      }, 3000);
-    })
-
-  })();
 
   /**
    * event
