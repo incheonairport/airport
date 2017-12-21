@@ -5,9 +5,18 @@
     width: 100%;
     margin: 0 auto;
     background-size: cover;
+    .main-guide {
+      .heading-group{
+        padding:35px 0;
+        .heading{
+
+        }
+      }
+    }
     .main {
       &-content{
         width: 100%;
+        padding:0 15px;
         &-heading{
           display: none;
         }
@@ -20,7 +29,7 @@
         text-align: center;
 
         &-item{
-          width: 85%;
+          width: 100%;
           padding: 15px;
           float: none;
           clear: both;
@@ -32,6 +41,7 @@
           }
           .heading-group{
             width: 100%;
+            height:auto;
           }
           .link-list{
             font-size: 0.75rem;
@@ -50,8 +60,8 @@
   .footer-graft{
     background: #f2f4f7;
     .main-banner{
-      width:240px;
-      padding: 20px;
+      width:260px;
+      padding:20px 0px;
       &-list{
 
       }
@@ -64,10 +74,10 @@
       &-control{
         &-arrow{
           .arrow.prev{
-            margin-left:-165px;
+            margin-left:-154px;
           }
           .arrow.next{
-            margin-left: 150px;
+            margin-left: 138px;
           }
         }
       }
