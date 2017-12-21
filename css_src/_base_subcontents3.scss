@@ -580,11 +580,12 @@
 
     &.big{
       margin:30px 0 20px;
-      border-left:1px solid #666;
+      //border-left:1px solid #666;
       .field-radio-label{
         padding:10px 32px;
         border:1px solid #666;
-        border-left:0;
+        //border-left:0;
+        margin-bottom: 10px;
         color:#000;
         font-size:1.125rem;
         vertical-align:middle;

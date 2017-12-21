@@ -1482,8 +1482,11 @@ button, a {
     width: 100%;
     margin-bottom: 50px;
     text-align: center;
+    display: block;
     &-list{
+      display: inline-block;
       @extend %clearfix;
+
       &-item{
         width: 214px;
         height: 214px;
