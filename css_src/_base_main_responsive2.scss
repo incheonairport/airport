@@ -1,6 +1,10 @@
 
 // 640
 @media all and (max-width:639px) {
+  .main-visual-item {
+    background-position: 50% 50%;
+    background-size: 260%;
+  }
   .main-visual-search-weather{
     left: -380px;
     top:-66px;
