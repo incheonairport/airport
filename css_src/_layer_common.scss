@@ -904,6 +904,10 @@ em{
           float: none;
           width: 100%;
           margin-right: 0;
+          .list-article{
+            top:0;
+            margin-bottom:40px;
+          }
         }
         &:nth-child(even){
         margin-right:0;
@@ -922,12 +926,12 @@ em{
       .list-article{
         background:#fff;
         padding:42px 0 16px;
-        margin:0 20px 40px 20px;
+        margin:0 20px;
         //height:182px;
         margin-top:-40px;
         text-align:center;
         position:relative;
-        //top:-40px;
+        top:-40px;
         &.left{
           text-align: left;
         }
