@@ -762,6 +762,19 @@
   }
 
   &.bg{
+    .gnb-map{
+      background: url(/static/ap/images/ico_link_map.png) no-repeat!important;
+      //background: #f79646;
+      //border-radius: 20px;
+      color: #fff;
+      width:112px;
+      height:36px;
+      //padding: 0px 30px 0px 40px;
+      text-indent:-9999px;
+      &:after{
+        display:none;
+      }
+    }
 
     background:#fff;
 
