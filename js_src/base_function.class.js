@@ -12,8 +12,23 @@ $(function(){
 
   Index = function(){
 
+    this.$mainSection = $('.full-page-content .section');
     this.$mainVisualItem = $('.main-visual-item');
+    this.$mainFullPageContent = $('.full-page-content');
+    this.currentMainSectionIndex = 0;
     this.easingType = 'easeInOutExpo';
+
+    this.setCurrentMainSectionIndex = function(currentIndex){
+
+      this.currentMainSectionIndex = currentIndex;
+
+    };
+
+    this.getCurrentMainSectionIndex = function(){
+
+      return this.currentMainSectionIndex;
+
+    };
 
   };
 
@@ -25,7 +40,39 @@ $(function(){
 
     Index.apply(this);
 
+  };
 
+  /**
+   * FullPage Class
+   */
+
+  FullPage = new function(){
+
+    Index.apply(this);
+    //
+    //this.sectionBgInit = function(){
+    //
+    //  $('.full-page-content .section-main-bg').css({
+    //    top:-480
+    //  });
+    //
+    //};
+    //
+    //this.sectionBgDown = function(sectionNextIndex){
+    //
+    //  this.$mainSection.eq(sectionNextIndex).find('.section-main-bg').animate({
+    //    top:0
+    //  }, 1000, 'easeOutQuad');
+    //
+    //};
+    //
+    //this.sectionBgUp = function(sectionPrevIndex){
+    //
+    //  this.$mainSection.eq(sectionPrevIndex).find('.section-main-bg').delay(100).animate({
+    //    top:-480
+    //  }, 900, 'easeOutQuad');
+    //
+    //};
 
   };
 

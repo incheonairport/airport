@@ -23,7 +23,6 @@
 
 /* 공항리무진 운행노선 */
 .digr-airport-limousine-route{
-  width:1152px;
   height:400px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_airport_limousine_route.png) center no-repeat #f2f4f7;
@@ -31,10 +30,15 @@
 
 /* Kal 운행노선 */
 .digr-airport-kal-route{
-  width:1152px;
   height:400px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_airport_kal_route.png) center no-repeat #f2f4f7;
+}
+
+.digr-airport-kal-route-en{
+  height:400px;
+  text-indent:-999em;
+  background: url(/static/ap/images/digr_airport_kal_route_en.png) center no-repeat #f2f4f7;
 }
 
 // 배너bg
@@ -414,7 +418,8 @@
   .btn-type-tab{
     min-width: 130px;
     height: 40px;
-    padding: 10px 20px;
+    line-height:40px;
+    //padding: 10px 20px;
     border: 1px solid #666;
     color: #444;
     float: left;

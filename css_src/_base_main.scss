@@ -8,9 +8,9 @@
     height:auto;
   }
 
-  &.bg-fixed{
-    background-attachment:fixed;
-  }
+  //&.bg-fixed{
+  //  background-attachment:fixed;
+  //}
 }
 
 .main{
@@ -624,7 +624,7 @@
             top:0;
             left:0;
 
-            font-family: 'nanumsq', sans-serif;
+            font-family:nanumsq, sans-serif;
             font-size:1.125rem;
             font-weight:400;
             color:#222;

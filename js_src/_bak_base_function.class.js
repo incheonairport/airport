@@ -12,9 +12,9 @@ $(function(){
 
   Index = function(){
 
-    //this.$mainSection = $('.full-page-content .section');
+    this.$mainSection = $('.full-page-content .section');
     this.$mainVisualItem = $('.main-visual-item');
-    //this.$mainFullPageContent = $('.full-page-content');
+    this.$mainFullPageContent = $('.full-page-content');
     this.currentMainSectionIndex = 0;
     this.easingType = 'easeInOutExpo';
 

@@ -47,6 +47,27 @@ $(function(){
 
   }
 
+  // set full page
+
+  (function(){
+
+    if( $('#fullpage').length > 0 ){
+
+      //FullPage.sectionBgInit();
+
+      $('#fullpage').fullpage({
+        scrollBar: true,
+        scrollingSpeed: 1000,
+        afterLoad: function(anchorLink, index){
+          console.log('adgdasg');
+        }
+
+      });
+
+    }
+
+  })();
+
   /**
    * event
    */
