@@ -26,7 +26,6 @@
   height:400px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_airport_limousine_route.png) center no-repeat #f2f4f7;
-
 }
 
 /* Kal 운행노선 */
@@ -34,6 +33,12 @@
   height:400px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_airport_kal_route.png) center no-repeat #f2f4f7;
+}
+
+.digr-airport-kal-route-en{
+  height:400px;
+  text-indent:-999em;
+  background: url(/static/ap/images/digr_airport_kal_route_en.png) center no-repeat #f2f4f7;
 }
 
 // 배너bg
