@@ -6,6 +6,7 @@
 .location{
   position: relative;
   &-btn{
+    display:none;
     position: absolute;
     top:20px;
     right:25px;
@@ -50,6 +51,7 @@
       &-link{
         color: #666;
         font-size:0.875rem;
+        z-index: 1;
       }
      }
     }
@@ -59,7 +61,7 @@
 .contents-visual{
   min-height:300px;
   height:300px;
-  padding-top: 90px;
+  padding-top: 70px;
   position:relative;
   background-size: cover;
   .inner-section{
@@ -90,6 +92,39 @@
   }
   &.departure-procedures{
     background:url(/static/ap/images/bg_departure_procedures.jpg) center no-repeat;
+  }
+
+  //&.bg1{
+  //  background:url(/static/ap/images/bg_base_top01.jpg) center no-repeat;
+  //}
+  //&.bg2{
+  //  background:url(/static/ap/images/bg_base_top02.jpg) center no-repeat;
+  //}
+  //&.bg3{
+  //  background:url(/static/ap/images/bg_base_top03.jpg) center no-repeat;
+  //}
+  &.bg4{
+    background:url(/static/ap/images/bg_base_top04.jpg) center no-repeat;
+  }
+  &.bg5{
+    background:url(/static/ap/images/bg_base_top05.jpg) center no-repeat;
+  }
+  //&.bg6{
+  //  background:url(/static/ap/images/bg_base_top07.jpg) center no-repeat;
+  //}
+  &.path-departure{
+    background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) center no-repeat;
+  }
+  &.entry-route{
+    background:url(/static/ap/images/bg_entry_route.jpg) center no-repeat;
+  }
+  //
+  //&.bg7 {
+  //  background: url(/static/ap/images/bg_parking_info.jpg) center no-repeat;
+  //}
+  &.bg8{
+    background:url(/static/ap/images/bg_immigration_procedure.jpg) center no-repeat;
+
   }
 }
 
@@ -363,7 +398,7 @@
       margin-bottom: 20px;
       color: #fff;
       font-size: 2.375rem;
-      font-family:'nanumsq', sans-serif;
+      font-family:nanumsq, sans-serif;
       font-weight: 300;
     }
   }
@@ -445,7 +480,6 @@
   }
 }
 
-/*�넻�빀寃��깋*/
 .global-search{
   border-bottom: 1px solid #42519e;
 
@@ -453,8 +487,10 @@
     width: 100%;
     text-align: center;
     margin: 0 auto;
+    position: relative;
     &-field{
       display: inline-block;
+      position:relative;
       @extend %clearfix;
       &-txt{
         width:520px;
@@ -487,10 +523,17 @@
           }
         }
       }
-      .checkbox-label{
-       float: left;
-        margin: 15px 30px;
+      &-checkbox{
+        display: inline-block;
+        position: absolute;
+        left: 80%;
+        top: 15px;
+        float: right;
       }
+      //.checkbox-label{
+      // float: left;
+      //  margin: 15px 30px;
+      //}
     }
   }
   &-option{
@@ -503,8 +546,8 @@
     float: left;
   }
   &-tag{
-    margin:10px 0 30px 140px;
-    text-align:left;
+    margin:10px 0 30px;
+    text-align:center;
     &-item{
       display:inline-block;
       margin-left:20px;
@@ -521,14 +564,14 @@
     position: relative;
     bottom: -1px;
   }
-  &-word{
-    width: 170px;
+  &-word {
+    //width: 170px;
     padding: 30px 20px 20px;
-    position: absolute;
-    left:50%;
-    margin-left:594px;
     background: #fff;
-    border: 1px solid #d9d9d9;
+    //border: 1px solid #d9d9d9;
+    //float:right;
+    //margin-top:65px;
+
     &-title{
       font-family: nanumsq, sans-serif;
       font-weight: 700;
@@ -750,9 +793,24 @@
     width: 100%;
     margin-top: 30px;
     text-align: left;
+    border-top: 1px solid #d9d9d9;
+    .multi-col.line:before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100%;
+      background: #d9d9d9;
+      position: absolute;
+      top: 0;
+      left: 80%;
+    }
+    &-total{
+      margin-top: 30px;
+      font-size: 1.25rem;
+    }
     &-box{
       margin: 5px 0 30px;
-      border:1px solid #d9d9d9;
+     // border:1px solid #d9d9d9;
       position: relative;
       &-title{
         font-size: 1.25rem;
@@ -795,7 +853,7 @@
           content: '';
           display: block;
           position: absolute;
-          top: 3px;
+          top: 0;
           right: 0;
           left: 0;
           bottom: auto;
@@ -816,22 +874,26 @@
           }
         }
       }
-      .list1{
+      .list{
         @extend %clearfix;
         padding: 20px 30px;
         &-item{
           width: 33.333%;
           float: left;
+          font-size: 1rem;
+          margin-bottom: 10px;
           em{
             margin-left: 20px;
           }
         }
       }
     }
+
+
     .result-category{
       padding-top: 30px;
       &-article{
-        border-bottom: 1px solid #a5a7aa;
+        border-bottom: 1px solid #d9d9d9;
         position: relative;
         &-more{
           position: absolute;
@@ -857,21 +919,156 @@
         .not-find{
           padding: 40px 0;
           text-align: center;
-          border-top: 1px solid #a5a7aa;
+          border-top: 1px solid #d9d9d9;
         }
       }
-      &-title{
-        padding:30px 30px 25px;
+      &-title {
+        padding: 30px 45px  25px;
         font-size: 1.25rem;
         font-weight: 800;
-      }
+        &:before{
+          content: '';
+          display: block;
+          margin: 0 auto;
+          position: absolute;
+          top: 33px;
+          left: 10px;
+          right: auto;
+          bottom: 0;
+          background: url(/static/ap/images/spr_ico_global_search_category.png) no-repeat;
+        }
+        &.search-all {
+          &:before {
+            background-position: -21px -12px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.search-start {
+          &:before {
+            background-position: -64px -18px;
+            width: 24px;
+            height: 10px;
+          }
+        }
+        &.search-arrive {
+          &:before {
+            background-position: -110px -15px;
+            width: 22px;
+            height: 15px;
+          }
+        }
+        &.search-transfer {
+          &:before {
+            background-position: -158px -13px;
+            width: 16px;
+            height: 19px;
+          }
+        }
+        &.search-traffic {
+          &:before {
+            background-position: -194px -12px;
+            width: 22px;
+            height: 22px;
+            top: 30px;
+          }
+        }
+        &.search-shopping {
+          &:before {
+            background-position: -235px -12px;
+            width: 22px;
+            height: 22px;
+            top: 30px;
+          }
+        }
+        &.search-service {
+          &:before {
+            background-position: -315px -12px;
+            width: 30px;
+            height: 23px;
+            top: 30px;
+          }
+        }
+        &.search-map {
+          &:before {
+            background-position: -272px -11px;
+            width: 27px;
+            height: 24px;
+            top: 29px;
+          }
+        }
+        &.search-cs{
+          &:before{
+            background-position: -361px -12px;
+            width: 22px;
+            height: 22px;
+            top: 30px;
+          }
+        }
+        &.search-co{
+          &:before{
+            background-position:-21px -52px;
+            width: 22px;
+            height:23px;
+            top:30px;
+          }
+        }
+        &.search-cyber{
+          &:before{
+            background-position:-64px -52px;
+            width: 31px;
+            height:23px;
+            top:30px;
+          }
+        }
+        &.search-client{
+          &:before{
+            background-position:-105px -49px;
+            width: 30px;
+            height:24px;
+            top:30px;
+          }
+        }
+        &.search-business{
+          &:before{
+            background-position:-155px -51px;
+            width: 26px;
+            height:20px;
+            top:30px;
+          }
+        }
+        &.search-support{
+          &:before{
+            background-position:-193px -51px;
+            width: 23px;
+            height:21px;
+            top:30px;
+          }
+        }
+        &.search-recruit{
+          &:before{
+            background-position: -232px -47px;
+            width: 26px;
+            height: 22px;
+            top:30px;
+          }
+        }
+    }
       .table.vt.borad-view{
-        border: none;
+        border-top: 1px solid #d9d9d9;
+        border-bottom:1px solid #d9d9d9;
+        &+.table.vt.borad-view{
+          border-top: none;
+          border-bottom:none;
+        }
         .reply-box{
-          border-left: none;
-          border-right: none;
-          border-bottom: none;
+          padding: 20px 40px;
           margin-bottom: 0;
+          border: none;
+          background: #fff;
+          .reply-head{
+            margin-bottom: 20px;
+          }
           .location-list{
             @extend %clearfix;
             &-item{
@@ -879,6 +1076,7 @@
               display: inline-block;
               position: relative;
               padding-right: 20px;
+              font-size: 0.875rem;
               &:after{
                 content: '';
                 display: block;
@@ -899,13 +1097,39 @@
               }
             }
           }
+          .reply-body{
+            &-desc{
+              font-size: 1.25rem;
+            }
+            &-txt{
+              font-size: 1rem;
+              line-height: 1.7;
+            }
+            .thum{
+              width: 103px;
+              height: 103px;
+              border: 1px solid #d9d9d9;
+              text-align: center;
+              float: left;
+              margin-right: 20px;
+              &.error{
+                display: none;
+              }
+            }
+          }
           .view-file{
             border: none;
-            padding: 30px 0;
+            padding: 10px 0;
           }
         }
       }
     }
+  }
+
+  &-research{
+    position:absolute;
+    top:15px;
+    right:-205px;
   }
 }
 
@@ -940,6 +1164,101 @@
 
 // layer popup
 .layer{
+  &.find-my-terminal{
+    min-width:642px;
+    overflow-y:auto;
+    border: 4px solid #fefefe;
+    padding: 36px 36px 70px;
+    background:url(/static/ap/images/bg_lp_modal.jpg ) center no-repeat;
+    background-size:cover;
+    .layer-area{
+      text-align:center;
+      padding:0;
+    }
+    .layer-title{
+      font-size:2.125rem;
+      font-family:exo, sans-serif;
+      font-weight:700;
+      color: #ffae43;
+      text-align:center;
+      border-bottom:0;
+      margin-bottom:0;
+      padding-bottom:0;
+      &:before{
+        content:'';
+        display:block;
+        width:49px;
+        height:60px;
+        background:url(/static/ap/images/ico_find_my_termimal.png ) center no-repeat;
+        margin:0 auto 26px;
+      }
+      &:after{
+        content:'';
+        display:block;
+        height:2px;
+        width:44px;
+        background:rgba(255,255,255,0.4);
+        margin: 26px auto 24px;
+      }
+    }
+    .layer-article{
+      margin-bottom:0;
+    }
+    .layer-close{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background:url(/static/ap/images/ico_lp_modal_close.png ) center no-repeat;
+      border:0;
+      text-indent: -99999em;
+      position:absolute;
+      z-index: 99999;
+      top: 20px;
+      right: 20px;
+      padding:0;
+      &:hover{
+        opacity:.7;
+      }
+    }
+    .layer-check{
+      float:left;
+      width:140px;
+      height:56px;
+      background:#323648;
+      color:#fff;
+      font-size: 1.25rem;
+      line-height:56px;
+      border:0;
+    }
+    .layer-search{
+      float:left;
+      width:calc(100% - 140px);
+      height:56px;
+      line-height:56px;
+      border: 0;
+      font-size: 1.125rem;
+      color: #666;
+      padding:0 30px;
+    }
+    .layer-inputbox{
+      display:inline-block;
+      width:100%;
+      @extend %clearfix;
+      &-desc{
+        color:#fff;
+        margin:10px 0;
+      }
+    }
+    .layer-inputbox-btn{
+      background:#323648;
+      padding:6px 10px;
+      border-radius:50px;
+      font-size:0.825rem;
+      color:#fff;
+      transition:all .2s;
+    }
+
+  }
   display:none;
   width: 550px;
   //max-height: 684px;
@@ -949,7 +1268,7 @@
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
-  overflow-y:scroll;
+  overflow-y:auto;
   z-index:10;
 
   &.on{
@@ -1026,7 +1345,7 @@
     margin-bottom: 20px;
     border-bottom: 2px solid #42519e;
     font-size: 1.5rem;
-    font-family: 'nanumsq', sans-serif;
+    font-family:nanumsq, sans-serif;
     color: #42519e;
     &.title2{
       padding: 0;
@@ -1037,7 +1356,7 @@
       font-size: 2.75rem;
       margin-top: 40px;
       text-align: center;
-      font-family: 'nanumsq', sans-serif;
+      font-family:nanumsq, sans-serif;
       color: #222;
       padding:0;
       border:none;
@@ -2066,18 +2385,20 @@
 .digr-incheon-airport-glance01{
   text-indent: -99999em;
   background: url(/static/ap/images/digr_incheon_airport_glance01.png)no-repeat center;
-  height: 555px;
+  height: 395px;
+  margin-top:0;
 }
 .digr-incheon-airport-glance02 {
   text-indent: -99999em;
   background: url(/static/ap/images/digr_incheon_airport_glance02.png) no-repeat center;
-  height: 554px;
+  height: 432px;
+  margin-top:0;
 }
 
 .digr-terminal-interconnection{
   background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
   //background-size: 833px 378px;
-  width: 833px;
+  //width: 833px;
   height: 379px;
   text-indent:-999em;
 }

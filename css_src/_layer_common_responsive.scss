@@ -25,6 +25,14 @@
           display:none;
         }
       }
+
+      &.search-map-left{
+        width: 78%;
+      }
+      &.search-map-right{
+        width: 22%;
+        text-align: right;
+      }
     }
     &.double{
       .inner-col{
@@ -68,6 +76,7 @@
         }
       }
     }
+
   }
 
   // step2
@@ -201,6 +210,8 @@
       padding-right:20px;
     }
   }
+
+
 }
 
 
@@ -367,6 +378,13 @@
       &.btn-right{
         position: static;
         text-align: left;
+      }
+
+      &.search-map-left{
+        display:inline-block;
+      }
+      &.search-map-right{
+        display:inline-block;
       }
     }
     &.double{

@@ -234,7 +234,7 @@
     }
   }
   &-tit{
-    font-family: 'roboto', sans-serif;
+    font-family:roboto, sans-serif;
     color:rgba(255,255,255,0.5);
     font-size:3rem;
     font-weight:300;
@@ -580,11 +580,12 @@
 
     &.big{
       margin:30px 0 20px;
-      border-left:1px solid #666;
+      //border-left:1px solid #666;
       .field-radio-label{
         padding:10px 32px;
         border:1px solid #666;
-        border-left:0;
+        //border-left:0;
+        margin-bottom: 10px;
         color:#000;
         font-size:1.125rem;
         vertical-align:middle;
@@ -757,6 +758,9 @@
         float: left;
       }
     }
+    .boxmodel2-imggroup{
+      width:370px;
+    }
   }
   // 썸네일형
   &-thumbnail{
@@ -855,6 +859,9 @@
     }
     .boxmodel2-maintit{
       margin-bottom:10px;
+    }
+    .boxmodel2-imggroup{
+      width:366px;
     }
   }
 

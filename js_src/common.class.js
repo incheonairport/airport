@@ -202,6 +202,7 @@ $(function(){
             showMonthAfterYear : true,
             showOtherMonths : true,
             selectOtherMonths : true,
+            dateFormat: "yy.mm.dd",
 
             prevText : 'p',
             nextText : 'n',
@@ -215,6 +216,7 @@ $(function(){
             showMonthAfterYear : true,
             showOtherMonths : true,
             selectOtherMonths : true,
+            dateFormat: "yy.mm.dd",
 
             prevText : 'p',
             nextText : 'n',
@@ -230,6 +232,7 @@ $(function(){
             showMonthAfterYear : true,
             showOtherMonths : true,
             selectOtherMonths : true,
+            dateFormat: "yy.mm.dd",
 
             prevText : 'p',
             nextText : 'n',

@@ -1,0 +1,233 @@
+
+// 640
+@media all and (max-width:639px) {
+  .main-visual-item {
+    background-position: 50% 50%;
+    background-size: 260%;
+  }
+  .main-visual-search-weather{
+    left: -380px;
+    top:-66px;
+    &:before{
+      display:none;
+    }
+  }
+  .main{
+    &-visual{
+      height:100vh;
+      &-control{
+
+        &-arrow{
+          width:100%;
+          position:absolute;
+          top:50%;
+          left:0;
+          z-index:100;
+
+          >.arrow{
+            background-size: 79px 75px;
+            width: 37px;
+            height: 37px;
+            position:absolute;
+            top:calc(50% - 55px);
+            transform:translateY(-50%);
+
+            text-indent:-99999em;
+
+            &.prev{
+              left:15px;
+              top:-20px;
+            }
+
+            &.next{
+              background-position:-42px 0;
+              right:15px;
+              top:-20px;
+            }
+          }
+        }
+
+        &-paging{
+          display:none;
+
+        }
+
+        &-bar{
+          width:0;
+          height:3px;
+          background:#ffae44;
+          position:absolute;
+          bottom:207px;
+          left:0;
+          z-index:110;
+        }
+      }
+
+      &-item{
+        .visual{
+          &-text{
+            &-box{
+              z-index:2;
+              top:calc(42% - 55px);
+            }
+
+            &:nth-child(1){
+              font-size:2rem!important;
+            }
+            &:nth-child(2){
+              font-size:1.125rem!important;
+              line-height:1.4;
+              padding:0 30px;
+            }
+
+            &:nth-child(3){
+              font-size:1.125rem!important;
+              line-height:1.4;
+              padding:0 30px;
+              margin-top:15px;
+              &:after{
+                display:none;
+              }
+
+            }
+          }
+        }
+      }
+
+      &-search{
+        height: auto;
+        padding:20px 0;
+        &-flight{
+          width: 100%;
+          .area{
+            &-tab{
+              width: 48%;
+              &.departure{
+                font-size:1rem;
+              }
+              &.arrival{
+                font-size:1rem;
+              }
+            }
+            &-form{
+              padding-bottom:10px;
+              &-button{
+                right:0;
+              }
+            }
+          }
+
+        }
+        &-inner{
+          width: 100%;
+          padding: 0 15px;
+          margin-right:0;
+        }
+        &-title{
+          display: none;
+        }
+        &-weather{
+          //display: none;
+        }
+        &-desc{
+          .airplane{
+            font-size:0.825rem;
+            &-info{
+              font-size:0.825rem;
+              .situation-info {
+                display:block;
+                margin-top:10px;
+                margin-bottom:10px;
+              }
+            }
+          }
+        }
+      }
+
+
+
+
+
+
+
+
+    }
+  }
+
+  .section2{
+    background-size: cover;
+    height: auto;
+
+    .main{
+      &-content{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding: 35px 15px;
+        &-heading{
+          font-size: 1.25rem;
+          color:#fff;
+        }
+      }
+      &-block{
+        width: 100%;
+
+        .link{
+          &-list{
+            height: auto;
+            padding:15px;
+          }
+        }
+
+        &-item{
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 30px;
+          &:last-child{
+            margin-bottom:0;
+          }
+
+          .link{
+            &-list{
+              &-sub{
+                padding-left:0;
+                &:last-child{}
+                &-item{
+                  &:first-child{
+                    width:auto;
+                    padding-left:0;
+
+                  }
+
+                }
+              }
+
+
+            }
+          }
+
+          .heading{
+            &-group{
+              height: auto;
+              padding: 35px;
+              .heading-desc{
+                padding: 0;
+              }
+              &.prepare{
+                background-size: cover;
+              }
+              &.airport{
+                background-size: cover;
+              }
+              &.transfer{
+                background-size: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -7,7 +7,7 @@ $(function(){
   // window close
   (function(){
 
-    $('.lp-close').on('click', function(){
+    $('.lp-close').on('click', function(e){
 
       e.preventDefault();
       window.close();

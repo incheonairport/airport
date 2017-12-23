@@ -2,6 +2,23 @@
  * Base Execution *
  ******************/
 
+  // loading
+(function(){
+
+  setTimeout(function(){
+    $('.loading-inner').removeClass('opacity');
+  }, 1000);
+
+  $(window).on('load', function(){
+    setTimeout(function(){
+      $('.loading').addClass('opacity').delay(1000).queue(function(){
+        $(this).addClass('none');
+      });
+    }, 3000);
+  })
+
+})();
+
 $(function(){
 
   /**
@@ -30,20 +47,24 @@ $(function(){
 
   }
 
-  // loading
+  // set full page
+
   (function(){
 
-    setTimeout(function(){
-      $('.loading-inner').removeClass('opacity');
-    }, 1000);
+    if( $('#fullpage').length > 0 ){
 
-    $(window).on('load', function(){
-      setTimeout(function(){
-        $('.loading').addClass('opacity').delay(1000).queue(function(){
-          $(this).addClass('none');
-        });
-      }, 3000);
-    })
+      //FullPage.sectionBgInit();
+
+      $('#fullpage').fullpage({
+        scrollBar: true,
+        scrollingSpeed: 1000,
+        afterLoad: function(anchorLink, index){
+          console.log('adgdasg');
+        }
+
+      });
+
+    }
 
   })();
 
@@ -117,7 +138,7 @@ $(function(){
 
     });
 
-    $('.header-search-btn').on('click', function(){
+    $('.gnb-search').on('click', function(){
 
       $('.total-search').addClass('show');
       $('.header, .gnb').addClass('bg');

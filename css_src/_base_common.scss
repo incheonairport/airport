@@ -24,7 +24,7 @@
 
     &-title{
       font-size:2.875rem;
-      font-family:'nanumsq', sans-serif;
+      font-family:nanumsq, sans-serif;
 
       &-lv3{
         font-size:2.875rem;
@@ -544,7 +544,7 @@ em{
   }
   &.text-georgia{
     font-style: italic;
-    font-family: 'georgia', sans-serif;
+    font-family:georgia, sans-serif;
   }
 }
 
@@ -591,6 +591,96 @@ em{
       position:absolute;
       top:0;
       left:0;
+    }
+  }
+}
+
+/*기존*/
+.tblType02, .tblBus01{
+  border-bottom:1px solid #a5a7aa;
+
+  tbody{
+    tr:first-child{
+      td{
+        border-top:0;
+      }
+    }
+  }
+
+  th{
+    padding:18px 0 16px;
+    font-size:1rem;
+    font-weight:400;
+    color:#fff;
+    line-height:1.4;
+    background:#323648;
+    border-right:1px solid #474a5b;
+    vertical-align:middle;
+
+    &:last-child{
+      border-right:0;
+    }
+
+    &.half{
+      padding:12px;
+    }
+
+    &.sub{
+      padding:6px 0 8px;
+      border:{
+        top:1px solid #212535;
+        right:1px solid #212535;
+      }
+      background:#4d5164;
+      font-size:0.875rem;
+      &.point{
+        background: #2f4985;
+      }
+
+      &:last-child{
+        border-right:0;
+      }
+    }
+
+  }
+
+  td{
+    padding:16px 20px;
+    line-height:1.4;
+    border-right:1px solid #f2f4f7;
+    border-top:1px solid #d9d9d9;
+    vertical-align:middle;
+    word-break: keep-all;
+
+    &.center{
+      text-align:center;
+    }
+
+    &.top{
+      vertical-align:top;
+    }
+
+    &:last-child{
+      border-right:0;
+    }
+    .schedule {
+      background: #2f4985;
+      border:5px solid #2f4985;
+      border-radius: 20px;
+      font-size: 0;
+      position: relative;
+      top: -5px;
+      &.weekend{
+        background: #2c8179;
+        border:5px solid #2c8179;
+      }
+    }
+  }
+  &.even{
+    tbody{
+      tr:nth-child(even){
+        background: #f8f8f8;
+      }
     }
   }
 }
@@ -821,6 +911,8 @@ em{
       }
     }
   }
+
+
 
   &.hr{
 
@@ -1198,6 +1290,7 @@ button{
 
 select{
   background:#fff;
+  padding: 0 0 0 10px !important;
 }
 
 .filter-service-field.bd-control{
