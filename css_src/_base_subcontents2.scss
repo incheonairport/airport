@@ -451,7 +451,7 @@
     //height:100%;
     margin-bottom:30px;
     &.h-472{
-      height:472px;
+      height:497px;
     }
     &.h-360{
       height:360px;
@@ -461,6 +461,9 @@
     }
     &.h-498{
       height:498px;
+    }
+    &.h-520{
+      height:520px;
     }
     &.box-border{
       border-top: 1px solid #dee3eb;
@@ -1159,7 +1162,7 @@
     line-height:50px;
     border:1px solid #666;
     font-size:1.125rem;
-    font-weight:600;
+    //font-weight:600;
     text-align:left;
     &.point{
       background:#42519e;

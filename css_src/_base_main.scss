@@ -58,6 +58,38 @@
             position:relative;
             top:calc(50% - 55px);
             transform:translateY(-50%);
+            &.open{
+              padding: 20px;
+              background: rgba( 51, 54, 73, 0.5 );
+            }
+            &:nth-child(3){
+              &:after{
+                content:"";
+                display:block;
+                width:50px;
+                height:1px;
+                background:#fff;
+                position:absolute;
+                top:0;
+                left:50%;
+                transform:translateX(-50%);
+              }
+            }
+            &:nth-child(4) {
+              margin-top: 60px;
+              line-height: 1.7;
+                &:after{
+                content:"";
+                display:block;
+                width:50px;
+                height:1px;
+                background:#fff;
+                position:absolute;
+                top:0;
+                left:50%;
+                transform:translateX(-50%);
+              }
+            }
           }
 
           &:nth-child(1){
@@ -73,7 +105,6 @@
           &:nth-child(2){
             position:relative;
             top:-20px;
-
             font-size:2.125rem;
             font-family:nanumsq, sans-serif;
             font-weight:300;
@@ -98,7 +129,10 @@
               transform:translateX(-50%);
             }
           }
-
+          &:nth-child(4) {
+            margin-top: 60px;
+            line-height: 1.7;
+          }
           &.white{
             color:#fff;
           }
@@ -225,7 +259,7 @@
 
     &-search{
       width:100%;
-      height:210px;
+      height:230px;
       padding-top:33px;
       background:url(/static/ap/images/bg_main_flight_search.png) no-repeat;
 
@@ -488,7 +522,7 @@
     transform:translate(-50%, -50%);
 
     &-heading{
-
+      color:#fff;
       font-size:2.5rem;
       font-weight:300;
       text-align:center;
@@ -930,5 +964,12 @@
 
 }
 
+.section2:after{
+  content:'';
+  display:block;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+}
 
 

@@ -624,6 +624,7 @@
     position:absolute;
     top:10px;
     left:10px;
+    display: none;
 
     &:before, &:after {
       content: "";
@@ -693,7 +694,7 @@
 
         &-item{
           float:left;
-          margin-left:18px;
+          margin-left:10px;
         }
 
         &-btn{
@@ -705,10 +706,17 @@
 
           &.gnb{
             &-map{
-              background: #f79646;
-              border-radius: 20px;
+              background: url(/static/ap/images/ico_link_map.png) no-repeat;
+              //background: #f79646;
+              //border-radius: 20px;
               color: #fff;
-              padding: 0px 30px 0px 40px;
+              width:112px;
+              height:36px;
+              //padding: 0px 30px 0px 40px;
+              text-indent:-9999px;
+              &:after{
+                display:none;
+              }
 
              /* &:after{
                 background-position:-154px -131px;
@@ -754,6 +762,19 @@
   }
 
   &.bg{
+    .gnb-map{
+      background: url(/static/ap/images/ico_link_map.png) no-repeat!important;
+      //background: #f79646;
+      //border-radius: 20px;
+      color: #fff;
+      width:112px;
+      height:36px;
+      //padding: 0px 30px 0px 40px;
+      text-indent:-9999px;
+      &:after{
+        display:none;
+      }
+    }
 
     background:#fff;
 

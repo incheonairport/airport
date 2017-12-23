@@ -212,12 +212,13 @@
         width:100%;
         text-align:center;
         border:0;
+        margin-bottom:14px;
       }
     }
     &-bgico {
       margin: 0;
       font-weight:400;
-      line-height:90px;
+      line-height:125px;
       height:70px;
       &:hover{
         opacity:.8;
@@ -609,6 +610,9 @@
           }
         }
       }
+      .boxmodel2-imggroup{
+        width:100%;
+      }
     }
     // 썸네일형
     &-thumbnail{
@@ -632,6 +636,9 @@
       }
       &-cover{
         display:none;
+      }
+      .boxmodel2-imggroup{
+        width:100%;
       }
     }
     &-column{
