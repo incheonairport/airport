@@ -1,0 +1,144 @@
+
+
+<section class="contents">
+  <div class="inner-contents">
+    <h2 class="heading-level1">주차요금 계산기</h2>
+
+    <article class="article">
+      <div class="calculator">
+        <div class="timesetting-date f-left">
+          <label for="start-day" class="label-hide">주차 시작일</label>
+          <input type="text" class="timesetting-date-day js-from-input f-left" readonly placeholder="2017.08.21(월)" id="start-day">
+          <button class="timesetting-date-calendar ico js-from-button  f-left">날짜 선택</button>
+          <select class="timesetting-date-option  f-left" title="주차 시작 시간을 선택 해 주세요">
+            <option>시간 선택</option>
+          </select>
+          <select class="timesetting-date-option f-left" title="주차 시작 분을 선택 해 주세요">
+            <option>분 선택</option>
+          </select>
+        </div>
+        <p class="timesetting-dash f-left"><strong>~</strong></p>
+        <div class="timesetting-date f-right">
+          <label for="end-day" class="label-hide">주차 종료일</label>
+          <input type="text" class="timesetting-date-day js-to-input f-left" readonly placeholder="2017.08.21(월)" id="end-day">
+          <button class="timesetting-date-calendar ico  js-to-button f-left">날짜 선택</button>
+          <select class="timesetting-date-option f-left"  title="주차 종료 시간을 선택 해 주세요">
+            <option>시간 선택</option>
+          </select>
+          <select class="timesetting-date-option f-left" title="주차 종료 분을 선택 해 주세요">
+            <option>분 선택</option>
+          </select>
+        </div>
+      </div>
+      <table class="table hr" summary="주차요금 계산 설정 표입니다.">
+        <caption>주차요금 계산 설절 안내표</caption>
+        <colgroup>
+          <col style="width:20%">
+          <col style="width:80%">
+        </colgroup>
+        <tbody>
+        <tr>
+          <th scope="row" class="center">
+            터미널
+          </th>
+          <td>
+            <div class="radio-type2">
+              <div class="radio-box">
+                <input type="radio" name="terminal" id="terminal1" class="radio-type2-radio" checked="checked">
+                <label for="terminal1" class="radio-type2-label ico">제1 여객 터미널</label>
+              </div>
+              <div class="radio-box">
+                <input type="radio" name="terminal" id="terminal2" class="radio-type2-radio" >
+                <label for="terminal2" class="radio-type2-label ico">제2 여객 터미널</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="center">
+            분류
+          </th>
+          <td>
+            <div class="radio-type2">
+              <div class="radio-box">
+                <input type="radio" name="parking" id="parking1" class="radio-type2-radio" checked="checked">
+                <label for="parking1" class="radio-type2-label ico">단기주차장</label>
+              </div>
+              <div class="radio-box">
+                <input type="radio" name="parking" id="parking2" class="radio-type2-radio" >
+                <label for="parking2" class="radio-type2-label ico">장기주차장</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="center">
+            차종
+          </th>
+          <td>
+            <div class="radio-type2">
+              <div class="radio-box">
+                <input type="radio" name="size" id="small" class="radio-type2-radio" checked="checked">
+                <label for="small" class="radio-type2-label ico">소형</label>
+              </div>
+              <div class="radio-box">
+                <input type="radio" name="size" id="big" class="radio-type2-radio">
+                <label for="big" class="radio-type2-label ico">대형</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="center">
+            감면대상
+          </th>
+          <td>
+            <div class="radio-type2">
+              <div class="radio-box">
+                <input type="radio" name="remission" id="remission-no" class="radio-type2-radio" checked="checked">
+                <label for="remission-no" class="radio-type2-label ico">해당사항 없음</label>
+              </div>
+              <div class="radio-box">
+                <input type="radio"name="remission"id="remission-yes" class="radio-type2-radio">
+                <label for="remission-yes" class="radio-type2-label ico">국가유공자/장애인/경차/친환경차량</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="text-center mt20 to-calculate">
+        <button type="button" class="btn-type-normal point ico arrow-point-right">주차요금 계산하기</button>
+      </div>
+    </article>
+
+    <article class="article">
+      <table class="table hr" summary="주차요금 계산 결과 표입니다.">
+        <caption>주차요금 계산 결과 안내표</caption>
+        <colgroup>
+          <col style="width:50%">
+          <col style="width:50%">
+        </colgroup>
+        <tbody>
+        <tr>
+          <th scope="row" class="center parking-fee">
+            <strong>2,251</strong> 원
+          </th>
+          <td>
+            <ul>
+              <li><strong>기간 : </strong> 2017.08.23~2017.08.23</li>
+              <li><strong>터미널 : </strong> 제2터미널</li>
+              <li><strong>분류 : </strong> 단기주차장</li>
+              <li><strong>차종 : </strong> 소형</li>
+              <li><strong>요율 : </strong> 해당사항없음</li>
+            </ul>
+          </td>
+        </tbody>
+      </table>
+    </article>
+
+  </div>
+</section>
+
+
+

@@ -1,0 +1,419 @@
+
+<section id="top-contents" class="contents">
+  <div class="location">
+    <div class="location-btn">
+      <button type="button" class="location-btn-minus ico">축소</button>
+      <button type="button" class="location-btn-plus ico">확대</button>
+      <button type="button" class="location-btn-print ico">인쇄</button>
+    </div>
+    <div class="location-bar">
+      <ul class="location-bar-nav">
+        <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link home ico">home</a></li>
+        <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link">고객센터</a></li>
+        <li class="location-bar-nav-item"><a href="" class="location-bar-nav-item-link">불편/칭찬</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="inner-section">
+    <div class="contents-sub-head">
+      <h2 class="contents-sub-head-title">고객센터</h2>
+      <p class="contents-sub-head-article">안녕하세요. 인천국제공항 고객센터입니다. 무엇을 도와드릴까요?</p>
+    </div>
+  </div>
+  <!-- 서브메뉴 탭 -->
+  <div class="sub-menu-tab">
+    <div class="inner-section">
+      <ul class="sub-menu-tab-iconlist">
+        <li class="sub-menu-tab-iconlist-item"><a href="" class="sub-menu-tab-iconlist-link question">자주하는<br/>질문/문의</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="" class="sub-menu-tab-iconlist-link appraisal on">불편/칭찬</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="" class="sub-menu-tab-iconlist-link suggestion">고객제안</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="" class="sub-menu-tab-iconlist-link phone">전화번호<br/>안내</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="" class="sub-menu-tab-iconlist-link lost-property">유실물<br/>관리소</a></li>
+        <li class="sub-menu-tab-iconlist-item"><a href="" class="sub-menu-tab-iconlist-link damage-relief">공항 이용자<br/> 피해구제 절차</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- //서브메뉴 탭 -->
+</section>
+<section class="contents">
+  <div class="inner-section mt40">
+    <h2 class="heading-level1 center">불평/칭찬</h2>
+    <!--불편/칭찬-->
+    <div class="today-box">
+      <div class="multi-col double line">
+        <div class="inner-col">
+          <div class="praise">
+            <h3 class="praise-title emoticon">금일 칭찬 <em class="praise-no color-b">12</em></h3>
+          </div>
+        </div>
+        <div class="inner-col">
+          <div class="inconvenience">
+            <h3 class="inconvenience-title emoticon">금일 불편 <em class="inconvenience-no red">12</em></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--//불편/칭찬-->
+    <!-- 검색 -->
+    <div class="search-cs-box">
+      <div class="search-cs-head option">
+        <label for="search-cs" class="search-cs-head-title">불평/칭찬 검색하기</label>
+        <div class="search-cs-name">
+          <label for="search-option" class="label-hide">검색 선택</label>
+          <select id="search-option"  class="search-cs-option">
+            <option>불편</option>
+            <option>칭찬</option>
+          </select>
+          <input type="text" placeholder="검색어 입력" id="search-cs" class="search-cs-name-txt">
+          <button type="button" class="search-cs-name-btn ico"></button>
+        </div>
+      </div>
+    </div>
+    <!-- //검색 -->
+
+    <!-- 게시판 리스트 ::
+      tr에 on클래스 적용시 상세페이지의 현재 어느 게시물인지 구분하는 스타일
+      board-list-link lock 클래스적용시 비공개 아이콘 활성화
+      board-list-link good 클래스적용시 칭찬 아이콘 활성화
+      board-list-link bad 클래스적용시 불편 아이콘 활성화
+      -->
+    <table class="table vt board-list" summary="불편 칭찬 게시판입니다.">
+      <caption>불편 칭찬 게시판</caption>
+      <colgroup>
+        <col style="width:10%">
+        <col style="width:15%">
+        <col style="width:35%">
+        <col style="width:10%">
+        <col style="width:10%">
+        <col style="width:10%">
+        <col style="width:10%">
+      </colgroup>
+      <thead>
+      <tr>
+        <th scope="col"><strong>번호</strong></th>
+        <th scope="col"><strong>접수번호</strong></th>
+        <th scope="col"><strong>제목</strong></th>
+        <th scope="col"><strong>작성자</strong></th>
+        <th scope="col"><strong>작성일</strong></th>
+        <th scope="col"><strong>조회수</strong></th>
+        <th scope="col"><strong>처리현황</strong></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="on">
+        <td class="center">
+          10
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0099</span>
+        </td>
+        <td>
+          <a class="board-list-link lock good" href="">칭찬해~ 아주 칭찬해~</a>
+        </td>
+        <td class="center">
+          박**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          접수중
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          9
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          접수중
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          8
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          답변완료
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          7
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          답변완료
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          6
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          답변완료
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          5
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          답변완료
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          4
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          답변완료
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          3
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          답변완료
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          2
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          답변완료
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center">
+          1
+        </td>
+        <td class="center">
+          <span class="text-color-b">A201709-0094</span>
+        </td>
+        <td>
+          <a class="board-list-link bad" href="">프로불편러는 아닌데...</a>
+        </td>
+        <td class="center">
+          윤**
+        </td>
+        <td class="center">
+          2017.09.06
+        </td>
+        <td class="center">
+          2222
+        </td>
+        <td class="center">
+          답변완료
+        </td>
+      </tr>
+      <tr>
+        <td class="center no-data-found" colspan="7">
+          조회된 데이타가 없습니다.
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <!-- //게시판 리스트-->
+
+    <div class="mt40">
+      <div class="multi-col double">
+        <div class="inner-col wide">
+          <div class="pagenation">
+            <a class="ico first default" href="">처음</a>
+            <a class="ico prev" href="">이전</a>
+            <ol class="pagenation-list">
+              <li class="pagenation-list-item on">
+                <a class="pagenation-list-link" href="">1</a>
+              </li>
+
+              <li class="pagenation-list-item">
+                <a class="pagenation-list-link" href="">2</a>
+              </li>
+
+              <li class="pagenation-list-item">
+                <a class="pagenation-list-link" href="">3</a>
+              </li>
+
+              <li class="pagenation-list-item">
+                <a class="pagenation-list-link" href="">4</a>
+              </li>
+
+              <li class="pagenation-list-item">
+                <a class="pagenation-list-link" href="">5</a>
+              </li>
+            </ol>
+            <a class="ico next" href="">다음</a>
+            <a class="ico last" href="">마지막</a>
+          </div>
+        </div>
+        <div class="inner-col w20 btn-right">
+          <a href="" class="btn-type-normal point ico arrow-point-right left"><strong>글 작성</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+    <!--글상자-->
+    <div class="text-box mt60">
+      <ul class="list1 font16">
+        <li class="list1-item">
+          인천공항에서 경험하신 '직원의 헌신적인 업무수행이나 친절한 응대사례'가 있으시다면 칭찬글을 올려 주시고, 불편 불만사항을 접수하시면 그에 대한 답변 및<br/>
+          개선여부를 알려 드립니다.
+        </li>
+        <li class="list1-item">
+           타인 비방, 욕설, 장난성 등의 내용은 임의로 삭제될 수 있으며 비공개 요청시에는   타인이 내용을 확인할 수 없습니다.
+        </li>
+        <li class="list1-item">
+          올려 주신 칭찬 글은 본인을 격려해 주고 공항에서 근무하고 있는 직원들에게 전파하여 고객서비스의 귀감으로 삼도록 하겠습니다.
+        </li>
+      </ul>
+    </div>
+
+    <!--글상자-->
+
+  </div>
+</section>
+<section class="footer-graft mt60">
+  <!--배너-->
+  <div class="section-banner wide commend">
+    <h3 class="section-banner-title font26">인천공항 대표번호 안내/신고 <strong class="big">1577-2600</strong></h3>
+    <a href="" class="btn-type-infolink ico arrow-infolin-right_w section-banner-link"><strong>문의하기</strong></a>
+  </div>
+  <!--//배너-->
+
+</section>
+
