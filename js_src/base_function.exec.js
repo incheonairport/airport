@@ -478,6 +478,14 @@ $(function(){
 
     });
 
+    $('.main-banner-wrap .banner-btn.left').on('click', function(){
+      ShoppingBanner.rollRight();
+    });
+
+    $('.main-banner-wrap .banner-btn.right').on('click', function(){
+      ShoppingBanner.rollLeft();
+    });
+
   })();
 
 });
