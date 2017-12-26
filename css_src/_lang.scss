@@ -3,5 +3,97 @@
   * {
     font-family:dotum, sans-serif !important;
   }
+}
+
+.en{
+  .layer{
+    &-article{
+      margin-bottom:20px;
+      position: relative;
+      @extend %clearfix;
+      .textarea{
+        width: 100%;
+        height: 200px;
+        padding: 0 10px;
+        line-height: 1.7;
+        text-align: left;
+        border: 1px solid #d9d9d9;
+        box-sizing: border-box;
+        color: #666;
+        font-family: roboto, spoqa, sans-serif;
+      }
+    }
+  }
+
+  .step-member{
+
+    width:100%;
+    height:59px;
+
+    background:url(/static/ap/images/spr_bg_step_member_en.png) no-repeat;
+
+    text-indent:-99999em;
+
+    &.step-2{
+      background-position:center 0;
+    }
+
+    &.step-4{
+      background-position:center -69px;
+    }
+
+    &.step-5{
+      background-position:center -138px;
+    }
+  }
+
+
+  .find-info{
+    &-item{
+      float:left;
+      position: relative;
+      line-height: 3;
+      &:first-child{
+        &:after{
+          top: 14px;
+        }
+      }
+    }
+  }
+
+
+  .sign-in{
+
+    &-btn{
+      width: 190px;
+      height: 40px;
+      background-color: #323648;
+      color: white;
+      border: 0;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: 13px;
+      margin-top: 0;
+      margin-right: 4px;
+      box-sizing: border-box;
+      position: relative;
+      text-align: left;
+      padding-left: 19px;
+      &:after{
+        content: '';
+        display: block;
+        width: 8px;
+        height: 12px;
+        background: url(/static/ap/images/spr_ico_global.png) no-repeat -129px -64px;
+        position: absolute;
+        top: 14px;
+        right: 17px;
+      }
+    }
+  }
+
+}
+
+.ja{
 
 }

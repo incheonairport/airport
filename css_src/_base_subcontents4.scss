@@ -1644,5 +1644,33 @@ button, a {
   @extend %clearfix;
 }
 
+.btn-tab{
+  @extend %clearfix;
+  .btn-type-tab{
+    min-width: 115px;
+    height: 40px;
+    //line-height:40px;
+    //padding: 10px 20px;
+    border: 1px solid #666;
+    border-right: 0;
+    color: #444;
+    float: left;
+    text-align: center;
+    background: #fff;
+    box-sizing: border-box;
+    &.on{
+      color: #fff;
+      background: #222;
+      border: 1px solid #222;
+      border-right: 0;
+    }
+    &+.btn-type-tab{
+      margin: 0;
+    }
+    &:last-child{
+      border-right: 1px solid #666;
+    }
+  }
+}
 
 
