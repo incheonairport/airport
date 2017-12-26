@@ -127,12 +127,6 @@ $(function(){
 
       _initPaging();
 
-      _timeBar(true);
-
-      setTimeout(function(){
-        _textMotion();
-      }, 1000);
-
     };
 
     var _textMotion = function(){
@@ -218,6 +212,14 @@ $(function(){
 
     };
 
+    this.rollFirst = function(){
+      _timeBar(true);
+
+      setTimeout(function(){
+        _textMotion();
+      }, 1000);
+    };
+
     this.rollAuto = function(){
 
       var _fade = this.fade;
@@ -287,7 +289,6 @@ $(function(){
 
     // running in constructor when loading
     _init();
-    this.rollAuto();
 
   };
 
