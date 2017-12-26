@@ -10,11 +10,16 @@ $(function(){
     $('.lp-close').on('click', function(e){
 
       e.preventDefault();
-      window.close();
-      self.close();
-      window.opener = window.location.href;
-      self.close();
-      window.open('about:blank','_self').close();
+
+      if( $(this).parents('html').attr('class').indexOf('ie') != -1 ){
+        window.open('','_self').close()
+      } else {
+        window.close();
+        self.close();
+        window.opener = window.location.href;
+        self.close();
+        window.open('about:blank','_self').close();
+      }
 
     });
 

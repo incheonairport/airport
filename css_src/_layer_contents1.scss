@@ -533,6 +533,9 @@
 // 스탭3
 .departure-step{
   background: url(/static/ap/images/bg_departure_step.jpg) no-repeat;
+  &.domestic{
+    background: url(/static/ap/images/bg_domestic_step.jpg) no-repeat;
+  }
   &.background-no{
     background: none;
     .departure-step-list-article{
@@ -617,6 +620,27 @@
         width:25%;
         &:before {
           background: url(/static/ap/images/spr_ico_quarantine.png) no-repeat;
+        }
+        &.step-1:before{
+          background-position: -16px -16px;
+        }
+        &.step-2:before{
+          background-position: -154px -16px;
+        }
+        &.step-3:before{
+          background-position: -292px -16px;
+        }
+        &.step-4:before{
+          background-position: -16px -152px;
+        }
+      }
+    }
+    &.domestic-car-rental{
+      width: 802px;
+      .departure-step-list-article{
+        width:25%;
+        &:before {
+          background: url(/static/ap/images/spr_ico_domestic.png) no-repeat;
         }
         &.step-1:before{
           background-position: -16px -16px;
