@@ -75,6 +75,18 @@ $(function(){
       $('.top-popup').data('open', false);
 
     }
+
+    if( $('section').hasClass('top-big-popup') ){
+
+      $('.top-popup').addClass('top-big-open');
+      $('.header').addClass('top-big-open');
+      $('.gnb').addClass('top-big-open');
+      $('.total-search').addClass('top-big-open');
+      $('.quick').addClass('top-big-open');
+      $('.top-popup-toggle').data('open', true).addClass('down');
+
+    }
+
   })();
 
 
@@ -509,11 +521,11 @@ $(function(){
 
     });
 
-    $('.main-banner-wrap .banner-btn.left').on('click', function(){
+    $('.slide-banner-btn.slide-left').on('click', function(){
       ShoppingBanner.rollRight();
     });
 
-    $('.main-banner-wrap .banner-btn.right').on('click', function(){
+    $('.slide-banner-btn.slide-right').on('click', function(){
       ShoppingBanner.rollLeft();
     });
 

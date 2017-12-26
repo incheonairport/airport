@@ -40,11 +40,17 @@
     width:300%;
     //width:3456px;
     height:100%;
-    @extend %clearfix;
+
+    position:relative;
+
     &-item{
       width:100%;
       height:100%;
-      float:left;
+
+      position:absolute;
+      top:0;
+      left:0;
+
       .slide-ad01{
         background:url(/static/ap/images/bg_slide_banner01.jpg) no-repeat center;
       }
@@ -81,6 +87,7 @@
     display:block;
     width:48px;
     height:58px;
+    border:none;
     background:rgba(0,0,0,.5);
     position:absolute;
     bottom:0;

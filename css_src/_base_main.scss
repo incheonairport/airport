@@ -13,6 +13,22 @@
   //}
 }
 
+.top-big-popup{
+  background:url(/static/ap/images/bg_top_big_popup.jpg) no-repeat center top;
+
+  &-text{
+    width:661px;
+    height:432px;
+    background:url(/static/ap/images/bg_top_big_popup_text.png) no-repeat;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-indent:-99999em;
+  }
+
+}
+
 .main{
 
   &-visual{
@@ -823,6 +839,10 @@
     margin:0 auto;
     position:relative;
     overflow:hidden;
+
+    &-wrap{
+      position:relative;
+    }
 
     &-list{
       position:relative;

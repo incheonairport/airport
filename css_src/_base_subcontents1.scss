@@ -1067,7 +1067,7 @@
           border: none;
           background: #fff;
           .reply-head{
-            margin-bottom: 20px;
+            margin:10px 0 0 0;
           }
           .location-list{
             @extend %clearfix;
@@ -1099,6 +1099,7 @@
           }
           .reply-body{
             &-desc{
+              margin-bottom:10px;
               font-size: 1.25rem;
             }
             &-txt{
