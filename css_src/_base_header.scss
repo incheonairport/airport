@@ -26,6 +26,7 @@
   left:0;
   //overflow:hidden;
   z-index:10001;
+  transition:all .3s ease-out;
 
   &-inner{
     height:0;
@@ -165,7 +166,7 @@
   }
 
   &-toggle{
-    width:116px;
+    width:100px;
     height:20px;
 
     border:0;
@@ -232,26 +233,24 @@
 
 .top-big-open{
 
-  display:block;
-
   &.top-popup{
-    top:calc(100% - 200px);
+    top:-200px;
   }
 
   &.header{
-    top:calc(100% + 200px);
+    top:-60px;
   }
 
   &.gnb{
-    top:calc(100% + 260px);
+    top:-40px;
   }
 
   &.total-search{
-    top:calc(100% + 301px);
+    top:-121px;
   }
 
   &.quick{
-    top:calc(100% + 30% + 200px);
+    right:-73px;
   }
 
 }
