@@ -285,6 +285,11 @@
   }
 
   &.hr{
+    &.info{
+      tr:last-child{
+        height:140px;
+      }
+    }
 
     border:{
       top:2px solid #444;
@@ -1293,7 +1298,10 @@ p.icontxt{
   &.government-center{
     background:url(/static/ap/images/bg_sub_layer_banner_government_center.jpg) no-repeat center;
     background-size: cover;
+  }
 
+  &.bg6{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_05.jpg) no-repeat center;
   }
 
 }
