@@ -163,6 +163,49 @@
 
     }
 
+    &-today{
+      position: relative;
+      top: -20px;
+      left: 86%;
+      .today{
+        &-checkbox{
+          border: 1px solid #868aa0;
+          position: absolute;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          width: 1px;
+          margin: -1px;
+          padding: 0px;
+          &+.today-label{
+            padding-left: 30px;
+            &:before {
+              content: '';
+              width: 19px;
+              height:19px;
+              position: absolute;
+              top:-3px;
+              left: 0;
+              border: 1px solid #868aa0;
+              background: #272936;
+            }
+          }
+          &:checked + .today-label:after {
+            content: '\002714';
+            position: absolute;
+            top:2px;
+            left:5px;
+            line-height: 0.8;
+            color: #faab44;
+          }
+        }
+        &-label{
+          color: #c6c6c6;
+          font-size: 0.9375rem;
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   &-toggle{
