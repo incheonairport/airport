@@ -331,6 +331,9 @@
       &:last-child{
         border-right:0;
       }
+      &.bold{
+        font-weight: bold;
+      }
     }
 
   }
