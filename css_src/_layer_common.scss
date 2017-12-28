@@ -1285,6 +1285,11 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_04.jpg) no-repeat center;
     background-size: cover;
   }
+
+  &.bg7{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_06.jpg) no-repeat center;
+    background-size: cover;
+  }
   &.government-center{
     background:url(/static/ap/images/bg_sub_layer_banner_government_center.jpg) no-repeat center;
     background-size: cover;
@@ -2175,4 +2180,41 @@ button{
 
 select{
   padding: 0 0 0 10px !important;
+}
+
+// bg-movie
+//.include-video{
+//  height:621px;
+//  &-inner{
+//    display:table;
+//    width:100%;
+//    height:100%;
+//    text-align:center;
+//    &-box{
+//      display:table-cell;
+//      vertical-align: middle;
+//    }
+//  }
+//  &-video{
+//    width:854px;
+//    height:480px;
+//    margin:auto;
+//    background:#000;
+//    &-iframe{
+//      width:854px;
+//      height:480px;
+//    }
+//  }
+//}
+
+.include-video{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  &-iframe{
+    width: 100%;
+    height: 480px;
+  }
 }
