@@ -386,9 +386,20 @@
 
       &.search-map-left{
         display:inline-block;
+        .search-map-input-select{
+          margin-top:10px;
+          &:first-child{
+
+          }
+        }
       }
       &.search-map-right{
         display:inline-block;
+        .checkbox{
+          &-label{
+            margin-top:10px;
+          }
+        }
       }
     }
     &.double{
