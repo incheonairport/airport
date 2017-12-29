@@ -92,6 +92,11 @@
         width: calc(25% - 9px);
         min-height:592px;
       }
+      &.white{
+        .step2-list-item{
+          min-height:300px;
+        }
+      }
     }
     &-item{
       margin-left:12px;
@@ -109,6 +114,7 @@
           }
         }
       }
+
     }
   }
 
@@ -209,6 +215,10 @@
     .icontxt-info{
       padding-right:20px;
     }
+  }
+
+  p.icontxt{
+    padding: 10px 30px 0 90px;
   }
 
 
@@ -382,9 +392,20 @@
 
       &.search-map-left{
         display:inline-block;
+        .search-map-input-select{
+          margin-top:10px;
+          &:first-child{
+
+          }
+        }
       }
       &.search-map-right{
         display:inline-block;
+        .checkbox{
+          &-label{
+            margin-top:10px;
+          }
+        }
       }
     }
     &.double{

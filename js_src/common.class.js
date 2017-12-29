@@ -30,12 +30,19 @@ $(function(){
           $('html').addClass('safari');
         }
 
-      }
-
-      if(ua.toLowerCase().indexOf('firefox') != -1){
+      } else if(ua.toLowerCase().indexOf('firefox') != -1){
         $('html').addClass('firefox');
-      }
 
+      } else if(ua.toLowerCase().indexOf('msie 9.0') != -1){
+        $('html').addClass('ie9');
+
+      } else if(ua.toLowerCase().indexOf('msie 10.0') != -1){
+        $('html').addClass('ie10');
+
+      } else if(ua.toLowerCase().indexOf('rv:11.0') != -1){
+        $('html').addClass('ie11');
+
+      }
     };
 
     var checkOS = function(){

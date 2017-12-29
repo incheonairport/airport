@@ -285,6 +285,11 @@
   }
 
   &.hr{
+    &.info{
+      tr:last-child{
+        height:140px;
+      }
+    }
 
     border:{
       top:2px solid #444;
@@ -330,6 +335,9 @@
       }
       &:last-child{
         border-right:0;
+      }
+      &.bold{
+        font-weight: bold;
       }
     }
 
@@ -1282,10 +1290,23 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_04.jpg) no-repeat center;
     background-size: cover;
   }
+
+  &.bg7{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_06.jpg) no-repeat center;
+    background-size: cover;
+  }
   &.government-center{
     background:url(/static/ap/images/bg_sub_layer_banner_government_center.jpg) no-repeat center;
     background-size: cover;
+  }
 
+  &.bg6{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_05.jpg) no-repeat center;
+  }
+
+  &.bg8{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_08.jpg) no-repeat center;
+    background-size: cover;
   }
 
 }
@@ -1767,7 +1788,7 @@ p.icontxt{
     }
     .step2-list-item{
       width: calc(25% - 10px);
-      min-height: 250px;
+      min-height: 276px;
       background:#fff;
       border: 1px solid #d9d9d9;
       margin-left:10px;
@@ -2150,8 +2171,11 @@ button{
   }
 }
 
-
-
+.banner-hotels{
+  background:url(/static/ap/images/img_banner_hotelsdotcom.jpg);
+  height:476px;
+  text-indent:-999em;
+}
 
 //select.mac{
 //  -webkit-border-radius: 0;
@@ -2169,4 +2193,41 @@ button{
 
 select{
   padding: 0 0 0 10px !important;
+}
+
+// bg-movie
+//.include-video{
+//  height:621px;
+//  &-inner{
+//    display:table;
+//    width:100%;
+//    height:100%;
+//    text-align:center;
+//    &-box{
+//      display:table-cell;
+//      vertical-align: middle;
+//    }
+//  }
+//  &-video{
+//    width:854px;
+//    height:480px;
+//    margin:auto;
+//    background:#000;
+//    &-iframe{
+//      width:854px;
+//      height:480px;
+//    }
+//  }
+//}
+
+.include-video{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  &-iframe{
+    width: 100%;
+    height: 480px;
+  }
 }

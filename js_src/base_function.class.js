@@ -2,7 +2,7 @@
  * Base Class *
  **************/
 
-var Index, HeaderGnb, TableLike, MainVisual, TopPopup, BottomBanner, BoxModel;
+var Index, HeaderGnb, TableLike, MainVisual, TopPopup, BottomBanner, BoxModel, ShoppingBanner;
 
 $(function(){
 
@@ -127,12 +127,6 @@ $(function(){
 
       _initPaging();
 
-      _timeBar(true);
-
-      setTimeout(function(){
-        _textMotion();
-      }, 1000);
-
     };
 
     var _textMotion = function(){
@@ -218,6 +212,14 @@ $(function(){
 
     };
 
+    this.rollFirst = function(){
+      _timeBar(true);
+
+      setTimeout(function(){
+        _textMotion();
+      }, 1000);
+    };
+
     this.rollAuto = function(){
 
       var _fade = this.fade;
@@ -287,7 +289,6 @@ $(function(){
 
     // running in constructor when loading
     _init();
-    this.rollAuto();
 
   };
 
@@ -638,6 +639,111 @@ $(function(){
 
     // constructor
     this.setColumnWidth();
+
+  };
+
+  /**
+   * ShoppingBanner Class
+   */
+
+  ShoppingBanner = new function(){
+
+    // private
+    var currentVisualIndex = 0;
+    var nextVisualIndex = 0;
+
+    var $visualItem = $('.slide-banner-list-item');
+    var easingType = this.easingType;
+
+    var $pageItem;
+
+    var timeID, timeID2;
+    var imageMovingTime = 1000;
+
+    // private
+    var _initPosition = function(){
+
+      $visualItem.hide().eq(0).show();
+
+    };
+
+    var _init = function(){
+
+      _initPosition();
+
+    };
+
+    var _setPlayButtonClass = function(status){
+      $('.main-visual-control-paging .play-button').attr('class', 'play-button').addClass(status);
+    };
+
+    // public
+    this.fade = function(){
+
+      if( nextVisualIndex >= $visualItem.length ){
+
+        nextVisualIndex = 0;
+
+      } else if( nextVisualIndex <= -1 ){
+
+        nextVisualIndex = $visualItem.length-1;
+
+      }
+
+      $visualItem.eq(currentVisualIndex).stop().fadeOut(imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).stop().fadeIn(imageMovingTime, easingType);
+
+      //$pageItem.find('.paging-link').removeClass('on');
+      //$pageItem.eq(nextVisualIndex).find('.paging-link').addClass('on');
+
+      currentVisualIndex = nextVisualIndex;
+
+    };
+
+    this.rollLeft = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex + 1;
+      this.fade();
+
+    };
+
+    this.rollRight = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex - 1;
+      this.fade();
+
+    };
+
+    this.rollStop = function(){
+
+      // stop rolling
+      clearInterval(timeID);
+
+      // stop time bar
+      clearInterval(timeID2);
+
+      _setPlayButtonClass('play');
+
+    };
+
+    this.checkAnimate = function(){
+
+      return this.$mainVisualItem.is(':animated');
+
+    };
+
+    this.getNextVisualIndex = function(){
+
+      return nextVisualIndex;
+
+    };
+
+    // running in constructor when loading
+    _init();
 
   };
 

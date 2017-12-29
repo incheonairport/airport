@@ -4,17 +4,50 @@
 
 $(function(){
 
+  (function(){
+
+    var $html = $('html');
+    var lang = $html.attr('lang');
+
+
+    switch(lang){
+
+      case 'ko' :
+        $html.addClass('ko');
+        break;
+
+      case 'en' :
+        $html.addClass('en');
+        break;
+
+      case 'ch' :
+        $html.addClass('ch');
+        break;
+
+      case 'ja' :
+        $html.addClass('ja');
+        break;
+
+    }
+
+  })();
+
   // window close
   (function(){
 
     $('.lp-close').on('click', function(e){
 
       e.preventDefault();
-      window.close();
-      self.close();
-      window.opener = window.location.href;
-      self.close();
-      window.open('about:blank','_self').close();
+
+      if( $(this).parents('html').attr('class').indexOf('ie') != -1 ){
+        window.open('','_self').close()
+      } else {
+        window.close();
+        self.close();
+        window.opener = window.location.href;
+        self.close();
+        window.open('about:blank','_self').close();
+      }
 
     });
 

@@ -6,10 +6,18 @@
   }
   .btn-type-small{
     &.position{
-      margin:10px 0;
-      display:inline-block;
+      //margin:10px 0;
+      //display:inline-block;
+      display: table-cell;
+      top: 10px;
       position:relative;
-      top:0;
+    }
+  }
+  .icon-koreanair,.icon-asiana{
+    .icontxt-title{
+      &:before{
+        display:none;
+      }
     }
   }
 
