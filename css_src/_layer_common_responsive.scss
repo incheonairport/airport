@@ -92,6 +92,11 @@
         width: calc(25% - 9px);
         min-height:592px;
       }
+      &.white{
+        .step2-list-item{
+          min-height:300px;
+        }
+      }
     }
     &-item{
       margin-left:12px;
@@ -109,6 +114,7 @@
           }
         }
       }
+
     }
   }
 
