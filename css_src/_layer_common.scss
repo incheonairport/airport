@@ -1304,6 +1304,11 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_05.jpg) no-repeat center;
   }
 
+  &.bg8{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_08.jpg) no-repeat center;
+    background-size: cover;
+  }
+
 }
 
 %gutter{
