@@ -4,6 +4,34 @@
 
 $(function(){
 
+  (function(){
+
+    var $html = $('html');
+    var lang = $html.attr('lang');
+
+
+    switch(lang){
+
+      case 'ko' :
+        $html.addClass('ko');
+        break;
+
+      case 'en' :
+        $html.addClass('en');
+        break;
+
+      case 'ch' :
+        $html.addClass('ch');
+        break;
+
+      case 'ja' :
+        $html.addClass('ja');
+        break;
+
+    }
+
+  })();
+
   // window close
   (function(){
 
