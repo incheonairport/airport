@@ -1364,11 +1364,12 @@ p.icontxt{
     }
 
     &.search-map-left{
+      float:left;
       width: 902px;
     }
     &.search-map-right{
-      width: 249px;
-      text-align: right;
+      float:right;
+
     }
 
     .img-auto{
