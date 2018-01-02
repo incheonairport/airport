@@ -259,6 +259,7 @@
 
     }
     &-wrap{
+      background:#fff;
       float:none;
       position:absolute;
       top:0;
@@ -345,29 +346,19 @@
   // 체크/라디오 그룹
   .field{
     &.map{
-      margin-top:-1px;
       .field-radio{
         & + .field-radio-label{
-          min-width:20%;
-          text-align:center;
-          padding:8px;
-          border: 1px solid #666;
-          border-left:0;
-        }
-      }
-      .field-group{
-        &:first-child{
-          border-left:1px solid #666;
-        }
-        label{
-          margin-right:0;
+          min-width:16.666%;
+          padding:14px;
         }
       }
     }
   }
   /*공항지도 검색*/
   .search-map{
-    width:100%;
+    padding:0;
+    background:none;
+    border:none;
     &-title{
       display:none;
       &.title2{
