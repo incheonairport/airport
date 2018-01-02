@@ -856,7 +856,17 @@
             }
 
           }
+          &.d-shopping{
 
+            &.t1:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0px -240px;
+            }
+
+            &.t2:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px -240px;
+            }
+
+          }
         }
       }
 
