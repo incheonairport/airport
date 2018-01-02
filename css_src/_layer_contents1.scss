@@ -1103,11 +1103,113 @@ button{
 
 /*공항지도 검색*/
 
+
+// 체크/라디오 그룹
+.field{
+  &.map{
+    margin-top:-1px;
+    .field-radio{
+      & + .field-radio-label{
+        min-width:120px;
+        text-align:center;
+        padding:8px;
+        border: 1px solid #666;
+        border-left:0;
+      }
+    }
+    .field-group{
+      &:first-child{
+        border-left:1px solid #666;
+      }
+      label{
+        margin-right:0;
+      }
+    }
+  }
+  @extend %clearfix;
+  .field-radio{
+    display:none;
+    & + .field-radio-label{
+      display: block;
+      padding:5px 10px;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      color: #666;
+      font-size:0.875rem;
+      float: left;
+      cursor: pointer;
+    }
+    &:checked + .field-radio-label {
+      background:#000;
+      color:#fff;
+      border: 1px solid #000;
+    }
+  }
+  &-group{
+    @extend %clearfix;
+    display:block;
+    margin-top:10px;
+    label{
+      margin-right:6px;
+    }
+    &:first-child{
+      margin-top:0;
+    }
+
+    &.brand{
+      .field-radio-label{
+        padding:0;
+        min-width:32px;
+        min-height:30px;
+        border:1px solid #666;
+        color:#000;
+        font-size:1rem;
+        font-weight:600;
+        line-height:30px;
+        vertical-align:middle;
+        text-align:center;
+        box-sizing:border-box;
+        &.pd10{
+          padding:0 10px;
+        }
+      }
+    }
+
+    &.big{
+      margin:30px 0 20px;
+      //border-left:1px solid #666;
+      .field-radio-label{
+        padding:10px 32px;
+        border:1px solid #666;
+        //border-left:0;
+        margin-bottom: 10px;
+        color:#000;
+        font-size:1.125rem;
+        vertical-align:middle;
+        text-align:center;
+        box-sizing:border-box;
+        margin-right:0;
+      }
+    }
+
+    &-tit{
+      min-width:150px;
+      margin-right:20px;
+      float:left;
+      font-size:1.25rem;
+      font-weight:900;
+      line-height:28px;
+    }
+  }
+}
 /*검색*/
 .search-map{
   width:100%;
-  padding: 20px 0;
-  @extend %clearfix;
+  padding: 40px 30px 40px 20px;
+  background:#f3f4f8;
+  border:1px solid #6b6b6b;
+  margin-top: -1px;
+  box-sizing:border-box;
   &-title{
     font-size: 1rem;
     font-weight:800;
@@ -1182,6 +1284,86 @@ button{
     img{
       width:100%;
     }
+
+    &-control{
+      position:absolute;
+      top:20px;
+      left:20px;
+      border:1px solid #a6a7ab;
+      width:32px;
+      z-index:2;
+      .zoom-level{
+        width:30px;
+        height:84px;
+        background:#fff;
+        border-top:1px solid #d9d9d9;
+        border-bottom:1px solid #d9d9d9;
+        &-item{
+          text-indent:-999em;
+          width:30px;
+          height:17px;
+          position:relative;
+          border:none;
+          &:first-child:before{
+            display:none;
+          }
+          &:before{
+            content:'';
+            display:block;
+            width:12px;
+            height:1px;
+            background:#a6a7ab;
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            margin:auto;
+          }
+          &.on{
+            background:#dbdfe7;
+          }
+        }
+
+      }
+      .svgbtn{
+        width:30px;
+        height:30px;
+        background:#fff;
+        text-indent:-999em;
+        position:relative;
+        border:none;
+        &:after{
+          content:'';
+          display:block;
+          background: url(/static/ap/images/spr_svgmap_controller.png) no-repeat;
+          position:absolute;
+          top:0;
+          left:0;
+          right:0;
+          bottom: 0;
+          margin:auto;
+        }
+        &.zoom-in{
+          &:after{
+            width: 10px;
+            height: 10px;
+            background-position:-12px -20px;
+          }
+        }
+        &.zoom-out{
+          &:after{
+            width: 10px;
+            height: 2px;
+            background-position:-36px -24px;
+          }
+        }
+        &:hover{
+          &:after{
+            opacity:.5;
+          }
+        }
+      }
+    }
   }
   &-clear{
     position:relative;
@@ -1218,6 +1400,7 @@ button{
     position: relative;
     width: 249px;
     height: 602px;
+    backgrond:#fff;
     border: 1px solid #d9d9d9;
     box-sizing: border-box;
     float:right;
@@ -1230,10 +1413,12 @@ button{
       padding:0 20px 20px;
     }
     &-level1{
+      border-bottom:2px solid #d9d9d9;
+      padding:10px 20px;
+      background:#333649;
+      color:#fff;
       font-size:1.5rem;
       font-weight:400;
-      border-bottom:2px solid #d9d9d9;
-      padding:20px 0 10px 20px;
     }
     &-level2{
       display:block;
@@ -1274,7 +1459,7 @@ button{
       background:#f2f4f7;
       padding:8px;
       &.on{
-        background:#42519e;
+        background:#333649;
         color:#fff;
         &+.search-map-list{
           display:block;
@@ -1332,6 +1517,7 @@ button{
 
 
 }
+
 
 /*환승절차*/
 .transit-step{
