@@ -3,6 +3,14 @@
   .header{
     max-width:330px;
   }
+  .lnb-top{
+    &-list{
+      &-item{
+        min-width: 60px;
+        margin: 0;
+      }
+    }
+  }
 }
 
 
@@ -25,9 +33,25 @@
   }
 
   .layer-terminal-check-btn{
-    width:200px;
-    max-width:200px;
-    margin-left:-100px;
+ //   width:200px;
+ //   max-width:200px;
+ //   margin-left:-100px;
+    text-indent: -999em;
+    font-size: 0;
+  }
+  .lnb-top{
+    &-list{
+      &-item{
+        min-width: 60px;
+        margin: 0;
+        &-link{
+          display: inline-block;
+          position: relative;
+          text-indent: -999em;
+          font-size: 0;
+        }
+      }
+    }
   }
 }
 
