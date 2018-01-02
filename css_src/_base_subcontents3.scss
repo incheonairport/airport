@@ -1,18 +1,12 @@
 // bg-movie
 .bg-include{
-  height:621px;
-  &.bg1{
-    background:url(/static/ap/images/bg_movie01.jpg) no-repeat;
-  }
   &-inner{
     display:table;
     width:100%;
     height:100%;
     text-align:center;
-    &-box{
-      display:table-cell;
-      vertical-align: middle;
-    }
+    margin-top: 40px;
+    border-bottom: 1px solid #323648;
   }
   &-video{
     width:854px;

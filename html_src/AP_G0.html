@@ -18,62 +18,90 @@
 
 
     <article class="mt40">
-      <div class="multi-col">
-        <div class="inner-col search-map-left">
-          <div>
-            <label class="search-map-title" for="floor">층</label>
-            <div class="search-map-input-item">
-              <select class="search-map-input-select small" id="floor" title="층을 선택해 주세요">
-                <option>층 선택</option>
-                <option>1F</option>
-                <option>2F</option>
-                <option>3F</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label class="search-map-title title2" for="object-category">항목</label>
-            <div class="search-map-input-item">
-              <select class="search-map-input-select" id="object-category" title="층을 선택해 주세요">
-                <option>항목 선택</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label class="search-map-title title2 necessary" for="main-category">분류</label>
-            <div class="search-map-input-item">
-              <select class="search-map-input-select" id="main-category" title="카테고리의 대분류를 선택해 주세요">
-                <option>분류 선택</option>
-              </select>
-            </div>
-            <div class="search-map-input-item">
-              <label class="search-map-title title2 d-none" for="middle-category">분류</label>
-              <select class="search-map-input-select" id="middle-category" title="카테고리의 중분류를 선택해 주세요">
-                <option>분류 선택</option>
-                <option>금융/통신</option>
-              </select>
-            </div>
-            <div class="search-map-input-item">
-              <label class="search-map-title title2 d-none" for="small-category">분류</label>
-              <select class="search-map-input-select" id="small-category" title="카테고리의 소분류를 선택해 주세요">
-                <option>분류 선택</option>
-                <option>은행</option>
-                <option>한줄최대여덟자</option>
-              </select>
-            </div>
-          </div>
-        </div>
 
-        <div class="inner-col search-map-right">
-          <input type="checkbox" name="search" id="search-option1" class="checkbox" value="yes" checked="">
-          <label class="checkbox-label ico" for="search-option1">24시간</label>
-          <button type="button" class="search-map-btn">검색</button>
+      <div class="field map">
+        <div class="field-group">
+          <input type="radio" name="map-area" id="map-1f" class="field-radio" value="map-1f" checked="">
+          <label class="field-radio-label" for="map-1f">1F</label>
+
+          <input type="radio" name="map-area" id="map-2f" class="field-radio" value="map-2f">
+          <label class="field-radio-label" for="map-2f">2F</label>
+
+          <input type="radio" name="map-area" id="map-3f" class="field-radio" value="map-3f">
+          <label class="field-radio-label" for="map-3f">3F</label>
+
+          <input type="radio" name="map-area" id="map-4f" class="field-radio" value="map-4f">
+          <label class="field-radio-label" for="map-4f">4F</label>
+
+          <input type="radio" name="map-area" id="map-b1" class="field-radio" value="map-b1">
+          <label class="field-radio-label" for="map-b1">B1</label>
+        </div>
+      </div>
+      <div class="search-map">
+
+
+
+        <div class="multi-col">
+          <div class="inner-col search-map-left">
+
+            <div>
+              <label class="search-map-title title2" for="object-category">항목</label>
+              <div class="search-map-input-item">
+                <select class="search-map-input-select" id="object-category" title="층을 선택해 주세요">
+                  <option>항목 선택</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="search-map-title title2 necessary" for="main-category">분류</label>
+              <div class="search-map-input-item">
+                <select class="search-map-input-select" id="main-category" title="카테고리의 대분류를 선택해 주세요">
+                  <option>분류 선택</option>
+                </select>
+              </div>
+              <div class="search-map-input-item">
+                <label class="search-map-title title2 d-none" for="middle-category">분류</label>
+                <select class="search-map-input-select" id="middle-category" title="카테고리의 중분류를 선택해 주세요">
+                  <option>분류 선택</option>
+                  <option>금융/통신</option>
+                </select>
+              </div>
+              <div class="search-map-input-item">
+                <label class="search-map-title title2 d-none" for="small-category">분류</label>
+                <select class="search-map-input-select" id="small-category" title="카테고리의 소분류를 선택해 주세요">
+                  <option>분류 선택</option>
+                  <option>은행</option>
+                  <option>한줄최대여덟자</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="inner-col search-map-right">
+            <input type="checkbox" name="search" id="search-option1" class="checkbox" value="yes" checked="">
+            <label class="checkbox-label ico" for="search-option1">24시간</label>
+            <button type="button" class="search-map-btn">검색</button>
+          </div>
         </div>
       </div>
 
 
+
       <div class="search-map-clear">
-        <div class="search-map-svg"></div>
+        <div class="search-map-svg">
+          <div class="search-map-svg-control">
+            <button type="button" name="button" class="svgbtn zoom-in">확대</button>
+            <div class="zoom-level">
+              <button type="button" name="button" class="zoom-level-item level5">5단계</button>
+              <button type="button" name="button" class="zoom-level-item level4">4단계</button>
+              <button type="button" name="button" class="zoom-level-item level3">3단계</button>
+              <button type="button" name="button" class="zoom-level-item level2">2단계</button>
+              <button type="button" name="button" class="zoom-level-item level1 on">1단계</button>
+            </div>
+
+            <button type="button" name="button" class="svgbtn zoom-out">축소</button>
+          </div>
+        </div>
         <!-- 매장정보 노출부분 -->
         <div class="search-map-wrap">
           <div class="search-map-box">
