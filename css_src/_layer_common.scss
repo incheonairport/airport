@@ -390,6 +390,7 @@
         &-item{
           .tab-nav-list-link{
             border:2px solid #2c8279;
+            border-bottom: 0;
             background: #2c8279;
             color: #fff;
             &.on{
