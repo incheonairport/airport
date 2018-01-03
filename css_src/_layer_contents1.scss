@@ -1292,12 +1292,13 @@ button{
       border:1px solid #a6a7ab;
       width:32px;
       z-index:2;
+
       .zoom-level{
         width:30px;
-        height:84px;
-        background:#fff;
-        border-top:1px solid #d9d9d9;
-        border-bottom:1px solid #d9d9d9;
+        height:64px;
+        background:#fff url(/static/ap/images/bg_map_zoom_ruler.png) no-repeat;
+
+        position:relative;
         &-item{
           text-indent:-999em;
           width:30px;
@@ -1325,6 +1326,16 @@ button{
         }
 
       }
+
+      .ui-slider-handle{
+        width:30px;
+        height:15px;
+        background:#dbdfe7;
+        position:absolute;
+        cursor:pointer;
+        //top:0;
+      }
+
       .svgbtn{
         width:30px;
         height:30px;
@@ -1344,6 +1355,8 @@ button{
           margin:auto;
         }
         &.zoom-in{
+          margin-bottom:15px;
+          border-bottom:1px solid #d9d9d9;
           &:after{
             width: 10px;
             height: 10px;
@@ -1351,6 +1364,7 @@ button{
           }
         }
         &.zoom-out{
+          border-top:1px solid #d9d9d9;
           &:after{
             width: 10px;
             height: 2px;

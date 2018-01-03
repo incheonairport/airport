@@ -91,13 +91,32 @@
         <div class="search-map-svg">
           <div class="search-map-svg-control">
             <button type="button" name="button" class="svgbtn zoom-in">확대</button>
-            <div class="zoom-level">
-              <button type="button" name="button" class="zoom-level-item level5">5단계</button>
-              <button type="button" name="button" class="zoom-level-item level4">4단계</button>
-              <button type="button" name="button" class="zoom-level-item level3">3단계</button>
-              <button type="button" name="button" class="zoom-level-item level2">2단계</button>
-              <button type="button" name="button" class="zoom-level-item level1 on">1단계</button>
-            </div>
+            <div class="zoom-level"></div>
+            <script>
+              $(function(){
+
+                var zoomValue = 0;
+
+                var slider = $('.zoom-level').slider({
+                  orientation:'vertical',
+                  min:1,
+                  max:5,
+                  step:1,
+                  value:3
+                });
+
+                $('.zoom-in').on('click', function(){
+                  zoomValue = slider.slider('option', 'value') + 1;
+                  slider.slider('value', zoomValue);
+                });
+
+                $('.zoom-out').on('click', function(){
+                  zoomValue = slider.slider('option', 'value') - 1;
+                  slider.slider('value', zoomValue);
+                });
+
+              });
+            </script>
 
             <button type="button" name="button" class="svgbtn zoom-out">축소</button>
           </div>

@@ -322,19 +322,20 @@
 
       &-inner{
         display:inline-block;
-        margin-right:100px;
+        margin-right:250px;
+        @extend %clearfix;
       }
 
       &-title{
-        margin:52px 25px auto auto;
+        margin:43px 25px auto auto;
         font-size:1.75rem;
         font-weight:300;
         float:left;
       }
 
       &-flight{
-        width:370px;
-        padding-top:45px;
+        width:520px;
+        padding-top:35px;
         float:left;
         position:relative;
 
@@ -343,7 +344,7 @@
 
           .area{
             &-tab{
-              width:183px;
+              width:257px;
               height:30px;
               padding-right:15px;
               border-bottom:1px solid #aec5fb;
@@ -399,7 +400,7 @@
             &-form{
               display:none;
               position:relative;
-              padding-bottom:15px;
+              padding-bottom:5px;
               border-bottom:1px solid #fff;
 
               &.on{
@@ -442,7 +443,7 @@
 
                 position:absolute;
                 top:8px;
-                right:-30px;
+                right:0;
 
                 background:transparent url(/static/ap/images/ico_main_visual_search.png) no-repeat;
                 border:0;
@@ -479,81 +480,103 @@
           content:"";
           display:block;
           width:1px;
-          height:72px;
+          height:180px;
           background:#fff;
           position:absolute;
-          top:-12px;
+          top:-40px;
           left:0;
           opacity:0.2;
         }
       }
 
       &-desc{
-        margin-top:11px;
+        margin-top:100px;
         font-size:0.8125rem;
         color:#a0a5be;
         text-align:initial;
         position:relative;
+        clear:both;
 
         .airplane{
-          font-size:1rem;
+          font-size:0.8825rem;
           color:#fff;
+          margin-bottom:10px;
 
-          &-number{
+          &-terminal{
             color:#fff193;
-            margin-left:10px;
           }
 
-          &-info{
-            font-size:1rem;
+          &-number{
             color:#fff;
-            margin-top:7px;
+            margin-left:40px;
+          }
 
-            .situation-info {
-              width: 70px;
-              height: 28px;
-              margin: 0 auto;
-              line-height: 29px;
-              display: inline-block;
-              color: #fff;
-              font-size: 0.875rem;
-              border-radius: 5px;
-              text-align:center;
+          &-destination{
+            color:#fff;
+            margin-left:40px;
 
-              &.delay,
-              &.type-red{
-                background: #d43e41;
-              }
-              &.boarding-on,
-              &.type-blue{
-                background: #42519e;
-              }
-              &.boarding-closing,
-              &.type-cyan{
-                background: #2c8179;
-              }
-              &.type-gray{
-                background: #999;
-              }
+            .city{
+              color:#ffae44;
+            }
+          }
 
+          .situation-info {
+            width: 60px;
+            height: 21px;
+            margin-left:20px;
+            line-height: 21px;
+            display: inline-block;
+            color: #fff;
+            font-size: 0.875rem;
+            border-radius: 5px;
+            text-align:center;
+
+            &.delay,
+            &.type-red{
+              background: #d43e41;
+            }
+            &.boarding-on,
+            &.type-blue{
+              background: #42519e;
+            }
+            &.boarding-closing,
+            &.type-cyan{
+              background: #2c8179;
+            }
+            &.type-gray{
+              background: #999;
             }
 
-            .date{
-              margin-right:10px;
-            }
+          }
 
-            &-close{
-              display:block;
-              width:22px;
-              height:22px;
-              border:0;
-              background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
-              position:absolute;
-              top:15px;
-              right:0;
-              text-indent:-99999em;
-            }
+          .date{
+            margin-left:128px;
+          }
 
+          &-info-more{
+            display:block;
+            //width:22px;
+            height:40px;
+            padding-top:20px;
+            border:0;
+            background:url(/static/ap/images/ico_airplane_info_more.png) no-repeat center top;
+            position:absolute;
+            top:30px;
+            right:-90px;
+            color:#fff;
+            //text-indent:-99999em;
+          }
+
+          &-info-close{
+            display:block;
+            width:22px;
+            height:22px;
+            border:0;
+            background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
+            position:absolute;
+            top:-54px;
+            right:-80px;
+            text-indent:-99999em;
           }
         }
       }
