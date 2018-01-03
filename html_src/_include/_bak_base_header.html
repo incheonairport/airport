@@ -261,12 +261,24 @@
     <li class="header-search-item gnb-search">
       <form method="post" action="javascript:alert('엔터로도 action이 동작합니다.')">
         <input type="text" id="header-search" class="header-search-input" placeholder="검색어를 입력해주세요." />
-        <label for="header-search"><button type="button" class="header-search-btn ico gnb-search">검색</button></label>
+        <button type="button" class="header-search-btn ico gnb-search"><label for="header-search">검색</label></button>
       </form>
     </li>
 
   </ul>
 </nav>
+
+<div class="total-search">
+
+  <div class="total-search-inner">
+    <label for="total-search" class="total-search-label">통합검색</label>
+    <input type="text" id="total-search" class="total-search-input" placeholder="검색어 입력" />
+    <button type="button" class="total-search-btn ico">검색</button>
+  </div>
+
+  <button type="button" class="total-search-close ico">검색 닫기</button>
+
+</div>
 
 <nav class="quick">
   <ul class="quick-menu-list">

@@ -432,13 +432,13 @@ $(function(){
 
     var _init = function(){
 
-      $bannerItem.each(function(i){
+        $bannerItem.each(function(){
 
-        itemWidth = $(this).width() + parseInt( $(this).css('margin-right') );
+          itemWidth = $(this).width() + parseInt( $(this).css('margin-right') );
 
-        listWidth += itemWidth;
+          listWidth += itemWidth;
 
-      });
+        });
 
       $bannerList.width(listWidth);
 

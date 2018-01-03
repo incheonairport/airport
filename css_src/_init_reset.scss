@@ -44,6 +44,7 @@ body {
   color:#444;
   overflow-y:scroll;
   position:relative;
+  min-width:1360px;
 
   &.open-layer{
     overflow:hidden;

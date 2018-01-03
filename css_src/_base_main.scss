@@ -676,7 +676,7 @@
 
       .link-list{
         width:100%;
-        height:245px;
+        height:280px;
         padding:25px 20px;
         border:1px solid #dee3eb;
         border-top:0;
@@ -690,10 +690,11 @@
           @extend %clearfix;
 
           &-title{
-            position:absolute;
-            top:0;
-            left:0;
+            //position:absolute;
+            //top:0;
+            //left:0;
 
+            margin-bottom:10px;
             font-family:nanumsq, sans-serif;
             font-size:1.125rem;
             font-weight:400;
@@ -703,16 +704,17 @@
         }
 
         &-sub{
-          padding-left:130px;
+          //padding-left:130px;
           float:left;
 
           @extend %clearfix;
 
           &-item{
             float:left;
+            margin-right:10px;
 
             &:first-child{
-              width:130px;
+              //width:130px;
             }
           }
 
@@ -721,6 +723,11 @@
             color:#666;
             position:relative;
             top:-3px;
+
+            &:hover{
+              color:#439096;
+              border-bottom:1px solid #439096;
+            }
           }
         }
 
@@ -883,11 +890,11 @@
           &.d-shopping{
 
             &.t1:before{
-              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0px -240px;
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 0;
             }
 
             &.t2:before{
-              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px -240px;
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px 0;
             }
 
           }

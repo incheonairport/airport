@@ -15,8 +15,6 @@
       </ul>
     </nav>
 
-
-
     <article class="mt40">
 
       <!-- 매장정보 층 분류 -->
@@ -109,11 +107,15 @@
                 $('.zoom-in').on('click', function(){
                   zoomValue = slider.slider('option', 'value') + 1;
                   slider.slider('value', zoomValue);
+
+                  console.log(zoomValue);
                 });
 
                 $('.zoom-out').on('click', function(){
                   zoomValue = slider.slider('option', 'value') - 1;
                   slider.slider('value', zoomValue);
+
+                  console.log(zoomValue);
                 });
 
               });
