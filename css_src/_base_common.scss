@@ -30,6 +30,7 @@
         font-size:2.875rem;
         font-weight:400;
         text-align:center;
+        color: #fff;
       }
     }
 
@@ -458,7 +459,7 @@
     background: #fff;
     transition: height .4s;
     border: 1px solid #d9d9d9;
-    z-index: 10;
+    z-index: 100;
 
     &.on {
       display: block;
