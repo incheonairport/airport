@@ -164,9 +164,9 @@
     }
 
     &-today{
-      position: relative;
-      top: -20px;
-      left: 86%;
+      position: absolute;
+      bottom: 20px;
+      right: 135px;
       .today{
         &-checkbox{
           border: 1px solid #868aa0;
@@ -181,8 +181,8 @@
             padding-left: 30px;
             &:before {
               content: '';
-              width: 19px;
-              height:19px;
+              width: 18px;
+              height:17px;
               position: absolute;
               top:-3px;
               left: 0;
@@ -814,11 +814,11 @@
       &:before{
         content:"";
         display:block;
-        width: 190px;
+        width: 150px;
         height: 25px;
         background: url(/static/ap/images/logo.png) no-repeat;
         position: absolute;
-        top: 12px;
+        top: 15px;
         left: 10px;
         z-index: 50;
         opacity: 1;
@@ -1008,11 +1008,12 @@
   //background:#333;
   width:73px;
   position:fixed;
-  top:30%;
+  top:50%;
   right:0;
   border-radius: 20px;
   //color:#fff;
-  z-index:9999;
+  z-index:999;
+  transform:translateY(-40%);
   transition:all .3s ease-out;
 
   &-menu-list{

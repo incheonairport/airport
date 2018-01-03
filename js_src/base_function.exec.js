@@ -101,13 +101,14 @@ $(function(){
       $('#fullpage').fullpage({
         scrollBar: true,
         scrollingSpeed: 1000,
-        afterLoad: function(anchorLink, index){
-          if(index == 2){
-            MainVisual.rollStop();
-            MainVisual.rollFirst();
-            MainVisual.rollAuto();
-          }
-        }
+        responsiveWidth: 1024
+        //afterLoad: function(anchorLink, index){
+        //  if(index == 2){
+        //    MainVisual.rollStop();
+        //    MainVisual.rollFirst();
+        //    MainVisual.rollAuto();
+        //  }
+        //}
 
       });
 
@@ -261,7 +262,7 @@ $(function(){
 
           }
 
-          if( $(this).scrollTop() >= ($(window).height() ) ){
+          if( $(this).scrollTop() >= 400 ){
 
             if( $('html').hasClass('main') ){
 
@@ -282,7 +283,7 @@ $(function(){
 
             $('.total-search').addClass('down');
 
-          } else if( $(this).scrollTop() < ($(window).height() + 400) ){
+          } else if( $(this).scrollTop() < 400 ){
 
             if( $('html').hasClass('main') ){
 

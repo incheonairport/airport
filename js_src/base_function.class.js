@@ -289,6 +289,8 @@ $(function(){
 
     // running in constructor when loading
     _init();
+    this.rollFirst();
+    this.rollAuto();
 
   };
 
