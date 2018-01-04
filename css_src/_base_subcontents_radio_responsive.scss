@@ -11,52 +11,29 @@
       & + .radio-type1-radio {
         margin-left: 20px;
       }
+
       &.font18 {
         font-size: 1rem;
       }
     }
   }
 
-  //.radio-type2{
-  //  text-align:left;
-  //  &-radio{
-  //    display: none;
-  //    &:checked {
-  //      &+label{
-  //        color:#222;
-  //        &.ico:after {
-  //          background-position:-177px -293px;
-  //        }
-  //      }
-  //    }
-  //  }
-  //  &-label{
-  //    height: 27px;
-  //    padding:0 20px 0 40px;
-  //    font-size: 1rem;
-  //    line-height: 1.7;
-  //    color: #666;
-  //    &.ico{
-  //      text-indent:0;
-  //      &:after {
-  //        background-position:-130px -293px;
-  //        width: 27px;
-  //        height: 27px;
-  //        top:0px;
-  //        left:0;
-  //        right:auto;
-  //        display: block;
-  //      }
-  //    }
-  //    &+.radio-type1-radio{
-  //      margin-left:40px;
-  //    }
-  //  }
-  //  .radio-box{
-  //    display:inline-block;
-  //    width:196px;
-  //  }
-  //}
+  .radio-type2{
+    &-label{
+      &+.radio-type1-radio{
+        margin-left:40px;
+      }
+      &.questionnaire{
+        margin-right:0;
+        display:block;
+        margin-top:10px;
+      }
+    }
+    .radio-box{
+      display:inline-block;
+      width:196px;
+    }
+  }
 
   .checkbox{
     display: none;

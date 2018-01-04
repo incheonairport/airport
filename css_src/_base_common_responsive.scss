@@ -534,4 +534,12 @@
     }
   }
 
+  .imgbox-extend{
+    overflow-x:auto;
+    height:300px;
+    .imgbox{
+      width:800px;
+    }
+  }
+
 }
