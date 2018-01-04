@@ -226,7 +226,6 @@
     margin:0;
     .top-notice-desc{
       letter-spacing:-1px;
-      padding-top:10px;
       color:#fff;
       font-size:0.825rem;
       &:before{
@@ -238,7 +237,7 @@
         height: 12px;
       }
       margin-bottom:30px;
-      padding:0 15px;
+      padding:10px 15px 0;
     }
     &:before{
       display:none;
