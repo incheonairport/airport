@@ -93,4 +93,11 @@ $(function(){
 
   })();
 
+  // map scroll overflow div add
+  (function(){
+
+    $('.imgbox').wrap('<div class="imgbox-extend" />');
+
+  })();
+
 });

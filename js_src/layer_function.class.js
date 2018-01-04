@@ -88,15 +88,3 @@ $(function(){
   };
 
 });
-
-
-$(function(){
-
-  // map scroll overflow div add
-  function mobileMapExtendEvent() {
-    $('.imgbox').wrap('<div class="imgbox-extend" />');
-  } mobileMapExtendEvent();
-
-
-});
-
