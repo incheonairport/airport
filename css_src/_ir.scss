@@ -1,0 +1,79 @@
+// IR PC
+
+.ch{
+  // 인천국제공항 IR 이미지 :: 중문
+  .digr-incheon-airport-glance01{
+    background: url(/static/ap/images/digr_incheon_airport_glance01_ch.png)no-repeat center;
+  }
+  .digr-incheon-airport-glance02 {
+    background: url(/static/ap/images/digr_incheon_airport_glance02_ch.png) no-repeat center;
+  }
+  .digr-terminal-interconnection{
+    background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
+  }
+  .relief{
+    background: url(/static/ap/images/digr_relief_01_ch.png) no-repeat;
+  }
+  .lost-found{
+    .lost-box{
+      &.found{
+        background: url(/static/ap/images/digr_lost_and_found_01_ch.png) no-repeat left;
+      }
+      &.belongings{
+        background: url(/static/ap/images/digr_lost_and_found_02_ch.png) no-repeat right;
+      }
+    }
+  }
+}
+
+.en{
+  // 인천국제공항 IR 이미지 :: 영문
+  .digr-incheon-airport-glance01{
+    background: url(/static/ap/images/digr_incheon_airport_glance01_en.png)no-repeat center;
+  }
+  .digr-incheon-airport-glance02 {
+    background: url(/static/ap/images/digr_incheon_airport_glance02_en.png) no-repeat center;
+  }
+  .digr-terminal-interconnection{
+    background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
+  }
+  .relief{
+    background: url(/static/ap/images/digr_relief_01_en.png) no-repeat;
+  }
+  .lost-found{
+    .lost-box{
+      &.found{
+        background: url(/static/ap/images/digr_lost_and_found_01_en.png) no-repeat left;
+      }
+      &.belongings{
+        background: url(/static/ap/images/digr_lost_and_found_02_en.png) no-repeat right;
+      }
+    }
+  }
+}
+
+.ja{
+  // 인천국제공항 IR 이미지 :: 일문
+  .digr-incheon-airport-glance01{
+    background: url(/static/ap/images/digr_incheon_airport_glance01_ja.png)no-repeat center;
+  }
+  .digr-incheon-airport-glance02 {
+    background: url(/static/ap/images/digr_incheon_airport_glance02_ja.png) no-repeat center;
+  }
+  .digr-terminal-interconnection{
+    background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
+  }
+  .relief{
+    background: url(/static/ap/images/digr_relief_01_ja.png) no-repeat;
+  }
+  .lost-found{
+    .lost-box{
+      &.found{
+        background: url(/static/ap/images/digr_lost_and_found_01_ja.png) no-repeat left;
+      }
+      &.belongings{
+        background: url(/static/ap/images/digr_lost_and_found_02_ja.png) no-repeat right;
+      }
+    }
+  }
+}
