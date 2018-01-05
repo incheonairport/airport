@@ -2535,7 +2535,44 @@ button{
 .banner-hotels{
   background:url(/static/ap/images/img_banner_hotelsdotcom.jpg);
   height:476px;
-  text-indent:-999em;
+
+  &-tit{
+    font-family:nanumsq, sans-serif;
+    color:#ffae44;
+    font-size: 2.75rem;
+    font-weight:300;
+    text-align:center;
+    padding-top:90px;
+    &:after{
+      content:'';
+      display:block;
+      margin:20px auto;
+      width: 40px;
+      height:1px;
+      background:#fff;
+    }
+  }
+  &-desc{
+    font-family:nanumsq, sans-serif;
+    color:#fff;
+    font-size: 1.25rem;
+    font-weight:300;
+    text-align:center;
+
+  }
+  &-point{
+    display:block;
+    font-family:nanumsq, sans-serif;
+    color:#fff;
+    font-size: 1.5rem;
+    font-weight:300;
+    text-align:center;
+    margin-top:20px;
+  }
+  &-img{
+    display:block;
+    margin:80px auto;
+  }
 }
 
 //select.mac{

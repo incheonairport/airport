@@ -557,6 +557,10 @@
   .imgbox-extend{
     overflow-x:auto;
     height:300px;
+    //direction: ltr;
+    //transform:rotateX(180deg);
+    //-ms-transform:rotateX(180deg); /* IE 9 */
+    //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
     .imgbox{
       width:800px;
     }

@@ -909,6 +909,26 @@
       }
     }
   }
+
+  .travel-info{
+    .travel-info-box-title{
+      font-size:1.125rem;
+      line-height:1.4;
+    }
+    .btn-type-small{
+      width:100%;
+    }
+    .imgbox-extend {
+      overflow-x: auto;
+      .imgbox {
+        width:100%;
+      }
+    }
+  }
+
+  .travel-info-detail-txt{
+    img{width:100%}
+  }
 }
 
 
