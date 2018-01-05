@@ -165,7 +165,7 @@
     &.vt{
       &.board-list{
         overflow: visible;
-        white-space: normal;
+        //white-space: normal;
         display: table;
         td{
           span{
@@ -231,7 +231,7 @@
       &.board-list{
         font-size:1rem;
         & th{
-          &:nth-child(1),&:nth-child(2),&:nth-child(5),&:nth-child(4),&:nth-child(6){
+          &:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6){
             display:none;
           }
         }
@@ -243,6 +243,27 @@
           }
           &:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6){
             display:none;
+          }
+        }
+      }
+
+      &.contact-list{
+        width:100%;
+        & th{
+          &:nth-child(1),&:nth-child(3),&:nth-child(4),&:nth-child(5){
+            display:none;
+          }
+          &:nth-child(2),&:nth-child(6){
+            display:table-cell;
+          }
+        }
+        & td{
+          padding:10px 0;
+          &:nth-child(1),&:nth-child(3),&:nth-child(4),&:nth-child(5){
+            display:none;
+          }
+          &:nth-child(2),&:nth-child(6){
+            display:table-cell;
           }
         }
       }
