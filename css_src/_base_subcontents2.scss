@@ -1320,11 +1320,12 @@
   &-item{
     float: left;
     font-size: 0.875rem;
-    text-indent: -99999em;
+    //text-indent: -99999em;
     display: block;
-    background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+    //background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+    color: #fff;
     margin-left: 20px;
-    &:first-child{
+    /*&:first-child{
       margin-left: 0;
     }
     &.asiana{
@@ -1366,7 +1367,7 @@
     &.delta{
       width: 70px;
       background-position: -249px -27px;
-    }
+    }*/
   }
 }
 
