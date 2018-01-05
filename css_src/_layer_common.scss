@@ -2618,6 +2618,13 @@ select{
 //  }
 //}
 
+.contents.checkin{
+  .article {
+    border: 1px solid #d0d0d0;
+    padding: 50px;
+  }
+}
+
 .include-video{
   display: block;
   margin: 0 auto;
