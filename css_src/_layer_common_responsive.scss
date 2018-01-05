@@ -292,6 +292,12 @@
     padding:0 20px 0 90px
   }
 
+  .banner-hotels{
+    background-size:cover;
+    height:auto;
+    padding:30px;
+  }
+
 }
 
 
@@ -301,6 +307,8 @@
   .inner-contents{
     padding:65px 15px 30px;
   }
+
+
 }
 
 
@@ -1273,8 +1281,30 @@
     }
   }
 
+  .banner-hotels{
+    padding:15px;
+
+    &-tit{
+      font-size: 2rem;
+      padding-top:30px;
+      line-height:1.4;
+    }
+    &-desc{
+      font-size: 1rem;
+    }
+    &-point{
+      font-size: 1.125rem;
+    }
+    &-img{
+      width:50%;
+      display:block;
+      margin:20px auto;
+    }
+  }
+
   .imgbox-extend{
     overflow-x:auto;
+    height:300px;
     .imgbox{
       width:800px;
     }

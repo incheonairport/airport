@@ -909,6 +909,7 @@
       margin-bottom: 30px;
       text-align: center;
       &-list{
+        width:100%;
         margin-bottom:30px;
         &-item{
           width:33.33%;
@@ -973,27 +974,12 @@
 
   }
 
-  //.step-member{
-  //  &.step-1{
-  //    background-position:-346px 0;
-  //  }
-  //
-  //  &.step-2{
-  //    background-position:center -69px;
-  //  }
-  //
-  //  &.step-3{
-  //    background-position:center -138px;
-  //  }
-  //
-  //  &.step-4{
-  //    background-position:center -207px;
-  //  }
-  //
-  //  &.step-5{
-  //    background-position:center -276px;
-  //  }
-  //}
+  .step-member{
+    width:100%;
+    height:auto;
+    border-top:1px solid #d9d9d9;
+    background:none;
+  }
 
 }
 
