@@ -230,11 +230,19 @@
       }
       &.board-list{
         font-size:1rem;
+        & th{
+          &:nth-child(1),&:nth-child(2),&:nth-child(5),&:nth-child(4),&:nth-child(6){
+            display:none;
+          }
+        }
         & td{
-          padding:0;
+          padding:10px 0;
           &.no-data-found{
             text-align:center;
             padding: 40px 20px;
+          }
+          &:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6){
+            display:none;
           }
         }
       }
@@ -553,5 +561,14 @@
       width:800px;
     }
   }
+
+  .f-left{
+    width:100%;
+  }
+
+  .f-right{
+    width:100%;
+  }
+
 
 }

@@ -807,6 +807,32 @@
     }
   }
 
+  .site-map{
+    &-heading{
+      font-size: 1.125rem;
+      padding-bottom:10px;
+    }
+    &-list{
+      &-depth1{
+        &-item{
+          width:100%;
+          float:none;
+          margin-right:0;
+          margin-bottom:20px;
+          border: 1px solid #d9d9d9;
+          padding: 20px;
+        }
+      }
+      &-depth2{
+        padding-top: 10px;
+        border:none;
+        &-item{
+          border-bottom:1px solid #d9d9d9;
+        }
+      }
+    }
+  }
+
 }
 
 
