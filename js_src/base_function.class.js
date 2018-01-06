@@ -40,6 +40,14 @@ $(function(){
 
     Index.apply(this);
 
+    this.mobileHeaderInit = function(){
+
+      $('.header-site').insertBefore('.gnb-depth1');
+
+    };
+
+    this.mobileHeaderInit();
+
   };
 
   /**
@@ -328,7 +336,7 @@ $(function(){
 
     };
 
-    var _init = function(){
+    this.init = function(){
 
       _initPosition();
 
@@ -403,7 +411,7 @@ $(function(){
     };
 
     // running in constructor when loading
-    _init();
+    this.init();
     this.rollAuto();
 
   };
@@ -430,7 +438,7 @@ $(function(){
     var itemWidth = 0;
     var listWidth = 0;
 
-    var _init = function(){
+    this.init = function(){
 
         $bannerItem.each(function(){
 
@@ -516,7 +524,7 @@ $(function(){
 
     };
 
-    _init();
+    this.init();
     this.rollAuto();
 
 

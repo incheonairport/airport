@@ -1,6 +1,6 @@
 
 // 780 <
-@media all and (max-width:780px) {
+@media all and (max-width:1024px) {
   .footer-graft{
     .multi-col {
       .inner-col {
@@ -9,9 +9,10 @@
     }
   }
 
-
   .footer{
     margin-top:20px;
+    margin-bottom:100px;
+
     &-align.left{
       width:100%;
       float:none;

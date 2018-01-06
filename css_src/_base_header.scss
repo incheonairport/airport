@@ -1048,7 +1048,7 @@
   position:fixed;
   top:50%;
   right:0;
-  border-radius: 20px;
+  //border-radius: 20px;
   //color:#fff;
   z-index:999;
   transform:translateY(-40%);
@@ -1075,6 +1075,7 @@
       &:before{
         content: '';
         display: block;
+        height:30px;
         margin: 0 auto 5px;
         background: url(/static/ap/images/spr_ico_quick.png) no-repeat;
       }
@@ -1082,37 +1083,37 @@
       &.cyber-airport:before{
         background-position: -132px 0;
         width: 43px;
-        height: 19px;
+        //height: 19px;
       }
 
       &.view-airport:before{
         background-position: -35px 0;
         width: 43px;
-        height: 16px;
+        //height: 16px;
       }
 
       &.move-terminal:before{
         background-position: -99px 0;
         width: 23px;
-        height: 18px;
+        //height: 18px;
       }
 
       &.my-terminal:before{
         background-position: 0 0;
         width: 16px;
-        height: 21px;
+        //height: 21px;
       }
 
       &.online-reserve:before{
         background-position: -188px 0;
         width: 26px;
-        height: 26px;
+        //height: 26px;
       }
 
       &.travel-info:before{
         background-position: -240px 0;
         width: 26px;
-        height: 24px;
+        //height: 24px;
       }
     }
 

@@ -1,6 +1,11 @@
 
 // 640
-@media all and (max-width:639px) {
+@media all and (max-width:1024px) {
+
+  body{
+    min-width:inherit;
+  }
+
   .main-visual-item {
     //background-position: 50% 50%;
     //background-size: 260%;
@@ -192,24 +197,20 @@
             margin-bottom:0;
           }
 
-          .link{
-            &-list{
-              &-sub{
-                padding-left:0;
-                &:last-child{}
-                &-item{
-                  &:first-child{
-                    width:auto;
-                    padding-left:0;
-
-                  }
-
-                }
-              }
-
-
-            }
-          }
+          //.link{
+          //  &-list{
+          //    &-sub{
+          //      padding-left:0;
+          //      &:last-child{}
+          //      &-item{
+          //        &:first-child{
+          //          width:auto;
+          //          padding-left:0;
+          //        }
+          //      }
+          //    }
+          //  }
+          //}
 
           .heading{
             &-group{
