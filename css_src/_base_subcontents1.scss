@@ -64,6 +64,12 @@
   padding-top: 70px;
   position:relative;
   background-size: cover;
+  &-head{
+    font-size: 2.25rem;
+    .color-o{
+      color:#dd7714;
+    }
+  }
   .inner-section{
     height:100%;
     position:relative;
@@ -92,6 +98,10 @@
   }
   &.departure-procedures{
     background:url(/static/ap/images/bg_departure_procedures.jpg) center no-repeat;
+  }
+
+  &.bg1{
+    background:url(/static/ap/images/bg_movie01.jpg) no-repeat;
   }
 
   //&.bg1{
@@ -1316,6 +1326,10 @@
     &.max-height{
       max-height: 890px;
     }
+  }
+
+  &.capchasize{
+    width:598px;
   }
 
   &.address-layer{

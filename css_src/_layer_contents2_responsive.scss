@@ -55,6 +55,11 @@
 
 // 780
 @media all and (max-width:780px) {
+  .btn-type-small{
+    &.position{
+      display: block;
+    }
+  }
   // logo list
   .company-wrap{
     .company-list{

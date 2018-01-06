@@ -253,11 +253,13 @@
       border-right: 1px solid #d9d9d9;
       float: none;
 
+
     }
     &-clear{
 
     }
     &-wrap{
+      background:#fff;
       float:none;
       position:absolute;
       top:0;
@@ -297,6 +299,12 @@
       &-item {
         width:33.333%;
         border-bottom:1px solid #a5a7aa;
+        &:first-child{
+          border-left:0;
+        }
+        &:nth-child(4),&:nth-child(7),&:nth-child(10){
+          border-left:0;
+        }
         &:nth-child(3n){
           border-right:0;
         }
@@ -341,9 +349,22 @@
 
 // 780
 @media all and (max-width:780px) {
+  // 체크/라디오 그룹
+  .field{
+    &.map{
+      .field-radio{
+        & + .field-radio-label{
+          min-width:16.666%;
+          padding:14px;
+        }
+      }
+    }
+  }
   /*공항지도 검색*/
   .search-map{
-    width:100%;
+    padding:0;
+    background:none;
+    border:none;
     &-title{
       display:none;
       &.title2{
@@ -372,6 +393,7 @@
       margin-top:10px;
     }
     &-box{
+      width: 180px;
       &-level1{
         font-size:1.125rem;
         font-weight:700;
@@ -387,11 +409,46 @@
     &-svg{
       height:320px;
       float: none;
+      &-control{
+        position:absolute;
+        top:20px;
+        left:20px;
+        border:1px solid #a6a7ab;
+        width:32px;
+        z-index:2;
+        .zoom-level{
+          display:none;
+        }
+        .svgbtn{
+          &:first-child{
+            border-bottom:1px solid #a6a7ab;
+          }
+
+        }
+      }
     }
     &-clear{
+      //width: 180px;
       min-height:320px;
+      &.on{ // 펼침 접기
+        border:1px solid #d9d9d9;
+        .search-map-svg{
+          width:100%;
+          border:0;
+          position:absolute;
+        }
+        .search-map-wrap{
+          right:-180px;
+        }
+        .search-map-control{
+          &:after{
+            transform:rotate(180deg);
+          }
+        }
+      }
     }
     &-wrap{
+      width: 180px;
       height:320px;
     }
 
@@ -805,7 +862,7 @@
     height:200px;
   }
   .digr_airport_railroad{
-    height:200px;
+    height:140px;
   }
   .digr_ktx_route{
     height:200px;
@@ -813,6 +870,64 @@
 
   .digr-city-airport-terminal-kwangmyung{
     height:200px;
+  }
+
+  .digr-city-airport-terminal-seoul{
+    height: 140px;
+  }
+
+  .digr-city-airport-terminal-samsung{
+    height: 140px;
+  }
+
+  .digr-city-airport-terminal-kwangmyung{
+    height: 140px;
+  }
+
+  .digr-airport-limousine-route{
+    height:140px;
+  }
+
+  /* Kal 운행노선 */
+  .digr-airport-kal-route{
+    height:140px;
+  }
+
+  /*환승절차*/
+  .transit-step{
+    .list3{
+      &-item{
+        float: none;
+        &.ico{
+          &:after{
+            display:none;
+          }
+        }
+        &+.list3-item{
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .travel-info{
+    .travel-info-box-title{
+      font-size:1.125rem;
+      line-height:1.4;
+    }
+    .btn-type-small{
+      width:100%;
+    }
+    .imgbox-extend {
+      overflow-x: auto;
+      .imgbox {
+        width:100%;
+      }
+    }
+  }
+
+  .travel-info-detail-txt{
+    img{width:100%}
   }
 }
 

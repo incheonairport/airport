@@ -164,9 +164,9 @@
     }
 
     &-today{
-      position: relative;
-      top: -20px;
-      left: 86%;
+      position: absolute;
+      bottom: 20px;
+      right: 135px;
       .today{
         &-checkbox{
           border: 1px solid #868aa0;
@@ -181,8 +181,8 @@
             padding-left: 30px;
             &:before {
               content: '';
-              width: 19px;
-              height:19px;
+              width: 18px;
+              height:17px;
               position: absolute;
               top:-3px;
               left: 0;
@@ -209,7 +209,7 @@
   }
 
   &-toggle{
-    width:100px;
+    //width:100px;
     height:20px;
 
     border:0;
@@ -220,7 +220,7 @@
     bottom:-20px;
     //left:50%;
     //margin-left:424px;
-    right:395px;
+    right:375px;
     transition:all .3s ease-out;
 
     >span{
@@ -243,7 +243,8 @@
 
   &.down{
     .top-popup-toggle{
-      right:165px;
+      //right:165px;
+      bottom:0;
     }
   }
 }
@@ -473,7 +474,7 @@
 
     &-item{
       float:left;
-      margin-left:18px;
+      margin-left:25px;
     }
 
     &-btn{
@@ -500,18 +501,27 @@
         }
 
         &-search{
-          width:22px;
+          //width:22px;
           height:27px;
+          padding-left:27px;
+          font-size:14px;
+          text-indent:0;
+          color:#fff;
 
           &:after {
             background-position: -74px -134px;
             width: 22px;
             height: 27px;
             top:4px;
+            right:auto;
           }
         }
       }
 
+    }
+
+    &-input{
+      display:none;
     }
 
   }
@@ -722,8 +732,8 @@
   }
 
   &.fixed{
-    padding-top:12px;
-    top:-51px;
+    padding-top:11px;
+    top:-50px;
 
     &.on{
       height:288px;
@@ -731,7 +741,7 @@
 
     &.down{
       top:0;
-      height:51px;
+      height:50px;
 
       &.on{
         height:288px;
@@ -754,72 +764,19 @@
 
       .header-search{
 
-        position:absolute;
-        top:9px;
-        right:15px;
-
-        @extend %clearfix;
-
-        &-item{
-          float:left;
-          margin-left:10px;
-        }
-
-        &-btn{
-          background:none;
-          border:none;
-          //padding:0;
-          cursor:pointer;
-          color:#222;
-
-          &.gnb{
-            &-map{
-              background: url(/static/ap/images/ico_link_map.png) no-repeat;
-              //background: #f79646;
-              //border-radius: 20px;
-              color: #fff;
-              width:112px;
-              height:36px;
-              //padding: 0px 30px 0px 40px;
-              text-indent:-9999px;
-              &:after{
-                display:none;
-              }
-
-             /* &:after{
-                background-position:-154px -131px;
-                width: 22px;
-                height: 27px;
-              }*/
-
-            }
-
-            &-search{
-              width:22px;
-              height:27px;
-
-              &:after {
-                background-position: -34px -134px;
-                width: 22px;
-                height: 27px;
-                top:4px;
-              }
-            }
-          }
-
-        }
+        top:10px;
 
       }
 
       &:before{
         content:"";
         display:block;
-        width: 190px;
-        height: 25px;
-        background: url(/static/ap/images/logo.png) no-repeat;
+        width: 60px;
+        height: 22px;
+        background: url(/static/ap/images/logo_symbol.png) no-repeat;
         position: absolute;
-        top: 12px;
-        left: 10px;
+        top: 15px;
+        left: 30px;
         z-index: 50;
         opacity: 1;
         background-size:100%;
@@ -831,7 +788,7 @@
 
   &.bg{
     .gnb-map{
-      background: url(/static/ap/images/ico_link_map.png) no-repeat!important;
+      //background: url(/static/ap/images/ico_link_header_search.png) no-repeat!important;
       //background: #f79646;
       //border-radius: 20px;
       color: #fff;
@@ -861,14 +818,33 @@
     .header-search{
 
       position:absolute;
-      //top:9px;
-      //right:15px;
+      //top:10px;
+      right:5px;
+      padding-right:78px;
 
       @extend %clearfix;
 
       &-item{
         float:left;
-        margin-left:18px;
+        margin-left:0;
+
+        &.gnb-search{
+          margin-left:0;
+          float:none;
+          position:absolute;
+          top:0;
+          right:0;
+          text-align:right;
+          width:68px;
+          background:#6281c1;
+          border-radius:20px;
+          overflow:hidden;
+          transition:all .3s ease-out;
+
+          &.on{
+            width:350px;
+          }
+        }
       }
 
       &-btn{
@@ -880,30 +856,92 @@
 
         &.gnb{
           &-map{
-            //width:22px;
-            //height:27px;
+            //background: #f79646;
+            //border-radius: 20px;
+            color: #fff;
+            width:auto;
+            height:19px;
+            padding:4px 10px 6px 32px;
+            background:#439096;
+            text-indent:0;
+            border-radius:20px;
+            box-sizing:content-box;
 
             &:after{
-              background-position:-154px -131px;
-              width: 22px;
-              height: 27px;
+              content:"";
+              display:block;
+              width:25px;
+              height:25px;
+              margin:0;
+              background: url(/static/ap/images/ico_link_header_search.png) no-repeat;
+              position:absolute;
+              top:2px;
+              left:2px;
             }
+
+            /* &:after{
+               background-position:-154px -131px;
+               width: 22px;
+               height: 27px;
+             }*/
 
           }
 
           &-search{
-            width:22px;
-            height:27px;
+            //width:22px;
+            //height:27px;
+
+            color: #fff;
+            width:auto;
+            height:19px;
+            padding:4px 10px 6px 32px;
+            background:#6281c1;
+            text-indent:0;
+            border-radius:20px;
+            box-sizing:content-box;
 
             &:after {
-              background-position: -34px -134px;
-              width: 22px;
-              height: 27px;
-              top:4px;
+              content:"";
+              display:block;
+              width:25px;
+              height:25px;
+              margin:0;
+              background: url(/static/ap/images/ico_link_header_search.png) no-repeat -35px 0;
+              position:absolute;
+              top:2px;
+              left:2px;
             }
           }
         }
 
+      }
+
+      &-input{
+        display:block;
+        width:265px;
+        height:25px;
+        border:0;
+        position:absolute;
+        top:2px;
+        right:70px;
+        background:transparent;
+        color:#fff;
+        font-weight:400;
+        font-size:14px;
+        line-height:14px;
+
+        &::-webkit-input-placeholder {
+          color: #fff;
+        }
+        &::-moz-placeholder {
+          color: #fff;
+        }
+        &:-ms-input-placeholder {
+          color: #fff;
+        }
+        &:-moz-placeholder {
+          color: #fff;
+        }
       }
 
     }
@@ -1008,11 +1046,12 @@
   //background:#333;
   width:73px;
   position:fixed;
-  top:30%;
+  top:50%;
   right:0;
-  border-radius: 20px;
+  //border-radius: 20px;
   //color:#fff;
-  z-index:9999;
+  z-index:999;
+  transform:translateY(-40%);
   transition:all .3s ease-out;
 
   &-menu-list{
@@ -1036,6 +1075,7 @@
       &:before{
         content: '';
         display: block;
+        height:30px;
         margin: 0 auto 5px;
         background: url(/static/ap/images/spr_ico_quick.png) no-repeat;
       }
@@ -1043,37 +1083,37 @@
       &.cyber-airport:before{
         background-position: -132px 0;
         width: 43px;
-        height: 19px;
+        //height: 19px;
       }
 
       &.view-airport:before{
         background-position: -35px 0;
         width: 43px;
-        height: 16px;
+        //height: 16px;
       }
 
       &.move-terminal:before{
         background-position: -99px 0;
         width: 23px;
-        height: 18px;
+        //height: 18px;
       }
 
       &.my-terminal:before{
         background-position: 0 0;
         width: 16px;
-        height: 21px;
+        //height: 21px;
       }
 
       &.online-reserve:before{
         background-position: -188px 0;
         width: 26px;
-        height: 26px;
+        //height: 26px;
       }
 
       &.travel-info:before{
         background-position: -240px 0;
         width: 26px;
-        height: 24px;
+        //height: 24px;
       }
     }
 

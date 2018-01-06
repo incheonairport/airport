@@ -40,6 +40,14 @@ $(function(){
 
     Index.apply(this);
 
+    this.mobileHeaderInit = function(){
+
+      $('.header-site').insertBefore('.gnb-depth1');
+
+    };
+
+    this.mobileHeaderInit();
+
   };
 
   /**
@@ -289,6 +297,8 @@ $(function(){
 
     // running in constructor when loading
     _init();
+    this.rollFirst();
+    this.rollAuto();
 
   };
 
@@ -326,7 +336,7 @@ $(function(){
 
     };
 
-    var _init = function(){
+    this.init = function(){
 
       _initPosition();
 
@@ -401,7 +411,7 @@ $(function(){
     };
 
     // running in constructor when loading
-    _init();
+    this.init();
     this.rollAuto();
 
   };
@@ -428,15 +438,15 @@ $(function(){
     var itemWidth = 0;
     var listWidth = 0;
 
-    var _init = function(){
+    this.init = function(){
 
-      $bannerItem.each(function(i){
+        $bannerItem.each(function(){
 
-        itemWidth = $(this).width() + parseInt( $(this).css('margin-right') );
+          itemWidth = $(this).width() + parseInt( $(this).css('margin-right') );
 
-        listWidth += itemWidth;
+          listWidth += itemWidth;
 
-      });
+        });
 
       $bannerList.width(listWidth);
 
@@ -514,7 +524,7 @@ $(function(){
 
     };
 
-    _init();
+    this.init();
     this.rollAuto();
 
 
@@ -748,5 +758,6 @@ $(function(){
   };
 
 });
+
 
 
