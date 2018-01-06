@@ -6,405 +6,882 @@
 // 640
 @media all and (max-width:640px) {
 
-  .table-like{
-    min-width:inherit;
+  // 출발
+  .contents{
+    &.dep{
+      .table-like{
+        min-width:inherit;
 
 
-    &.vt-dark{
-      .caption-like{
-        display:none;
-      }
-      .tr-like{
-        &.flight-info-basic{
-          position:relative;
-          display:inline-block;
-          width:100%;
-          border:1px solid #d9d9d9;
-          border-top:0;
-        }
+        &.vt-dark{
+          .caption-like{
+            display:none;
+          }
+          .tr-like{
+            &.codeshare{
+              .ico-codeshare{
+                left: 16px;
+                top: 16px;
+              }
+              .flight-info-basic-status{
+                padding-left:40px;
+              }
+            }
+            &.flight-info-basic{
+              position:relative;
+              display:inline-block;
+              width:100%;
+              border:1px solid #d9d9d9;
+              border-top:0;
+            }
 
-        &.flight-info-detail{
+            &.flight-info-detail{
+              .td-like{
+                height:145px;
+                border-bottom:1px solid #999;
+
+
+                &.share-close{
+                  width:30%!important;
+                  position:absolute;
+                  right:0;
+                  bottom:0;
+                }
+
+                &:nth-child(3){
+                  width:70%!important;
+                }
+              }
+            }
+
+          }
+
+          .th-like{
+            display:none;
+          }
+
           .td-like{
-            height:145px;
-            border-bottom:1px solid #999;
 
+            display:inline-block;
+            width:100%!important;
 
-            &.share-close{
-              width:30%!important;
-              position:absolute;
+            //float:left;
+            padding:16px;
+            font-size:1rem;
+            border:{
               right:0;
+              top:0;
               bottom:0;
             }
-
-            &:nth-child(3){
-              width:70%!important;
+            &.center{
+              text-align:left;
             }
-          }
-        }
-
-      }
-
-      .th-like{
-       display:none;
-      }
-
-      .td-like{
-        display:inline-block;
-        width:100%!important;
-
-        //float:left;
-        padding:16px;
-        font-size:1rem;
-        border:{
-          right:0;
-          top:0;
-          bottom:0;
-        }
-        &.center{
-          text-align:left;
-        }
-
-        &:last-child{
-          border-right:0;
-        }
-      }
-
-      .td-pop{
-        height:145px;
-      }
-
-    }
-
-  }
-  .flight-info-basic-airline{
-    display:none;
-  }
-
-  .flight-info-basic{
-    .td-like{
-      &:first-child,&:nth-child(2){
-        width:100%!important;
-      }
-      &:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:last-child{
-        width:auto!important;
-      }
-      &:nth-child(2){
-        padding:14px 14px 0;
-      }
-      &:nth-child(3){
-        padding:0 14px 14px;
-      }
-      &:nth-child(4){
-        position: absolute;
-        top: 17px;
-        right: 96px;
-        padding:0;
-      }
-      &:nth-child(5){
-        display:none;
-      }
-      &:nth-child(6){
-        display:none;
-      }
-      &:nth-child(7){
-        display:inline-block;
-        width:60px!important;
-        line-height:28px;
-        text-align:center!important;
-        font-size:0.875rem;
-        position:absolute;
-        top:18px;
-        right:15px;
-        padding:0;
-      }
-      &:last-child{
-        position: absolute;
-        bottom: 24px;
-        right: 30px;
-        padding:0;
-      }
-    }
-  }
-
-  .flight-info{
-
-    &-basic{
-
-      &-link{
-        .flight{
-          font-size:1rem;
-          text-align: left;
-          .flight-info-basic-flight-number{
-            float:right;
-          }
-          .flight-info-basic-flight-name{
-            display:inline-block;
-            margin-right:14px;
-          }
-        }
-      }
-      &-status{
-        border-bottom:1px solid #d9d9d9!important;
-        .time-changed{
-          display:inline-block;
-        }
-        .time-due{
-          display:inline-block;
-          margin-left:4px;
-        }
-        &:after{
-          width:100%;
-          height:4px;
-          top:0;
-          left:0;
-        }
-
-      }
-      &-no-result{
-        border:0;
-        border-top:1px solid #d9d9d9;
-      }
-    }
-
-    // detail
-    &-detail{
-      display:none;
-      height:auto;
-      background: url(/static/ap/images/bg_flight_info_detail_bg.jpg) repeat;
-      position:relative;
-
-      &-heading{
-        &-title{
-          color: #fff;
-          font-weight: 900;
-          float: left;
-          .view-way{
-            margin-left: 10px;
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            font-weight:400;
-            position: relative;
-            bottom:3px;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-          }
-        }
-        &-desc{
-          //font-size:0.875rem;
-          //color: #fff;
-          //float: right;
-          margin-top: 0;
-          .strong{
-            color: #ffae44;
-          }
-        }
-      }
-
-      &-airline{
-          
-        text-align: center;
-        padding-top: 15px;
-        background:url(/static/ap/images/ico_airplane_arrow_departure.png) 50% 20px no-repeat;
-        .flight-info-detail{
-          &-country{
-            color: #ffae44;
-            font-size: 1.25rem;
-          }
-          &-date{
-            color: #999;
-            font-size: 	0.875rem;
-
-          }
-        }
-        &.arrival{
-          background:url(/static/ap/images/ico_airplane_arrow_arrival.png) 50% 40px no-repeat;
-        }
-      }
-
-      &-way{
-        margin-top: 30px;
-        .way-list{
-          display: block;
-            
-          &-item{
-            width:auto;
-            min-width:unset;
-            text-align: center;
-            float: left;
-            margin-right:25px;
 
             &:last-child{
-              margin-right:0;
+              border-right:0;
             }
+          }
 
-            &-heading{
-              line-height: 1.2;
-              font-size: 0.8125rem;
-              color: #ccc;
-              display: block;
-                
-            }
-            &-content{
-              padding:0;
-              font-size: 1.25rem;
-              color: #fff;
-                
+          .td-pop{
+            height:145px;
+          }
+
+        }
+
+      }
+      .flight-info-basic-airline{
+        display:none;
+      }
+      .flight-info-basic{
+        .td-like{
+          &.codeshare{
+            position:relative;
+            margin-top:-1px;
+            .ico-codeshare{
+              position:absolute;
+              left: 16px;
+              top: 16px;
               display:block;
+              text-indent:-999em;
+              font-size:0;
+              &:before{
+                content:'';
+                display:block;
+                width:16px;
+                height:35px;
+                background: url(/static/ap/images/ico_codeshare.png) no-repeat;
+              }
             }
-            &.ico{
-              text-indent:0;
+            &:first-child{
+              margin-top:10px;
+            }
+          }
+          &:first-child,&:nth-child(2){
+            width:100%!important;
+          }
+          &:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:last-child{
+            width:auto!important;
+          }
+          &:nth-child(2){
+            padding:14px 14px 0;
+          }
+          &:nth-child(3){
+            padding:0 14px 14px;
+          }
+          &:nth-child(4){
+            position: absolute;
+            top: 17px;
+            right: 96px;
+            padding:0;
+          }
+          &:nth-child(5){
+            display:none;
+          }
+          &:nth-child(6){
+            display:none;
+          }
+          &:nth-child(7){
+            display:inline-block;
+            width:60px!important;
+            line-height:28px;
+            text-align:center!important;
+            font-size:0.875rem;
+            position:absolute;
+            top:18px;
+            right:15px;
+            padding:0;
+          }
+          &:last-child{
+            position: absolute;
+            bottom: 24px;
+            right: 30px;
+            padding:0;
+          }
+        }
+      }
+      .flight-info{
 
-              &:after {
-                background-position: -147px -63px;
-                width: 22px;
-                height: 22px;
-                left: auto;
-                right: -21px;
-                top: auto;
-                bottom:13px;
+        &-basic{
+
+          &-link{
+            .flight{
+              font-size:1rem;
+              text-align: left;
+              .flight-info-basic-flight-number{
+                float:right;
+              }
+              .flight-info-basic-flight-name{
+                display:inline-block;
+                margin-right:14px;
               }
             }
           }
-          &.arrival{
-            .way-list-item {
-              margin-right:25px;
-              &.ico{
-                &:after {
-                  right: -25px;
+          &-status{
+            border-bottom:1px solid #d9d9d9!important;
+            .time-changed{
+              display:inline-block;
+            }
+            .time-due{
+              display:inline-block;
+              margin-left:4px;
+            }
+            &:after{
+              width:100%;
+              height:4px;
+              top:0;
+              left:0;
+            }
+
+          }
+          &-no-result{
+            border:0;
+            border-top:1px solid #d9d9d9;
+          }
+        }
+
+        // detail
+        &-detail{
+          height:auto;
+          background: url(/static/ap/images/bg_flight_info_detail_bg.jpg) repeat;
+          position:relative;
+          background-size: cover;
+
+          &-heading{
+            &-title{
+              color: #fff;
+              font-weight: 900;
+              float: left;
+              .view-way{
+                margin-left: 10px;
+                padding: 4px 10px;
+                font-size: 0.75rem;
+                font-weight:400;
+                position: relative;
+                bottom:3px;
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 20px;
+              }
+            }
+            &-desc{
+              //font-size:0.875rem;
+              //color: #fff;
+              //float: right;
+              margin-top: 0;
+              .strong{
+                color: #ffae44;
+              }
+            }
+          }
+
+          &-airline{
+
+            text-align: center;
+            padding-top: 15px;
+            background:url(/static/ap/images/ico_airplane_arrow_departure.png) 50% 20px no-repeat;
+            .flight-info-detail{
+              &-country{
+                color: #ffae44;
+                font-size: 1.25rem;
+              }
+              &-date{
+                color: #999;
+                font-size: 	0.875rem;
+
+              }
+            }
+            &.arrival{
+              background:url(/static/ap/images/ico_airplane_arrow_arrival.png) 50% 40px no-repeat;
+            }
+          }
+
+          &-way{
+            margin-top: 30px;
+            .way-list{
+              display: block;
+
+              &-item{
+                width:auto;
+                min-width:unset;
+                text-align: center;
+                float: left;
+                margin-right:25px;
+
+                &:last-child{
+                  margin-right:0;
+                }
+
+                &-heading{
+                  line-height: 1.2;
+                  font-size: 0.8125rem;
+                  color: #ccc;
+                  display: block;
+
+                }
+                &-content{
+                  padding:0;
+                  font-size: 1.25rem;
+                  color: #fff;
+
+                  display:block;
+                }
+                &.ico{
+                  text-indent:0;
+
+                  &:after {
+                    background-position: -147px -63px;
+                    width: 22px;
+                    height: 22px;
+                    left: auto;
+                    right: -21px;
+                    top: auto;
+                    bottom:13px;
+                  }
+                }
+              }
+              &.arrival{
+                .way-list-item {
+                  margin-right:25px;
+                  &.ico{
+                    &:after {
+                      right: -25px;
+                    }
+                  }
                 }
               }
             }
           }
-        }
-      }
 
-      &-dest{
-        color: #fff;
-          
-        .dest{
-          &-weather{
-            margin-top:0;
+          &-dest{
+            color: #fff;
 
-            float:none;
+            .dest{
+              &-weather{
+                margin-top:0;
 
-            &:after{
-              content:"";
-              display:block;
-              clear:both;
-            }
+                float:none;
 
-            //&-img{
-            //  float: left;
-            //}
-            &-temp{
-              width: 80px;
-              float: left;
-              font-size: 1.25rem;
-              margin: 15px 0 0 20px;
+                &:after{
+                  content:"";
+                  display:block;
+                  clear:both;
+                }
 
-              //.min-temp{
-              //  float: left;
-              //}
-              .celsius{
-                font-size: 1rem;
-                position: relative;
-                top: -9px;
+                //&-img{
+                //  float: left;
+                //}
+                &-temp{
+                  width: 80px;
+                  float: left;
+                  font-size: 1.25rem;
+                  margin: 15px 0 0 20px;
+
+                  //.min-temp{
+                  //  float: left;
+                  //}
+                  .celsius{
+                    font-size: 1rem;
+                    position: relative;
+                    top: -9px;
+                  }
+                }
+              }
+              &-date{
+                margin-top: 0;
+                font-size:0.875rem;
+                float:none;
+                text-align:left;
+                //position:absolute;
+                //top:50px;
+                //right:16px;
               }
             }
           }
-          &-date{
-            margin-top: 0;
-            font-size:0.875rem;
-            float:none;
-            text-align:left;
-            //position:absolute;
-            //top:50px;
-            //right:16px;
+
+          &-share{
+            //display: block;
+            //width:100%;
+            height: 73px;
+            //background:none;
+            //border:none;
+            line-height:120px;
+            //color: #999;
+            //font-size: 0.75rem;
+            //cursor: pointer;
+            //text-align: center;
+            //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+            &.ico{
+              text-indent: 0;
+              &:after {
+                //background-position:-37px -185px;
+                //width: 32px;
+                //height: 32px;
+                //top:-10px;
+                margin-top:13px;
+                //position:absolute;
+                //top:50%;
+                //left:50%;
+                //transform:translate(-50%, -60%);
+              }
+            }
           }
+
+          &-close{
+            //display: block;
+            //width:100%;
+            height: 73px;
+            //background:none;
+            //border:none;
+            //cursor: pointer;
+            //text-align: center;
+
+            &.ico{
+              &:after {
+                background-position:-95px -188px;
+                width: 25px;
+                height: 25px;
+                //position:absolute;
+                //top:50%;
+                //left:50%;
+                //transform:translate(-50%, -50%);
+              }
+            }
+          }
+
+          &-sns{
+
+            width:280px;
+            height: 145px;
+            padding: 47px 10px 23px;
+            background: #fff;
+            border:{
+              right:1px solid #d9d9d9;
+              bottom:1px solid #d9d9d9;
+            }
+            .sns-item{
+              float: left;
+              margin-bottom:15px;
+
+              &-link{
+                display: block;
+                width:63px;
+                //height:70px;
+                padding-top:40px;
+
+                position:relative;
+
+                text-align: center;
+                font-size: 0.875rem;
+              }
+            }
+          }
+
+
         }
       }
-
-      &-share{
-        //display: block;
-        //width:100%;
-        height: 73px;
-        //background:none;
-        //border:none;
-        line-height:120px;
-        //color: #999;
-        //font-size: 0.75rem;
-        //cursor: pointer;
-        //text-align: center;
-        //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-
-        &.ico{
-          text-indent: 0;
-          &:after {
-            //background-position:-37px -185px;
-            //width: 32px;
-            //height: 32px;
-            //top:-10px;
-            margin-top:13px;
-            //position:absolute;
-            //top:50%;
-            //left:50%;
-            //transform:translate(-50%, -60%);
-          }
-        }
-      }
-
-      &-close{
-        //display: block;
-        //width:100%;
-        height: 73px;
-        //background:none;
-        //border:none;
-        //cursor: pointer;
-        //text-align: center;
-
-        &.ico{
-          &:after {
-            background-position:-95px -188px;
-            width: 25px;
-            height: 25px;
-            //position:absolute;
-            //top:50%;
-            //left:50%;
-            //transform:translate(-50%, -50%);
-          }
-        }
-      }
-
-      &-sns{
-          
-        width:280px;
-        height: 145px;
-        padding: 47px 10px 23px;
-        background: #fff;
-        border:{
-          right:1px solid #d9d9d9;
-          bottom:1px solid #d9d9d9;
-        }
-        .sns-item{
-          float: left;
-          margin-bottom:15px;
-
-          &-link{
-            display: block;
-            width:63px;
-            //height:70px;
-            padding-top:40px;
-
-            position:relative;
-
-            text-align: center;
-            font-size: 0.875rem;
-          }
-        }
-      }
-
-
     }
   }
+
+  // 도착
+  .contents{
+    &.arr{
+      .table-like{
+        min-width:inherit;
+
+
+        &.vt-dark{
+          .caption-like{
+            display:none;
+          }
+          .tr-like{
+            &.codeshare{
+              .ico-codeshare{
+                left: 16px;
+                top: 16px;
+              }
+              .flight-info-basic-status{
+                padding-left:40px;
+              }
+            }
+            &.flight-info-basic{
+              position:relative;
+              display:inline-block;
+              width:100%;
+              border:1px solid #d9d9d9;
+              border-top:0;
+            }
+
+            &.flight-info-detail{
+              .td-like{
+                height:145px;
+                border-bottom:1px solid #999;
+
+
+                &.share-close{
+                  width:30%!important;
+                  position:absolute;
+                  right:0;
+                  bottom:0;
+                }
+
+                &:nth-child(3){
+                  width:70%!important;
+                }
+              }
+            }
+
+          }
+
+          .th-like{
+            display:none;
+          }
+
+          .td-like{
+
+            display:inline-block;
+            width:100%!important;
+
+            //float:left;
+            padding:16px;
+            font-size:1rem;
+            border:{
+              right:0;
+              top:0;
+              bottom:0;
+            }
+            &.center{
+              text-align:left;
+            }
+
+            &:last-child{
+              border-right:0;
+            }
+          }
+
+          .td-pop{
+            height:145px;
+          }
+
+        }
+
+      }
+      .flight-info-basic-airline{
+        display:none;
+      }
+      .flight-info-basic{
+        .td-like{
+          &.codeshare{
+            position:relative;
+            margin-top:-1px;
+            .ico-codeshare{
+              position:absolute;
+              left: 16px;
+              top: 16px;
+              display:block;
+              text-indent:-999em;
+              font-size:0;
+              &:before{
+                content:'';
+                display:block;
+                width:16px;
+                height:35px;
+                background: url(/static/ap/images/ico_codeshare.png) no-repeat;
+              }
+            }
+            &:first-child{
+              margin-top:10px;
+            }
+          }
+          &:first-child,&:nth-child(2){
+            width:100%!important;
+          }
+          &:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:last-child{
+            width:auto!important;
+          }
+          &:nth-child(2){
+            padding:14px 14px 0;
+          }
+          &:nth-child(3){
+            padding:0 14px 14px;
+          }
+          &:nth-child(4){
+            position: absolute;
+            top: 17px;
+            right: 96px;
+            padding:0;
+          }
+          &:nth-child(5){
+            display:none;
+          }
+          &:nth-child(6){
+            display:none;
+          }
+          &:nth-child(7){
+            display:none;
+          }
+          &:nth-child(8){
+            display:inline-block;
+            width:60px!important;
+            line-height:28px;
+            text-align:center!important;
+            font-size:0.875rem;
+            position:absolute;
+            top:18px;
+            right:15px;
+            padding:0;
+          }
+          &:last-child{
+            position: absolute;
+            bottom: 24px;
+            right: 30px;
+            padding:0;
+          }
+        }
+      }
+      .flight-info{
+
+        &-basic{
+
+          &-link{
+            .flight{
+              font-size:1rem;
+              text-align: left;
+              .flight-info-basic-flight-number{
+                float:right;
+              }
+              .flight-info-basic-flight-name{
+                display:inline-block;
+                margin-right:14px;
+              }
+            }
+          }
+          &-status{
+            border-bottom:1px solid #d9d9d9!important;
+            .time-changed{
+              display:inline-block;
+            }
+            .time-due{
+              display:inline-block;
+              margin-left:4px;
+            }
+            &:after{
+              width:100%;
+              height:4px;
+              top:0;
+              left:0;
+            }
+
+          }
+          &-no-result{
+            border:0;
+            border-top:1px solid #d9d9d9;
+          }
+        }
+
+        // detail
+        &-detail{
+
+          height:auto;
+          background: url(/static/ap/images/bg_flight_info_detail_bg.jpg) repeat;
+          position:relative;
+          background-size: cover;
+
+          &-heading{
+            &-title{
+              color: #fff;
+              font-weight: 900;
+              float: left;
+              .view-way{
+                margin-left: 10px;
+                padding: 4px 10px;
+                font-size: 0.75rem;
+                font-weight:400;
+                position: relative;
+                bottom:3px;
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 20px;
+              }
+            }
+            &-desc{
+              //font-size:0.875rem;
+              //color: #fff;
+              //float: right;
+              margin-top: 0;
+              .strong{
+                color: #ffae44;
+              }
+            }
+          }
+
+          &-airline{
+
+            text-align: center;
+            padding-top: 15px;
+            background:url(/static/ap/images/ico_airplane_arrow_departure.png) 50% 20px no-repeat;
+            .flight-info-detail{
+              &-country{
+                color: #ffae44;
+                font-size: 1.25rem;
+              }
+              &-date{
+                color: #999;
+                font-size: 	0.875rem;
+
+              }
+            }
+            &.arrival{
+              background:url(/static/ap/images/ico_airplane_arrow_arrival.png) 50% 40px no-repeat;
+            }
+          }
+
+          &-way{
+            margin-top: 30px;
+            .way-list{
+              display: block;
+
+              &-item{
+                width:auto;
+                min-width:unset;
+                text-align: center;
+                float: left;
+                margin-right:25px;
+
+                &:last-child{
+                  margin-right:0;
+                }
+
+                &-heading{
+                  line-height: 1.2;
+                  font-size: 0.8125rem;
+                  color: #ccc;
+                  display: block;
+
+                }
+                &-content{
+                  padding:0;
+                  font-size: 1.25rem;
+                  color: #fff;
+
+                  display:block;
+                }
+                &.ico{
+                  text-indent:0;
+
+                  &:after {
+                    background-position: -147px -63px;
+                    width: 22px;
+                    height: 22px;
+                    left: auto;
+                    right: -21px;
+                    top: auto;
+                    bottom:13px;
+                  }
+                }
+              }
+              &.arrival{
+                .way-list-item {
+                  margin-right:25px;
+                  &.ico{
+                    &:after {
+                      right: -25px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &-dest{
+            color: #fff;
+
+            .dest{
+              &-weather{
+                margin-top:0;
+
+                float:none;
+
+                &:after{
+                  content:"";
+                  display:block;
+                  clear:both;
+                }
+
+                //&-img{
+                //  float: left;
+                //}
+                &-temp{
+                  width: 80px;
+                  float: left;
+                  font-size: 1.25rem;
+                  margin: 15px 0 0 20px;
+
+                  //.min-temp{
+                  //  float: left;
+                  //}
+                  .celsius{
+                    font-size: 1rem;
+                    position: relative;
+                    top: -9px;
+                  }
+                }
+              }
+              &-date{
+                margin-top: 0;
+                font-size:0.875rem;
+                float:none;
+                text-align:left;
+                //position:absolute;
+                //top:50px;
+                //right:16px;
+              }
+            }
+          }
+
+          &-share{
+            //display: block;
+            //width:100%;
+            height: 73px;
+            //background:none;
+            //border:none;
+            line-height:120px;
+            //color: #999;
+            //font-size: 0.75rem;
+            //cursor: pointer;
+            //text-align: center;
+            //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+            &.ico{
+              text-indent: 0;
+              &:after {
+                //background-position:-37px -185px;
+                //width: 32px;
+                //height: 32px;
+                //top:-10px;
+                margin-top:13px;
+                //position:absolute;
+                //top:50%;
+                //left:50%;
+                //transform:translate(-50%, -60%);
+              }
+            }
+          }
+
+          &-close{
+            //display: block;
+            //width:100%;
+            height: 73px;
+            //background:none;
+            //border:none;
+            //cursor: pointer;
+            //text-align: center;
+
+            &.ico{
+              &:after {
+                background-position:-95px -188px;
+                width: 25px;
+                height: 25px;
+                //position:absolute;
+                //top:50%;
+                //left:50%;
+                //transform:translate(-50%, -50%);
+              }
+            }
+          }
+
+          &-sns{
+
+            width:280px;
+            height: 145px;
+            padding: 47px 10px 23px;
+            background: #fff;
+            border:{
+              right:1px solid #d9d9d9;
+              bottom:1px solid #d9d9d9;
+            }
+            .sns-item{
+              float: left;
+              margin-bottom:15px;
+
+              &-link{
+                display: block;
+                width:63px;
+                //height:70px;
+                padding-top:40px;
+
+                position:relative;
+
+                text-align: center;
+                font-size: 0.875rem;
+              }
+            }
+          }
+
+
+        }
+      }
+    }
+  }
+
 }

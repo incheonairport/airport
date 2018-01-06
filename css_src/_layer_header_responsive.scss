@@ -64,11 +64,18 @@
 
 // 780
 @media all and (max-width:780px) {
-  .layer-terminal-check-btn{
-    width:160px;
-    max-width:200px;
-    margin-left:-80px;
-    top:10px;
+  .lnb-top{
+    top:-20px;
+    &-list{
+      border-bottom:0;
+    }
+
+  }
+  .layer-terminal-check-btn.one{
+    border:none;
+    span{
+      display:none;
+    }
   }
 
   .header{

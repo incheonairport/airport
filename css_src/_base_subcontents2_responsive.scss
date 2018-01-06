@@ -198,6 +198,11 @@
         height:66px;
         line-height:66px;
       }
+      &.row-2{
+        overflow: inherit;
+        height:38px;
+        line-height:38px;
+      }
     }
     .guide-desc{
       text-align:center;
@@ -226,7 +231,6 @@
     margin:0;
     .top-notice-desc{
       letter-spacing:-1px;
-      padding-top:10px;
       color:#fff;
       font-size:0.825rem;
       &:before{
@@ -238,7 +242,7 @@
         height: 12px;
       }
       margin-bottom:30px;
-      padding:0 15px;
+      padding:10px 15px 0;
     }
     &:before{
       display:none;
@@ -335,6 +339,7 @@
         }
         &.col-1{
           .leave-check{
+            padding:0;
             .col-btn{
               &-link1{
                 width:33.33%;
@@ -592,7 +597,7 @@
       }
     }
     &-list{
-      margin-top:30px;
+      margin-top:0;
       &.col-4{
         .section-bg-list-item{
           width:100%;
@@ -618,6 +623,9 @@
       &-item{
         margin-bottom:-2px;
         margin-left:0;
+        border:none;
+        width:100%!important;
+        background:none;
         &:first-child{
           margin-left:0;
         }
@@ -871,6 +879,8 @@
     background-size:contain;
     height:200px;
   }
+
+
 
 }
 

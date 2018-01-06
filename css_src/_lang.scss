@@ -3,6 +3,61 @@
   * {
     font-family: 'Noto Sans SC', roboto, spoqa ,sans-serif!important;
   }
+  .logo-list{
+    @extend %clearfix;
+    &-item{
+      float: left;
+      font-size: 0.875rem;
+      text-indent: -99999em;
+      display: block;
+      background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+      color: #fff;
+      margin-left: 20px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &.asiana{
+        width: 93px;
+        background-position: 0 0;
+      }
+      &.jejuair{
+        width: 53px;
+        background-position: -108px 0;
+      }
+      &.jinair{
+        width: 67px;
+        background-position: -186px 0;
+      }
+      &.tway{
+        width: 30px;
+        background-position: -276px 0;
+      }
+      &.eastar{
+        width: 64px;
+        background-position: -334px 0;
+      }
+      &.airseoul{
+        width: 76px;
+        background-position: -423px 0;
+      }
+      &.koreanair{
+        width: 85px;
+        background-position: 0 -27px;
+      }
+      &.airfrance{
+        width: 92px;
+        background-position: -98px -28px;
+      }
+      &.klm{
+        width: 28px;
+        background-position: -208px -28px;
+      }
+      &.delta{
+        width: 70px;
+        background-position: -249px -27px;
+      }
+    }
+  }
 
 }
 
@@ -94,10 +149,122 @@
   .f-spoqa{
     font-family: roboto, spoqa, sans-serif;
   }
+
+  .logo-list{
+    @extend %clearfix;
+    &-item{
+      float: left;
+      font-size: 0.875rem;
+      text-indent: -99999em;
+      display: block;
+      background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+      color: #fff;
+      margin-left: 20px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &.asiana{
+        width: 93px;
+        background-position: 0 0;
+      }
+      &.jejuair{
+        width: 53px;
+        background-position: -108px 0;
+      }
+      &.jinair{
+        width: 67px;
+        background-position: -186px 0;
+      }
+      &.tway{
+        width: 30px;
+        background-position: -276px 0;
+      }
+      &.eastar{
+        width: 64px;
+        background-position: -334px 0;
+      }
+      &.airseoul{
+        width: 76px;
+        background-position: -423px 0;
+      }
+      &.koreanair{
+        width: 85px;
+        background-position: 0 -27px;
+      }
+      &.airfrance{
+        width: 92px;
+        background-position: -98px -28px;
+      }
+      &.klm{
+        width: 28px;
+        background-position: -208px -28px;
+      }
+      &.delta{
+        width: 70px;
+        background-position: -249px -27px;
+      }
+    }
+  }
 }
 
 .ja{
   * {
-    font-family: 'Noto Sans JP', roboto, spoqa, sans-serif;
+    font-family: 'Noto Sans JP', roboto, spoqa, sans-serif!important;
+  }
+
+  .logo-list{
+    @extend %clearfix;
+    &-item{
+      float: left;
+      font-size: 0.875rem;
+      text-indent: -99999em;
+      display: block;
+      background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+      color: #fff;
+      margin-left: 20px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &.asiana{
+        width: 93px;
+        background-position: 0 0;
+      }
+      &.jejuair{
+        width: 53px;
+        background-position: -108px 0;
+      }
+      &.jinair{
+        width: 67px;
+        background-position: -186px 0;
+      }
+      &.tway{
+        width: 30px;
+        background-position: -276px 0;
+      }
+      &.eastar{
+        width: 64px;
+        background-position: -334px 0;
+      }
+      &.airseoul{
+        width: 76px;
+        background-position: -423px 0;
+      }
+      &.koreanair{
+        width: 85px;
+        background-position: 0 -27px;
+      }
+      &.airfrance{
+        width: 92px;
+        background-position: -98px -28px;
+      }
+      &.klm{
+        width: 28px;
+        background-position: -208px -28px;
+      }
+      &.delta{
+        width: 70px;
+        background-position: -249px -27px;
+      }
+    }
   }
 }

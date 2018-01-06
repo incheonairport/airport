@@ -1,0 +1,283 @@
+// IR PC
+
+.ch{
+  // 인천국제공항 IR 이미지 :: 중문
+  .digr-incheon-airport-glance01{
+    background: url(/static/ap/images/digr_incheon_airport_glance01_ch.png)no-repeat center;
+  }
+  .digr-incheon-airport-glance02 {
+    background: url(/static/ap/images/digr_incheon_airport_glance02_ch.png) no-repeat center;
+  }
+
+  .digr-terminal-interconnection{
+    background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
+  }
+
+  .relief{
+    background: url(/static/ap/images/digr_relief_01_ch.png) no-repeat;
+  }
+
+  .lost-found{
+    .lost-box{
+      &.found{
+        background: url(/static/ap/images/digr_lost_and_found_01_ch.png) no-repeat left;
+      }
+      &.belongings{
+        background: url(/static/ap/images/digr_lost_and_found_02_ch.png) no-repeat right;
+      }
+    }
+  }
+
+  .customs_inspection{
+    height:400px;
+    text-indent:-999em;
+    background:url(/static/ap/images/digr_customs_inspection_procedure_ch.png) center no-repeat #333649;
+  }
+
+  .digr_airport_railroad{
+    height:274px;
+    text-indent:-999em;
+    background: url(/static/ap/images/digr_airport_railroad_ch.png) center no-repeat #f3f4f8;
+  }
+
+  .digr_ktx_route{
+    height:274px;
+    text-indent:-999em;
+    background: url(/static/ap/images/digr_ktx_route_ch.png) center no-repeat #fff;
+    border:1px solid #dcdcdc;
+  }
+
+  .digr-airport-limousine-route{
+    background: url(/static/ap/images/digr_airport_limousine_route_ch.png) center no-repeat #f2f4f7;
+  }
+
+  .digr-airport-kal-route{
+    background: url(/static/ap/images/digr_airport_kal_route_ch.png) center no-repeat #f2f4f7;
+  }
+
+  .digr-airport-kal-route-en{
+    background: url(/static/ap/images/digr_airport_kal_route_ch.png) center no-repeat #f2f4f7;
+  }
+
+  .maglev-train{
+    background:url(/static/ap/images/bg_maglev_train.jpg) no-repeat;
+  }
+
+  .maglev-train-tour{
+    background:url(/static/ap/images/bg_maglev_train_tour.jpg) no-repeat;
+  }
+
+  .digr-city-airport-terminal-seoul{
+    background:url(/static/ap/images/digr_city_airport_terminal_seoul_ch.png) no-repeat #333649 center;
+  }
+
+  .digr-city-airport-terminal-samsung{
+    background:url(/static/ap/images/digr_city_airport_terminal_samsung_ch.png) no-repeat #333649 center;
+  }
+
+  .digr-city-airport-terminal-kwangmyung{
+    background:url(/static/ap/images/digr_city_airport_terminal_kwangmyung_ch.png) no-repeat #333649 center;
+  }
+
+  .info-graphic{
+    &.baggage1{
+      background:url(/static/ap/images/digr_info_graphic01_ch.png) center no-repeat #323648;
+    }
+    &.baggage2{
+      background:url(/static/ap/images/digr_info_graphic02_ch.png) center no-repeat #323648;
+    }
+    &.baggage3{
+      background:url(/static/ap/images/digr_info_graphic03_ch.png) center no-repeat #323648;
+    }
+    &.packing{
+      background:url(/static/ap/images/digr_info_graphic04_ch.png) center no-repeat #323648;
+    }
+  }
+
+}
+
+.en{
+  // 인천국제공항 IR 이미지 :: 영문
+  .digr-incheon-airport-glance01{
+    background: url(/static/ap/images/digr_incheon_airport_glance01_en.png)no-repeat center;
+  }
+  .digr-incheon-airport-glance02 {
+    background: url(/static/ap/images/digr_incheon_airport_glance02_en.png) no-repeat center;
+  }
+
+  .digr-terminal-interconnection{
+    background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
+  }
+
+  .relief{
+    background: url(/static/ap/images/digr_relief_01_en.png) no-repeat;
+  }
+
+  .lost-found{
+    .lost-box{
+      &.found{
+        background: url(/static/ap/images/digr_lost_and_found_01_en.png) no-repeat left;
+      }
+      &.belongings{
+        background: url(/static/ap/images/digr_lost_and_found_02_en.png) no-repeat right;
+      }
+    }
+  }
+
+  .customs_inspection{
+    background:url(/static/ap/images/digr_customs_inspection_procedure_en.png) center no-repeat #333649;
+  }
+
+  .digr_airport_railroad{
+    background: url(/static/ap/images/digr_airport_railroad_en.png) center no-repeat #f3f4f8;
+  }
+
+  .digr_ktx_route{
+    background: url(/static/ap/images/digr_ktx_route_en.png) center no-repeat #fff;
+  }
+
+  .digr-airport-limousine-route{
+    background: url(/static/ap/images/digr_airport_limousine_route_en.png) center no-repeat #f2f4f7;
+  }
+
+  .digr-airport-kal-route{
+    background: url(/static/ap/images/digr_airport_kal_route_en.png) center no-repeat #f2f4f7;
+  }
+
+  .digr-airport-kal-route-en{
+    background: url(/static/ap/images/digr_airport_kal_route_en.png) center no-repeat #f2f4f7;
+  }
+
+
+  .maglev-train{
+    background:url(/static/ap/images/bg_maglev_train.jpg) no-repeat;
+  }
+
+  .maglev-train-tour{
+    background:url(/static/ap/images/bg_maglev_train_tour.jpg) no-repeat;
+  }
+
+  .digr-city-airport-terminal-seoul{
+    background:url(/static/ap/images/digr_city_airport_terminal_seoul_en.png) no-repeat #333649 center;
+  }
+
+  .digr-city-airport-terminal-samsung{
+    background:url(/static/ap/images/digr_city_airport_terminal_samsung_en.png) no-repeat #333649 center;
+  }
+
+  .digr-city-airport-terminal-kwangmyung{
+    background:url(/static/ap/images/digr_city_airport_terminal_kwangmyung_en.png) no-repeat #333649 center;
+  }
+
+  .info-graphic{
+    &.baggage1{
+      background:url(/static/ap/images/digr_info_graphic01_en.png) center no-repeat #323648;
+    }
+    &.baggage2{
+      background:url(/static/ap/images/digr_info_graphic02_en.png) center no-repeat #323648;
+    }
+    &.baggage3{
+      background:url(/static/ap/images/digr_info_graphic03_en.png) center no-repeat #323648;
+    }
+    &.packing{
+      background:url(/static/ap/images/digr_info_graphic04_en.png) center no-repeat #323648;
+    }
+  }
+
+}
+
+.ja{
+  // 인천국제공항 IR 이미지 :: 일문
+  .digr-incheon-airport-glance01{
+    background: url(/static/ap/images/digr_incheon_airport_glance01_ja.png)no-repeat center;
+  }
+  .digr-incheon-airport-glance02 {
+    background: url(/static/ap/images/digr_incheon_airport_glance02_ja.png) no-repeat center;
+  }
+
+  .digr-terminal-interconnection{
+    background: url(/static/ap/images/digr_terminal_interconnection.jpg) no-repeat center;
+  }
+
+  .relief{
+    background: url(/static/ap/images/digr_relief_01_ja.png) no-repeat;
+  }
+
+  .lost-found{
+    .lost-box{
+      &.found{
+        background: url(/static/ap/images/digr_lost_and_found_01_ja.png) no-repeat left;
+      }
+      &.belongings{
+        background: url(/static/ap/images/digr_lost_and_found_02_ja.png) no-repeat right;
+      }
+    }
+  }
+
+  .customs_inspection{
+    height:400px;
+    text-indent:-999em;
+    background:url(/static/ap/images/digr_customs_inspection_procedure_ja.png) center no-repeat #333649;
+  }
+
+  .digr_airport_railroad{
+    height:274px;
+    text-indent:-999em;
+    background: url(/static/ap/images/digr_airport_railroad_ja.png) center no-repeat #f3f4f8;
+  }
+
+  .digr_ktx_route{
+    height:274px;
+    text-indent:-999em;
+    background: url(/static/ap/images/digr_ktx_route_ja.png) center no-repeat #fff;
+    border:1px solid #dcdcdc;
+  }
+
+  .digr-airport-limousine-route{
+    background: url(/static/ap/images/digr_airport_limousine_route_ja.png) center no-repeat #f2f4f7;
+  }
+
+  .digr-airport-kal-route{
+    background: url(/static/ap/images/digr_airport_kal_route_ja.png) center no-repeat #f2f4f7;
+  }
+
+  .digr-airport-kal-route-en{
+    background: url(/static/ap/images/digr_airport_kal_route_ja.png) center no-repeat #f2f4f7;
+  }
+
+  .maglev-train{
+    background:url(/static/ap/images/bg_maglev_train.jpg) no-repeat;
+  }
+
+  .maglev-train-tour{
+    background:url(/static/ap/images/bg_maglev_train_tour.jpg) no-repeat;
+  }
+
+  .digr-city-airport-terminal-seoul{
+    background:url(/static/ap/images/digr_city_airport_terminal_seoul_ja.png) no-repeat #333649 center;
+  }
+
+  .digr-city-airport-terminal-samsung{
+    background:url(/static/ap/images/digr_city_airport_terminal_samsung_ja.png) no-repeat #333649 center;
+  }
+
+  .digr-city-airport-terminal-kwangmyung{
+    background:url(/static/ap/images/digr_city_airport_terminal_kwangmyung_ja.png) no-repeat #333649 center;
+  }
+
+  .info-graphic{
+    &.baggage1{
+      background:url(/static/ap/images/digr_info_graphic01_ja.png) center no-repeat #323648;
+    }
+    &.baggage2{
+      background:url(/static/ap/images/digr_info_graphic02_ja.png) center no-repeat #323648;
+    }
+    &.baggage3{
+      background:url(/static/ap/images/digr_info_graphic03_ja.png) center no-repeat #323648;
+    }
+    &.packing{
+      background:url(/static/ap/images/digr_info_graphic04_ja.png) center no-repeat #323648;
+    }
+  }
+
+}

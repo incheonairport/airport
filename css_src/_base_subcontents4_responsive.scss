@@ -294,7 +294,8 @@
     }
 
     .layer-article-input.search-address{
-      width: calc(100% - 50px);
+      width: 100%;
+      border-right:1px solid #d9d9d9;
     }
     .address-select {
       &-title {
@@ -624,6 +625,11 @@
       width:100%;
       margin-top:20px
     }
+    &.direct-input{
+      width:100%;
+      height:50px;
+      margin-top:20px;
+    }
   }
   .user{
     &-input{
@@ -688,8 +694,9 @@
   .search-phone{
     &-box{
       height:auto;
-      border: 1px solid #d9d9d9;
-      padding:0 15px 15px;
+      border:none;
+      padding:0;
+      background:none;
     }
 
     &-head{
@@ -707,6 +714,7 @@
       margin: 0 auto;
 
       &-label{
+        font-size:1.125rem;
         width:100%;
         display:block;
         float: none;
@@ -901,6 +909,7 @@
       margin-bottom: 30px;
       text-align: center;
       &-list{
+        width:100%;
         margin-bottom:30px;
         &-item{
           width:33.33%;
@@ -965,27 +974,12 @@
 
   }
 
-  //.step-member{
-  //  &.step-1{
-  //    background-position:-346px 0;
-  //  }
-  //
-  //  &.step-2{
-  //    background-position:center -69px;
-  //  }
-  //
-  //  &.step-3{
-  //    background-position:center -138px;
-  //  }
-  //
-  //  &.step-4{
-  //    background-position:center -207px;
-  //  }
-  //
-  //  &.step-5{
-  //    background-position:center -276px;
-  //  }
-  //}
+  .step-member{
+    width:100%;
+    height:auto;
+    border-top:1px solid #d9d9d9;
+    background:none;
+  }
 
 }
 
