@@ -42,7 +42,15 @@ $(function(){
 
     this.mobileHeaderInit = function(){
 
-      $('.header-site').insertBefore('.gnb-depth1');
+      $('.header-util-cs').insertBefore('.gnb-depth1');
+
+      $('.header-util-lang').insertAfter('.gnb-depth1');
+
+      $('.header-site').insertAfter('.gnb-depth1');
+
+      $('.header-search-item.gnb-search').insertAfter('.header-logo');
+
+      $('.gnb').append('<button type="button" class="gnb-mobile-btn-close">닫기</button>');
 
     };
 
