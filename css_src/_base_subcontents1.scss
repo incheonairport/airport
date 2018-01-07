@@ -1642,6 +1642,15 @@
   }
 
 }
+.tab-sub.col-3{
+  .tab-sub-list-item{
+    width:calc(33.33% - 4px);
+    &:first-child{
+      margin-left:2px;
+    }
+  }
+
+}
 
 .field2{
   width: 242px;

@@ -1066,6 +1066,16 @@
     }
   }
 
+  .tab-sub.col-3{
+    .tab-sub-list-item{
+      width:33.33%;
+      &:first-child{
+        margin-left:0;
+      }
+    }
+
+  }
+
 }
 
 
