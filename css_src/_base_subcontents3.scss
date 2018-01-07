@@ -609,6 +609,41 @@
 // 박스모델2
 .boxmodel2{
   @extend %clearfix;
+  &.course{
+    .boxmodel2-table-tit{
+      width:154px;
+    }
+    .boxmodel2-table-desc{
+      width: calc(100% - 154px);
+    }
+
+  }
+  .boxmodel2-simple-detail{
+    padding:0 30px 30px;
+  }
+  .boxmodel-hrtour-mark{
+    display:inline-block;
+    padding:10px 10px 10px 36px;
+    background:#989898;
+    border-radius:50px;
+    color:#fff;
+    font-size:0.875rem;
+    position: relative;
+    bottom:2px;
+
+    &:before{
+      content:'';
+      display:block;
+      width:20px;
+      height:20px;
+      position: absolute;
+      top:0;
+      left:10px;
+      bottom:0;
+      margin:auto;
+      background: url(/static/ap/images/spr_transfer_ico.png) no-repeat -92px -18px;
+    }
+  }
   // 리스트/썸네일 탭
   &-tab{
     @extend %clearfix;
@@ -779,6 +814,7 @@
       &:nth-child(3n){
         margin-right:0;
       }
+
     }
     &-link{
       display:block;
@@ -916,6 +952,31 @@
       width:100px;
       float:left;
       font-weight:900;
+      &.course{
+        &:before{
+          content:'';
+          display:inline-block;
+          background: url(/static/ap/images/spr_transfer_ico.png) no-repeat -15px -14px;
+          width: 25px;
+          height: 25px;
+          position:relative;
+          top:7px;
+          margin-right:4px;
+        }
+      }
+
+      &.scheadule{
+        &:before{
+          content:'';
+          display:inline-block;
+          background: url(/static/ap/images/spr_transfer_ico.png) no-repeat -50px -14px;
+          width: 25px;
+          height: 25px;
+          position:relative;
+          top:7px;
+          margin-right:4px;
+        }
+      }
     }
     &-desc{
       width:calc(100% - 100px);
@@ -934,7 +995,12 @@
         box-orient: vertical;
         height:2.4rem;
       }
+      &.icodesc{
+        padding-top:6px;
+      }
     }
+
+
   }
   &-desc{
     line-height:1.4;

@@ -693,42 +693,7 @@
   }
 
   &-mobile-btn{
-    width:19px;
-    height:14px;
-    padding:0;
-    border:none;
-    background:none;
-    text-indent:-99999em;
-    position:absolute;
-    top:10px;
-    left:10px;
-    display: none;
-
-    &:before, &:after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: #222;
-      position:absolute;
-      top:0;
-      left:0;
-    }
-
-    &:after{
-      top:6px;
-    }
-
-    span{
-      display:block;
-      width:13px;
-      height:2px;
-      background:#222;
-      text-indent:-99999em;
-      position:absolute;
-      bottom:0;
-      left:0;
-    }
+    display:none;
   }
 
   &.fixed{
@@ -787,6 +752,9 @@
   }
 
   &.bg{
+
+    background:#fff;
+
     .gnb-map{
       //background: url(/static/ap/images/ico_link_header_search.png) no-repeat!important;
       //background: #f79646;
@@ -800,8 +768,6 @@
         display:none;
       }
     }
-
-    background:#fff;
 
     .gnb{
 
