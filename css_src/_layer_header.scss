@@ -151,9 +151,10 @@
   margin: 0 auto;
   text-align: center;
   &-list{
-    width: auto;
+    width:auto;
     padding:12px;
-    border: 2px solid rgba(255,255,255, 0.3);
+    //border: 2px solid rgba(255,255,255, 0.3);
+    border:2px solid rgba(255,255,255,0.1);
     border-radius:80px;
     text-align: center;
     display: inline-block;
