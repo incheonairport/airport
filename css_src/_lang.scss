@@ -62,6 +62,15 @@
 }
 
 .en{
+  .step2-list {
+    &.col-4 {
+      .step2-list-item {
+        width: calc(25% - 18px);
+        min-height: 570px;
+      }
+    }
+  }
+
   .layer{
     &-article{
       margin-bottom:20px;
