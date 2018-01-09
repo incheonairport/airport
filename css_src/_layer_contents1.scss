@@ -345,6 +345,11 @@
 /*날짜및시간설정*/
 .timesetting{
   &-date{
+    @extend %clearfix;
+    &-title{
+      line-height: 56px;
+      padding-right: 10px;
+    }
     &.f-left,
     &.f-right{
       height:56px;
@@ -362,7 +367,7 @@
     }
     &-calendar{
       width: 46px;
-      height: 56px;
+      height: 56px!important;
       border: 1px solid #d9d9d9;
       border-left: 0;
       background: #fff;
@@ -1561,6 +1566,107 @@ button{
         }
       }
     }
+  }
+}
+
+//input
+.user-text{
+  width: 250px;
+  height: 50px;
+  line-height:50px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  &.wide{
+    width: 100%;
+  }
+  &.height{
+    height:200px;
+    padding:15px;
+    line-height: 1.5;
+    font-family: roboto, spoqa, sans-serif;
+  }
+  &.email{
+    width:140px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  &.email-wide{
+    width: 85%;
+    margin-bottom: 10px;
+  }
+  &.direct-input{
+    width:296px;
+    height:40px;
+  }
+  &.color-gr{
+    background: #f2f2f2;
+  }
+}
+/*파일 첨부, 주소 검색*/
+.user{
+  &-input{
+    width:957px;
+    &-text{
+      width:800px;
+      height:50px;
+      font-size:1rem;
+      border: 1px solid #d9d9d9;
+      box-sizing: border-box;
+      float:left;
+    }
+    &-link{
+      min-width:145px;
+      height:50px;
+      line-height: 50px;
+      padding: 0 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #d9d9d9;
+      font-weight: 900;
+      text-align: center;
+      display: inline-block;
+      &.small{
+        min-width:84px;
+        height:26px;
+        line-height:26px;
+        font-size: 0.8125rem;
+        font-weight:700;
+        color: #666;
+      }
+    }
+    &.id{
+      width: 410px;
+      .user-input-text{
+        width: 263px;
+        padding: 0 10px;
+        border-right: 0;
+        float:left;
+      }
+    }
+  }
+
+}
+.object-list{
+  width:250px;
+  height:50px;
+  padding: 0 15px;
+  border: 1px solid #d9d9d9;
+  font-size: 1rem;
+  vertical-align: top;
+  &option{
+    font-size: 1rem;
+  }
+  &.email{
+    width: 157px;
+    margin-right: 8px;
+  }
+  &.small{
+    width: 150px;
+  }
+  &-title{
+    line-height: 50px;
+    padding: 0 10px;
   }
 }
 
