@@ -40,6 +40,20 @@
     font-family:nanumsq, sans-serif;
     font-size:1.5rem;
     font-weight:400;
+    &.point{
+      background:#323648;
+      color:#fff;
+      text-align:center;
+      padding:19px 0;
+      margin-bottom:10px;
+      width:calc(100% - 2px);
+    }
+    &.half{
+      width:calc(50% - 6px);
+    }
+    .color-o{
+      color:#ffae44;
+    }
   }
 
   &-level3{
@@ -401,6 +415,7 @@
         &-item{
           .tab-nav-list-link{
             border:2px solid #2c8279;
+            border-bottom: 0;
             background: #2c8279;
             color: #fff;
             &.on{
@@ -415,7 +430,7 @@
               border-bottom: 0;
               background: #4674c9;
               &.on{
-                border-bottom-color:#fff;
+                border-bottom: 0;
                 background: #fff;
                 color:#4674c9;
               }
@@ -427,7 +442,7 @@
               border-bottom: 0;
               background: #dd7713;
               &.on{
-                border-bottom-color:#fff;
+                border-bottom: 0;
                 background: #fff;
                 color:#dd7713;
               }
@@ -711,6 +726,9 @@
       right:18px;
     }
   }
+  &.left{
+    text-align: left;
+  }
 }
 
 .btn-type-event{
@@ -957,13 +975,14 @@ em{
       }
       .list-article{
         background:#fff;
-        padding:42px 0 16px;
+        padding: 32px 0 60px;
+        //padding:42px 0 16px;
         margin:0 20px;
         //height:182px;
-        margin-top:-40px;
+        //margin-top:-40px;
         text-align:center;
         position:relative;
-        top:-40px;
+        //top:-40px;
         &.left{
           text-align: left;
         }
@@ -1807,7 +1826,7 @@ p.icontxt{
       margin-left: 0;
     }
     .step2-list-item{
-      width: calc(25% - 10px);
+      width: calc(25% - 8px);
       min-height: 276px;
       background:#fff;
       border: 1px solid #d9d9d9;
@@ -2639,12 +2658,18 @@ select{
 //}
 
 .contents.checkin{
-  .article {
-    border: 1px solid #d0d0d0;
-    padding: 50px;
-  }
+
+}
+.boxsing {
+  border: 1px solid #d0d0d0;
+  padding: 50px;
+  margin-bottom:60px;
 }
 
+.article.line{
+  padding-bottom: 60px;
+  border-bottom: 1px solid #d9d9d9;
+}
 
 
 .include-video{
