@@ -158,8 +158,9 @@
     &-search{
 
       position:absolute;
-      top:59px !important;
-      right:12px !important;
+      top:20px !important;
+      left:20px !important;
+      right:auto !important;
       padding-right:0 !important;
 
       &:after{
@@ -299,6 +300,10 @@
     top:0;
     left:-100%;
     z-index:99999;
+
+    &.mobile-on{
+      left:0;
+    }
 
     &-depth1{
       width:100%;
