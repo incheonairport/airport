@@ -33,6 +33,10 @@
     background:url(/static/ap/images/bg_layer_header_06.jpg) no-repeat left bottom;
   }
 
+  &.full-screen{
+    left:-100% !important;
+  }
+
 
   &-heading{
     margin-bottom:75px;

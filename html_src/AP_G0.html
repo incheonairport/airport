@@ -161,6 +161,7 @@
 
               });
             </script>
+            <button type="button" class="svgbtn map-full-screen" title="전체화면">전제화면</button>
           </div>
 
         </div>
@@ -312,30 +313,7 @@
         </div>
       </div>
 
-      <!-- SVG UI 스크립트 -->
-      <script>
-        function svgMapListEvent(){
-          $('.search-map-control').on('click', function (e) {
-            $('.search-map-clear').toggleClass('on');
-            e.preventDefault();
-          });
-
-          $('.search-map-box-level2').on('click', function (e) {
-            $(this).addClass('on').parent().siblings().children().removeClass('on');
-//            $(this).parents().find('.search-map-result').siblings().children().find('a').removeClass('on');
-            e.preventDefault();
-          });
-
-          $('.search-map-box-level3').on('click', function (e) {
-            $(this).addClass('on').parent().siblings().children().removeClass('on');
-            e.preventDefault();
-          });
-
-        } svgMapListEvent();
-      </script>
-
-
-      <div class="mt30">
+      <div class="search-map-contents mt30">
         <h3 class="heading-level2">우리은행</h3>
         <!-- 웹표준을위한 table th scope 추가 수정 -->
         <table class="table hr" summary="공항지도 검색결과에 대한 안내 표입니다.">

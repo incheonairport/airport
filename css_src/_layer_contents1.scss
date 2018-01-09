@@ -1134,7 +1134,7 @@ button{
     margin-top:-1px;
     background:#fff;
     border:1px solid #6b6b6b;
-    padding:10px 20px;
+    padding:20px;
     .field-radio{
       & + .field-radio-label{
         min-width:inherit;
@@ -1260,7 +1260,7 @@ button{
 /*검색*/
 .search-map{
   width:100%;
-  padding: 40px 30px 40px 20px;
+  padding: 20px;
   background:#f3f4f8;
   border:1px solid #6b6b6b;
   margin-top: -1px;
@@ -1428,6 +1428,32 @@ button{
             background-position:-36px -24px;
           }
         }
+        &.map-full-screen{
+          width:30px;
+          height:30px;
+          background:#fff;
+          text-indent:-999em;
+          position:relative;
+          border:none;
+          &:after{
+            content:'';
+            display:block;
+            background: url(/static/ap/images/ico_map_fullscreen.png) no-repeat;
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            margin:auto;
+          }
+
+          &.full-screen{
+            &:after{
+              background-position:-30px 0;
+            }
+          }
+        }
+
         &:hover{
           &:after{
             opacity:.5;
@@ -1436,12 +1462,23 @@ button{
       }
     }
   }
+
   &-clear{
     position:relative;
     overflow:hidden;
     min-height:602px;
     margin-top:20px;
     @extend %clearfix;
+    &.full-screen{
+      height:800px;
+      .search-map-svg{
+        height:100%;
+      }
+
+      .search-map-wrap{
+        height:100%;
+      }
+    }
     &.on{ // 펼침 접기
       border:1px solid #d9d9d9;
       .search-map-svg{
@@ -1583,6 +1620,13 @@ button{
       right:0;
       bottom:0;
       margin:auto;
+    }
+  }
+
+  &-contents{
+    &.full-screen{
+      width:50%;
+      margin:30px auto 0;
     }
   }
 
