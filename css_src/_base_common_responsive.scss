@@ -575,6 +575,13 @@
   .terms_sub_txt >div{
     padding-left:0!important;
   }
+  .contents-visual.departure-procedures{
+    .congestion{
+      margin-bottom:0;
+    }
+  }
+
+
   .imgbox-extend{
     overflow-x:auto;
     height:300px;
@@ -587,13 +594,13 @@
     }
   }
 
-  .f-left{
-    width:100%;
-  }
-
-  .f-right{
-    width:100%;
-  }
+  //.f-left{
+  //  width:100%;
+  //}
+  //
+  //.f-right{
+  //  width:100%;
+  //}
 
 
 }

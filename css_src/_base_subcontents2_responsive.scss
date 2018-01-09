@@ -230,6 +230,7 @@
     width:100%;
     margin:0;
     .top-notice-desc{
+      text-align:center;
       letter-spacing:-1px;
       color:#fff;
       font-size:0.825rem;
@@ -652,8 +653,9 @@
     }
     &-head2{
       text-align:center;
+      margin-bottom:10px;
       &:after{
-        width:100%;
+        display:none;
       }
     }
     &-desc{
@@ -708,6 +710,16 @@
       }
       .logo-list{
         display:inline-block;
+
+        &-item{
+          width:50%;
+          margin-left:0;
+          border-left:1px solid rgba(255,255,255,.3);
+          border-bottom:1px solid rgba(255,255,255,.3);
+          &:nth-child(odd){
+            border-left:0;
+          }
+        }
       }
     }
   }
