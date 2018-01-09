@@ -415,10 +415,9 @@
           &:first-child{
             .tab-nav-list-link{
               border:2px solid #4674c9;
-              border-bottom: 0;
               background: #4674c9;
               &.on{
-                border-bottom-color:#fff;
+                border-bottom: 0;
                 background: #fff;
                 color:#4674c9;
               }
@@ -427,10 +426,9 @@
           &:last-child{
             .tab-nav-list-link{
               border:2px solid #dd7713;
-              border-bottom: 0;
               background: #dd7713;
               &.on{
-                border-bottom-color:#fff;
+                border-bottom: 0;
                 background: #fff;
                 color:#dd7713;
               }
