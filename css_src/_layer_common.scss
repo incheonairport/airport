@@ -1359,6 +1359,26 @@ p.icontxt{
     background-size: cover;
   }
 
+  &.in-person{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_in_person.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.autoscreening{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_autoscreening.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.baggage-claim{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_baggage_claim.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.lost-baggage{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_lost_baggage.jpg) no-repeat center;
+    background-size: cover;
+  }
+
 }
 
 %gutter{
