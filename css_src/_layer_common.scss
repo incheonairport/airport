@@ -404,6 +404,7 @@
         &-item{
           .tab-nav-list-link{
             border:2px solid #2c8279;
+            border-bottom: 0;
             background: #2c8279;
             color: #fff;
             &.on{
@@ -415,6 +416,7 @@
           &:first-child{
             .tab-nav-list-link{
               border:2px solid #4674c9;
+              border-bottom: 0;
               background: #4674c9;
               &.on{
                 border-bottom: 0;
@@ -426,6 +428,7 @@
           &:last-child{
             .tab-nav-list-link{
               border:2px solid #dd7713;
+              border-bottom: 0;
               background: #dd7713;
               &.on{
                 border-bottom: 0;
@@ -712,6 +715,9 @@
       right:18px;
     }
   }
+  &.left{
+    text-align: left;
+  }
 }
 
 .btn-type-event{
@@ -958,13 +964,14 @@ em{
       }
       .list-article{
         background:#fff;
-        padding:42px 0 16px;
+        padding: 32px 0 60px;
+        //padding:42px 0 16px;
         margin:0 20px;
         //height:182px;
-        margin-top:-40px;
+        //margin-top:-40px;
         text-align:center;
         position:relative;
-        top:-40px;
+        //top:-40px;
         &.left{
           text-align: left;
         }
