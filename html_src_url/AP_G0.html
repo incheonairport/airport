@@ -1,3 +1,4 @@
+
 <section class="contents">
   <div class="inner-contents">
     <h2 class="heading-level1">공항지도</h2>
@@ -13,15 +14,13 @@
       </ul>
     </nav>
 
-
-
     <article class="mt40">
 
       <!-- 매장정보 층 분류 -->
       <div class="field map">
         <div class="field-group">
           <input type="radio" name="map-area" id="map-1f" class="field-radio" value="map-1f" checked="">
-          <label class="field-radio-label" for="map-1f">1F</label>
+          <label class="field-radio-label" for="map-1f">값1</label>
 
           <input type="radio" name="map-area" id="map-2f" class="field-radio" value="map-2f">
           <label class="field-radio-label" for="map-2f">2F</label>
@@ -37,10 +36,51 @@
         </div>
       </div>
 
+
+      <!-- category checkbox area -->
+      <div class="field map-category-check">
+        <div class="field-group">
+          <input type="checkbox" name="map-area" id="test1" class="field-radio" value="map-1f" checked="">
+          <label class="field-radio-label" for="test1">셔틀트레인</label>
+
+          <input type="checkbox" name="map-area" id="test2" class="field-radio" value="map-2f">
+          <label class="field-radio-label" for="test2">에스컬레이터</label>
+
+          <input type="checkbox" name="map-area" id="test3" class="field-radio" value="map-3f">
+          <label class="field-radio-label" for="test3">한국문화박물관</label>
+
+          <input type="checkbox" name="map-area" id="test4" class="field-radio" value="map-4f">
+          <label class="field-radio-label" for="test4">한국문화박물관한국문화박물관</label>
+
+          <input type="checkbox" name="map-area" id="test5" class="field-radio" value="map-b1">
+          <label class="field-radio-label" for="test5">셔틀트레인</label>
+
+          <input type="checkbox" name="map-area" id="test6" class="field-radio" value="map-1f" checked="">
+          <label class="field-radio-label" for="test6">셔틀트레인</label>
+
+          <input type="checkbox" name="map-area" id="test7" class="field-radio" value="map-2f">
+          <label class="field-radio-label" for="test7">에스컬레이터</label>
+
+          <input type="checkbox" name="map-area" id="test8" class="field-radio" value="map-3f">
+          <label class="field-radio-label" for="test8">한국문화박물관</label>
+
+          <input type="checkbox" name="map-area" id="test9" class="field-radio" value="map-4f">
+          <label class="field-radio-label" for="test9">한국문화박물관한국문화박물관</label>
+
+        </div>
+      </div>
+      <!-- category checkbox area -->
+
+
+
+
       <div class="search-map">
+
 
         <!-- 매장정보 검색부분 -->
         <div class="multi-col">
+
+
           <div class="inner-col search-map-left">
 
             <div>
@@ -89,15 +129,39 @@
           <!-- 확대 축소 컨트롤러 -->
           <div class="search-map-svg-control">
             <button type="button" name="button" class="svgbtn zoom-in">확대</button>
-            <div class="zoom-level">
-              <button type="button" name="button" class="zoom-level-item level5">5단계</button>
-              <button type="button" name="button" class="zoom-level-item level4">4단계</button>
-              <button type="button" name="button" class="zoom-level-item level3">3단계</button>
-              <button type="button" name="button" class="zoom-level-item level2">2단계</button>
-              <button type="button" name="button" class="zoom-level-item level1 on">1단계</button>
-            </div>
+            <div class="zoom-level"></div>
             <button type="button" name="button" class="svgbtn zoom-out">축소</button>
+            <script>
+              $(function(){
+
+                var zoomValue = 0;
+
+                var slider = $('.zoom-level').slider({
+                  orientation:'vertical',
+                  min:1,
+                  max:5,
+                  step:1,
+                  value:3
+                });
+
+                $('.zoom-in').on('click', function(){
+                  zoomValue = slider.slider('option', 'value') + 1;
+                  slider.slider('value', zoomValue);
+
+                  console.log(zoomValue);
+                });
+
+                $('.zoom-out').on('click', function(){
+                  zoomValue = slider.slider('option', 'value') - 1;
+                  slider.slider('value', zoomValue);
+
+                  console.log(zoomValue);
+                });
+
+              });
+            </script>
           </div>
+
         </div>
 
         <!-- 매장정보 노출부분 -->
@@ -318,3 +382,4 @@
 
   </div>
 </section>
+
