@@ -1310,4 +1310,17 @@
     }
   }
 
+  .traffic-parking+.mobile-header+.contents{
+    .multi-col{
+      .imgbox-extend{
+        overflow-x:auto;
+        height:auto;
+        .imgbox{
+          width:100%;
+        }
+      }
+    }
+
+  }
+
 }
