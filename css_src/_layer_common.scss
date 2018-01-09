@@ -404,6 +404,7 @@
         &-item{
           .tab-nav-list-link{
             border:2px solid #2c8279;
+            border-bottom: 0;
             background: #2c8279;
             color: #fff;
             &.on{
@@ -415,6 +416,7 @@
           &:first-child{
             .tab-nav-list-link{
               border:2px solid #4674c9;
+              border-bottom: 0;
               background: #4674c9;
               &.on{
                 border-bottom: 0;
@@ -426,6 +428,7 @@
           &:last-child{
             .tab-nav-list-link{
               border:2px solid #dd7713;
+              border-bottom: 0;
               background: #dd7713;
               &.on{
                 border-bottom: 0;
