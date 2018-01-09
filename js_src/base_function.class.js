@@ -50,11 +50,27 @@ $(function(){
 
       $('.header-search-item.gnb-search').insertAfter('.header-logo');
 
-      $('.gnb').append('<button type="button" class="gnb-mobile-btn-close">닫기</button>');
+      if( $('.gnb-mobile-btn-close').length <= 0){
+        $('.gnb').append('<button type="button" class="gnb-mobile-btn-close">닫기</button>');
+      }
 
     };
 
-   // this.mobileHeaderInit();
+    this.pcHeaderInit = function(){
+
+      $('.header-util-cs').appendTo( $('.header-util') );
+
+      $('.header-util-lang').appendTo( $('.header-util') );
+
+      $('.header-site').prependTo( $('.header') );
+
+      $('.header-search-item.gnb-search').appendTo($('.header-search'));
+
+      $('.gnb-mobile-btn-close').remove();
+
+    };
+
+    //this.mobileHeaderInit();
 
   };
 
@@ -177,6 +193,21 @@ $(function(){
         top:-20
       }, 1000, 'easeOutCubic');
 
+      $visualItem.eq(currentVisualIndex+1).find('.visual-text').eq(0).stop().animate({
+        opacity:0,
+        top:-20
+      }, 1000, 'easeOutCubic');
+
+      $visualItem.eq(currentVisualIndex+1).find('.visual-text').eq(1).stop().delay(500).animate({
+        opacity:0,
+        top:-20
+      }, 1000, 'easeOutCubic');
+
+      $visualItem.eq(currentVisualIndex+1).find('.visual-text').eq(2).stop().delay(500).animate({
+        opacity:0,
+        top:-20
+      }, 1000, 'easeOutCubic');
+
     };
 
     var _timeBar = function(auto){
@@ -247,8 +278,6 @@ $(function(){
 
         _timeBar(true);
 
-        //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
-
       }, imageIntervalTime);
 
       _setPlayButtonClass('pause');
@@ -263,8 +292,6 @@ $(function(){
       this.fade();
       _timeBar(false);
 
-      //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
-
     };
 
     this.rollRight = function(){
@@ -274,8 +301,6 @@ $(function(){
       nextVisualIndex = currentVisualIndex - 1;
       this.fade();
       _timeBar(false);
-
-      //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
     };
 
@@ -448,6 +473,8 @@ $(function(){
 
     this.init = function(){
 
+      if( $(window).width() > 1024 ){
+
         $bannerItem.each(function(){
 
           itemWidth = $(this).width() + parseInt( $(this).css('margin-right') );
@@ -455,6 +482,18 @@ $(function(){
           listWidth += itemWidth;
 
         });
+
+      } else {
+
+        $bannerItem.each(function(){
+
+          itemWidth = $(this).width();
+
+          listWidth += itemWidth;
+
+        });
+
+      }
 
       $bannerList.width(listWidth);
 

@@ -3,6 +3,7 @@
   position:relative;
   background-repeat:no-repeat;
   background-position:center top;
+  background-size:cover;
 
   &.auto-height{
     height:auto;
@@ -98,6 +99,15 @@
 
       .visual{
         &-text{
+          &.text-right{
+            //position:absolute;
+            right:270px;
+          }
+
+          &.text-left{
+            //position:absolute;
+            left:270px;
+          }
 
           &-box{
             text-align:center;
@@ -155,25 +165,26 @@
             font-family:nanumsq, sans-serif;
             font-weight:300;
             opacity:0;
+            margin-bottom:20px;
           }
 
           &:nth-child(3){
-            margin-top:30px;
-            padding-top:30px;
+            //margin-top:30px;
+            //padding-top:30px;
             position:relative;
             opacity:0;
-
-            &:after{
-              content:"";
-              display:block;
-              width:50px;
-              height:1px;
-              background:#fff;
-              position:absolute;
-              top:0;
-              left:50%;
-              transform:translateX(-50%);
-            }
+            //
+            //&:after{
+            //  content:"";
+            //  display:block;
+            //  width:50px;
+            //  height:1px;
+            //  background:#fff;
+            //  position:absolute;
+            //  top:0;
+            //  left:50%;
+            //  transform:translateX(-50%);
+            //}
           }
           &:nth-child(4) {
             margin-top: 60px;
@@ -581,14 +592,15 @@
           &-info-more{
             display:none;
             //width:22px;
-            height:40px;
-            padding-top:20px;
-            border:0;
-            background:url(/static/ap/images/ico_airplane_info_more.png) no-repeat center top;
+            height:30px;
+            //padding-top:20px;
+            border:1px solid #fff193;
+            background:none;
             position:absolute;
             top:47px;
-            right:-8px;
-            color:#fff;
+            right:0;
+            font-size:0.875rem;
+            color:#fff193;
             //text-indent:-99999em;
           }
 
@@ -600,7 +612,7 @@
             background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
             position:absolute;
             top:0;
-            right:3px;
+            right:0;
             text-indent:-99999em;
           }
         }
