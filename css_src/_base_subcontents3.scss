@@ -851,16 +851,17 @@
           .boxmodel2-map-link{
             display:block;
             font-size:0.875rem;
-            display: -webkit-box;
             overflow: hidden;
             word-wrap: break-word;
             text-overflow: ellipsis;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
             -moz-box-orient: vertical;
             -ms-box-orient: vertical;
             box-orient: vertical;
-            height:5.4rem;
+            //height:5.9rem;
+            white-space: nowrap;
+            width:100%;
             &:before{
               content:'';
               display:block;

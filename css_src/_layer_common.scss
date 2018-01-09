@@ -572,7 +572,16 @@
     margin:auto;
     background: url(/static/ap/images/spr_ico_global.png) no-repeat;
   }
-
+  &.location-bar-nav-item-link.home:after{
+    background-position:-216px -31px;
+    width: 18px;
+    height: 14px;
+  }
+  &.location-bar-nav-item:after{
+    background-position:-153px -93px;
+    width: 22px;
+    height: 22px;
+  }
   &.arrow-normal-right:after{
     background-position:-101px -64px;
     width: 8px;
@@ -2624,6 +2633,8 @@ select{
     padding: 50px;
   }
 }
+
+
 
 .include-video{
   display: block;

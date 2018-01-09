@@ -654,18 +654,46 @@
 
   // reflash button
   .update{
+    margin-bottom: 10px;
+    text-align: left;
+    overflow:hidden;
     &-time{
-      font-size: 1rem;
+      line-height:26px;
     }
     &-refresh{
-      width:100%;
-      font-size:1rem;
-      font-weight:700;
-      line-height: 40px;
-      height: 40px;
-      margin-top:10px;
+      float:right;
+      width:26px;
+      padding:0;
+      line-height:inherit;
+      border-radius:50%;
+      &.ico{
+        text-indent:-9999px;
+      }
+      &.ico:after{
+        top:3px;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+      }
+    }
+    &.mb10{
+      margin-bottom: 10px;
     }
   }
+  //.update{
+  //  &-time{
+  //    font-size: 1rem;
+  //  }
+  //  &-refresh{
+  //    width:100%;
+  //    font-size:1rem;
+  //    font-weight:700;
+  //    line-height: 40px;
+  //    height: 40px;
+  //    margin-top:10px;
+  //  }
+  //}
 
   // parking box
   .congested{

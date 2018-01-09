@@ -50,12 +50,30 @@
       &-item{
         min-width: 60px;
         margin: 0;
+        height:42px;
         &-link{
           display: inline-block;
           position: relative;
           text-indent: -999em;
           font-size: 0;
+
+          &.home {
+            text-indent: -999em;
+            font-size: 0;
+            height:auto;
+            margin-top:10px;
+          }
+          &.back{
+            text-indent: -999em;
+            font-size: 0;
+            height:auto;
+            margin-top:10px;
+          }
+
         }
+
+
+
       }
     }
   }
@@ -68,6 +86,7 @@
     top:-20px;
     &-list{
       border-bottom:0;
+      border:none;
     }
 
   }
