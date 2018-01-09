@@ -699,6 +699,9 @@
         }
 
         &.img{
+          .boxmodel-btn-group{
+            margin-top: 72%;
+          }
           border:none;
           background-size:cover!important;
           &.leave{
