@@ -118,8 +118,6 @@
       }
     }
 
-
-
     th{
       padding:19px 0 16px;
       font-size:1rem;
@@ -235,6 +233,19 @@
         td{
           border-top:0;
         }
+      }
+    }
+
+    tr {
+
+      &.span{
+        td{
+          border-right: 1px solid #f2f4f7;
+        }
+      }
+
+      &.on {
+        background: #f3f4f8;
       }
     }
 
@@ -2655,6 +2666,10 @@ select{
   margin-bottom:60px;
 }
 
+.article.line{
+  padding-bottom: 60px;
+  border-bottom: 1px solid #d9d9d9;
+}
 
 
 .include-video{
