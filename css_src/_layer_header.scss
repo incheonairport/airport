@@ -37,13 +37,18 @@
   &-heading{
     margin-bottom:75px;
     font-family:nanumsq, sans-serif;
-    font-size:2.75rem;
+    font-size:2.5rem;
     font-weight:400;
     color:#fff;
     text-align:center;
+    line-height:1.4;
 
     &-sub{
       font-size:1.75rem;
+    }
+
+    br{
+      display:none;
     }
   }
 }
@@ -266,7 +271,7 @@
   right:0;
   display: block;
   margin: 0 auto;
-  width:284px;
+  width:80%;
   max-width:284px;
   border:2px solid rgba(255,255,255,0.1);
   padding: 14px 0;

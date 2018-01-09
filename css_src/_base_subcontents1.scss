@@ -1321,7 +1321,7 @@
   }
 
   &.size{
-    width: 912px;
+    width: 940px;
     //max-height: 827px;
     &.max-height{
       max-height: 890px;
@@ -2379,6 +2379,10 @@
 
         &:last-child{
           margin-right: 0;
+        }
+
+        &.wide-row{
+          width:265px;
         }
       }
 

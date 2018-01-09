@@ -104,8 +104,6 @@
       }
     }
 
-
-
     th{
       padding:19px 0 16px;
       font-size:1rem;
@@ -221,6 +219,19 @@
         td{
           border-top:0;
         }
+      }
+    }
+
+    tr {
+
+      &.span{
+        td{
+          border-right: 1px solid #f2f4f7;
+        }
+      }
+
+      &.on {
+        background: #f3f4f8;
       }
     }
 
