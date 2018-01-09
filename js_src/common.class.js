@@ -34,13 +34,13 @@ $(function(){
         $('html').addClass('firefox');
 
       } else if(ua.toLowerCase().indexOf('msie 9.0') != -1){
-        $('html').addClass('ie9');
+        $('html').addClass('ie ie9');
 
       } else if(ua.toLowerCase().indexOf('msie 10.0') != -1){
-        $('html').addClass('ie10');
+        $('html').addClass('ie ie10');
 
       } else if(ua.toLowerCase().indexOf('rv:11.0') != -1){
-        $('html').addClass('ie11');
+        $('html').addClass('ie ie11');
 
       }
     };

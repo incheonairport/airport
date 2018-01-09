@@ -1325,6 +1325,9 @@
     //background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
     color: #fff;
     margin-left: 20px;
+    &:first-child{
+      margin-left: 0;
+    }
     /*&:first-child{
       margin-left: 0;
     }
