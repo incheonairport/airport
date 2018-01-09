@@ -101,6 +101,7 @@
       margin-bottom:10px;
       font-size:1.125rem;
       font-weight:700;
+      line-height:1.4;
     }
   }
 
@@ -217,13 +218,13 @@
       display: inline-block;
       th{
         text-align: left;
-        padding-left: 10px;
+        padding:10px;
         &.sub{
           padding:12px;
         }
       }
       td{
-        padding: 19px 10px 16px;
+        padding:10px;
       }
       td.center{
         text-align: left;
