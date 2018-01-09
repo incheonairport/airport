@@ -168,17 +168,17 @@
       }
     }
     // 썸네일형
-    //&-thumbnail{
-    //  &-item{
-    //    width:calc(50% - 12px);
-    //    &:nth-child(2n){
-    //      margin-right:0!important;
-    //    }
-    //    &:nth-child(3n){
-    //      margin-right:24px;
-    //    }
-    //  }
-    //}
+    &-thumbnail{
+      &-item{
+        width:calc(50% - 12px);
+        &:nth-child(2n){
+          margin-right:0!important;
+        }
+        &:nth-child(3n){
+          margin-right:24px;
+        }
+      }
+    }
   }
 }
 
@@ -829,7 +829,7 @@
   }
 
   /*날짜및시간설정*/
-  .timesetting{
+  .view-list{
     &-date{
 
       .timesetting-subtit{

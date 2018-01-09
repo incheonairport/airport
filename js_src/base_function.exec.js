@@ -63,6 +63,8 @@ $(function(){
 
       BottomBanner.init();
 
+      console.log( $('.layer').height() );
+
       if( $(window).width() > 1024 ){
 
         HeaderGnb.pcHeaderInit();

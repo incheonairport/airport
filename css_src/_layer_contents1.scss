@@ -1111,7 +1111,7 @@ button{
 // 체크/라디오 그룹
 .field{
   &.map{
-    margin-top:-1px;
+
     .field-radio{
       & + .field-radio-label{
         min-width:120px;
@@ -1125,6 +1125,57 @@ button{
       &:first-child{
         border-left:1px solid #666;
       }
+      label{
+        margin-right:0;
+      }
+    }
+  }
+  &.map-category-check{
+    margin-top:-1px;
+    background:#fff;
+    border:1px solid #6b6b6b;
+    padding:10px 20px;
+    .field-radio{
+      & + .field-radio-label{
+        min-width:inherit;
+        text-align:center;
+        padding:8px;
+        border:none;
+        background:none;
+        font-size:1rem;
+        position:relative;
+        &:before{
+          content:'';
+          display:block;
+          width:1px;
+          height:9px;
+          background:#a1a1a1;
+          position: absolute;
+          top:0;
+          bottom:0;
+          left:0;
+          margin:auto;
+        }
+
+      }
+
+
+      & + .field-radio-label.first{
+        &:before{
+          display:none;
+        }
+      }
+
+
+      &:checked + .field-radio-label {
+        background:none;
+        color:#42519e;
+        border:none;
+        font-weight:900;
+      }
+    }
+    .field-group{
+
       label{
         margin-right:0;
       }
@@ -1508,7 +1559,7 @@ button{
     }
   }
   &-control{
-    display:none;
+    //display:none;
     position:absolute;
     top:0;
     bottom:0;
