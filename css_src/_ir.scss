@@ -2,6 +2,12 @@
 
 .ch{
   // 인천국제공항 IR 이미지 :: 중문
+  .route-bus-stop{
+    background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t1_02_ch.png) no-repeat center;
+  }
+  .route-bus-stop2{
+    background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t2_02_ch.png) no-repeat center;
+  }
   .digr-incheon-airport-glance01{
     background: url(/static/ap/images/digr_incheon_airport_glance01_ch.png)no-repeat center;
   }
@@ -98,6 +104,14 @@
 
 .en{
   // 인천국제공항 IR 이미지 :: 영문
+
+  .route-bus-stop{
+    background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t1_02_en.png) no-repeat center;
+  }
+  .route-bus-stop2{
+    background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t2_02_en.png) no-repeat center;
+  }
+
   .digr-incheon-airport-glance01{
     background: url(/static/ap/images/digr_incheon_airport_glance01_en.png)no-repeat center;
   }
@@ -190,6 +204,14 @@
 
 .ja{
   // 인천국제공항 IR 이미지 :: 일문
+
+  .route-bus-stop{
+    background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t1_02_ja.png) no-repeat center;
+  }
+  .route-bus-stop2{
+    background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t2_02_ja.png) no-repeat center;
+  }
+
   .digr-incheon-airport-glance01{
     background: url(/static/ap/images/digr_incheon_airport_glance01_ja.png)no-repeat center;
   }

@@ -315,6 +315,12 @@
         color:#42519e;
       }
     }
+
+    &.info {
+      tr:last-child {
+        height: 140px;
+      }
+    }
   }
 
   &.hr{
@@ -2120,6 +2126,12 @@ b.text-bold{
   height: 400px;
   overflow-x: auto;
   overflow-y:hidden;
+  &.t1{
+    height:440px;
+  }
+  &.t2{
+    height:671px;
+  }
 }
 
 button{

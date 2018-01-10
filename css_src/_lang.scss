@@ -264,6 +264,23 @@
     text-align: center;
     padding: 0 6px;
   }
+
+  /*footer*/
+  .footer{
+    &-call {
+      margin: 20px 0 15px;
+    }
+    &-contact{
+      &-item{
+        display: block;
+        &:before{
+          width:0;
+          margin-right:0;
+        }
+      }
+    }
+  }
+
 }
 
 .ja{
