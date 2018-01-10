@@ -266,7 +266,7 @@
       right:0;
     }
     &-control{
-      display:block;
+      //display:block;
     }
   }
 }
@@ -417,7 +417,7 @@
         width:32px;
         z-index:2;
         .zoom-level{
-          display:none;
+          //display:none;
         }
         .svgbtn{
           &:first-child{
@@ -429,7 +429,7 @@
     }
     &-clear{
       //width: 180px;
-      min-height:320px;
+      height:320px;
       &.on{ // 펼침 접기
         border:1px solid #d9d9d9;
         .search-map-svg{

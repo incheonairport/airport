@@ -8,12 +8,20 @@
   width:70%;
   min-width:calc(100% - 500px);
   float:right;
+
+  &.full-screen{
+    width:100% !important;
+  }
 }
 
 .inner-contents{
   width:1152px;
   padding:65px 0 100px;
   margin:0 auto;
+
+  &.full-screen{
+    width:100% !important;
+  }
 }
 
 .article{
@@ -117,8 +125,6 @@
         background: #f3f4f8;
       }
     }
-
-
 
     th{
       padding:19px 0 16px;
@@ -235,6 +241,19 @@
         td{
           border-top:0;
         }
+      }
+    }
+
+    tr {
+
+      &.span{
+        td{
+          border-right: 1px solid #f2f4f7;
+        }
+      }
+
+      &.on {
+        background: #f3f4f8;
       }
     }
 
@@ -1340,6 +1359,26 @@ p.icontxt{
     background-size: cover;
   }
 
+  &.in-person{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_in_person.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.autoscreening{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_autoscreening.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.baggage-claim{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_baggage_claim.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.lost-baggage{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_lost_baggage.jpg) no-repeat center;
+    background-size: cover;
+  }
+
 }
 
 %gutter{
@@ -1721,7 +1760,7 @@ p.icontxt{
       .step2-list-item {
         min-height: 280px;
         width:calc(20% - 10px);
-        margin-left: 10px;
+        margin-left: 12px;
       }
     }
   }
@@ -1730,7 +1769,7 @@ p.icontxt{
       .step2-list-item {
         min-height: 280px;
         width:calc(16.666% - 10px);
-        margin-left: 10px;
+        margin-left: 12px;
       }
     }
   }

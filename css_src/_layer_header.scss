@@ -13,6 +13,18 @@
 
   &.start{ // 출발
     background:url(/static/ap/images/bg_layer_header_01.jpg) no-repeat left bottom;
+    &.checkin{//체크인카운터
+      background:url(/static/ap/images/bg_layer_header_ac_01_01.jpg) no-repeat left bottom;
+    }
+    &.security{//보안검색
+      background:url(/static/ap/images/bg_layer_header_ac_04_01.jpg) no-repeat left bottom;
+    }
+    &.immigration.sub1{//유인심사
+      background:url(/static/ap/images/bg_layer_header_ac_05_01.jpg) no-repeat left bottom;
+    }
+    &.immigration.sub2{//자동출입
+      background:url(/static/ap/images/bg_layer_header_ac_05_02.jpg) no-repeat left bottom;
+    }
   }
   &.arrive{ // 도착
     background:url(/static/ap/images/bg_layer_header_02.jpg) no-repeat left bottom;
@@ -33,17 +45,26 @@
     background:url(/static/ap/images/bg_layer_header_06.jpg) no-repeat left bottom;
   }
 
+  &.full-screen{
+    left:-100% !important;
+  }
+
 
   &-heading{
     margin-bottom:75px;
     font-family:nanumsq, sans-serif;
-    font-size:2.75rem;
+    font-size:2.5rem;
     font-weight:400;
     color:#fff;
     text-align:center;
+    line-height:1.4;
 
     &-sub{
       font-size:1.75rem;
+    }
+
+    br{
+      display:none;
     }
   }
 }
@@ -266,7 +287,7 @@
   right:0;
   display: block;
   margin: 0 auto;
-  width:284px;
+  width:80%;
   max-width:284px;
   border:2px solid rgba(255,255,255,0.1);
   padding: 14px 0;
