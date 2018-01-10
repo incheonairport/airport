@@ -113,7 +113,7 @@
         font-size:2rem;
         line-height:1.3;
         &-lv3{
-          font-size:2rem;
+          font-size:1.5rem;
         }
       }
       &.clip, &.clip-white{
@@ -237,13 +237,17 @@
           }
         }
         & td{
-          padding:10px 0;
+          padding:10px;
+          font-size:0.825rem;
           &.no-data-found{
             text-align:center;
             padding: 40px 20px;
           }
           &:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6){
             display:none;
+          }
+          .board-list-link{
+            font-size:0.825rem;
           }
         }
       }
