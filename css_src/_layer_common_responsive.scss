@@ -1497,6 +1497,17 @@
     }
   }
 
+  .overflow{
+    max-width: 100%;
+    overflow-y:scroll;
+    &.t1{
+      height:400px;
+    }
+    &.t2{
+      height:400px;
+    }
+  }
+
 
 
 }

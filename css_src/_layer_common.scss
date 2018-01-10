@@ -2126,6 +2126,12 @@ b.text-bold{
   height: 400px;
   overflow-x: auto;
   overflow-y:hidden;
+  &.t1{
+    height:440px;
+  }
+  &.t2{
+    height:671px;
+  }
 }
 
 button{
