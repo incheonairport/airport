@@ -315,6 +315,12 @@
         color:#42519e;
       }
     }
+
+    &.info {
+      tr:last-child {
+        height: 140px;
+      }
+    }
   }
 
   &.hr{
