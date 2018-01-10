@@ -1,5 +1,5 @@
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1023px) {
   // guide box
   .guidebox {
     &-col {
@@ -183,7 +183,7 @@
 }
 
 // 640
-@media all and (max-width:639px) {
+@media screen and (max-width:639px) {
   .position-box108{
     margin-top:0;
   }

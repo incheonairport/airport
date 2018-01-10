@@ -119,9 +119,7 @@ $(function(){
 
   })();
 
-
   // set full page
-
   (function(){
 
     if( $('#fullpage').length > 0 ){
@@ -238,9 +236,27 @@ $(function(){
 
     });
 
-    $('.header-search-btn.gnb-search').on('mouseenter', function(){
+    $('.header-search-btn.gnb-search').data('search', false).on('click', function(){
 
-      $('.header-search-item.gnb-search').addClass('on');
+      if( !$(this).data().search ){
+
+        $('.header-search-item.gnb-search').addClass('on');
+        $(this).data('search', true);
+
+      } else {
+
+        // 검색 기능 실행
+        alert('검색기능실행');
+
+      }
+
+    });
+
+    $('.header-search-close').on('click', function(){
+
+      $('.header-search-item.gnb-search').removeClass('on');
+      $('.header-search-btn.gnb-search').data('search', false);
+
 
     });
 
@@ -250,7 +266,7 @@ $(function(){
 
         if( !$(e.target).hasClass('header-search-input') ){
 
-          $('.header-search-item.gnb-search').removeClass('on');
+
 
         }
 
@@ -276,6 +292,27 @@ $(function(){
 
       $('.gnb').removeClass('mobile-on');
 
+    });
+
+  })();
+
+  // zoom in/out
+  (function(){
+
+    $('.location-btn-minus').on('click', function(){
+
+      Zoom.exec(-1);
+
+    });
+
+    $('.location-btn-plus').on('click', function(){
+
+      Zoom.exec(1);
+
+    });
+
+    $('.location-btn-print').on('click', function(){
+      window.print();
     });
 
   })();

@@ -846,7 +846,7 @@
           transition:all .3s ease-out;
 
           &.on{
-            width:350px;
+            width:360px;
           }
         }
       }
@@ -922,7 +922,7 @@
 
       &-input{
         display:block;
-        width:265px;
+        width:250px;
         height:25px;
         border:0;
         position:absolute;
@@ -945,6 +945,28 @@
         }
         &:-moz-placeholder {
           color: #fff;
+        }
+      }
+
+      &-close{
+        width:15px;
+        height:15px;
+        position:absolute;
+        top:0;
+        right:343px;
+        border:none;
+        background:transparent;
+
+        &:after{
+          content:"";
+          display:block;
+          width:15px;
+          height:15px;
+          background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
+          background-size:cover;
+          position:absolute;
+          top:13px;
+          left:6px;
         }
       }
 

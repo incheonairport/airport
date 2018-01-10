@@ -1,5 +1,5 @@
 // 1740
-@media all and (max-width:1739px) {
+@media screen and (max-width:1739px) {
   .header{
     max-width:330px;
 
@@ -19,7 +19,7 @@
 
 
 // 1260
-@media all and (max-width:1259px) {
+@media screen and (max-width:1259px) {
   .header{
     max-width:260px;
     &-heading{
@@ -85,7 +85,7 @@
 
 
 // 780
-@media all and (max-width:780px) {
+@media screen and (max-width:780px) {
   .lnb-top{
     top:-20px;
     &-list{

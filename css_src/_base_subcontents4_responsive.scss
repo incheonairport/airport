@@ -1,5 +1,5 @@
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1023px) {
   // layout
   //.multi-col{
   //  &.double{
@@ -56,7 +56,7 @@
 }
 
 // 640
-@media all and (max-width:640px) {
+@media screen and (max-width:640px) {
 
   .multi-col{
     min-width:100%;
