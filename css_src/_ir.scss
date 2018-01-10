@@ -117,9 +117,11 @@
     .lost-box{
       &.found{
         background: url(/static/ap/images/digr_lost_and_found_01_en.png) no-repeat left;
+        height: 750px;
       }
       &.belongings{
         background: url(/static/ap/images/digr_lost_and_found_02_en.png) no-repeat right;
+        height: 750px;
       }
     }
   }

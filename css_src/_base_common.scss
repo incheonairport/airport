@@ -830,6 +830,10 @@ em{
   &.vt-dark{
     border-bottom:1px solid #a5a7aa;
 
+    &.info{
+      min-height: 300px;
+    }
+
     tbody{
       tr:first-child{
         td{
@@ -843,6 +847,9 @@ em{
       &.span{
         td{
           border-right: 1px solid #f2f4f7;
+          &:first-child {
+            border-left:0;
+          }
         }
       }
 
@@ -1339,6 +1346,7 @@ select{
   font-size:1rem!important;
   position:relative;
   text-indent:24px;
+  background:#fff;
   &:before{
     content:'';
     display:block;
@@ -1385,3 +1393,4 @@ select{
     border-top:0!important;
   }
 }
+

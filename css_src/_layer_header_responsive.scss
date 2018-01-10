@@ -103,7 +103,7 @@
 
   .header{
     width:70%;
-    padding-top: 136px;
+    padding-top: 66px;
     max-width:70%;
     min-width:260px;
 
@@ -203,5 +203,17 @@
       right:15px;
       text-indent:-99999em;
     }
+  }
+
+
+
+  .layer-terminal-check-btn{
+    position:static;
+    width:80%;
+    max-width:284px;
+    border:none;
+    padding: 14px 0;
+    font-size:1.125rem;
+
   }
 }

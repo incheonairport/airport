@@ -1365,6 +1365,30 @@ p.icontxt{
     background-size: cover;
   }
 
+  &.in-person{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_in_person.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.autoscreening{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_autoscreening.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.baggage-claim{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_baggage_claim.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.lost-baggage{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_lost_baggage.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.military{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_military.jpg) no-repeat center;
+    background-size: cover;
+  }
 }
 
 %gutter{
@@ -2200,6 +2224,158 @@ button{
     }
 
   }
+  &.system{
+    min-width:565px;
+    overflow-y:auto;
+    border: 4px solid #fefefe;
+    padding: 36px 36px 70px;
+    background:url(/static/ap/images/bg_system_check_popup.jpg ) center no-repeat;
+    background-size:cover;
+
+    .layer-system-list{
+      width:300px;
+      margin:0 auto;
+      text-indent:10px;
+      @extend %clearfix;
+      &:last-child{
+        margin:0 auto 15px auto;
+      }
+      &-tit{
+        float:left;
+        width:150px;
+        color:#fff;
+        text-align:left;
+        line-height:1.4;
+        &:before{
+          content: "·";
+          font-size: 1.125rem;
+          margin-right:5px;
+        }
+      }
+      &-desc{
+        color:#fff;
+        text-align:left;
+        line-height:1.7;
+      }
+    }
+
+    .layer-system-desc{
+      color:#fff;
+      margin-bottom:30px;
+      &.point{
+        color:#ffae43;
+        font-size:1.125rem;
+        margin-bottom:30px;
+      }
+      &.systemico:after{
+        content:'';
+        display:block;
+        width:114px;
+        height:99px;
+        background:url(/static/ap/images/ico_system_mark.png ) center no-repeat;
+        margin:26px auto 40px;
+      }
+    }
+    .layer-area{
+      text-align:center;
+      padding:0;
+    }
+    .layer-title{
+      font-size:2.125rem;
+      color:#fff;
+      font-weight:300;
+      font-family:exo, sans-serif;
+      text-align:center;
+      border-bottom:0;
+      margin-bottom:0;
+      padding-bottom:0;
+      &:after{
+        content:'';
+        display:block;
+        height:2px;
+        width:44px;
+        background:rgba(255,255,255,0.4);
+        margin: 26px auto 24px;
+      }
+    }
+    .layer-article{
+      margin-bottom:0;
+    }
+    .layer-close{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background:url(/static/ap/images/ico_lp_modal_close.png ) center no-repeat;
+      border:0;
+      text-indent: -99999em;
+      position:absolute;
+      z-index: 99999;
+      top: 20px;
+      right: 20px;
+      padding:0;
+      &:hover{
+        opacity:.7;
+      }
+    }
+    .layer-check{
+      float:left;
+      width:140px;
+      height:56px;
+      background:#323648;
+      color:#fff;
+      font-size: 1.25rem;
+      line-height:56px;
+      border:0;
+    }
+
+    .layer-guide{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:46px;
+      background:#fff;
+      &-box{
+        position:absolute;
+        right:0;
+        bottom:10px;
+        margin:auto;
+      }
+    }
+
+    .btn-group{
+      margin-top:30px;
+    }
+    .layer-inputbox-btn{
+      border:1px solid rgba(255,255,255,.8);
+      min-width:155px;
+      margin-left:6px;
+      display:inline-block;
+      padding:8px 10px;
+      border-radius:50px;
+      font-size:0.825rem;
+      color:#fff;
+      text-align:left;
+      position:relative;
+      &:first-child{
+        margin-left:0;
+      }
+
+      &:after{
+        content:'';
+        display:block;
+        width:6px;
+        height:10px;
+        background:url(/static/ap/images/ico_system_arrow.png ) center no-repeat;
+        position:absolute;
+        right:10px;
+        top:0;
+        bottom:0;
+        margin:auto;
+      }
+    }
+
+  }
   display:none;
   width: 550px;
   //max-height: 684px;
@@ -2698,3 +2874,56 @@ select{
   }
 }
 
+.capcha{
+  width:150px;
+  height:50px;
+  border:1px solid #d9d9d9;
+  font-size:1rem!important;
+  position:relative;
+  text-indent:24px;
+  &:before{
+    content:'';
+    display:block;
+    background: url(/static/ap/images/spr_service_ico.png) no-repeat;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:24px;
+    margin:auto;
+  }
+  &.reflash{
+    &:before{
+      background-position:-29px -18px;
+      width: 21px;
+      height: 21px;
+    }
+
+  }
+  &.sound{
+    &:before{
+      background-position: -68px -17px;
+      width: 25px;
+      height: 23px;
+    }
+  }
+}
+.input-align{
+  clear: both;
+  overflow:hidden;
+
+  .capcha{
+    float:left;
+    &:nth-child(3){
+      border-left:0;
+    }
+  }
+  img{
+    float:left;
+  }
+  .user-input-text{
+    width:550px!important;
+  }
+  .capcha+.user-input-text{
+    border-top:0!important;
+  }
+}

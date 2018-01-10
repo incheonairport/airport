@@ -326,6 +326,9 @@
           padding:20px 10px 16px;
           margin:0!important;
           &.img{
+            .boxmodel-btn-group{
+              margin-top:auto;
+            }
             height:300px!important;
             min-height:300px;
             .boxmodel-list-head{
@@ -709,6 +712,7 @@
         }
       }
       .logo-list{
+        width:100%;
         display:inline-block;
 
         &-item{

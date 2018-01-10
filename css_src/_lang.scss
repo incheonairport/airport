@@ -78,8 +78,28 @@
   .step2-list {
     &.col-4 {
       .step2-list-item {
-        width: calc(25% - 18px);
         min-height: 570px;
+      }
+      &.white{
+        .step2-list-item {
+          min-height: 316px;
+        }
+      }
+    }
+
+    &.col-6 {
+      &.white{
+        .step2-list-item {
+          min-height: 320px;
+        }
+      }
+    }
+
+    &.white{
+      .btn-type-small{
+        height: auto;
+        line-height: 1.4;
+        padding: 5px 30px 5px 15px;
       }
     }
   }
@@ -232,6 +252,17 @@
         background-position: -249px -27px;
       }
     }
+  }
+
+  .search-flight-search-btn.ico:after {
+    right: 77px;
+    top: -2px;
+  }
+
+  .search-flight-detail-option input[type="radio"].radio+.search-option-btn {
+    min-width: 58px;
+    text-align: center;
+    padding: 0 6px;
   }
 }
 
