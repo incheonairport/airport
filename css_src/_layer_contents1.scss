@@ -934,18 +934,19 @@
 .route-bus-stop{
   display: block;
   width: 1152px;
-  height: 400px;
+  height: 440px;
   background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t1_02.png) no-repeat center;
   //background-size: 100%;
   position: relative;
+  border:1px solid #d9d9d9;
   &-ico-box{
     display: block;
     position: absolute;
-    width: 529px;
-    height: 89px;
+    width: 903px;
+    height: 151px;
     top: 50%;
     left: 50%;
-    margin: -75px -276px;
+    margin: -15px -454px;
   }
   .exit{
     text-indent: -99999em;
@@ -954,64 +955,120 @@
     height: 42px;
     position: absolute;
     &.exit-1{
-      top: -2px;
-      left: 15px;
+      top: -28px;
+      left: 29px;
     }
     &.exit-2{
-      top: 11px;
-      left: 55px;
+      top: -11px;
+      left: 66px;
     }
     &.exit-3{
-      top: 21px;
-      left: 96px;
+      top: 10px;
+      left: 124px;
     }
     &.exit-4{
-      top: 30px;
-      left: 137px;
+      top: 28px;
+      left: 192px;
     }
     &.exit-5{
-      top: 37px;
-      left: 175px;
+      top: 40px;
+      left: 256px;
     }
     &.exit-6{
-      top: 40px;
-      left: 212px;
+      top: 50px;
+      left: 327px;
     }
     &.exit-7{
-      top: 42px;
-      left: 246px;
+      top: 54px;
+      left: 398px;
     }
     &.exit-8{
-      top: 43px;
-      left: 282px;
+      top: 55px;
+      left: 457px;
     }
     &.exit-9{
-      top: 42px;
-      left: 317px;;
+      top: 52px;
+      left: 522px;
     }
     &.exit-10{
-      top: 39px;
-      left: 354px;
+      top: 44px;
+      left: 588px;
     }
     &.exit-11{
       top: 34px;
-      left: 394px;
+      left: 655px;
     }
     &.exit-12{
-      top: 27px;
-      left: 434px;
+      top: 18px;
+      left: 725px;
     }
     &.exit-13{
-      top: 14px;
-      left: 474px;
+      top: -1px;
+      left: 789px;
     }
     &.exit-14{
-      top: 0;
-      left: 513px;
+      top: -27px;
+      left: 852px;
     }
   }
 }
-
+.route-bus-stop2{
+  display: block;
+  width: 1152px;
+  height: 671px;
+  background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t2_02.png) no-repeat center;
+  border:1px solid #d9d9d9;
+  //background-size: 100%;
+  position: relative;
+  &-ico-box2{
+    display: block;
+    position: absolute;
+    width: 703px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin: -2px -361px;
+  }
+  .exit{
+    text-indent: -99999em;
+    background: url(/static/ap/images/ico_route_bus_area_search_t1.png) no-repeat;
+    width: 22px;
+    height: 42px;
+    position: absolute;
+    &.exit-1{
+      top: 86px;
+      left: 115px;
+    }
+    &.exit-2{
+      top: 155px;
+      left: 115px;
+    }
+    &.exit-3{
+      top: 182px;
+      left: 182px;
+    }
+    &.exit-4{
+      top: 182px;
+      left: 277px;
+    }
+    &.exit-5{
+      top: 182px;
+      left: 382px;
+    }
+    &.exit-6{
+      top: 182px;
+      left: 475px;
+    }
+    &.exit-7{
+      top: 155px;
+      left: 549px;
+    }
+    &.exit-8{
+      top: 86px;
+      left: 548px;
+    }
+  }
+}
 
 .font20, %font20{
   font-size: 1.25rem;
