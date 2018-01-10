@@ -58,7 +58,7 @@ $(function(){
 
     var gnbLinkIndex = $('.gnb-link').index( $('.gnb-link.on') );
 
-    $('.header').addClass('sub' + gnbLinkIndex);
+    $('.header').addClass('sub' + (gnbLinkIndex+1) );
 
   })();
 
