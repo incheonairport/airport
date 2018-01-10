@@ -62,6 +62,19 @@
 }
 
 .en{
+
+  .gnb.bg .header-search-item.gnb-search{
+    width:83px;
+
+    &.on{
+      width:350px;
+    }
+  }
+
+  .gnb.bg .header-search{
+    padding-right:90px;
+  }
+
   .step2-list {
     &.col-4 {
       .step2-list-item {

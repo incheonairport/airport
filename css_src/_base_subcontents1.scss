@@ -1470,6 +1470,17 @@
 
     }
 
+    &#airportOnMapWrap{
+
+      .layer{
+
+        max-height:inherit;
+        height:96%;
+
+      }
+
+    }
+
   }
 
   &.size{

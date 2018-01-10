@@ -429,6 +429,11 @@
   display:inline-block;
   width:860px;
   margin:20px 0 0 40px;
+
+  &.tight{
+    margin-top:0;
+  }
+
   .top-notice-desc{
     //letter-spacing:-1px;
     padding-top:10px;
@@ -443,6 +448,8 @@
       height: 12px;
     }
   }
+
+
   &:before{
     content: '';
     display: block;

@@ -361,6 +361,12 @@
         text-align: left;
         padding-left: 20px;
       }
+
+      &.two-line-th{
+        br{
+          display: block;
+        }
+      }
     }
 
     td{
