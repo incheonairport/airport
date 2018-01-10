@@ -1376,6 +1376,11 @@ p.icontxt{
     background-size: cover;
   }
 
+  &.arr-immigration{
+    background:url(/static/ap/images/bg_sub_layer_banner_arr_immigration.jpg) no-repeat center;
+    background-size: cover;
+  }
+
   &.autoscreening{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_autoscreening.jpg) no-repeat center;
     background-size: cover;
@@ -2885,6 +2890,11 @@ select{
     width: 100%;
     height: 100%;
   }
+}
+
+
+img.no-extend{
+  width:100%;
 }
 
 .capcha{

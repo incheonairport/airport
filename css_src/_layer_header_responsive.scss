@@ -37,9 +37,9 @@
   }
 
   .layer-terminal-check-btn.one{
-    width:200px;
-    max-width:200px;
-    margin-left:-100px;
+    //width:200px;
+    //max-width:200px;
+    //margin-left:-100px;
   }
 
   .lnb-top{
@@ -87,7 +87,7 @@
 // 780
 @media screen and (max-width:780px) {
   .lnb-top{
-    top:-20px;
+    //top:-20px;
     &-list{
       border-bottom:0;
       border:none;
@@ -95,10 +95,10 @@
 
   }
   .layer-terminal-check-btn.one{
-    border:none;
-    span{
-      display:none;
-    }
+    //border:none;
+    //span{
+    //  display:none;
+    //}
   }
 
   .header{
