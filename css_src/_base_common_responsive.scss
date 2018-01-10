@@ -1,5 +1,5 @@
 // 1260
-//@media all and (max-width:1259px) {
+//@media screen and (max-width:1259px) {
 //  // layout
 //  .inner-section{
 //    //width: 100%;
@@ -13,7 +13,7 @@
 //}
 
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1023px) {
   // layout
   .inner-section.responsive{
     width: 100%;
@@ -23,7 +23,7 @@
 }
 
 // 640
-@media all and (max-width:639px) {
+@media screen and (max-width:639px) {
 
   .inner-section{
     width: 100%;
