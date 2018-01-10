@@ -1,0 +1,157 @@
+<!--=include _include/_base_header.html -->
+<section id="top-contents" class="contents" style="height:2000px;">
+  <div class="inner-section">
+    <!--레이어팝업-->
+    <div class="layer-wrap on">
+      <div class="layer address-layer max-size max-height on">
+        <div class="layer-area">
+          <div class="layer-article">
+            <h4 class="layer-title title2">라운지 쿠폰등록</h4>
+          </div>
+          <div class="tab-area">
+            <h5 class="tab-area-heading" onclick="searchAndRegistCouponInfo()">Register Coupon Information</h5>
+
+            <div class="tab-area-content">
+              <div class="layer-article mt40">
+                <div id="registCoupon"></div>
+              </div>
+            </div>
+
+            <h5 class="tab-area-heading on" onclick="editCouponInfo()" >Edit Coupon Information</h5>
+            <div class="tab-area-content on">
+              <div class="layer-article mt20">
+                <div id="editCoupon">
+                  <script type="text/javascript">
+                    $(document)
+                        .ready(
+                        function() {
+                          $('#cpnSearch2').on('click',function() {
+                            if ($('#CP_NUM').val() == '') {
+                              alert("Enter Serial Number.");
+                            } else if ($('#EMAIL').val() == '' && $('#emailRadio').is(":checked")) {
+                              alert("Enter Email Address.");
+                            } else if ($('#SUR_NAME').val() == '' && $('#nameRadio').is( ":checked")) {
+                              alert("Enter SUR_NAME.");
+                            } else if ($('#GIVEN_NAME').val() == ''&& $('#nameRadio').is(":checked")) {
+                              alert("Enter GIVEN_NAME.");
+                            } else {
+                              if ($('#emailRadio').is(":checked")) {
+                                var data = {CP_NUM : $('#CP_NUM').val(), EMAIL : $('#EMAIL').val() };
+                                $("#editCoupon").load("/ap/ko/trn/trnSkyHubLoungeCpRegistered.do", data, function(response, result, status) {
+// 							 			LineTab1.setTab($('.tab-nav'));
+// 							 			LineTab1.setTab($('.tab-area'));
+// 							 		    // Layer Popup 닫기
+// 							 		    $('.layer-close').on('click', function(){
+// 							 		      LayerPopup1.closePopup( $(this).parent('.layer') );
+// 							 		     $("#popupLayer").html('');
+// 							 		    });
+                                });
+
+                              } else if ($('#nameRadio').is(":checked")) {
+                                var data = {
+                                  CP_NUM : $('#CP_NUM').val(),
+                                  SUR_NAME : $('#SUR_NAME').val(),
+                                  GIVEN_NAME : $('#GIVEN_NAME').val()
+                                };
+                                fncLoad("#editCoupon", "/ap/ko/trn/trnSkyHubLoungeCpRegistered.do",data,
+
+                                );
+                              }
+                            }
+                          });
+
+                          $('#CP_NUM, #SUR_NAME, #GIVEN_NAME').keyup(
+                              function() {$(this).val($(this).val().replace(/[^a-zA-Z0-9_]/g, "").toUpperCase());
+                              });
+
+                          $('#emailRadio, #nameRadio').click(
+                              function() {
+                                if ($('#emailRadio').is(":checked")) {
+                                  $('#nameArea input[type=text]').attr(	"disabled", true);
+                                  $('#emailArea input[type=text]').attr(	"disabled", false);
+                                }
+                                if ($('#nameRadio').is(":checked")) {
+                                  $('#nameArea input[type=text]').attr(	"disabled", false);
+                                  $('#emailArea input[type=text]').attr(	"disabled", true);
+                                }
+                              }
+                          );
+                        });
+                  </script>
+                  <style>
+                    .carnum {
+                      padding: 0px;
+                      width : 188px;
+                    }
+
+                    .txt_coral {
+                      color: coral;
+                    }
+                  </style>
+                  <!-- 선택박스 -->
+                  <div>
+                    <div class="layer-article mt40">
+                      <div class="layer-text-box">
+                        <label for="CP_NUM" class="carnum guide-desc mark color">Serial Number</label>
+                        <input title="CP_NUM" id="CP_NUM" name="CP_NUM" placeholder="Enter Serial Number" type="text" class="user-text">
+                      </div>
+                      <div>
+                        <div>
+                          <div id="emailArea">
+                            <div class="multi-col">
+                              <div class="inner-col">
+                                <div class="radio-type1">
+                                  <input name="radio" id="emailRadio" value="emailRadio" checked="checked" type="radio" class="radio-type1-radio">
+                                  <label for="emailRadio" class="carnum radio-type1-label ico">Email</label>
+                                </div>
+                              </div>
+                              <div class="inner-col">
+                                <input title="EMAIL" id="EMAIL" name="EMAIL" placeholder="Enter Email Address" tyoe="text" class="user-text">
+                              </div>
+                            </div>
+                          </div>
+                          <div id="nameArea text-box">
+                            <div class="multi-col">
+                              <div class="inner-col">
+                                <div class="radio-type1">
+                                  <input name="radio" id="nameRadio" value="nameRadio" type="radio" class="radio-type1-radio">
+                                  <label for="nameRadio" class="carnum radio-type1-label ico"> Surname </label>
+                                  <input title="SUR_NAME" id="SUR_NAME" name="SUR_NAME" placeholder="Enter SUR_NAME" class="user-text" type="text" disabled="disabled">
+                                </div>
+                              </div>
+                              <div class="inner-col">
+                                <label for="GIVEN_NAME" class="carnum"> Givenname</label>
+                                <input title="GIVEN_NAME" id="GIVEN_NAME" name="GIVEN_NAME" placeholder="Enter GIVEN_NAME" class="user-text" type="text" disabled="disabled">
+                              </div>
+                          </div>
+                          <button id="cpnSearch2" class="btn btn-edit">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                      <div class="mt40">
+                        <p class="guide-desc mark">
+                          <strong>This amenity is available only
+                            to transfer passengers using serial numbers assigned by the carriers
+                            participating in the promotion campaign.</strong>
+                        </p>
+                        <p class="guide-desc">
+                          <strong>
+                            Enter a serial number including _(under bar). <span class="color">Mandatory input : serial number, Optional input : email or name </span>
+                          </strong>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!--// 선택박스 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="layer-close">닫기</a>
+      </div>
+    </div>
+    <!--//레이어팝업-->
+  </div>
+</section>
+<!--=include _include/_base_footer.html -->
