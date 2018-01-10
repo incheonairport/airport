@@ -28,6 +28,9 @@
   }
   &.arrive{ // 도착
     background:url(/static/ap/images/bg_layer_header_02.jpg) no-repeat left bottom;
+    &.immigration{//유인심사
+      background:url(/static/ap/images/bg_layer_header_bc_02.jpg) no-repeat left bottom;
+    }
   }
   &.traffic-parking{ // 교통/주차
     background:url(/static/ap/images/bg_layer_header_03.jpg) no-repeat left bottom;

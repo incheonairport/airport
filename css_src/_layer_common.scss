@@ -1831,6 +1831,7 @@ p.icontxt{
       text-align:center;
       &.left{
         text-align:left;
+        letter-spacing:-1px;
       }
 
       .article-desc{
@@ -2937,5 +2938,9 @@ select{
   }
   .capcha+.user-input-text{
     border-top:0!important;
+  }
+
+  .f-small{
+    font-size: 1.125rem;
   }
 }
