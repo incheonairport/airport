@@ -73,6 +73,22 @@
         }
       }
     }
+
+    &.col-6 {
+      &.white{
+        .step2-list-item {
+          min-height: 320px;
+        }
+      }
+    }
+
+    &.white{
+      .btn-type-small{
+        height: auto;
+        line-height: 1.4;
+        padding: 5px 30px 5px 15px;
+      }
+    }
   }
 
   .layer{

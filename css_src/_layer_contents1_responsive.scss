@@ -429,7 +429,17 @@
     }
     &-clear{
       //width: 180px;
-      height:320px;
+      min-height:320px;
+      &.full-screen{
+        height:320px;
+        .search-map-svg{
+          height:100%;
+        }
+
+        .search-map-wrap{
+          height:100%;
+        }
+      }
       &.on{ // 펼침 접기
         border:1px solid #d9d9d9;
         .search-map-svg{
