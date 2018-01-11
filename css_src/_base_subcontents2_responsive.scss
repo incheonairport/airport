@@ -583,6 +583,9 @@
     &.airline-city{
       padding:60px 0;
     }
+    &.transfer-bg{
+      padding-top:30px;
+    }
     &-inner{
       //padding:60px 15px;
       &.split{
@@ -602,6 +605,20 @@
     }
     &-list{
       margin-top:0;
+      &.col-multi{
+        .section-bg-list-tit{
+          font-size:1rem;
+        }
+        .section-bg-list-item{
+          width:100%;
+          .btn-type-small{
+            margin-top:10px;
+          }
+          .section-bg-list-inner{
+
+          }
+        }
+      }
       &.col-4{
         .section-bg-list-item{
           width:100%;
