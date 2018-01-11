@@ -55,6 +55,10 @@
 
 }
 
+.full-page-wrapper{
+  overflow:hidden;
+}
+
 .main{
 
   &-visual{
@@ -327,7 +331,7 @@
       color:#fff;
       text-align:center;
 
-      overflow:hidden;
+      //overflow:hidden;
 
       z-index:100;
 

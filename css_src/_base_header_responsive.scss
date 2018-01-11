@@ -48,6 +48,7 @@
       width:170px;
       position:relative;
       left:-4px;
+      z-index:0;
 
       &-link{
         height:23px;
@@ -57,9 +58,11 @@
 
     &-site{
       top:auto;
-      bottom:20px;
+      bottom:0;
       width:100%;
       left:0;
+      padding:30px 0;
+      background:#fff;
 
       &-item{
         width:50%;
@@ -185,9 +188,11 @@
           border-radius:20px;
           overflow:hidden;
           transition:all .3s ease-out;
+          z-index:10;
+
 
           &.on{
-            width:350px;
+            width:80%;
           }
         }
       }
@@ -244,6 +249,8 @@
             text-indent:-99999em;
             border-radius:20px;
             box-sizing:content-box;
+            position:relative;
+            z-index:10;
 
             &:after {
               content:"";
@@ -263,7 +270,7 @@
 
       &-input{
         display:block;
-        width:265px;
+        width:60%;
         height:25px;
         border:0;
         position:absolute;
@@ -289,6 +296,12 @@
         }
       }
 
+      &-close{
+        //right:230px;
+        left:10px;
+        z-index:0;
+      }
+
     }
   }
 
@@ -307,13 +320,46 @@
 
     &-depth1{
       width:100%;
+      height:100%;
       padding:20px;
+      overflow:auto;
+      padding-bottom:210px;
 
       &-item{
         width:100% !important;
         float:none;
         height:45px;
+        //height:266px;
         border-bottom:1px solid #d9d9d9;
+        overflow:hidden;
+
+        &:hover:after{
+          top:43px;
+        }
+
+        &:nth-child(1).on{
+          height:190px;
+        }
+
+        &:nth-child(2).on{
+          height:160px;
+        }
+
+        &:nth-child(3).on{
+          height:190px;
+        }
+
+        &:nth-child(4).on{
+          height:160px;
+        }
+
+        &:nth-child(5).on{
+          height:160px;
+        }
+
+        &:nth-child(6).on{
+          height:160px;
+        }
       }
 
       &-link{
@@ -338,7 +384,12 @@
     }
 
     &-depth2{
-      display:none;
+      //display:none;
+      height:auto;
+      border:0!important;
+      margin-top:0;
+      padding:10px 0 0 10px;
+
     }
 
     &-mobile-btn{

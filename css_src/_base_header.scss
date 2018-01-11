@@ -475,6 +475,8 @@
     &-item{
       float:left;
       margin-left:25px;
+      position:relative;
+      overflow:hidden;
     }
 
     &-btn{
@@ -529,8 +531,8 @@
       width:15px;
       height:15px;
       position:absolute;
-      top:0;
-      right:343px;
+      top:7px;
+      right:335px;
       border:none;
       background:transparent;
       text-indent:-99999em;
@@ -543,9 +545,8 @@
         background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
         background-size:cover;
         position:absolute;
-        top:13px;
-        left:6px;
-
+        top:0;
+        left:0;
       }
     }
 
