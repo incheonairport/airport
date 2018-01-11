@@ -653,6 +653,11 @@
 
   .tab{
     &-nav{
+      &.transit{
+        .tab-nav-list-item{
+          width:100%!important;
+        }
+      }
       &-list{
         &-link{
           border-bottom-color:#d9d9d9;

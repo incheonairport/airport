@@ -1198,6 +1198,37 @@
 
   }
 
+
+  .digr-incheon-airport-glance01{
+    height: 194px;
+    background-size:contain;
+  }
+
+  .digr-incheon-airport-glance02 {
+    height: 194px;
+    background-size:contain;
+  }
+
+  .layer{
+    .tab-area-heading{
+      width:50%!important;
+    }
+    &:nth-child(3){
+
+    }
+    .tab-area-heading+.tab-area-content+.tab-area-heading{
+      left:50%!important;
+    }
+  }
+  .layer.size.max-height {
+
+    max-height: 100%;
+    img {
+      width:100%;
+    }
+  }
+
+
 }
 
 
