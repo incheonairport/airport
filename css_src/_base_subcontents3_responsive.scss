@@ -308,7 +308,7 @@
     }
     // 터미널검색
     &-terminal-search{
-
+      height:250px;
       &-heading{
         display:block;
         height:0;
@@ -360,7 +360,8 @@
       }
       &-depth2{
         position:absolute;
-        top:196px;
+        top:149px;
+        width:100%;
         padding:0px;
         background:none;
         border:0;
@@ -375,6 +376,7 @@
         width:100%;
         text-align:center;
         top:140px;
+        position: static;
       }
       &-detail{
         display:none;
