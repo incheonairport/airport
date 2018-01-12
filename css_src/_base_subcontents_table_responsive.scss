@@ -4,7 +4,7 @@
 }
 
 // 640
-@media screen and (max-width:640px) {
+@media screen and (max-width:1023px) {
 
   // 출발
   .contents{
@@ -328,7 +328,7 @@
                 margin-top:0;
 
                 float:left;
-                width:70%;
+                width:100%;
 
                 &:after{
                   content:"";

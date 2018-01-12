@@ -1,9 +1,10 @@
 // 1024
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   // layout
   .contents{
     width: 100%;
     min-width: 100%;
+
   }
 
 
@@ -34,7 +35,7 @@
 }
 
 // 640
-@media screen and (max-width:639px) {
+@media screen and (max-width:1024px) {
 
   .location{
     position: static;
@@ -49,12 +50,23 @@
       position: static;
       &-nav{
         &-item {
+          display:none;
           padding-left: 20px;
           float: left;
           line-height:1.7;
           &-link{
             color: #666;
             font-size:0.75rem;
+          }
+          &:last-child{
+            display:block;
+            width:100%;
+            text-align: center;
+            padding: 0;
+            .location-bar-nav-item-link{
+              font-size:0.825rem;
+              font-weight:900;
+            }
           }
         }
       }
@@ -239,10 +251,10 @@
     }
     &-mark{
       &-color{
-        width: 14px;
-        height: 14px;
+        width: 14px!important;
+        height: 14px!important;
         font-size:0.75rem;
-        line-height:14px;
+        line-height:14px!important;
       }
     }
   }
@@ -748,7 +760,7 @@
             width:100%;
             display: inline-block;
             border: 1px solid rgba(255, 255, 255, .5);
-            font-size: 1.125rem;
+            font-size: 1rem;
           }
         }
       }
@@ -964,20 +976,23 @@
       &-field{
         width:100%;
         &-txt{
-          width:calc(100% - 50px);
+          width:100%;
           height: 50px;
           padding: 0 15px;
+          border:1px solid #d9d9d9;
+          border-bottom:0;
           font-size: 1rem;
         }
         &-btn{
-
-          width: 50px;
+          width:100%;
           height: 50px;
           padding-left: 30px;
           line-height: 50px;
           &.ico{
-            text-indent:-999em;
+            font-size:1rem;
+            padding:0;
             &:after{
+              display:none;
               top:0;
               right:0;
               left:0;
@@ -1182,9 +1197,12 @@
     }
 
     &-research{
-      position:absolute;
+      position:static;
       top:15px;
       right:-205px;
+      .checkbox-label{
+        margin-top:10px;
+      }
     }
   }
 
