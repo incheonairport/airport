@@ -1312,6 +1312,7 @@ p.icontxt{
     font-size: 3.75rem;
     font-weight: 300;
     padding-top: 55px;
+    line-height: 1.2;
   }
 
   &-text{
@@ -1409,6 +1410,11 @@ p.icontxt{
 
   &.military{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_military.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  &.transferring-from{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_transferring_from.jpg) no-repeat center;
     background-size: cover;
   }
 }
