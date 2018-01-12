@@ -264,11 +264,6 @@ $(function(){
         $('.header-search-item.gnb-search').addClass('on');
         $(this).data('search', true);
 
-      } else {
-
-        // 검색 기능 실행
-        alert('검색기능실행');
-
       }
 
     });
