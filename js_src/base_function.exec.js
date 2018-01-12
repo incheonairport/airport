@@ -90,6 +90,8 @@ $(function(){
 
       } else {
 
+        $('.gnb-depth1-link').attr('href', '#');
+
         HeaderGnb.mobileHeaderInit();
         $('.visual-text').removeClass('text-right text-left');
 
@@ -119,9 +121,7 @@ $(function(){
 
   })();
 
-
   // set full page
-
   (function(){
 
     if( $('#fullpage').length > 0 ){
@@ -228,19 +228,51 @@ $(function(){
 
     });
 
-    $('.gnb-depth1-link').on('click', function(e){
+    $('.gnb-depth1-link').data('open', false).on('click', function(e){
 
       if( $(window).width() <= 1024 ){
 
         e.preventDefault();
 
+        if( !$(this).data().open ){
+
+          console.log($(this).data().open);
+
+          $('.gnb-depth1-item').removeClass('on').children('.gnb-depth1-link').data('open', false);
+          $(this).parents('.gnb-depth1-item').addClass('on');
+          $(this).data('open', true);
+
+        } else {
+
+          console.log($(this).data().open);
+
+          $(this).parents('.gnb-depth1-item').removeClass('on').children('.gnb-depth1-link').data('open', false);
+          $(this).data('open', false);
+
+        }
+
+
+
       }
 
     });
 
-    $('.header-search-btn.gnb-search').on('mouseenter', function(){
+    $('.header-search-btn.gnb-search').data('search', false).on('click', function(){
 
-      $('.header-search-item.gnb-search').addClass('on');
+      if( !$(this).data().search ){
+
+        $('.header-search-item.gnb-search').addClass('on');
+        $(this).data('search', true);
+
+      }
+
+    });
+
+    $('.header-search-close').on('click', function(){
+
+      $('.header-search-item.gnb-search').removeClass('on');
+      $('.header-search-btn.gnb-search').data('search', false);
+
 
     });
 
@@ -250,7 +282,7 @@ $(function(){
 
         if( !$(e.target).hasClass('header-search-input') ){
 
-          $('.header-search-item.gnb-search').removeClass('on');
+
 
         }
 
@@ -276,6 +308,27 @@ $(function(){
 
       $('.gnb').removeClass('mobile-on');
 
+    });
+
+  })();
+
+  // zoom in/out
+  (function(){
+
+    $('.location-btn-minus').on('click', function(){
+
+      Zoom.exec(-1);
+
+    });
+
+    $('.location-btn-plus').on('click', function(){
+
+      Zoom.exec(1);
+
+    });
+
+    $('.location-btn-print').on('click', function(){
+      window.print();
     });
 
   })();

@@ -1,10 +1,10 @@
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1023px) {
 
 }
 
 // 640
-@media all and (max-width:640px) {
+@media screen and (max-width:1023px) {
 
   // 출발
   .contents{
@@ -37,7 +37,7 @@
 
             &.flight-info-detail{
               .td-like{
-                height:145px;
+                height:auto;
                 border-bottom:1px solid #999;
 
 
@@ -46,10 +46,11 @@
                   position:absolute;
                   right:0;
                   bottom:0;
+                  border-left:0;
                 }
 
                 &:nth-child(3){
-                  width:70%!important;
+                  width:100%!important;
                 }
               }
             }
@@ -84,6 +85,8 @@
 
           .td-pop{
             height:145px;
+            bottom:-1px;
+            top:auto;
           }
 
         }
@@ -209,7 +212,8 @@
           &-heading{
             &-title{
               color: #fff;
-              font-weight: 900;
+              font-size:0.825rem;
+              font-weight: 400;
               float: left;
               .view-way{
                 margin-left: 10px;
@@ -242,7 +246,7 @@
             .flight-info-detail{
               &-country{
                 color: #ffae44;
-                font-size: 1.25rem;
+                font-size: 1rem;
               }
               &-date{
                 color: #999;
@@ -261,11 +265,11 @@
               display: block;
 
               &-item{
-                width:auto;
+                width:50%;
                 min-width:unset;
                 text-align: center;
                 float: left;
-                margin-right:25px;
+                margin-right:0;
 
                 &:last-child{
                   margin-right:0;
@@ -297,6 +301,10 @@
                     top: auto;
                     bottom:13px;
                   }
+
+                  &:nth-child(2){
+                    &:after{display:none}
+                  }
                 }
               }
               &.arrival{
@@ -319,7 +327,8 @@
               &-weather{
                 margin-top:0;
 
-                float:none;
+                float:left;
+                width:100%;
 
                 &:after{
                   content:"";
@@ -347,10 +356,11 @@
                 }
               }
               &-date{
+
+                float:left;
                 margin-top: 0;
-                font-size:0.875rem;
-                float:none;
                 text-align:left;
+                font-size:0.875rem;
                 //position:absolute;
                 //top:50px;
                 //right:16px;
@@ -361,7 +371,7 @@
           &-share{
             //display: block;
             //width:100%;
-            height: 73px;
+            height: 50px;
             //background:none;
             //border:none;
             line-height:120px;
@@ -372,29 +382,34 @@
             //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
             &.ico{
+              border-bottom:0;
               text-indent: 0;
-              &:after {
-                //background-position:-37px -185px;
-                //width: 32px;
-                //height: 32px;
-                //top:-10px;
-                margin-top:13px;
-                //position:absolute;
-                //top:50%;
-                //left:50%;
-                //transform:translate(-50%, -60%);
-              }
+              text-indent:-999em;
+              line-height:inherit;
+              height:50px;
+              width:50px;
+              position: absolute;
+              right:50px;
+              bottom:10px;
+            &:after{
+              margin-top: 10px!important;
+              transform:scale(0.8);
+            }
             }
           }
 
           &-close{
             //display: block;
             //width:100%;
-            height: 73px;
+            height: 50px;
             //background:none;
             //border:none;
             //cursor: pointer;
             //text-align: center;
+            width:50px;
+            position: absolute;
+            right:0;
+            bottom:10px;
 
             &.ico{
               &:after {
@@ -470,11 +485,12 @@
               width:100%;
               border:1px solid #d9d9d9;
               border-top:0;
+
             }
 
             &.flight-info-detail{
               .td-like{
-                height:145px;
+                height:auto;
                 border-bottom:1px solid #999;
 
 
@@ -483,10 +499,11 @@
                   position:absolute;
                   right:0;
                   bottom:0;
+                  border-left:0;
                 }
 
                 &:nth-child(3){
-                  width:70%!important;
+                  width:100%!important;
                 }
               }
             }
@@ -650,7 +667,8 @@
           &-heading{
             &-title{
               color: #fff;
-              font-weight: 900;
+              font-size:0.825rem;
+              font-weight: 400;
               float: left;
               .view-way{
                 margin-left: 10px;
@@ -683,16 +701,19 @@
             .flight-info-detail{
               &-country{
                 color: #ffae44;
-                font-size: 1.25rem;
+                font-size: 1rem;
               }
               &-date{
                 color: #999;
                 font-size: 	0.875rem;
+                width:30%;
+                float:left;
+                text-align:right;
 
               }
             }
             &.arrival{
-              background:url(/static/ap/images/ico_airplane_arrow_arrival.png) 50% 40px no-repeat;
+              background:url(/static/ap/images/ico_airplane_arrow_arrival.png) 50% 20px no-repeat;
             }
           }
 
@@ -702,11 +723,11 @@
               display: block;
 
               &-item{
-                width:auto;
+                width:50%;
                 min-width:unset;
                 text-align: center;
                 float: left;
-                margin-right:25px;
+                margin-right:0;
 
                 &:last-child{
                   margin-right:0;
@@ -738,11 +759,15 @@
                     top: auto;
                     bottom:13px;
                   }
+
+                  &:nth-child(2){
+                    &:after{display:none}
+                  }
                 }
               }
               &.arrival{
                 .way-list-item {
-                  margin-right:25px;
+                  margin-right:0;
                   &.ico{
                     &:after {
                       right: -25px;
@@ -759,8 +784,8 @@
             .dest{
               &-weather{
                 margin-top:0;
-
-                float:none;
+                float:left;
+                width:70%;
 
                 &:after{
                   content:"";
@@ -788,6 +813,7 @@
                 }
               }
               &-date{
+                width:70%;
                 margin-top: 0;
                 font-size:0.875rem;
                 float:none;
@@ -831,7 +857,7 @@
           &-close{
             //display: block;
             //width:100%;
-            height: 73px;
+            height: 50px;
             //background:none;
             //border:none;
             //cursor: pointer;

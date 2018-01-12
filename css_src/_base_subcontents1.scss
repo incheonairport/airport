@@ -6,7 +6,7 @@
 .location{
   position: relative;
   &-btn{
-    display:none;
+
     position: absolute;
     top:20px;
     right:25px;
@@ -1273,6 +1273,158 @@
     }
 
   }
+  &.system{
+    min-width:565px;
+    overflow-y:auto;
+    border: 4px solid #fefefe;
+    padding: 36px 36px 70px;
+    background:url(/static/ap/images/bg_system_check_popup.jpg ) center no-repeat;
+    background-size:cover;
+
+    .layer-system-list{
+      width:300px;
+      margin:0 auto;
+      text-indent:10px;
+      @extend %clearfix;
+      &:last-child{
+        margin:0 auto 15px auto;
+      }
+      &-tit{
+        float:left;
+        width:150px;
+        color:#fff;
+        text-align:left;
+        line-height:1.4;
+        &:before{
+          content: "·";
+          font-size: 1.125rem;
+          margin-right:5px;
+        }
+      }
+      &-desc{
+        color:#fff;
+        text-align:left;
+        line-height:1.7;
+      }
+    }
+
+    .layer-system-desc{
+      color:#fff;
+      margin-bottom:30px;
+      &.point{
+        color:#ffae43;
+        font-size:1.125rem;
+        margin-bottom:30px;
+      }
+      &.systemico:after{
+        content:'';
+        display:block;
+        width:114px;
+        height:99px;
+        background:url(/static/ap/images/ico_system_mark.png ) center no-repeat;
+        margin:26px auto 40px;
+      }
+    }
+    .layer-area{
+      text-align:center;
+      padding:0;
+    }
+    .layer-title{
+      font-size:2.125rem;
+      color:#fff;
+      font-weight:300;
+      font-family:exo, sans-serif;
+      text-align:center;
+      border-bottom:0;
+      margin-bottom:0;
+      padding-bottom:0;
+      &:after{
+        content:'';
+        display:block;
+        height:2px;
+        width:44px;
+        background:rgba(255,255,255,0.4);
+        margin: 26px auto 24px;
+      }
+    }
+    .layer-article{
+      margin-bottom:0;
+    }
+    .layer-close{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background:url(/static/ap/images/ico_lp_modal_close.png ) center no-repeat;
+      border:0;
+      text-indent: -99999em;
+      position:absolute;
+      z-index: 99999;
+      top: 20px;
+      right: 20px;
+      padding:0;
+      &:hover{
+        opacity:.7;
+      }
+    }
+    .layer-check{
+      float:left;
+      width:140px;
+      height:56px;
+      background:#323648;
+      color:#fff;
+      font-size: 1.25rem;
+      line-height:56px;
+      border:0;
+    }
+
+    .layer-guide{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:46px;
+      background:#fff;
+      &-box{
+        position:absolute;
+        right:0;
+        bottom:10px;
+        margin:auto;
+      }
+    }
+
+    .btn-group{
+      margin-top:30px;
+    }
+    .layer-inputbox-btn{
+      border:1px solid rgba(255,255,255,.8);
+      min-width:155px;
+      margin-left:6px;
+      display:inline-block;
+      padding:8px 10px;
+      border-radius:50px;
+      font-size:0.825rem;
+      color:#fff;
+      text-align:left;
+      position:relative;
+      &:first-child{
+        margin-left:0;
+      }
+
+      &:after{
+        content:'';
+        display:block;
+        width:6px;
+        height:10px;
+        background:url(/static/ap/images/ico_system_arrow.png ) center no-repeat;
+        position:absolute;
+        right:10px;
+        top:0;
+        bottom:0;
+        margin:auto;
+      }
+    }
+
+  }
   display:none;
   width: 550px;
   //max-height: 684px;
@@ -1318,10 +1470,21 @@
 
     }
 
+    &#airportOnMapWrap{
+
+      .layer{
+
+        max-height:inherit;
+        height:96%;
+
+      }
+
+    }
+
   }
 
   &.size{
-    width: 912px;
+    width: 940px;
     //max-height: 827px;
     &.max-height{
       max-height: 890px;
@@ -1489,6 +1652,15 @@
     button{
       height: 50px;
       font-size: 1.5rem;
+      .btn-register{
+        height: 56px;
+        padding: 10px;
+        background: #42519e;
+        border: 1px solid #42519e;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
     }
     &.article2{
       margin-bottom: 10px;
@@ -2379,6 +2551,10 @@
 
         &:last-child{
           margin-right: 0;
+        }
+
+        &.wide-row{
+          width:265px;
         }
       }
 

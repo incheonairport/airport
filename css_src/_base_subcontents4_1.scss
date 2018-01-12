@@ -255,8 +255,150 @@
 
 }
 
+.route-list{
 
+  &-item{
 
+    height:60px;
+
+    position:relative;
+    margin-bottom:2px;
+
+    &:after{
+      content:"";
+      display:block;
+      width:4px;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+
+    &.general{
+      &:after{
+        background:#a87b50;
+      }
+    }
+
+    &.departure{
+      &:after{
+        background:#132d5b;
+      }
+    }
+
+    &.moving{
+      &:after{
+        background:#b34b58;
+      }
+    }
+
+    &.tax-free{
+      &:after{
+        background:#6182c0;
+      }
+    }
+
+    &.arrival{
+      &:after{
+        background:#42519e;
+      }
+    }
+
+    .route{
+      &-name{
+        width:20%;
+        height:60px;
+        padding-left:25px;
+        border:{
+          top:1px solid #d9d9d9;
+          bottom:1px solid #d9d9d9;
+          right:1px solid #d9d9d9;
+        }
+        float:left;
+        font-size:1.25rem;
+        font-weight:700;
+        line-height:60px;
+        position:relative;
+
+        .move{
+          font-size:0.85rem;
+          font-weight:400;
+          position:absolute;
+          top:10px;
+          right:20px;
+          line-height:normal;
+          padding-bottom:16px;
+
+          &:after{
+            content:"";
+            display:block;
+            width:0;
+            height:0;
+            position:absolute;
+            top:19px;
+            left:2px;
+          }
+
+          &.general{
+            &:after{
+              border:{
+                top:14px solid #a97c50;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
+          &.departure{
+            &:after{
+              border:{
+                top:14px solid #132d5b;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
+          &.tax-free{
+            &:after{
+              border:{
+                top:14px solid #6182D1;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
+          &.moving{
+            &:after{
+              border:{
+                top:14px solid #b34b58;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+        }
+      }
+
+      &-desc{
+        width:80%;
+        height:60px;
+        padding-left:33px;
+        border:{
+          top:1px solid #d9d9d9;
+          bottom:1px solid #d9d9d9;
+          right:1px solid #d9d9d9;
+        }
+        float:left;
+        font-size:1.125rem;
+        line-height:60px;
+      }
+    }
+
+  }
+
+}
 
 
 

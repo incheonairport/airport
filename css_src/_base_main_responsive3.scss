@@ -1,6 +1,6 @@
 
 // 640
-@media all and (max-width:1024px) {
+@media screen and (max-width:1024px) {
   .section3{
     width: 100%;
     height:auto;
@@ -76,9 +76,11 @@
   }
   .footer-graft{
     background: #f2f4f7;
+
     .main-banner{
       width:240px;
-      padding:20px 0px;
+      padding:20px 0 30px;
+
       &-list{
 
       }
@@ -88,7 +90,15 @@
           width: 100%;
         }
       }
+
       &-control{
+
+        &-paging{
+          margin-left:auto;
+          transform:translateX(-50%);
+          bottom:5px;
+        }
+
         &-arrow{
 
           .arrow.prev{

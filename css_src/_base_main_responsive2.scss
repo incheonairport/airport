@@ -1,9 +1,10 @@
 
 // 640
-@media all and (max-width:1024px) {
+@media screen and (max-width:1024px) {
 
   body{
     min-width:inherit;
+    overflow-x:hidden;
   }
 
   .main-visual-item {
@@ -11,9 +12,9 @@
     //background-size: 260%;
   }
   .main-visual-search-weather{
-    left:50%;
+    left:20px;;
     top:-57px;
-    transform:translateX(-50%);
+    transform:none;
     padding:0;
 
     &:before{

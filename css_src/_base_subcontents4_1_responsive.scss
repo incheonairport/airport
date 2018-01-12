@@ -1,10 +1,10 @@
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1023px) {
 
 }
 
 // 640
-@media all and (max-width:640px) {
+@media screen and (max-width:1024px) {
   //.contact-list{
   //  width:100%;
   //}
@@ -32,6 +32,51 @@
     &-col2{
       float: none;
     }
+  }
+  .route-list{
+
+    &-item{
+
+      height:auto;
+      position:relative;
+      margin-bottom:20px;
+
+      &:after{
+        content:"";
+        display:block;
+        width:4px;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+      }
+
+
+      .route{
+        &-name{
+          width:100%;
+          height:auto;
+          padding-left:15px;
+          float:none;
+          font-size:1rem;
+          line-height:60px;
+          border-left:1px solid #d9d9d9;
+        }
+
+        &-desc{
+          width:100%;
+          height:auto;
+          padding:15px;
+          float:none;
+          font-size:1rem;
+          line-height:1.7;
+          border-left:1px solid #d9d9d9;
+          border-top:0;
+        }
+      }
+
+    }
+
   }
 }
 
