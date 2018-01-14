@@ -646,6 +646,11 @@
     -ms-text-size-adjust: 100%;
   }
 
+  // 탑승구 최단 이동 경로 안내 test
+  #myMaps div{
+    width:100%!important;
+  }
+
   .imgbox-extend {
     overflow-x: auto;
     height: 300px;
