@@ -1,5 +1,5 @@
 // 1024
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   // guide box
   .guidebox {
     &-col {
@@ -183,7 +183,7 @@
 }
 
 // 640
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   .position-box108{
     margin-top:0;
   }
@@ -822,17 +822,47 @@
   /*주차요금계산기*/
   .calculator{
     width: 100%;
-    padding:15px;
+    background:none;
+    padding:0;
+    margin-bottom:20px;
     .timesetting-date.f-left{
       .timesetting-subtit{
         margin-top:0;
       }
     }
-    .f-left{
-      float:none;
+  }
+
+  .timesetting{
+
+    &-date{
+      width:100%;
+      .timesetting-subtit{
+        text-align:center;
+        line-height:50px;
+        margin-bottom:0;
+        background:#f1f1f1;
+        color:#333
+      }
+      &-day{
+        width:calc(100% - 50px);
+        height:50px;
+      }
+      &-calendar{
+        width: 50px;
+        height: 50px;
+      }
+      &-option{
+        width: 100%;
+        height: 50px;
+      }
     }
-    .r-left{
-      float:none;
+    &-dash{
+      margin: 0 auto;
+      padding-left: 15px;
+      text-align: center;
+      color: #fff;
+      font-size: 1.375rem;
+      line-height: 58px;
     }
   }
 

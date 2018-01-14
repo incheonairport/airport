@@ -1466,7 +1466,7 @@
 
   .inner-col{
     .imgbox-extend{
-      overflow-x:none;
+      overflow-x:auto;
       height:auto;
       //direction: ltr;
       //transform:rotateX(180deg);
@@ -1530,9 +1530,10 @@
 
 
   .boxsing {
-    borderbottom: 1px solid #d0d0d0;
+    border:0;
+    border-bottom:1px solid #d9d9d9;
     padding: 0;
-    margin-bottom:30px;
+    padding-bottom: 15px;
   }
 
 

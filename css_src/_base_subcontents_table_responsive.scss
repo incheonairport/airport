@@ -1,10 +1,10 @@
 // 1024
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1024px) {
 
 }
 
 // 640
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1024px) {
 
   // 출발
   .contents{
@@ -251,6 +251,9 @@
               &-date{
                 color: #999;
                 font-size: 	0.875rem;
+                br{
+                  display:none;
+                }
 
               }
             }
@@ -270,6 +273,12 @@
                 text-align: center;
                 float: left;
                 margin-right:0;
+                margin-right:0;
+                border-right: 1px solid rgba(255,255,255,0.3);
+                margin-bottom: 15px;
+                &:nth-child(2n){
+                  border-right:0;
+                }
 
                 &:last-child{
                   margin-right:0;
@@ -293,6 +302,7 @@
                   text-indent:0;
 
                   &:after {
+                    display:none;
                     background-position: -147px -63px;
                     width: 22px;
                     height: 22px;
@@ -709,6 +719,9 @@
                 width:30%;
                 float:left;
                 text-align:right;
+                br{
+                  display:none;
+                }
 
               }
             }
@@ -768,8 +781,17 @@
               &.arrival{
                 .way-list-item {
                   margin-right:0;
+                  border-right: 1px solid rgba(255,255,255,0.3);
+                  margin-bottom: 15px;
+                  br{
+                    display:none;
+                  }
+                  &:nth-child(2n){
+                    border-right:0;
+                  }
                   &.ico{
                     &:after {
+                      display:none;
                       right: -25px;
                     }
                   }
@@ -784,8 +806,9 @@
             .dest{
               &-weather{
                 margin-top:0;
+
                 float:left;
-                width:70%;
+                width:100%;
 
                 &:after{
                   content:"";
@@ -813,11 +836,11 @@
                 }
               }
               &-date{
-                width:70%;
+
+                float:left;
                 margin-top: 0;
-                font-size:0.875rem;
-                float:none;
                 text-align:left;
+                font-size:0.875rem;
                 //position:absolute;
                 //top:50px;
                 //right:16px;
@@ -828,7 +851,7 @@
           &-share{
             //display: block;
             //width:100%;
-            height: 73px;
+            height: 50px;
             //background:none;
             //border:none;
             line-height:120px;
@@ -839,17 +862,18 @@
             //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
             &.ico{
+              border-bottom:0;
               text-indent: 0;
-              &:after {
-                //background-position:-37px -185px;
-                //width: 32px;
-                //height: 32px;
-                //top:-10px;
-                margin-top:13px;
-                //position:absolute;
-                //top:50%;
-                //left:50%;
-                //transform:translate(-50%, -60%);
+              text-indent:-999em;
+              line-height:inherit;
+              height:50px;
+              width:50px;
+              position: absolute;
+              right:50px;
+              bottom:10px;
+              &:after{
+                margin-top: 10px!important;
+                transform:scale(0.8);
               }
             }
           }
