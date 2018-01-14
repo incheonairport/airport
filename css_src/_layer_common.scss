@@ -1358,6 +1358,7 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_06.jpg) no-repeat center;
     background-size: cover;
   }
+  //정부종합청사
   &.government-center{
     background:url(/static/ap/images/bg_sub_layer_banner_government_center.jpg) no-repeat center;
     background-size: cover;
@@ -1371,17 +1372,17 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_08.jpg) no-repeat center;
     background-size: cover;
   }
-
+//유인출국
   &.in-person{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_in_person.jpg) no-repeat center;
     background-size: cover;
   }
-
+//도착-입국심사
   &.arr-immigration{
     background:url(/static/ap/images/bg_sub_layer_banner_arr_immigration.jpg) no-repeat center;
     background-size: cover;
   }
-
+//도착 자동입국심사
   &.arr-autoimmigration{
     background:url(/static/ap/images/bg_sub_layer_banner_arr_immigration.jpg) no-repeat center;
     background-size: cover;
@@ -1397,24 +1398,39 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_autoscreening.jpg) no-repeat center;
     background-size: cover;
   }
-
+  //수하물찾기
   &.baggage-claim{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_baggage_claim.jpg) no-repeat center;
     background-size: cover;
   }
-
+  //수하물분실
   &.lost-baggage{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_lost_baggage.jpg) no-repeat center;
     background-size: cover;
   }
-
+  //병무허가
   &.military{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_military.jpg) no-repeat center;
     background-size: cover;
   }
-
+  //환승
   &.transferring-from{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_transferring_from.jpg) no-repeat center;
+    background-size: cover;
+  }
+  //세관신고
+  &.customs-declaration{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_customs_declaration.jpg) no-repeat center;
+    background-size: cover;
+  }
+  //부가세환급
+  &.tax-refund{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_tax_refund.jpg) no-repeat center;
+    background-size: cover;
+  }
+  //주차대행
+  &.valet-service{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_valet_service.jpg) no-repeat center;
     background-size: cover;
   }
 }
