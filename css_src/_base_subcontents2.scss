@@ -204,13 +204,18 @@
   &.path-departure{
     background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) center no-repeat;
   }
+  //주차안내
   &.bg7{
   background: url(/static/ap/images/bg_parking_info.jpg) center no-repeat;
   }
   &.bg8{
     background:url(/static/ap/images/bg_immigration_procedure.jpg) center no-repeat;
   }
-
+  //오시는길
+  &.direction{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_direction.jpg) no-repeat center;
+    background-size: cover;
+  }
 }
 
 

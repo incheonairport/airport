@@ -186,7 +186,16 @@ $(function(){
       $currentPopup.removeClass('on');
       $nextPopup.addClass('on');
 
-    }
+    };
+
+    this.setSysPopupHeight = function(){
+
+      var winHeight = $(window).height()/2;
+
+      $('.layer.system').css({height:winHeight});
+      $('.layer-article.systemico').css({height:(winHeight - 160)});
+
+    };
 
   };
 

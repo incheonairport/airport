@@ -1178,6 +1178,7 @@
 
 // layer popup
 .layer{
+
   &.find-my-terminal{
     min-width:642px;
     overflow-y:auto;
@@ -1273,21 +1274,33 @@
     }
 
   }
+
   &.system{
-    min-width:565px;
-    overflow-y:auto;
+    max-width:550px;
+    //min-width:565px;
+    //overflow-y:auto;
     border: 4px solid #fefefe;
-    padding: 36px 36px 70px;
+    //padding: 36px 36px 70px;
+    position:relative;
+    float:left;
+    width:calc(50% - 5px);
+    margin-right:5px;
     background:url(/static/ap/images/bg_system_check_popup.jpg ) center no-repeat;
     background-size:cover;
 
+    .layer-system-wrap{
+      border:1px solid #fff;
+      margin-top:20px;
+      padding:10px;
+    }
+
     .layer-system-list{
-      width:300px;
-      margin:0 auto;
+      //width:300px;
+      //margin:0 auto;
       text-indent:10px;
       @extend %clearfix;
       &:last-child{
-        margin:0 auto 15px auto;
+        //margin:0 auto 15px auto;
       }
       &-tit{
         float:left;
@@ -1295,6 +1308,7 @@
         color:#fff;
         text-align:left;
         line-height:1.4;
+        font-size:0.875rem;
         &:before{
           content: "·";
           font-size: 1.125rem;
@@ -1305,6 +1319,7 @@
         color:#fff;
         text-align:left;
         line-height:1.7;
+        font-size:0.875rem;
       }
     }
 
@@ -1313,42 +1328,39 @@
       margin-bottom:30px;
       &.point{
         color:#ffae43;
-        font-size:1.125rem;
-        margin-bottom:30px;
+        font-size:1rem;
+        margin-bottom:0;
       }
-      &.systemico:after{
-        content:'';
-        display:block;
-        width:114px;
-        height:99px;
-        background:url(/static/ap/images/ico_system_mark.png ) center no-repeat;
-        margin:26px auto 40px;
-      }
+
     }
     .layer-area{
       text-align:center;
-      padding:0;
+      padding: 20px;
     }
     .layer-title{
-      font-size:2.125rem;
+      font-size:1.75rem;
       color:#fff;
-      font-weight:300;
+      font-weight:700;
       font-family:exo, sans-serif;
       text-align:center;
       border-bottom:0;
       margin-bottom:0;
-      padding-bottom:0;
+      //padding-bottom:0;
       &:after{
         content:'';
         display:block;
         height:2px;
         width:44px;
         background:rgba(255,255,255,0.4);
-        margin: 26px auto 24px;
+        margin: 20px auto 0;
       }
     }
     .layer-article{
       margin-bottom:0;
+
+      &.systemico{
+        overflow:auto;
+      }
     }
     .layer-close{
       display: block;
@@ -1378,17 +1390,21 @@
     }
 
     .layer-guide{
-      position:absolute;
-      bottom:0;
-      left:0;
+      //position:absolute;
+      //bottom:0;
+      //left:0;
       width:100%;
       height:46px;
       background:#fff;
+      text-align:right;
+      padding-top:11px;
+
       &-box{
-        position:absolute;
-        right:0;
-        bottom:10px;
-        margin:auto;
+        //position:absolute;
+        //right:0;
+        //bottom:10px;
+        //margin:auto;
+        display:inline-block;
       }
     }
 
@@ -1425,15 +1441,15 @@
     }
 
   }
-  display:none;
-  width: 550px;
+
+  //display:none;
+  //max-width: 550px;
   //max-height: 684px;
   border: 4px solid #42519e;
   background:#fff;
   position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
+  top:0;
+  left:0;
   overflow-y:auto;
   z-index:10;
 
@@ -1468,6 +1484,15 @@
       top:0;
       left:0;
 
+    }
+
+    &.system{
+      position:absolute;
+      width:80%;
+
+      &:after{
+        content:none;
+      }
     }
 
     &#airportOnMapWrap{
@@ -1517,7 +1542,7 @@
   }
 
   &-area{
-    padding: 20px;
+    padding: 40px 20px;
     position: relative;
   }
 
@@ -1590,6 +1615,17 @@
     margin-bottom:20px;
     position: relative;
     @extend %clearfix;
+
+    &.systemico:after{
+      content:'';
+      display:block;
+      width:64px;
+      height:55px;
+      background:url(/static/ap/images/ico_system_mark.png ) center no-repeat;
+      background-size:cover;
+      margin:15px auto 0;
+    }
+
     .textarea{
       width: 100%;
       height: 100px;
@@ -1601,6 +1637,7 @@
       color: #666;
       font-family: roboto, spoqa, sans-serif;
     }
+
     &.mb60{
       margin-bottom: 60px;
     }
@@ -1615,6 +1652,7 @@
         line-height: 32px;
       }
     }
+
     &-input{
       width: 100%;
       height: 50px;
@@ -1625,6 +1663,7 @@
       border: 1px solid #d9d9d9;
       box-sizing: border-box;
     }
+
     &-box{
       width: 500px;
       height: 148px;

@@ -63,6 +63,8 @@ $(function(){
 
       BottomBanner.init();
 
+      LayerPopup.setSysPopupHeight();
+
       if( $(window).width() > 1024 ){
 
         HeaderGnb.pcHeaderInit();
@@ -131,7 +133,8 @@ $(function(){
       $('#fullpage').fullpage({
         scrollBar: true,
         scrollingSpeed: 1000,
-        responsiveWidth: 1024
+        responsiveWidth: 1024,
+        normalScrollElements: '.layer.system'
         //afterLoad: function(anchorLink, index){
         //  if(index == 2){
         //    MainVisual.rollStop();

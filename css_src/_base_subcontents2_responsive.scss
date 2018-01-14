@@ -1,5 +1,5 @@
 // 1024
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   // boxmodel
   .boxmodel {
     &.parking{
@@ -224,7 +224,7 @@
 
 
 // 780
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   .top-notice{
     display:inline-block;
     width:100%;
@@ -244,6 +244,7 @@
       }
       margin-bottom:30px;
       padding:10px 15px 0;
+      border-top:1px solid rgba(255,255,255,0.3);
     }
     &:before{
       display:none;
@@ -288,7 +289,7 @@
 }
 
 // 640
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1024px) {
 
   // top visual
   .sub-top{
@@ -486,7 +487,7 @@
     }
     &-head2{
       text-align:center;
-      margin-bottom:10px;
+      margin-bottom:0;
       &:after{
         display:none;
       }
@@ -533,9 +534,9 @@
       width:100%;
       float:none;
       margin-left:0;
-      margin-bottom:30px;
+      margin-bottom:15px;
       text-align:center;
-      padding:15px;
+      padding:0 15px;
       .logo-text{
         &.mt20{
           margin-top:10px;
@@ -548,11 +549,10 @@
 
 
         &-item{
-          width:50%;
-          margin-left:0;
-          border-left:1px solid rgba(255,255,255,.3);
+          margin-left:4px;
+          //border-left:1px solid rgba(255,255,255,.3);
           &:nth-child(odd){
-            border-left:0;
+            //border-left:0;
           }
         }
       }
@@ -789,14 +789,20 @@
           padding:20px 10px 16px;
           margin:0!important;
           &.img{
+            //height:300px!important;
+            min-height:inherit;
+            padding:30px 15px;
+            background-position: center!important;
+
             .boxmodel-btn-group{
               margin-top:auto;
+
             }
-            height:300px!important;
-            min-height:300px;
+
             .boxmodel-list-head{
               font-size:1.875rem;
               line-height:1.4;
+              margin-top:0!important;
             }
             .boxmodel-list-desc{
               max-width:inherit;
