@@ -1299,7 +1299,10 @@ p.icontxt{
 
 .banner{
   //width: 1152px;
-  min-height: 240px;
+  //min-height: 240px;
+  width: 100%;
+  padding: 40px;
+  min-height: inherit;
   text-align: center;
   background: url(/static/ap/images/bg_sub_layer_banner_bg_01.jpg) no-repeat center;
   background-size: cover;

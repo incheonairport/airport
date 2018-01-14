@@ -293,6 +293,11 @@
     font-family: 'Noto Sans JP', roboto, spoqa, sans-serif!important;
   }
 
+
+  .boxmodel-list-head.small{
+    font-size:1.25rem;
+  }
+
   .logo-list{
     @extend %clearfix;
     &-item{
@@ -346,6 +351,14 @@
         width: 70px;
         background-position: -249px -27px;
       }
+    }
+  }
+
+
+  // 테이블 조절 ( 임시 180114 )
+  .table{
+    &.vt, &.vt-dark, &.hr{
+      word-break:normal;
     }
   }
 }
