@@ -1,4 +1,4 @@
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1200px) {
 
   .top{
     &-popup{
@@ -178,10 +178,10 @@
 
         &.gnb-search{
           margin-left:0;
-          float:none;
-          position:absolute;
-          top:15px;
-          right:15px;
+          float:left;
+          position:relative;
+          top:auto;
+          right:auto;
           text-align:right;
           width:38px;
           background:#6281c1;
@@ -294,12 +294,20 @@
         &:-moz-placeholder {
           color: #fff;
         }
+
+        &.mobile-none{
+          display:none !important;
+        }
       }
 
       &-close{
         //right:230px;
         left:10px;
         z-index:0;
+
+        &.mobile-none{
+          display:none !important;
+        }
       }
 
     }
@@ -313,6 +321,7 @@
     top:0;
     left:-100%;
     z-index:99999;
+    transition:left .3s ease-out;
 
     &.mobile-on{
       left:0;
@@ -404,6 +413,13 @@
       top:22px;
       left:25px;
 
+      &.btn-quick{
+        transform:scale(-1,1);
+        left:auto;
+        right:25px;
+      }
+
+
       &:before, &:after {
         content: "";
         display: block;
@@ -446,42 +462,37 @@
       display:none;
     }
 
+    &.bg{
+      .header-search{
+
+        &-item{
+          &.gnb{
+            &-map-wrap{
+
+            }
+
+            &-search{
+              position:relative;
+              top:auto;
+              left:auto;
+              float:left;
+              margin-left:10px;
+            }
+          }
+        }
+
+      }
+    }
+
   }
 
   .quick{
-    width:100%;
-    //height:73px;
-    top:auto;
-    bottom:0;
-    transform:translate(0);
 
-    &-menu-list{
+    transform:translate(100%, -40%);
+    transition:transform .3s ease-out;
 
-      border-radius:0;
-
-      &:after{
-        content:"";
-        display:block;
-        clear:both;
-      }
-
-      &-item{
-        width:20%;
-        float:left;
-
-        &.top{
-          display:none;
-        }
-      }
-
-      &-link{
-
-        //br{
-        //  display:none;
-        //}
-
-      }
-
+    &.mobile-on{
+      transform:translate(0, -40%);
     }
 
   }

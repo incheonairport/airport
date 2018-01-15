@@ -48,7 +48,16 @@ $(function(){
 
       $('.header-site').insertAfter('.gnb-depth1');
 
-      $('.header-search-item.gnb-search').insertAfter('.header-logo');
+      $('.header-search-item.gnb-search .header-search-input').addClass('mobile-none');
+      $('.header-search-item.gnb-search .header-search-close').removeClass('mobile-none');
+
+      if( $('.gnb-mobile-btn').length <= 0 ){
+        $('.header').append('<button type="button" class="gnb-mobile-btn btn-gnb"><span>주메뉴 열기</span></button>');
+      }
+
+      if( $('.gnb-mobile-btn.btn-quick').length <= 0 ){
+        $('.header').append('<button type="button" class="gnb-mobile-btn btn-quick"><span>퀵메뉴 열기</span></button>');
+      }
 
       if( $('.gnb-mobile-btn-close').length <= 0){
         $('.gnb').append('<button type="button" class="gnb-mobile-btn-close">닫기</button>');
@@ -64,47 +73,12 @@ $(function(){
 
       $('.header-site').prependTo( $('.header') );
 
-      $('.header-search-item.gnb-search').appendTo($('.header-search'));
+      //$('.header-search-item.gnb-search').appendTo($('.header-search'));
 
+      $('.gnb-mobile-btn').remove();
       $('.gnb-mobile-btn-close').remove();
 
     };
-
-    //this.mobileHeaderInit();
-
-  };
-
-  /**
-   * FullPage Class
-   */
-
-  FullPage = new function(){
-
-    Index.apply(this);
-    //
-    //this.sectionBgInit = function(){
-    //
-    //  $('.full-page-content .section-main-bg').css({
-    //    top:-480
-    //  });
-    //
-    //};
-    //
-    //this.sectionBgDown = function(sectionNextIndex){
-    //
-    //  this.$mainSection.eq(sectionNextIndex).find('.section-main-bg').animate({
-    //    top:0
-    //  }, 1000, 'easeOutQuad');
-    //
-    //};
-    //
-    //this.sectionBgUp = function(sectionPrevIndex){
-    //
-    //  this.$mainSection.eq(sectionPrevIndex).find('.section-main-bg').delay(100).animate({
-    //    top:-480
-    //  }, 900, 'easeOutQuad');
-    //
-    //};
 
   };
 
@@ -351,7 +325,7 @@ $(function(){
     var nextVisualIndex = 0;
     var totalPage = $visualItem.length;
 
-    var timeID, timeID2;
+    var timeID;
     var imageMovingTime = 1000;
     var imageIntervalTime = 10000;
 
@@ -711,8 +685,6 @@ $(function(){
 
     var $visualItem = $('.slide-banner-list-item');
     var easingType = this.easingType;
-
-    var $pageItem;
 
     var timeID, timeID2;
     var imageMovingTime = 1000;

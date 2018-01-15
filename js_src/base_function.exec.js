@@ -29,11 +29,12 @@ $(function(){
 
   $('.gnb').append('<div class="scroll-amount"></div>');
 
+
+  // detect language
   (function(){
 
     var $html = $('html');
     var lang = $html.attr('lang');
-
 
     switch(lang){
 
@@ -57,20 +58,21 @@ $(function(){
 
   })();
 
+  // header set when resize
   (function(){
 
     $(window).on('resize', function(){
 
       BottomBanner.init();
 
-      if( $(window).width() > 1024 ){
+      if( $(window).width() > 1200 ){
 
         HeaderGnb.pcHeaderInit();
         $('.gnb').removeClass('mobile-on');
-        //$('.visual-text').addClass('text-right text-left');
 
         if( $(window).scrollTop() < 400 ){
-          if( $('section').hasClass('main-visual') ){
+
+          if( $('section').hasClass('main-visual') && $('.top-popup').length > 0 ){
 
             $('html').addClass('main');
 
@@ -79,6 +81,7 @@ $(function(){
             $('.gnb').addClass('top-open');
             $('.total-search').addClass('top-open');
             $('.quick').addClass('top-open');
+            $('.fullpage-wrapper').addClass('top-open');
             $('.top-popup-toggle').data('open', true).addClass('down');
 
           } else {
@@ -100,24 +103,34 @@ $(function(){
         $('.gnb').removeClass('top-open');
         $('.total-search').removeClass('top-open');
         $('.quick').removeClass('top-open');
+        $('.fullpage-wrapper').removeClass('top-open');
         $('.top-popup-toggle').data('open', true).removeClass('down');
 
       }
 
     }).resize();
 
+    $(window).on('resize', function(){
 
+      scrollHeight = $('body').height() - $(window).height();
 
-    //if( $('section').hasClass('top-popup') ){
-    //
-    //  $('.top-popup').addClass('top-open');
-    //  $('.header').addClass('top-open');
-    //  $('.gnb').addClass('top-open');
-    //  $('.total-search').addClass('top-open');
-    //  $('.quick').addClass('top-open');
-    //  $('.top-popup-toggle').data('open', true).addClass('down');
-    //
-    //}
+      if( $('html').hasClass('main') ){
+        if( $(window).width() > 1200 ){
+
+          if( $(window).scrollTop() < 400 ){
+
+            $('.header, .gnb').removeClass('fixed down bg');
+
+          }
+
+        } else {
+
+          $('.header, .gnb').removeClass('fixed down').addClass('bg');
+
+        }
+      }
+
+    }).resize();
 
   })();
 
@@ -126,21 +139,11 @@ $(function(){
 
     if( $('#fullpage').length > 0 ){
 
-      //FullPage.sectionBgInit();
-
       $('#fullpage').fullpage({
         scrollBar: true,
         scrollingSpeed: 1000,
         responsiveWidth: 1024,
         normalScrollElements: '.layer.system'
-        //afterLoad: function(anchorLink, index){
-        //  if(index == 2){
-        //    MainVisual.rollStop();
-        //    MainVisual.rollFirst();
-        //    MainVisual.rollAuto();
-        //  }
-        //}
-
       });
 
     }
@@ -299,9 +302,15 @@ $(function(){
 
     });
 
-    $('body').on('click', 'button.gnb-mobile-btn', function(e){
+    $('body').on('click', 'button.gnb-mobile-btn.btn-gnb', function(e){
 
       $('.gnb').addClass('mobile-on');
+
+    });
+
+    $('body').on('click', 'button.gnb-mobile-btn.btn-quick', function(e){
+
+      $('.quick').addClass('mobile-on');
 
     });
 
@@ -344,27 +353,7 @@ $(function(){
 
     });
 
-    $(window).on('resize', function(){
 
-      scrollHeight = $('body').height() - $(window).height();
-
-      if( $('html').hasClass('main') ){
-        if( $(window).width() > 1024 ){
-
-          if( $(window).scrollTop() < 400 ){
-
-            $('.header, .gnb').removeClass('fixed down bg');
-
-          }
-
-        } else {
-
-          $('.header, .gnb').removeClass('fixed down').addClass('bg');
-
-        }
-      }
-
-    }).resize();
 
     var prevScroll = 0;
 
@@ -374,7 +363,7 @@ $(function(){
       $('.scroll-amount').css({width : scrollAmount + '%'});
       var currentScroll = $(this).scrollTop();
 
-      if( $(window).width() > 1024 ){
+      if( $(window).width() > 1200 ){
 
         if( $('section').hasClass('main-visual') ){
           if( $(this).scrollTop() >= 400 ){
@@ -667,6 +656,17 @@ $(function(){
   (function(){
 
     $('.imgbox').wrap('<div class="imgbox-extend" />');
+
+  })();
+
+  // 시스템 레이어팝업 이벤트
+  (function(){
+
+    $('.layer-system-close').on('click', function(){
+
+      $(this).parents('.layer.system').removeClass('on');
+
+    });
 
   })();
 
