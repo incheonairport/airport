@@ -2442,6 +2442,9 @@ button{
   &.on{
     display:block;
   }
+  &.off{
+    display:none;
+  }
 
   &-wrap{
     display:none;

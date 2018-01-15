@@ -209,7 +209,7 @@
   .map-departure-congestion01{
     height:240px;
     .map-absolute-area{
-      width: 268px;
+      width: 256px;
       height: 184px;
       background-size:contain;
     }
@@ -218,43 +218,90 @@
   .map-departure-congestion02{
     height:240px;
     & .map-absolute-area{
-      width: 268px;
+      width: 256px;
       height: 184px;
       background-size:contain;
     }
   }
   // 팝업 지도 기능 포인터
   .congestion{
-    &-mark1{
-      top: 87px;
-      left: 55px;
+    &-mark1-1{
+      position: absolute;
+      top: 178px;
+      left: 322px;
     }
-    &-mark2{
-      top: 75px;
-      left: 83px;
+    &-mark1-2{
+      position: absolute;
+      top: 82px;
+      left: 158px;
+      .congestion-mark-number{
+        left: 31px;
+        top: 9px;
+      }
     }
-    &-mark3{
-      top: 74px;
-      right: 83px;
+    &-mark1-3{
+      position: absolute;
+      top: 72px;
+      left: 133px;
     }
-    &-mark4{
-      top: 87px;
-      right: 54px;
+    &-mark1-4{
+      position: absolute;
+      top: 72px;
+      left: 77px;
     }
-    &-mark5{
-      top: 91px;
-      left: 79px;
+    &-mark1-5{
+      position: absolute;
+      top: 84px;
+      left: 45px;
+      .congestion-mark-number{
+        right: -20px;
+        top: 9px;
+      }
+
     }
-    &-mark6{
-      top: 91px;
-      right: 79px;
+    &-mark1-6{
+      position: absolute;
+      top: 179px;
+      right: 161px;
     }
+
+    &-mark2-1{
+      position: absolute;
+      top: 72px;
+      left: 138px;
+    }
+
+    &-mark2-2{
+      position: absolute;
+      top: 72px;
+      left: 70px;
+    }
+
+    &-mark{
+      &-number{
+        position:absolute;
+        border: 1px solid #7d7d7d;
+        height:20px;
+        &:after{
+          display:none;
+        }
+        &:before{
+          display:none;
+        }
+      }
+
+    }
+
     &-mark{
       &-color{
+        position:absolute;
         width: 14px!important;
         height: 14px!important;
         font-size:0.75rem;
         line-height:14px!important;
+        left: 19px;
+        right: 0;
+        bottom: -42px;
       }
     }
   }

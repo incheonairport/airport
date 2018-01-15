@@ -1457,6 +1457,10 @@
     display:block;
   }
 
+  &.off{
+    display:none;
+  }
+
   &-wrap{
     display:none;
     position:fixed;
@@ -2376,35 +2380,47 @@
 }
 
 .congestion{
-  &-mark1{
+  &-mark1-1{
     position: absolute;
-    top: 159px;
-    left: 99px;
+    top: 178px;
+    left: 322px;
   }
-  &-mark2{
+  &-mark1-2{
     position: absolute;
-    top: 143px;
-    left: 149px;
+    top: 157px;
+    left: 290px;
   }
-  &-mark3{
+  &-mark1-3{
     position: absolute;
-    top: 143px;
-    right: 152px;
+    top: 139px;
+    left: 242px;
   }
-  &-mark4{
+  &-mark1-4{
     position: absolute;
-    top: 159px;
-    right: 106px;
+    top: 139px;
+    left: 146px;
   }
-  &-mark5{
+  &-mark1-5{
     position: absolute;
-    top: 179px;
-    left: 160px;
+    top: 157px;
+    left: 98px;
   }
-  &-mark6{
+  &-mark1-6{
     position: absolute;
     top: 179px;
     right: 161px;
+  }
+
+  &-mark2-1{
+    position: absolute;
+    top: 179px;
+    right: 161px;
+  }
+
+  &-mark2-2{
+    position: absolute;
+    top: 179px;
+    left: 160px;
   }
   &-mark{
     &-number{
