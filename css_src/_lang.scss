@@ -63,9 +63,22 @@
 
 .en{
 
+  .contents-visual{
+    .section-bg-contents2:last-child{
+      width:485px;
+      .logo-list{
+        .etc{
+         margin-left:0;
+        }
+      }
+    }
+  }
+
   .search-airline-name-btn{
     font-size:1.125rem;
   }
+
+
 
   .bussearch .search-area-btn{
     font-size:1.125rem;

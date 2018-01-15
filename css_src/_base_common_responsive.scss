@@ -646,6 +646,17 @@
     -ms-text-size-adjust: 100%;
   }
 
+  .contents-visual{
+    .section-bg-contents2:last-child{
+      width:100%;
+      .logo-list{
+        .etc{
+          margin-left:20px;
+        }
+      }
+    }
+  }
+
   // 탑승구 최단 이동 경로 안내 test
   #myMaps div{
     width:100%!important;
