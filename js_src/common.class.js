@@ -188,12 +188,34 @@ $(function(){
 
     };
 
-    this.setSysPopupHeight = function(){
+    this.setPopupHeight = function(){
 
-      var winHeight = $(window).height()/2;
+      var winHeight = $(window).height();
 
-      $('.layer.system').css({height:winHeight});
-      $('.layer-article.systemico').css({height:(winHeight - 160)});
+      if( $('.layer').hasClass('system') ){
+
+        var winHeightHalf = winHeight/2;
+
+        $('.layer.system').css({height:winHeightHalf});
+        $('.layer-article.systemico').css({height:(winHeightHalf - 160)});
+
+      } else {
+
+        $('.layer').each(function(){
+
+          if( $(this).height() >= winHeight ){
+
+            $(this).css({height:winHeight*0.96});
+
+          } else {
+
+            $(this).attr('style', '');
+
+          }
+
+        });
+
+      }
 
     };
 

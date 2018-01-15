@@ -1282,6 +1282,9 @@
     border: 4px solid #fefefe;
     //padding: 36px 36px 70px;
     position:relative;
+    top:auto;
+    left:auto;
+    transform:none;
     float:left;
     width:calc(50% - 5px);
     margin-right:5px;
@@ -1448,8 +1451,9 @@
   border: 4px solid #42519e;
   background:#fff;
   position:absolute;
-  top:0;
-  left:0;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
   overflow-y:auto;
   z-index:10;
 

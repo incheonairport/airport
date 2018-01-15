@@ -63,8 +63,6 @@ $(function(){
 
       BottomBanner.init();
 
-      LayerPopup.setSysPopupHeight();
-
       if( $(window).width() > 1024 ){
 
         HeaderGnb.pcHeaderInit();
