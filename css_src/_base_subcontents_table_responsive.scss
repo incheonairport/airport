@@ -9,6 +9,9 @@
   // 출발
   .contents{
     &.dep{
+      .list2.mt30{
+        display:none;
+      }
       .table-like{
         min-width:inherit;
 
@@ -471,6 +474,9 @@
   // 도착
   .contents{
     &.arr{
+      .list2.mt30{
+        display:none;
+      }
       .table-like{
         min-width:inherit;
 
@@ -886,6 +892,10 @@
             //border:none;
             //cursor: pointer;
             //text-align: center;
+            width:50px;
+            position: absolute;
+            right:0;
+            bottom:10px;
 
             &.ico{
               &:after {

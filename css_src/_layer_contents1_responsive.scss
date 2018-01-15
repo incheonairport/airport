@@ -46,6 +46,9 @@
   // date time setting
   .timesetting{
     &-date{
+      .timesetting-subtit{
+        margin-top:10px;
+      }
       &.f-left,
       &.f-right{
         float:none;
@@ -58,12 +61,41 @@
       }
       &-option{
         width: 33.333%;
+
+      &.resize{
+        width:100%;
+      }
+
       }
     }
     &-dash{
       float:none;
     }
+
   }
+  .btn-pos-box{
+    position:static;
+    .btn-type-small{
+      position: static;
+    }
+  }
+  .btn-center{
+    display:block;
+    padding:20px 0;
+
+    .btn-type-small{
+      min-width:100%;
+    }
+    .btn-type-normal{
+      font-size:1rem;
+    }
+    .btn-type-small{
+      &.download{
+      }
+    }
+  }
+
+
   .maglev-train{
     &-line{
       &-list {
@@ -974,6 +1006,7 @@
     &.hr.writing{
       border-top:1px solid #d9d9d9;
       display:block;
+      overflow-x:inherit;
       thead,
       tbody,
       tr,
@@ -1015,6 +1048,7 @@
           padding:25px 20px;
         }
       }
+
     }
   }
 

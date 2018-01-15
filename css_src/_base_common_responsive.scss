@@ -657,6 +657,22 @@
     }
   }
 
+  .table.hr.writing{
+    .agreement-offer{
+      .checkbox-type2-label{
+        margin-bottom:10px;
+        text-align:left;
+        width:100%;
+      }
+    }
+  }
+
+  .inner-section{
+    .btn-type-normal{
+      font-size:1rem;
+    }
+  }
+
   // 탑승구 최단 이동 경로 안내 test
   #myMaps div{
     width:100%!important;
@@ -671,6 +687,20 @@
     //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
     .imgbox {
       width: 800px;
+    }
+  }
+
+  .inner-col{
+    .imgbox-extend{
+      overflow-x:auto;
+      height:auto;
+      //direction: ltr;
+      //transform:rotateX(180deg);
+      //-ms-transform:rotateX(180deg); /* IE 9 */
+      //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
+      .imgbox{
+        width:100%;
+      }
     }
   }
 }

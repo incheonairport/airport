@@ -41,6 +41,7 @@
 
   .boxmodel2{
     min-width:1152px;
+
     &-tab{
       &-btngroup{
       }
@@ -522,6 +523,25 @@
   }
   .boxmodel2{
     min-width:100%;
+    &.course{
+      .boxmodel2-table-tit{
+        width:100%;
+      }
+      .boxmodel2-table-desc{
+        width:100%;
+      }
+
+
+    }
+    .boxmodel2-simple-detail{
+      padding:0 15px 15px;
+    }
+    .boxmodel-hrtour-mark{
+      display:block;
+      margin-top:10px;
+      width:100px;
+
+    }
     &-tab{
       &-btngroup{
       }
@@ -627,6 +647,7 @@
       &-item{
         width:100%;
         margin-right:0!important;
+        height:auto;
       }
       &-link{
       }
