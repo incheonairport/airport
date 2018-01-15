@@ -40,6 +40,28 @@
       height:auto;
       position:relative;
       margin-bottom:20px;
+      .multi-col{
+        .route-list-item{
+          .route-name{
+            width:100%;
+          }
+          .route-desc{
+            width:100%;
+          }
+
+          &.moving{
+            margin-top:-21px;
+            .route-desc{
+              br{
+                display:none;
+              }
+
+              padding-top:10px;
+              letter-spacing:0;
+            }
+          }
+        }
+      }
 
       &:after{
         content:"";

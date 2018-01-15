@@ -271,8 +271,10 @@
     height:360px;
     min-height:360px;
     background: url(/static/ap/images/bg_transfer.jpg) center no-repeat;
+    background-size:cover;
     &.tour{
       background: url(/static/ap/images/bg_transfer_tour.jpg) center no-repeat;
+      background-size:cover;
     }
   }
 

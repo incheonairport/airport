@@ -258,11 +258,28 @@
 .route-list{
 
   &-item{
-
     height:60px;
-
     position:relative;
     margin-bottom:2px;
+    .multi-col{
+      .route-list-item{
+        .route-name{
+          width:40%;
+        }
+        .route-desc{
+          width:60%;
+        }
+
+        &.moving{
+          .route-desc{
+            line-height:1.4;
+            font-size:1rem;
+            padding-top:9px;
+            letter-spacing:-1px;
+          }
+        }
+      }
+    }
 
     &:after{
       content:"";
