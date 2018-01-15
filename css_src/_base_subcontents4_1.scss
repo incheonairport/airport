@@ -333,6 +333,12 @@
       }
     }
 
+    &.tax-free2{
+      &:after{
+        background:#bfdfe0;
+      }
+    }
+
     &.arrival{
       &:after{
         background:#42519e;
@@ -398,6 +404,16 @@
             &:after{
               border:{
                 top:14px solid #6182D1;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
+          &.tax-free2{
+            &:after{
+              border:{
+                top:14px solid #bfdfe0;
                 left:10px solid transparent;
                 right:10px solid transparent;
               }

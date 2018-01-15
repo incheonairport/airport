@@ -73,6 +73,9 @@
   .inner-section{
     height:100%;
     position:relative;
+    .bg-banner-iconlist{
+      top: 10px;
+    }
   }
 
   &.departure{
