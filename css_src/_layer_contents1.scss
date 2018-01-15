@@ -1324,7 +1324,7 @@ button{
 /*검색*/
 .search-map{
   width:100%;
-  padding: 20px;
+  padding: 10px 20px;
   background:#f3f4f8;
   border:1px solid #6b6b6b;
   margin-top: -1px;
@@ -1334,7 +1334,7 @@ button{
     font-weight:800;
     float: left;
     position: relative;
-    top:17px;
+    top:9px;
     padding-right: 15px;
 
     &.title2{
@@ -1363,7 +1363,7 @@ button{
       }
     }
     &-select, &-txt{
-      height:50px;
+      height:30px;
       padding: 0 10px;
       border: 1px solid #d9d9d9;
       border-right:0;
@@ -1385,18 +1385,18 @@ button{
 
   &-btn{
     width: 80px;
-    height: 50px;
+    height: 30px;
     background: #42519e;
     border: none;
     color: #fff;
     font-size: 1rem;
     font-weight: 900;
-    line-height: 50px;
+    line-height: 30px;
   }
   &-svg{
     width:calc(100% - 249px);
     background:#333649;
-    height: 602px;
+    height: 700px;
     border: 1px solid #d9d9d9;
     border-right: 0;
     float: left;
@@ -1530,7 +1530,7 @@ button{
   &-clear{
     position:relative;
     overflow:hidden;
-    min-height:602px;
+    min-height:700px;
     margin-top:20px;
     @extend %clearfix;
     &.full-screen{

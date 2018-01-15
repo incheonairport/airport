@@ -1276,6 +1276,7 @@
   }
 
   &.system{
+    display:none;
     max-width:550px;
     //min-width:565px;
     //overflow-y:auto;
@@ -1365,7 +1366,7 @@
         overflow:auto;
       }
     }
-    .layer-close{
+    .layer-system-close{
       display: block;
       width: 25px;
       height: 25px;
@@ -1497,6 +1498,7 @@
     &.system{
       position:absolute;
       width:80%;
+      height:auto;
 
       &:after{
         content:none;
