@@ -67,7 +67,13 @@ $(function(){
         scrollBar: true,
         scrollingSpeed: 1000,
         responsiveWidth: 1025,
-        normalScrollElements: '.layer.system'
+        normalScrollElements: '.layer.system',
+        afterLoad: function(anchorLink, index){
+          if(index == 2){
+            MainVisual.rollFirst();
+            MainVisual.rollAuto();
+          }
+        }
       });
 
     }
