@@ -147,6 +147,15 @@ board-list 에 on클래스를 추가하여 리스트펼침 스타일을 활성�
   </div>
 </section>
 
+<script>
+  $('.board-list').removeClass('on');
+  $('.board-list-tit').on('click', function(e){
+    $(this).parents('.board-list').addClass('on').siblings().removeClass('on');
+    e.preventDefault();
+
+  });
+</script>
+
 
 
 <!--=include _include/_layer_footer.html -->
