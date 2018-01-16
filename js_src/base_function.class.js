@@ -55,8 +55,8 @@ $(function(){
         $('.header').append('<button type="button" class="gnb-mobile-btn btn-gnb"><span>주메뉴 열기</span></button>');
       }
 
-      if( $('.gnb-mobile-btn.btn-quick').length <= 0 ){
-        $('.header').append('<button type="button" class="gnb-mobile-btn btn-quick"><span>퀵메뉴 열기</span></button>');
+      if( $('.quick-toggle').length <= 0 ){
+        $('.quick').append('<button type="button" class="quick-toggle"><span>퀵메뉴 열기</span></button>');
       }
 
       if( $('.gnb-mobile-btn-close').length <= 0){
