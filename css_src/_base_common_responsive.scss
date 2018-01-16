@@ -514,31 +514,36 @@
     }
 
     td{
+
       padding:0;
       border:0;
       position:relative;
       float:left;
-      width:100%;
+      width:50%;
       font-size:1rem;
 
       p.font16{
         font-weight: 700;
-        font-size:1.5rem;
+        font-size:1.125rem;
       }
       img{
         vertical-align: middle;
         height:100%;
       }
-
+      &:nth-child(4),&:nth-child(3),&:nth-child(2){
+        width:100%;
+      }
       &:first-child{
         border-top:0;
+        width:100%;
       }
       &:before{
         font-weight:400;
         display:inline-block;
-        min-width:100px;
+        min-width:60px;
         padding:10px;
-        font-size:0.825rem;
+        font-size:1rem;
+        color:#999;
       }
       &:nth-child(1):before{
         content:'항공사명';

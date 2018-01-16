@@ -936,6 +936,26 @@
     }
   }
 
+  .contents-visual.search-airline{
+    .search-airline{
+      &-name{
+
+        &-option{
+          width:40%;
+          height: 40px;
+         }
+        &-txt{
+          width:calc(60% - 40px);
+          height: 40px;
+        }
+        &-btn{
+          width:40px;
+          height:40px;
+        }
+      }
+    }
+  }
+
   .update{
     margin-bottom: 10px;
     text-align: left;
