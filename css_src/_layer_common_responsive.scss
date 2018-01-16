@@ -224,6 +224,7 @@
 
   .table{
     &.hr{
+
       br{
         display: none;
       }
@@ -761,6 +762,7 @@
   }
 
 
+
   // button
   .btn-type-normal{
     width:100%;
@@ -768,6 +770,7 @@
     padding:0;
     line-height:40px;
     height:40px;
+    font-weight:400;
     strong{
       font-weight:400;
     }
@@ -825,6 +828,9 @@
   }
 
   // table
+  .table.hr.info tr:last-child{
+    height:auto;
+  }
   .table{
     &.table-block{
       display:table!important;
@@ -898,6 +904,8 @@
       }
     }
     &.hr{
+
+
       display:block;
       overflow-x:auto;
       .radio-box{
@@ -1450,12 +1458,12 @@
     min-height: inherit;
     &-title{
       width: 100%;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       padding-top: 0;
       margin: 0 auto;
       text-align: center;
       strong{
-        display: inline-block;
+        display:inline;
       }
       &:after{
         top: 115px;
@@ -1576,12 +1584,18 @@
 
   .overflow{
     max-width: 100%;
-    overflow-y:scroll;
+
+    //overflow-y:scroll;
     &.t1{
-      height:400px;
+      height: 184px;
+      background:#fff;
+      border:1px solid #d9d9d9;
+
     }
     &.t2{
-      height:400px;
+      height: 184px;
+      background:#fff;
+      border:1px solid #d9d9d9;
     }
   }
 

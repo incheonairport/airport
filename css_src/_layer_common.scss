@@ -2161,15 +2161,18 @@ b.text-bold{
 
 .overflow{
   position: relative;
-  max-width: 1152px;
+  //max-width: 1152px;
+  width:100%;
   height: 400px;
-  overflow-x: auto;
-  overflow-y:hidden;
+  //overflow-x: auto;
+  //overflow-y:hidden;
   &.t1{
     height:440px;
+
   }
   &.t2{
     height:671px;
+
   }
 }
 
