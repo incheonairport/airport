@@ -25,17 +25,31 @@
     &.immigration.sub2{//자동출입
       background:url(/static/ap/images/bg_layer_header_ac_05_02.jpg) no-repeat left bottom;
     }
+    &.declaring.sub4{//검역안내
+      background:url(/static/ap/images/bg_layer_header_ac_03_03.jpg) no-repeat left bottom;
+    }
   }
-  &.arrive{ // 도착
-    background:url(/static/ap/images/bg_layer_header_02.jpg) no-repeat left bottom;
-    &.immigration.sub1{//유인심사
-      background:url(/static/ap/images/bg_layer_header_bc_02.jpg) no-repeat left bottom;
+  &.arrive {
+    // 도착
+    background: url(/static/ap/images/bg_layer_header_02.jpg) no-repeat left bottom;
+    &.immigration.sub1 {
+      //유인심사
+      background: url(/static/ap/images/bg_layer_header_bc_02.jpg) no-repeat left bottom;
     }
-    &.immigration.sub2{//자동심사
-      background:url(/static/ap/images/bg_layer_header_bc_02_2.jpg) no-repeat left bottom;
+    &.immigration.sub2 {
+      //자동심사
+      background: url(/static/ap/images/bg_layer_header_bc_02_2.jpg) no-repeat left bottom;
     }
-    &.baggage{
-      background:url(/static/ap/images/bg_layer_header_bc_03.jpg) no-repeat left bottom;
+    &.baggage {
+      background: url(/static/ap/images/bg_layer_header_bc_03.jpg) no-repeat left bottom;
+    }
+    &.report.sub1 {
+      //검역안내
+      background: url(/static/ap/images/bg_layer_header_bc_04_03.jpg) no-repeat left bottom;
+    }
+    &.report.sub2 {
+      //새관신고
+      background: url(/static/ap/images/bg_layer_header_bc_04_02.jpg) no-repeat left bottom;
     }
   }
   &.traffic-parking{ // 교통/주차
@@ -46,7 +60,18 @@
   }
   &.airport-services{ // 공항서비스
     background:url(/static/ap/images/bg_layer_header_05.jpg) no-repeat left bottom;
+    &.sub3{
+      background:url(/static/ap/images/bg_layer_header_fc_04.jpg) no-repeat left bottom;
+    }
   }
+
+  &.cyber-airport{ // 사이버에어포트
+    background:url(/static/ap/images/bg_layer_header_05.jpg) no-repeat left bottom;
+    &.sub2{
+      background:url(/static/ap/images/bg_layer_header_cyber_airport_ja.jpg) no-repeat left bottom;
+    }
+  }
+
   &.transfer{ // 환승
     background:url(/static/ap/images/bg_layer_header_ca_01_01.jpg) no-repeat left bottom;
   }
