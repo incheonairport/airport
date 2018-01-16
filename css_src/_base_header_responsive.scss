@@ -321,7 +321,7 @@
     height:100%;
     top:0;
     left:-100%;
-    z-index:99999;
+    z-index:99997;
     //transition:left .3s ease-out;
 
     &.mobile-on{
@@ -492,7 +492,7 @@
     bottom:15px;
     right:15px;
     transform:none;
-    z-index:99999;
+    z-index:99998;
 
     &-menu-list{
       background:none;
