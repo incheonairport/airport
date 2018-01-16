@@ -181,6 +181,24 @@
                 margin-right:14px;
               }
             }
+            &:after{
+              content:'자세히보기';
+              font-size: 0.75rem;
+              position: absolute;
+              top:0;
+              left:0;
+              right:0;
+              bottom:0;
+              margin:auto;
+              text-align:center;
+              width:70px;
+              height:20px;
+              line-height:20px;
+              color: #666;
+              background: #fff;
+              border: 1px solid #d9d9d9;
+              border-radius: 40px;
+            }
           }
           &-status{
             border-bottom:1px solid #d9d9d9!important;
@@ -647,6 +665,24 @@
                 display:inline-block;
                 margin-right:14px;
               }
+            }
+            &:after{
+              content:'자세히보기';
+              font-size: 0.75rem;
+              position: absolute;
+              top:0;
+              left:0;
+              right:0;
+              bottom:0;
+              margin:auto;
+              text-align:center;
+              width:70px;
+              height:20px;
+              line-height:20px;
+              color: #666;
+              background: #fff;
+              border: 1px solid #d9d9d9;
+              border-radius: 40px;
             }
           }
           &-status{

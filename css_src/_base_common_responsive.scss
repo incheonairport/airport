@@ -111,9 +111,9 @@
   // contents sub
   .contents-sub{
     &-head{
-      padding:30px 0 30px;
+      padding:15px 0 15px;
       &-title{
-        font-size:2rem;
+        font-size:1.5rem;
         line-height:1.3;
         &-lv3{
           font-size:1.5rem;
@@ -156,6 +156,7 @@
       }
       &-article{
         margin-top:10px;
+        font-size:0.825rem;
       }
     }
   }
@@ -196,6 +197,10 @@
 
         th{
           font-size: 0.815rem;
+          &:after{
+            top: 9px;
+            right: -2px;
+          }
         }
         colgroup {
           col{
@@ -611,19 +616,19 @@
 
 
 
-  .inner-col{
-    .imgbox-extend{
-      overflow-x:auto;
-      height:300px;
-      //direction: ltr;
-      //transform:rotateX(180deg);
-      //-ms-transform:rotateX(180deg); /* IE 9 */
-      //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
-      .imgbox{
-        width:400px;
-      }
-    }
-  }
+  //.inner-col{
+  //  .imgbox-extend{
+  //    overflow-x:auto;
+  //    height:300px;
+  //    //direction: ltr;
+  //    //transform:rotateX(180deg);
+  //    //-ms-transform:rotateX(180deg); /* IE 9 */
+  //    //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
+  //    .imgbox{
+  //      width:400px;
+  //    }
+  //  }
+  //}
 
   //.f-left{
   //  width:100%;
@@ -678,29 +683,33 @@
     width:100%!important;
   }
 
-  .imgbox-extend {
-    overflow-x: auto;
-    height: 300px;
-    //direction: ltr;
-    //transform:rotateX(180deg);
-    //-ms-transform:rotateX(180deg); /* IE 9 */
-    //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
-    .imgbox {
-      width: 800px;
-    }
-  }
+  //.imgbox-extend {
+  //  overflow-x: auto;
+  //  height: 300px;
+  //  //direction: ltr;
+  //  //transform:rotateX(180deg);
+  //  //-ms-transform:rotateX(180deg); /* IE 9 */
+  //  //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
+  //  .imgbox {
+  //    width: 800px;
+  //  }
+  //}
 
-  .inner-col{
-    .imgbox-extend{
-      overflow-x:auto;
-      height:auto;
-      //direction: ltr;
-      //transform:rotateX(180deg);
-      //-ms-transform:rotateX(180deg); /* IE 9 */
-      //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
-      .imgbox{
-        width:100%;
-      }
-    }
+  //.inner-col{
+  //  .imgbox-extend{
+  //    overflow-x:auto;
+  //    height:auto;
+  //    //direction: ltr;
+  //    //transform:rotateX(180deg);
+  //    //-ms-transform:rotateX(180deg); /* IE 9 */
+  //    //-webkit-transform:rotateX(180deg); /* Safari and Chrome */
+  //    .imgbox{
+  //      width:100%;
+  //    }
+  //  }
+  //}
+
+  select,input[type="text"]{
+    height: 40px!important;
   }
 }
