@@ -626,6 +626,14 @@
     transition:top .3s ease-out;
   }
 
+  .scroll-amount{
+    height:2px;
+    background:#ffae44;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
 }
 
 .gnb{
