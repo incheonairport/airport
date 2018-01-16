@@ -426,13 +426,17 @@
     &-box{
       width: 180px;
       &-level1{
-        font-size:1.125rem;
+        font-size:1rem;
         font-weight:700;
       }
       &-level2{
-        font-size:1.125rem;
+        font-size:1rem;
       }
       &-level3{
+        font-size:0.825rem;
+        .search-map-list-link{
+          font-size:0.825rem;
+        }
 
       }
     }
