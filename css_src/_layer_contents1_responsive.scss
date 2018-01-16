@@ -368,6 +368,7 @@
         width:50%;
         font-size:1rem;
         border:0;
+        margin-bottom:10px;
         &:nth-child(8n){
           border-right:0;
         }
@@ -952,6 +953,7 @@
       padding-left:0;
       float:none;
       color:#222;
+      line-height:30px;
     }
   }
   .calculator{
@@ -1072,7 +1074,7 @@
         float:left;
         width:100%;
         text-align:center;
-        margin-bottom:20px;
+        margin-bottom:-1px;
         padding:20px 10px;
         height:auto;
         line-height: 1.4;
@@ -1150,59 +1152,59 @@
       height: 21px;
       background-size:cover;
       &.exit-1{
-        top: 34px;
-        left: 15px;
+        top: 36px;
+        left: 9px;
       }
       &.exit-2{
-        top: 38px;
-        left: 24px;
+        top: 41px;
+        left: 20px;
       }
       &.exit-3{
-        top: 43px;
-        left: 39px;
+        top: 46px;
+        left: 34px;
       }
       &.exit-4{
-        top: 47px;
-        left: 56px;
+        top: 51px;
+        left: 52px;
       }
       &.exit-5{
-        top: 50px;
-        left: 72px;
+        top: 54px;
+        left: 68px;
       }
       &.exit-6{
-        top: 53px;
-        left: 89px;
+        top: 56px;
+        left: 86px;
       }
       &.exit-7{
-        top: 54px;
-        left: 107px;
+        top: 58px;
+        left: 105px;
       }
       &.exit-8{
-        top: 54px;
-        left: 122px;
+        top: 58px;
+        left: 121px;
       }
       &.exit-9{
-        top: 54px;
-        left: 139px;
+        top: 57px;
+        left: 137px;
       }
       &.exit-10{
-        top: 52px;
+        top: 55px;
         left: 155px;
       }
       &.exit-11{
-        top: 50px;
+        top: 52px;
         left: 172px;
       }
       &.exit-12{
-        top: 46px;
+        top: 48px;
         left: 189px;
       }
       &.exit-13{
-        top: 41px;
+        top: 42px;
         left: 206px;
       }
       &.exit-14{
-        top: 33px;
+        top: 36px;
         left: 221px;
       }
     }
@@ -1258,6 +1260,26 @@
       &.exit-8{
         top: 89px;
         left: 138px;
+      }
+    }
+  }
+
+  /*다운로드버튼*/
+  .btn-download{
+    min-width: 100%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+    padding: 0;
+    &.big{
+      font-size: 1rem;
+      &.ico{
+        &:after{
+        }
+      }
+    }
+    &.ico{
+      &:after{
       }
     }
   }

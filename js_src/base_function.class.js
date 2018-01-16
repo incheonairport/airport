@@ -48,6 +48,8 @@ $(function(){
 
       $('.header-site').insertAfter('.gnb-depth1');
 
+      $('.scroll-amount').insertBefore('.header-util');
+
       $('.header-search-item.gnb-search .header-search-input').addClass('mobile-none');
       $('.header-search-item.gnb-search .header-search-close').removeClass('mobile-none');
 
@@ -73,10 +75,13 @@ $(function(){
 
       $('.header-site').prependTo( $('.header') );
 
+      $('.scroll-amount').insertAfter('.header-search');
+
       //$('.header-search-item.gnb-search').appendTo($('.header-search'));
 
       $('.gnb-mobile-btn').remove();
       $('.gnb-mobile-btn-close').remove();
+      $('.quick-toggle').remove();
 
     };
 

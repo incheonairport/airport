@@ -17,6 +17,10 @@
 .top-big-popup{
   background:url(/static/ap/images/bg_top_big_popup.jpg) no-repeat center top;
 
+  &.none{
+    display:none;
+  }
+
   &-text{
     width:661px;
     height:432px;

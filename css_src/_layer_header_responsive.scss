@@ -216,4 +216,18 @@
     font-size:1.125rem;
 
   }
+
+
+  .en{
+    // location lnb
+    .location{
+      &-bar{
+        &-nav{
+          &-item {
+            float: none;
+          }
+        }
+      }
+    }
+  }
 }
