@@ -297,11 +297,15 @@
           }
         }
         .home{
+          width:18px;
+          height:22px;
           &.ico{
             &:after{
-              top:-2px;
-              left: auto;
-              right: 0;
+              //width:5px;
+              //height:22px;
+              top:1px;
+              left:9px;
+              right:auto;
             }
           }
         }
