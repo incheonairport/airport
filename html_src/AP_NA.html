@@ -24,9 +24,34 @@
 		<div class="inner-section">
 			<div class="global-search-area">
 				<div class="global-search-area-field">
-					<label for="search-facilities" class="label-hide">통합검색</label>
-					<input type="text" id="search-facilities" class="global-search-area-field-txt" placeholder="">
-					<button type="button" class="global-search-area-field-btn ico">검색</button>
+
+					<label for="search-facilities" class="label-hide">
+
+						Total Search
+
+					</label>
+					<form action="/cmm/en/totalSearch.do" id="search" name="search" method="GET">
+						<input type="text" id="Query" class="global-search-area-field-txt" name="query" value="parking" autocomplete="off">
+						<input type="hidden" id="category" name="category" value="AIR_HOME">
+						<input type="hidden" id="collection" name="collection" value="">
+						<input type="hidden" id="startCount" name="startCount" value="0">
+						<button type="button" class="global-search-area-field-btn ico" onclick="goSearch();">
+
+							Total Search
+
+						</button>
+						<div class="global-search-research">
+							<input type="checkbox" name="requery" id="requery" class="checkbox" value="">
+							<label class="checkbox-label ico" for="requery">
+
+								Re-search
+
+							</label>
+						</div>
+						<!-- ARK search suggest -->
+						<div id="ark" style="position: relative; z-index: 999999; top: 0px; left: 0px; width: 465px;"><div id="ark_down" style="position: absolute; cursor: pointer; top: 25px; left: 478px;"><img id="ark_img_down" src="/static/ark/img/arrow_auto.gif" alt="자동완성펼치기"></div><div id="ark_up" style="position: absolute; display: none; cursor: pointer; top: 25px; left: 478px;"><img id="ark_img_up" src="/static/ark/img/arrow_auto2.gif" alt="자동완성접기"></div><div id="tooltip01" style="position: absolute; display: none; cursor: pointer; z-index: 999999; top: 0px; left: 327px;"><img id="tooltipIcon01" src="/static/ark/img/tooltip_01.gif"></div><div class="ark_wrap" id="ark_wrap" style="position: absolute; top: 50px; left: 6px; width: 465px; display: none;">	<ul>		<li class="ark_content">			<ul class="fl" id="ark_content_list" style="width: 465px;"></ul>		</li>		<li class="ark_footer" id="ark_footer" style="width: 465px;"></li>	</ul></div></div>
+					</form>
+
 				</div>
 				<div class="global-search-area-field-checkbox">
 					<input type="checkbox" name="search" id="search-option" class="checkbox" value="" checked="checked">
@@ -70,52 +95,67 @@
 
 			<ul class="global-search-category">
 				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-all">
-						전체
-						<span class="result-num">11</span>
+					<a href="#" class="global-search-category-item-link search-all" onclick="javascript:goColSearch(&quot;AIR_HOME&quot;, &quot;&quot;);">
+
+						All
+
+						<span class="result-num">(20)</span>
 					</a>
 				</li>
 				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-start">
-						출발
-						<span class="result-num">111</span>
+					<a href="#" class="global-search-category-item-link search-start" onclick="javascript:goColSearch(&quot;AIR_HOME&quot;, &quot;air_depart_en&quot;);">
+
+						Departure
+
+						<span class="result-num">(0)</span>
 					</a>
 				</li>
 				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-arrive">
-						도착
-						<span class="result-num">111</span>
+					<a href="#" class="global-search-category-item-link search-arrive" onclick="javascript:goColSearch(&quot;AIR_HOME&quot;, &quot;air_arrival_en&quot;);">
+
+						Arrival
+
+						<span class="result-num">(1)</span>
 					</a>
 				</li>
 				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-transfer">
-						환승
-						<span class="result-num">111</span>
+					<a href="#" class="global-search-category-item-link search-transfer" onclick="javascript:goColSearch(&quot;AIR_HOME&quot;, &quot;air_trans_en&quot;);">
+
+						Transfer
+
+						<span class="result-num">(0)</span>
 					</a>
 				</li>
 				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-traffic">
-						교통/주차 <span class="result-num">111</span>
+					<a href="#" class="global-search-category-item-link search-traffic" onclick="javascript:goColSearch(&quot;AIR_HOME&quot;, &quot;air_traffic_en&quot;);">
+
+						To &amp; From Airport
+
+						<span class="result-num">(14)</span>
 					</a>
 				</li>
 				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-shopping">
-						쇼핑/식당 <span class="result-num">111</span>
+					<a href="#" class="global-search-category-item-link search-shopping" onclick="javascript:goColSearch(&quot;AIR_HOME&quot;, &quot;air_shop_en&quot;);">
+
+						Shop &amp; Dine
+
+						<span class="result-num">(0)</span>
 					</a>
 				</li>
 				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-service">
-						공항서비스 <span class="result-num">111</span>
+					<a href="#" class="global-search-category-item-link search-service" onclick="javascript:goColSearch(&quot;AIR_HOME&quot;, &quot;air_service_en&quot;);">
+
+						Airport Services
+
+						<span class="result-num">(2)</span>
 					</a>
 				</li>
 				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-map">
-						공항지도 <span class="result-num">11</span>
-					</a>
-				</li>
-				<li class="global-search-category-item">
-					<a href="" class="global-search-category-item-link search-cs">
-						고객센터 <span class="result-num">1</span>
+					<a href="#" class="global-search-category-item-link search-cs" onclick="javascript:goColSearch(&quot;AIR_HOME&quot;, &quot;air_client_en&quot;);">
+
+						Customer Center
+
+						<span class="result-num">(3)</span>
 					</a>
 				</li>
 			</ul>

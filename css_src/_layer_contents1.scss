@@ -8,16 +8,18 @@
 
 /*공항철도 노선도*/
 .digr_airport_railroad{
-  height:274px;
+  //height:274px;
+  height:441px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_airport_railroad.png) center no-repeat #f3f4f8;
 }
 
 /*KTX 노선도*/
 .digr_ktx_route{
-  height:274px;
+  height:324px;
   text-indent:-999em;
-  background: url(/static/ap/images/digr_ktx_route.png) center no-repeat #f3f4f8;
+  background: url(/static/ap/images/digr_ktx_route.png) center no-repeat #fff;
+  border:1px solid #dcdcdc;
 }
 
 /* 공항리무진 운행노선 */
@@ -191,6 +193,12 @@
 
     @extend %clearfix;
 
+    &.time-table{
+      border:0;
+      background:none;
+      padding:0;
+    }
+
     &-item {
       font-size:1rem;
       width: 16.6%;
@@ -242,9 +250,9 @@
 
 /*다운로드버튼*/
 .btn-download{
-  width: 86px;
+  min-width: 86px;
   height: 26px;
-  padding-left:25px;
+  padding:0 15px 0 30px;
   line-height: 26px;
   border: 1px solid #d9d9d9;
   background:#f2f2f2;
@@ -266,8 +274,9 @@
   &.ico{
     text-indent: 0;
     &:after{
-      top:10px;
-      right:48px;
+      top: 10px;
+      left: 10px;
+      right: auto;
     }
   }
 }
@@ -335,16 +344,51 @@
 
 /*주차요금계산기*/
 .calculator{
+  @extend %clearfix;
   width: 100%;
   min-height: 98px;
   padding: 20px;
   background: #323648;
-  @extend %clearfix;
 }
+
+.btn-center{
+  display:table;
+  margin:auto;
+  padding:20px 0 60px;
+  .btn-type-small{
+    min-width:166px;
+  }
+
+  //다운로드 버튼타입
+  .btn-type-small{
+    &.download{
+      min-width: 0;
+      font-family: spoqa, sans-serif;
+      font-weight: 700;
+    }
+  }
+}
+
+.btn-pos-box{
+  position:relative;
+  .btn-type-small{
+    position: absolute;
+    right:0;
+    top:20px;
+  }
+}
+
+
 
 /*날짜및시간설정*/
 .timesetting{
   &-date{
+    .timesetting-subtit{
+      display:block;
+      color:#fff;
+      font-weight:700;
+      margin-bottom:10px;
+    }
     @extend %clearfix;
     &-title{
       line-height: 56px;
@@ -352,7 +396,7 @@
     }
     &.f-left,
     &.f-right{
-      height:56px;
+      min-height:56px;
     }
     &-day{
       width: 140px;
@@ -387,6 +431,10 @@
       padding-left: 10px;
       border: 1px solid #d9d9d9;
       color: #666;
+      &.resize{
+        width: 365px;
+        height: 50px;
+      }
       +.timesetting-date-option{
         border-left: 0;
       }
@@ -935,7 +983,7 @@
   display: block;
   width: 1152px;
   height: 440px;
-  background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t1_02.png) no-repeat center;
+  background:url(/static/ap/images/bg_route_bus_area_search_t1_02.png) no-repeat center;
   //background-size: 100%;
   position: relative;
   border:1px solid #d9d9d9;
@@ -1016,7 +1064,7 @@
   display: block;
   width: 1152px;
   height: 671px;
-  background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t2_02.png) no-repeat center;
+  background:url(/static/ap/images/bg_route_bus_area_search_t2_02.png) no-repeat center;
   border:1px solid #d9d9d9;
   //background-size: 100%;
   position: relative;
@@ -1317,7 +1365,7 @@ button{
 /*검색*/
 .search-map{
   width:100%;
-  padding: 20px;
+  padding: 10px 20px;
   background:#f3f4f8;
   border:1px solid #6b6b6b;
   margin-top: -1px;
@@ -1327,7 +1375,7 @@ button{
     font-weight:800;
     float: left;
     position: relative;
-    top:17px;
+    top:9px;
     padding-right: 15px;
 
     &.title2{
@@ -1356,7 +1404,7 @@ button{
       }
     }
     &-select, &-txt{
-      height:50px;
+      height:30px;
       padding: 0 10px;
       border: 1px solid #d9d9d9;
       border-right:0;
@@ -1378,18 +1426,18 @@ button{
 
   &-btn{
     width: 80px;
-    height: 50px;
+    height: 30px;
     background: #42519e;
     border: none;
     color: #fff;
     font-size: 1rem;
     font-weight: 900;
-    line-height: 50px;
+    line-height: 30px;
   }
   &-svg{
     width:calc(100% - 249px);
     background:#333649;
-    height: 602px;
+    height: 700px;
     border: 1px solid #d9d9d9;
     border-right: 0;
     float: left;
@@ -1523,7 +1571,7 @@ button{
   &-clear{
     position:relative;
     overflow:hidden;
-    min-height:602px;
+    min-height:700px;
     margin-top:20px;
     @extend %clearfix;
     &.full-screen{
@@ -1756,69 +1804,69 @@ button{
     background: #f2f2f2;
   }
 }
-/*파일 첨부, 주소 검색*/
-.user{
-  &-input{
-    width:957px;
-    &-text{
-      width:800px;
-      height:50px;
-      font-size:1rem;
-      border: 1px solid #d9d9d9;
-      box-sizing: border-box;
-      float:left;
-    }
-    &-link{
-      min-width:145px;
-      height:50px;
-      line-height: 50px;
-      padding: 0 20px;
-      background-color: #f2f2f2;
-      border: 1px solid #d9d9d9;
-      font-weight: 900;
-      text-align: center;
-      display: inline-block;
-      &.small{
-        min-width:84px;
-        height:26px;
-        line-height:26px;
-        font-size: 0.8125rem;
-        font-weight:700;
-        color: #666;
-      }
-    }
-    &.id{
-      width: 410px;
-      .user-input-text{
-        width: 263px;
-        padding: 0 10px;
-        border-right: 0;
-        float:left;
-      }
-    }
-  }
-
-}
-.object-list{
-  width:250px;
-  height:50px;
-  padding: 0 15px;
-  border: 1px solid #d9d9d9;
-  font-size: 1rem;
-  vertical-align: top;
-  &option{
-    font-size: 1rem;
-  }
-  &.email{
-    width: 157px;
-    margin-right: 8px;
-  }
-  &.small{
-    width: 150px;
-  }
-  &-title{
-    line-height: 50px;
-    padding: 0 10px;
-  }
-}
+///*파일 첨부, 주소 검색*/
+//.user{
+//  &-input{
+//    width:957px;
+//    &-text{
+//      width:800px;
+//      height:50px;
+//      font-size:1rem;
+//      border: 1px solid #d9d9d9;
+//      box-sizing: border-box;
+//      float:left;
+//    }
+//    &-link{
+//      min-width:145px;
+//      height:50px;
+//      line-height: 50px;
+//      padding: 0 20px;
+//      background-color: #f2f2f2;
+//      border: 1px solid #d9d9d9;
+//      font-weight: 900;
+//      text-align: center;
+//      display: inline-block;
+//      &.small{
+//        min-width:84px;
+//        height:26px;
+//        line-height:26px;
+//        font-size: 0.8125rem;
+//        font-weight:700;
+//        color: #666;
+//      }
+//    }
+//    &.id{
+//      width: 410px;
+//      .user-input-text{
+//        width: 263px;
+//        padding: 0 10px;
+//        border-right: 0;
+//        float:left;
+//      }
+//    }
+//  }
+//
+//}
+//.object-list{
+//  width:250px;
+//  height:50px;
+//  padding: 0 15px;
+//  border: 1px solid #d9d9d9;
+//  font-size: 1rem;
+//  vertical-align: top;
+//  &option{
+//    font-size: 1rem;
+//  }
+//  &.email{
+//    width: 157px;
+//    margin-right: 8px;
+//  }
+//  &.small{
+//    width: 150px;
+//  }
+//  &-title{
+//    line-height: 50px;
+//    padding: 0 10px;
+//  }
+//}
 

@@ -10,8 +10,7 @@
       <ul class="location-bar-nav">
         <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link home ico">home</a></li>
         <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link">환승</a></li>
-        <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link">환승 즐기기</a></li>
-        <li class="location-bar-nav-item"><a href="" class="location-bar-nav-item-link">환승 타입 테스트</a></li>
+        <li class="location-bar-nav-item"><a href="" class="location-bar-nav-item-link">환승 V-Log</a></li>
       </ul>
     </div>
   </div>
@@ -25,14 +24,20 @@
 
   <div class="contents-visual bg1">
     <div class="inner-section">
-      <div class="contents-visual-head text-center">
-        <p class="color-o">인천국제공항에서 즐기는 특별한 환승</p>
-      </div>
+       <div class="contents-visual-head text-center">
+         <p class="color-o">인천국제공항에서 즐기는 특별한 환승</p>
+       </div>
+      <ul class="bg-banner-iconlist">
+        <li class="bg-banner-iconlist-item">
+          <a href="" class="bg-banner-bgico shopping">환승 타입 테스트</a>
+        </li>
+      </ul>
       <!--subtab-->
-      <nav class="tab-sub">
+      <nav class="tab-sub col-3">
         <ul class="tab-sub-list">
-          <li class="tab-sub-list-item"><a href="" class="tab-sub-list-item-link">환승 V-Log</a></li>
-          <li class="tab-sub-list-item"><a href="" class="tab-sub-list-item-link on">환승 타입 테스트</a></li>
+          <li class="tab-sub-list-item"><a href="" class="tab-sub-list-item-link on">환승 V-Log</a></li>
+          <li class="tab-sub-list-item"><a href="" class="tab-sub-list-item-link">Stopover in Korea</a></li>
+          <li class="tab-sub-list-item"><a href="" class="tab-sub-list-item-link">K-POP Concert</a></li>
         </ul>
       </nav>
       <!--//subtab-->
@@ -42,123 +47,164 @@
 
 <section class="contents">
   <div class="inner-section">
-    <div class="filter">
-      <div class="filter-service-field bd-control">
-        <div class="field">
-          <h3 class="article-head">나의 환승 정보 입력</h3>
 
-          <div class="calculator mt30">
-            <div class="timesetting-date f-left">
-              <span class="timesetting-subtit">도착</span>
-
-              <label for="timesetting-arrival-timedate" class="label-hide">날짜 선택</label>
-              <input id="timesetting-arrival-timedate" type="text" class="timesetting-date-day f-left" readonly>
-
-              <button class="timesetting-date-calendar ico  f-left" title="클릭하면 날짜를 선택할 수 있습니다.">날짜 선택</button>
-
-              <label for="timesetting-arrival-timehour" class="label-hide">시간 선택</label>
-              <select id="timesetting-arrival-timehour" class="timesetting-date-option f-left">
-                <option>시간 선택</option>
-              </select>
-
-              <label for="timesetting-arrival-minute" class="label-hide">분 선택</label>
-              <select id="timesetting-arrival-minute" class="timesetting-date-option f-left">
-                <option>분 선택</option>
-              </select>
-            </div>
-            <div class="timesetting-date f-right">
-              <span class="timesetting-subtit">출발</span>
-
-              <label for="timesetting-start-timedate" class="label-hide">날짜 선택</label>
-              <input id="timesetting-start-timedate" type="text" class="timesetting-date-day f-left" readonly>
-
-              <button class="timesetting-date-calendar ico  f-left" title="클릭하면 날짜를 선택할 수 있습니다.">날짜 선택</button>
-
-              <label for="timesetting-start-timehour" class="label-hide">시간 선택</label>
-              <select id="timesetting-start-timehour" class="timesetting-date-option f-left">
-                <option>시간 선택</option>
-              </select>
-
-              <label for="timesetting-start-minute" class="label-hide">분 선택</label>
-              <select id="timesetting-start-minute" class="timesetting-date-option f-left">
-                <option>분 선택</option>
-              </select>
-            </div>
-          </div>
-          <table class="table hr" summary="나의 환승정보 표입니다.">
-            <caption>나의 환승정보 표 입니다.</caption>
-            <colgroup>
-              <col style="width:20%">
-              <col style="width:80%">
-            </colgroup>
-            <tbody>
-            <tr>
-              <th class="center">
-                <strong>항공사 선</strong>
-              </th>
-              <td class="pd-resize">
-                <label for="timesetting-terminal" class="label-hide">항공상 선택</label>
-                <select id="timesetting-terminal" class="timesetting-date-option resize">
-                  <option>선택하세요.</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th class="center">
-                <strong>선호 타입</strong>
-              </th>
-              <td>
-                <div class="radio-type2">
-                  <div class="radio-box">
-                    <input type="radio" name="option-favorite" id="option-favorite-relax" class="radio-type2-radio" value="option-favorite-relax" checked />
-                    <label class="radio-type2-label ico" for="option-favorite-relax">Relax</label>
-                  </div>
-
-                  <div class="radio-box">
-                   <input type="radio" name="option-favorite" id="option-favorite-tour" class="radio-type2-radio" value="option-favorite-tour" />
-                    <label class="radio-type2-label ico" for="option-favorite-tour">Tour & Culture</label>
-                  </div>
-
-                  <div class="radio-box">
-                    <input type="radio" name="option-favorite" id="option-favorite-shop" class="radio-type2-radio" value="option-favorite-shop" />
-                    <label class="radio-type2-label ico" for="option-favorite-shop">Shop & Dine</label>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th class="center">
-                <strong>비자</strong>
-              </th>
-              <td>
-                <div class="radio-type2">
-                  <div class="radio-box">
-                    <input type="radio" name="option-visa" id="option-visa-no" class="radio-type2-radio" value="option-visa-no" checked />
-                    <label class="radio-type2-label ico" for="option-visa-no">비자 없음</label>
-                  </div>
-
-                  <div class="radio-box">
-                    <input type="radio" name="option-visa" id="option-visa-yes" class="radio-type2-radio" value="option-visa-yes" />
-                    <label class="radio-type2-label ico" for="option-visa-yes">비자 있음</label>
-                  </div>
-
-                  <div class="radio-box">
-                    <input type="radio" name="option-visa" id="option-visa-exemption" class="radio-type2-radio" value="option-visa-exemption" />
-                    <label class="radio-type2-label ico" for="option-visa-exemption">비자 면제 국가</label>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            </tbody>
-          </table>
-          <div class="btn-center">
-            <button type="button" class="btn-type-normal point ico arrow-point-right">검색</button>
-            <button class="btn-type-small point ico download">검색결과 다운로드</button>
-          </div>
-
-        </div>
+    <div class="bg-include-inner">
+      <div class="bg-include-video">
+        <iframe class="bg-include-video-iframe" title="셀프백드랍 이용방법" src="https://www.youtube.com/embed/NHfVTw_2jGA" poster="/static/ap/images/img_sub_visual_airline.jpg" frameborder="0" allowfullscreen=""></iframe>
       </div>
+      <a href="" class="btn-type-infolink ico arrow-infolin-right_w mt30">영상 더 보기</a>
     </div>
+
+    <div class="boxmodel2 mt40">
+      <ul class="boxmodel2-thumbnail">
+        <li class="boxmodel2-thumbnail-item">
+          <a href="" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark green">공연/전시</span>
+                  <img src="/static/ap/images/img_enjoy_transit_thumbnail_01.jpg" class="imgbox" alt="왕가의 산책 관련 이미지">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">왕가의 산책</span>
+                <p class="boxmodel2-desc">
+                  조선시대 왕과 왕비를 비롯한 궁중왕실의 일상모습을 재현한 행사입니다. 궁중복식 및 의장물을 착용한 출연진들과 함께 기념사진을 촬영할 수 있는 포토타임도 마련되어 있습니다.
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제 1여객터미널] (면세지역) 4층 동&middot;서 끝 편(2개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark brown">호텔</span>
+                  <img src="/static/ap/images/img_enjoy_transit_thumbnail_02.jpg" class="imgbox" alt="환승호텔 관련 이미지">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">환승호텔</span>
+                <p class="boxmodel2-desc">
+                  환승객 전용 면세구역내에 위치하는 환승여객을 위한 시설로 다음날 새벽 일찍 출국하기 위해 전날 출국수속을 받고 호텔을 이용하는 것은 불가
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제 1여객터미널] (면세지역) 3층 출국장 11번, 43번 게이트 앞 4층</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark red">라운지</span>
+                  <img src="/static/ap/images/img_enjoy_transit_thumbnail_03.jpg" class="imgbox" alt="CIP라운지 관련 이미지">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">CIP라운지</span>
+                <p class="boxmodel2-desc">
+                  면적: 288㎡ (87평) / 라운지: 56석 / 비즈니스룸: 7석 (노트북, 팩스, 국제전화 등) / 회의실: 5석
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제 1여객터미널] (일반지역) 3층 E-F 체크인 카운터 부근</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark red">라운지</span>
+                  <img src="/static/ap/images/img_enjoy_transit_thumbnail_04.jpg" class="imgbox" alt="SKY HUB-Lounge 관련 이미지">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">SKY HUB-Lounge</span>
+                <p class="boxmodel2-desc">
+                  품격있고 편안한 VIP 라운지 서비스를 제공하며, 고급 뷔페, 다양한 음료 및 주류를 즐기며, 비즈니스 또는 휴식을 할 수 있는 특별한 공간입니다.
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제 1여객터미널] (면세지역) 내 4층(동/서편 각 1개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark blue">인터넷</span>
+                  <img src="/static/ap/images/img_enjoy_transit_thumbnail_05.jpg" class="imgbox" alt="INTERNET ZONE 관련 이미지">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">INTERNET ZONE</span>
+                <p class="boxmodel2-desc">
+                  환승하는 여행객들이 무료로 인터넷을 즐길 수 있는 공간입니다.
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제 1여객터미널] (면세지역) 환승편의시설 4층 동∙ 서편 SNACK BAR 맞은편</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+                  <span class="boxmodel2-imggroup-mark gray">샤워</span>
+                  <img src="/static/ap/images/img_enjoy_transit_thumbnail_06.jpg" class="imgbox" alt="SHOWER-ROOM 관련 이미지">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">SHOWER-ROOM</span>
+                <p class="boxmodel2-desc">
+                  상쾌한 여행이 될 수 있도록 환승객 대상으로 제공되는 무료샤워시설입니다. 청결하게 유지되는 24개의 샤워실이 누구나 이용할 수 있도록 개방되어 있습니다.
+                </p>
+                <span class="boxmodel2-map-link color-lb">[제 1여객터미널] (면세지역) 4층(동/서편 각 1개소), 탑승동 4층(1개소)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+      </ul> <!-- thumbnail style -->
+    </div>
+
   </div>
 </section>
+
 <!--=include _include/_base_footer.html -->

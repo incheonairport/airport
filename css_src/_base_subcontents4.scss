@@ -664,6 +664,10 @@
       //  width:200px;
       //  padding-left:10px;
       //}
+
+      &.right{
+        float:right;
+      }
     }
   }
 
@@ -944,6 +948,10 @@
       line-height: 1;
       &.agreement-offer{
         padding:25px 20px;
+      }
+
+      .guide-desc{
+        margin-bottom:10px;
       }
     }
   }

@@ -258,11 +258,28 @@
 .route-list{
 
   &-item{
-
     height:60px;
-
     position:relative;
     margin-bottom:2px;
+    .multi-col{
+      .route-list-item{
+        .route-name{
+          width:40%;
+        }
+        .route-desc{
+          width:60%;
+        }
+
+        &.moving{
+          .route-desc{
+            line-height:1.4;
+            font-size:1rem;
+            padding-top:9px;
+            letter-spacing:-1px;
+          }
+        }
+      }
+    }
 
     &:after{
       content:"";
@@ -272,6 +289,24 @@
       position:absolute;
       top:0;
       left:0;
+    }
+
+    &.double-row{
+      height:122px;
+      .route-name{
+        height:122px;
+        line-height:122px;
+
+        .move{
+          top:50%;
+          transform:translateY(-50%);
+        }
+      }
+
+      .route-desc{
+        height:122px;
+        line-height:122px;
+      }
     }
 
     &.general{
@@ -295,6 +330,12 @@
     &.tax-free{
       &:after{
         background:#6182c0;
+      }
+    }
+
+    &.tax-free2{
+      &:after{
+        background:#bfdfe0;
       }
     }
 
@@ -369,6 +410,16 @@
             }
           }
 
+          &.tax-free2{
+            &:after{
+              border:{
+                top:14px solid #bfdfe0;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
           &.moving{
             &:after{
               border:{
@@ -393,6 +444,12 @@
         float:left;
         font-size:1.125rem;
         line-height:60px;
+
+        &.small{
+          font-size:1rem;
+          line-height:1.4;
+          padding:9px 33px 0;
+        }
       }
     }
 

@@ -101,6 +101,20 @@ $(function(){
 
   })();
 
+  /**
+   * 레이어 팝업
+   */
+
+  (function(){
+
+    $(window).on('resize', function(){
+
+      LayerPopup.setPopupHeight();
+
+    }).resize();
+
+  })();
+
 });
 
 

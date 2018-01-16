@@ -73,6 +73,9 @@
   .inner-section{
     height:100%;
     position:relative;
+    .bg-banner-iconlist{
+      top: 10px;
+    }
   }
 
   &.departure{
@@ -316,6 +319,26 @@
       border-right: 1px solid #d9d9d9;
       vertical-align: bottom;
       float: left;
+      &.double{
+        padding:0;
+        .search-flight-detail-select-article{
+          width:85px;
+          float:left;
+          &:last-child{
+            border-right:0;
+            border-left:1px solid #d9d9d9;
+            float:right;
+          }
+        }
+        .dash{
+          font-size:0.75rem;
+          float:left;
+          display:block;
+          height:100%;
+          line-height:58px;
+          padding:0 3px;
+        }
+      }
     }
     &-airplane{
       width: 189px;
@@ -652,17 +675,20 @@
   &-category{
     display:inline-block;
     @extend %clearfix;
+
     &-item{
       float: left;
       line-height: 1.2;
+      width:auto;
+      padding:0 10px;
 
       &+.global-search-category-item{
         border-left: 1px solid #d9d9d9;
+
       }
       &-link{
-        width: 127px;
-        height: 60px;
-        padding: 10px 10px 10px 30px;
+        width:100%;
+        padding: 10px 10px 10px 45px;
         display:inline-block;
         font-family: spoqa, sans-serif;
         font-size: 1rem;
@@ -1276,12 +1302,16 @@
   }
 
   &.system{
+    display:none;
     max-width:550px;
     //min-width:565px;
     //overflow-y:auto;
     border: 4px solid #fefefe;
     //padding: 36px 36px 70px;
     position:relative;
+    top:auto;
+    left:auto;
+    transform:none;
     float:left;
     width:calc(50% - 5px);
     margin-right:5px;
@@ -1362,7 +1392,7 @@
         overflow:auto;
       }
     }
-    .layer-close{
+    .layer-system-close{
       display: block;
       width: 25px;
       height: 25px;
@@ -1448,13 +1478,18 @@
   border: 4px solid #42519e;
   background:#fff;
   position:absolute;
-  top:0;
-  left:0;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
   overflow-y:auto;
   z-index:10;
 
   &.on{
     display:block;
+  }
+
+  &.off{
+    display:none;
   }
 
   &-wrap{
@@ -1489,6 +1524,7 @@
     &.system{
       position:absolute;
       width:80%;
+      height:auto;
 
       &:after{
         content:none;
@@ -2376,35 +2412,47 @@
 }
 
 .congestion{
-  &-mark1{
+  &-mark1-1{
     position: absolute;
-    top: 159px;
-    left: 99px;
+    top: 178px;
+    left: 322px;
   }
-  &-mark2{
+  &-mark1-2{
     position: absolute;
-    top: 143px;
-    left: 149px;
+    top: 157px;
+    left: 290px;
   }
-  &-mark3{
+  &-mark1-3{
     position: absolute;
-    top: 143px;
-    right: 152px;
+    top: 139px;
+    left: 242px;
   }
-  &-mark4{
+  &-mark1-4{
     position: absolute;
-    top: 159px;
-    right: 106px;
+    top: 139px;
+    left: 146px;
   }
-  &-mark5{
+  &-mark1-5{
     position: absolute;
-    top: 179px;
-    left: 160px;
+    top: 157px;
+    left: 98px;
   }
-  &-mark6{
+  &-mark1-6{
     position: absolute;
     top: 179px;
     right: 161px;
+  }
+
+  &-mark2-1{
+    position: absolute;
+    top: 179px;
+    right: 161px;
+  }
+
+  &-mark2-2{
+    position: absolute;
+    top: 179px;
+    left: 160px;
   }
   &-mark{
     &-number{
@@ -2723,5 +2771,7 @@
       width: 154px;
     }
   }
+
+
 
 }
