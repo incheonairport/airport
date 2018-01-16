@@ -16,9 +16,10 @@
 
 /*KTX 노선도*/
 .digr_ktx_route{
-  height:274px;
+  height:324px;
   text-indent:-999em;
-  background: url(/static/ap/images/digr_ktx_route.png) center no-repeat #f3f4f8;
+  background: url(/static/ap/images/digr_ktx_route.png) center no-repeat #fff;
+  border:1px solid #dcdcdc;
 }
 
 /* 공항리무진 운행노선 */
