@@ -1358,18 +1358,22 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_06.jpg) no-repeat center;
     background-size: cover;
   }
-  //정부종합청사
-  &.government-center{
-    background:url(/static/ap/images/bg_sub_layer_banner_government_center.jpg) no-repeat center;
-    background-size: cover;
-  }
-
   &.bg6{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_05.jpg) no-repeat center;
   }
 
   &.bg8{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_08.jpg) no-repeat center;
+    background-size: cover;
+  }
+  //출발검역안내
+  &.dep-quarantine{
+    background:url(/static/ap/images/bg_sub_layer_banner_dep_declaration.jpg) no-repeat center;
+    background-size: cover;
+  }
+  //정부종합청사
+  &.government-center{
+    background:url(/static/ap/images/bg_sub_layer_banner_government_center.jpg) no-repeat center;
     background-size: cover;
   }
 //유인출국
@@ -1387,8 +1391,12 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_arr_immigration.jpg) no-repeat center;
     background-size: cover;
   }
-
-
+  //도착 검역 안내
+  &.arr-quarantine{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_quarantine.jpg) no-repeat center;
+    background-size: cover;
+  }
+  //도착 세관신고
   &.arr-declaration{
     background:url(/static/ap/images/bg_sub_layer_banner_arr_declaration.jpg) no-repeat center;
     background-size: cover;
@@ -2161,15 +2169,18 @@ b.text-bold{
 
 .overflow{
   position: relative;
-  max-width: 1152px;
+  //max-width: 1152px;
+  width:100%;
   height: 400px;
-  overflow-x: auto;
-  overflow-y:hidden;
+  //overflow-x: auto;
+  //overflow-y:hidden;
   &.t1{
     height:440px;
+
   }
   &.t2{
     height:671px;
+
   }
 }
 
@@ -2940,6 +2951,7 @@ img.no-extend{
   font-size:1rem!important;
   position:relative;
   text-indent:24px;
+  background:#fff;
   &:before{
     content:'';
     display:block;

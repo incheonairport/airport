@@ -179,9 +179,10 @@
         &.gnb-search{
           margin-left:0;
           float:left;
-          position:relative;
-          top:auto;
-          right:auto;
+          // 임시 위치조정
+          position:absolute;
+          top:15px;
+          right:15px;
           text-align:right;
           width:38px;
           background:#6281c1;

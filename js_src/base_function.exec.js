@@ -642,11 +642,11 @@ $(function(){
   })();
 
   // map scroll overflow div add
-  (function(){
-
-    $('.imgbox').wrap('<div class="imgbox-extend" />');
-
-  })();
+  //(function(){
+  //
+  //  $('.imgbox').wrap('<div class="imgbox-extend" />');
+  //
+  //})();
 
   // 시스템 레이어팝업 이벤트
   (function(){

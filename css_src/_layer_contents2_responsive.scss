@@ -168,4 +168,31 @@
     height:188px;
   }
 
+  .detail-column{
+    &.col-2{
+      .detail-table{
+        width:100%;
+        float:none;
+        &.w60{
+          width:100%;
+        }
+        &.w40{
+          width:100%;
+        }
+      }
+    }
+    .detail-table{
+      &-tit{
+        width:100%;
+        float:none;
+        margin-bottom:6px;
+      }
+      &-desc{
+        width:100%;
+        float:none;
+      }
+    }
+
+  }
+
 }
