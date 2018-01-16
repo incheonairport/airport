@@ -209,6 +209,12 @@
       height: 35px;
       left: -10px;
     }
+    &.reservation:after {
+      background-position: -169px -38px;
+      width: 50px;
+      height: 35px;
+      left: -10px;
+    }
     &.event:after {
       background-position: -30px -34px;
       width: 44px;
@@ -220,6 +226,11 @@
       height: 41px;
     }
     &.survey:after {
+      background-position: -30px -113px;
+      width: 46px;
+      height: 40px;
+    }
+    &.poll:after {
       background-position: -30px -113px;
       width: 46px;
       height: 40px;
