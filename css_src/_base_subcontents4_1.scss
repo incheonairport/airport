@@ -5,31 +5,67 @@
 //  margin: 0 auto;
 //}
 .digr-way-bus{
-
+  border:1px solid #d9d9d9;
+  padding:40px 40px 20px;
+  @extend %clearfix;
+  .guide-desc{
+    padding:50px 0 20px;
+  }
+  &-tit{
+    font-size:1.125rem;
+    font-weight:600;
+    float:left;
+    width:90px;
+  }
   &-list{
-    display:none;
-
+    float:left;
+    width:calc(100% - 90px);
+    margin:12px 0;
     &:before{
       content:'';
       display:block;
       height:3px;
-      width:280px;
+      width:100%;
       background:#d9d9d9;
       margin-bottom:10px;
     }
+    @extend %clearfix;
 
     &-item{
-      display:inline-block;
-      margin-right:10px;
-      position: relative;
 
+      float:left;
+      position: relative;
+      width:33.33%;
+      &:first-child{
+        &:before{
+          right:auto;
+        }
+      }
+      &:last-child{
+        text-align:right;
+        &:before{
+          left:auto;
+        }
+      }
+
+      &.t2{
+        &:before{
+          background:#68aac6;
+        }
+      }
+
+      &.t1{
+        &:before{
+          background:#6787cf;
+        }
+      }
       &:before{
         content:'';
         display:inline-block;
         width:12px;
         height:12px;
         border-radius:50%;
-        background:red;
+        background:#595757;
         position:absolute;
         top:-17px;
         left:0;
@@ -50,6 +86,7 @@
   text-indent:-999em;
   height:416px;
   background: url(/static/ap/images/digr_way_02.png ) no-repeat;
+  border:1px solid #d9d9d9;
 }
 
 .sub-menu-tab{
