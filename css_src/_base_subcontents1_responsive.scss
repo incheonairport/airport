@@ -38,6 +38,7 @@
 @media screen and (max-width:1024px) {
 
   .location{
+    display:none;
     position: static;
     padding:10px 15px;
     height: auto;
@@ -145,8 +146,8 @@
         & + .search-option-btn{
           width:50%;
           text-align:center;
-          height: 50px;
-          line-height: 50px;
+          height: 40px;
+          line-height: 40px;
         }
       }
     }
@@ -154,41 +155,41 @@
       height: auto;
       float: none;
       &-article{
-        width: 100%;
+        width: 50%;
         padding:0 10px;
         border-bottom:1px solid #d9d9d9;
         border-right:0;
-        height:50px;
-        line-height:50px;
+        height:40px;
+        line-height:40px;
         &:nth-child(4n){
           border-right:0;
         }
       }
       &-airplane{
-        height:50px;
-        line-height:50px;
-        width:100%;
+        height:40px;
+        line-height:40px;
+        width:calc(100% - 40px);
       }
       &-btn{
-        width:100%;
-        height:50px;
+        width:40px;
+        height:40px;
         &:after{
-          display:none;
+          //display:none;
         }
         &:before{
-          content:'검색';
-          display: block;
-          width:100%;
-          height:50px;
-          color:#fff;
-          font-size:1.125rem;
-          font-weight:700;
-          text-align: center;
-          text-indent:14px;
-          line-height:50px;
-          position:absolute;
-          top:0;
-          left:0;
+          //
+          //display: block;
+          //width:100%;
+          //height:50px;
+          //color:#fff;
+          //font-size:1.125rem;
+          //font-weight:700;
+          //text-align: center;
+          //text-indent:14px;
+          //line-height:50px;
+          //position:absolute;
+          //top:0;
+          //left:0;
         }
       }
     }
@@ -787,9 +788,10 @@
     padding-left:0;
     float: none;
     position:static;
-    margin-bottom:30px;
+    margin-bottom:15px;
     &-title{
       padding:0 15px;
+      font-size:1.125rem;
       br{
         display:none
       }
@@ -804,7 +806,7 @@
     &-main{
       width:100%;
       height:auto;
-      margin-bottom:30px;
+      margin-bottom:15px;
       padding:0 30px;
       &-list{
         width:100%;
@@ -812,6 +814,8 @@
           width:50%;
           &-link{
             width:100%;
+            height:40px;
+            line-height:40px;
             display: inline-block;
             border: 1px solid rgba(255, 255, 255, .5);
             font-size: 1rem;
@@ -823,12 +827,17 @@
     &-sub{
       position: static;
       &-list{
+        display:flex;
         &-item {
           float: left;
           width:50%;
+          height:auto;
           &-link{
             font-size: 	1rem;
             letter-spacing:-1px;
+            line-height:1.4;
+            padding:15px;
+
           }
           &+.tab-sub-list-item{
             margin-left:0;
@@ -877,8 +886,9 @@
       padding:0 15px;
       &-title{
         margin-bottom: 10px;
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 400;
+        padding-top:10px;
       }
     }
     &-name{
@@ -891,21 +901,24 @@
         border:1px solid #d9d9d9
       }
       &-txt{
-        width:100%;
-        height: 50px;
+        width:calc(100% - 40px);
+        height: 40px;
         font-size: 1rem;
       }
       &-btn{
-        width:100%;
-        height:50px;
+        width:40px;
+        height:40px;
         padding-left:0;
         font-size:1.125rem;
         line-height:50px;
         &.ico{
+          text-indent:-999em;
 
         }
         &.ico:after{
-          display:none;
+          left:0;
+          right:0;
+
         }
       }
     }
@@ -1030,23 +1043,23 @@
       &-field{
         width:100%;
         &-txt{
-          width:100%;
+          width:calc(100% - 70px);
           height: 50px;
           padding: 0 15px;
           border:1px solid #d9d9d9;
-          border-bottom:0;
           font-size: 1rem;
         }
         &-btn{
-          width:100%;
+          width:70px;
           height: 50px;
           padding-left: 30px;
           line-height: 50px;
+
           &.ico{
-            font-size:1rem;
+            text-indent:-999em;
             padding:0;
             &:after{
-              display:none;
+              //display:none;
               top:0;
               right:0;
               left:0;
@@ -1297,6 +1310,12 @@
     max-height: 100%;
     img {
       width:100%;
+    }
+  }
+
+  .en{
+    .global-search-category-item{
+      height:70px;
     }
   }
 
