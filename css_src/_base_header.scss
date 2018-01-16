@@ -280,6 +280,25 @@
   }
 }
 
+.top-big-open{
+
+  &.top-popup{
+    top:-200px;
+  }
+
+  &.header{
+    top:-60px;
+  }
+
+  &.gnb{
+    top:-40px;
+  }
+
+  &.quick{
+    right:-73px;
+  }
+}
+
 .header{
 
   width:100%;
@@ -1062,7 +1081,10 @@
   //color:#fff;
   z-index:999;
   transform:translateY(-40%);
-  //transition:all .3s ease-out;
+
+  &.quick-in{
+    transition:all .3s ease-out;
+  }
 
   &-menu-list{
     background: #272936;
