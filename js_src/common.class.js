@@ -68,15 +68,15 @@ $(function(){
 
     var calcTabWidth = function( $currentTab, findClass ){
 
-      if ($('html').hasClass('mobile')) {
+      //if ($('html').hasClass('mobile')) {
 
         //tabWidth = 100 / Math.ceil( $currentTab.find(findClass).length / 2 );
 
-      } else {
+      //} else {
 
         tabWidth = 100 / $currentTab.find(findClass).length;
 
-      }
+      //}
 
     };
 
