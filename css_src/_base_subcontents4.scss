@@ -317,6 +317,30 @@
     font-size:1.25rem;
     font-weight:700;
     font-family:nanumsq, sans-serif;
+
+    &.bus{
+      &:before{
+        content:'';
+        display:inline-block;
+        width:49px;
+        height:50px;
+        background: url(/static/ap/images/ico_way_bus.png ) no-repeat;
+        vertical-align: middle;
+        margin-right:8px;
+      }
+    }
+
+    &.ktx{
+      &:before{
+        content:'';
+        display:inline-block;
+        width:49px;
+        height:50px;
+        background: url(/static/ap/images/ico_way_ktx.png ) no-repeat;
+        vertical-align: middle;
+        margin-right:8px;
+      }
+    }
   }
 
   &-level4{

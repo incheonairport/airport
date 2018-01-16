@@ -749,8 +749,34 @@
 
   // guide box
   .guidebox{
-    display:table;
+
     width:100%;
+    &.row-type{
+      display:block;
+      height:auto;
+      clear:both;
+      overflow:hidden;
+      .row-col-line{
+        display:block;
+        border-right:1px solid #d9d9d9;
+        height:100%;
+        padding:15px;
+      }
+      .row-col{
+        display:block;
+        width:100%;
+        margin-bottom:10px;
+      }
+      .col-3{
+        padding:15px;
+        display:block;
+        width:100%;
+        border-bottom:1px solid #474a5b;
+        .guidebox-desc{
+          font-size:1.125rem;
+        }
+      }
+    }
 
     &-col{
       display:table-cell;

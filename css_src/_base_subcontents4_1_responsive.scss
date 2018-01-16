@@ -8,6 +8,86 @@
   //.contact-list{
   //  width:100%;
   //}
+
+
+  .digr-way-bus{
+    padding:15px 15px 5px;
+    .guide-desc{
+      padding:20px 0 20px;
+    }
+    &-tit{
+      font-size:1rem;
+      float:none;
+      width:100%;
+    }
+    &-list{
+      float:none;
+      width:100%;
+      &:before{
+        content:'';
+        display:block;
+        height:3px;
+        width:100%;
+        background:#d9d9d9;
+        margin-bottom:10px;
+      }
+
+      &-item{
+        font-size:0.75rem;
+        letter-spacing:-1px;
+        &:first-child{
+          &:before{
+            right:auto;
+          }
+        }
+        &:last-child{
+          text-align:right;
+          &:before{
+            left:auto;
+          }
+        }
+
+        &.t2{
+          &:before{
+            background:#68aac6;
+          }
+        }
+
+        &.t1{
+          &:before{
+            background:#6787cf;
+          }
+        }
+        &:before{
+          content:'';
+          display:inline-block;
+          width:12px;
+          height:12px;
+          border-radius:50%;
+          background:#595757;
+          position:absolute;
+          top:-17px;
+          left:0;
+          right:0;
+          margin:auto;
+        }
+      }
+    }
+  }
+  .digr_way1{
+    text-indent:-999em;
+    width:562px;
+    height:275px;
+    background: url(/static/ap/images/digr_way_01.png ) no-repeat;
+  }
+
+  .digr_way2{
+    text-indent:-999em;
+    height:216px;
+    background: url(/static/ap/images/digr_way_02.png ) no-repeat center;
+    background-size:contain;
+
+  }
   .find-info{
     text-align: center;
     &-list{
