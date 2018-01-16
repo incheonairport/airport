@@ -111,7 +111,7 @@ $(function(){
 
       LayerPopup.setPopupHeight();
 
-    }).resize();
+    });
 
   })();
 
