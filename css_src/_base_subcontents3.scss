@@ -1205,6 +1205,23 @@
   display:table;
   width:100%;
   height:200px;
+  &.row-type{
+
+    height:130px;
+    .row-col-line{
+      border:1px solid #d9d9d9;
+      border-right:0;
+      height:100%;
+      padding:40px;
+    }
+    .row-col{
+      width:20%;
+    }
+    .col-3{
+      width:20%;
+      border-left:1px solid #474a5b;
+    }
+  }
 
   &-col{
     display:table-cell;

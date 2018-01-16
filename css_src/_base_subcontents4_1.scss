@@ -4,6 +4,53 @@
 //  width:1152px;
 //  margin: 0 auto;
 //}
+.digr-way-bus{
+
+  &-list{
+    display:none;
+
+    &:before{
+      content:'';
+      display:block;
+      height:3px;
+      width:280px;
+      background:#d9d9d9;
+      margin-bottom:10px;
+    }
+
+    &-item{
+      display:inline-block;
+      margin-right:10px;
+      position: relative;
+
+      &:before{
+        content:'';
+        display:inline-block;
+        width:12px;
+        height:12px;
+        border-radius:50%;
+        background:red;
+        position:absolute;
+        top:-17px;
+        left:0;
+        right:0;
+        margin:auto;
+      }
+    }
+  }
+}
+.digr_way1{
+  text-indent:-999em;
+  width:562px;
+  height:275px;
+  background: url(/static/ap/images/digr_way_01.png ) no-repeat;
+}
+
+.digr_way2{
+  text-indent:-999em;
+  height:416px;
+  background: url(/static/ap/images/digr_way_02.png ) no-repeat;
+}
 
 .sub-menu-tab{
   &-iconlist{

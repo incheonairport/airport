@@ -751,6 +751,24 @@
   .guidebox{
     display:table;
     width:100%;
+    &.row-type{
+
+      height:auto;
+      .row-col-line{
+        border-right:1px solid #d9d9d9;
+        height:100%;
+        padding:15px;
+      }
+      .row-col{
+        display:block;
+        width:100%;
+        margin-bottom:10px;
+      }
+      .col-3{
+        width:100%;
+        border-left:1px solid #474a5b;
+      }
+    }
 
     &-col{
       display:table-cell;
