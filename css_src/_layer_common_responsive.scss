@@ -529,7 +529,7 @@
 
   // layout
   .contents{
-    padding-top:100px;
+    padding-top:70px;
     width:100%;
     float:none;
   }
@@ -549,12 +549,23 @@
       &.search-map-left{
         display:inline-block;
         .search-map-input-select{
-          margin-top:10px;
-          &:first-child{
-
-          }
+          margin-top:-1px;
+          border:1px solid #666;
+          //border-left:0;
         }
+
+        //.search-map-input-item{
+        //  &:first-child{
+        //    .search-map-input-select{
+        //      border:1px solid #666!important;
+        //    }
+        //  }
+        //}
       }
+
+
+
+
       &.search-map-right{
         display:inline-block;
         .checkbox{
@@ -766,10 +777,10 @@
   // button
   .btn-type-normal{
     width:100%;
-    min-width:192px;
     padding:0;
-    line-height:40px;
-    height:40px;
+    line-height:40px!important;
+    height:40px!important;
+    font-size:1rem!important;
     font-weight:400;
     strong{
       font-weight:400;
@@ -948,7 +959,7 @@
         display: block;
         float: left;
         width: 100%;
-        padding: 20px;
+        padding: 15px;
         border-bottom:none;
         border-right: 1px solid #d9d9d9;
       }
@@ -957,7 +968,7 @@
         display: block;
         float: left;
         width: 100%;
-        padding:0 20px 20px;
+        padding:0 15px 15px;
         border: 1px solid #d9d9d9;
         border-top:none;
         border-bottom:none;
@@ -1005,16 +1016,15 @@
     }
 
     &-tit{
-      font-family: nanumsq, sans-serif;
-      font-size:1.125rem;
+      font-size:1rem;
       font-weight:600;
       line-height: 1.5;
     }
 
     &-list{
       .list1-item{
-        margin-bottom:8px;
-        font-size:1rem;
+        margin-bottom:0;
+        font-size:0.825rem;
 
         &:last-child{
           margin-bottom:0;
@@ -1240,16 +1250,20 @@
         padding:10px 0;
         font-size:1rem;
         font-weight:600;
-        height:64px;
+        height:auto;
         &:after{
           right:10px;
+          background-position:-174px -49px;
+          background-size: 250px 200px;
+          width: 10px;
+          height: 6px;
         }
         &-inner{
           padding:0 40px 0 10px;
           overflow:hidden;
-          text-overflow:ellipsis;
-          white-space:nowrap;
-          line-height:44px;
+          //text-overflow:ellipsis;
+          //white-space:nowrap;
+          line-height:1.4;
         }
       }
     }
@@ -1584,6 +1598,7 @@
 
   .overflow{
     max-width: 100%;
+    height:auto;
 
     //overflow-y:scroll;
     &.t1{
@@ -1628,9 +1643,17 @@
   }
 
 
+  .mt40{
+    margin-top:20px;
+  }
 
   p.icontxt,.icontxt{
     padding:15px 0 0 90px;
+  }
+
+
+  .article{
+    margin-bottom:30px;
   }
 
 }

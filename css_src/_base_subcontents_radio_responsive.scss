@@ -41,22 +41,23 @@
       &+label{
         color:#222;
         &.ico:after {
-          background-position:-271px -293px;
+          background-position:-136px -147px;
         }
       }
     }
     &-label{
       height: 27px;
-      padding:0 20px 0 40px;
+      padding:0 20px 0 26px;
       font-size:0.825rem;
       line-height:27px;
       color: #666;
       &.ico{
         text-indent:0;
         &:after {
-          background-position:-225px -293px;
-          width: 27px;
-          height: 27px;
+          background-position:-112px -147px;
+          background-size: 250px 200px;
+          width: 13px;
+          height: 13px;
           top:0;
           left:0;
           right:auto;
