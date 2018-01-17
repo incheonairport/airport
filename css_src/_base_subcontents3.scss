@@ -738,13 +738,13 @@
         &:after{
           content:'24h';
           position:absolute;
-          top:20px;
-          right:20px;
+          top:15px;
+          right:15px;
           display:block;
-          width:50px;
-          height:50px;
+          width:40px;
+          height:40px;
           border-radius:50%;
-          line-height:50px;
+          line-height:40px;
           border:4px solid #d43e41;
           color:#d43e41;
           font-weight:900;
@@ -763,15 +763,15 @@
         vertical-align:bottom;
       }
       @extend %clearfix;
-      padding:30px;
+      padding:15px;
       &-split{
         float:left;
         &.col-1{
           //width:370px;
         }
         &.col-2{
-          padding-left:40px;
-          width: calc(100% - 370px);
+          padding-left:20px;
+          width: calc(100% - 300px);
         }
       }
     }
@@ -814,7 +814,7 @@
       }
     }
     .boxmodel2-imggroup{
-      width:370px;
+      width:300px;
     }
   }
   // 썸네일형
@@ -938,8 +938,8 @@
   }
   &-maintit{
     display:block;
-    margin-bottom:18px;
-    font-size:1.625rem;
+    margin-bottom:10px;
+    font-size:1.25rem;
     line-height:1;
     font-weight: 600;
     &+.boxmodel2-column{
@@ -964,7 +964,7 @@
   }
   &-table{
     font-size:1rem;
-    padding:12px 0;
+    padding:4px 0;
     text-align:left;
     @extend %clearfix;
     &-tit{

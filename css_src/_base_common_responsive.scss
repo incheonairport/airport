@@ -28,6 +28,19 @@
 // 640
 @media screen and (max-width:1024px) {
 
+  //tab control
+
+  .tab-half{
+    .tab-nav-list-item{
+      width:50%!important;
+      .tab-nav-list-link{
+
+      }
+    }
+  }
+
+
+
   .inner-section{
     width: 100%;
     min-width:inherit;
@@ -617,6 +630,8 @@
     .user-input-text{
       width:100%!important;
     }
+
+
   }
 
 
@@ -715,7 +730,7 @@
   //}
 
 
-  // 라운지 쿠폰
+
 
 
   select,input[type="text"]{

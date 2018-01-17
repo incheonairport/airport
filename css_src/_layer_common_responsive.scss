@@ -959,7 +959,7 @@
         display: block;
         float: left;
         width: 100%;
-        padding: 20px;
+        padding: 15px;
         border-bottom:none;
         border-right: 1px solid #d9d9d9;
       }
@@ -968,7 +968,7 @@
         display: block;
         float: left;
         width: 100%;
-        padding:0 20px 20px;
+        padding:0 15px 15px;
         border: 1px solid #d9d9d9;
         border-top:none;
         border-bottom:none;
@@ -1016,16 +1016,15 @@
     }
 
     &-tit{
-      font-family: nanumsq, sans-serif;
-      font-size:1.125rem;
+      font-size:1rem;
       font-weight:600;
       line-height: 1.5;
     }
 
     &-list{
       .list1-item{
-        margin-bottom:8px;
-        font-size:1rem;
+        margin-bottom:0;
+        font-size:0.825rem;
 
         &:last-child{
           margin-bottom:0;
@@ -1599,6 +1598,7 @@
 
   .overflow{
     max-width: 100%;
+    height:auto;
 
     //overflow-y:scroll;
     &.t1{
@@ -1649,6 +1649,11 @@
 
   p.icontxt,.icontxt{
     padding:15px 0 0 90px;
+  }
+
+
+  .article{
+    margin-bottom:30px;
   }
 
 }
