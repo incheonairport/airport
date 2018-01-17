@@ -615,6 +615,8 @@
     width:100%;
     .capcha{
       width:50%;
+      height:40px;
+      line-height:40px;
       float:left;
       &:first-child{
         border-right:0!important;

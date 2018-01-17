@@ -510,6 +510,7 @@
       }
       &-desc{
         font-size:0.825rem;
+        color:#fff;
         br{
           display: block!important;
         }
@@ -770,7 +771,11 @@
         padding-bottom: 0;
       }
       &-head{
-        font-size:1.5rem;
+        font-size:1.25rem;
+        &:after{
+          height:70px;
+          margin:10px auto 0 auto;
+        }
       }
       &-item{
         br {
@@ -885,6 +890,12 @@
               margin-top:0
             }
           }
+        }
+
+      }
+      &-num{
+        margin-bottom:20px;
+        &:before, &:after{
         }
 
       }
