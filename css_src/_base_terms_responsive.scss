@@ -11,12 +11,15 @@
     }
   }
   .tab-sub.terms{
+    .tab-sub-list{
+      display:block;
+    }
     position:static;
     .tab-sub-list-item{
       width:100%;
-      height:50px;
+      height:auto;
       &-link{
-        line-height:50px;
+        line-height:1.4;
       }
       &:first-child{
         margin-left:0;

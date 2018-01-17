@@ -226,6 +226,17 @@
     &-level3{
       margin-bottom:10px;
       font-size:1rem;
+      &.bus{
+        &:before{
+          display:none;
+        }
+      }
+
+      &.ktx{
+        &:before{
+          display:none;
+        }
+      }
     }
     &-level4{
     }
@@ -638,7 +649,7 @@
       a{
         &:first-child{
           margin-bottom:10px;
-          font-weight:900;
+          font-weight:400;
         }
       }
     }
@@ -986,12 +997,13 @@
 
   .text-box{
     padding:15px;
+    font-size:0.825rem;
   }
   .text-box-right{
     margin-left:0;
   }
   .certification{
-    margin-bottom:60px;
+    margin-bottom:30px;
   }
 
   .join{
@@ -1048,7 +1060,8 @@
       }
     }
     &-step-procedure{
-      padding:40px 0;
+      padding:40px 0 0;
+      height:260px;
     }
     &-step-btn{
       margin-top: 30px;
@@ -1061,7 +1074,36 @@
         }
       }
     }
+    &-membership{
+      .password-change{
+        width:100%;
 
+      }
+      .password-find{
+        width:100%;
+        margin-bottom:10px;
+
+      }
+    }
+    &-ipin-btn{
+
+      margin-top: 15px;
+      text-align: center;
+      .btn-type-normal{
+        width:100%;
+      }
+      &-simple{
+        margin-top: 10px;
+        .btn-type-normal{
+          width: 100%;
+          padding: 0;
+          display: block;
+          line-height: 40px;
+          height: 40px;
+          margin-top: 10px;
+        }
+      }
+    }
 
   }
 

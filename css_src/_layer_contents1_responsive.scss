@@ -257,7 +257,7 @@
         }
       }
       &-select, &-txt{
-        height:30px;
+        height:40px;
         padding: 0 10px;
         border: 1px solid #d9d9d9;
         border-right:0;
@@ -394,7 +394,7 @@
     &.map{
       .field-radio{
         & + .field-radio-label{
-          min-width:16.666%;
+          min-width:20%;
           padding:14px;
         }
       }
@@ -415,7 +415,7 @@
     }
     &-input{
       &-item{
-        width:100%;
+        width:33.33%;
         &:last-child{
           margin-right: 0;
         }
@@ -429,7 +429,8 @@
     }
 
     &-btn{
-      width:100%;
+      width:65%;
+      height:40px;
       margin-top:10px;
     }
     &-box{
@@ -1089,6 +1090,7 @@
   //input
   .user-text{
     width: 100%;
+    height:40px;
 
     &.height{
 
