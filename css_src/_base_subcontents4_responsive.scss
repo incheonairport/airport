@@ -83,7 +83,10 @@
             border-bottom:1px solid #d9d9d9;
             &.ico{
               text-indent: 0;
+              line-height: 1.4;
+              text-align:center;
               &:after{
+                display:none;
                 background-position:-164px -32px;
                 width: 13px;
                 height: 11px;
@@ -152,13 +155,13 @@
       width:100%;
       float: none;
       &-txt {
-        width: calc(100% - 50px);
+        width: calc(100% - 40px);
         height: 50px;
         line-height:50px;
       }
       &-btn {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background: #42519e;
         border: none;
         float: left;
@@ -372,6 +375,10 @@
         height:64px;
         &:after{
           right:10px;
+          background-position: -174px -49px;
+          background-size: 250px 200px;
+          width: 10px;
+          height: 6px;
         }
         &-inner{
           font-size:1rem;
@@ -393,7 +400,6 @@
       padding:10px;
       .board-list-desc{
         font-size:1rem;
-        font-weight:600;
       }
     }
   }
