@@ -7,14 +7,30 @@ $(function(){
 
 
   (function(){
-    //var listWidth = $('.half li').width();
-    var listWidth = $('.local-list.tab-half').children('li').width();
-    var listCount = $('.local-list.tab-half').children('li').length;
     $('.local-list.tab-half').wrap('<div class="tab-scroll-x" />');
-    $('.local-list.tab-half').width(listWidth * listCount);
-    //
-    //console.log(listCount);
-    //console.log(listWidth);
+
+    $(window).on('resize', function(){
+      //var listWidth = $('.half li').width();
+      var listWidth = $('.local-list.tab-half').children('li').width();
+      var listCount = $('.local-list.tab-half').children('li').length;
+      //$('.local-list.tab-half').width(listWidth * listCount);
+      //
+      //console.log(listCount);
+      //console.log(listWidth);
+
+
+
+      if( $('.local').width() >= 858 ){
+
+        $('.local-list-item').css({width : ($('.local-list').width() / $('.local-list-item').length )});
+        $('.local-list').css({width : 'auto'});
+
+      } else {
+        $('.local-list-item').outerWidth(78);
+        $('.local-list').width( $('.local-list-item').outerWidth() * $('.local-list-item').length );
+
+      }
+    });
   })();
 
   /**
