@@ -59,9 +59,17 @@
     }
   }
 
+  .top-big-popup{
+    background:url(/static/ap/images/bg_top_big_popup_ch.png) no-repeat center top;
+  }
+
 }
 
 .en{
+
+  .top-big-popup{
+    background:url(/static/ap/images/bg_top_big_popup_en.png) no-repeat center top;
+  }
 
   .tab-nav-list-link{
     font-size:1.125rem;
@@ -81,8 +89,6 @@
   .search-airline-name-btn{
     font-size:1.125rem;
   }
-
-
 
   .bussearch .search-area-btn{
     font-size:1.125rem;
@@ -677,6 +683,10 @@
 .ja{
   * {
     font-family: 'Noto Sans JP', roboto, spoqa, sans-serif!important;
+  }
+
+  .top-big-popup{
+    background:url(/static/ap/images/bg_top_big_popup_ja.png) no-repeat center top;
   }
 
 
