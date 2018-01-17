@@ -164,6 +164,7 @@ $(function(){
   LayerPopup = new function(){
 
     var $layerWrap = $('.layer-wrap');
+    $('.layer').data('set', false);
 
     this.openPopup = function( $popupName ){
 
@@ -196,12 +197,18 @@ $(function(){
 
         var winHeightHalf = winHeight/2;
 
-        $('.layer.system').css({height:winHeightHalf});
-        $('.layer-article.systemico').css({height:(winHeightHalf - 160)});
+        $('.layer.system').each(function(){
+
+          $(this).css({height:winHeightHalf});
+          $(this).find('.systemico').css({height:(winHeightHalf - 160)});
+
+        });
 
       } else {
 
         $('.layer').each(function(){
+
+          console.log( $(this).height() );
 
           if( $(this).height() >= winHeight ){
 
@@ -322,5 +329,7 @@ $(function(){
   };
 
 });
+
+
 
 

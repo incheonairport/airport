@@ -109,8 +109,6 @@ $(function(){
 
     $(window).on('resize', function(){
 
-      console.log( $(window).scrollTop() );
-
       scrollHeight = $('body').height() - $(window).height();
 
       BottomBanner.init();

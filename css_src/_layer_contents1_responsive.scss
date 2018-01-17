@@ -327,28 +327,38 @@
 }
   /*버스지역*/
   .local {
-    border:0;
-    &-list {
+    .tab-scroll-x{
       border:1px solid #a5a7aa;
-      border-bottom:0;
+      width:100%;
+      overflow-x:scroll;
+    }
+    border:0;
+    width:100%;
+
+    &-list {
+      border-left:1px solid #a5a7aa;
+
       &-item {
-        width:33.333%;
-        border:0;
+        width:80px;
+        //border:0;
         border-bottom:1px solid #a5a7aa;
 
         &:first-child{
           border-left:0;
         }
         &:nth-child(4),&:nth-child(7),&:nth-child(10){
-          border-left:0;
+          //border-left:0;
         }
         &:nth-child(3n){
-          border-right:0;
+          //border-right:0;
         }
         &:last-child{
-          width:66.66%;
+          //width:66.66%;
         }
         &-link {
+          height:auto;
+          line-height:1.4;
+          padding:10px;
           font-size:0.9rem;
           &.on {
             &:after{
@@ -360,9 +370,9 @@
     }
     &-town {
       padding:10px;
-      margin-top:10px;
+      margin-top:-1px;
       border:1px solid #a5a7aa;
-      max-height:300px;
+      max-height:100px;
       overflow-y:auto;
       &-item {
         width:50%;
@@ -673,20 +683,22 @@
     &-area{
       display:block;
       &-title {
+        display:none;
         float: none;
         position: static;
         margin-right:0;
         margin-bottom:10px;
-        display:block;
+
         font-size:1.125rem;
       }
       &-input {
-        width: calc(100% - 50px);
-        height: 50px;
+        width: calc(100% - 40px);
+        height: 40px;
+        line-height:40px;
       }
       &-btn {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
 
       }
     }
@@ -837,14 +849,14 @@
     }
     .search-area{
       &-txt{
-        width:calc(100% - 50px);
-        height:50px;
+        width:calc(100% - 40px);
+        height:40px;
         font-size:0.8125rem;
 
       }
       &-btn{
-        width:50px;
-        height:50px;
+        width:40px;
+        height:40px;
         font-size: 1.125rem;
         &.ico{
           text-indent:-99999em;
@@ -1266,6 +1278,70 @@
     }
   }
 
+
+  //버스노선
+  .route-bus-line{
+    width:100%;
+    height:auto;
+    padding:15px 0;
+    border:1px solid #d9d9d9;
+    &:before{
+      content:'';
+      display:block;
+      width:2px;
+      height:100%;
+      background:#394894;
+      position:absolute;
+      top:0;
+      left:20px;
+    }
+
+    &-list{
+      position:relative;
+      left: 22px;
+      width:100%;
+      height:auto;
+      background:none;
+      transform:none;
+
+      &-article{
+        width:17px;
+        height:17px;
+        position:static;
+        margin-bottom:10px;
+
+        >p{
+          -webkit-transform:none;
+          -ms-transform:none;
+          transform-origin:0 0;
+          padding-left:10px;
+          br{display:none}
+          top:auto;
+        }
+
+        &:after{
+          content:"";
+          display:block;
+          width:17px;
+          height:17px;
+          border:3px solid #41519e;
+          border-radius:50%;
+          box-sizing:border-box;
+          background: #f2f4f7;
+        }
+
+        &.top{
+          top:-7px;
+        }
+
+        &.bottom{
+          bottom:-7px;
+        }
+
+      }
+    }
+  }
+
   /*다운로드버튼*/
   .btn-download{
     min-width: 100%;
@@ -1273,6 +1349,10 @@
     line-height:30px;
     text-align: center;
     padding: 0;
+    &.ml10{
+      margin-left:0;
+      margin-top:10px;
+    }
     &.big{
       font-size: 1rem;
       &.ico{

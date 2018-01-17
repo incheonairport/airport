@@ -688,7 +688,7 @@
         }
       }
 
-      &:hover{
+      &:hover, &.on{
         &:after{
           content:"";
           display:block;
