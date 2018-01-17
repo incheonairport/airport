@@ -335,6 +335,16 @@
 @media screen and (max-width:1259px) {
 
 
+  .route-bus-line{
+    &-list{
+      width: 84%;
+      background: url(/static/ap/images/bg_route_bus_area_search_t1_01.png) no-repeat -354px;
+    }
+  }
+
+
+
+
   .travel-info{
     &-box{
       &-day{
@@ -1367,6 +1377,14 @@
         }
 
       }
+    }
+  }
+
+  .overflow.t1,.overflow.t2{
+    overflow-x:inherit;
+    width:100%;
+    .route-bus-stop{
+
     }
   }
 
