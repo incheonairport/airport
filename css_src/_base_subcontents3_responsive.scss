@@ -17,8 +17,11 @@
       &.col-3 {
         width: 32%;
         a {
-          min-width: 155px;
+          width:150px;
+          min-width: 150px;
           font-size: 0.875rem;
+          height:40px;
+          line-height:40px;
         }
       }
     }
@@ -955,6 +958,10 @@
         display:block;
         width:100%;
         margin-bottom:10px;
+        p{
+          font-size:0.825rem;
+          br{display:none}
+        }
       }
       .col-3{
         padding:15px;
@@ -962,7 +969,8 @@
         width:100%;
         border-bottom:1px solid #474a5b;
         .guidebox-desc{
-          font-size:1.125rem;
+          font-size:1rem;
+          font-weight:400;
         }
       }
     }
@@ -1029,7 +1037,7 @@
 
     &-tit{
       font-family: nanumsq, sans-serif;
-      font-size:1.125rem;
+      font-size:1rem;
       font-weight:600;
       line-height: 1.5;
     }
@@ -1054,7 +1062,7 @@
       color:#fff;
       font-size:1.25rem;
       font-weight:600;
-      margin-bottom:18px;
+      margin-bottom:10px;
       white-space:nowrap;
     }
 
