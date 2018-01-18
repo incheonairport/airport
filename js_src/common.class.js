@@ -208,15 +208,13 @@ $(function(){
 
         $('.layer').each(function(){
 
-          console.log( $(this).height() );
-
-          if( $(this).height() >= winHeight ){
+          if( $(this).find('.layer-area').outerHeight() >= winHeight ){
 
             $(this).css({height:winHeight*0.96});
 
           } else {
 
-            $(this).attr('style', '');
+            $(this).css({height:'auto'});
 
           }
 

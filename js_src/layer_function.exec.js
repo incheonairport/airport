@@ -142,7 +142,7 @@ $(function(){
 
         $(this).addClass('full-screen').attr('title', '전체화면 종료');
 
-        $('.header.airport-map').addClass('full-screen');
+        $('.header.airport-service').addClass('full-screen');
 
         $('.contents').addClass('full-screen');
 

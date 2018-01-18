@@ -61,7 +61,7 @@ $(function(){
   // set full page
   (function(){
 
-    if( $(window).width() >= 1024 ){
+    if( $(window).width() > 1024 ){
 
       if( $('#fullpage').length > 0 ){
 
@@ -123,7 +123,7 @@ $(function(){
 
       BottomBanner.init();
 
-      if( $(window).width() >= 1024 ){
+      if( $(window).width() > 1024 ){
 
         if( $('section.top-big-popup').length >= 0 ){
           $('section.top-big-popup').removeClass('mobile none');

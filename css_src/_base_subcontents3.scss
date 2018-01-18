@@ -849,6 +849,7 @@
       .imgbox{
         width:100%;
         vertical-align:top;
+        border-bottom:1px solid #d9d9d9;
       }
       &-split{
         &.row-2{
@@ -919,7 +920,7 @@
       margin-bottom:10px;
     }
     .boxmodel2-imggroup{
-      width:365px;
+      //width:365px;
     }
   }
 

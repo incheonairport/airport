@@ -152,6 +152,16 @@ $(function(){
 
     });
 
+    $('body').on('click', function(){
+
+      if( $('.layer-wrap').hasClass('on') ){
+
+        LayerPopup.setPopupHeight();
+
+      }
+
+    });
+
   })();
 
 });
