@@ -282,6 +282,10 @@
       height: auto;
     }
     &-list{
+      &-item{
+        position: static;
+        margin-bottom: 15px;
+      }
       &-link{
         width: 100%;
         padding:0 15px;
