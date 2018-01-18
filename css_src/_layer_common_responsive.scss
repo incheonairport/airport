@@ -851,7 +851,7 @@
       &.board-list{
         overflow: visible;
         white-space: normal;
-        display: table;
+        //display: table;
         td{
           span{
             font-size:0.8125rem;
@@ -1280,7 +1280,7 @@
   .borad-view{
     overflow: visible!important;
     white-space: normal!important;
-    display: table!important;
+    //display: table!important;
     .view-head{
       padding:25px 0;
       &-tit{
