@@ -10,15 +10,6 @@ $(function(){
     $('.local-list.tab-half').wrap('<div class="tab-scroll-x" />');
 
     $(window).on('resize', function(){
-      //var listWidth = $('.half li').width();
-      var listWidth = $('.local-list.tab-half').children('li').width();
-      var listCount = $('.local-list.tab-half').children('li').length;
-      //$('.local-list.tab-half').width(listWidth * listCount);
-      //
-      //console.log(listCount);
-      //console.log(listWidth);
-
-
 
       if( $('.local').width() >= 858 ){
 
@@ -110,6 +101,25 @@ $(function(){
    * 탭
    */
 
+  (function(){
+
+    $('.tab-area-heading').on('click', function(){
+
+      $(this).siblings('.tab-area-heading').removeClass('on').next('.tab-area-content').removeClass('on');
+
+      $(this).addClass('on').next('.tab-area-content').addClass('on')
+
+    });
+
+    $('.btn-type-tab').on('click', function(){
+
+      $(this).siblings('.btn-type-tab').removeClass('on');
+
+      $(this).addClass('on');
+
+    });
+
+  })();
   (function(){
 
     $('.tab-area-heading').on('click', function(){
