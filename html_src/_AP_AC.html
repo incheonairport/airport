@@ -57,6 +57,327 @@
 <section class="contents">
   <div class="inner-section">
 
+
+
+
+
+
+
+
+
+    <div class="layer-wrap on">
+      <script type="text/javascript">
+
+        $(document).ready(function() {
+          searchAndRegistCouponInfo();
+        });
+
+        function searchAndRegistCouponInfo()
+        {
+          var jsonData = {};
+          $("#registCoupon").load("/ap/ko/trn/trnSkyHubLoungeTab1.do", jsonData, function(response, result, status) {
+            LineTab1.setTab($('.tab-nav'));
+            LineTab1.setTab($('.tab-area'));
+            // Layer Popup 닫기
+            $('.layer-close').on('click', function(){
+              LayerPopup1.closePopup( $(this).parent('.layer') );
+              $("#popupLayer").html('');
+            });
+
+            $('#THIRD_TO_ARR_CAL').datepicker( "destroy" );
+            $('#THIRD_TO_ARR_CAL').removeClass("hasDatepicker").removeAttr('id');
+
+            $('#ICN_TO_DEP_CAL').datepicker( "destroy" );
+            $('#ICN_TO_DEP_CAL').removeClass("hasDatepicker").removeAttr('id');
+
+            $('#editCoupon').html('');
+          });
+        }
+
+        function editCouponInfo()
+        {
+          var jsonData = {};
+          $("#editCoupon").load("/ap/ko/trn/trnSkyHubLoungeTab2.do", jsonData, function(response, result, status) {
+            LineTab1.setTab($('.tab-nav'));
+            LineTab1.setTab($('.tab-area'));
+            // Layer Popup 닫기
+            $('.layer-close').on('click', function(){
+              LayerPopup1.closePopup( $(this).parent('.layer') );
+              $("#popupLayer").html('');
+            });
+
+            $('#THIRD_TO_ARR_CAL').datepicker( "destroy" );
+            $('#THIRD_TO_ARR_CAL').removeClass("hasDatepicker").removeAttr('id');
+
+            $('#ICN_TO_DEP_CAL').datepicker( "destroy" );
+            $('#ICN_TO_DEP_CAL').removeClass("hasDatepicker").removeAttr('id');
+
+            $('#registCoupon').html('');
+          });
+        }
+
+        function activateCalendar() {
+          $('#THIRD_TO_ARR_CAL').datepicker({
+            showMonthAfterYear : true,
+            showOtherMonths : true,
+            selectOtherMonths : true,
+            dateFormat: "yy-mm-dd",
+            prevText : 'p',
+            nextText : 'n',
+            dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+            monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12'],
+            beforeShow: function(inst) {
+            },
+            afterShow: function(inst) {
+              $('#popupLayer').append($('#ui-datepicker-div'));
+              $('#ui-datepicker-div').css("z-index", "100000");
+            }
+          });
+          $('#ICN_TO_DEP_CAL').datepicker({
+            showMonthAfterYear : true,
+            showOtherMonths : true,
+            selectOtherMonths : true,
+            dateFormat: "yy-mm-dd",
+            prevText : 'p',
+            nextText : 'n',
+            dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+            monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12'],
+            beforeShow: function(inst) {
+            },
+            afterShow: function(inst) {
+              $('#popupLayer').append($('#ui-datepicker-div'));
+              $('#ui-datepicker-div').css("z-index", "100000");
+            }
+          });
+        }
+      </script>
+      <div id="dv_loungeCoupon" class="layer address-layer max-size max-height on" style="">
+        <div class="layer-area">
+          <div class="layer-article">
+            <h4 class="layer-title title2">라운지 쿠폰 등록</h4>
+          </div>
+          <div class="tab-area">
+            <h5 class="tab-area-heading" onclick="searchAndRegistCouponInfo()" style="width: 100%; left: 0%;">라운지 쿠폰 등록</h5>
+
+            <div class="tab-area-content">
+              <div class="layer-article mt40">
+                <div id="registCoupon"></div>
+              </div>
+            </div>
+
+            <h5 class="tab-area-heading on" onclick="editCouponInfo()" style="width: 100%; left: 100%;">쿠폰정보수정</h5>
+            <div class="tab-area-content on">
+              <div class="layer-article mt20">
+                <div id="editCoupon">
+                  <script type="text/javascript">
+                    $(document)
+                        .ready(
+                        function() {
+                          $('#cpnSearch2').on('click',function() {
+                            if ($('#CP_NUM').val() == '') {
+                              alert("일련번호를 입력하십시오.");
+                            } else if ($('#EMAIL').val() == '' && $('#emailRadio').is(":checked")) {
+                              alert("이메일을 입력하십시오..");
+                            } else if ($('#SUR_NAME').val() == '' && $('#nameRadio').is( ":checked")) {
+                              alert("성을 입력하십시오..");
+                            } else if ($('#GIVEN_NAME').val() == ''&& $('#nameRadio').is(":checked")) {
+                              alert("법적이름을 입력하십시오..");
+                            } else {
+                              if ($('#emailRadio').is(":checked")) {
+                                var data = {CP_NUM : $('#CP_NUM').val(), EMAIL : $('#EMAIL').val() };
+                                $("#editCoupon").load("/ap/ko/trn/trnSkyHubLoungeCpRegistered.do", data, function(response, result, status) {
+// 							 			LineTab1.setTab($('.tab-nav'));
+// 							 			LineTab1.setTab($('.tab-area'));
+// 							 		    // Layer Popup 닫기
+// 							 		    $('.layer-close').on('click', function(){
+// 							 		      LayerPopup1.closePopup( $(this).parent('.layer') );
+// 							 		     $("#popupLayer").html('');
+// 							 		    });
+                                });
+
+                              } else if ($('#nameRadio').is(":checked")) {
+                                var data = {
+                                  CP_NUM : $('#CP_NUM').val(),
+                                  SUR_NAME : $('#SUR_NAME').val(),
+                                  GIVEN_NAME : $('#GIVEN_NAME').val()
+                                };
+                                fncLoad("#editCoupon", "/ap/ko/trn/trnSkyHubLoungeCpRegistered.do",data,
+
+                                );
+                              }
+                            }
+                          });
+
+                          $('#CP_NUM, #SUR_NAME, #GIVEN_NAME').keyup(
+                              function() {$(this).val($(this).val().replace(/[^a-zA-Z0-9_]/g, "").toUpperCase());
+                              });
+
+                          $('#emailRadio, #nameRadio').click(
+                              function() {
+                                if ($('#emailRadio').is(":checked")) {
+                                  $('#nameArea input[type=text]').attr(	"disabled", true);
+                                  $('#emailArea input[type=text]').attr(	"disabled", false);
+                                }
+                                if ($('#nameRadio').is(":checked")) {
+                                  $('#nameArea input[type=text]').attr(	"disabled", false);
+                                  $('#emailArea input[type=text]').attr(	"disabled", true);
+                                }
+                              }
+                          );
+                        });
+                  </script>
+                  <style>
+
+                    .carnum {
+                      padding: 0px;
+                      width : 188px;
+                    }
+                    .txt_coral {
+                      color: coral;
+                    }
+
+                    .coupon{
+                      padding:0 50px;
+                    }
+
+                    .coupon-number{
+                      padding-top: 0px;
+                    }
+                    .coupon-number:after{
+                      content:'';
+                      background:rgb(204, 204, 204);
+                      width:100%;
+                      height:5px;
+                      margin:20px 0;
+                      display:block;
+                    }
+
+                    .coupon-body{
+
+                    }
+                    .coupon-body:after{
+                      content:'';
+                      background:rgb(204, 204, 204);
+                      width:100%;
+                      height:5px;
+                      margin:20px 0;
+                      display:block;
+                    }
+
+                    .coupon-number label{
+                      width:180px;
+                      display:block;
+                      float:left;
+                    }
+
+
+                    .coupon-body-email{
+                      text-align: left;
+                      margin-bottom: 18px;
+                      height:50px;
+                    }
+
+                    .coupon-body-rdo{
+                      padding-top: 15px;
+                      float: left;
+                      width:180px;
+                    }
+
+
+                    .coupon-body-email-ipt{
+
+                    }
+
+
+                    .coupon-search-btn{
+                      position:absolute;
+                      top:163px;
+                      right:13px;
+                    }
+
+                  </style>
+                  <!-- 선택박스 -->
+                  <div>
+                    <!-- 여기서부터 수정 -->
+                    <div class="layer-article coupon mt40">
+                      <div class="layer-text-box">
+                        <div class="coupon-number">
+                          <label for="RESERV_ID" class="carnum"><span class="txt_coral mgt16">※</span>일련번호</label>
+                          <input title="CP_NUM" id="CP_NUM" name="CP_NUM" placeholder="일련번호를 입력하십시오" type="text" class="user-text" style="width:250px">
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="coupon-body">
+
+                          <!-- 이메일 -->
+                          <div id="emailArea" class="coupon-body-email">
+                            <div class="coupon-body-rdo">
+                              <input name="radio" id="emailRadio" value="emailRadio" checked="checked" type="radio" style="padding: 15px 0px 0px 10px">
+                              <label for="emailRadio" class="carnum">이메일</label>
+                            </div>
+
+                            <div class="coupon-body-ipt">
+                              <input title="EMAIL" id="EMAIL" name="EMAIL" placeholder="이메일을 입력하십시오." type="text" class="user-text">
+                            </div>
+                          </div>
+
+
+                          <!--성 -->
+                          <div id="nameArea" class="coupon-body-gender">
+                            <div class="coupon-body-rdo">
+                              <input name="radio" id="nameRadio" value="nameRadio" type="radio" style="padding:10px">
+                              <label for="nameRadio" class="carnum">성 </label>
+                            </div>
+
+
+                            <input title="SUR_NAME" id="SUR_NAME" name="SUR_NAME" placeholder="성을 입력하십시오." class="user-text" type="text" disabled="disabled">
+                            <label for="name" class="carnum" style="margin-left: 36px; margin-right: 43px;"> 법적이름
+                          </label>
+
+                            <input title="GIVEN_NAME" id="GIVEN_NAME" name="GIVEN_NAME" placeholder="법적이름을 입력하십시오." class="user-text" type="text" disabled="disabled">
+                          </div>
+                        </div>
+                        <div class="coupon-search-btn">
+                          <button id="cpnSearch2" class="btn btn-edit user-input-link" style="height: 50px;font-size:1rem;">검색</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="box_line mgt40" style="text-align: center">
+                    <p>
+                      <strong class="">※&nbsp;&nbsp;본 서비스는 홍보행사에 참여하는 항공사에서 받은 일련번호를 사용하는 환승객에 한해서 제공됩니다.</strong>
+                    </p>
+                    <p>
+                      <strong class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        _ 도 포함해서 일련번호를 입력하세요. <span class="txt_coral mgt16">
+			필수입력항목 : 일련번호, 선택입력항목 : 이메일 또는 이름 </span>
+                      </strong>
+                    </p>
+                  </div>
+                  <!--// 선택박스 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="layer-close">닫기</a>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
     <div class="boxmodel mt40">
       <div class="boxmodel-list">
         <div class="boxmodel-list-item col-3">

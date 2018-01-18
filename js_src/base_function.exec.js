@@ -152,16 +152,19 @@ $(function(){
             $('html').addClass('main');
 
             // set top popup
-            $('.top-popup').addClass('top-open');
-            $('.header').addClass('top-open');
-            $('.gnb').addClass('top-open');
-            $('.total-search').addClass('top-open');
-            $('.quick').addClass('top-open');
-            $('.fullpage-wrapper').addClass('top-open');
-            $('.top-popup-toggle').data('open', true).addClass('down');
+            if( $('.top-popup').has('.top-popup-inner').length > 0 ){
+              $('.top-popup').addClass('top-open');
+              $('.header').addClass('top-open');
+              $('.gnb').addClass('top-open');
+              $('.total-search').addClass('top-open');
+              $('.quick').addClass('top-open');
+              $('.fullpage-wrapper').addClass('top-open');
+              $('.top-popup-toggle').data('open', true).addClass('down');
 
-            // header, gnb
-            $('.header, .gnb').removeClass('fixed down bg');
+              // header, gnb
+              $('.header, .gnb').removeClass('fixed down bg');
+            }
+
 
           // when sub
           } else {

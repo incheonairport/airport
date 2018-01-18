@@ -1,0 +1,38 @@
+@media screen and (max-width:1024px){
+
+  .ch{
+
+    * {
+      font-family: 'Noto Sans SC', roboto, spoqa ,sans-serif!important;
+    }
+
+    .top-big-popup-text{
+      background: url(/static/ap/images/bg_mobile_top_big_popup_ch.png) no-repeat center top;
+      background-size:contain;
+    }
+
+
+  }
+
+  .en{
+
+    .top-big-popup-text{
+      background: url(/static/ap/images/bg_mobile_top_big_popup_en.png) no-repeat center top;
+      background-size:contain;
+    }
+
+  }
+
+  .ja{
+    * {
+      font-family: 'Noto Sans JP', roboto, spoqa, sans-serif!important;
+    }
+
+    .top-big-popup-text{
+      background: url(/static/ap/images/bg_mobile_top_big_popup_ja.png) no-repeat center top;
+      background-size:contain;
+    }
+
+  }
+
+}

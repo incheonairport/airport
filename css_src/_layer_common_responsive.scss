@@ -851,7 +851,7 @@
       &.board-list{
         overflow: visible;
         white-space: normal;
-        display: table;
+        //display: table;
         td{
           span{
             font-size:0.8125rem;
@@ -1280,7 +1280,7 @@
   .borad-view{
     overflow: visible!important;
     white-space: normal!important;
-    display: table!important;
+    //display: table!important;
     .view-head{
       padding:25px 0;
       &-tit{
@@ -1654,6 +1654,68 @@
 
   .article{
     margin-bottom:30px;
+  }
+
+
+  // 라운지쿠폰 CSS
+  .layer{
+    .coupon{
+      input[type="text"]{
+        width:100%!important;
+
+      }
+      .carnum {
+        width :50%;
+        float:none;
+        line-height:40px;
+        text-align:left;
+        &.name{
+          margin-left:0;
+        }
+      }
+      padding:0;
+      &-number{
+        padding-top: 0px;
+        &:after{
+          margin:10px 0;
+        }
+        label{
+          width:100%;
+          display:block;
+          float:none;
+          height:40px;
+        }
+      }
+
+      &-body{
+        &:after{
+          margin:10px 0;
+        }
+
+        &-email{
+          text-align: left;
+          margin-bottom: 10px;
+          height:50px;
+        }
+
+        &-rdo{
+          padding-top:0;
+          float: none;
+        }
+        &-gender{
+          margin-top:40px;
+        }
+
+      }
+      &-search-btn{
+        position:static;
+
+        button{
+          height:40px!important;
+          line-height:40px!important;
+        }
+      }
+    }
   }
 
 }
