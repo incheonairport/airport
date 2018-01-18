@@ -7,7 +7,7 @@ $(function(){
 
 
   (function(){
-    $('.local-list.tab-half').wrap('<div class="tab-scroll-x" />');
+    //$('.local-list.tab-half').wrap('<div class="tab-scroll-x" />');
 
     $(window).on('resize', function(){
       //var listWidth = $('.half li').width();
