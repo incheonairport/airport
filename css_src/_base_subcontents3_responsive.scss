@@ -279,12 +279,16 @@
   // slide banner
   .slide-banner{
     &-wrap{
-      height:130px;
+      height: auto;
     }
     &-list{
       &-link{
-
-        padding:40px 15px;
+        width: 100%;
+        padding:0 15px;
+        img{
+          height: 130px;
+          width: 100%;
+        }
       }
       &-desc{
         width:100%;
