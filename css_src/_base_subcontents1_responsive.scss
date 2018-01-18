@@ -1429,7 +1429,33 @@
     }
   }
 
+  .table2{
+    &.vt-dark{
+      display: table;
+    }
+  }
 
+  //.table-m{
+  //  display: table!important;
+  //}
+
+
+}
+
+@media screen and (max-width:639px){
+  .table2{
+    &.vt-dark{
+      display: inline-block;
+    }
+  }
+
+  //.table-m{
+  //  display: inline-block !important;
+  //  white-space: pre-line;
+  //  th{
+  //
+  //  }
+  //}
 }
 
 
