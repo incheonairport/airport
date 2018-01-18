@@ -15,7 +15,7 @@
 }
 
 .top-big-popup{
-  background:url(/static/ap/images/bg_top_big_popup.jpg) no-repeat center top;
+  background:url(/static/ap/images/bg_top_big_popup.jpg) no-repeat center;
 
   &.none{
     display:none;
@@ -34,9 +34,9 @@
     border:0;
     background:url(/static/ap/images/bg_top_big_popup_arrow.png) no-repeat;
     position:absolute;
-    top:761px;
+    top:50%;
     left:50%;
-    transform:translate(-50%, -50%);
+    transform:translate(-50%, 250%);
     text-indent:-99999em;
 
     &:after{
