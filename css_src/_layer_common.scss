@@ -2993,6 +2993,8 @@ img.no-extend{
   }
   .user-input-text{
     width:550px!important;
+    height:50px;
+    line-height:50px;
   }
   .capcha+.user-input-text{
     border-top:0!important;
@@ -3003,7 +3005,12 @@ img.no-extend{
   }
 }
 
-
+// 쇼핑식당 이벤트 상세 data 높이 강제조절.
+.event-img{
+  img{
+    hieght:auto!important;
+  }
+}
 // 라운지쿠폰 CSS
 .layer{
   .coupon{
