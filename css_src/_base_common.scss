@@ -1225,7 +1225,7 @@ em{
 
 //font-size
 .font14, %font14{
-  font-size: 	0.875rem;
+  font-size: 0.875rem;
 }
 .font16, %font16{
   font-size:1rem;
@@ -1397,3 +1397,75 @@ select{
 img.no-extend{
   width:100%;
 }
+
+
+
+
+// 라운지쿠폰 CSS
+.layer{
+  .coupon{
+    .carnum {
+      width : 180px;
+      &.name{
+        margin:0 40px 0 40px;
+      }
+    }
+    .txt_coral {
+      color:#ffae44;
+    }
+    padding:0 50px;
+    &-number{
+      padding-top: 0px;
+      &:after{
+        content:'';
+        background:rgb(204, 204, 204);
+        width:100%;
+        height:1px;
+        margin:20px 0;
+        display:block;
+      }
+      label{
+        width:180px;
+        display:block;
+        float:left;
+      }
+    }
+
+    &-body{
+      &:after{
+        content:'';
+        background:rgb(204, 204, 204);
+        width:100%;
+        height:1px;
+        margin:20px 0;
+        display:block;
+      }
+
+      &-email{
+        text-align: left;
+        margin-bottom: 18px;
+        height:50px;
+      }
+
+      &-rdo{
+        padding-top: 15px;
+        float: left;
+        width:180px;
+      }
+      &-ipt{
+
+      }
+    }
+    &-search-btn{
+      position:absolute;
+      top:159px;
+      right:51px;
+      button{
+        height: 50px;
+        font-size:1rem!important;
+      }
+    }
+  }
+}
+
+
