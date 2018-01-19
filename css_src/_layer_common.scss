@@ -1441,6 +1441,11 @@ p.icontxt{
     background:url(/static/ap/images/bg_sub_layer_banner_bg_valet_service.jpg) no-repeat center;
     background-size: cover;
   }
+  //버스정차장
+  &.bus-stop{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_bus_stop.jpg) no-repeat center;
+    background-size: cover;
+  }
 }
 
 %gutter{

@@ -25,6 +25,9 @@
     &.immigration.sub2{//자동출입
       background:url(/static/ap/images/bg_layer_header_ac_05_02.jpg) no-repeat left bottom;
     }
+    &.declaring.sub3{//부가세 환급
+      background:url(/static/ap/images/bg_layer_header_tax_refund.jpg) no-repeat left bottom;
+    }
     &.declaring.sub4{//검역안내
       background:url(/static/ap/images/bg_layer_header_ac_03_03.jpg) no-repeat left bottom;
     }
@@ -55,7 +58,16 @@
   &.traffic-parking{ // 교통/주차
     background:url(/static/ap/images/bg_layer_header_03.jpg) no-repeat left bottom;
   }
-  &.parking-lot{ // 교통/주차
+  &.bus-stop{ // 버스
+    background:url(/static/ap/images/bg_layer_header_bus_stop.jpg) no-repeat left bottom;
+  }
+  &.ktx{ //ktx
+    &.sub1{
+      background:url(/static/ap/images/bg_layer_header_ktx.jpg) no-repeat left bottom;
+    }
+
+  }
+  &.parking-lot{ // 주차장
     background:url(/static/ap/images/bg_layer_parking_lot_01.jpg) no-repeat left bottom;
   }
   &.shopping-restaurant{ // 쇼핑/식당
