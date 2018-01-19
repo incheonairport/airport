@@ -1054,6 +1054,17 @@
   }
 }
 
+.contents.trn-service{
+  .boxmodel2{
+    // 썸네일형
+    &-thumbnail{
+      &-item{
+        height:300px;
+      }
+    }
+  }
+}
+
 // 버튼+인풋 영역 스타일 및 너비값제어
 .responsive-form-box{
   position:relative;

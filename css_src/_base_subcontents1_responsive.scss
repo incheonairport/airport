@@ -441,6 +441,7 @@
   // layer popup
   .layer{
     padding:15px;
+    height:100vh!important;
     &.find-my-terminal{
       br{
         display:none;
