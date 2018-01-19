@@ -1318,11 +1318,17 @@
 
 
   //버스노선
+  .overflow{
+    border:1px solid #d9d9d9;
+    background:#f2f4f7;
+    padding:15px 0;
+  }
   .route-bus-line{
     width:100%;
     height:auto;
-    padding:15px 0;
-    border:1px solid #d9d9d9;
+    padding:0;
+    background:none;
+
     &:before{
       content:'';
       display:block;
@@ -1374,6 +1380,10 @@
 
         &.bottom{
           bottom:-7px;
+        }
+
+        &:last-child{
+          margin-bottom:0;
         }
 
       }
