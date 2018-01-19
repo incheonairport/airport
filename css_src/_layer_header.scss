@@ -55,6 +55,9 @@
   &.traffic-parking{ // 교통/주차
     background:url(/static/ap/images/bg_layer_header_03.jpg) no-repeat left bottom;
   }
+  &.parking-lot{ // 교통/주차
+    background:url(/static/ap/images/bg_layer_parking_lot_01.jpg) no-repeat left bottom;
+  }
   &.shopping-restaurant{ // 쇼핑/식당
     background:url(/static/ap/images/bg_layer_header_04.jpg) no-repeat left bottom;
   }
@@ -63,6 +66,10 @@
     &.sub3{
       background:url(/static/ap/images/bg_layer_header_fc_04.jpg) no-repeat left bottom;
     }
+  }
+
+  &.airport-services2{ // 공항즐기기
+    background:url(/static/ap/images/bg_layer_airport_services_01.jpg) no-repeat left bottom;
   }
 
   &.cyber-airport{ // 사이버에어포트
