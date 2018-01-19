@@ -64,6 +64,7 @@
 
     &.mobile{
       background:url(/static/ap/images/bg_mobile_top_big_popup.jpg) no-repeat center top;
+      background-size:cover;
     }
   }
 
@@ -75,6 +76,7 @@
     background:url(/static/ap/images/bg_top_big_popup_en.png) no-repeat center top;
     &.mobile{
       background:url(/static/ap/images/bg_mobile_top_big_popup.jpg) no-repeat center top;
+      background-size:cover;
     }
   }
 
@@ -696,6 +698,7 @@
     background:url(/static/ap/images/bg_top_big_popup_ja.png) no-repeat center top;
     &.mobile{
       background:url(/static/ap/images/bg_mobile_top_big_popup.jpg) no-repeat center top;
+      background-size:cover;
     }
   }
 
