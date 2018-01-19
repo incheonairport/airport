@@ -74,663 +74,63 @@
 
     <!--검색영역-->
     <div class="search-flight-detail mt30">
-      <div class="search-flight-detail-option">
-
-        <input type="radio" name="day" id="today" class="radio" value="today" checked=""> <label for="today" class="search-option-btn" onclick="fncTodayGoSearch(url)">오늘</label>
-        <input type="radio" name="day" id="tomorrow" class="radio" value="tomorrow"> <label for="tomorrow" class="search-option-btn" onclick="fncTomorrowGoSearch(url)">내일</label>
+      <div class="search-flight-detail-option terminal">
+        <label for="terminal" class="label-hide">터미널</label>
+        <select class="search-flight-detail-select-article" id="terminal" name="terminal" value="">
+          <option value="">전체</option>
+          <option value="">T1</option>
+          <option value="">T2</option>
+        </select>
+        <!--<input type="radio" name="day" id="today" class="radio" value="today" checked="">
+        <label for="today" class="search-option-btn" onclick="fncTodayGoSearch(url)">오늘</label>
+        <input type="radio" name="day" id="tomorrow" class="radio" value="tomorrow">
+        <label for="tomorrow" class="search-option-btn" onclick="fncTomorrowGoSearch(url)">내일</label>-->
 
       </div>
       <div class="search-flight-detail-select">
+        <label for="DAY_SEL" class="label-hide">날짜</label>
         <select class="search-flight-detail-select-article" id="DAY_SEL" name="DAY_SEL">
 
-          <option value="20180102">2018.01.02 (화)</option>
-
-          <option value="20180103">2018.01.03 (수)</option>
-
-          <option value="20180104">2018.01.04 (목)</option>
-
-          <option value="20180105">2018.01.05 (금)</option>
-
           <option value="20180106">2018.01.06 (토)</option>
-
-          <option value="20180107">2018.01.07 (일)</option>
-
-          <option value="20180108">2018.01.08 (월)</option>
-
-          <option value="20180109">2018.01.09 (화)</option>
-
-          <option value="20180110">2018.01.10 (수)</option>
-
-          <option value="20180111">2018.01.11 (목)</option>
-
-          <option value="20180112">2018.01.12 (금)</option>
-
-          <option value="20180113">2018.01.13 (토)</option>
-
-          <option value="20180114">2018.01.14 (일)</option>
-
-          <option value="20180115">2018.01.15 (월)</option>
-
-          <option value="20180116">2018.01.16 (화)</option>
-
-          <option value="20180117">2018.01.17 (수)</option>
-
-          <option value="20180118">2018.01.18 (목)</option>
-
-          <option value="20180119">2018.01.19 (금)</option>
-
-          <option value="20180120">2018.01.20 (토)</option>
-
-          <option value="20180121">2018.01.21 (일)</option>
-
-          <option value="20180122">2018.01.22 (월)</option>
-
         </select>
-
         <!-- 시작시간 ~ 종료시간 수정구간 -->
         <div class="search-flight-detail-select-article double">
-        <select class="search-flight-detail-select-article" id="SELECT_TIME" name="SELECT_TIME" value="17001759">
-
-
-          <option value="00000059">00:00~ 00:59</option>
-
-          <option value="01000159">01:00~ 01:59</option>
-
-          <option value="02000259">02:00~ 02:59</option>
-
-          <option value="03000359">03:00~ 03:59</option>
-
-          <option value="04000459">04:00~ 04:59</option>
-
-          <option value="05000559">05:00~ 05:59</option>
-
-          <option value="06000659">06:00~ 06:59</option>
-
-          <option value="07000759">07:00~ 07:59</option>
-
-          <option value="08000859">08:00~ 08:59</option>
-
-          <option value="09000959">09:00~ 09:59</option>
-
-          <option value="10001059">10:00~ 10:59</option>
-
-          <option value="11001159">11:00~ 11:59</option>
-
-          <option value="12001259">12:00~ 12:59</option>
-
-          <option value="13001359">13:00~ 13:59</option>
-
-          <option value="14001459">14:00~ 14:59</option>
-
-          <option value="15001559">15:00~ 15:59</option>
-
-          <option value="16001659">16:00~ 16:59</option>
-
-          <option value="17001759">17:00~ 17:59</option>
-
-          <option value="18001859">18:00~ 18:59</option>
-
-          <option value="19001959">19:00~ 19:59</option>
-
-          <option value="20002059">20:00~ 20:59</option>
-
-          <option value="21002159">21:00~ 21:59</option>
-
-          <option value="22002259">22:00~ 22:59</option>
-
-          <option value="23002359">23:00~ 23:59</option>
-
-        </select>
+          <label for="FROM_TIME" class="label-hide">시간</label>
+          <select class="search-flight-detail-select-article" id="FROM_TIME" name="FROM_TIME" value="1000">
+            <option value="0000">00:00</option>
+          </select>
           <span class="dash">~</span>
-        <select class="search-flight-detail-select-article" id="SELECT_TIME" name="SELECT_TIME" value="17001759">
+          <select class="search-flight-detail-select-article" id="TO_TIME" name="TO_TIME" value="1059">
+            <option value="0059">00:59</option>
 
-
-          <option value="00000059">00:00~ 00:59</option>
-
-          <option value="01000159">01:00~ 01:59</option>
-
-          <option value="02000259">02:00~ 02:59</option>
-
-          <option value="03000359">03:00~ 03:59</option>
-
-          <option value="04000459">04:00~ 04:59</option>
-
-          <option value="05000559">05:00~ 05:59</option>
-
-          <option value="06000659">06:00~ 06:59</option>
-
-          <option value="07000759">07:00~ 07:59</option>
-
-          <option value="08000859">08:00~ 08:59</option>
-
-          <option value="09000959">09:00~ 09:59</option>
-
-          <option value="10001059">10:00~ 10:59</option>
-
-          <option value="11001159">11:00~ 11:59</option>
-
-          <option value="12001259">12:00~ 12:59</option>
-
-          <option value="13001359">13:00~ 13:59</option>
-
-          <option value="14001459">14:00~ 14:59</option>
-
-          <option value="15001559">15:00~ 15:59</option>
-
-          <option value="16001659">16:00~ 16:59</option>
-
-          <option value="17001759">17:00~ 17:59</option>
-
-          <option value="18001859">18:00~ 18:59</option>
-
-          <option value="19001959">19:00~ 19:59</option>
-
-          <option value="20002059">20:00~ 20:59</option>
-
-          <option value="21002159">21:00~ 21:59</option>
-
-          <option value="22002259">22:00~ 22:59</option>
-
-          <option value="23002359">23:00~ 23:59</option>
-
-        </select>
+          </select>
         </div>
         <!-- 시작시간 ~ 종료시간 수정구간 -->
-
-
+        <label for="AIRPORT" class="label-hide">목적지 선택</label>
         <select class="search-flight-detail-select-article" id="AIRPORT" name="AIRPORT" value="">
           <option value="">목적지 선택</option>
-
-          <option value="KOJ">가고시마</option>
-
-          <option value="KHH">가오슝</option>
-
-          <option value="KWL">계림</option>
-
-          <option value="KMQ">고마쓰</option>
-
-          <option value="GUM">괌</option>
-
-          <option value="CAN">광저우</option>
-
-          <option value="KMJ">구마모토</option>
-
-          <option value="KWE">구이양</option>
-
-          <option value="KKJ">기타큐슈</option>
-
-          <option value="NGS">나가사키</option>
-
-          <option value="NGO">나고야</option>
-
-          <option value="NNG">난닝</option>
-
-          <option value="NAN">난디</option>
-
-          <option value="NKG">난징</option>
-
-          <option value="JFK">뉴욕</option>
-
-          <option value="KIJ">니가타</option>
-
-          <option value="DAD">다낭</option>
-
-          <option value="DLC">다롄</option>
-
-          <option value="TAK">다카마쓰</option>
-
-          <option value="TAE">대구</option>
-
-          <option value="DFW">댈러스</option>
-
-          <option value="DPS">덴파사르</option>
-
-          <option value="DEL">델리</option>
-
-          <option value="NRT">도쿄/ 나리타</option>
-
-          <option value="HND">도쿄/ 하네다</option>
-
-          <option value="DOH">도하</option>
-
-          <option value="DXB">두바이</option>
-
-          <option value="DTW">디트로이트</option>
-
-          <option value="LAS">라스베이거스</option>
-
-          <option value="LHR">런던/히드로</option>
-
-          <option value="FCO">로마</option>
-
-          <option value="LAX">로스앤젤레스</option>
-
-          <option value="MNL">마닐라</option>
-
-          <option value="MAD">마드리드</option>
-
-          <option value="MYJ">마쓰야마</option>
-
-          <option value="MFM">마카오</option>
-
-          <option value="MLE">말레</option>
-
-          <option value="MEX">멕시코</option>
-
-          <option value="SVO">모스크바</option>
-
-          <option value="MDG">무단장</option>
-
-          <option value="BOM">뭄바이</option>
-
-          <option value="MUC">뮌헨</option>
-
-          <option value="KMI">미야자키</option>
-
-          <option value="MXP">밀라노</option>
-
-          <option value="WAW">바르샤바</option>
-
-          <option value="BCN">바르셀로나</option>
-
-          <option value="BWN">반다르스리브가완</option>
-
-          <option value="BKK">방콕</option>
-
-          <option value="DMK">방콕/돈므앙</option>
-
-          <option value="YVR">밴쿠버</option>
-
-          <option value="PEK">베이징</option>
-
-          <option value="PUS">부산</option>
-
-          <option value="BNE">브리즈번</option>
-
-          <option value="VVO">블라디보스토크</option>
-
-          <option value="VIE">비엔나</option>
-
-          <option value="VTE">비엔티안</option>
-
-          <option value="HSG">사가</option>
-
-          <option value="SPN">사이판</option>
-
-          <option value="UUS">사할린</option>
-
-          <option value="CTS">삿포로</option>
-
-          <option value="PVG">상하이/ 푸동</option>
-
-          <option value="SFO">샌프란시스코</option>
-
-          <option value="XMN">샤먼</option>
-
-          <option value="SHE">선양</option>
-
-          <option value="SZX">선전</option>
-
-          <option value="CEB">세부</option>
-
-          <option value="SDJ">센다이</option>
-
-          <option value="SJW">스자좡</option>
-
-          <option value="SYD">시드니</option>
-
-          <option value="XIY">시안</option>
-
-          <option value="SEA">시애틀</option>
-
-          <option value="REP">시엠립</option>
-
-          <option value="FSZ">시즈오카</option>
-
-          <option value="ORD">시카고</option>
-
-          <option value="SIN">싱가포르</option>
-
-          <option value="SYX">싼야</option>
-
-          <option value="ADD">아디스 아바바</option>
-
-          <option value="AUH">아부다비</option>
-
-          <option value="TSE">아스타나</option>
-
-          <option value="AOJ">아오모리</option>
-
-          <option value="ALA">알마티</option>
-
-          <option value="AMS">암스테르담</option>
-
-          <option value="ATL">애틀랜타</option>
-
-          <option value="YKS">야쿠츠크</option>
-
-          <option value="RGN">양곤</option>
-
-          <option value="YNJ">옌지</option>
-
-          <option value="YNZ">옌청</option>
-
-          <option value="YNT">옌타이</option>
-
-          <option value="KIX">오사카/ 간사이</option>
-
-          <option value="OIT">오이타</option>
-
-          <option value="OKJ">오카야마</option>
-
-          <option value="AKL">오클랜드</option>
-
-          <option value="OKA">오키나와</option>
-
-          <option value="YGJ">요나고</option>
-
-          <option value="UBJ">우베</option>
-
-          <option value="WUH">우한</option>
-
-          <option value="ULN">울란바토르</option>
-
-          <option value="IAD">워싱턴</option>
-
-          <option value="WNZ">원저우</option>
-
-          <option value="WEH">웨이하이</option>
-
-          <option value="IST">이스탄불</option>
-
-          <option value="JMU">자무쓰</option>
-
-          <option value="CGK">자카르타</option>
-
-          <option value="CSX">장사</option>
-
-          <option value="CGO">정저우</option>
-
-          <option value="TNA">지난</option>
-
-          <option value="CGQ">창춘</option>
-
-          <option value="CTU">청두</option>
-
-          <option value="CKG">충칭</option>
-
-          <option value="ZRH">취리히</option>
-
-          <option value="CNX">치앙마이</option>
-
-          <option value="TAO">칭다오</option>
-
-          <option value="KTM">카트만두</option>
-
-          <option value="HPH">카트비발</option>
-
-          <option value="KLO">칼리보</option>
-
-          <option value="CXR">캄 라흐</option>
-
-          <option value="ROR">코로르</option>
-
-          <option value="BKI">코타키나발루</option>
-
-          <option value="CMB">콜롬보</option>
-
-          <option value="KUL">쿠알라룸푸르</option>
-
-          <option value="KMG">쿤밍</option>
-
-          <option value="CRK">클라크필드</option>
-
-          <option value="TAS">타슈켄트</option>
-
-          <option value="RMQ">타이중/칭촨강</option>
-
-          <option value="TPE">타이페이</option>
-
-          <option value="TLV">텔아비브</option>
-
-          <option value="TSN">톈진</option>
-
-          <option value="YYZ">토론토</option>
-
-          <option value="CDG">파리</option>
-
-          <option value="PQC">푸꿕</option>
-
-          <option value="HKT">푸케트</option>
-
-          <option value="PNH">프놈펜</option>
-
-          <option value="PRG">프라하</option>
-
-          <option value="FRA">프랑크푸르트</option>
-
-          <option value="HAN">하노이</option>
-
-          <option value="KHV">하바로프스크</option>
-
-          <option value="HRB">하얼빈</option>
-
-          <option value="HAK">하이커우</option>
-
-          <option value="HGH">항저우</option>
-
-          <option value="HFE">허페이</option>
-
-          <option value="HEL">헬싱키</option>
-
-          <option value="HNL">호놀룰루</option>
-
-          <option value="SGN">호찌민</option>
-
-          <option value="HKG">홍콩</option>
-
-          <option value="TXN">황산</option>
-
-          <option value="FUK">후쿠오카</option>
-
-          <option value="HIJ">히로시마</option>
-
-        </select> <select id="AIRLINE" name="AIRLINE" class="search-flight-detail-select-article" value="">
-        <option value="">항공사 선택</option>
-
-        <option value="LO">LOT 폴란드 항공</option>
-
-        <option value="S7">S7 항공</option>
-
-        <option value="GA">가루다인도네시아항공</option>
-
-        <option value="SA">남아프리카항공</option>
-
-        <option value="KE">대한항공</option>
-
-        <option value="DL">델타항공</option>
-
-        <option value="QV">라오항공</option>
-
-        <option value="LA">란항공</option>
-
-        <option value="BI">로얄 브루네이 항공</option>
-
-        <option value="AT">로얄 에어 모로코</option>
-
-        <option value="LH">루프트한자항공</option>
-
-        <option value="AE">만다린항공</option>
-
-        <option value="MH">말레이시아항공</option>
-
-        <option value="OM">몽골항공</option>
-
-        <option value="8M">미얀마국제항공</option>
-
-        <option value="VA">베네주엘라 국제항공</option>
-
-        <option value="VN">베트남항공</option>
-
-        <option value="VJ">비엣젯항공</option>
-
-        <option value="SV">사우디 아라비안 항공</option>
-
-        <option value="3U">사천항공</option>
-
-        <option value="SC">산동항공</option>
-
-        <option value="FM">상하이항공</option>
-
-        <option value="5J">세부퍼시픽항공</option>
-
-        <option value="HM">세이셸항공</option>
-
-        <option value="ZA">스카이 앙코르 항공</option>
-
-        <option value="ZH">심천항공</option>
-
-        <option value="SQ">싱가포르항공</option>
-
-        <option value="AA">아메리칸항공</option>
-
-        <option value="OZ">아시아나항공</option>
-
-        <option value="AM">아에로멕시코</option>
-
-        <option value="AZ">알리탈리아 항공</option>
-
-        <option value="R3">야쿠티아 항공</option>
-
-        <option value="EK">에미레이트항공</option>
-
-        <option value="BR">에바항공</option>
-
-        <option value="NZ">에어 뉴질랜드</option>
-
-        <option value="NX">에어 마카오</option>
-
-        <option value="UX">에어 유로파</option>
-
-        <option value="AF">에어 프랑스</option>
-
-        <option value="SU">에어로플로트항공</option>
-
-        <option value="RS">에어서울</option>
-
-        <option value="KC">에어아스타나</option>
-
-        <option value="Z2">에어아시아 제스트항공</option>
-
-        <option value="D7">에어아시아엑스</option>
-
-        <option value="AI">에어인디아</option>
-
-        <option value="AC">에어캐나다</option>
-
-        <option value="ET">에티오피아항공</option>
-
-        <option value="EY">에티하드 항공</option>
-
-        <option value="BA">영국항공</option>
-
-        <option value="HZ">오로라항공</option>
-
-        <option value="WY">오만항공</option>
-
-        <option value="OS">오스트리아 항공</option>
-
-        <option value="HY">우즈베키스탄항공</option>
-
-        <option value="UA">유나이티드항공</option>
-
-        <option value="B7">유니항공</option>
-
-        <option value="ZE">이스타항공</option>
-
-        <option value="JL">일본항공</option>
-
-        <option value="NH">전일본공수</option>
-
-        <option value="QD">제이씨 인터네셔널 항공</option>
-
-        <option value="7C">제주항공</option>
-
-        <option value="9W">제트 에어웨이스</option>
-
-        <option value="CA">중국국제항공</option>
-
-        <option value="CZ">중국남방항공</option>
-
-        <option value="MU">중국동방항공</option>
-
-        <option value="MF">중국하문항공</option>
-
-        <option value="CI">중화항공</option>
-
-        <option value="LJ">진에어</option>
-
-        <option value="OK">체코항공</option>
-
-        <option value="9C">춘추항공</option>
-
-        <option value="QR">카타르항공</option>
-
-        <option value="CX">캐세이패시픽항공</option>
-
-        <option value="KQ">케냐항공</option>
-
-        <option value="KL">케이엘엠네덜란드항공</option>
-
-        <option value="CM">코파 항공</option>
-
-        <option value="QF">콴타스항공</option>
-
-        <option value="XJ">타이에어아시아엑스</option>
-
-        <option value="TG">타이항공</option>
-
-        <option value="TK">터키항공</option>
-
-        <option value="GS">텐진 에어라인</option>
-
-        <option value="TW">티웨이항공</option>
-
-        <option value="8Y">팬퍼시픽 항공</option>
-
-        <option value="XY">플라이나스</option>
-
-        <option value="MM">피치항공</option>
-
-        <option value="AY">핀에어</option>
-
-        <option value="PR">필리핀항공</option>
-
-        <option value="HA">하와이안항공</option>
-
-        <option value="TN">호주 항공</option>
-
-        <option value="UO">홍콩엑스프레스항공</option>
-
-        <option value="HX">홍콩항공</option>
-
-      </select>
-
+        </select>
+        <label for="AIRLINE" class="label-hide">항공사 선택</label>
+        <select id="AIRLINE" name="AIRLINE" class="search-flight-detail-select-article" value="">
+          <option value="">항공사 선택</option>
+        </select>
+
+        <label for="AIRPLANE" class="label-hide">편명</label>
         <input type="text" id="AIRPLANE" name="AIRPLANE" class="search-flight-detail-select-airplane" placeholder="편명입력" value="" maxlength="8">
 
         <button id="searchBtn" type="button" class="search-flight-detail-select-btn ico">검색</button>
       </div>
-      <input type="hidden" title="개발에 필요한 빈 인풋" id="curDate" name="curDate" value="20180116">
-      <input type="hidden" title="개발에 필요한 빈 인풋" id="startTime" name="startTime" value="1700">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="curDate" name="curDate" value="20180119">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="startTime" name="startTime" value="1000">
       <input type="hidden" title="개발에 필요한 빈 인풋" id="airPort" name="airPort" value="">
-      <input type="hidden" title="개발에 필요한 빈 인풋" id="endTime" name="endTime" value="1759">
-      <input type="hidden" title="개발에 필요한 빈 인풋" id="todayDate" name="todayDate" value="20180116">
-      <input type="hidden" title="개발에 필요한 빈 인풋" id="tomorrowDate" name="tomorrowDate" value="20180117">
-      <input type="hidden" title="개발에 필요한 빈 인풋" id="todayTime" name="todayTime" value="1717">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="endTime" name="endTime" value="1059">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="todayDate" name="todayDate" value="20180119">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="tomorrowDate" name="tomorrowDate" value="20180120">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="todayTime" name="todayTime" value="1006">
       <input type="hidden" title="개발에 필요한 빈 인풋" id="userId" name="userId" value="">
       <input type="hidden" title="개발에 필요한 빈 인풋" id="listCnt" name="listCnt" value="">
-      <input type="hidden" title="개발에 필요한 빈 인풋" id="curStime" name="curStime" value="1700">
-      <input type="hidden" title="개발에 필요한 빈 인풋" id="curEtime" name="curEtime" value="1759">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="curStime" name="curStime" value="1000">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="curEtime" name="curEtime" value="1059">
     </div>
     <!--//검색영역-->
     <!--업데이트 시간-->
@@ -764,7 +164,7 @@
       </div>
 
 
-<!-- codeshare 에 대한 클래스 추가와 아이콘 추가 share된 첫번째 는 first 클래스-->
+      <!-- codeshare 에 대한 클래스 추가와 아이콘 추가 share된 첫번째 는 first 클래스-->
       <div class="tr-like flight-info-basic codeshare first">
         <span class="ico-codeshare">코드쉐어</span>
         <a href="" class="flight-info-basic-link" title="클릭하면 상세 정보가 화면에 나타납니다.">

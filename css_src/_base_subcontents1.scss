@@ -302,6 +302,17 @@
         }
       }
     }
+    &.terminal{
+      width: 140px;
+      height: 60px;
+      border: 1px solid #666;
+      box-sizing: border-box;
+      .search-flight-detail-select-article{
+        width: 140px;
+        border-right: 1px solid #666;
+        box-sizing: border-box;
+      }
+    }
   }
   &-select{
     height: 60px;
