@@ -29,7 +29,6 @@ $(function(){
 
   $('.gnb').append('<div class="scroll-amount"></div>');
 
-
   // detect language
   (function(){
 
@@ -402,8 +401,6 @@ $(function(){
 
         }
 
-
-
       }
 
     });
@@ -470,8 +467,6 @@ $(function(){
       $('.quick').addClass('mobile-on');
 
     });
-
-
 
   })();
 
@@ -781,5 +776,3 @@ $(function(){
   })();
 
 });
-
-
