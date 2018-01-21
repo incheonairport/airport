@@ -159,6 +159,16 @@
           line-height: 40px;
         }
       }
+      &.terminal{
+        width: 100%;
+        height: 40px;
+        border-right:0;
+        margin-bottom:0;
+        .search-flight-detail-select-article{
+          width: 100%;
+
+        }
+      }
     }
     &-select{
       height: auto;
@@ -214,6 +224,7 @@
         }
       }
     }
+
   }
   // 서브 탭
   .inner-tab2{
