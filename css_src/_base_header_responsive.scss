@@ -177,18 +177,18 @@
         margin-left:0;
 
         &.gnb-search{
-          margin-left:0;
-          float:left;
+          //margin-left:0;
+          //float:left;
           // 임시 위치조정
-          position:absolute;
-          top:15px;
-          right:15px;
-          text-align:right;
-          width:38px;
-          background:#6281c1;
-          border-radius:20px;
-          overflow:hidden;
-          transition:all .3s ease-out;
+          //position:absolute;
+          //top:15px;
+          //right:15px;
+          //text-align:right;
+          //width:38px;
+          //background:#6281c1;
+          //border-radius:20px;
+          //overflow:hidden;
+          //transition:all .3s ease-out;
           z-index:10;
 
 
@@ -242,14 +242,14 @@
             //width:22px;
             //height:27px;
 
-            color: #fff;
-            width:auto;
-            height:19px;
-            padding:4px 10px 6px 32px;
-            background:#6281c1;
-            text-indent:-99999em;
-            border-radius:20px;
-            box-sizing:content-box;
+            //color: #fff;
+            //width:auto;
+            //height:19px;
+            //padding:4px 10px 6px 32px;
+            //background:#6281c1;
+            //text-indent:-99999em;
+            //border-radius:20px;
+            //box-sizing:content-box;
             position:relative;
             z-index:10;
 
@@ -349,7 +349,7 @@
         border-bottom:1px solid #d9d9d9;
         overflow:hidden;
 
-        &:hover:after{
+        &:hover:after, &.on:after{
           top:43px;
         }
 
