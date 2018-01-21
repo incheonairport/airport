@@ -31,7 +31,6 @@ footer, header, menu, nav, section {
 html{
   font-size:15px;
   //overflow-y:scroll;
-
   &.open-layer{
     overflow:hidden;
   }
@@ -45,6 +44,7 @@ body {
   overflow-y:scroll;
   position:relative;
   //min-width:1360px;
+  //min-width:1330px;
 
   &.open-layer{
     overflow:hidden;
