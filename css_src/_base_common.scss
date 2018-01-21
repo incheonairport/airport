@@ -1,3 +1,9 @@
+body {
+
+  min-width:1330px;
+
+}
+
 .inner-section{
   width: 1200px;
   min-width: 1200px;
@@ -1314,7 +1320,7 @@ button{
 
 select{
   background-color:#fff;
-  padding-right: 20px !important;
+  padding: 0 0 0 10px !important;
 }
 
 .filter-service-field.bd-control{

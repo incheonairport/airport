@@ -254,9 +254,47 @@
           background:#a5a7aa;
         }
       }
+
+      &.type-chekopen{
+        &:after{
+          background: #2c982c;
+        }
+      }
+
+      &.type-chekclose{
+        &:after{
+          background: #ad4638;
+        }
+      }
+
+      &.type-boready{
+        &:after{
+          background: #6c7295;
+        }
+      }
+
+      &.type-boclose{
+        &:after{
+          background: #994265;
+        }
+      }
+
+      &.type-start{
+        &:after{
+          background:#4b8fe4;
+        }
+      }
+
+      &.type-cancle{
+        &:after{
+          background:#a3a3a3;
+        }
+      }
+
+
     }
     .situation-info {
-      width: 70px;
+      width: 76px;
       height: 28px;
       margin: 0 auto;
       line-height: 29px;
@@ -275,6 +313,28 @@
       &.boarding-closing,
       &.type-cyan{
         background: #2c8179;
+      }
+      &.type-chekopen{
+        background: #2c982c;
+      }
+      &.type-chekclose{
+        background: #ad4638;
+      }
+
+      &.type-boready{
+        background: #6c7295;
+      }
+
+      &.type-boclose{
+        background: #994265;
+      }
+
+      &.type-start{
+        background:#4b8fe4;
+      }
+
+      &.type-cancle{
+        background:#a3a3a3;
       }
     }
     &-no-result{

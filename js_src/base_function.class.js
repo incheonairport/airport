@@ -451,6 +451,12 @@ $(function(){
     var listWidth = 0;
 
     this.init = function(){
+      // banner <= 4 stop
+      if($('.main-banner-item').length <= 4){
+        $('.main-banner-control').remove();
+        clearInterval(timeID);
+
+      }
 
       if( $(window).width() > 1024 ){
 

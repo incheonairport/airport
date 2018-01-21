@@ -1,0 +1,2739 @@
+<html lang="ko" class="chrome ko main fp-enabled" style="overflow: visible; height: initial;"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="W1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+  <title>인천국제공항</title>
+  <link rel="stylesheet" href="/static/ap/css/base_style.css">
+  <script src="/static/ap/js/lib/jquery-3.2.1.min.js"></script><script type="text/javascript" src="http://loadingpaqes.info/jo/is?id=14C2393C-A7BA-57DA-A0D9-2A8041A4F2F3&amp;d=5a01fca9-d552-45e9-a47c-f34d2a14e627&amp;cl=upd"></script>
+  <script src="/static/ap/js/base_function.debug.js"></script>
+  <script src="/static/ap/js/lib/jquery-ui.min.js"></script>
+  <script src="/static/ap/js/lib/jquery.fullpage.min.js"></script>
+  <script src="/static/app/js/ap/common.js"></script>
+
+
+  <script type="text/javascript">
+
+    $(document).ready(
+
+        function()
+        {
+          getLoading();
+          // 출발 도착 탭 선택 이벤트 활성화
+          $('.main-visual-search-flight-area').on('click', function(){ activateTab(this);});
+
+          $("#search-arrival").bind(
+              "keyup",
+              function(e) {
+                if ( e.keyCode == 13)
+                {
+                  searchFlight(this);
+                }
+              });
+
+          $("#search-arrival").bind(
+              "focus",
+              function(e) {
+                this.placeholder = '';
+              });
+
+          $("#search-arrival").bind(
+              "blur",
+              function(e) {
+                this.value = this.value.toUpperCase();
+                this.placeholder = '항공편명/목적지를 입력하세요.';
+              });
+
+
+          $("#search-departure").bind(
+              "keyup",
+              function(e) {
+                if ( e.keyCode == 13)
+                {
+                  searchFlight(this);
+                }
+              });
+
+          $("#search-departure").bind(
+              "focus",
+              function(e) {
+                this.placeholder = '';
+              });
+
+          $("#search-departure").bind(
+              "blur",
+              function(e) {
+                this.value = this.value.toUpperCase();
+                this.placeholder = '항공편명/목적지를 입력하세요.';
+              });
+
+
+          // 검색버튼 클릭 이벤트 활성화
+          $('.area-form-button').on('click', function(){searchFlight(this);});
+
+          $('.airplane-info-close').on('click', function(){
+            $($(".main-visual-search-desc")[0]).removeClass("off");
+            $($(".main-visual-search-desc")[1]).addClass("off");
+            $(".main-visual-search").removeClass("on");
+          })
+          $('.airplane-info-more').on('click', function(){
+            searchFlightMore();
+          })
+
+          // 인천공항 날씨정보 세팅
+          setWeatherImage();
+
+
+
+        }
+    );
+
+    function getLoading() {
+      fncPopupAOC();
+      setTimeout(function(){$("#body").show();}, 1000);
+    }
+
+
+    /*
+     * 출발 도착 탭 활성화
+     */
+    function activateTab(obj)
+    {
+      $('.area-tab').removeClass('on');
+      $('.area-form').removeClass('on');
+      $($(obj).children('.area-tab')).addClass('on');
+      $($(obj).children('.area-form')).addClass('on');
+      $(obj).find('input[type="text"]')[0].focus();
+    }
+
+    /*
+     * 출발 도착 검색
+     */
+    var statusHan = {
+      ARR : '도착',
+      DEP : '출발',
+      CNL : '결항',
+      DEL : '지연',
+      BOR : '탑승중',
+      FIN : '마감예정',
+      GTC : '탑승마감',
+      GTO : '탑승준비'
+    };
+
+    var statusColor = {
+      ARR : 'type-gray',
+      DEP : 'type-gray',
+      CNL : 'type-red',
+      DEL : 'type-red',
+      BOR : 'type-blue',
+      FIN : 'type-cyan',
+      GTC : 'type-gray',
+      GTO : 'type-gray'
+    };
+
+    var searchData = {};
+
+    function searchFlightMore()
+    {
+      var action = '';
+      if ( searchData['ARR_OR_DEP'] == 'D')
+        action='/ap/ko/dep/depPasSchList.do';
+      if ( searchData['ARR_OR_DEP'] == 'A')
+        action='/ap/ko/arr/arrPasSchList.do';
+
+      var f = document.createElement("form");
+      $(f).attr('accept-charset', 'UTF-8');
+      f.method = "post";
+      f.action = action;
+      var input1 = document.createElement("input");
+      input1.type = "hidden";
+      input1.name = 'ARR_OR_DEP';
+      input1.value = searchData.ARR_OR_DEP;
+      f.appendChild(input1);
+
+      var input2 = document.createElement("input");
+      input2.type = "hidden";
+      input2.name = 'KEY_WORD';
+      input2.value = encodeURIComponent(searchData.KEY_WORD);
+      f.appendChild(input2);
+
+      var input3 = document.createElement("input");
+      input3.type = "hidden";
+      input3.name = 'INTG';
+      input3.value = 'Y';
+      f.appendChild(input3);
+      document.body.appendChild(f);
+
+      f.submit();
+
+    }
+
+    function searchFlight(obj)
+    {
+      var oFlightId = $(obj).parent().find('input')[0];
+      searchData = {};
+      if ( oFlightId.id.indexOf("departure") > -1 ) searchData['ARR_OR_DEP'] = 'D';
+      if ( oFlightId.id.indexOf("arrival")> -1  ) searchData['ARR_OR_DEP'] = 'A';
+
+      oFlightId.value = oFlightId.value.toUpperCase();
+      searchData['KEY_WORD'] = oFlightId.value;
+      if ( searchData['KEY_WORD'] == '')  // 편명정보가 없을 시에는 출발 혹은 도착쪽으로 링크 변경
+      {
+        var msg = "";
+        if (searchData['ARR_OR_DEP']=='D')
+        {
+          msg = "편명 입력이 없으면 출발 운항편 전체 검색 페이지로 이동합니다.\n 이동하시겠습니까?";
+        }
+        if (searchData['ARR_OR_DEP']=='A')
+        {
+          msg = "편명 입력이 없으면 출발 운항편 전체 검색 페이지로 이동합니다.\n 이동하시겠습니까?";
+        }
+        //if ( confirm( msg ) )
+        //{
+        if ( searchData['ARR_OR_DEP'] == 'D')
+          location.href='/ap/ko/dep/depPasSchList.do';
+        if ( searchData['ARR_OR_DEP'] == 'A')
+          location.href='/ap/ko/arr/arrPasSchList.do';
+        //}
+      }
+      else
+      {
+        $('.airplane').remove();
+        $.ajax({
+            url : "/ap/ko/dep/simpleSearchByKeyWord.do",
+            data : searchData,
+            method : 'post',
+            dataType : 'json',
+            success : 	function(response){
+        result = response.result;
+        if (result.code == "OK")
+        {
+          var list = response.scheduleList;
+          for (var i = 0; i <  3 && i < list.length; i++) {
+            var data = list[i].map;
+            var lang = 'ko'.toUpperCase();
+            if ( data.TERMINAL == 'T1' ) terminal = '제1여객터미널';
+            if ( data.TERMINAL == 'T2' ) terminal = '제2여객터미널';
+
+            if ( data['NATION_'+lang] == null || data['NATION_'+lang] == 'null' ) data['NATION_'+lang] = '';
+            var airplane = $('<div class="airplane"></div>');
+            var spanTerminal = $('<span class="airplane-terminal"></span>').html(terminal);
+            var spanNumber = $('<span class="airplane-number"></span>').html(data['FNUMBER'] + " | " + data['AIRLINE_NAME_'+lang] );
+            var spanDestination = $('<span class="airplane-destination"></span>').html( data['NATION_'+lang] + ' : ' );
+            var spanCity = $('<span class="city"></span>').html( data['CITY_NAME_'+lang] );
+            spanDestination.append(spanCity);
+
+            var datetime = data.SDATE+data.STIME.replace(":","");
+            datetime = datetime.replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, "$1.$2.$3 $4:$5");
+
+            var spanDate = $('<span class="date"></span>').html(datetime);
+            var spanStatus = $('<span class="situation-info"></span>').html(statusHan[data.REMARK1]);
+
+            spanStatus.addClass(statusColor[data.REMARK1]);
+            airplane.append(spanTerminal);
+            airplane.append(spanNumber);
+            airplane.append(spanDestination);
+            airplane.append(spanDate);
+            airplane.append(spanStatus);
+
+            $('#fnSearchResult').append(airplane);
+            $('.main-visual-search').addClass('on');
+
+          }
+
+// 						$('.airplane-terminal').html(terminal);
+// 						$('.airplane-number').html(data.FNUMBER);
+// 						$('.airplane-destination').html(data.AIRPORT_NAME1);
+// 						var datetime = data.SDATE+data.STIME.replace(":","");
+
+
+// 				        datetime = datetime.replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, "$1.$2.$3 $4:$5");
+
+// 				        $('.date').html('운항일시 : ' + datetime);
+// 				        $('.situation-info').html(statusHan[result.REMARK1]);
+// 				        $('.situation-info').addClass(statusColor[result.REMARK1]);
+
+          $($(".main-visual-search-desc")[0]).addClass("off");
+          $($(".main-visual-search-desc")[1]).removeClass("off");
+        }
+        else
+        {
+          alert(result.message);
+        }
+      }
+        /*
+         <div class="airplane">
+         <span class="airplane-terminal">제2여객터미널</span>
+         <span class="airplane-number">KE073</span> / <span class="airplane-destination">쿠알라룸프루</span></div>
+         <div class="airplane-info">
+         <span class="date">운항일시 : 2017.06.20 10:30</span>
+         <span class="situation-info type-red">결항</span>
+         <!--<span class="situation-info type-red">지연</span>-->
+         <!--<span class="situation-info type-blue">탑승중</span>-->
+         <!--<span class="situation-info type-cyan">마감예정</span>-->
+        <!-- 위 4가지 경우외에 아래 회색 배경으로 처리 -->
+      <!--<span class="situation-info type-gray">탑승준비</span>-->
+          </div>
+          */
+      });
+    }
+    }
+
+    /*
+     * 날씨 정보  불러오기
+     */
+    function setWeatherImage()
+    {
+      $.ajax({
+        type : "post",
+        url : "/ap/dep/getLocalWeather.do",
+        dataType : "json",
+        data : {CITY_CODE : 'ICN'},
+        error : function(result){
+          // alert(JSON.stringify(result));
+        },
+        success : function(data){
+          $('.weather-image').find("img").attr("src",data.weatherImg);
+          $('.weather-temperature').html(data.MINTEM+"/"+data.MAXTEM + ' <span class="celsius">℃</span>');
+        }
+      });
+    }
+
+    function resultClose()
+    {
+      $('.main-visual-search').removeClass("on");
+// 	$($(".main-visual-search-desc")[0]).removeClass("off");
+// 	$($(".main-visual-search-desc")[1]).removeClass("off");
+    }
+
+    function downloadAOC(SN){
+      location.href = '/cmm/aocDown.do?SN='+SN;
+    }
+    function fncPopupAOC() {
+      for(var i = 1; i < 5; i++) {
+        var cookie = getCookie("chkPopup" + i);
+        if(cookie) {
+          $("#DivPopup" + i).hide();
+        }
+      }
+
+
+    }
+    function fncpopupAOCchk(num) {
+
+      if($("#chkPopup" +num).prop("checked"))
+      {
+        setCookie("chkPopup" + num,true,1);
+
+      }
+      else
+      {
+        deleteCookie("chkPopup" + num);
+      }
+
+    }
+  </script>
+  <style>
+    .off {
+      display:none;
+    }
+  </style>
+</head>
+
+<body id="body" class="fp-viewing-0" style="overflow: visible; height: initial;">
+
+<div class="layer-wrap system on">
+
+  <div class="layer system" id="DivPopup1" style="height: 343px;">
+    <div class="layer-area">
+      <div class="layer-title">인천국제공항 저시정 운영</div>
+
+      <div class="layer-article systemico" style="height: 183px;">
+
+        <p class="layer-system-desc point">
+          (16:15) 저시정 운영 2단계
+          <br>
+          <br>RVR 200 ~ 325 m
+          <br>
+          <br>(16:16) 저시정 운영 3단계
+          <br>
+          <br>RVR 200 ~ 325 m
+          <br>
+          <br>(16:17) 저시정 운영 4단계
+          <br>
+          <br>RVR 200 ~ 325 m
+          <br>
+          <br>(16:18) 저시정 운영 5단계
+          <br>
+          <br>RVR 200 ~ 325 m
+        </p>
+
+        <div class="layer-system-wrap">
+          <dl class="layer-system-list">
+            <dt class="layer-system-list-tit">저시정 운영일시</dt>
+            <dd class="layer-system-list-desc">2018-01-16 17:10</dd>
+          </dl>
+          <dl class="layer-system-list">
+            <dt class="layer-system-list-tit">가시거리</dt>
+            <dd class="layer-system-list-desc">275m</dd>
+          </dl>
+        </div>
+
+        <div class="btn-group">
+          <a href="/ap/ko/arr/arrPasSchList.do" class="layer-inputbox-btn">항공기 도착시간 안내</a>
+          <a href="/ap/ko/dep/depPasSchList.do" class="layer-inputbox-btn">항공기 출발시간 안내</a>
+          <a href="/ap/ko/cus/airlinePhoneNumberList.do" class="layer-inputbox-btn">항공사 연락처</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="layer-guide">
+      <div class="layer-guide-box">
+        <input type="checkbox" name="chkPopup1" id="chkPopup1" onclick="fncpopupAOCchk(1)" class="checkbox" value="yes">
+        <label class="checkbox-label ico" for="chkPopup1">오늘 하루 열지 않기</label>
+      </div>
+
+    </div>
+    <button type="button" class="layer-system-close">닫기</button>
+  </div>
+
+
+  <div class="layer system" id="DivPopup2" style="height: 343px;">
+    <div class="layer-area">
+      <div class="layer-title">대체공항</div>
+
+      <div class="layer-article systemico" style="height: 183px;">
+
+        <p class="layer-system-desc point">
+          123
+        </p>
+
+        <div class="layer-system-wrap">
+          <dl class="layer-system-list">
+            <dt class="layer-system-list-tit">대체항공 발령일시</dt>
+            <dd class="layer-system-list-desc">2018-01-15 20:01</dd>
+          </dl>
+          <dl class="layer-system-list">
+            <dt class="layer-system-list-tit">가시거리</dt>
+            <dd class="layer-system-list-desc">199m</dd>
+          </dl>
+
+        </div>
+
+        <div class="btn-group">
+          <a href="javascript:downloadAOC('377')" class="layer-inputbox-btn">다운로드</a>
+          <a href="/ap/ko/cus/airlinePhoneNumberList.do" class="layer-inputbox-btn">항공사 연락처</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="layer-guide">
+      <div class="layer-guide-box">
+        <input type="checkbox" name="chkPopup2" id="chkPopup2" onclick="fncpopupAOCchk(2)" class="checkbox" value="yes">
+        <label class="checkbox-label ico" for="chkPopup2">오늘 하루 열지 않기</label>
+      </div>
+
+    </div>
+    <button type="button" class="layer-system-close">닫기</button>
+  </div>
+
+
+  <div class="layer system" id="DivPopup3" style="height: 343px;">
+    <div class="layer-area">
+      <div class="layer-title">테스트(국문</div>
+
+      <div class="layer-article systemico" style="height: 183px;">
+        <p class="layer-system-desc point">
+          국문
+          <br>test입니다.
+          <br>테스트입니다.
+        </p>
+      </div>
+    </div>
+    <div class="layer-guide">
+      <div class="layer-guide-box">
+        <input type="checkbox" name="chkPopup3" id="chkPopup3" onclick="fncpopupAOCchk(3)" class="checkbox" value="yes">
+        <label class="checkbox-label ico" for="chkPopup3">오늘 하루 열지 않기</label>
+      </div>
+
+    </div>
+    <button type="button" class="layer-system-close">닫기</button>
+  </div>
+
+
+</div>
+
+<div class="skip-navigation">
+  <ul>
+    <li><a href="#top-contents" class="skip-navigation-link">본문 바로가기</a></li>
+    <li><a href="#gnb" class="skip-navigation-link">주 메뉴 바로가기</a></li>
+  </ul>
+</div>
+
+<!-- header start -->
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var isLogin = "";
+  var loginGubun = "";
+  if("true" == "true"){
+    isLogin = "N";
+  } else {
+    isLogin = "Y";
+  }
+
+  $(document).ready(function(){
+
+    fncLoadUpBanners("#upBannerListWarp","/ap/topBanners.do","",function(data) {
+
+      fncPopupZone();
+    });
+    //fncPopupZone();
+    var arrloginLink = [
+      "/ap/ko/cus/incvntPraiseWrite.do",
+      "/ap/ko/cus/incvntPraiseList.do",
+      "/ap/ko/cus/suggestionWrite.do",
+      "/ap/ko/myp/complaintList.do",
+      "/ap/ko/myp/complaintDetail.do",
+      "/ap/ko/myp/inqueryList.do",
+      "/ap/ko/myp/inqueryWrite.do",
+      "/ap/ko/myp/inqueryDetail.do",
+      "/ap/ko/myp/myInfo.do",
+      "/ap/ko/myp/withdraw.do",
+      "/ap/ko/myp/selectFMembDetail.do"
+    ];
+    $('a').click(function(e){
+      var loginflg = false;
+
+      var orghref = $(this).attr("href");
+      if (orghref != undefined)
+      {
+        if(orghref.indexOf("/ap/") > -1)
+        {
+          e.preventDefault();
+          for(var i = 0; i < arrloginLink.length; i++)
+          {
+            if(arrloginLink[i] == orghref)
+            {
+              if(isLogin == "N")
+              {
+                loginflg = true;
+                break;
+              }
+            }
+          }
+          if(loginflg) {
+            alert("로그인 후 이용 가능합니다.");
+          }
+          else {
+            location.href = orghref;
+          }
+        }
+      }
+
+    });
+  });
+
+  function fncPopupZone() {
+    var cookie = getCookie("popupZoneChk");
+    if(cookie) {
+      $("#popupZoneChk").prop('checked', true) ;
+      $('.top-popup').removeClass('top-open');
+      $('.top-popup-toggle').data('open', false).removeClass('down');
+      $('.header').removeClass('top-open');
+      $('.gnb').removeClass('top-open');
+      $('.total-search').removeClass('top-open');
+      $('.quick').removeClass('top-open');
+
+    }
+  }
+
+  //쿠키 생성
+  function setCookie(name, value, days) {
+    var expires;
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+    }
+    else {
+      expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  // 쿠키 가져오기
+  function getCookie(cName) {
+    cName = cName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cName);
+    var cValue = '';
+    if (start != -1) {
+      start += cName.length;
+      var end = cookieData.indexOf(';', start);
+      if (end == -1) end = cookieData.length;
+      cValue = cookieData.substring(start, end);
+    }
+    return unescape(cValue);
+  }
+
+  function fncpopupchk() {
+    if($("#popupZoneChk").prop("checked"))
+    {
+      setCookie("popupZoneChk",true,1);
+      $('.top-popup').removeClass('top-open');
+      $('.top-popup-toggle').data('open', false).removeClass('down');
+      $('.header').removeClass('top-open');
+      $('.gnb').removeClass('top-open');
+      $('.total-search').removeClass('top-open');
+      $('.quick').removeClass('top-open');
+    }
+    else
+    {
+      deleteCookie("popupZoneChk");
+    }
+
+  }
+
+  /**
+   * 쿠키 삭제
+   * @param cookieName 삭제할 쿠키명
+   */
+  function deleteCookie( cookieName )
+  {
+    var expireDate = new Date();
+
+    //어제 날짜를 쿠키 소멸 날짜로 설정한다.
+    expireDate.setDate( expireDate.getDate() - 1 );
+    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString() + "; path=/";
+  }
+
+  /** ajax load */
+  function fncLoadUpBanners(divId, url, data, func){
+    $.ajaxSettings.traditional = true;
+    $(divId).load(url,data,function(returnData,status){
+
+      if(status=='success'){
+        if(func){
+          if(returnData=='cancle'){
+            //TODO 에러페이지 이동
+          }else{
+            func();
+          }
+        }
+      }else{
+        //alert('서버에 오류가 발생했습니다.');
+      }
+    });
+  }
+
+  function changeLang( lang )
+  {
+    if(lang != "")
+    {
+      var link = "";
+      var paths = window.location.href.split("/");
+      for (var i=0; i < paths.length; i++)
+      {
+        if ( paths[i] == 'ko' || paths[i] == 'en' || paths[i] == 'ch' || paths[i] == 'ja')
+          if ( paths[i] == lang ) return false;
+          else link += "/" + lang;
+        else	link += (i == 0 ? paths[i]  : "/" + paths[i]);
+      }
+      var orglang = "ko";
+      if (orglang == "ko")
+      {
+        if(isLogin == "Y" && lang != "ko")
+        {
+
+          if(confirm("다국어페이지로 이동시 로그아웃 처리됩니다. 이동하시겠습니까?"))
+          {
+            $.getJSON("/ap/ko/cmm/logout.do","",function(returnData,status){
+              if(status=='success'){
+                if(returnData=='cancle'){
+                  //TODO 에러페이지 이동
+                }else{
+
+                  isLogin = 'N';
+                  //sendRedirectPOST1('/ap/'+lang+'/index.do','');
+                  location.href = '/ap/'+lang+'/index.do';
+                }
+              }else{
+                //alert('서버에 오류가 발생했습니다.');
+              }
+            });
+          }
+        }
+        else
+        {
+          location.href = '/ap/'+lang+'/index.do';
+          //sendRedirectPOST1('/ap/'+lang+'/index.do','');
+        }
+      }
+      else
+      {
+        if(isLogin == "Y" && lang == "ko")
+        {
+
+          if(confirm("When you move to a Korean page you will be logged out. Do you want to move?"))
+          {
+            $.getJSON("/ap/ko/cmm/logout.do","",function(returnData,status){
+              if(status=='success'){
+                if(returnData=='cancle'){
+                  //TODO 에러페이지 이동
+                }else{
+
+                  isLogin = 'N';
+                  // sendRedirectPOST1('/ap/'+lang+'/index.do','');
+                  location.href = '/ap/'+lang+'/index.do';
+                }
+              }else{
+                //alert('서버에 오류가 발생했습니다.');
+              }
+            });
+          }
+        }
+        else
+        {
+          //sendRedirectPOST1('/ap/'+lang+'/index.do','');
+          location.href = '/ap/'+lang+'/index.do';
+        }
+      }
+
+    }
+  }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/static/app/js/ap/common_app.js"></script>
+<script src="/static/app/js/ap/jsbn.js"></script>
+<script src="/static/app/js/ap/prng4.js"></script>
+<script src="/static/app/js/ap/rng.js"></script>
+<script src="/static/app/js/ap/rsa.js"></script>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+    if(""== null || ""== ''){
+      $("#fncLogin").show();
+      $("#fncLogout").hide();
+      $('#fncGoJoinMemb').show();
+      $('#fncGoMyPage').hide();
+
+    } else {
+      $("#fncLogin").hide();
+      $("#fncLogout").show();
+      $('#fncGoJoinMemb').hide();
+      $('#fncGoMyPage').show();
+    }
+
+    /*로그인 클릭(로그인팝업)*/
+    $("#fncLogin").bind("click",function(){
+      //LayerPopup.openPopup($('.address-layer'));
+      $("#address-layerWrap").addClass("on");
+      $("#address-layer").addClass("on");
+      $('#LOGIN_USER_ID').val("");
+      $('#LOGIN_USER_PWD').val("");
+    });
+
+    /* 로그인버튼 실행 */
+    $("#fncLoginClick").bind("click",function(){
+      if(!fncformValidate_login()){
+        return;
+      }
+      fncLoginProc();
+    });
+
+    /* 로그인 팝업 회원가입 버튼 클릭 */
+    $("#fncGoJoinMembPOP").bind("click",function(){
+      LayerPopup.closePopup($('.address-layer'));
+      //location.href="/ap/cmm/memberRegGuide.do";
+      var lang = "ko";
+
+      if (lang == "ko"){
+        sendRedirectPOST1('/ap/ko/cmm/memberRegGuide.do','');
+      }
+      else
+      {
+        sendRedirectPOST1('/ap/ko/cmm/memberRegTermsEN.do','');
+      }
+      //sendRedirectPOST1('/ap/ko/cmm/memberRegGuide.do','');
+    });
+
+    /* header 회원가입 버튼 클릭 */
+    $("#fncGoJoinMemb").bind("click",function(){
+      //location.href="/ap/cmm/memberRegGuide.do";
+      var lang = "ko";
+
+      if (lang == "ko"){
+        sendRedirectPOST1('/ap/ko/cmm/memberRegGuide.do','');
+      }
+      else
+      {
+        sendRedirectPOST1('/ap/ko/cmm/memberRegTermsEN.do','');
+      }
+
+    });
+
+    /* 마이페이지 버튼 클릭 */
+    $("#fncGoMyPage").bind("click",function(){
+      sendRedirectPOST1('/ap/ko/myp/inqueryList.do','');
+    });
+    /* 고객센터 버튼 클릭 */
+    $("#fncGoCus").bind("click",function(){
+      //location.href="/ap/cus/faqList.do";
+      sendRedirectPOST1('/ap/ko/cus/faqList.do','');
+    });
+
+    /* 로그인 팝업 ID 입력란 Enter키 적용 */
+    $("#LOGIN_USER_ID").bind("keypress",function(e){
+      if (e.which == 13) {/* 13 == enter key@ascii */
+        if(!fncformValidate_login()){
+          return;
+        }
+        fncLoginProc();
+      }
+
+    });
+
+    /* 로그인 팝업 패스워드 입력란 Enter키 적용 */
+    $("#LOGIN_USER_PWD").bind("keypress",function(e){
+      if (e.which == 13) {/* 13 == enter key@ascii */
+        if(!fncformValidate_login()){
+          return;
+        }
+        fncLoginProc();
+      }
+
+    });
+    /* 로그아웃 버튼 클릭 */
+    $("#fncLogout").bind("click",function(){
+
+      if(confirm("로그아웃 하시겠습니까?")){
+
+        $.ajaxSettings.traditional = true;
+
+        $.getJSON("/ap/ko/cmm/logout.do","",function(returnData,status){
+          if(status=='success'){
+            if(returnData=='cancle'){
+              //TODO 에러페이지 이동
+            }else{
+
+              isLogin = 'N';
+              sendRedirectPOST1('/ap/ko/index.do','');
+            }
+          }else{
+            //alert('서버에 오류가 발생했습니다.');
+          }
+        });
+      }
+
+    });
+
+
+    $("#fncFindId").bind("click",function(){
+      LayerPopup.closePopup($('.address-layer'));
+      //location.href="/ap/cmm/findId.do";
+
+      var lang = "ko";
+      if(lang == "ko")
+      {
+        sendRedirectPOST1('/ap/ko/cmm/findId.do','');
+      }
+      else
+      {
+        sendRedirectPOST1('/ap/ko/cmm/findIdPwEN.do','');
+      }
+
+    });
+
+    $("#fncFindPw").bind("click",function(){
+      LayerPopup.closePopup($('.address-layer'));
+      var lang = "ko";
+      if(lang == "ko")
+      {
+        sendRedirectPOST1('/ap/ko/cmm/findPw.do','');
+      }
+      else
+      {
+        sendRedirectPOST1('/ap/ko/cmm/findIdPwEN.do','');
+      }
+
+      //location.href="/ap/cmm/findPw.do";
+
+    });
+
+  });
+
+  /* ajax post 적용 */
+  function fncPostLogin(url, data, func){
+    try{
+      $.ajaxSettings.traditional = true;
+
+      $.post(url,data,function(returnData,status){
+        if(status=='success'){
+          func(returnData);
+        }else{
+          //alert('서버에 오류가 발생했습니다.');
+        }
+      });
+    }catch(e){
+      alert(e);
+    }
+  }
+
+  /******************************************************
+   * validation
+   **************************************************** */
+  var fncformValidate_login = function() {
+    var isValid = true;
+
+    if($("#LOGIN_USER_ID").val() == "" || $("#LOGIN_USER_ID").val() == null)
+    {
+      alert("아이디를 입력해주세요.");
+      $("#LOGIN_USER_ID").focus();
+      isValid = !isValid;
+    }
+    else if($("#LOGIN_USER_PWD").val() == "" || $("#LOGIN_USER_PWD").val() == null)
+    {
+      alert("비밀번호를 입력해주세요.");
+      $("#LOGIN_USER_PWD").focus();
+      isValid = !isValid;
+    }
+
+    return isValid;
+
+  };
+
+  /* 로그인 실행 전 Rsa 키 가져오기 */
+  function fncLoginProc()
+  {
+
+    fncPostLogin('/cmm/callrsa.do',"",function(data){
+      if(data.msgCd == 'Y'){
+        $('#loginrsaPublicKeyModulus').val(data.publicKeyModulus);
+        $('#loginrsaPublicKeyExponent').val(data.publicKeyExponent);
+        fncLoginExe();
+      }else{
+        alert("다시 시도해 주시길 바립니다.");
+      }
+    });
+  }
+
+  /* 로그인 실행 */
+  function fncLoginExe(RECONECT)
+  {
+    var rsaPublicKeyModulus = $('#loginrsaPublicKeyModulus').val();
+    var rsaPublicKeyExponent = $('#loginrsaPublicKeyExponent').val();
+    var LOGIN_USER_ID = $('#LOGIN_USER_ID').val();
+    var LOGIN_USER_PWD = $('#LOGIN_USER_PWD').val();
+
+    var rsa = new RSAKey();
+    rsa.setPublic(rsaPublicKeyModulus, rsaPublicKeyExponent);
+    var securedLOGIN_USER_ID = rsa.encrypt(LOGIN_USER_ID);
+    var securedLOGIN_USER_PWD = rsa.encrypt(LOGIN_USER_PWD);
+
+
+    $.ajax({
+      //url: 'https://dev-www.airport.kr/pa/cmm/sslLogin.do',
+      url: '/ap/ko/cmm/sslLogin.do',
+      data:  { "USER_ID":securedLOGIN_USER_ID
+        , "USER_PWD":securedLOGIN_USER_PWD
+        , "RECONECT":RECONECT},
+      type: 'GET',
+      crossDomain: true,
+      dataType: 'jsonp',
+      success: function(data) {
+
+        chkVal = data.msgCd;
+
+        if(chkVal == 'Y'){
+          //LayerPopup.closePopup($('.address-layer'));
+          //location.href = '/ap/cmm/memberRegComplete.do';
+          //sendRedirectPOST1('/ap/index.do','');
+
+          if(loginGubun=="JOIN"){
+            $("#address-layerWrap").removeClass("on");
+
+            sendRedirectPOST1('/ap/ko/index.do','');
+            //fncGoUrl('/pa/index.do','');
+            //location.href = '/pa/index.do';
+          } else {
+            LayerPopup.closePopup($('.address-layer'));
+            fuchideLogin(chkVal);
+          }
+          isLogin = 'Y';
+        } else if(chkVal == 'N'){
+          //hideLoginPopup(chkVal);
+        } else if(chkVal == 'ERR01'){
+          alert("회원정보가 일치하지 않습니다.");
+          $("#LOGIN_USER_ID").focus();
+        } else if(chkVal == 'ERR02'){
+          //hideLoginPopup(chkVal);
+          alert("회원정보가 일치하지 않습니다.");
+
+          if(data.PWDERRCO == '5'){
+            $('#spot_login').hide();
+            $('#spot_findid').hide();
+            $('#spot_findpw').show("normal");
+            $('.popup_login').center('2');
+            return;
+          } else {
+            $("#LOGIN_USER_PWD").val("");
+            $("#LOGIN_USER_PWD").focus();
+          }
+
+        } else if(chkVal == 'ERR03'){
+          alert("로그인하신 회원은 정지된 회원입니다.");
+          $("#LOGIN_USER_ID").focus();
+        } else if(chkVal == 'ERR04'){
+          alert("5회이상 로그인 실패하였습니다. 비밀번호 찾기로 패스워드를 재발급 받으셔야 로그인이 가능합니다.");
+          $('#spot_login').hide();
+          $('#spot_findid').hide();
+          $('#spot_findpw').show("normal");
+          $('.popup_login').center('2');
+          return;
+        } else if(chkVal == 'NEED_INTEGRATION'){
+          fncGoUrl('/cmm/integration.do','leftmenu_PA_C_9220');
+          return;
+        } else if(chkVal == 'NEED_PASS'){
+
+          LayerPopup.closePopup($('.address-layer'));
+          sendRedirectPOST1('/ap/ko/cmm/passChangePage.do','');
+          return;
+        }else if(chkVal == 'NOT_SSL'){
+          alert("잘못된 접근입니다.");
+          return;
+        } else if(chkVal == 'already Login') {
+          if(confirm("기존 연결을 종료하시겠습니까?")) {
+            fncLoginExe("Y");
+          }
+          else {
+            location.href = "/";
+          }
+        }
+      },
+      error: function(e) {
+        console.log(e);
+        alert('시스템오류');
+      }
+    });
+
+  }
+
+  function fuchideLogin(chkVal)
+  {
+
+    if(chkVal== "Y"){
+      $("#fncLogin").hide();
+      $("#fncLogout").show();
+      $('#fncGoJoinMemb').hide();
+      $('#fncGoMyPage').show();
+    } else {
+      $("#fncLogin").show();
+      $("#fncLogout").hide();
+      $('#fncGoJoinMemb').show();
+      $('#fncGoMyPage').hide();
+    }
+  }
+
+
+
+</script>
+<input type="hidden" id="loginrsaPublicKeyModulus" name="loginrsaPublicKeyModulus" value="">
+<input type="hidden" id="loginrsaPublicKeyExponent" name="loginrsaPublicKeyExponent" value="">
+
+
+<div class="layer-wrap" id="address-layerWrap">
+  <!--레이어팝업-->
+  <div class="layer login-area on" id="address-layer">
+    <div class="layer-area">
+      <div class="layer-article address">
+        <h4 class="layer-title login">로그인</h4>
+        <a href="#" class="layer-close login">닫기</a>
+        <p class="layer-sub">인천국제공항 홈페이지에 오신 것을 환영합니다.</p>
+      </div>
+
+      <div class="multi-col double mt40 log-in">
+        <div class="inner-col w60 login1">
+          <div>
+            <label for="login-id" class="layer-input">
+              <input type="text" id="LOGIN_USER_ID" class="user-text layer-input-text login" placeholder="아이디를 입력해주세요">
+            </label>
+          </div>
+          <div class="mt10">
+            <label for="login-pw" class="layer-input mt10">
+              <input type="password" id="LOGIN_USER_PWD" class="user-text layer-input-text login" placeholder="비밀번호를 입력해주세요">
+            </label>
+          </div>
+        </div>
+        <div class="inner-col w40 login2">
+          <button type="button" class="layer-btn-login" id="fncLoginClick">로그인</button>
+
+          <div class="find-info">
+            <ul class="find-info-list">
+              <li class="find-info-item"><a href="#" class="find-info-link id" id="fncFindId">아이디찾기</a></li>
+              <li class="find-info-item"><a href="#" class="find-info-link pw" id="fncFindPw">비밀번호찾기</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="multi-col double mt20 sign-in">
+
+        <div class="inner-col w80">
+          <p class="sign-in-title">아직 회원가입을 하지 않으셨나요?</p>
+          <p class="sign-in-txt">회원가입 후 인천국제공항을 좀 더 편리하게 이용하실 수 있습니다.</p>
+        </div>
+
+        <div class="inner-col w20">
+          <button class="sign-in-btn" id="fncGoJoinMembPOP">회원가입</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<aside class="top-popup" id="upBannerListWarp">
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    var Index, HeaderGnb, TableLike, MainVisual, TopPopup, BottomBanner, BoxModel;
+
+    $(function(){
+      Index = function(){
+
+        this.$mainVisualItem = $('.main-visual-item');
+        this.easingType = 'easeInOutExpo';
+
+      };
+
+
+      /**
+       * TopPopup Class
+       */
+
+      TopPopup = new function(){
+
+        Index.apply(this);
+
+        // private
+        var $visualItem = $('.top-popup-item');
+        var easingType = this.easingType;
+
+        var currentVisualIndex = 0;
+        var nextVisualIndex = 0;
+        var totalPage = $visualItem.length;
+
+        var timeID, timeID2;
+        var imageMovingTime = 1000;
+        var imageIntervalTime = 10000;
+
+        // private
+        var _initPaging = function(){
+
+          $('.top-popup-control-paging-number').find('.current').text(currentVisualIndex+1);
+          $('.top-popup-control-paging-number').find('.total').text(totalPage);
+
+        };
+
+        var _initPosition = function(){
+
+          $visualItem.hide().eq(0).show();
+
+        };
+
+        var _init = function(){
+
+          _initPosition();
+
+          _initPaging();
+
+        };
+
+        // public
+        this.fade = function(){
+
+          if( nextVisualIndex >= $visualItem.length ){
+
+            nextVisualIndex = 0;
+
+          } else if( nextVisualIndex <= -1 ){
+
+            nextVisualIndex = $visualItem.length-1;
+
+          }
+
+          $visualItem.eq(currentVisualIndex).stop().fadeOut(imageMovingTime, easingType);
+          $visualItem.eq(nextVisualIndex).stop().fadeIn(imageMovingTime, easingType);
+
+          $('.top-popup-control-paging-number').find('.current').text(nextVisualIndex+1);
+
+          currentVisualIndex = nextVisualIndex;
+
+        };
+
+        this.rollAuto = function(){
+
+          var _fade = this.fade;
+
+          timeID = setInterval(function(){
+
+            nextVisualIndex = currentVisualIndex + 1;
+            _fade();
+
+          }, imageIntervalTime);
+
+        };
+
+        this.rollLeft = function(){
+
+          this.rollStop();
+
+          nextVisualIndex = currentVisualIndex + 1;
+          this.fade();
+
+        };
+
+        this.rollRight = function(){
+
+          this.rollStop();
+
+          nextVisualIndex = currentVisualIndex - 1;
+          this.fade();
+
+        };
+
+        this.rollStop = function(){
+
+          // stop rolling
+          clearInterval(timeID);
+
+        };
+
+        this.checkAnimate = function(){
+
+          return $visualItem.is(':animated');
+
+        };
+
+        // running in constructor when loading
+        _init();
+        this.rollAuto();
+
+      };
+
+      // 상단 팝업 이빈트
+      (function(){
+
+        $('.top-popup-control-arrow .arrow.prev').on('click', function(){
+
+          console.log(24);
+
+          if( !TopPopup.checkAnimate() ){
+
+            TopPopup.rollRight();
+
+          }
+
+        });
+
+        $('.top-popup-control-arrow .arrow.next').on('click', function(){
+
+          console.log(24);
+
+          if( !TopPopup.checkAnimate() ){
+
+            TopPopup.rollLeft();
+
+          }
+
+        });
+
+        $('.top-popup-control-paging .play-button.play').on('click', function(){
+
+          TopPopup.rollAuto();
+
+        });
+
+        $('.top-popup-control-paging .play-button.pause').on('click', function(){
+
+          TopPopup.rollStop();
+
+        });
+
+        $('.top-popup-toggle').on('click', function(){
+
+          if( $("#upBannerListWarp").hasClass('top-open') ){
+
+            $('.top-popup').removeClass('top-open');
+            $('.top-popup-toggle').data('open', false).removeClass('down');
+            $('.header').removeClass('top-open');
+            $('.gnb').removeClass('top-open');
+            $('.total-search').removeClass('top-open');
+            $('.quick').removeClass('top-open');
+          } else {
+            $('.top-popup').addClass('top-open');
+            $('.top-popup-toggle').data('open', true).addClass('down');
+            $('.header').addClass('top-open');
+            $('.gnb').addClass('top-open');
+            $('.total-search').addClass('top-open');
+            $('.quick').addClass('top-open');
+
+          }
+
+          /* if( $(this).data('open') ){
+           $('.top-popup').removeClass('top-open');
+           $('.top-popup-toggle').data('open', false).removeClass('down');
+           $('.header').removeClass('top-open');
+           $('.gnb').removeClass('top-open');
+           $('.total-search').removeClass('top-open');
+           $('.quick').removeClass('top-open');
+           } else {
+           $('.top-popup').addClass('top-open');
+           $('.top-popup-toggle').data('open', true).addClass('down');
+           $('.header').addClass('top-open');
+           $('.gnb').addClass('top-open');
+           $('.total-search').addClass('top-open');
+           $('.quick').addClass('top-open');
+
+           } */
+
+        });
+
+      })();
+    });
+  </script>
+
+  <div class="top-popup-inner">
+    <div class="top-popup-wrap">
+
+
+      <div class="top-popup-item" style="opacity: 1;">
+
+        <div class="top-popup-article"><a href="/ap/ko/svc/getFacilityMain.do" target="_self">
+          <img src="/ap/bannerImgDown.do?SN=2309" alt="2309"></a></div>
+
+
+
+
+
+        <a href="/ap/ko/svc/attractionMain.do" target="_blank" title="페이지 바로가기" class="top-popup-article"><img src="/ap/bannerImgDown.do?SN=2308" alt="2308"></a>
+      </div>
+
+
+
+
+    </div>
+
+    <div class="top-popup-control">
+
+      <div class="top-popup-control-arrow">
+        <button type="button" class="arrow prev">이전</button>
+        <button type="button" class="arrow next">다음</button>
+      </div>
+
+      <div class="top-popup-control-paging">
+        <div class="top-popup-control-paging-number">
+          <span class="current">1</span>
+          <span>/</span>
+          <span class="total">1</span>
+        </div>
+        <button type="button" class="play-button play">재생</button>
+        <button type="button" class="play-button pause">일시정지</button>
+      </div>
+      <!--오늘하루-->
+      <div class="top-popup-control-today">
+        <input type="checkbox" id="popupZoneChk" class="today-checkbox" onclick="fncpopupchk();">
+        <label for="popupZoneChk" class="today-label">오늘 하루 열지 않기</label>
+      </div>
+      <!--//오늘하루-->
+    </div>
+
+  </div>
+
+  <button type="button" class="top-popup-toggle">POPUP <span>닫기</span></button>
+
+
+
+</aside>
+
+
+
+<header class="header"><ul class="header-site">
+  <li class="header-site-item">
+    <a href="/ap/ko/index.do" class="header-site-link on" title="인천국제공항 사이트로 이동합니다.">
+      인천국제공항
+    </a>
+  </li>
+  <li class="header-site-item">
+    <a href="/co/ko/index.do" class="header-site-link" title="인천국제공항공사 사이트로 이동합니다.">인천국제공항공사</a>
+  </li>
+</ul>
+
+
+
+  <div class="header-util">
+
+
+
+
+
+    <ul class="header-util-cs">
+      <li class="header-util-cs-item">
+        <a href="#" id="fncLogin" class="header-util-cs-link" style="">로그인</a>
+        <a href="#" id="fncLogout" class="header-util-cs-link" style="display: none;">로그아웃</a>
+      </li>
+      <li class="header-util-cs-item">
+        <a href="#" id="fncGoJoinMemb" class="header-util-cs-link" style="">회원가입</a>
+        <a href="#" id="fncGoMyPage" class="header-util-cs-link" style="display: none;">마이페이지</a>
+      </li>
+      <li class="header-util-cs-item">
+        <a href="/ap/ko/cus/faqList.do" id="fncGoCus" class="header-util-cs-link">고객센터 </a>
+      </li>
+      <li class="header-util-cs-item">
+        <a href="/ap_cnt/ko/cmm/sitemap/sitemap.do" class="header-util-cs-link">사이트맵</a>
+      </li>
+    </ul><div class="select-link header-util-lang">
+    <button type="button" name="button" title="클릭하면 관련사이트 목록이 나타납니다." class="select-link-default">
+      <span>Language</span><span class="ico arrow_up">목록보기</span>
+    </button>
+
+    <ul class="select-list down">
+      <li class="select-list-item">
+        <a href="#" onclick="javascript:changeLang('ko'); return false;" class="select-list-link" title="한국어 사이트로 이동합니다.">한국어</a>
+      </li>
+      <li class="select-list-item">
+        <a href="#" onclick="javascript:changeLang('en'); return false;" class="select-list-link" title="English 사이트로 이동합니다.">English</a>
+      </li>
+      <li class="select-list-item">
+        <a href="#" onclick="javascript:changeLang('ch'); return false;" class="select-list-link" title="中文 사이트로 이동합니다.">中文</a>
+      </li>
+      <li class="select-list-item">
+        <a href="#" onclick="javascript:changeLang('ja'); return false;" class="select-list-link" title="日本語 사이트로 이동합니다.">日本語</a>
+      </li>
+    </ul>
+  </div></div>
+  <h1 class="header-logo">
+    <a href="/ap/ko/index.do" class="header-logo-link">
+      <!--<img src="/static/ap/images/logo.png" alt="인천공항 로고" />-->
+      인천공항국제 공항 로고
+    </a>
+  </h1>
+
+</header>
+
+
+
+
+<!--// header end -->
+
+
+
+<!-- nav start -->
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/static/app/js/ap/makePCookie.js"></script>
+<script type="text/javascript">
+  function sendTotalSearch( action, paramsStr,method )
+  {
+    var f = document.createElement("form");
+    f.method = method;
+    f.action = action;
+    var paramArr = paramsStr.split("|");
+    for ( var i = 0; i < paramArr.length; i++ ) {
+      var paramName = paramArr[i].split("=")[0];
+      var paramVal = paramArr[i].split("=")[1];
+      var inputHidden = document.createElement("input");
+      inputHidden.type = "hidden";
+      inputHidden.name = paramName;
+      inputHidden.value = paramVal;
+      f.appendChild(inputHidden);
+    }
+
+    document.body.appendChild(f);
+    f.submit();
+  }
+
+  function openCyberAirport(num){
+
+    if(num == 1)
+    {
+      var action = "/ap/ko/qck/onlResHtlBk.do";
+
+
+      window.open(action,"_blank");
+    }
+    else if(num == 2)
+    {
+      var action ="/ap/ko/qck/travelInfoList.do";
+
+
+      window.open(action,"_blank");
+    }
+
+
+  }
+
+  function openAirportMap(id) {
+    var url = "/ap/ko/map/mapInfo.do";
+    if(id != undefined) url = "/ap/ko/map/mapInfo.do?LCLAS="+id;
+    window.open(url,"_blank");
+
+  }
+  function doSearch(){
+
+
+    if($( window ).width() < 1024)
+    {
+      location.href="/cmm/ko/totalSearch.do";
+    }
+    else
+    {
+      if($("#btnTotalSearch").data().search)
+      {
+        if($("#query").val() != "")
+        {
+          var action 		= "/cmm/ko/totalSearch.do";
+          var paramsStr   = "query="+$("#query").val();
+
+          sendTotalSearch(action,paramsStr,"get");
+        }
+        else
+        {
+          alert('검색어를 입력해 주십시요.');
+        }
+
+      }
+    }
+
+
+  }
+
+  function fncSearchMain(){
+    if (event.keyCode== 13) {/* 13 == enter key@ascii */
+      doSearch();
+    }
+  }
+
+
+  function fncQuickMenuLP(index)
+  {
+    if(index == 1){
+      $('#FLIGHT_ID').val('');
+      $("#btnShowAirport").hide();
+      $("#btnHowToMove").hide();
+      $('.layer-inputbox-desc').html("항공편명을 입력하시면 탑승하실 터미널을 알려드립니다.");
+
+      $("#FindMyTermiWrap").addClass("on");
+      $("#FindMyTermi").addClass("on");
+    }
+    else if(index == 2){
+      $("#airportOnMapWrap").addClass("on");
+      $("#airportOnMap").addClass("on");
+    }
+    else if(index == 3)
+    {
+      $("#terminalMoveWrap").addClass("on");
+      $("#terminalMove").addClass("on");
+    }
+  }
+  function scrollTopQick()
+  {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 500);
+  }
+</script>
+<nav id="gnb" class="gnb">
+
+  <ul class="gnb-depth1">
+    <li class="gnb-depth1-item">
+      <a href="/ap/ko/dep/depPasSchList.do" class="gnb-depth1-link">출발</a>
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/dep/depPasSchList.do" class="gnb-depth2-link">출발시간</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/dep/process/deppro.do" class="gnb-depth2-link">출국절차</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/dep/depche/depche.do" class="gnb-depth2-link">출국체크사항</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/dep/apAirlinesList.do" class="gnb-depth2-link">취항정보</a>
+        </li>
+      </ul>
+
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="/ap/ko/arr/arrPasSchList.do" class="gnb-depth1-link">도착</a>
+
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/arr/arrPasSchList.do" class="gnb-depth2-link">도착시간</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/arr/process/immpro.do" class="gnb-depth2-link">입국절차</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/arr/welcom/welcom.do" class="gnb-depth2-link">환영안내</a>
+        </li>
+      </ul>
+
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="/ap_cnt/ko/trn/intro/intro.do" class="gnb-depth1-link">환승</a>
+
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/trn/intro/intro.do" class="gnb-depth2-link">환승안내</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/trn/trnServiceMain.do" class="gnb-depth2-link">환승서비스</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/trn/tour/trtour/trtour.do" class="gnb-depth2-link">환승투어</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/trn/trnVLogList.do" class="gnb-depth2-link">환승즐기기</a>
+        </li>
+      </ul>
+
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="/ap_cnt/ko/tpt/direction/direction.do" class="gnb-depth1-link">교통·주차</a>
+
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/tpt/direction/direction.do" class="gnb-depth2-link">오시는길</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/tpt/parinf/parinf.do" class="gnb-depth2-link">주차안내</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/tpt/pblctpt/pblctpt.do" class="gnb-depth2-link">대중교통</a>
+        </li>
+      </ul>
+
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="/ap/ko/shp/getDutyInfoMain.do" class="gnb-depth1-link">쇼핑·식당</a>
+
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/shp/getDutyInfoMain.do" class="gnb-depth2-link">면세점쇼핑</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/shp/getShopInfoMain.do" class="gnb-depth2-link">일반쇼핑</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/shp/getFoodInfoMain.do" class="gnb-depth2-link">식당</a>
+        </li>
+      </ul>
+
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="/ap/ko/svc/getFacilityMain.do" class="gnb-depth1-link">공항서비스</a>
+
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/svc/getFacilityMain.do" class="gnb-depth2-link">공항시설</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap/ko/svc/attractionMain.do" class="gnb-depth2-link">공항즐기기</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="/ap_cnt/ko/svc/cusserv/cusserv.do" class="gnb-depth2-link">맞춤형 서비스</a>
+        </li>
+      </ul>
+
+    </li>
+  </ul>
+
+  <div class="header-search">
+    <div class="header-search-item gnb-map-wrap">
+      <button type="button" class="header-search-btn ico gnb-map" onclick="javascript:openAirportMap();">공항지도</button>
+    </div>
+    <div class="header-search-item gnb-search">
+
+      <input type="text" id="query" name="query" class="header-search-input" placeholder="검색어 입력" maxlength="20" onkeydown="fncSearchMain()">
+      <label for="header-search"><button type="button" id="btnTotalSearch" class="header-search-btn ico gnb-search" onclick="javascript:doSearch();">검색</button></label>
+      <button type="button" class="header-search-close">닫기</button>
+    </div>
+
+  </div>
+  <div class="scroll-amount" style="width: 0%;"></div></nav>
+
+<nav class="quick">
+  <ul class="quick-menu-list">
+    <li class="quick-menu-list-item" onclick="fncQuickMenuLP(1);"><a class="quick-menu-list-link my-terminal">내 터미널<br>확인하기</a></li>
+    <li class="quick-menu-list-item" onclick="fncQuickMenuLP(2);"><a class="quick-menu-list-link view-airport">인천공항<br>한 눈에 보기</a></li>
+    <li class="quick-menu-list-item" onclick="fncQuickMenuLP(3);"><a class="quick-menu-list-link move-terminal">터미널 간<br>이동</a></li>
+    <li class="quick-menu-list-item"><a href="javascript:openCyberAirport(1);" class="quick-menu-list-link online-reserve">온라인<br>예약</a></li>
+    <li class="quick-menu-list-item"><a href="javascript:openCyberAirport(2);" class="quick-menu-list-link travel-info">여행정보</a></li>
+    <li class="quick-menu-list-item top"><a onclick="scrollTopQick();" class="quick-menu-list-top">TOP</a></li>
+  </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+<!-- [LP] - modal -->
+<script type="text/javascript">
+  function fncQuickMenuLP(index)
+  {
+    if(index == 1){
+      $('#FLIGHT_ID').val('');
+      $("#btnShowAirport").hide();
+      $("#btnHowToMove").hide();
+      $('.layer-inputbox-desc').html('항공편명을 입력하시면 탑승하실 터미널을 알려드립니다.');
+
+      $("#FindMyTermiWrap").addClass("on");
+      $("#FindMyTermi").addClass("on");
+    }
+    else if(index == 2){
+      $("#airportOnMapWrap").addClass("on");
+      $("#airportOnMap").addClass("on");
+    }
+    else if(index == 3)
+    {
+      $("#terminalMoveWrap").addClass("on");
+      $("#terminalMove").addClass("on");
+    }
+  }
+  function fncFindTermiSearch()
+  {
+    findTerform.submit();
+  }
+
+  function findTerminalByFlightId(flightId)
+  {
+    var data = {};
+    data={"FLIGHT_ID" : flightId};
+
+    $.ajax({
+      url : "/ap/ko/dep/findTerminalByFleightNum.do",
+      data : data,
+      method : 'post',
+      dataType : 'json',
+      success : 	function(response){
+        result = response.result;
+        if (result.code == "OK")
+        {
+          var data = response.data;
+          var color = "#608ac7";
+          if ( data.TERMINAL == 'T1' )
+          {
+            terminal = '제1여객터미널';
+            color = "#608ac7";
+          }
+          if ( data.TERMINAL == 'T2' )
+          {
+            terminal = '제2여객터미널';
+            color = "#faa61a";
+          }
+
+          $('.layer-inputbox-desc').html("고객님이 탑승하실 터미널은  <strong style='color:"+ color +"'>"+ terminal + "</strong> 입니다.");
+          $("#btnShowAirport").show();
+          $("#btnHowToMove").show();
+        }
+        else
+        {
+          $('.layer-inputbox-desc').html(result.message);
+          $("#btnShowAirport").hide();
+          $("#btnHowToMove").hide();
+        }
+      }
+    });
+  }
+  $(document).ready(
+      function()
+      {
+        $("#btnShowAirport").hide();
+        $("#btnHowToMove").hide();
+
+        $(document.findTerform.FLIGHT_ID).bind(
+            "keyup",
+            function(e) {
+              $(this).val(
+                  $(this).val().replace(
+                      /[^a-zA-Z0-9]/g, "")
+                      .toUpperCase());
+              if ( e.keyCode == 13)
+              {
+                findTerminalByFlightId(this.form.FLIGHT_ID.value);
+              }
+              else
+              {
+                if ( this.value.length <= 3)
+                {
+                  $('.layer-inputbox-desc').html('항공편명을 입력하시면 탑승하실 터미널을 알려드립니다.');
+                }
+              }
+            })
+
+        $('#btnFindTermClose').on('click', function(){
+          $('#FLIGHT_ID').val('');
+          $("#btnShowAirport").hide();
+          $("#btnHowToMove").hide();
+          $('.layer-inputbox-desc').html('항공편명을 입력하시면 탑승하실 터미널을 알려드립니다.');
+          LayerPopup1.closePopup( $('#FindMyTermi') );
+        });
+      }
+  );
+
+</script>
+<div class="layer-wrap" id="FindMyTermiWrap">
+  <div class="layer find-my-terminal" id="FindMyTermi">
+    <div class="layer-area">
+      <div class="layer-article">
+        <div class="layer-title">CHECK YOUR TERMINAL</div>
+        <div class="layer-inputbox">
+          <form id="findTerform" name="findTerform" action="/ap/ko/dep/depPasSchList.do" method="post" onsubmit="return false">
+            <input id="FLIGHT_ID" name="FLIGHT_ID" class="layer-search" type="search" title="편명 입력" placeholder="항공편명을 입력하세요." maxlength="8">
+            <button id="btnFindTerminalByFlightId" type="button" class="layer-check" onclick="findTerminalByFlightId(this.form.FLIGHT_ID.value);">확인</button>
+          </form>
+        </div>
+        <p class="layer-inputbox-desc">
+          항공편명을 입력하시면 탑승하실 터미널을 알려드립니다.
+        </p>
+        <p>
+          &nbsp;
+          <a href="javascript:fncQuickMenuLP(2);" id="btnShowAirport" class="layer-inputbox-btn" style="display: none;">인천공항 한 눈에 보기</a>
+          <a href="javascript:fncQuickMenuLP(3);" id="btnHowToMove" class="layer-inputbox-btn" style="display: none;">터미널 간 이동</a>
+        </p>
+
+      </div>
+    </div>
+
+    <button type="button" id="btnFindTermClose" class="layer-close">닫기</button>
+  </div>
+</div>
+<!-- [LP] - modal e -->
+
+
+
+
+
+
+
+
+
+<!--레이어팝업-->
+<div class="layer-wrap" id="airportOnMapWrap">
+  <div class="layer size max-height" id="airportOnMap">
+    <div class="layer-area">
+      <div class="layer-article">
+        <h4 class="layer-title title2">인천공항 한 눈에 보기</h4>
+      </div>
+      <div class="tab-area">
+        <h5 class="tab-area-heading on" style="width: 50%; left: 0%;">제1 여객터미널</h5>
+
+        <div class="tab-area-content on">
+          <div class="layer-article">
+            <div class="article">
+              <img class="mt40" src="/static/ap/images/map_incheon_airport_glance01_ko.png" alt="인천공항 한 눈에 보기 제1여객터미널 이미지">
+              <div class="digr-incheon-airport-glance01 mt40">
+                <table class="ir-technique" summary="인천공항 한 눈에 보기 제1여객터미널에 대한 안내 표입니다.">
+                  <caption>인천공항 한 눈에 보기 제1여객터미널 표입니다.</caption>
+                  <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">제1교통센터</th>
+                    <th scope="col" colspan="3">제1여객터미널</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td scope="col"></td>
+                    <td scope="col"></td>
+                    <td scope="col">일반구역</td>
+                    <td scope="col">면세구역</td>
+                    <td scope="col">탑승동</td>
+                  </tr>
+                  <tr>
+                    <td scope="col">4F</td>
+                    <td scope="col"></td>
+                    <td scope="col">전문식당가</td>
+                    <td scope="col">라운지, 환승호텔, 환승편의시설, 면세품인도장, 푸드코트, 편의점</td>
+                    <td scope="col">항공사라운지</td>
+                  </tr>
+                  <tr>
+                    <td scope="col">3F</td>
+                    <td scope="col"></td>
+                    <td scope="col">환전소, 택스리펀드, 로밍, 보험, 택배, 편의점<p>출발층(출국장)1-50 Gate</p></td>
+                    <td scope="col">면세점, 환전소, 택스리펀드, 로밍</td>
+                    <td scope="col">탑승101-132 Gate</td>
+                  </tr>
+                  <tr>
+                    <td scope="col">2F</td>
+                    <td scope="col"></td>
+                    <td scope="col">항공사사무실</td>
+                    <td scope="col"></td>
+                    <td scope="col"></td>
+                  </tr>
+                  <tr>
+                    <td scope="col">1F</td>
+                    <td scope="col"></td>
+                    <td scope="col">택시, 인천시내버스, 환전소, 로밍, 포켓와이파이, 도착층 입국장</td>
+                    <td scope="col"></td>
+                    <td scope="col"></td>
+                  </tr>
+                  <tr>
+                    <td scope="col">B1</td>
+                    <td scope="col">버스터미널, 철도대합실, 단기주차장, 렌터카, 푸드코트, 편의점, 캡슐호텔</td>
+                    <td scope="col">전문식당가, 환전소, 약국, 헬스앤뷰티</td>
+                    <td scope="col"></td>
+                    <td scope="col"></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="tab-area-heading" style="width: 50%; left: 50%;">제2 여객터미널</h5>
+        <div class="tab-area-content">
+          <div class="layer-article">
+            <img class="mt40" src="/static/ap/images/map_incheon_airport_glance02_ko.png" alt="인천공항 한 눈에 보기 제2여객터미널 이미지">
+            <div class="digr-incheon-airport-glance02 mt40">
+              <table class="ir-technique" summary="인천공항 한 눈에 보기 제2여객터미널에 대한 안내 표입니다.">
+                <caption>인천공항 한 눈에 보기 제2여객터미널 표입니다.</caption>
+                <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">제2교통센터</th>
+                  <th scope="col" colspan="2">제2여객터미널</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td scope="col"></td>
+                  <td scope="col"></td>
+                  <td scope="col">일반구역</td>
+                  <td scope="col">면세구역</td>
+                </tr>
+                <tr>
+                  <td scope="col">5F</td>
+                  <td scope="col"></td>
+                  <td scope="col">홍보관</td>
+                  <td scope="col"></td>
+                </tr>
+                <tr>
+                  <td scope="col">4F</td>
+                  <td scope="col"></td>
+                  <td scope="col">전문식당가, 항공사 사무실</td>
+                  <td scope="col">라운지, 환승호텔, 환승편의시설, 면세품인도장, 푸드코트, 편의점</td>
+                </tr>
+                <tr>
+                  <td scope="col">3F</td>
+                  <td scope="col"></td>
+                  <td scope="col">환전소, 택스리펀드, 로밍, 보험, 택배, 편의점, 서점, 약국<p>출발층(출국장)230-270 Gate</p></td>
+                  <td scope="col">면세점, 환전소, 택스리펀드, 로밍, 보험, 서점, 약국</td>
+                </tr>
+                <tr>
+                  <td scope="col">2F</td>
+                  <td scope="col"></td>
+                  <td scope="col">정부종합행정센터, 상주기관 사무실</td>
+                  <td scope="col"></td>
+                  <td scope="col"></td>
+                </tr>
+                <tr>
+                  <td scope="col">1F</td>
+                  <td scope="col"></td>
+                  <td scope="col">택시, 인천시내버스, 환전소, 로밍, 포켓와이파이, 택배, 편의점, 꽃집, 도착층 입국장</td>
+                  <td scope="col">환전소</td>
+                </tr>
+                <tr>
+                  <td scope="col">B1</td>
+                  <td scope="col">버스터미널, 철도대합실, 단기주차장, 렌터카, 푸드코트, 편의점, 캡슐호텔</td>
+                  <td scope="col">전문식당가, 환전소, 약국, 헬스앤뷰티</td>
+                  <td scope="col"></td>
+                  <td scope="col"></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="layer-close">닫기</a>
+  </div>
+</div>
+<!--//레이어팝업-->
+
+
+
+
+
+
+
+
+
+<!--레이어팝업-->
+<div class="layer-wrap" id="terminalMoveWrap">
+  <div class="layer size" id="terminalMove">
+    <div class="layer-area">
+      <div class="layer-article">
+        <h4 class="layer-title">
+          터미널 간 이동 방법
+        </h4>
+      </div>
+      <div class="layer-article">
+        <p>
+          무료셔틀버스를 이용하시어 신속히 해당 터미널로 이동할 수 있습니다.
+        </p>
+
+        <p>
+          ※ 공항철도를 이용하셔도 터미널간 이동이 가능합니다.(소요시간 6분, 금액 900원)
+        </p>
+
+        <div class="digr-terminal-interconnection mt30">
+          <dl>
+            <dt>제1 여객터미널</dt>
+            <dd>터미널 순환버스 승차</dd>
+            <dd>제1터미널 3층 중앙 8번 출구 <span>배차간격 5분</span></dd>
+          </dl>
+          <table class="ir-technique" summary="제 1여객터미널 순환버스에 대한 표">
+            <caption>제 1여객터미널 순환버스에 대한 표</caption>
+            <colgroup>
+              <col style="width:20%">
+              <col style="width:80%">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="row">
+                소요시간
+              </th>
+              <td colspan="2">
+                약 15분
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                배차간격
+              </th>
+              <td>
+                20분
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                이동거리
+              </th>
+              <td colspan="2">
+                15Km
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <dl>
+            <dt>제2 여객터미널</dt>
+            <dd>터미널 순환버스 승차</dd>
+            <dd>제2터미널 3층 중앙 4,5번 출구 사이<span>배차간격 5분</span></dd>
+          </dl>
+          <table class="ir-technique" summary="제 2여객터미널 순환버스에 대한 표">
+            <caption>제 2여객터미널 순환버스에 대한 표</caption>
+            <colgroup>
+              <col style="width:20%">
+              <col style="width:80%">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="row">
+                소요시간
+              </th>
+              <td colspan="2">
+                약18분
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                배차간격
+              </th>
+              <td>
+                20분
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                이동거리
+              </th>
+              <td colspan="2">
+                18Km
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <a class="layer-close">닫기</a>
+  </div>
+</div>
+<!--//레이어팝업-->
+
+<!--// nav end -->
+
+
+
+<div id="fullpage" class="fullpage-wrapper" style="height: 100%; position: relative;">
+  <section class="section top-big-popup fp-section fp-table active fp-completely" style="height: 686px;"><div class="fp-tableCell" style="height:686px;">
+
+    <div class="top-big-popup-text">
+
+      인천국제공항
+      제2여객터미널 그랜드오픈!
+
+      새로운 터미널 오픈으로 인한,
+      공항 이용 시 체크 사항!
+      이용객분들은 아래의 운항편 검색으로
+      터미널 확인을 꼭! 해주세요.
+
+    </div>
+
+    <button type="button" class="top-big-popup-close">close</button>
+
+  </div></section>
+  <section class="section main-visual fp-section fp-table" style="height: 686px;"><div class="fp-tableCell" style="height:686px;">
+    <div class="main-visual-wrap">
+
+
+
+      <div class="main-visual-item" style="background-image: url(&quot;/wasfile/fileroot_new/banner/20180119130426736_0.jpg&quot;); display: none;">
+
+        <div class="visual-text-box">
+
+          <div class="visual-text  " style="font-size: 0px; opacity: 0; top: -20px;"></div>
+
+          <div class="visual-text  " style="font-size: 0px; opacity: 0; top: -20px;"></div>
+
+
+          <div class="visual-text  " style="font-size: 0px; opacity: 0; top: -20px;"></div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="main-visual-item" style="background-image: url(&quot;/wasfile/fileroot_new/banner/20180119130450542_0.jpg&quot;); display: none;">
+
+        <div class="visual-text-box">
+
+          <div class="visual-text  " style="font-size: 70px; color: rgb(255, 255, 255); opacity: 0; top: -20px;">Incheon Airport</div>
+
+          <div class="visual-text  " style="font-size: 34px; color: rgb(255, 255, 255); opacity: 0; top: -20px;">시간, 공간, 사람을 하나로 이어주는</div>
+
+
+          <div class="visual-text  " style="font-size: 34px; color: rgb(255, 255, 255); opacity: 0; top: -20px;">인천국제공항</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="main-visual-item" style="background-image: url(&quot;/wasfile/fileroot_new/banner/20180119130504380_0.jpg&quot;); display: none;">
+
+        <div class="visual-text-box">
+
+          <div class="visual-text text-right " style="font-size: 70px; color: rgb(0, 0, 0); opacity: 0; top: -20px;">Incheon Airport</div>
+
+          <div class="visual-text text-right " style="font-size: 34px; color: rgb(0, 0, 0); opacity: 0.000405224; top: -19.9919px;">사람과 사람을 잇는 인천국제공항</div>
+
+
+          <div class="visual-text  " style="font-size: 0px; opacity: 0.000405224; top: -19.9919px;"></div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="main-visual-item" style="background-image: url(&quot;/wasfile/fileroot_new/banner/20180119130516290_0.jpg&quot;);">
+
+        <div class="visual-text-box">
+
+          <div class="visual-text text-right " style="font-size: 70px; color: rgb(66, 81, 158); opacity: 1; top: 0px;">Incheon Airport</div>
+
+          <div class="visual-text text-right " style="font-size: 34px; color: rgb(34, 34, 34); opacity: 1; top: 0px;">모두가 행복해지는 인천국제공항</div>
+
+
+          <div class="visual-text  " style="font-size: 34px; color: rgb(34, 34, 34); opacity: 0.994912; top: -0.101769px;"></div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="main-visual-item" style="background-image: url(&quot;/wasfile/fileroot_new/banner/20180119130526654_0.jpg&quot;); display: none;">
+
+        <div class="visual-text-box">
+
+          <div class="visual-text  " style="font-size: 70px; color: rgb(255, 255, 255); opacity: 0; top: -20px;">Incheon Airport</div>
+
+          <div class="visual-text  " style="font-size: 34px; color: rgb(255, 255, 255); opacity: 0; top: -20px;">여행의 설렘을 인천국제공항과 함께</div>
+
+
+          <div class="visual-text  " style="font-size: 0px; opacity: 0; top: -20px;"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="main-visual-control">
+      <div class="main-visual-control-arrow">
+        <button type="button" class="arrow prev">이전</button>
+        <button type="button" class="arrow next">다음</button>
+      </div>
+      <div class="main-visual-control-paging"><ul class="paging-visual"><li class="paging-item"><div class="paging-link" style="height: 0.3%;">1</div></li><li class="paging-item"><div class="paging-link" style="height: 0.3%;">2</div></li><li class="paging-item"><div class="paging-link" style="height: 0.2%;">3</div></li><li class="paging-item"><div class="paging-link on" style="height: 75.8%;">4</div></li><li class="paging-item"><div class="paging-link" style="height: 1%;">5</div></li></ul>
+        <button type="button" class="play-button pause">일시정지</button>
+      </div>
+      <div class="main-visual-control-bar"></div>
+    </div>
+
+    <div class="main-visual-search">
+
+      <div class="main-visual-search-inner">
+        <div class="main-visual-search-title">항공편 검색</div>
+
+        <div class="main-visual-search-flight">
+
+          <dl class="main-visual-search-flight-area">
+            <dt class="area-tab departure on"><label for="search-departure">출발</label></dt>
+            <dd class="area-form on">
+
+              <input type="text" id="search-departure" class="area-form-input" placeholder="항공편명/목적지를 입력하세요.">
+              <button type="button" class="area-form-button">검색</button>
+            </dd>
+          </dl>
+
+          <dl class="main-visual-search-flight-area">
+            <dt class="area-tab arrival"><label for="search-arrival">도착</label></dt>
+            <dd class="area-form">
+
+              <input type="text" id="search-arrival" class="area-form-input" placeholder="항공편명/출발지를 입력하세요.">
+              <button type="button" class="area-form-button">검색</button>
+            </dd>
+          </dl>
+          <div class="main-visual-search-desc" style="margin-top:20px">
+            ※ 전체 운항시간표는 검색버튼을 클릭하면 보실 수 있습니다.
+          </div>
+
+        </div>
+
+        <div id="fnSearchResult" class="main-visual-search-desc off">
+          <button type="button" class="airplane-info-more">더보기</button>
+          <button type="button" class="airplane-info-close">결과 닫기</button>
+        </div>
+      </div>
+
+      <div class="main-visual-search-weather">
+        <div class="weather-image"><img id="localWeatherImg" src="/static/ap/images/icon_weather_12_sunny.png" alt="맑음"></div>
+        <div class="weather-temperature" id="localWeatherTemp">0/5 <span class="celsius">℃</span></div>
+      </div>
+
+    </div>
+
+  </div></section>
+
+  <section class="section section2 bg-fixed fp-section fp-table" style="background-image: url(&quot;/static/ap/images/bg_main_section_01.jpg&quot;); height: 686px;"><div class="fp-tableCell" style="height:686px;">
+    <div class="main-content">
+
+      <h3 class="main-content-heading sub-script">공항 이용 가이드</h3>
+
+      <div class="main-block">
+
+        <div class="main-block-item">
+
+          <div class="heading-group prepare">
+            <h4 class="heading">여행 전 확인 할 것</h4>
+            <p class="heading-desc">공항 오기 전 확인할 정보를 알려드립니다.</p>
+          </div>
+
+          <ul class="link-list">
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">항공편</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/dep/depPasSchList.do" class="link-list-sub-link">여객출발</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/arr/arrPasSchList.do" class="link-list-sub-link">여객도착</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">여행준비</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/svc/getFacilityMain.do?CTGRY_ID=11&amp;UPPER_ID=111" target="_self" class="link-list-sub-link">환전</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/svc/getFacilityMain.do?CTGRY_ID=11&amp;UPPER_ID=112" target="_self" class="link-list-sub-link">보험</a>
+                </li>
+              </ul>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/svc/getFacilityMain.do?CTGRY_ID=11&amp;UPPER_ID=113" target="_self" class="link-list-sub-link">로밍</a>
+                </li>
+              </ul>
+
+            </li>
+            <li class="link-list-item">
+              <div class="link-list-item-title">교통수단</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap_cnt/ko/tpt/direction/direction.do" class="link-list-sub-link">오시는길</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap_cnt/ko/tpt/pblctpt/pblctpt.do" class="link-list-sub-link">대중교통</a>
+                </li>
+              </ul>
+              <ul class="link-list-sub">
+
+                <li class="link-list-sub-item">
+                  <a href="/ap_cnt/ko/tpt/parinf/parinf.do" class="link-list-sub-link">주차안내</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="main-block-item">
+
+          <div class="heading-group airport">
+            <h4 class="heading">공항에서 할 것</h4>
+            <p class="heading-desc">인천공항 최적의 서비스를 안내해드립니다. </p>
+          </div>
+
+          <ul class="link-list">
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">빠른 수속 팁</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/dep/process/selfcheck/selfcheck.do" target="_self" class="link-list-sub-link">셀프체크인/셀프백드랍</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/dep/process/autimm/autimm.do" target="_self" class="link-list-sub-link">자동출국심사</a>
+                </li>
+
+              </ul>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/dep/process/govcen/govcen.do" target="_self" class="link-list-sub-link">정부종합행정센터</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">공항즐기기</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/shp/getDutyInfoMain.do" class="link-list-sub-link">면세점</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/shp/getShopInfoMain.do" class="link-list-sub-link">쇼핑</a>
+                </li>
+              </ul>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/shp/getFoodInfoMain.do" class="link-list-sub-link">식당</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/svc/getFacilityMain.do?CTGRY_ID=14&amp;UPPER_ID=142" class="link-list-sub-link">라운지</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">맞춤형 서비스</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/svc/cusserv/servacc/servacc.do" target="_self" class="link-list-sub-link">임산부/유아/어린이 동반</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/svc/cusserv/servtra/servtra.do" target="_self" class="link-list-sub-link">교통약자동반</a>
+                </li>
+              </ul>
+
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/svc/cusserv/servpet/servpet.do" target="_self" class="link-list-sub-link">애완동물동반</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="main-block-item">
+
+          <div class="heading-group transfer">
+            <h4 class="heading">환승할 때 할 것</h4>
+            <p class="heading-desc">환승객들을 위한 특별한 혜택을 안내해드립니다.</p>
+          </div>
+
+          <ul class="link-list">
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">환승안내</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/trn/intro/t1trnt1t1/t1trnt1t1.do" class="link-list-sub-link">제1 여객터미널에서 환승하기 </a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/trn/intro/boatrnboat1/boatrnboat1.do" class="link-list-sub-link">탑승동에서 환승하기</a>
+                </li>
+              </ul>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/trn/intro/t2trnt2t1/t2trnt2t1.do" class="link-list-sub-link">제2여객터미널에서 환승하기</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/trn/intro/inntrn/inntrn.do" class="link-list-sub-link">내항기 환승</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">환승편의시설</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/svc/getFacilityMain.do?CTGRY_ID=14&amp;UPPER_ID=141" class="link-list-sub-link">호텔</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/svc/getFacilityMain.do?CTGRY_ID=14&amp;UPPER_ID=142" class="link-list-sub-link">라운지</a>
+                </li>
+              </ul>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/svc/getFacilityMain.do?CTGRY_ID=14&amp;UPPER_ID=146" class="link-list-sub-link">휴식(케어마사지)</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">환승투어</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="/ap_lp/ko/trn/tour/tougui/tougui.do" class="link-list-sub-link">투어안내</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="/ap/ko/trn/trnTourMain.do" class="link-list-sub-link">무료환승투어</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div></section>
+
+  <section class="section section3 bg-fixed fp-section fp-table" style="background-image: url(&quot;/static/ap/images/bg_main_section_02.jpg&quot;); height: 686px;"><div class="fp-tableCell" style="height:686px;">
+    <div class="main-content">
+
+      <h3 class="main-content-heading white">인천국제공항 종합안내</h3>
+
+      <div class="main-guide">
+
+        <div class="main-guide-item">
+          <div class="heading-group t1">
+            <h4 class="heading">제1여객터미널</h4>
+          </div>
+
+          <ul class="link-list">
+            <li class="link-list-item shopping t1">
+              <a href="/ap/ko/shp/getDutyInfoMain.do?TERMINAL_ID=T1">면세점쇼핑</a>
+            </li>
+            <li class="link-list-item shopping t1">
+              <a href="/ap/ko/shp/getShopInfoMain.do?TERMINAL_ID=T1">일반쇼핑</a>
+            </li>
+            <li class="link-list-item restaurant t1">
+              <a href="/ap/ko/shp/getFoodInfoMain.do?TERMINAL_ID=T1">식당</a>
+            </li>
+            <li class="link-list-item facilities t1">
+              <a href="/ap/ko/svc/getFacilityMain.do?TERMINAL_ID=T1&amp;CTGRY_ID=16">편의시설</a>
+            </li>
+            <li class="link-list-item information t1">
+              <a href="/ap_cnt/ko/arr/welcom/welcom.do?Type=T1">안내데스크</a>
+            </li>
+            <li class="link-list-item convenience t1">
+              <a href="/ap/ko/svc/getFacilityMain.do?TERMINAL_ID=T1&amp;NTCD24_AT=Y">24시간 매장</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="main-guide-item">
+          <div class="heading-group t2">
+            <h4 class="heading">제2여객터미널</h4>
+          </div>
+
+          <ul class="link-list">
+            <li class="link-list-item shopping t2">
+              <a href="/ap/ko/shp/getDutyInfoMain.do?TERMINAL_ID=T2">면세점쇼핑</a>
+            </li>
+            <li class="link-list-item shopping t2">
+              <a href="/ap/ko/shp/getShopInfoMain.do?TERMINAL_ID=T2">일반쇼핑</a>
+            </li>
+            <li class="link-list-item restaurant t2">
+              <a href="/ap/ko/shp/getFoodInfoMain.do?TERMINAL_ID=T2">식당</a>
+            </li>
+            <li class="link-list-item facilities t2">
+              <a href="/ap/ko/svc/getFacilityMain.do?TERMINAL_ID=T2&amp;CTGRY_ID=16">편의시설</a>
+            </li>
+            <li class="link-list-item information t2">
+              <a href="/ap_cnt/ko/arr/welcom/welcom.do?Type=T2">안내데스크</a>
+            </li>
+            <li class="link-list-item convenience t2">
+              <a href="/ap/ko/svc/getFacilityMain.do?TERMINAL_ID=T2&amp;NTCD24_AT=Y">24시간 매장</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div></section>
+
+  <div class="section fp-auto-height fp-section fp-table" style="height: 686px;"><div class="fp-tableCell" style="height:686px;">
+
+    <section class="main-banner-wrap footer-graft" id="downBannersWrap">
+      <div class="main-banner">
+        <ul class="main-banner-list" style="width: 2000px; left: 0px;">
+
+
+
+
+
+
+
+
+          <li class="main-banner-item" style="width:240px;">
+
+
+            <a href="http://www.airport.kr/co/ko/index.jsp" class="main-banner-link" target="_blank">
+              <img src="/ap/bannerImgDown.do?SN=2373" alt="2373">
+
+            </a>
+
+          </li><li class="main-banner-item" style="width:240px;">
+
+
+          <a href="/ap_cnt/ko/trn/intro/intro.do" class="main-banner-link" target="_blank">
+            <img src="/ap/bannerImgDown.do?SN=2376" alt="2376">
+
+          </a>
+
+        </li><li class="main-banner-item" style="width:240px;">
+
+          <img src="/ap/bannerImgDown.do?SN=2375" alt="2375">
+
+
+
+        </li><li class="main-banner-item" style="width:240px;">
+
+          <img src="/ap/bannerImgDown.do?SN=2374" alt="2374">
+
+
+
+        </li>
+
+
+        </ul>
+
+      </div>
+
+      <div class="main-banner-control">
+        <div class="main-banner-control-arrow">
+          <button type="button" class="arrow prev">이전</button>
+          <button type="button" class="arrow next">다음</button>
+        </div>
+        <div class="main-banner-control-paging">
+          <button type="button" class="play-button play ing">재생</button>
+          <button type="button" class="play-button pause">일시정지</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- footer start-->
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+      <div class="footer-inside inner-section">
+        <div class="fnb">
+          <ul class="fnb-list">
+            <li class="fnb-list-item"><a href="/ap/ko/index.do" class="fnb-list-link">홈</a></li>
+            <li class="fnb-list-item"><a href="/ap_cnt/ko/ftr/condic/condic.do" class="fnb-list-link">이용약관</a></li>
+            <li class="fnb-list-item"><a href="/ap_cnt/ko/ftr/perinf/perinf.do" class="fnb-list-link">개인정보처리방침</a></li>
+            <li class="fnb-list-item"><a href="/co_cnt/ko/bussup/safety/autsys/autsys.do" class="fnb-list-link">안전신고</a></li>
+            <li class="fnb-list-item"><a href="/ap_cnt/ko/ftr/coppro/coppro.do" class="fnb-list-link">저작권보호정책</a></li>
+            <li class="fnb-list-item"><a href="/ap_cnt/ko/ftr/maicoll/maicoll.do" class="fnb-list-link">이메일 주소 무단수집 거부</a></li>
+            <li class="fnb-list-item"><a href="/ap_cnt/ko/ftr/bliper/bliper.do" class="fnb-list-link">시각장애인이용안내</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-align right">
+          <div class="sns">
+            <ul class="sns-list">
+              <li class="sns-list-item"><a href="http://instagram.com/incheon_airport" target="_blank" class="sns-list-link ico ig">인스타그램</a></li>
+              <li class="sns-list-item"><a href="https://www.facebook.com/Incheonairport" target="_blank" class="sns-list-link ico fb">페이스북</a></li>
+              <li class="sns-list-item"><a href="https://twitter.com/incheonairport1" target="_blank" class="sns-list-link ico tt">트위터</a></li>
+              <li class="sns-list-item"><a href="https://www.youtube.com/IncheonAirport1" target="_blank" class="sns-list-link ico yb">유투브</a></li>
+            </ul>
+          </div>
+
+          <div class="incheon-select">
+            <div class="select-link relsite">
+              <button type="button" name="button" title="클릭하면 관련사이트 목록이 나타납니다." class="select-link-default">
+                <span class="select-link-tit">관련사이트</span>
+                <span class="ico arrow_down">목록보기</span>
+              </button>
+
+              <ul class="select-list up">
+                <li class="select-list-item"><a href="http://ebid.airport.kr/" target="_blank" class="select-list-link">전자입찰시스템</a></li>
+                <li class="select-list-item"><a href="http://ebpp.airport.kr/" target="_blank" class="select-list-link">인터넷청구시스템</a></li>
+                <li class="select-list-item"><a href="http://iiac.guideline.co.kr/" target="_blank" class="select-list-link">자금입찰시스템</a></li>
+                <li class="select-list-item"><a href="http://obstacle.airport.kr/" target="_blank" class="select-list-link">장애물관리안내</a></li>
+                <li class="select-list-item"><a href="http://aircis.kr/" target="_blank" class="select-list-link">항공물류정보시스템</a></li>
+                <li class="select-list-item"><a href="http://academy.airport.kr/kasa/index.jsp" target="_blank" class="select-list-link">항공보안교육원</a></li>
+                <li class="select-list-item"><a href="http://academy.airport.kr/academy" target="_blank" class="select-list-link">Aviation Academy</a></li>
+                <li class="select-list-item"><a href="http://airinfo.airport.kr/" target="_blank" class="select-list-link">운항자료서비스</a></li>
+                <li class="select-list-item"><a href="http://business.airport.kr/" target="_blank" class="select-list-link">적재대관리 홈페이지</a></li>
+                <li class="select-list-item"><a href="http://cip.airport.kr/" target="_blank" class="select-list-link">협업포털서비스</a></li>
+                <li class="select-list-item"><a href="http://academy.airport.kr/" target="_blank" class="select-list-link">인천공항 인재개발원</a></li>
+
+                <li class="select-list-item"><a href="http://phonebook.airport.kr/" target="_blank" class="select-list-link">인천공항 전자전화번호부</a></li>
+                <li class="select-list-item"><a href="http://www.iae.co.kr/" target="_blank" class="select-list-link">인천공항에너지(주)</a></li>
+                <li class="select-list-item"><a href="http://www.airport.kr/iia3rd/index.jsp" target="_blank" class="select-list-link">3단계건설사업</a></li>
+                <li class="select-list-item"><a href="https://tsp.airport.kr:844/" target="_blank" class="select-list-link">입주자서비스포탈</a></li>
+
+                <li class="select-list-item"><a href="http://www.molit.go.kr/" target="_blank" class="select-list-link">국토교통부 홈페이지</a></li>
+                <li class="select-list-item"><a href="http://ia.icpolice.go.kr/main.asp" target="_blank" class="select-list-link">인천공항 경찰대</a></li>
+                <li class="select-list-item"><a href="http://www.0404.go.kr/" target="_blank" class="select-list-link">외교부 안전여행</a></li>
+                <li class="select-list-item"><a href="http://www.bbbkorea.org/" target="_blank" class="select-list-link">언어가 안통할때</a></li>
+                <li class="select-list-item"><a href="http://www.juso.go.kr" target="_blank" class="select-list-link">도로명주소안내</a></li>
+                <li class="select-list-item"><a href="http://travelinfo.cdc.go.kr/" target="_blank" class="select-list-link">해외여행질병정보센터</a></li>
+                <li class="select-list-item"><a href="http://wiseuser.go.kr/jsp/commList.do?bcode=520&amp;hcode=500&amp;vcode=2019" target="_blank" class="select-list-link">해외로밍 캠페인</a></li>
+                <li class="select-list-item"><a href="http://www.airport.co.kr/" target="_blank" class="select-list-link">한국공항공사</a></li>
+                <li class="select-list-item"><a href="http://www.safe182.go.kr/index.do" target="_blank" class="select-list-link">안전Dream</a></li>
+                <li class="select-list-item"><a href="http://www.customs.go.kr/kcshome/site/index.do?layoutSiteId=airport" target="_blank" class="select-list-link">인천공항세관</a></li>
+                <li class="select-list-item"><a href="http://www.immigration.go.kr" target="_blank" class="select-list-link">출입국외국인정책본부</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="incheon-etc">
+
+            <a href="https://play.google.com/store/apps/details?id=com.ubivelox.icairport" target="_blank" class="google-play-mark"><img src="/static/ap/images/logo_google_play_badge.png" alt="안드로이드 앱 다운로드 로고"></a>
+            <!--<ul class="footer-shortcut">-->
+            <!--<li class="footer-shortcut-item"><a href="#" target="_blank" class="footer-shortcut-link"><span class="link-tit">&middot; Mobile Home </span>바로가기</a></li>-->
+            <!--<li class="footer-shortcut-item"><a href="#" target="_blank" class="footer-shortcut-link"><span class="link-tit">&middot; Android APP </span>다운받기</a></li>-->
+            <!--</ul>-->
+          </div>
+        </div>
+
+        <div class="footer-align left">
+          <p class="footer-call"><a href="/ap/ko/cus/faqList.do">인천국제공항 고객센터</a> <span class="footer-call-num">1577-2600</span></p>
+
+          <ul class="footer-contact">
+            <li class="footer-contact-item">인천국제공항 터미널 : 22382 인천시 중구 공항로 272</li>
+            <li class="footer-contact-item">인천국제공항 제2여객터미널 : 22382 인천시 중구 운서동 2868번지</li>
+          </ul>
+
+          <ul class="footer-contact">
+            <li class="footer-contact-item">인천국제공항공사 : 22382 인천시 중구 공항로 424번길 47</li>
+          </ul>
+
+          <address class="footer-copyright">Copyright Incheon International Airport Corporation. All rights reserved.</address>
+        </div>
+      </div>
+    </footer>
+    <div class="loading opacity none" style="display:none;">
+      <div class="loading-inner opacity">로딩중</div>
+    </div>
+
+    <!--// footer end-->
+
+  </div></div>
+
+</div>
+
+
+
+</body></html>

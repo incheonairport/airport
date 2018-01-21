@@ -653,7 +653,9 @@
         width: 40%;
         padding-left:27px;
       }
-
+      &.pl10{
+        padding-left:15px;
+      }
       &.pd0{
         padding:0;
       }
@@ -1713,4 +1715,90 @@ button, a {
   }
 }
 
+/*k-pop*/
+.kpop-step{
+  @extend %clearfix;
+  margin-top: 35px;
+  &-list{
+      padding-left: 30px;
+   &-item{
+     float: left;
+     display: inline-block;
+     position: relative;
+     text-indent: -999em;
+     font-size:0;
+     &:before {
+       content: '';
+       display: block;
+       width: 116px;
+       height: 116px;
+       margin: 0 auto;
+       background: url(/static/ap/images/spr_ico_step_kpop.png) no-repeat;
+     }
+     &.step1:before{
+       background-position: -10px -12px;
+     }
+     &.step2:before{
+       background-position: -191px -12px
+     }
+     &.step3:before{
+       background-position: -371px -12px
+     }
+     &.step4:before{
+       background-position: -552px -12px;
+     }
+     &.step5:before{
+       background-position: -731px -12px;
+     }
+     &.step6:before{
+       background-position: -912px -12px;
+     }
+     &+.kpop-step-list-item{
+       margin-left: 60px;
+     }
+     &:after{
+       content: '';
+       display: block;
+       position: absolute;
+       width: 10px;
+       height: 19px;
+       top: 0;
+       right: auto;
+       left: 140px;
+       bottom: 0;
+       margin: auto;
+       background: url(/static/ap/images/spr_ico_step_kpop.png)  -154px -61px no-repeat;
+     }
+     &:last-child{
+       &:after{
+         background: none;
+       }
+     }
+   }
+ }
+}
 
+.kpop-transport-list{
+  margin-top: 17px;
+  &-item{
+    display: inline-block;
+    position: relative;
+    padding-left:45px;
+    line-height: 1.5;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 35px;
+      height: 36px;
+      top: 4px;
+      left: 0;
+      background: url(/static/ap/images/spr_ico_kpop_transport.png) no-repeat;
+    }
+    &.metro:before{
+      background-position: -13px -10px
+    }
+    &.bus:before{
+      background-position: -13px -10px
+    }
+  }
+}
