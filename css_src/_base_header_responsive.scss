@@ -701,4 +701,11 @@
 
   }
 
+  // scroll 막기
+  .scrollfix{
+    height:100%!important;
+    overflow:hidden!important;
+  }
+
 }
+
