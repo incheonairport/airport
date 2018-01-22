@@ -263,6 +263,29 @@
 }
 
 .search-flight-detail{
+
+  &.arr-detail{
+    .terminal{
+      width:200px;
+      .search-flight-detail-select-article{
+        width:65%;
+        &:last-child{
+          width:35%;
+          border-right:0;
+        }
+      }
+    }
+    .search-flight-detail-select-article{
+      width:166px;
+    }
+    .search-flight-detail-select-airplane{
+      width:150px;
+    }
+    .search-flight-detail-select-article.double .search-flight-detail-select-article {
+      width: 75px;
+    }
+  }
+
   margin-bottom:20px;
   display: inline-block;
   &-option{
@@ -312,6 +335,7 @@
         border-right: 1px solid #666;
         box-sizing: border-box;
       }
+
     }
   }
   &-select{

@@ -147,6 +147,43 @@
   //filter search
   .search-flight-detail{
     min-width:100%;
+    &.arr-detail{
+      .terminal{
+        border-bottom:0;
+        border:1px solid #666;
+        width:100%;
+        .search-flight-detail-select-article{
+          width:50%;
+
+          &.atc1{
+            border-right:1px solid #d9d9d9;
+
+          }
+
+          &:last-child{
+            width:50%;
+
+
+          }
+        }
+      }
+      .search-flight-detail-select-article{
+        width:50%;
+      }
+      .search-flight-detail-select-airplane{
+        width:calc(100% - 40px);
+      }
+      .search-flight-detail-select-article.double{
+
+      }
+      .search-flight-detail-select-article.double .search-flight-detail-select-article {
+        width:50%;
+
+        &:last-child{
+          border-right:0;
+        }
+      }
+    }
     &-option{
       float: none;
       margin-right:0;
