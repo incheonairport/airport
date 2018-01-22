@@ -84,6 +84,12 @@
   }
   &.airport-services{ // 공항서비스
     background:url(/static/ap/images/bg_layer_header_05.jpg) no-repeat left bottom;
+    &.sub1{
+      background:url(/static/ap/images/bg_layer_header_fc_01.jpg) no-repeat left bottom;
+    }
+    &.sub2{
+      background:url(/static/ap/images/bg_layer_header_fc_02.jpg) no-repeat left bottom;
+    }
     &.sub3{
       background:url(/static/ap/images/bg_layer_header_fc_04.jpg) no-repeat left bottom;
     }
