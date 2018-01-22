@@ -17,9 +17,12 @@ $(function(){
       if(type=='on'){
         $('.header').animate({left:0},350);
         $('.mobile-header').addClass('active');
+        $('body').addClass('scrollfix');
+
       } else {
         $('.header').animate({left: -100 + '%'},350);
         $('.mobile-header').removeClass('active');
+        $('body').removeClass('scrollfix');
       }
 
     };
