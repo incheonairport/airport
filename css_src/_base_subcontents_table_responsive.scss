@@ -217,9 +217,16 @@
             }
 
           }
+
           &-no-result{
             border:0;
             border-top:1px solid #d9d9d9;
+          }
+          .situation-info {
+            width: 66px;
+            height: 26px;
+            line-height: 27px;
+            font-size: 0.75rem;
           }
         }
 
@@ -706,6 +713,12 @@
             border:0;
             border-top:1px solid #d9d9d9;
           }
+          .situation-info {
+            width: 66px;
+            height: 26px;
+            line-height: 27px;
+            font-size: 0.75rem;
+          }
         }
 
         // detail
@@ -1177,13 +1190,18 @@
             }
 
           }
+
           .situation-info {
-            color: #222;
+            width: 66px;
+            height: 26px;
+            line-height: 27px;
+            font-size: 0.75rem;
           }
           &-no-result{
             border:0;
             border-top:1px solid #d9d9d9;
           }
+
         }
       }
     }
