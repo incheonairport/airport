@@ -879,23 +879,26 @@
           position:relative;
           line-height:60px;
 
-          &:before{
-            content:"";
-            display:block;
-            width:60px;
-            height:60px;
-            position:absolute;
-            top:0;
-            left:0;
+          a{
+            &:before{
+              content:"";
+              display:block;
+              width:60px;
+              height:60px;
+              position:absolute;
+              top:0;
+              left:0;
+            }
           }
+
 
           &.shopping{
 
-            &.t1:before{
+            &.t1 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 0;
             }
 
-            &.t2:before{
+            &.t2 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px 0;
             }
 
@@ -903,11 +906,11 @@
 
           &.restaurant{
 
-            &.t1:before{
+            &.t1 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -70px 0;
             }
 
-            &.t2:before{
+            &.t2 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -210px 0;
             }
 
@@ -915,11 +918,11 @@
 
           &.facilities{
 
-            &.t1:before{
+            &.t1 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 -80px;
             }
 
-            &.t2:before{
+            &.t2 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px -80px;
             }
 
@@ -927,11 +930,11 @@
 
           &.convenience{
 
-            &.t1:before{
+            &.t1 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -70px -80px;
             }
 
-            &.t2:before{
+            &.t2 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -210px -80px;
             }
 
@@ -939,11 +942,11 @@
 
           &.information{
 
-            &.t1:before{
+            &.t1 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 -160px;
             }
 
-            &.t2:before{
+            &.t2 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px -160px;
             }
 
@@ -962,11 +965,11 @@
           }
           &.d-shopping{
 
-            &.t1:before{
+            &.t1 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 0;
             }
 
-            &.t2:before{
+            &.t2 a:before{
               background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px 0;
             }
 
