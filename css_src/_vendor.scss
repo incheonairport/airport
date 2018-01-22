@@ -26,7 +26,21 @@ html.ie{
   }
 
   .ie10{
+    .tr-like{
 
+      &.not-changed{
+        .time-changed{
+          display:block;
+          height:60px;
+          line-height:60px;
+        }
+        .ico-codeshare{
+          top: 50%;
+          margin-top: -9px;
+        }
+      }
+
+    }
   }
 
 }

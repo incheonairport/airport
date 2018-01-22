@@ -40,6 +40,17 @@
           }
         }
       }
+      &.not-changed{
+        .time-changed{
+          display:block;
+          height:60px;
+          line-height:60px;
+        }
+        .ico-codeshare{
+          top: 50%;
+          margin-top: -9px;
+        }
+      }
       &.flight-info-detail{
         .td-like{
           height: 185px;
