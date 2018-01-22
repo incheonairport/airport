@@ -1437,9 +1437,10 @@
 
       .timesetting-date-day{
         width: calc(100% - 40px);
+        height: 40px !important;
       }
       .timesetting-date-calendar{
-        height: 40px;
+        height: 40px !important;
         width:40px;
       }
       .layer-text{
@@ -1454,9 +1455,15 @@
         width:100%;
         text-align:center;
         margin:5px 0;
+        &.d-none{
+          display: none;
+        }
       }
       .layer-text{
         width:100%;
+        &.time{
+          width: calc( 50% - 6px );
+        }
       }
 
       .list1-item{
