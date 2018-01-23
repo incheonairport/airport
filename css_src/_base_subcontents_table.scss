@@ -1,3 +1,24 @@
+
+.flight-info-basic-airline{
+  img{
+    width:120px;
+    height:40px;
+  }
+}
+
+.vt-dark.even{
+  td{
+    img{
+      width:120px;
+      height:40px;
+    }
+  }
+}
+
+
+
+
+
 .table-like{
   display:table;
   width:100%;
@@ -144,6 +165,7 @@
       &.share-close{
         padding: 0;
       }
+
     }
 
     .td-pop{
@@ -404,6 +426,7 @@
       text-align: center;
       padding-top: 20px;
       background:url(/static/ap/images/ico_airplane_arrow_departure.png) 50% 17px no-repeat;
+
       .flight-info-detail{
         &-country{
           color: #ffae44;
