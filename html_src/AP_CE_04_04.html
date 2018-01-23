@@ -1,0 +1,168 @@
+<!--=include _include/_base_header.html -->
+
+<section id="top-contents" class="contents" style="height:2000px;">
+  <div class="inner-section">
+<!--레이어팝업-->
+
+    <div class="layer-wrap on">
+
+      <div class="layer login-area on reservation2" style="width: 1200px;">
+        <div class="layer-area">
+          <div class="layer-article address">
+            <div class="layer-title">Reservation List</div>
+            <!--<h4 class="layer-title login">Reservation List</h4>-->
+          </div>
+
+          <table class="table hr writing" summary="환승투어 예약 확인 작성란 입니다.">
+            <caption>환승투어 예약 확인 작성란 입니다.</caption>
+            <colgroup>
+              <col style="width:25%">
+              <col style="width:25%">
+              <col style="width:25%">
+              <col style="width:25%">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="row" class="left">Tour Name</th>
+              <td>전통지역 (5시간)</td>
+              <th scope="row" class="left">Tour Time</th>
+              <td>8:00~13:00</td>
+            </tr>
+            <tr>
+              <th scope="row" class="left">Tour Date</th>
+              <td colspan="3">2018-01-07</td>
+            </tr>
+            <tr>
+              <th scope="row" class="left">
+                <label for="nationality" class="important">Nation</label>
+              </th>
+              <td>
+                <input type="text" class="user-text" id="nationality">
+              </td>
+              <th scope="row" class="left">
+                <label for="tel" class="important">Telephone No.</label>
+              </th>
+              <td>
+                <input type="text" class="user-text" id="tel">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="left">
+                <label for="e-mail" class="important">E-mail</label>
+              </th>
+              <td colspan="3">
+                <input type="text" class="user-text" id="e-mail">
+                @
+                <input type="text" class="user-text" title="이메일 도메인주소 입력하세요">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="left important">
+                The (total) Number
+              </th>
+              <td colspan="3">
+                <label class="object-list-title" for="adult">어른</label>
+                <select class="object-list small" id="adult" title="대분류">
+                  <option>선택</option>
+                  <option>1명</option>
+                  <option>2명</option>
+                  <option>3명</option>
+                </select>
+                <label class="object-list-title" for="child">어린이</label>
+                <select class="object-list small" id="child" title="대분류">
+                  <option>선택</option>
+                  <option>1명</option>
+                  <option>2명</option>
+                  <option>3명</option>
+                </select>
+                <label class="object-list-title" for="baby">영유아</label>
+                <select class="object-list small" id="baby" title="대분류">
+                  <option>선택</option>
+                  <option>1명</option>
+                  <option>2명</option>
+                  <option>3명</option>
+                </select>
+                <span>(0/5)</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="left">
+                <label for="use-date">Arrival Time</label>
+              </th>
+              <td>
+                <div class="timesetting-date low">
+                  <select class="timesetting-date-option f-left" style="width: 100px;" title="시간을 선택할 수 있는 리스트입니다">
+                    <option>시간 선택</option>
+                  </select>
+                  <select class="timesetting-date-option f-left" style="width: 100px;" title="분을 선택할 수 있는 리스트입니다.">
+                    <option>분 선택</option>
+                  </select>
+                </div>
+              </td>
+              <th scope="row" class="left">
+                <label for="use-date">Arrival Flight Identifier</label>
+              </th>
+              <td>
+                <input type="text" class="user-text" placeholder="항공편 입력" title="이용하신 항공편을 입력하실 수 있습니다">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="left">
+                <label for="use-date">Departure date</label>
+              </th>
+              <td>
+                <div class="timesetting-date low">
+                  <input type="text" class="timesetting-date-day f-left hasDatepicker" readonly="" placeholder="2017.08.21(월)" id="use-date" title="이용날짜를 선택하면 출력됩니다" style="width: 120px;">
+                  <button class="timesetting-date-calendar ico f-left" title="클릭시 날짜를 선택할 수 있는 달력이 나옵니다">날짜 선택</button>
+                </div>
+              </td>
+              <th scope="row" class="left">
+                <label for="use-date">Departure Time</label>
+              </th>
+              <td>
+                <div class="timesetting-date low">
+                  <select class="timesetting-date-option f-left" style="width: 100px;" title="시간을 선택할 수 있는 리스트입니다">
+                    <option>시간 선택</option>
+                  </select>
+                  <select class="timesetting-date-option f-left" style="width: 100px;" title="분을 선택할 수 있는 리스트입니다.">
+                    <option>분 선택</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="left">
+                <label for="use-date">Departure Flight Identifier</label>
+              </th>
+              <td colspan="3">
+                <input type="text" class="user-text" placeholder="항공편 입력" title="이용하신 항공편을 입력하실 수 있습니다">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="left">
+                <label for="content" class="important">Etc</label>
+              </th>
+              <td colspan="3">
+                <textarea class="user-text wide height" id="content" style="height: 100px;">          </textarea>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <article class="article text-center mt40">
+            <button type="button" class="btn-type-normal point ico arrow-point-right"><strong>Cancellation</strong></button>
+          </article>
+
+        </div>
+        <a href="" class="layer-close close">닫기</a>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+
+
+<!--=include _include/_base_footer.html -->
