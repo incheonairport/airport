@@ -136,6 +136,8 @@ $(function(){
       }
     });
 
+
+
     $('.map-full-screen').data('full', false).on('click', function(){
 
       if( !$(this).data().full ){
@@ -152,6 +154,7 @@ $(function(){
 
         $('.search-map-clear').addClass('full-screen on');
         $('.search-map-control').data('open', false);
+        $('.header').addClass('full-screen');
 
         $(this).data('full', true);
 
@@ -169,6 +172,7 @@ $(function(){
 
         $('.search-map-clear').removeClass('full-screen on');
         $('.search-map-control').data('open', true);
+        $('.header').removeClass('full-screen');
 
         $(this).data('full', false);
 

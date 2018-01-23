@@ -17,6 +17,7 @@
   // layout
   .inner-contents{
     width:860px;
+
   }
   .multi-col{
     .inner-col{
@@ -319,9 +320,9 @@
     padding:30px;
   }
 
-  &.search-map-contents.full-screen{
-    width:80% !important;
-  }
+  //&.search-map-contents.full-screen{
+  //  width:80% !important;
+  //}
 
 }
 
@@ -331,6 +332,9 @@
   // layout
   .inner-contents{
     padding:65px 15px 30px;
+    &.full-screen{
+      padding:15px;
+    }
   }
 
 

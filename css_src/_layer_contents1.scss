@@ -1443,6 +1443,7 @@ button{
     border-right: 0;
     float: left;
     overflow:hidden;
+    
     img{
       width:100%;
     }
@@ -1498,7 +1499,9 @@ button{
         cursor:pointer;
         //top:0;
       }
-
+svg g{
+  transition:all .4s;
+}
       .svgbtn{
         width:30px;
         height:30px;
@@ -1574,9 +1577,13 @@ button{
     overflow:hidden;
     min-height:700px;
     margin-top:20px;
+    transition:all .4s;
     @extend %clearfix;
     &.full-screen{
-      height:800px;
+      height:1000px;
+      .search-map-box{
+        height:100%;
+      }
       .search-map-svg{
         height:100%;
       }
@@ -1591,6 +1598,7 @@ button{
         width:100%;
         border:0;
         position:absolute;
+
       }
       .search-map-wrap{
         right:-249px;
@@ -1618,6 +1626,7 @@ button{
     border: 1px solid #d9d9d9;
     box-sizing: border-box;
     float:right;
+    transition:all .4s;
   }
   &-box{
     width: 249px;
@@ -1730,9 +1739,11 @@ button{
   }
 
   &-contents{
+
     &.full-screen{
-      width:50%;
+      width:100%;
       margin:30px auto 0;
+
     }
   }
 
