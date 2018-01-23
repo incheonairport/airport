@@ -23,6 +23,10 @@
     min-width:inherit;
     padding: 0 15px;
   }
+
+  .inner-list-item{
+    padding-left:12px;
+  }
 }
 
 // 640
@@ -246,12 +250,22 @@
       &.board-list{
         overflow: visible;
         //white-space: normal;
-        display: table;
+        display: block;
         td{
+
           span{
             font-size:0.8125rem;
           }
           padding: 8px 0;
+          &.text-over{
+            max-width: 0;
+            font-size:1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 86%;
+
+          }
           & .board-list-link{
             font-size:1rem;
             overflow: hidden;
@@ -814,7 +828,15 @@
 //}
 
 
+.text-right{
+  .btn-type-normal{
+    width:100%!important;
+  }
+}
 
+  .reservation2{
+    width:100%!important;
+  }
 
   select,input[type="text"]{
     height: 40px!important;
