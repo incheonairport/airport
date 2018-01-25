@@ -850,119 +850,7 @@
   .table.hr.info tr:last-child{
     height:auto;
   }
-  .table{
-    &.table-block{
-      display:table!important;
-      white-space: normal!important;
-    }
-    &.vt{
-      &.board-list{
-        overflow: visible;
-        //display: table;
-        //white-space: normal;
-        display: block;
-        //overflow-x: scroll;
-        td{
-          span{
-            font-size:0.8125rem;
-          }
-          padding: 10px 5px;
-          & .board-list-link{
-            font-size:1rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            width: 86%;
-            display: block;
-            &.lock{
-              &:after{
-              }
-            }
-            &.good{
-              &:before{
-              }
-            }
-          }
-        }
 
-        th{
-          font-size: 0.815rem;
-          padding: 10px 5px;
-        }
-        colgroup{
-          col{
-            &:first-child{
-              width:10%!important;
-            }
-            &:last-child{
-              width:20%!important;
-            }
-            width:70%!important;
-          }
-        }
-        .text-over{
-          max-width: 0;
-          width: 83.4%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-        .mobile{
-          display:none;
-        }
-      }
-    }
-    &.vt,
-    &.vt-dark{
-      overflow-x:auto;
-      overflow-y: hidden;
-      white-space: nowrap;
-      display: inline-block;
-      th{
-        text-align: left;
-        padding:10px;
-        &.sub{
-          padding-left:12px;
-        }
-      }
-      td{
-        padding: 10px;
-      }
-      td.center{
-        text-align: left;
-      }
-    }
-    &.hr{
-
-
-      display:block;
-      overflow-x:auto;
-      .radio-box{
-        margin-top:10px;
-        &:first-child{
-          margin-top:0;
-        }
-
-      }
-      br{
-        display:none;
-      }
-      th{
-        min-width:80px;
-        line-height:1.4;
-        letter-spacing: -1px;
-        font-weight:900;
-        padding:0 11px;
-        font-size:1rem;
-        padding:10px;
-        text-align:left;
-      }
-      td{
-        padding: 10px;
-        font-size:1rem;
-      }
-    }
-  }
 
   // guide box
   .guidebox{
@@ -1742,4 +1630,121 @@
     }
   }
 
+}
+
+
+@media screen and (max-width:439px) {
+  .table{
+    //&.table-block{
+    //  display:table!important;
+    //  white-space: normal!important;
+    //}
+    &.vt{
+      &.board-list{
+        overflow: visible;
+        //display: table;
+        //white-space: normal;
+        display: block;
+        //overflow-x: scroll;
+        td{
+          span{
+            font-size:0.8125rem;
+          }
+          padding: 10px 5px;
+          & .board-list-link{
+            font-size:1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 86%;
+            display: block;
+            &.lock{
+              &:after{
+              }
+            }
+            &.good{
+              &:before{
+              }
+            }
+          }
+        }
+
+        th{
+          font-size: 0.815rem;
+          padding: 10px 5px;
+        }
+        colgroup{
+          col{
+            &:first-child{
+              width:10%!important;
+            }
+            &:last-child{
+              width:20%!important;
+            }
+            width:70%!important;
+          }
+        }
+        .text-over{
+          max-width: 0;
+          width: 83.4%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .mobile{
+          display:none;
+        }
+      }
+    }
+    &.vt,
+    &.vt-dark{
+      overflow-x:auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      th{
+        text-align: left;
+        padding:10px;
+        &.sub{
+          padding-left:12px;
+        }
+      }
+      td{
+        padding: 10px;
+      }
+      td.center{
+        text-align: left;
+      }
+    }
+    &.hr{
+
+
+      display:block;
+      overflow-x:auto;
+      .radio-box{
+        margin-top:10px;
+        &:first-child{
+          margin-top:0;
+        }
+
+      }
+      br{
+        display:none;
+      }
+      th{
+        min-width:80px;
+        line-height:1.4;
+        letter-spacing: -1px;
+        font-weight:900;
+        padding:0 11px;
+        font-size:1rem;
+        padding:10px;
+        text-align:left;
+      }
+      td{
+        padding: 10px;
+        font-size:1rem;
+      }
+    }
+  }
 }

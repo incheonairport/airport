@@ -240,204 +240,7 @@
     }
   }
 
-  // table
-  .table{
-    &.table-block{
-      display:table!important;
-      white-space: normal!important;
-    }
-    &.vt{
-      &.board-list{
-        overflow: visible;
-        //white-space: normal;
-        display: block;
-        td{
 
-          span{
-            font-size:0.8125rem;
-          }
-          padding: 8px 0;
-          &.text-over{
-            max-width: 0;
-            font-size:1rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            width: 86%;
-
-          }
-          & .board-list-link{
-            font-size:1rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            width: 86%;
-            display: block;
-            &.lock{
-              &:after{
-              }
-            }
-            &.good{
-              &:before{
-              }
-            }
-          }
-        }
-
-        th{
-          font-size: 0.815rem;
-          &:after{
-            top: 9px;
-            right: -2px;
-          }
-        }
-        colgroup {
-          col{
-            &:first-child{
-              width:20%!important;
-            }
-            &:last-child{
-              width:20%!important;
-            }
-            width:60%!important;
-          }
-        }
-        .mobile{
-          display:none;
-        }
-      }
-    }
-    &.vt,
-    &.vt-dark{
-      overflow-x:auto;
-      overflow-y: hidden;
-      white-space: nowrap;
-      display: inline-block;
-      th{
-        text-align: left;
-        padding:10px;
-        &.sub{
-          padding:12px;
-        }
-      }
-      td{
-        padding:10px;
-      }
-      td.center{
-        text-align: left;
-      }
-      &.board-list{
-        font-size:1rem;
-        & th{
-          &:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6){
-            display:none;
-          }
-        }
-        & td{
-          padding:10px;
-          font-size:0.825rem;
-          &.no-data-found{
-            text-align:center;
-            padding: 40px 20px;
-          }
-          &:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6){
-            display:none;
-          }
-          .board-list-link{
-            font-size:0.825rem;
-          }
-        }
-      }
-
-      &.contact-list{
-        width:100%;
-        & th{
-          &:nth-child(1),&:nth-child(3),&:nth-child(4),&:nth-child(5){
-            display:none;
-          }
-          &:nth-child(2),&:nth-child(6){
-            display:table-cell;
-          }
-        }
-        & td{
-          padding:10px 0;
-          &:nth-child(1),&:nth-child(3),&:nth-child(4),&:nth-child(5){
-            display:none;
-          }
-          &:nth-child(2),&:nth-child(6){
-            display:table-cell;
-          }
-        }
-      }
-    }
-    &.hr{
-      .radio-box{
-        margin-top:10px;
-        &:first-child{
-          margin-top:0;
-        }
-      }
-      br{
-        display:none;
-      }
-      th{
-        min-width:inherit;
-        line-height:1.4;
-
-        letter-spacing: -1px;
-        font-weight:900;
-        padding:0 4px;
-        &.left{
-          padding-left:4px;
-        }
-      }
-      td{
-        padding: 4px;
-        select{
-          width:100%;
-          margin-bottom: 10px;
-        }
-        .inner-col{
-          display:block;
-        }
-        .timesetting-date-day{
-          margin-bottom: 10px;
-        }
-        .timesetting-date-option{
-          width:100%;
-          border:1px solid #d9d9d9;
-          margin-bottom: 10px;
-        }
-        .user-text{
-          width:100%;
-          margin-bottom: 10px;
-        }
-        .checkbox + label {
-          width:100%;
-          text-align:left;
-          margin-bottom: 10px;
-        }
-        .radio-type2-label{
-          font-size:0.825rem;
-          line-height:27px;
-        }
-        .user-input + .list1{
-          font-size:0.825rem;
-          text-align:left;
-        }
-        //.user-input{
-        //  width:100%;
-        //}
-        //
-        //input[type="text"]{
-        //  width:100%;
-        //}
-        //textarea{
-        //  width:100%;
-        //}
-      }
-    }
-  }
 
   .ml10, %ml10{
     margin-left: 0;
@@ -826,6 +629,206 @@
 //    label{width:100%}
 //  }
 //}
+
+
+  // table
+  .table{
+    &.table-block{
+      display:table!important;
+      white-space: normal!important;
+    }
+    &.vt{
+      &.board-list{
+        overflow: visible;
+        //white-space: normal;
+        display: table;
+        td{
+
+          span{
+            font-size:0.8125rem;
+          }
+          padding: 8px 0;
+          &.text-over{
+            max-width: 0;
+            font-size:1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 86%;
+
+          }
+          & .board-list-link{
+            font-size:1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 86%;
+            display: block;
+            &.lock{
+              &:after{
+              }
+            }
+            &.good{
+              &:before{
+              }
+            }
+          }
+        }
+
+        th{
+          font-size: 0.815rem;
+          &:after{
+            top: 9px;
+            right: -2px;
+          }
+        }
+        colgroup {
+          col{
+            &:first-child{
+              width:20%!important;
+            }
+            &:last-child{
+              width:20%!important;
+            }
+            width:60%!important;
+          }
+        }
+        .mobile{
+          display:none;
+        }
+      }
+    }
+    &.vt,
+    &.vt-dark{
+      overflow-x:auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      th{
+        text-align: left;
+        padding:10px;
+        &.sub{
+          padding:12px;
+        }
+      }
+      td{
+        padding:10px;
+      }
+      td.center{
+        text-align: left;
+      }
+      &.board-list{
+        font-size:1rem;
+        & th{
+          &:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6){
+            display:none;
+          }
+        }
+        & td{
+          padding:10px;
+          font-size:0.825rem;
+          &.no-data-found{
+            text-align:center;
+            padding: 40px 20px;
+          }
+          &:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6){
+            display:none;
+          }
+          .board-list-link{
+            font-size:0.825rem;
+          }
+        }
+      }
+
+      &.contact-list{
+        width:100%;
+        & th{
+          &:nth-child(1),&:nth-child(3),&:nth-child(4),&:nth-child(5){
+            display:none;
+          }
+          &:nth-child(2),&:nth-child(6){
+            display:table-cell;
+          }
+        }
+        & td{
+          padding:10px 0;
+          &:nth-child(1),&:nth-child(3),&:nth-child(4),&:nth-child(5){
+            display:none;
+          }
+          &:nth-child(2),&:nth-child(6){
+            display:table-cell;
+          }
+        }
+      }
+    }
+    &.hr{
+      .radio-box{
+        margin-top:10px;
+        &:first-child{
+          margin-top:0;
+        }
+      }
+      br{
+        display:none;
+      }
+      th{
+        min-width:inherit;
+        line-height:1.4;
+
+        letter-spacing: -1px;
+        font-weight:900;
+        padding:0 4px;
+        &.left{
+          padding-left:4px;
+        }
+      }
+      td{
+        padding: 4px;
+        select{
+          width:100%;
+          margin-bottom: 10px;
+        }
+        .inner-col{
+          display:block;
+        }
+        .timesetting-date-day{
+          margin-bottom: 10px;
+        }
+        .timesetting-date-option{
+          width:100%;
+          border:1px solid #d9d9d9;
+          margin-bottom: 10px;
+        }
+        .user-text{
+          width:100%;
+          margin-bottom: 10px;
+        }
+        .checkbox + label {
+          width:100%;
+          text-align:left;
+          margin-bottom: 10px;
+        }
+        .radio-type2-label{
+          font-size:0.825rem;
+          line-height:27px;
+        }
+        .user-input + .list1{
+          font-size:0.825rem;
+          text-align:left;
+        }
+        //.user-input{
+        //  width:100%;
+        //}
+        //
+        //input[type="text"]{
+        //  width:100%;
+        //}
+        //textarea{
+        //  width:100%;
+        //}
+      }
+    }
+  }
 
 
 .text-right{

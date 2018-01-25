@@ -17,12 +17,18 @@ $(function(){
       if(type=='on'){
         $('.header').animate({left:0},350);
         $('.mobile-header').addClass('active');
+        //$('body').on('scroll touchmove mousewheel', function(e){
+        //  event.preventDefault();
+        //  event.stopPropagation();
+        //  return false;
+        //});
         $('body').addClass('scrollfix');
 
       } else {
         $('.header').animate({left: -100 + '%'},350);
         $('.mobile-header').removeClass('active');
         $('body').removeClass('scrollfix');
+        //$('body').off('scroll touchmove mousewheel');
       }
 
     };

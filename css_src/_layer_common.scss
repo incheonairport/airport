@@ -4,6 +4,12 @@
   clear:both;
 }
 
+#mapArea{
+  svg{
+    width:100%;
+  }
+}
+
 .contents{
   width:70%;
   min-width:calc(100% - 500px);

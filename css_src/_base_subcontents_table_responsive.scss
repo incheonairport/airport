@@ -6,6 +6,102 @@
 // 640
 @media screen and (max-width:1024px) {
 
+  //최단이동경로안내
+  .display-inline{
+    display: inline-block;
+    .flight-info-detail-way{
+      width:100%;
+      text-align:center;
+      margin:15px 0;
+      font-weight:400;
+      padding-bottom:10px;
+      border-bottom:1px solid #474a5b;
+    }
+    .way-list{
+      margin:0!important;
+      padding:0 15px 15px;
+      .way-list-item{
+        margin-left:0!important;
+        width:50%;
+        float:left;
+        &:after{
+          display:none;
+        }
+      }
+    }
+    .way-list-item-content{
+      display: block!important;
+      font-size:1rem;
+    }
+  }
+
+  .table-like{
+    &.vt-dark{
+      .codeshare-wrap{
+        margin-top:10px;
+        border:0;
+        border-left:1px solid #999;
+        border-right:1px solid #999;
+        border-bottom:1px solid #999;
+        .flight-info-basic-link{
+          &:first-child{
+            border-top:0;
+          }
+          &:last-child{
+            .td-like{
+              border-bottom:0;
+            }
+          }
+          .td-like{
+            &:last-child{
+              border-right:0;
+            }
+          }
+        }
+
+      }
+
+      .flight-wrap{
+        margin-top:10px;
+        border:1px solid #999;
+        .flight-info-basic-link{
+          .td-like{
+            border-top:0;
+            border-bottom:0;
+            &:last-child{
+              border-right:0;
+            }
+          }
+
+        }
+      }
+
+      .tr-like{
+        &.codeshare{
+          &:first-child{
+            .td-like{
+              border-top:0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ico-codeshare{
+    top:23%!important;
+  }
+  .flight-info-basic-link:hover{
+    >.td-like{
+      background:none!important;
+    }
+  }
+  .table-like.vt-dark .tr-like.flight-info-basic{
+    border-right:0!important;
+    border-left:0!important;
+    border-bottom:0!important;
+  }
+
+
   // 출발
   .contents{
     &.dep{
@@ -23,8 +119,7 @@
           .tr-like{
             &.codeshare{
               .ico-codeshare{
-                left: 16px;
-                top: 16px;
+
               }
               .flight-info-basic-status{
                 padding-left:40px;
@@ -105,8 +200,7 @@
             margin-top:-1px;
             .ico-codeshare{
               position:absolute;
-              left: 16px;
-              top: 16px;
+
               display:block;
               text-indent:-999em;
               font-size:0;
@@ -204,6 +298,8 @@
             border-bottom:1px solid #d9d9d9!important;
             .time-changed{
               display:inline-block;
+              height:auto!important;
+              line-height:inherit!important;
             }
             .time-due{
               display:inline-block;
@@ -513,8 +609,7 @@
           .tr-like{
             &.codeshare{
               .ico-codeshare{
-                left: 16px;
-                top: 16px;
+
               }
               .flight-info-basic-status{
                 padding-left:40px;
@@ -594,8 +689,7 @@
             margin-top:-1px;
             .ico-codeshare{
               position:absolute;
-              left: 16px;
-              top: 16px;
+
               display:block;
               text-indent:-999em;
               font-size:0;
@@ -1013,8 +1107,7 @@
           .tr-like{
             &.codeshare{
               .ico-codeshare{
-                left: 16px;
-                top: 16px;
+
               }
               .flight-info-basic-status{
                 padding-left:40px;
@@ -1095,8 +1188,7 @@
             margin-top:-1px;
             .ico-codeshare{
               position:absolute;
-              left: 16px;
-              top: 16px;
+
               display:block;
               text-indent:-999em;
               font-size:0;
@@ -1126,8 +1218,9 @@
           }
           &:nth-child(4){
             position: absolute;
-            top: 5px;
-            right: 6px;
+            top: 17px;
+            right: 96px;
+            padding:0;
           }
           &:nth-child(5){
             padding: 0 14px 14px;
@@ -1145,9 +1238,14 @@
             padding:0;
           }
           &:last-child{
-            position: absolute;
-            bottom: 33px;
-            right: -25px;
+            display:inline-block;
+            width:60px!important;
+            line-height:28px;
+            text-align:center!important;
+            font-size:0.875rem;
+            position:absolute;
+            top:18px;
+            right:15px;
             padding:0;
           }
         }

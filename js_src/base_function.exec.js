@@ -107,6 +107,11 @@ $(function(){
     if($(window).outerWidth() <= 1024){
       if( $('.top-big-popup').length > 0){
         $('body').addClass('scrollfix');
+        //$('body').on('scroll touchmove mousewheel', function(e){
+        //  event.preventDefault();
+        //  event.stopPropagation();
+        //  return false;
+        //});
       }
     }
 
@@ -116,6 +121,7 @@ $(function(){
     $('body').on('click','.top-big-popup.mobile', function(){
 
       $(this).addClass('none');
+      //$('body').off('scroll touchmove mousewheel');
       $('body').removeClass('scrollfix');
 
     });
@@ -459,6 +465,11 @@ $(function(){
 
     $('body').on('click', 'button.gnb-mobile-btn.btn-gnb', function(e){
       $('body').addClass('scrollfix');
+      //$('body').on('scroll touchmove mousewheel', function(e){
+      //  event.preventDefault();
+      //  event.stopPropagation();
+      //  return false;
+      //});
       $('.gnb').removeClass('mobile-off').addClass('mobile-on');
       $('body').addClass('mobile-menu-on');
       $('.quick').addClass('none');
@@ -467,6 +478,7 @@ $(function(){
 
     $('body').on('click', 'button.gnb-mobile-btn-close', function(e){
       $('body').removeClass('scrollfix');
+      //$('body').off('scroll touchmove mousewheel');
       $('.gnb').removeClass('mobile-on').addClass('mobile-off');
       $('body').removeClass('mobile-menu-on');
       $('.quick').removeClass('none');
@@ -775,13 +787,18 @@ $(function(){
         $('.quick-menu-list').removeClass('quick-off').addClass('quick-on');
         $('body').addClass('mobile-menu-on');
         $('body').addClass('scrollfix');
+        //$('body').on('scroll touchmove mousewheel', function(e){
+        //  event.preventDefault();
+        //  event.stopPropagation();
+        //  return false;
+        //});
       } else {
 
         $(this).removeClass('close').data('open', false);
         $('.quick-menu-list').removeClass('quick-on').addClass('quick-off');
         $('body').removeClass('mobile-menu-on');
         $('body').removeClass('scrollfix');
-
+        //$('body').off('scroll touchmove mousewheel');
       }
 
     });
