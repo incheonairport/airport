@@ -947,6 +947,22 @@ em{
         }
       }
     }
+    &.table-pd{
+      thead{
+        tr{
+          th{
+            padding: 8px 0 8px;
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            padding: 8px 0 8px;
+          }
+        }
+      }
+    }
   }
 
 
