@@ -277,16 +277,17 @@
 
   // 팝업 지도 기능 이미지1
   .map-departure-congestion01{
-    height:240px;
+    //height:240px;
     .map-absolute-area{
       width: 256px;
       height: 184px;
       background-size:contain;
     }
+
   }
   // 팝업 지도 기능 이미지2
   .map-departure-congestion02{
-    height:240px;
+    //height:240px;
     & .map-absolute-area{
       width: 256px;
       height: 184px;
@@ -1374,6 +1375,16 @@
   .tab-sub.col-3{
     .tab-sub-list-item{
       width:33.33%;
+      &:first-child{
+        margin-left:0;
+      }
+    }
+
+  }
+
+  .tab-sub.col-4{
+    .tab-sub-list-item{
+      width:25%;
       &:first-child{
         margin-left:0;
       }
