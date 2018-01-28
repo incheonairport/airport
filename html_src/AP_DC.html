@@ -1,109 +1,84 @@
 <!--=include _include/_base_header.html -->
-<section id="top-contents" class="contents">
+<section class="contents" id="top-contents">
   <div class="location">
     <div class="location-btn">
-      <button type="button" class="location-btn-minus ico">축소</button>
-      <button type="button" class="location-btn-plus ico">확대</button>
-      <button type="button" class="location-btn-print ico">인쇄</button>
+      <button class="location-btn-minus ico" type="button">축소</button>
+      <button class="location-btn-plus ico" type="button">확대</button>
+      <button class="location-btn-print ico" type="button">인쇄</button>
     </div>
     <div class="location-bar">
       <ul class="location-bar-nav">
-        <li class="location-bar-nav-item ico"><a href="/" class="location-bar-nav-item-link home ico">home</a></li>
-        <li class="location-bar-nav-item ico"><a href="/ap_cnt/${LANG_SE}//tpt/direction/direction.do" class="location-bar-nav-item-link">교통/주차</a></li>
-        <li class="location-bar-nav-item"><a href="/ap_cnt/${LANG_SE}/tpt/pblctpt/pblctpt.do" class="location-bar-nav-item-link">대중교통</a></li>
+        <li class="location-bar-nav-item ico"><a class="location-bar-nav-item-link home ico" href="/">home</a></li>
+        <li class="location-bar-nav-item ico"><a class="location-bar-nav-item-link"  href="/ap_cnt/ko//tpt/direction/direction.do">교통/주차</a></li>
+        <li class="location-bar-nav-item"><a class="location-bar-nav-item-link" href="/ap_cnt/ko/tpt/pblctpt/pblctpt.do">대중교통</a></li>
       </ul>
     </div>
   </div>
-
   <div class="inner-section">
     <div class="contents-sub-head">
       <h2 class="contents-sub-head-title">대중교통</h2>
-      <p class="contents-sub-head-article">인천공항을 보다 빠르고 안전하게 오는 방법! 대중교통 정보를 제공합니다.</p>
+      <p class="contents-sub-head-article">인천공항의 대중교통 정보를 제공합니다.</p>
     </div>
   </div>
   <div class="sub-top bg1">
     <div class="sub-top-inner">
       <div class="sub-top-descbox">
         <p class="sub-top-descbox-text">
-          <span class="sub-top-descbox-tit"><em class="color-o">인천공항 제 1,2 여객터미널</em> 을 오시는 방법</span><br />
+          <span class="sub-top-descbox-tit"><em class="color-o">인천공항을 보다 빠르고 안전하게 오시는 방법! </em></span>
         </p>
       </div>
     </div>
   </div>
 </section>
-
-<section class="contents mt40">
-  <div class="inner-section">
+<div class="contents mt40">
+  <div class="inner-section responsive">
     <div class="boxmodel">
       <div class="boxmodel-list h-420">
         <div class="boxmodel-list-item col-3">
           <div class="boxmodel-list-item-inner color">
             <div class="boxmodel-list-head bus">버스</div>
-
             <div class="boxmodel-btn-group">
-              <a href="/ap_lp/${LANG_SE}/tpt/pblctpt/busstoinft1/busstoinft1.do" class="boxmodel-btn-link ico arrow-link-right">
-                <span class="link-tit">버스 정차장 안내</span>
-              </a>
-            </div>
-
+              <a class="boxmodel-btn-link ico arrow-link-right" href="/ap_lp/ko/tpt/pblctpt/busstoinft1/busstoinft1.do"> <span class="link-tit">버스 정차장 안내</span> </a></div>
             <div class="boxmodel-btn-group">
-              <a href="/ap/${LANG_SE}/tpt/busRouteList.do" class="boxmodel-btn-link ico arrow-link-right">
-                <span class="link-tit">버스 검색</span>
-              </a>
+              <a class="boxmodel-btn-link ico arrow-link-right" href="javascript:openCMSLayerTab('/ap/ko/tpt/busRouteList.do');"> <span class="link-tit">버스 검색</span> </a>
             </div>
-
+            <!--<div class="boxmodel-btn-group"> <a class="boxmodel-btn-link ico arrow-link-right" href="javascript:alert('서비스 점검중 입니다.');"> <span class="link-tit">버스 검색</span> </a> </div> -->
             <div class="boxmodel-btn-group">
-              <a href="/ap_lp/${LANG_SE}/tpt/pblctpt/cirbus1/cirbus1.do" class="boxmodel-btn-link ico arrow-link-right">
-                <span class="link-tit">무료순환버스(셔틀) 안내</span>
-              </a>
+              <a class="boxmodel-btn-link ico arrow-link-right" href="/ap_lp/ko/tpt/pblctpt/pblctpt1/pblctpt1.do"> <span class="link-tit">심야버스</span> </a>
             </div>
-
             <div class="boxmodel-btn-group">
-              <a href="/ap_lp/${LANG_SE}/tpt/pblctpt/pblctpt1/pblctpt1.do" class="boxmodel-btn-link ico arrow-link-right">
-                <span class="link-tit">심야버스</span>
-              </a>
+              <a class="boxmodel-btn-link ico arrow-link-right" href="/ap_lp/ko/tpt/pblctpt/cirbus1/cirbus1.do"> <span class="link-tit">무료순환버스(셔틀) 안내</span></a>
             </div>
-
           </div>
         </div>
-
         <div class="boxmodel-list-item col-3">
           <div class="boxmodel-list-item-inner color">
             <div class="boxmodel-list-head airtrack">공항철도 / KTX</div>
             <div class="boxmodel-btn-group row-2">
-              <a href="/ap_lp/${LANG_SE}/tpt/pblctpt/airtrainf/airtrainf.do" class="boxmodel-btn-link ico arrow-link-right">
-                <span class="link-tit">공항철도 안내</span>
-              </a>
+              <a class="boxmodel-btn-link ico arrow-link-right" href="/ap_lp/ko/tpt/pblctpt/airtrainf/airtrainf.do"> <span class="link-tit">공항철도 안내</span> </a>
             </div>
             <div class="boxmodel-btn-group row-2">
-              <a href="/ap_lp/${LANG_SE}/tpt/pblctpt/ktxinf/ktxinf.do" class="boxmodel-btn-link ico arrow-link-right">
-                <span class="link-tit">KTX 안내</span>
-              </a>
+              <a class="boxmodel-btn-link ico arrow-link-right" href="/ap_lp/ko/tpt/pblctpt/ktxinf/ktxinf.do"> <span class="link-tit">KTX 안내</span> </a>
             </div>
           </div>
         </div>
-
         <div class="boxmodel-list-item col-3">
           <div class="boxmodel-list-item-inner color">
             <div class="boxmodel-list-head callvan">택시 / 콜밴</div>
-
             <div class="boxmodel-btn-group row-2">
-              <a href="/ap_lp/${LANG_SE}/tpt/pblctpt/taxinf/taxinf.do" class="boxmodel-btn-link ico arrow-link-right">
-                <span class="link-tit">택시 / 콜밴 이용 안내</span>
-              </a>
+              <a class="boxmodel-btn-link ico arrow-link-right" href="/ap/${LANG_SE}/tpt/pblcTptTaxi.do"> <span class="link-tit">택시 이용 안내</span></a>
             </div>
-
+            <div class="boxmodel-btn-group row-2">
+              <a class="boxmodel-btn-link ico arrow-link-right" href="/ap_lp/${LANG_SE}/tpt/pblctpt/calinf/calinf.do"> <span class="link-tit">콜밴 이용 안내</span> </a>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-</section>
-
+</div>
 <section class="section-bg mt55 footer-graft">
   <div class="inner-section section-bg-inner">
-
     <div class="section-bg-contents">
       <div class="contents-sub-head clip-white down">
         <h3 class="contents-sub-head-title-lv3">자기부상열차</h3>
@@ -113,13 +88,13 @@
           <li class="section-bg-list-item">
             <div class="section-bg-list-inner">
               <div class="section-bg-list-tit"><em class="color-o">자기부상열차</em> 소개</div>
-              <a href="/ap_lp/${LANG_SE}/tpt/pblctpt/magtrainf/magtrainf.do" class="btn-type-small under ico arrow-middle-right">바로가기</a>
+              <a class="btn-type-small under ico arrow-middle-right" href="/ap_lp/ko/tpt/pblctpt/magtrainf/magtrainf.do">바로가기</a>
             </div>
           </li>
           <li class="section-bg-list-item">
             <div class="section-bg-list-inner">
               <div class="section-bg-list-tit"><em class="color-o">주변지역</em> 관광안내</div>
-              <a href="/ap_lp/${LANG_SE}/tpt/pblctpt/magtranea/magtranea.do" class="btn-type-small under ico arrow-middle-right">바로가기</a>
+              <a class="btn-type-small under ico arrow-middle-right" href="/ap_lp/ko/tpt/pblctpt/magtranea/magtranea.do">바로가기</a>
             </div>
           </li>
         </ul>
