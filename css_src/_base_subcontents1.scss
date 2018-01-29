@@ -1577,6 +1577,19 @@
 
     }
 
+    &.popup{//서비스만족도
+      position: static;
+      .layer{
+        position: static;
+        top: 0;
+        left: 0;
+        transform: inherit;
+      }
+      &:after{
+        display: none;
+      }
+    }
+
   }
 
   &.size{
@@ -1933,7 +1946,15 @@
       margin-left:2px;
     }
   }
+}
 
+.tab-sub.col-4{
+  .tab-sub-list-item{
+    width:calc(25% - 4px);
+    &:first-child{
+      margin-left:2px;
+    }
+  }
 }
 
 .tab-sub.col-4{
@@ -2444,6 +2465,34 @@
       height:301px;
       background: url(/static/ap/images/map_departure_congestion_01.png) no-repeat center;
   }
+  .remarks-column{
+    position: absolute;
+    top:20px;
+    left:20px;
+    &-list{
+      &-item{
+        color: #444;
+        font-family: spoqa;
+        &:before{
+          content: '';
+          display: block;
+          width: 24px;
+          height: 24px;
+          float: left;
+          margin-right: 9px;
+          border-radius: 50%;
+          background: #a6b1cc;
+        }
+        &:first-child:before{
+          background: #8a95a4;
+          border-radius: 0;
+        }
+        &+.remarks-column-list-item{
+          margin-top: 10px;
+        }
+      }
+    }
+  }
 }
 
 .map-departure-congestion02{
@@ -2455,6 +2504,34 @@
     width:476px;
     height:313px;
     background: url(/static/ap/images/map_departure_congestion_02.png) no-repeat center;
+  }
+  .remarks-column{
+    position: absolute;
+    top:20px;
+    left:20px;
+    &-list{
+      &-item{
+        color: #444;
+        font-family: spoqa;
+        &:before{
+          content: '';
+          display: block;
+          width: 24px;
+          height: 24px;
+          float: left;
+          margin-right: 9px;
+          border-radius: 50%;
+          background: #4674c9;
+        }
+        &:first-child:before{
+          background: #8a95a4;
+          border-radius: 0;
+        }
+        &+.remarks-column-list-item{
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }
 

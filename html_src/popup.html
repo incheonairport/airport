@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+  <title>인천국제공항</title>
+  <link rel="stylesheet" href="/static/ap/css/base_style.css" />
+  <script src="/static/ap/js/lib/jquery-3.2.1.min.js"></script>
+  <script src="/static/ap/js/lib/jquery-ui.min.js"></script>
+  <script src="/static/ap/js/lib/jquery.fullpage.min.js"></script>
+  <script src="/static/ap/js/base_function.debug.js"></script>
+</head>
+<body>
+
+<div class="layer-wrap popup on">
+  <div class="layer on questionnaire">
+    <div class="layer-area">
+      <div class="layer-article">
+        <h4 class="layer-title">서비스 만족도 조사</h4>
+      </div>
+      <div class="layer-article mb60">
+        <div class="question-wrap">
+          <div class="question-num">설문01</div>
+          <div class="question-txt"><strong>인천국제공항공사의 “고객의 소리” 서비스에 대해 전반적으로 만족하십니까?</strong></div>
+        </div>
+        <div class="radio-type2">
+          <div class="radio-type2-top">
+            <input type="radio" name="option" id="option1" class="radio-type2-radio" value="yes" checked="">
+            <label class="radio-type2-label ico questionnaire" for="option1">매우만족</label>
+            <input type="radio" name="option" id="option2" class="radio-type2-radio" value="no">
+            <label class="radio-type2-label ico questionnaire" for="option2">만족</label>
+            <input type="radio" name="option" id="option3" class="radio-type2-radio" value="no">
+            <label class="radio-type2-label ico questionnaire" for="option3">보통</label>
+            <input type="radio" name="option" id="option4" class="radio-type2-radio" value="no">
+            <label class="radio-type2-label ico questionnaire" for="option4">불만족</label>
+            <input type="radio" name="option" id="option5" class="radio-type2-radio" value="no">
+            <label class="radio-type2-label ico questionnaire" for="option5">매우불만족</label>
+          </div>
+        </div>
+      </div>
+      <div class="layer-article mb60">
+        <div class="question-wrap">
+          <div class="question-num">설문02</div>
+          <div class="question-txt"><strong>인천국제공항공사의 서비스에 대해 추가적으로 개선이 필요한 사항은 무엇입니까?</strong></div>
+        </div>
+        <div>
+          <textarea class="user-text wide height color-gr" id="content"></textarea>
+        </div>
+      </div>
+
+      <div class="layer-article text-center">
+        <a href="" class="btn-type-normal point ico arrow-point-right col-btn-link1"><strong>확인</strong></a>
+      </div>
+
+    </div>
+    <a href="" class="layer-close">닫기</a>
+  </div>
+</div>
+
+</body>
+</html>

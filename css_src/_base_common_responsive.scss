@@ -50,7 +50,7 @@
     }
     padding:0;
     &-number{
-      padding-top: 0px;
+      padding-top: 0;
       &:after{
         margin:10px 0;
       }
@@ -242,8 +242,6 @@
       }
     }
   }
-
-
 
   .ml10, %ml10{
     margin-left: 0;
@@ -633,8 +631,7 @@
 //  }
 //}
 
-
-  // table
+// table
   .table{
     &.table-block{
       display:table!important;
@@ -833,8 +830,7 @@
     }
   }
 
-
-.text-right{
+  .text-right{
   .btn-type-normal{
     width:100%!important;
   }

@@ -1804,10 +1804,13 @@ button, a {
       background: url(/static/ap/images/spr_ico_kpop_transport.png) no-repeat;
     }
     &.metro:before{
-      background-position: -13px -10px
+      background-position: -13px -10px;
     }
     &.bus:before{
-      background-position: -13px -10px
+      background-position: -13px -65px;
+    }
+    &+.kpop-transport-list-item{
+      margin-left: 80px;
     }
   }
 }
