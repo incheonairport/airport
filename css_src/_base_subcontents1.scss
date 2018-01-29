@@ -1577,6 +1577,19 @@
 
     }
 
+    &.popup{//서비스만족도
+      position: static;
+      .layer{
+        position: static;
+        top: 0;
+        left: 0;
+        transform: inherit;
+      }
+      &:after{
+        display: none;
+      }
+    }
+
   }
 
   &.size{
