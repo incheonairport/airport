@@ -170,6 +170,11 @@
           float: left;
         }
       }
+      .boxmodel2-list-box-split.col-1{
+        .boxmodel2-imggroup{
+          width:100%;
+        }
+      }
     }
     // 썸네일형
     &-thumbnail{
@@ -728,6 +733,12 @@
         width:100%;
       }
       .boxmodel2-table-desc{
+        width:100%;
+      }
+      .boxmodel2-imggroup{
+        width:100%;
+      }
+      .boxmodel2-list-box-split.col-2{
         width:100%;
       }
 
