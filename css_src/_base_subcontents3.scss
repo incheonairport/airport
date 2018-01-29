@@ -278,13 +278,17 @@
     background: url(/static/ap/images/bg_shopping_02.jpg) center no-repeat;
   }
   &.transfer{
-    height:360px;
-    min-height:360px;
+    //height:300px;
+    min-height:300px;
     background: url(/static/ap/images/bg_transfer.png) center no-repeat;
     background-size:cover;
     &.tour{
       background: url(/static/ap/images/bg_transfer_tour.jpg) center no-repeat;
       background-size:cover;
+    }
+
+    .tab-sub.col-3{
+      bottom: -113px;
     }
   }
 
@@ -632,6 +636,12 @@
     .boxmodel2-table-desc{
       width: calc(100% - 154px);
     }
+    .boxmodel2-imggroup{
+      width:368px;
+    }
+    .boxmodel2-list-box-split.col-2{
+      width:calc(100% - 368px);
+    }
 
   }
   .boxmodel2-simple-detail{
@@ -811,9 +821,12 @@
         float: left;
       }
     }
-    .boxmodel2-imggroup{
-      width:300px;
+    .boxmodel2-list-box-split.col-1{
+      .boxmodel2-imggroup{
+        width:300px;
+      }
     }
+
   }
   // 썸네일형
   &-thumbnail{

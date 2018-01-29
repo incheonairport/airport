@@ -283,6 +283,27 @@
       height: 184px;
       background-size:contain;
     }
+    .remarks-column{
+      top:10px;
+      left:10px;
+      &-list{
+        &-item{
+          font-size:0.825rem;
+          &:before{
+            width: 14px;
+            height: 14px;
+            margin-top: 4px;
+          }
+          &:first-child:before{
+            background: #8a95a4;
+            border-radius: 0;
+          }
+          &+.remarks-column-list-item{
+            margin-top: 10px;
+          }
+        }
+      }
+    }
 
   }
   // 팝업 지도 기능 이미지2
@@ -292,6 +313,27 @@
       width: 256px;
       height: 184px;
       background-size:contain;
+    }
+    .remarks-column{
+      top:10px;
+      left:10px;
+      &-list{
+        &-item{
+          font-size:0.825rem;
+          &:before{
+            width: 14px;
+            height: 14px;
+            margin-top: 4px;
+          }
+          &:first-child:before{
+            background: #8a95a4;
+            border-radius: 0;
+          }
+          &+.remarks-column-list-item{
+            margin-top: 10px;
+          }
+        }
+      }
     }
   }
   // 팝업 지도 기능 포인터
@@ -543,9 +585,16 @@
 
     }
     &.system{
+      .systemico{
+        height:auto!important;
+      }
+      .layer-guide{
+        position: absolute;
+        bottom: 0;
+      }
       min-width:100%;
       border: none;
-      padding: 40px 15px 0;
+      padding: 40px 0 0;
       br{
         display:none;
       }
@@ -570,12 +619,13 @@
         &.point{
           margin-bottom:20px;
         }
+
         &.systemico:after{
           margin:20px auto 50px;
         }
       }
       .layer-title{
-        font-size:1.5rem;
+        font-size:1.25rem;
         &:after{
           margin: 15px auto 15px;
         }
@@ -625,6 +675,9 @@
     overflow:auto;
     &-wrap{
       position:absolute;
+      &.system{
+        width:100%;
+      }
     }
     &.size{
       width: 100%;

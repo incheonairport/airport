@@ -1552,6 +1552,12 @@ p.icontxt{
       &.w20{
         width: 20%;
       }
+      &.w41{
+        width: 41%;
+      }
+      &.w59{
+        width: 59%;
+      }
       &.w65{
         width: 65%;
         padding-left: 25px;
@@ -3027,6 +3033,12 @@ img.no-extend{
     hieght:auto!important;
   }
 }
+
+
+.inner-list-item{
+  padding-left:46px;
+}
+
 // 라운지쿠폰 CSS
 .layer{
   .coupon{
