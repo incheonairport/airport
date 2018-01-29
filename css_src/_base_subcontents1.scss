@@ -1736,7 +1736,7 @@
     }
 
     &-box{
-      width: 500px;
+      //width: 500px;
       height: 148px;
       padding: 20px 15px;
       border: 1px solid #e2e5e9;
@@ -1751,7 +1751,7 @@
       }
     }
     p{
-      font-size: 1rem;
+      font-size: 0.825rem;
       &.font18{
         font-size:1.125rem;
       }
@@ -1929,6 +1929,16 @@
 .tab-sub.col-3{
   .tab-sub-list-item{
     width:calc(33.33% - 4px);
+    &:first-child{
+      margin-left:2px;
+    }
+  }
+
+}
+
+.tab-sub.col-4{
+  .tab-sub-list-item{
+    width:calc(24.33% - 4px);
     &:first-child{
       margin-left:2px;
     }
