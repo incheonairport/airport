@@ -60,7 +60,7 @@
   }
 
   .top-big-popup{
-    background:url(/static/ap/images/bg_top_big_popup_ch.png) no-repeat center top;
+    background:url(/static/ap/images/bg_top_big_popup_ch.png) no-repeat center;
 
     &.mobile{
       background:url(/static/ap/images/bg_mobile_top_big_popup.jpg) no-repeat center top;
@@ -73,7 +73,7 @@
 .en{
 
   .top-big-popup{
-    background:url(/static/ap/images/bg_top_big_popup_en.png) no-repeat center top;
+    background:url(/static/ap/images/bg_top_big_popup_en.png) no-repeat center;
     &.mobile{
       background:url(/static/ap/images/bg_mobile_top_big_popup.jpg) no-repeat center top;
       background-size:cover;
@@ -695,7 +695,7 @@
   }
 
   .top-big-popup{
-    background:url(/static/ap/images/bg_top_big_popup_ja.png) no-repeat center top;
+    background:url(/static/ap/images/bg_top_big_popup_ja.png) no-repeat center;
     &.mobile{
       background:url(/static/ap/images/bg_mobile_top_big_popup.jpg) no-repeat center top;
       background-size:cover;
