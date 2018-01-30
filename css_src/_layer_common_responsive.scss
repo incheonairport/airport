@@ -358,6 +358,258 @@
     height: 163px;
   }
 
+
+  // 출국장혼잡도
+  .map-departure-congestion01{
+    //height:240px;
+    .map-absolute-area{
+      width: 256px;
+      height: 184px;
+      background-size:contain;
+    }
+    .remarks-column{
+      top:10px;
+      left:10px;
+      &-list{
+        &-item{
+          font-size:0.825rem;
+          &:before{
+            width: 14px;
+            height: 14px;
+            margin-top: 4px;
+          }
+          &:first-child:before{
+            background: #8a95a4;
+            border-radius: 0;
+          }
+          &+.remarks-column-list-item{
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+  }
+  .map-departure-congestion02{
+    //height:240px;
+    & .map-absolute-area{
+      width: 256px;
+      height: 184px;
+      background-size:contain;
+    }
+    .remarks-column{
+      top:10px;
+      left:10px;
+      &-list{
+        &-item{
+          font-size:0.825rem;
+          &:before{
+            width: 14px;
+            height: 14px;
+            margin-top: 4px;
+          }
+          &:first-child:before{
+            background: #8a95a4;
+            border-radius: 0;
+          }
+          &+.remarks-column-list-item{
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+  .congestion{
+    &-mark1-1{
+      position: absolute;
+      top: 178px;
+      left: 322px;
+    }
+    &-mark1-2{
+      position: absolute;
+      top: 82px;
+      left: 158px;
+      .congestion-mark-number{
+        left: 31px;
+        top: 9px;
+      }
+    }
+    &-mark1-3{
+      position: absolute;
+      top: 72px;
+      left: 133px;
+    }
+    &-mark1-4{
+      position: absolute;
+      top: 72px;
+      left: 77px;
+    }
+    &-mark1-5{
+      position: absolute;
+      top: 84px;
+      left: 45px;
+      .congestion-mark-number{
+        right: -20px;
+        top: 9px;
+      }
+
+    }
+    &-mark1-6{
+      position: absolute;
+      top: 179px;
+      right: 161px;
+    }
+
+    &-mark2-1{
+      position: absolute;
+      top: 72px;
+      left: 138px;
+    }
+
+    &-mark2-2{
+      position: absolute;
+      top: 72px;
+      left: 70px;
+    }
+
+    &-mark{
+      &-number{
+        position:absolute;
+        border: 1px solid #7d7d7d;
+        height:20px;
+        &:after{
+          display:none;
+        }
+        &:before{
+          display:none;
+        }
+      }
+
+    }
+
+    &-mark{
+      &-color{
+        position:absolute;
+        width: 14px!important;
+        height: 14px!important;
+        font-size:0.75rem;
+        line-height:14px!important;
+        left: 19px;
+        right: 0;
+        bottom: -42px;
+      }
+    }
+  }
+  .table2{
+    &-article {
+      position: static;
+      padding-top:0;
+      &-box {
+        height:auto;
+        overflow: inherit;
+      }
+    }
+    &.vt-dark{
+      text-align:center;
+      th{
+        text-align:center;
+      }
+      td{
+        text-align:center!important;
+      }
+    }
+    table{
+      position: static;
+    }
+    thead tr{
+      position: static;
+    }
+    thead th{
+      &.wid{
+        width:auto;
+      }
+      width: auto;
+    }
+    thead th:first-child{
+      width: auto;
+    }
+    tbody{
+      display: table-row-group;
+      height: auto;
+    }
+    tbody tr{
+      height:auto;
+    }
+    tbody td{
+      text-align: center;
+    }
+  }
+  .table-guide{
+    &-btn{
+      width:100%;
+      float: none;
+      padding: 0;
+      &-text{
+        font-size: 0.825rem;
+      }
+    }
+
+    &-ico{
+      float:right;
+      margin-left:0;
+    }
+
+    &-pop-up{
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      margin-bottom:20px;
+      background: #fff;
+      border: 2px solid #42519e;
+      &-depth{
+      }
+      &-list{
+        margin-bottom: 10px;
+      }
+      &-item{
+        &:first-child{
+          width: 70px;
+        }
+        font-size: 0.825rem;
+        letter-spacing: -1px;
+        margin-left:0;
+        float: left;
+        line-height: 1;
+        &:before{
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    &-list{
+      float: none;
+      display:inline-block;
+      margin-top:20px;
+    }
+
+    &-item{
+      margin-left: 6px;
+      line-height:1;
+      letter-spacing:-1px;
+      &:first-child{
+        margin-left:0;
+      }
+      &:before{
+        margin-right:4px;
+        width: 14px;
+        height: 14px;
+      }
+
+    }
+  }
+
   // layer popup
   .layer{
     height:100vh!important;
