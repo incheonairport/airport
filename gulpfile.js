@@ -119,7 +119,7 @@ gulp.task('release:html', function(){
 // release sass
 gulp.task('release:sass', function(){
   return gulp.src('css_src/*.scss')
-      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
       .pipe(gulp.dest('../release/static/ap/css/'));
 });
 
