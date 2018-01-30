@@ -725,8 +725,17 @@
       &.color-b{
         color:#42519e;
       }
+      &.color-r{
+        color:#d43e41;
+      }
       p.color-b{
         color:#42519e;
+      }
+      &.border-n{
+        border: none;
+      }
+      &.border-right-n{
+        border-right: none;
       }
     }
 
@@ -1693,7 +1702,16 @@ p.icontxt{
         background-position:-105px -762px;
       }
     }
-
+    &-txbus{//시외버스
+      &:after{
+        background-position:-105px -852px;
+      }
+    }
+    &-kobus{//고속버스
+      &:after{
+        background-position:-198px -852px;
+      }
+    }
   }
 
   &-title {
@@ -1709,6 +1727,16 @@ p.icontxt{
 
     &.list1-item{
       line-height:1;
+    }
+  }
+  &.bus-qlink{//버스 예매 추가
+    padding-top: 20px;
+    .icontxt-title{
+      padding-top: 10px;
+      float: left;
+    }
+    .icontxt-info{
+      padding-left: 150px;
     }
   }
 }
