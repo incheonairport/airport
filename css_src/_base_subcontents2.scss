@@ -712,20 +712,19 @@
 
       /* 환승 - 제1여객터미널에서 환승하기 */
       &.terminal_first:after{
-        background-position: -342px -395px;
-        width: 110px;
+        background-position: 0 0;
+        width: 99px;
       }
       /* 환승 - 탑승동에서 환승하기 */
       &.terminal_passenger:after{
-        background-position: -55px -395px;
+        background-position: -157px -3px;
         width: 116px;
       }
       /* 환승 - 제2여객터미널에서 환승하기 */
       &.terminal-second:after{
-        background-position: -208px -395px;
-        width: 110px;
+        background-position: -323px -11px;
+        width: 103px;
       }
-
 
     }
 
