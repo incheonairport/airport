@@ -7,6 +7,14 @@ html.ie{
 
 .ie{
 
+  .layer-text-box{
+    &-right{
+      .layer-text{
+        width: 152px;
+      }
+    }
+  }
+
 
   input::-ms-clear {
     display: none;

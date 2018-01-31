@@ -170,13 +170,13 @@ $(function(){
             // set top popup
             if( $('.top-popup').has('.top-popup-inner').length > 0 ){
               //초기에 탑배너 안열기. test
-              //$('.top-popup').addClass('top-open');
-              //$('.header').addClass('top-open');
-              //$('.gnb').addClass('top-open');
-              //$('.total-search').addClass('top-open');
-              //$('.quick').addClass('top-open');
-              //$('.fullpage-wrapper').addClass('top-open');
-              //$('.top-popup-toggle').data('open', true).addClass('down');
+              $('.top-popup').addClass('top-open');
+              $('.header').addClass('top-open');
+              $('.gnb').addClass('top-open');
+              $('.total-search').addClass('top-open');
+              $('.quick').addClass('top-open');
+              $('.fullpage-wrapper').addClass('top-open');
+              $('.top-popup-toggle').data('open', true).addClass('down');
 
               // header, gnb
               $('.header, .gnb').removeClass('fixed down bg');
@@ -516,6 +516,8 @@ $(function(){
     });
 
   })();
+
+
 
   // 공통 이벤트
   (function(){
