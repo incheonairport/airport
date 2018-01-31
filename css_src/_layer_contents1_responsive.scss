@@ -1195,7 +1195,7 @@
   .route-bus-stop{
     width: 288px;
     height: 184px;
-    background-size:contain;
+    background-size:contain !important;
     border:none;
     margin:auto;
     &-ico-box{
@@ -1272,7 +1272,7 @@
   .route-bus-stop2{
     width: 288px;
     height: 184px;
-    background-size:contain;
+    background-size:contain !important;
     border:none;
     margin:auto;
     &-ico-box2{
