@@ -316,6 +316,31 @@ $(function(){
   /**
    * event
    */
+  // main section2 event
+  function mainSectionControl(){
+    $('.guide-list').find('.guide-list-item').each(function(){
+      var guideLink = $(this).find('.guide-list-link');
+      var guideLinkText = guideLink.text().length;
+      console.log(guideLinkText);
+
+      if(guideLinkText < 4 ){
+        $(this).addClass('layout-div');
+      } else if(guideLinkText > 4 ){
+        $(this).removeClass('layout-div');
+      }
+
+
+      if( $('html').hasClass('en') ){
+
+        if(guideLinkText < 12 ){
+          $(this).addClass('layout-div');
+        } else if(guideLinkText > 12 ){
+          $(this).removeClass('layout-div');
+        }
+
+      }
+    });
+  } mainSectionControl();
 
   //Header 이벤트
   (function(){

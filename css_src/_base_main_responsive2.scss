@@ -12,6 +12,8 @@
     overflow-x:hidden;
   }
 
+
+
   .main-visual-item {
     //background-position: 50% 50%;
     //background-size: 260%;
@@ -170,19 +172,64 @@
         &-weather{
           //display: none;
         }
+        #fnSearchResult{
+          overflow-y:hidden;
+          height:84px;
+        }
         &-desc{
           .airplane{
             font-size:0.825rem;
-            &-info{
-              font-size:0.825rem;
-              .situation-info {
-                display:block;
-                margin-top:10px;
-                margin-bottom:10px;
-              }
+            margin-bottom:10px;
+
+            &-terminal{
+              width:100%;
+              margin-bottom:6px;
+            }
+
+            &-number{
+              width:auto;
+              margin-right:6px;
+              margin-bottom:6px;
+            }
+
+            &-destination{
+              margin-right:6px;
+              width:auto;
+            }
+
+            .situation-info {
+              margin-top:4px;
+            }
+
+            .date{
+              width:100%;
+            }
+
+            &-info-more{
+              position: absolute;
+              top: auto;
+              bottom: 0px;
+              width: 100%;
+              right: 0;
+            }
+
+            &-info-close{
             }
           }
         }
+        //&-desc{
+        //  .airplane{
+        //    font-size:0.825rem;
+        //    &-info{
+        //      font-size:0.825rem;
+        //      .situation-info {
+        //        display:block;
+        //        margin-top:10px;
+        //        margin-bottom:10px;
+        //      }
+        //    }
+        //  }
+        //}
       }
 
 
@@ -227,6 +274,41 @@
           margin-bottom: 30px;
           &:last-child{
             margin-bottom:0;
+          }
+
+          .guide-wrap{
+            height:auto;
+            padding:20px;
+            .guide-box{
+              margin-bottom:10px;
+              &:first-child{
+                height:auto;
+              }
+              .box-left{
+                float:none;
+                width:100%;
+                .guide-tit{
+                }
+              }
+              .box-right{
+                float:none;
+                width:100%;
+              }
+              .guide-list{
+                &-item{
+                  &.layout-div{
+                    width:100%;
+                    margin-right:0;
+                  }
+                }
+                &-link{
+
+                  &:hover{
+
+                  }
+                }
+              }
+            }
           }
 
           //.link{

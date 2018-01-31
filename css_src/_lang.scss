@@ -72,6 +72,19 @@
 
 .en{
 
+  .guide-wrap{
+    height:335px;
+    .guide-box{
+      .box-left{
+        width:40%;
+      }
+      .box-right{
+        width:60%;
+      }
+
+    }
+  }
+
   .top-big-popup{
     background:url(/static/ap/images/bg_top_big_popup_en.png) no-repeat center;
     &.mobile{

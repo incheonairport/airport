@@ -84,66 +84,109 @@
       </div>
       <div class="main-visual-control-bar"></div>
     </div>
-
     <div class="main-visual-search">
 
       <div class="main-visual-search-inner">
-        <div class="main-visual-search-title">항공편 검색</div>
+        <div class="main-visual-search-title">Search Flights</div>
 
         <div class="main-visual-search-flight">
 
           <dl class="main-visual-search-flight-area">
-            <dt class="area-tab departure on"><label for="search-departure">출발</label></dt>
+            <dt class="area-tab departure on"><label for="search-departure">Departure</label></dt>
             <dd class="area-form on">
-              <input type="text" id="search-departure" class="area-form-input" placeholder="항공편명/목적지를 입력하세요." />
-              <button type="button" class="area-form-button">검색</button>
+
+              <input type="text" id="search-departure" class="area-form-input" placeholder="Enter flight number/airline/city">
+              <button type="button" class="area-form-button">Search</button>
             </dd>
           </dl>
 
           <dl class="main-visual-search-flight-area">
-            <dt class="area-tab arrival"><label for="search-arrival">도착</label></dt>
+            <dt class="area-tab arrival"><label for="search-arrival">Arrival</label></dt>
             <dd class="area-form">
-              <input type="text" id="search-arrival" class="area-form-input" placeholder="항공편명/출발지를 입력하세요." />
+
+              <input type="text" id="search-arrival" class="area-form-input" placeholder="Enter flight number/airline/city">
               <button type="button" class="area-form-button">검색</button>
             </dd>
           </dl>
-
-          <!--<p class="main-visual-search-desc">※ 전체 운항시간표는 우측의 검색버튼을 클릭하면 보실 수 있습니다.</p>-->
+          <div class="main-visual-search-desc" style="margin-top:20px">
+            ※ Click the search button to see all Flight schedule.
+          </div>
 
         </div>
 
-        <div class="main-visual-search-desc">
+        <div id="fnSearchResult" class="main-visual-search-desc off">
           <button type="button" class="airplane-info-more">더보기</button>
           <button type="button" class="airplane-info-close">결과 닫기</button>
         </div>
-        <!--ajax 테스트-->
-        <script>
-
-          $(function(){
-
-            $('.area-form-button').on('click', function(){
-
-              $.get('AP_00_data.html', function(data){
-
-                $('.main-visual-search-desc').prepend(data);
-
-                $('.main-visual-search').addClass('on');
-
-              });
-
-            });
-
-          });
-
-        </script>
       </div>
 
       <div class="main-visual-search-weather">
-        <div class="weather-image"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
-        <div class="weather-temperature">27<span class="celsius">℃</span></div>
+        <div class="weather-image"><img id="localWeatherImg" src="/static/ap/images/icon_weather_12_sunny.png" alt="맑음"></div>
+        <div class="weather-temperature" id="localWeatherTemp">0/2 <span class="celsius">℃</span></div>
       </div>
 
     </div>
+    <!--<div class="main-visual-search">-->
+
+      <!--<div class="main-visual-search-inner">-->
+        <!--<div class="main-visual-search-title">항공편 검색</div>-->
+
+        <!--<div class="main-visual-search-flight">-->
+
+          <!--<dl class="main-visual-search-flight-area">-->
+            <!--<dt class="area-tab departure on"><label for="search-departure">출발</label></dt>-->
+            <!--<dd class="area-form on">-->
+              <!--<input type="text" id="search-departure" class="area-form-input" placeholder="항공편명/목적지를 입력하세요." />-->
+              <!--<button type="button" class="area-form-button">검색</button>-->
+            <!--</dd>-->
+          <!--</dl>-->
+
+          <!--<dl class="main-visual-search-flight-area">-->
+            <!--<dt class="area-tab arrival"><label for="search-arrival">도착</label></dt>-->
+            <!--<dd class="area-form">-->
+              <!--<input type="text" id="search-arrival" class="area-form-input" placeholder="항공편명/출발지를 입력하세요." />-->
+              <!--<button type="button" class="area-form-button">검색</button>-->
+            <!--</dd>-->
+          <!--</dl>-->
+
+          <!--&lt;!&ndash;<p class="main-visual-search-desc">※ 전체 운항시간표는 우측의 검색버튼을 클릭하면 보실 수 있습니다.</p>&ndash;&gt;-->
+
+        <!--</div>-->
+        <!-- -->
+
+
+        <!--<div class="main-visual-search-desc">-->
+          <!--<button type="button" class="airplane-info-more">더보기</button>-->
+          <!--<button type="button" class="airplane-info-close">결과 닫기</button>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;ajax 테스트&ndash;&gt;-->
+        <!--<script>-->
+
+          <!--$(function(){-->
+
+            <!--$('.area-form-button').on('click', function(){-->
+
+              <!--$.get('AP_00_data.html', function(data){-->
+
+                <!--$('.main-visual-search-desc').prepend(data);-->
+
+                <!--$('.main-visual-search').addClass('on');-->
+
+              <!--});-->
+
+            <!--});-->
+
+          <!--});-->
+
+        <!--</script>-->
+      <!--</div>-->
+
+      <!--<div class="main-visual-search-weather">-->
+        <!--<div class="weather-image"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>-->
+        <!--<div class="weather-temperature">27<span class="celsius">℃</span></div>-->
+      <!--</div>-->
+
+    <!--</div>-->
 
   </section>
 

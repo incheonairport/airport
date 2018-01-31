@@ -686,7 +686,6 @@
 
     width:1152px;
     @extend %clearfix;
-
     &-item{
 
       width:368px;
@@ -698,11 +697,10 @@
       }
 
       .heading{
-
         &-group{
           width:100%;
           height:200px;
-          padding-top:75px;
+          padding:70px 10px 0;
           text-align:center;
           font-family:nanumsq, sans-serif;
 
@@ -731,6 +729,70 @@
           letter-spacing:1px;
         }
 
+      }
+
+      .guide-wrap{
+        width:100%;
+        height:310px;
+        padding:20px;
+        border:1px solid #dee3eb;
+        border-top:0;
+        background:#fff;
+        .guide-box{
+          margin-bottom:30px;
+          @extend %clearfix;
+          &:first-child{
+            height:80px;
+          }
+          .box-left{
+            float:left;
+            width:40%;
+            .guide-tit{
+              margin-bottom:5px;
+              font-family:nanumsq, sans-serif;
+              font-size:1.125rem;
+              font-weight:700;
+              color:#222;
+              line-height:1.4;
+            }
+          }
+          .box-right{
+            float:right;
+            width:60%;
+          }
+          .guide-list{
+            &-item{
+              position:relative;
+              padding-left:7px;
+              line-height: 1.2;
+              margin-bottom:6px;
+              &.layout-div{
+                width:40%;
+                display:inline-block;
+                margin-right:10px;
+              }
+              &:after{
+                content:"";
+                display:block;
+                width:2px;
+                height:2px;
+                border-radius:2px;
+                background:#222;
+                position:absolute;
+                top: 12px;
+                left: 0;
+              }
+            }
+            &-link{
+              font-size:0.875rem;
+              color:#666;
+              &:hover{
+                color:#439096;
+                border-bottom:1px solid #439096;
+              }
+            }
+          }
+        }
       }
 
       .link-list{
@@ -1132,12 +1194,12 @@
 
 }
 
-.section2:after{
-  content:'';
-  display:block;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.4);
-}
+//.section2:after{
+//  content:'';
+//  display:block;
+//  width:100%;
+//  height:100%;
+//  background:rgba(0,0,0,0.4);
+//}
 
 

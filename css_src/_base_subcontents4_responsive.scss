@@ -1,5 +1,17 @@
 // 1024
 @media screen and (max-width:1024px) {
+
+  span.heading-level3{
+    text-align: center;
+    display: block;
+  }
+  span.heading-level3+.btn-type-small{
+    display: block;
+    text-align: left;
+    margin:auto;
+    min-width: 126px;
+    width: 126px;
+  }
   // layout
   //.multi-col{
   //  &.double{
@@ -224,6 +236,7 @@
       margin-bottom: 10px;
       font-size: 1.125rem;
       font-weight: 700;
+      line-height:1.4;
 
     }
     &-level3{
@@ -1129,6 +1142,86 @@
     .btn-type-tab{
       min-width:33.33%;
       border-right: 1px solid #666;
+    }
+  }
+
+
+  /*k-pop*/
+  .text-box{
+    .btn-type-small{
+      padding:0;
+      margin-top:10px;
+    }
+  }
+  .kpop-step{
+    margin-top: 10px;
+    &-list{
+      padding-left: 0;
+      &-item{
+        width:33.33%;
+        margin-bottom:10px;
+        &:before {
+          content: '';
+          background-size: 519px 69px;
+          width: 58px;
+          height: 58px;
+          margin: 0 auto;
+        }
+        &.step1:before{
+          background-position: -6px -6px;
+        }
+        &.step2:before{
+          background-position: -96px -6px;
+        }
+        &.step3:before{
+          background-position: -186px -6px;
+        }
+        &.step4:before{
+          background-position: -276px -6px;
+        }
+        &.step5:before{
+          background-position: -366px -6px;
+        }
+        &.step6:before{
+          background-position: -456px -6px;
+        }
+        &+.kpop-step-list-item{
+          margin-left:0;
+        }
+        &:after{
+          background-size: 519px 69px;
+          width: 6px;
+          height: 10px;
+          background: url(/static/ap/images/spr_ico_step_kpop.png)  -77px -30px no-repeat;
+        }
+        &:last-child{
+          &:after{
+            background: none;
+          }
+        }
+      }
+    }
+  }
+  .kpop-transport-list{
+    margin-top: 10px;
+    &-item{
+      width:100%;
+      margin-top:10px;
+      &:first-child{
+        margin-top:0;
+      }
+      &:before {
+
+      }
+      &.metro:before{
+        background-position: -13px -10px;
+      }
+      &.bus:before{
+        background-position: -13px -65px;
+      }
+      &+.kpop-transport-list-item{
+        margin-left:0;
+      }
     }
   }
 
