@@ -148,8 +148,8 @@
   &-list {
     @extend %clearfix;
     &-item {
-      width:9.09%;
-      border-left: 1px solid #a5a7aa;
+      width:14.28%;
+      border-right: 1px solid #a5a7aa;
       float: left;
       &:first-child{
         border-left:0;

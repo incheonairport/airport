@@ -217,6 +217,20 @@
     .icontxt-info{
       padding-right:20px;
     }
+
+    &.bus-qlink{//버스 예매 추가
+      width:100%;
+      .btn-type-small{
+        font-size:0.825rem;
+      }
+      .icontxt-title{
+        width:100%;
+        padding-top:0;
+      }
+      .icontxt-info{
+        padding-left: 0;
+      }
+    }
   }
 
   p.icontxt{
@@ -1098,6 +1112,20 @@
       line-height: 1.4;
       &.list1-item{
         line-height:1.3;
+      }
+    }
+    &.bus-qlink{//버스 예매 추가
+      padding-top: 10px;
+      .btn-type-small{
+        font-size:0.825rem;
+        text-align:left;
+        padding-left:10px;
+      }
+      .icontxt-title{
+        padding-top:0;
+      }
+      .icontxt-info{
+        padding-left: 0;
       }
     }
   }

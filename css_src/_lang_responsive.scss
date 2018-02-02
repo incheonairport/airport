@@ -1,7 +1,33 @@
 @media screen and (max-width:1024px){
 
   .ch{
-
+    // 출/도착시간표 자세히보기 언어변경
+    .contents{
+      &.dep{
+        .flight-info{
+          &-basic{
+            &-link{
+              &:after{
+                content:'德塔耶';
+              }
+            }
+          }
+        }
+      }
+    }
+    .contents{
+      &.arr{
+        .flight-info{
+          &-basic{
+            &-link{
+              &:after{
+                content:'德塔耶';
+              }
+            }
+          }
+        }
+      }
+    }
     * {
       font-family: 'Noto Sans SC', roboto, spoqa ,sans-serif!important;
     }
@@ -16,6 +42,34 @@
 
   .en{
 
+    // 출/도착시간표 자세히보기 언어변경
+    .contents{
+      &.dep{
+        .flight-info{
+          &-basic{
+            &-link{
+              &:after{
+                content:'Detaille';
+              }
+            }
+          }
+        }
+      }
+    }
+    .contents{
+      &.arr{
+        .flight-info{
+          &-basic{
+            &-link{
+              &:after{
+                content:'Detaille';
+              }
+            }
+          }
+        }
+      }
+    }
+
     .top-big-popup-text{
       background: url(/static/ap/images/bg_mobile_top_big_popup_en.png) no-repeat center top;
       background-size:contain;
@@ -24,6 +78,35 @@
   }
 
   .ja{
+
+    // 출/도착시간표 자세히보기 언어변경
+    .contents{
+      &.dep{
+        .flight-info{
+          &-basic{
+            &-link{
+              &:after{
+                content:'デタイユ';
+              }
+            }
+          }
+        }
+      }
+    }
+    .contents{
+      &.arr{
+        .flight-info{
+          &-basic{
+            &-link{
+              &:after{
+                content:'デタイユ';
+              }
+            }
+          }
+        }
+      }
+    }
+
     * {
       font-family: 'Noto Sans JP', roboto, spoqa, sans-serif!important;
     }

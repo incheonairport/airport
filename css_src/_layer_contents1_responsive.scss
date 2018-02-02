@@ -371,40 +371,44 @@
   }
 }
   /*버스지역*/
+
   .local {
     .tab-scroll-x{
       border:1px solid #a5a7aa;
       width:100%;
-      overflow-x:scroll;
+
     }
+
     border:0;
     width:100%;
 
     &-list {
-      border-left:1px solid #a5a7aa;
+      //border-left:1px solid #a5a7aa;
 
       &-item {
-        width:80px;
+        width:25%;
+
         //border:0;
         border-bottom:1px solid #a5a7aa;
 
         &:first-child{
           border-left:0;
         }
-        &:nth-child(4),&:nth-child(7),&:nth-child(10){
-          //border-left:0;
+        &:nth-child(4n){
+          border-right:0;
         }
-        &:nth-child(3n){
-          //border-right:0;
+        &:nth-child(5n){
+          border-left:0;
         }
-        &:last-child{
-          //width:66.66%;
-        }
+
+
+
         &-link {
           height:auto;
           line-height:1.4;
           padding:10px;
-          font-size:0.9rem;
+          font-size:0.825rem;
+          border:0!important;
           &.on {
             &:after{
               display:none;
@@ -414,6 +418,7 @@
       }
     }
     &-town {
+      width:100%;
       padding:10px;
       margin-top:-1px;
       border:1px solid #a5a7aa;

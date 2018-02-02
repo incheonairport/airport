@@ -419,7 +419,7 @@
   width:70%;
   min-width:calc(100% - 500px);
   float:right;
-  transition:all .4s;
+  //transition:all .4s;
 
   &.full-screen{
     width:100% !important;
@@ -432,7 +432,7 @@
   width:1152px;
   padding:65px 0 100px;
   margin:0 auto;
-  transition:all .4s;
+  //transition:all .4s;
 
   &.full-screen{
     width:100% !important;

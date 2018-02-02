@@ -9,19 +9,19 @@ $(function(){
   (function(){
     //$('.local-list.tab-half').wrap('<div class="tab-scroll-x" />');
 
-    $(window).on('resize', function(){
-
-      if( $('.local').width() >= 858 ){
-
-        $('.local-list-item').css({width : ($('.local-list').width() / $('.local-list-item').length )});
-        $('.local-list').css({width : 'auto'});
-
-      } else {
-        $('.local-list-item').outerWidth(78);
-        $('.local-list').width( $('.local-list-item').outerWidth() * $('.local-list-item').length );
-
-      }
-    });
+    //$(window).on('resize', function(){
+    //
+    //  if( $('.local').width() >= 858 ){
+    //
+    //    $('.local-list-item').css({width : ($('.local-list').width() / $('.local-list-item').length )});
+    //    $('.local-list').css({width : 'auto'});
+    //
+    //  } else {
+    //    $('.local-list-item').outerWidth(78);
+    //    $('.local-list').width( $('.local-list-item').outerWidth() * $('.local-list-item').length );
+    //
+    //  }
+    //});
   })();
 
   /**

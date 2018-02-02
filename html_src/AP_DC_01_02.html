@@ -36,88 +36,129 @@
       </div>
 
       <div class="local">
-        <ul class="local-list tab-half">
-          <li class="local-list-item"><a href="" class="local-list-item-link on">서울 전체</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">서울 동부</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">서울 서부</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">서울 남부</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">서울 북부</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">경기도</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">인천</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">강원도</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">충청도</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">전라도</a></li>
-          <li class="local-list-item"><a href="" class="local-list-item-link">경상도</a></li>
-        </ul>
+        <div class="tab-scroll-x">
+          <ul class="local-list">
+            <li class="local-list-item"><a id="a_0" onclick="fncRefresh2(0);return false;" class="local-list-item-link on">서울 전체</a></li>
+            <!--
+            <li class="local-list-item"><a id="a_1"  onclick="fncRefresh2(1);return false;" class="local-list-item-link">서울 동부</a></li>
+            <li class="local-list-item"><a id="a_2"  onclick="fncRefresh2(2);return false;" class="local-list-item-link">서울 서부</a></li>
+            <li class="local-list-item"><a id="a_3"  onclick="fncRefresh2(3);return false;" class="local-list-item-link">서울 남부</a></li>
+            <li class="local-list-item"><a id="a_4"  onclick="fncRefresh2(4);return false;" class="local-list-item-link">서울 북부</a></li>
+             -->
+            <li class="local-list-item"><a id="a_6" onclick="fncRefresh2(6);return false;" class="local-list-item-link">경기도</a></li>
+            <li class="local-list-item"><a id="a_5" onclick="fncRefresh2(5);return false;" class="local-list-item-link">인천</a></li>
+            <li class="local-list-item"><a id="a_7" onclick="fncRefresh2(7);return false;" class="local-list-item-link">강원도</a></li>
+            <li class="local-list-item"><a id="a_8" onclick="fncRefresh2(8);return false;" class="local-list-item-link">충청도</a></li>
+            <li class="local-list-item"><a id="a_9" onclick="fncRefresh2(9);return false;" class="local-list-item-link">전라도</a></li>
+            <li class="local-list-item"><a id="a_10" onclick="fncRefresh2(10);return false;" class="local-list-item-link">경상도</a></li>
+          </ul>
+        </div>
+
         <ul class="local-town" id="busRouteList">
 
-          <li class="local-town-item on"><a id="a_li_2400" href="javascript:getBusInfoDetail(2400);" class="local-town-item-link on">6008(영등포역)</a></li>
+          <li class="local-town-item on"><a id="a_li_4500" href="javascript:getBusInfoDetail(4500);" class="local-town-item-link">6600(위례신도시)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2383" href="javascript:getBusInfoDetail(2383);" class="local-town-item-link">6006(코엑스/잠실)</a></li>
+          <li class="local-town-item on"><a id="a_li_4496" href="javascript:getBusInfoDetail(4496);" class="local-town-item-link">6006(코엑스/잠실)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2384" href="javascript:getBusInfoDetail(2384);" class="local-town-item-link">6200(강동구/하남)</a></li>
+          <li class="local-town-item on"><a id="a_li_4497" href="javascript:getBusInfoDetail(4497);" class="local-town-item-link">6200(강동구/상일동)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2385" href="javascript:getBusInfoDetail(2385);" class="local-town-item-link">6009(대치동)</a></li>
+          <li class="local-town-item on"><a id="a_li_4498" href="javascript:getBusInfoDetail(4498);" class="local-town-item-link">6009(대치동)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2386" href="javascript:getBusInfoDetail(2386);" class="local-town-item-link">6500(신사동/강남역)</a></li>
+          <li class="local-town-item on"><a id="a_li_4499" href="javascript:getBusInfoDetail(4499);" class="local-town-item-link">6500(신사동/강남역)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2387" href="javascript:getBusInfoDetail(2387);" class="local-town-item-link">6600(위례신도시)</a></li>
+          <li class="local-town-item on"><a id="a_li_4501" href="javascript:getBusInfoDetail(4501);" class="local-town-item-link">6020(반포/강남역)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2388" href="javascript:getBusInfoDetail(2388);" class="local-town-item-link">6020(테헤란로)</a></li>
+          <li class="local-town-item on"><a id="a_li_4502" href="javascript:getBusInfoDetail(4502);" class="local-town-item-link">6300(강동구/고덕)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2389" href="javascript:getBusInfoDetail(2389);" class="local-town-item-link">6300(강동구)</a></li>
+          <li class="local-town-item on"><a id="a_li_4503" href="javascript:getBusInfoDetail(4503);" class="local-town-item-link">6707A(김포공항)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2390" href="javascript:getBusInfoDetail(2390);" class="local-town-item-link">6707A(김포공항)</a></li>
+          <li class="local-town-item on"><a id="a_li_4519" href="javascript:getBusInfoDetail(4519);" class="local-town-item-link">6701(시청/광화문)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2392" href="javascript:getBusInfoDetail(2392);" class="local-town-item-link">6701(시청/광화문)</a></li>
+          <li class="local-town-item on"><a id="a_li_4520" href="javascript:getBusInfoDetail(4520);" class="local-town-item-link">6702(남산/동대문) </a></li>
 
-          <li class="local-town-item on"><a id="a_li_2393" href="javascript:getBusInfoDetail(2393);" class="local-town-item-link">6702(남산/동대문) </a></li>
+          <li class="local-town-item on"><a id="a_li_4521" href="javascript:getBusInfoDetail(4521);" class="local-town-item-link">6703(강남/코엑스)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2394" href="javascript:getBusInfoDetail(2394);" class="local-town-item-link">6703(강남/코엑스),</a></li>
+          <li class="local-town-item on"><a id="a_li_4522" href="javascript:getBusInfoDetail(4522);" class="local-town-item-link">6705(잠실롯데월드)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2395" href="javascript:getBusInfoDetail(2395);" class="local-town-item-link">6705(잠실롯데월드)</a></li>
+          <li class="local-town-item on"><a id="a_li_4523" href="javascript:getBusInfoDetail(4523);" class="local-town-item-link">6100(중랑/수락)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2396" href="javascript:getBusInfoDetail(2396);" class="local-town-item-link">6100(중랑/수락)</a></li>
+          <li class="local-town-item on"><a id="a_li_4524" href="javascript:getBusInfoDetail(4524);" class="local-town-item-link">6101(도봉/성북)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2397" href="javascript:getBusInfoDetail(2397);" class="local-town-item-link">6101(도봉/성북)</a></li>
+          <li class="local-town-item on"><a id="a_li_4525" href="javascript:getBusInfoDetail(4525);" class="local-town-item-link">6103(코엑스/도심공항)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2398" href="javascript:getBusInfoDetail(2398);" class="local-town-item-link">6103(코엑스/도심공항)</a></li>
+          <li class="local-town-item on"><a id="a_li_4526" href="javascript:getBusInfoDetail(4526);" class="local-town-item-link">6003(서울대)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2399" href="javascript:getBusInfoDetail(2399);" class="local-town-item-link">6003(서울대)</a></li>
+          <li class="local-town-item on"><a id="a_li_4527" href="javascript:getBusInfoDetail(4527);" class="local-town-item-link">6003(서울대) 토·휴일</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2401" href="javascript:getBusInfoDetail(2401);" class="local-town-item-link">6014(광명시)</a></li>
+          <li class="local-town-item on"><a id="a_li_4528" href="javascript:getBusInfoDetail(4528);" class="local-town-item-link">6008(영등포역)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2402" href="javascript:getBusInfoDetail(2402);" class="local-town-item-link">6004(금천구)</a></li>
+          <li class="local-town-item on"><a id="a_li_4529" href="javascript:getBusInfoDetail(4529);" class="local-town-item-link">6008(영등포역) 토·휴일</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2403" href="javascript:getBusInfoDetail(2403);" class="local-town-item-link">6016(남부터미널)</a></li>
+          <li class="local-town-item on"><a id="a_li_4530" href="javascript:getBusInfoDetail(4530);" class="local-town-item-link">6014(광명시)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2404" href="javascript:getBusInfoDetail(2404);" class="local-town-item-link">6017(구로/낙성대)</a></li>
+          <li class="local-town-item on"><a id="a_li_4531" href="javascript:getBusInfoDetail(4531);" class="local-town-item-link">6014(광명시) 토·휴일</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2405" href="javascript:getBusInfoDetail(2405);" class="local-town-item-link">6018(목동/신도림)</a></li>
+          <li class="local-town-item on"><a id="a_li_4532" href="javascript:getBusInfoDetail(4532);" class="local-town-item-link">6004(금천구)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2406" href="javascript:getBusInfoDetail(2406);" class="local-town-item-link">6019(상도/내방)</a></li>
+          <li class="local-town-item on"><a id="a_li_4533" href="javascript:getBusInfoDetail(4533);" class="local-town-item-link">6004(금천구) 토·휴일</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2407" href="javascript:getBusInfoDetail(2407);" class="local-town-item-link">6015(마포/명동)</a></li>
+          <li class="local-town-item on"><a id="a_li_4534" href="javascript:getBusInfoDetail(4534);" class="local-town-item-link">6016(남부터미널)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2408" href="javascript:getBusInfoDetail(2408);" class="local-town-item-link">6001(동대문패션타운)</a></li>
+          <li class="local-town-item on"><a id="a_li_4535" href="javascript:getBusInfoDetail(4535);" class="local-town-item-link">6016(남부터미널) 토·휴일</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2409" href="javascript:getBusInfoDetail(2409);" class="local-town-item-link">6005(인사동)</a></li>
+          <li class="local-town-item on"><a id="a_li_4536" href="javascript:getBusInfoDetail(4536);" class="local-town-item-link">6017(구로/낙성대)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2410" href="javascript:getBusInfoDetail(2410);" class="local-town-item-link">6002(청량리)</a></li>
+          <li class="local-town-item on"><a id="a_li_4537" href="javascript:getBusInfoDetail(4537);" class="local-town-item-link">6017(구로/낙성대) 토·휴일</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2411" href="javascript:getBusInfoDetail(2411);" class="local-town-item-link">6011(성북구)</a></li>
+          <li class="local-town-item on"><a id="a_li_4538" href="javascript:getBusInfoDetail(4538);" class="local-town-item-link">6018(목동/신도림)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2412" href="javascript:getBusInfoDetail(2412);" class="local-town-item-link">6012(은평구)</a></li>
+          <li class="local-town-item on"><a id="a_li_4539" href="javascript:getBusInfoDetail(4539);" class="local-town-item-link">6018(목동/신도림) 토·휴일</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2413" href="javascript:getBusInfoDetail(2413);" class="local-town-item-link">6013(광진구)</a></li>
+          <li class="local-town-item on"><a id="a_li_4540" href="javascript:getBusInfoDetail(4540);" class="local-town-item-link">6019(상도/내방)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2414" href="javascript:getBusInfoDetail(2414);" class="local-town-item-link">6010(금호/성동구),</a></li>
+          <li class="local-town-item on"><a id="a_li_4541" href="javascript:getBusInfoDetail(4541);" class="local-town-item-link">6019(상도/내방) 토·휴일</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2415" href="javascript:getBusInfoDetail(2415);" class="local-town-item-link">6030(한남/이태원)</a></li>
+          <li class="local-town-item on"><a id="a_li_4542" href="javascript:getBusInfoDetail(4542);" class="local-town-item-link">6015(마포/명동)</a></li>
 
-          <li class="local-town-item on"><a id="a_li_2416" href="javascript:getBusInfoDetail(2416);" class="local-town-item-link">6900(동서울터미널)</a></li>
+          <li class="local-town-item on"><a id="a_li_4543" href="javascript:getBusInfoDetail(4543);" class="local-town-item-link">6015(마포/명동) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4544" href="javascript:getBusInfoDetail(4544);" class="local-town-item-link">6001(동대문패션타운)</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4545" href="javascript:getBusInfoDetail(4545);" class="local-town-item-link">6001(동대문패션타운) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4546" href="javascript:getBusInfoDetail(4546);" class="local-town-item-link">6005(인사동)</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4547" href="javascript:getBusInfoDetail(4547);" class="local-town-item-link">6005(인사동) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4548" href="javascript:getBusInfoDetail(4548);" class="local-town-item-link">6002(청량리)</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4549" href="javascript:getBusInfoDetail(4549);" class="local-town-item-link">6002(청량리) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4550" href="javascript:getBusInfoDetail(4550);" class="local-town-item-link">6011(성북구)</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4551" href="javascript:getBusInfoDetail(4551);" class="local-town-item-link">6011(성북구) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4552" href="javascript:getBusInfoDetail(4552);" class="local-town-item-link">6012(은평구)</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4553" href="javascript:getBusInfoDetail(4553);" class="local-town-item-link">6012(은평구) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4554" href="javascript:getBusInfoDetail(4554);" class="local-town-item-link">6013(광진구)</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4555" href="javascript:getBusInfoDetail(4555);" class="local-town-item-link">6013(광진구) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4556" href="javascript:getBusInfoDetail(4556);" class="local-town-item-link">6010(금호/성동구)</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4557" href="javascript:getBusInfoDetail(4557);" class="local-town-item-link">6010(금호/성동구) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4558" href="javascript:getBusInfoDetail(4558);" class="local-town-item-link">6030(한남/이태원)</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4559" href="javascript:getBusInfoDetail(4559);" class="local-town-item-link">6030(한남/이태원) 토·휴일</a></li>
+
+          <li class="local-town-item on"><a id="a_li_4560" href="javascript:getBusInfoDetail(4560);" class="local-town-item-link">6900(동서울터미널)</a></li>
 
         </ul>
+
+
       </div>
 
     </article>
