@@ -33,6 +33,9 @@ gulp.task('reload:watch', function() {
   gulp.watch('*', ['reload:livereload']);
   gulp.watch('css_src/**', ['build:sass:dev', 'reload:livereload']);
   gulp.watch('html_src/**', ['build:include:html', 'reload:livereload']);
+  gulp.watch('html_src/en/**', ['build:include:html', 'reload:livereload']);
+  gulp.watch('html_src/ch/**', ['build:include:html', 'reload:livereload']);
+  gulp.watch('html_src/ja/**', ['build:include:html', 'reload:livereload']);
   gulp.watch('js_src/**', ['build:js:compress', 'reload:livereload']);
 });
 
@@ -46,6 +49,18 @@ gulp.task('build:include:html', function(){
       .pipe(include())
       .on('error', console.log)
       .pipe(gulp.dest("html/"));
+  gulp.src("html_src/en/*.html")
+      .pipe(include())
+      .on('error', console.log)
+      .pipe(gulp.dest("html/en/"));
+  gulp.src("html_src/ja/*.html")
+      .pipe(include())
+      .on('error', console.log)
+      .pipe(gulp.dest("html/ja/"));
+  gulp.src("html_src/ch/*.html")
+      .pipe(include())
+      .on('error', console.log)
+      .pipe(gulp.dest("html/ch/"));
 });
 
 // build sass for dev
