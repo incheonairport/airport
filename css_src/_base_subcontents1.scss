@@ -1424,7 +1424,7 @@
       margin-bottom:0;
 
       &.systemico{
-        overflow:auto;
+        overflow-y:auto;
       }
     }
     .layer-system-close{
@@ -1702,7 +1702,7 @@
 
     &.systemico:after{
       content:'';
-      display:block;
+      display:none;
       width:64px;
       height:55px;
       background:url(/static/ap/images/ico_system_mark.png ) center no-repeat;
