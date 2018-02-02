@@ -1,0 +1,49 @@
+<!--=include _include/_layer_header.html -->
+
+<!--=include _include/_layer_header_cb_02.html -->
+
+<section class="contents">
+  <div class="inner-contents">
+
+    <h2 class="heading-level1">
+      FAQ
+    </h2>
+
+    <!-- 게시판 슬라이드형태
+board-list 에 on클래스를 추가하여 리스트펼침 스타일을 활성화-->
+    <div class="board-slide mt40">
+      <div class="board-list">
+        <div class="board-list-head"> <a class="board-list-tit ico arrow-down" href="">
+          <p class="board-list-tit-inner"> Q. 为了参加换乘旅行需要接受出入境审查吗？ </p> </a> </div>
+        <div class="board-list-body">
+          <p class="board-list-desc"> 如果想参加换乘旅行需要接受入境审查，结束旅行后需要通过出境审查和安全检查. </p> </div> </div>
+      <div class="board-list">
+        <div class="board-list-head"> <a class="board-list-tit ico arrow-down" href="">
+          <p class="board-list-tit-inner"> Q. 在哪办理履行申请? </p> </a> </div>
+        <div class="board-list-body">
+          <p class="board-list-desc"> 旅行申请要通过如果审查在1楼中央前台办理 </p> </div> </div>
+      <div class="board-list">
+        <div class="board-list-head"> <a class="board-list-tit ico arrow-down" href="">
+          <p class="board-list-tit-inner"> Q. 旅行申请要通过如果审查在1楼中央前台办理 </p> </a> </div>
+        <div class="board-list-body">
+          <p class="board-list-desc"> 所有旅行都包括往返目的地的交通时间，可以在指定的旅游时间内到达机场。 </p> </div> </div>
+      <div class="board-list">
+        <div class="board-list-head"> <a class="board-list-tit ico arrow-down" href="">
+          <p class="board-list-tit-inner"> Q. 旅行时有寄存携带行李的地方吗? </p> </a> </div>
+        <div class="board-list-body">
+          <p class="board-list-desc"> 您可以将随身行李带到旅游巴士或者留在主办公室。 （仅限转机旅客的免费接送服务）。贵重物品必须由个人保管，并且必须在18:00之前登记入住。 </p> </div> </div> </div>
+  </div>
+</section>
+
+<script>
+  $('.board-list').removeClass('on');
+  $('.board-list-tit').on('click', function(e){
+    $(this).parents('.board-list').addClass('on').siblings().removeClass('on');
+    e.preventDefault();
+
+  });
+</script>
+
+
+
+<!--=include _include/_layer_footer.html -->

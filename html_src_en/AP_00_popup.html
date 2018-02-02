@@ -1,0 +1,972 @@
+<!--=include _include/_base_header.html -->
+
+<div id="fullpage">
+
+  <section class="section top-big-popup">
+
+    <!--<div class="top-big-popup-text">-->
+
+      <!--인천국제공항-->
+      <!--제2여객터미널 그랜드오픈!-->
+
+      <!--새로운 터미널 오픈으로 인한,-->
+      <!--공항 이용 시 체크 사항!-->
+      <!--이용객분들은 아래의 운항편 검색으로-->
+      <!--터미널 확인을 꼭! 해주세요.-->
+
+    <!--</div>-->
+
+    <button type="button" class="top-big-popup-close">close</button>
+
+  </section>
+
+  <section id="top-contents" class="section main-visual">
+
+    <div class="main-visual-wrap">
+      <div class="main-visual-item" style="background-image:url(/static/ap/images/bg_main_visual_01.jpg)">
+        <div class="visual-text-box">
+          <h3 class="visual-text" style="font-size:72px;color:#fff;font-style:italic">Grand Open</h3>
+          <h3 class="visual-text" style="font-size:30px;color:#fff;font-style:italic">2018.01.18</h3>
+          <div class="visual-text" style="font-size:18px;color:#fff;font-style:italic"><strong>제2 여객터미널 그랜드 오픈</strong>으로 인천공항이 다시 한 번 도약합니다.</div>
+        </div>
+      </div>
+      <div class="main-visual-item" style="background-image:url(/static/ap/images/bg_main_visual_07.jpg)">
+        <div class="visual-text-box">
+          <div class="visual-text" style="font-size:70px;color:#42519e;font-style:normal">Incheon Airport</div>
+          <div class="visual-text" style="font-size:34px;color:#42519e;font-style:normal">세상을 설레게 만드는 것은 당신입니다.</div>
+        </div>
+      </div>
+      <div class="main-visual-item" style="background-image:url(/static/ap/images/bg_main_visual_04.jpg)">
+        <div class="visual-text-box">
+          <div class="visual-text" style="font-size:70px;color:#fff;font-style:normal">Incheon Airport</div>
+          <div class="visual-text" style="font-size:34px;color:#fff;font-style:normal">시간, 공간, 사람을 하나로 이어주는 인천국제공항</div>
+        </div>
+      </div>
+      <div class="main-visual-item" style="background-image:url(/static/ap/images/bg_main_visual_06.jpg)">
+        <div class="visual-text-box">
+          <div class="visual-text text-right" style="font-size:70px;color:#000;font-style:normal">Incheon Airport</div>
+          <div class="visual-text text-right" style="font-size:34px;color:#000;font-style:normal">사람과 사람을 잇는 인천국제공항</div>
+        </div>
+      </div>
+      <div class="main-visual-item" style="background-image:url(/static/ap/images/bg_main_visual_05.jpg)">
+        <div class="visual-text-box">
+          <div class="visual-text text-left" style="font-size:70px;color:#fff;font-style:normal">Incheon Airport</div>
+          <div class="visual-text text-left" style="font-size:34px;color:#fff;font-style:normal">여행의 설렘을 인천국제공항과 함께</div>
+        </div>
+      </div>
+      <!--<div class="main-visual-item" style="background-image:url(/static/ap/images/bg_main_visual_06.jpg)">-->
+        <!--<div class="visual-text-box">-->
+          <!--<div class="visual-text text-right" style="font-size:70px;color:#42519e;font-style:normal">Incheon Airport</div>-->
+          <!--<div class="visual-text text-right" style="font-size:34px;color:#222;font-style:normal">세계인 모두가</div>-->
+          <!--<div class="visual-text text-right" style="font-size:34px;color:#222;font-style:normal">행복해지는 인천국제공항</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="main-visual-item" style="background-image:url(/static/ap/images/bg_main_visual_07.jpg)">-->
+        <!--<div class="visual-text-box">-->
+          <!--<div class="visual-text" style="font-size:70px;color:#fff;font-style:normal">Incheon Airport</div>-->
+          <!--<div class="visual-text" style="font-size:34px;color:#fff;font-style:normal">시간, 공간, 사람을 하나로</div>-->
+          <!--<div class="visual-text" style="font-size:34px;color:#fff;font-style:normal">이어주는 인천국제공항</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    </div>
+
+    <div class="main-visual-control">
+      <div class="main-visual-control-arrow">
+        <button type="button" class="arrow prev">이전</button>
+        <button type="button" class="arrow next">다음</button>
+      </div>
+      <div class="main-visual-control-paging">
+        <button type="button" class="play-button pause">일시정지</button>
+      </div>
+      <div class="main-visual-control-bar"></div>
+    </div>
+
+    <div class="main-visual-search">
+
+      <div class="main-visual-search-inner">
+        <div class="main-visual-search-title">항공편 검색</div>
+
+        <div class="main-visual-search-flight">
+
+          <dl class="main-visual-search-flight-area">
+            <dt class="area-tab departure on"><label for="search-departure">출발</label></dt>
+            <dd class="area-form on">
+              <input type="text" id="search-departure" class="area-form-input" placeholder="항공편명/목적지를 입력하세요." />
+              <button type="button" class="area-form-button">검색</button>
+            </dd>
+          </dl>
+
+          <dl class="main-visual-search-flight-area">
+            <dt class="area-tab arrival"><label for="search-arrival">도착</label></dt>
+            <dd class="area-form">
+              <input type="text" id="search-arrival" class="area-form-input" placeholder="항공편명/출발지를 입력하세요." />
+              <button type="button" class="area-form-button">검색</button>
+            </dd>
+          </dl>
+
+          <!--<p class="main-visual-search-desc">※ 전체 운항시간표는 우측의 검색버튼을 클릭하면 보실 수 있습니다.</p>-->
+
+        </div>
+
+        <div class="main-visual-search-desc">
+          <button type="button" class="airplane-info-more">더보기</button>
+          <button type="button" class="airplane-info-close">결과 닫기</button>
+        </div>
+        <!--ajax 테스트-->
+        <script>
+
+          $(function(){
+
+            $('.area-form-button').on('click', function(){
+
+              $.get('AP_00_data.html', function(data){
+
+                $('.main-visual-search-desc').prepend(data);
+
+                $('.main-visual-search').addClass('on');
+
+              });
+
+            });
+
+          });
+
+        </script>
+      </div>
+
+      <div class="main-visual-search-weather">
+        <div class="weather-image"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
+        <div class="weather-temperature">27<span class="celsius">℃</span></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section section2 bg-fixed" style="background-image:url(/static/ap/images/bg_main_section_01.jpg)">
+    <div class="main-content">
+
+      <h3 class="main-content-heading sub-script">공항 이용 가이드</h3>
+
+      <div class="main-block">
+
+        <div class="main-block-item">
+
+          <div class="heading-group prepare">
+            <h4 class="heading">여행 전 확인 할 것</h4>
+            <p class="heading-desc">공항 오기 전 확인할 정보를 알려드립니다.</p>
+          </div>
+
+          <ul class="link-list">
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">항공편</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">여객출발</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">여객도착</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">여행준비</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">환전</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">보험</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">로밍</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">포켓와이파이</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">교통수단</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">오시는길</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">대중교통</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">주차안내</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="main-block-item">
+
+          <div class="heading-group airport">
+            <h4 class="heading">공항에서 할 것</h4>
+            <p class="heading-desc">인천공항 최적의 서비스를 안내해드립니다. </p>
+          </div>
+
+          <ul class="link-list">
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">빠른 수속 팁</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">셀프체크인/백드랍</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">자동출입국심사</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">정부종합행정센터</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">공항즐기기</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">면세점</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">쇼핑</a>
+                </li>
+              </ul>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">식당</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">라운지</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">편의시설</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">맞춤형 서비스</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">임산부/유아/어린이동반</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">교통약자동반</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">애완동물동반</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="main-block-item">
+
+          <div class="heading-group transfer">
+            <h4 class="heading">환승할 때 할 것</h4>
+            <p class="heading-desc">환승객들을 위한 특별한 혜택을 안내해드립니다. </p>
+          </div>
+
+          <ul class="link-list">
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">환승안내</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">제1여객터미널에서 환승하기</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">탑승동에서 환승하기</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">제2여객터미널에서 환승하기</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">내항기 환승 </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">환승편의시설</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">호텔</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">라운지</a>
+                </li>
+              </ul>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">휴식(케어마사지)</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="link-list-item">
+              <div class="link-list-item-title">환승투어</div>
+              <ul class="link-list-sub">
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">투어안내</a>
+                </li>
+                <li class="link-list-sub-item">
+                  <a href="" class="link-list-sub-link">무료환승투어</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section3 bg-fixed" style="background-image:url(/static/ap/images/bg_main_section_02.jpg)">
+    <div class="main-content">
+
+      <h3 class="main-content-heading white">인천국제공항 종합안내</h3>
+
+      <div class="main-guide">
+
+        <div class="main-guide-item">
+          <div class="heading-group t1">
+            <h4 class="heading">제1여객터미널</h4>
+          </div>
+
+          <ul class="link-list">
+            <li class="link-list-item d-shopping t1">
+              <a href="">면세점쇼핑</a>
+            </li>
+            <li class="link-list-item shopping t1">
+              <a href="">일반쇼핑</a>
+            </li>
+            <li class="link-list-item restaurant t1">
+              <a href="">식당</a>
+            </li>
+            <li class="link-list-item facilities t1">
+              <a href="">편의시설</a>
+            </li>
+            <li class="link-list-item information t1">
+              <a href="">안내데스크</a>
+            </li>
+            <li class="link-list-item convenience t1">
+              <a href="">24시간 매장</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="main-guide-item">
+          <div class="heading-group t2">
+            <h4 class="heading">제2여객터미널</h4>
+          </div>
+
+          <ul class="link-list">
+            <li class="link-list-item d-shopping t2">
+              <a href="">면세점쇼핑</a>
+            </li>
+            <li class="link-list-item shopping t2">
+              <a href="">일반쇼핑</a>
+            </li>
+            <li class="link-list-item restaurant t2">
+              <a href="">식당</a>
+            </li>
+            <li class="link-list-item facilities t2">
+              <a href="">편의시설</a>
+            </li>
+            <li class="link-list-item information t2">
+              <a href="">안내데스크</a>
+            </li>
+            <li class="link-list-item convenience t2">
+              <a href="">24시간 매장</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section fp-auto-height">
+
+    <section class="main-banner-wrap footer-graft">
+
+      <div class="main-banner">
+
+        <ul class="main-banner-list">
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">1</div>
+              <img src="/static/ap/images/img_main_bottom_banner_01.jpg" alt="자동 수화물 위탁" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">2</div>
+              <img src="/static/ap/images/img_main_bottom_banner_02.jpg" alt="주차요금 모바일앱 결제서비스" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">3</div>
+              <img src="/static/ap/images/img_main_bottom_banner_03.jpg" alt="출국심사인 날인생략" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">4</div>
+              <img src="/static/ap/images/img_main_bottom_banner_04.jpg" alt="2017 세계항공컨퍼런스 2017.9.5 ~ 9.7" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">5</div>
+              <img src="/static/ap/images/img_main_bottom_banner_01.jpg" alt="자동 수화물 위탁" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">6</div>
+              <img src="/static/ap/images/img_main_bottom_banner_02.jpg" alt="주차요금 모바일앱 결제서비스" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">7</div>
+              <img src="/static/ap/images/img_main_bottom_banner_03.jpg" alt="출국심사인 날인생략" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">8</div>
+              <img src="/static/ap/images/img_main_bottom_banner_04.jpg" alt="2017 세계항공컨퍼런스 2017.9.5 ~ 9.7" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">9</div>
+              <img src="/static/ap/images/img_main_bottom_banner_04.jpg" alt="2017 세계항공컨퍼런스 2017.9.5 ~ 9.7" />
+            </a>
+          </li>
+
+          <li class="main-banner-item">
+            <a href="" class="main-banner-link">
+              <div style="position:absolute;top:0;left:0;font-size:50px;">10</div>
+              <img src="/static/ap/images/img_main_bottom_banner_04.jpg" alt="2017 세계항공컨퍼런스 2017.9.5 ~ 9.7" />
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="main-banner-control">
+        <div class="main-banner-control-arrow">
+          <button type="button" class="arrow prev">이전</button>
+          <button type="button" class="arrow next">다음</button>
+        </div>
+        <div class="main-banner-control-paging">
+          <button type="button" class="play-button play ing">재생</button>
+          <button type="button" class="play-button pause">일시정지</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!--=include _include/_base_footer.html -->
+
+  </div>
+
+</div>
+
+<div class="layer-wrap on">
+
+  <div class="departure_congestion layer size on">
+    <div class="layer-area">
+      <div class="layer-article">
+        <h4 class="layer-title title2">출국장 혼잡도 한 눈에 보기</h4>
+      </div>
+
+      <div class="tab-area">
+        <h5 class="tab-area-heading on">제1 여객터미널</h5>
+
+        <div class="tab-area-content on">
+          <div class="update mt20 mb10">
+            <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
+            <button type="button" class="update-refresh size ico">새로고침</button>
+          </div>
+          <div class="map-departure-congestion01">
+            <div class="map-absolute-area">
+              <div class="congestion-mark1-6" style="display:none">
+                <div class="congestion-mark-number">0</div>
+                <div class="congestion-mark-color blue">6</div>
+              </div>
+              <div class="congestion-mark1-5">
+                <div class="congestion-mark-number">121</div>
+                <div class="congestion-mark-color  green">5</div>
+              </div>
+              <div class="congestion-mark1-4">
+                <div class="congestion-mark-number">216</div>
+                <div class="congestion-mark-color  red">4</div>
+              </div>
+              <div class="congestion-mark1-3">
+                <div class="congestion-mark-number">155</div>
+                <div class="congestion-mark-color  red">3</div>
+              </div>
+              <div class="congestion-mark1-2">
+                <div class="congestion-mark-number">238</div>
+                <div class="congestion-mark-color  red">2</div>
+              </div>
+              <div class="congestion-mark1-1" style="display:none">
+                <div class="congestion-mark-number">0</div>
+                <div class="congestion-mark-color  blue">1</div>
+              </div>
+            </div>
+          </div>
+          <!--<div class="map-departure-congestion01">-->
+          <!--<div class="map-absolute-area">-->
+          <!--<div class="congestion-mark1">-->
+          <!--<div class="congestion-mark-number">5</div>-->
+          <!--<div class="congestion-mark-color blue">5</div>-->
+          <!--</div>-->
+          <!--<div class="congestion-mark2">-->
+          <!--<div class="congestion-mark-number">100</div>-->
+          <!--<div class="congestion-mark-color green">4</div>-->
+          <!--</div>-->
+          <!--<div class="congestion-mark3">-->
+          <!--<div class="congestion-mark-number">876</div>-->
+          <!--<div class="congestion-mark-color yellow">3</div>-->
+          <!--</div>-->
+          <!--<div class="congestion-mark4">-->
+          <!--<div class="congestion-mark-number">2,546</div>-->
+          <!--<div class="congestion-mark-color red">2</div>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+          <div class="layer-article article2 clearfix">
+            <h5 class="layer-article-title float">시간대별 예상 승객 수</h5>
+            <div class="inner-tab2">
+              <button class="btn-type-tab on">오늘</button>
+              <button class="btn-type-tab">내일</button>
+            </div>
+          </div>
+          <div class="table2-article">
+            <div class="table2-article-box">
+              <table class="table table2 vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
+                <caption>시간대별 예상 승객 수 구분</caption>
+                <colgroup>
+                  <col style="width:135px"/>
+                  <col style="width:179px"/>
+                  <col style="width:179px"/>
+                  <col style="width:179px"/>
+                  <col style="width:179px"/>
+                </colgroup>
+                <thead>
+                <tr>
+                  <th scope="col">시간</th>
+                  <th scope="col">5번 출국장</th>
+                  <th scope="col">4번 출국장</th>
+                  <th scope="col">3번 출국장</th>
+                  <th scope="col">2번 출국장</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td scope="col" class="center">
+                    오후4시
+                  </td>
+                  <td scope="col">
+                    <strong class="green">100</strong>명
+                  </td>
+
+                  <td scope="col">
+                    <strong class="green">100</strong> 명
+                  </td>
+
+                  <td scope="col">
+                    <strong class="green">100</strong> 명
+                  </td>
+
+                  <td scope="col">
+                    <strong class="red">2,556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후5시
+                  </td>
+                  <td>
+                    <strong class="blue">14</strong>명
+                  </td>
+
+                  <td>
+                    <strong class="blue">14</strong> 명
+                  </td>
+
+                  <td>
+                    <strong class="blue">14</strong> 명
+                  </td>
+
+                  <td>
+                    <strong class="brown">1,556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후6시
+                  </td>
+                  <td>
+                    <strong class="blue">0</strong>명
+                  </td>
+
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+
+                  <td>
+                    <strong class="yellow">556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후7시
+                  </td>
+                  <td>
+                    <strong class="blue">0</strong>명
+                  </td>
+
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후7시
+                  </td>
+                  <td>
+                    <strong class="blue">0</strong>명
+                  </td>
+
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="tab-area-heading">제2 여객터미널</h5>
+        <div class="tab-area-content">
+
+          <div class="update mt20 mb10">
+            <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
+            <button type="button" class="update-refresh ico">새로고침</button>
+          </div>
+          <div class="map-departure-congestion02">
+            <div class="map-absolute-area">
+              <div class="congestion-mark2-2">
+                <div class="congestion-mark-number">155</div>
+                <div class="congestion-mark-color blue">2</div>
+              </div>
+              <div class="congestion-mark2-1">
+                <div class="congestion-mark-number">155</div>
+                <div class="congestion-mark-color blue">1</div>
+              </div>
+            </div>
+          </div>
+          <div class="layer-article article2 clearfix">
+            <h5 class="layer-article-title float">시간대별 예상 승객 수</h5>
+            <div class="inner-tab2">
+              <button class="btn-type-tab on">오늘</button>
+              <button class="btn-type-tab">내일</button>
+            </div>
+          </div>
+          <div class="table2-article">
+            <div class="table2-article-box">
+              <table class="table table2 vt-dark" summary="시간대별 예상 승객 수에 대한 안내 표입니다.">
+                <caption>시간대별 예상 승객 수 구분</caption>
+                <colgroup>
+                  <col style="width:135px"/>
+                  <col style="width:358px"/>
+                  <col style="width:358px"/>
+                </colgroup>
+                <thead>
+                <tr>
+                  <th scope="col">시간</th>
+                  <th scope="col" class="wid">1번 출국장</th>
+                  <th scope="col" class="wid">2번 출국장</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td scope="col" class="center">
+                    오후4시
+                  </td>
+                  <td scope="col">
+                    <strong class="green">100</strong>명
+                  </td>
+                  <td scope="col">
+                    <strong class="red">2,556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후5시
+                  </td>
+                  <td>
+                    <strong class="blue">14</strong>명
+                  </td>
+                  <td>
+                    <strong class="brown">1,556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후6시
+                  </td>
+                  <td>
+                    <strong class="blue">0</strong>명
+                  </td>
+                  <td>
+                    <strong class="yellow">556</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후7시
+                  </td>
+                  <td>
+                    <strong class="blue">0</strong>명
+                  </td>
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                    오후7시
+                  </td>
+                  <td>
+                    <strong class="blue">0</strong>명
+                  </td>
+                  <td>
+                    <strong class="blue">0</strong> 명
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-guide mt20">
+          <button type="button" name="button" title="클릭하면 기준시간당 승객 수 가이드가 나타납니다." class="table-guide-btn">
+            <span class="table-guide-btn-text">기준시간당 승객 수</span>
+            <span class="table-guide-ico ico warning">가이드자세히보기</span>
+          </button>
+
+          <div class="layer-area table-guide-pop-up">
+            <div class="layer-article">
+              <h4 class="laye-articler-title title color-b">혼잡도기준</h4>
+            </div>
+            <ul class="table-guide-pop-up-depth">
+              <li class="table-guide-pop-up-depth-list font14">
+                <dl class="table-guide-pop-up-list">
+                  <dt class="table-guide-pop-up-item blue">원활</dt>
+                  <dd class="table-guide-pop-up-item">~6,500 명</dd>
+                </dl>
+              </li>
+              <li class="table-guide-pop-up-depth-list font14">
+                <dl class="table-guide-pop-up-list">
+                  <dt class="table-guide-pop-up-item green">보통</dt>
+                  <dd class="table-guide-pop-up-item">6,500 ~ 7,100 명</dd>
+                </dl>
+              </li>
+              <li class="table-guide-pop-up-depth-list font14">
+                <dl class="table-guide-pop-up-list">
+                  <dt class="table-guide-pop-up-item yellow">약간혼잡</dt>
+                  <dd class="table-guide-pop-up-item">7,100 ~ 7,500명</dd>
+                </dl>
+              </li>
+              <li class="table-guide-pop-up-depth-list font14">
+                <dl class="table-guide-pop-up-list">
+                  <dt class="table-guide-pop-up-item brown">혼잡</dt>
+                  <dd class="table-guide-pop-up-item">7,500명 초과  7,100명 초과 2시간 지속</dd>
+                </dl>
+              </li>
+              <li class="table-guide-pop-up-depth-list font14">
+                <dl class="table-guide-pop-up-list">
+                  <dt class="table-guide-pop-up-item red">매우혼잡</dt>
+                  <dd class="table-guide-pop-up-item">7,100명 초과 3시간 지속  7,500명 초과 2시간 지속</dd>
+                </dl>
+              </li>
+            </ul>
+            <a href="" class="layer-close close">닫기</a>
+          </div>
+
+          <ul class="table-guide-list">
+            <li class="table-guide-item blue font14">원활</li>
+            <li class="table-guide-item green font14">보통</li>
+            <li class="table-guide-item yellow font14">약간혼잡</li>
+            <li class="table-guide-item brown font14">혼잡</li>
+            <li class="table-guide-item red font14">매우혼잡</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="layer-close">닫기</button>
+  </div>
+
+</div>
+
+<div class="layer-wrap">
+
+  <div class="flight-sms-01 layer">
+    <div class="layer-area">
+      <div class="layer-article">
+        <h4 class="layer-title">운항속보 SMS 이용안내</h4>
+        <ul class="list1">
+          <li class="list1-item">
+            신청하신 운항편이 <em class="color-r">1시간 이상 지연, 결항되는 경우 이를 휴대전화 문자(SMS)로<br>
+            알려드리는 서비스</em>입니다.
+          </li>
+          <li class="list1-item">
+            신청하신 운항편이 1시간 이상 지연, 결항되지 않고 정상적으로 운항한 경우에는 SMS가
+            발송 되지 않습니다.
+          </li>
+          <li class="list1-item">
+            당사 또는 이동통신사 사정으로 문자 미발송 및 지연 발송이 발생할 수 있습니다. <br>
+            본 서비스는 부가정보로 활용하시고, 이용하시는 항공사 등 다양한 매체를 통해 <br>
+            정확한 정보를 확인하시기 바랍니다
+          </li>
+          <li class="list1-item">
+            본인 인증 후 인증 받은 번호로만 발송 됩니다.
+          </li>
+        </ul>
+      </div>
+      <div class="layer-article">
+        <h5 class="layer-article-title">개인정보 3자 제공 정책 및 동의여부 선택</h5>
+        <div class="layer-article-box">
+          <h6 class="layer-article-box-sub">제공받는 자</h6>
+          <p class="layer-article-box-txt">SMS 서비스: 디노벤 (KT SMS)</p>
+          <h6 class="layer-article-box-sub mt10">개인정보 이용목적</h6>
+          <p class="layer-article-box-txt">
+            운항정보 SMS 신청 서비스의 1시간 이상 지연, 결항 등 운항속보 상황에만 SMS 발송을 위하여 사용
+          </p>
+          <h6 class="layer-article-box-sub mt10">제공하는 개인정보 항목</h6>
+          <p class="layer-article-box-txt">
+            휴대전화 연락처
+          </p>
+          <h6 class="layer-article-box-sub mt10">보유 및 이용기간</h6>
+          <p class="layer-article-box-txt">
+            휴대전화 연락처
+          </p>
+        </div>
+        <p class="info-desc mt10">
+          * 개인정보보호법 제15조 제2항 제4조(동의를 (동의를 거부할 권리가 있다는 사실 및 동의 거부에 따른
+          불이익이 있는 경우에는 그 불이익의 내용)에 따라 동의를 거부할 수 있으나 거부할 경우 서비스 이용에
+          제한이 있을 수 있음을 알려드립니다.
+        </p>
+      </div>
+      <div class="radio-type1">
+        <input type="radio" name="agree" id="yes" class="radio-type1-radio" value="yes" checked="">
+        <label class="radio-type1-label ico" for="yes">동의함</label>
+        <input type="radio" name="agree" id="no" class="radio-type1-radio" value="no">
+        <label class="radio-type1-label ico" for="no">동의하지 않음</label>
+      </div>
+    </div>
+    <div class="enter">
+      <p class="guide-desc mark color">개인정보 3자 제공 정책에 동의하셔야 합니다.</p>
+      <button type="button" class="enter-btn mt10">확인</button>
+    </div>
+
+    <button type="button" class="layer-close">닫기</button>
+  </div>
+
+</div>
+
+<div class="layer-wrap">
+
+  <div class="flight-sms-02 layer">
+    <div class="layer-area">
+      <div class="layer-article">
+        <h4 class="layer-title">운항속보 SMS 이용안내</h4>
+        <ul class="list1">
+          <li class="list1-item">
+            신청하신 운항편이 <em class="color-r">1시간 이상 지연, 결항되는 경우 이를 휴대전화 문자(SMS)로 <br>
+            알려드리는 서비스</em>입니다.
+          </li>
+          <li class="list1-item">
+            신청하신 운항편이 1시간 이상 지연, 결항되지 않고 정상적으로 운항한 경우에는 SMS가
+            발송 되지 않습니다.
+          </li>
+          <li class="list1-item">
+            당사 또는 이동통신사 사정으로 문자 미발송 및 지연 발송이 발생할 수 있습니다. <br>
+            본 서비스는 부가정보로 활용하시고, 이용하시는 항공사 등 다양한 매체를 통해 정확한 정보를 확인하시기 바랍니다
+          </li>
+          <li class="list1-item">
+            본인 인증 후 인증 받은 번호로만 발송 됩니다.
+          </li>
+        </ul>
+      </div>
+      <div class="layer-article">
+        <h5 class="layer-article-title">휴대폰 본인인증</h5>
+      </div>
+    </div>
+    <div class="enter">
+      <button type="button" class="enter-btn">휴대폰 본인인증</button>
+    </div>
+    <button type="button" class="layer-close">닫기</button>
+  </div>
+
+</div>
