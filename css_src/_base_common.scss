@@ -1425,6 +1425,21 @@ select{
   }
 }
 
+.layer{
+  .input-align{
+    margin:auto;
+    width:550px;
+    .capcha{
+      &:nth-child(3){
+      }
+    }
+    .user-input-text{
+    }
+    .capcha+.user-input-text{
+    }
+  }
+}
+
 img.no-extend{
   width:100%;
 }
