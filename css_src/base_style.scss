@@ -7,7 +7,6 @@
 @import "init_scrollbar";
 
 @import "base_header";
-@import "base_header_responsive";
 
 @import "jquery.fullpage.min";
 
@@ -16,43 +15,44 @@
 @import "jquery-ui";
 
 @import "base_common";
-@import "base_common_responsive";
 
 @import "base_main";
-@import "base_main_responsive2";
-
-
-@import "base_main_responsive3";
 
 @import "base_subcontents1";
-@import "base_subcontents1_responsive";
 
 @import "base_subcontents2";
-@import "base_subcontents2_responsive";
 
 @import "base_subcontents3";
-@import "base_subcontents3_responsive";
 
 @import "base_subcontents4";
-@import "base_subcontents4_responsive";
 
 @import "base_subcontents4_1";
-@import "base_subcontents4_1_responsive";
 
 @import "base_subcontents_table";
-@import "base_subcontents_table_responsive";
 
 @import "base_subcontents_radio";
-@import "base_subcontents_radio_responsive";
 
 @import "base_terms";
-@import "base_terms_responsive";
 
 @import "base_footer";
-@import "base_footer_responsive";
 
 @import "lang";
-@import "lang_responsive";
+
 @import "vendor";
 
 @import "ir";
+
+@import "base_header_responsive";
+@import "base_common_responsive";
+@import "base_main_responsive2";
+@import "base_main_responsive3";
+@import "base_subcontents1_responsive";
+@import "base_subcontents2_responsive";
+@import "base_subcontents3_responsive";
+@import "base_subcontents4_responsive";
+@import "base_subcontents4_1_responsive";
+@import "base_subcontents_table_responsive";
+@import "base_subcontents_radio_responsive";
+@import "base_terms_responsive";
+@import "base_footer_responsive";
+@import "lang_responsive";

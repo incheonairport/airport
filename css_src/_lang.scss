@@ -700,6 +700,167 @@
     }
   }
 
+  .route-list{
+
+    &-item{
+      &.h80{
+        height:80px;
+        .route-name{
+          height:80px;
+        }
+        .route-desc{
+          height:80px;
+        }
+        .route-list-item{
+          height:80px;
+        }
+      }
+
+
+      height:60px;
+      position:relative;
+      margin-bottom:2px;
+      .multi-col{
+        .route-list-item{
+
+          .route-name{
+            width:48%;
+          }
+          .route-desc{
+            width:52%;
+          }
+
+          &.moving{
+
+            .route-desc{
+              line-height:1.4;
+              font-size:1rem;
+              padding-top:9px;
+              letter-spacing:-1px;
+              span{
+                font-size:0.825rem;
+              }
+            }
+          }
+        }
+      }
+
+      &:after{
+        content:"";
+        display:block;
+        width:4px;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+      }
+
+      &.double-row{
+        height:122px;
+        .route-name{
+          height:122px;
+          line-height:122px;
+
+          .move{
+            top:50%;
+            transform:translateY(-50%);
+          }
+        }
+
+        .route-desc{
+          height:122px;
+          line-height:122px;
+        }
+      }
+
+      .route{
+
+        &-name{
+          width:24%;
+          font-size:1rem;
+          .move{
+            font-size:0.75rem;
+            top:14px;
+            right:10px;
+
+            &:after{
+              top:19px;
+              left:7px;
+            }
+
+            &.general{
+              &:after{
+                border:{
+                  top:10px solid #a97c50;
+                  left:6px solid transparent;
+                  right:6px solid transparent;
+                }
+              }
+            }
+
+            &.departure{
+              &:after{
+                border:{
+                  top:10px solid #132d5b;
+                  left:6px solid transparent;
+                  right:6px solid transparent;
+                }
+              }
+            }
+
+            &.tax-free{
+              &:after{
+                border:{
+                  top:10px solid #6182D1;
+                  left:6px solid transparent;
+                  right:6px solid transparent;
+                }
+              }
+            }
+
+            &.tax-free2{
+              &:after{
+                border:{
+                  top:10px solid #bfdfe0;
+                  left:6px solid transparent;
+                  right:6px solid transparent;
+                }
+              }
+            }
+
+            &.moving{
+              &:after{
+                border:{
+                  top:10px solid #b34b58;
+                  left:6px solid transparent;
+                  right:6px solid transparent;
+                }
+              }
+            }
+          }
+        }
+
+        &-desc{
+          width:76%;
+
+          height:60px;
+          padding:10px 25px;
+          float:left;
+          font-size:1rem;
+          line-height:1.4;
+
+          &.small{
+            font-size:1rem;
+            line-height:1.4;
+            padding:9px 33px 0;
+          }
+        }
+      }
+
+    }
+
+  }
+
 }
 
 .ja{

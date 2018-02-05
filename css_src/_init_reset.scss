@@ -119,3 +119,8 @@ select {
   background-position: 100% 50% !important;
   background-repeat: no-repeat !important;
 }
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}

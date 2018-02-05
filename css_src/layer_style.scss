@@ -9,23 +9,24 @@
 @import "jquery-ui";
 
 @import "layer_header";
-@import "layer_header_responsive";
 
 @import "layer_common";
-@import "layer_common_responsive";
 
 @import "layer_contents1";
-@import "layer_contents1_responsive";
 
 @import "layer_contents2";
-@import "layer_contents2_responsive";
 
 @import "base_subcontents_radio";
-@import "base_subcontents_radio_responsive";
 
 @import "layer_footer";
-@import "layer_footer_responsive";
 
 @import "lang";
 
 @import "ir";
+
+@import "layer_header_responsive";
+@import "layer_common_responsive";
+@import "layer_contents1_responsive";
+@import "layer_contents2_responsive";
+@import "base_subcontents_radio_responsive";
+@import "layer_footer_responsive";

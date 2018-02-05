@@ -11,24 +11,25 @@ $(function(){
    */
 
   MobileGnb = new function(){
-
+    //var posY;
     this.mobileOnOffMenu = function( type ){
-
       if(type=='on'){
         $('.header').animate({left:0},350);
         $('.mobile-header').addClass('active');
-        //$('body').on('scroll touchmove mousewheel', function(e){
-        //  event.preventDefault();
-        //  event.stopPropagation();
-        //  return false;
-        //});
-        $('body').addClass('scrollfix');
+        $('body').on('scroll touchmove mousewheel', function(e){
+          event.preventDefault();
+          event.stopPropagation();
+          return false;
+        });
+        //posY = $(window).scrollTop();
+        //$('body').addClass('scrollfix');
 
       } else {
         $('.header').animate({left: -100 + '%'},350);
         $('.mobile-header').removeClass('active');
-        $('body').removeClass('scrollfix');
-        //$('body').off('scroll touchmove mousewheel');
+        //$('body').removeClass('scrollfix');
+        //posY = $(window).scrollTop(posY);
+        $('body').off('scroll touchmove mousewheel');
       }
 
     };

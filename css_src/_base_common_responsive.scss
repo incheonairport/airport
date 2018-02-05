@@ -545,7 +545,7 @@
 
 
 // 1024
-@media screen and (max-width:639px) {
+@media screen and (max-width:640px) {
   body {
     // mobile auto font size control XXX
     -webkit-text-size-adjust: 100%;
@@ -560,6 +560,32 @@
         .etc{
           margin-left:20px;
         }
+      }
+    }
+  }
+
+  // banner
+  .banner{
+    background-size:cover!important;
+    width: 100%;
+    padding: 25px;
+    min-height: inherit;
+    &-title{
+      width: 100%;
+      font-size: 2.75rem;
+      padding-top: 0;
+      margin: 0 auto;
+      text-align: center;
+      strong{
+        display: inline-block;
+      }
+      &:after{
+        top: 115px;
+      }
+    }
+    &-text{
+      br{
+        display: none;
       }
     }
   }

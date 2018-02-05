@@ -556,7 +556,9 @@ em{
     color:#41519e;
   }
   &.color-o{
-    color:#ffae44;
+    /* 임시 컬러값 전환 */
+    color:#fff;
+    //color:#ffae44;
   }
   &.color-r{
     color:#d43e41;
@@ -1515,3 +1517,49 @@ img.no-extend{
 }
 
 
+.banner{
+  width: 100%;
+  padding: 40px;
+  min-height: inherit;
+  text-align: center;
+  background: url(/static/ap/images/bg_sub_layer_banner_bg_01.jpg) no-repeat center;
+  background-size: cover;
+
+  &-title{
+    color: #ffae44;
+    font-size: 3.75rem;
+    font-weight: 300;
+    //padding-top: 55px;
+    line-height: 1.2;
+  }
+
+  &-text{
+    margin-top:25px;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-align:center;
+    position:relative;
+    &:after{
+      content:"";
+      display:block;
+      border-top: 1px solid #b7b2a9;
+      width: 50px;
+      position:absolute;
+      top:-15px;
+      left:50%;
+      margin-left:-25px;
+    }
+  }
+
+  //환승
+  &.transferring-from{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_transferring_from.jpg) no-repeat center;
+    background-size: cover;
+  }
+}
+
+.h-hide{
+  // section 제목숨기기
+  display:none;
+}
