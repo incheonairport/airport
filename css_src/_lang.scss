@@ -777,6 +777,18 @@
         }
       }
 
+      &.arrival{
+        &.route{
+          &-name{
+            width:30%;
+          }
+
+          &-desc{
+            width:68%;
+          }
+        }
+      }
+
       .route{
 
         &-name{
@@ -864,6 +876,8 @@
     }
 
   }
+
+
 
   .tab-sub.terms{
     .tab-sub-list-item{
