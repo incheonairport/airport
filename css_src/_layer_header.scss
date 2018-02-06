@@ -21,6 +21,9 @@
     }
     &.security{//보안검색
       background:url(/static/ap/images/bg_layer_header_ac_04_01.jpg) no-repeat left bottom;
+      &.sub1{
+        background:url(/static/ap/images/bg_layer_header_01.jpg) no-repeat left bottom;
+      }
     }
     &.immigration.sub1{//유인심사
       background:url(/static/ap/images/bg_layer_header_ac_05_01.jpg) no-repeat left bottom;
