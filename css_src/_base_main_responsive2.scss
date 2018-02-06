@@ -5,7 +5,7 @@
 
 
 }
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1080px) {
 
   body{
     min-width:inherit;
@@ -48,6 +48,10 @@
             position:absolute;
             top:calc(50% - 55px);
             transform:translateY(-50%);
+            -webkit-transform:translateY(-50%);
+            -moz-transform:translateY(-50%);
+            -ms-transform:translateY(-50%);
+            -o-transform:translateY(-50%);
 
             text-indent:-99999em;
 
@@ -364,6 +368,10 @@
       top:50%;
       left:50%;
       transform:translate(-50%, -60%);
+      -webkit-transform:translate(-50%, -60%);
+      -moz-transform:translate(-50%, -60%);
+      -ms-transform:translate(-50%, -60%);
+      -o-transform:translate(-50%, -60%);
       text-indent:-99999em;
       background-size:contain;
     }

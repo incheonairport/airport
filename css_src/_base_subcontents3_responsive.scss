@@ -1,5 +1,5 @@
 // 1024
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1080px) {
   // guide box
   .guidebox {
     &-col {
@@ -192,7 +192,7 @@
 }
 
 // 640
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1080px) {
   .position-box108{
     margin-top:0;
   }
@@ -1058,6 +1058,10 @@
           top:50%;
           left:50%;
           transform:translate(-50%, -50%);
+          -webkit-transform:translate(-50%, -50%);
+          -moz-transform:translate(-50%, -50%);
+          -ms-transform:translate(-50%, -50%);
+          -o-transform:translate(-50%, -50%);
         }
       }
 

@@ -458,7 +458,7 @@ $(function(){
 
       }
 
-      if( $(window).width() > 1024 ){
+      if( $(window).width() > 1080 ){
 
         $bannerItem.each(function(){
 

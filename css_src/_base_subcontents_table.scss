@@ -270,6 +270,7 @@
   &-basic{
     //margin-top:10px;
     &-link{
+      cursor: pointer;
       display: block;
       outline: 1px solid transparent;
       &:hover {
@@ -707,6 +708,10 @@
     //right: 0;
     left: 50%;
     transform:translate(-50%);
+    -webkit-transform:translate(-50%);
+    -moz-transform:translate(-50%);
+    -ms-transform:translate(-50%);
+    -o-transform:translate(-50%);
     //bottom: 0;
     //margin: auto;
     background: url(/static/ap/images/spr_ico_sns.png) no-repeat;

@@ -60,14 +60,14 @@ $(function(){
   // set full page
   (function(){
 
-    if( $(window).outerWidth() > 1024 ){
+    if( $(window).outerWidth() > 1080 ){
 
       if( $('#fullpage').length > 0 ){
 
         $('#fullpage').fullpage({
           scrollBar: true,
           scrollingSpeed: 1000,
-          responsiveWidth: 1025,
+          responsiveWidth: 1081,
           normalScrollElements: '.layer.system, .layer',
           afterLoad: function(anchorLink, index){
             if(index == 2){
@@ -87,7 +87,7 @@ $(function(){
         $('#fullpage').fullpage({
           scrollBar: true,
           scrollingSpeed: 1000,
-          responsiveWidth: 1025,
+          responsiveWidth: 1081,
           normalScrollElements: '.layer.system, .layer'
         });
 
@@ -104,7 +104,7 @@ $(function(){
   (function(){
 
     // top popup mobile scroll fix
-    if($(window).outerWidth() <= 1024){
+    if($(window).outerWidth() <= 1080){
       if( $('.top-big-popup').length > 0){
         $('body').addClass('scrollfix');
         //$('body').on('scroll touchmove mousewheel', function(e){
@@ -139,7 +139,7 @@ $(function(){
 
       BottomBanner.init();
 
-      if( $(window).outerWidth() > 1024 ){
+      if( $(window).outerWidth() > 1080 ){
 
         if( $('section.top-big-popup').length >= 0 ){
           $('section.top-big-popup').removeClass('mobile none');

@@ -1065,6 +1065,10 @@
     top:50%;
     right:24px;
     transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
 
     &:after{
       margin:0;
@@ -1096,6 +1100,10 @@
   //color:#fff;
   z-index:999;
   transform:translateY(-40%);
+  -webkit-transform:translateY(-40%);
+  -moz-transform:translateY(-40%);
+  -ms-transform:translateY(-40%);
+  -o-transform:translateY(-40%);
 
   &.quick-in{
     transition:all .3s ease-out;

@@ -936,6 +936,10 @@
     top: 50%;
     left: 50%;
     transform:translate(-55%,-40%);
+    -webkit-transform:translate(-55%,-40%);
+    -moz-transform:translate(-55%,-40%);
+    -ms-transform:translate(-55%,-40%);
+    -o-transform:translate(-55%,-40%);
 
     &-article{
       width:17px;
