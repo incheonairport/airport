@@ -312,6 +312,14 @@
     }
   }
 
+  .btn-type-small{
+    &.double{
+      height: auto;
+      padding: 5px 12px;
+      line-height: normal;
+    }
+  }
+
   .search-flight-search-btn.ico:after {
     right: 77px;
     top: -2px;
