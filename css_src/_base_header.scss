@@ -532,18 +532,21 @@
     }
 
     &-close{
+      display:none;
       width:15px;
       height:15px;
       position:absolute;
-      top:7px;
-      right:335px;
+      top: 0;
+      margin: auto;
+      bottom: 0;
+      left:10px;
       border:none;
       background:transparent;
       text-indent:-99999em;
 
       &:after{
-        content:"";
         display:block;
+        content:"";
         width:15px;
         height:15px;
         background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
@@ -880,13 +883,16 @@
           right:0;
           text-align:right;
           width:68px;
-          background:#6281c1;
+          background:#466fb7;
           border-radius:20px;
           overflow:hidden;
           transition:all .3s ease-out;
 
           &.on{
-            width:360px;
+            width:245px;
+            .header-search-close{
+              display:block;
+            }
           }
         }
       }
@@ -949,11 +955,12 @@
               display:block;
               width:25px;
               height:25px;
-              margin:0;
               background: url(/static/ap/images/ico_link_header_search.png) no-repeat -35px 0;
               position:absolute;
-              top:2px;
-              left:2px;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              left: 2px;
             }
           }
         }
@@ -962,7 +969,7 @@
 
       &-input{
         display:block;
-        width:250px;
+        width:134px;
         height:25px;
         border:0;
         position:absolute;
@@ -971,7 +978,7 @@
         background:transparent;
         color:#fff;
         font-weight:400;
-        font-size:14px;
+        font-size:0.825rem;
         line-height:14px;
 
         &::-webkit-input-placeholder {

@@ -155,6 +155,11 @@ $(function(){
 
     };
 
+    $(window).scroll(function(){
+      $('.select-list').removeClass('on');
+      $('.select-link-default').removeClass('on');
+    });
+
   };
 
   /**
