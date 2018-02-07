@@ -12,6 +12,44 @@ html.ie{
 
 .ie{
 
+  .section2{
+    .main{
+      &-content{
+        -ms-transform:none;
+        margin: -16% -32%;
+      }
+    }
+  }
+
+  .section3{
+    .main{
+      &-content{
+        -ms-transform:none;
+        margin: -15% -28%;
+      }
+    }
+  }
+
+  @media screen and (max-width:1080px) {
+    .section2{
+      .main{
+        &-content{
+          margin: 0;
+        }
+      }
+    }
+
+    .section3{
+      .main{
+        &-content{
+          margin: 0;
+        }
+      }
+    }
+  }
+
+
+
   .layer-text-box{
     &-right{
       .layer-text{
