@@ -1,0 +1,615 @@
+<!--=include _include/_base_header.html -->
+
+<section id="top-contents" class="contents">
+	<div class="location">
+		<div class="location-btn">
+			<button type="button" class="location-btn-minus ico"></button>
+			<button type="button" class="location-btn-plus ico"></button>
+			<button type="button" class="location-btn-print ico"></button>
+		</div>
+		<div class="location-bar">
+			<ul class="location-bar-nav">
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/svc/getFacilityMain.do" class="location-bar-nav-item-link">안내·서비스</a></li>
+				<li class="location-bar-nav-item"><a href="/ap/ko/svc/getFacilityMain.do" class="location-bar-nav-item-link">안내·편의시설</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="inner-section">
+		<div class="contents-sub-head">
+			<h2 class="contents-sub-head-title">안내·편의시설</h2>
+			<p class="contents-sub-head-article">인천국제공항에서의 즐거운 경험을 위한 다양한 공항시설을 안내합니다.</p>
+		</div>
+	</div>
+</section>
+
+<section class="contents facility">
+	<input type="hidden" id="CODE_ID" value="">
+	<input type="hidden" id="SN" value="">
+
+	<div class="contents-visual facilities">
+		<div class="inner-section">
+			<div class="congestion">
+				<div class="congestion-title ft20">제2 여객터미널<br> <span class="point">정부종합행정센터 </span>안내</div>
+				<a href="javascript:openLayerTab();" class="congestion-quick-link ico">바로가기</a>
+			</div>
+			<div class="search-airline-head">
+				<h4 class="search-airline-head-title"><strong>안내·편의시설</strong> 검색</h4>
+
+				<div class="search-airline-name">
+					<label for="SEARCH_STR" class="label-hide"></label>
+					<input type="text" id="SEARCH_STR" class="search-airline-name-txt" placeholder="서비스명 입력">
+					<button type="button" class="search-airline-name-btn ico" onclick="javascript:getShopSearchStr();">검색</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="inner-section">
+		<div class="filter mt30">
+			<!-- 터미널별 검색 -->
+			<div class="filter-terminal-search">
+				<span class="filter-terminal-search-heading">터미널 별 검색</span>
+				<!-- 1차 필터 검색 -->
+				<div class="filter-terminal-search-depth1">
+					<div class="input-box field">
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('ALL');" checked="checked">
+							<label for="main-terminal" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">전체</label>
+						</div>
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('P01');">
+							<label for="main-terminal-1" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">제1 여객터미널</label>
+						</div>
+
+						<div class="input-box field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-2" class="field-radiomain" value="main-terminal-2" onclick="javascript:fncTerminalID('P03');">
+							<label for="main-terminal-2" class="field-radiomain-label" title="클릭하면 제2 여객터미널에서 검색이 가능합니다.">제2 여객터미널</label>
+						</div>
+					</div>
+
+					<div class="input-box base">
+						<input type="checkbox" name="search" id="NTCD24_AT" class="checkbox" value="todclock" onclick="javascript:getShopDetail24();">
+						<label class="checkbox-label ico" for="NTCD24_AT">24시간</label>
+					</div>
+				</div>
+
+				<div class="filter-terminal-search-depth2">
+					<div class="field">
+						<div class="field-division col-1">
+							<span class="field-group-tit">서비스 선택</span>
+						</div>
+						<div class="field-group" id="category">
+
+
+
+
+
+
+
+							<input type="radio" name="shop-area" id="cat_all" class="field-radio" value="all" onclick="javascript:getCategoryDetail();" checked="">
+							<label class="field-radio-label" for="cat_all">전체</label>
+
+							<input type="radio" name="shop-area" id="11" class="field-radio" value="11" onclick="javascript:getCategoryDetail('11');">
+							<label class="field-radio-label" for="11">금융·보험·통신</label>
+
+							<input type="radio" name="shop-area" id="12" class="field-radio" value="12" onclick="javascript:getCategoryDetail('12');">
+							<label class="field-radio-label" for="12">비즈니스</label>
+
+							<input type="radio" name="shop-area" id="13" class="field-radio" value="13" onclick="javascript:getCategoryDetail('13');">
+							<label class="field-radio-label" for="13">안내·서비스</label>
+
+							<input type="radio" name="shop-area" id="14" class="field-radio" value="14" onclick="javascript:getCategoryDetail('14');">
+							<label class="field-radio-label" for="14">휴식</label>
+
+							<input type="radio" name="shop-area" id="15" class="field-radio" value="15" onclick="javascript:getCategoryDetail('15');">
+							<label class="field-radio-label" for="15">의료</label>
+
+							<input type="radio" name="shop-area" id="16" class="field-radio" value="16" onclick="javascript:getCategoryDetail('16');">
+							<label class="field-radio-label" for="16">생활</label>
+
+							<input type="radio" name="shop-area" id="17" class="field-radio" value="17" onclick="javascript:getCategoryDetail('17');">
+							<label class="field-radio-label" for="17">렌터카</label>
+						</div>
+					</div>
+					<div class="field" style="display:none;" id="selCategoryDetail">
+						<div class="field-division col-1">
+							<span class="field-group-tit">분류 선택</span>
+						</div>
+						<div class="field-group" id="category_detail">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 매장검색
+			<div class="filter-store-search">
+				<div class="filter-store-search-input">
+					<label for="SEARCH_STR" class="responsive-form-box-hide">브랜드검색</label>
+					<input type="text" id="SEARCH_STR" placeholder="매장명, 브랜드명 입력"/>
+				</div>
+				<div class="filter-store-search-icon">
+					<button type="button" title="키워드 검색을 할 수 있습니다." class="ico search-black" onclick="javascript:getShopSearchStr();">검색</button>
+				</div>
+			</div>
+			 -->
+		</div>
+		<div class="boxmodel2">
+			<ul class="boxmodel2-list" id="shop_detail">
+
+
+
+
+
+
+
+				<script>
+					$(document).ready(function(){
+						if("287" != "" && "287" != "0") {
+							setPageNation("1", "287");
+						}
+						else {
+							$("#resultPageNavi").html("");
+						}
+					});
+					function openMap(sn) {
+						window.open("/ap/ko/map/mapInfo.do?SN=" + sn,'_blank');
+					}
+				</script>
+
+
+
+				<li class="boxmodel2-list-item todclock">
+
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+								<div class="boxmodel2-imggroup">
+				<span class="
+					boxmodel2-imggroup-mark blue
+
+
+
+
+				">휴대폰대여/로밍</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1288" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">와이파이도시락</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">00:00 ~ 24:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<!-- <dd class="boxmodel2-table-desc">1566-9070</dd> -->
+									<dd class="boxmodel2-table-desc" id="TELNO">1566-9070</dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1288');"><em class="color-lb">제2여객터미널 1층 일반지역 1번 출입구 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">국내/해외 포켓와이파이, 데이터로밍</dd>
+								</dl>
+							</div>
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								와이파이도시락은 세계 각 국가별 이동통신사의 3G/4G(LTE) 신호를 wifi신호로 바꿔주는 새로운 개념의 데이터로밍 단말기로써, ‘와이파이’는 데이터를 + ‘도시락’은 휴대성을 의미합니다. 해외여행 시 데이터를 도시락처럼 간편하게 휴대하며 언제 어디서든 쉽고 빠르게 무선데이터를 사용할 수 있는 와이드모바일의 대표 브랜드 입니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+				<li class="boxmodel2-list-item todclock">
+
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+								<div class="boxmodel2-imggroup">
+				<span class="
+					boxmodel2-imggroup-mark blue
+
+
+
+
+				">휴대폰대여/로밍</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1289" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">월드로밍</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">00:00 ~ 24:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<!-- <dd class="boxmodel2-table-desc"></dd> -->
+									<dd class="boxmodel2-table-desc" id="TELNO"></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1289');"><em class="color-lb">제2여객터미널 1층 일반지역 6번 출입구 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">포켓와이파이 단말기</dd>
+								</dl>
+							</div>
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								월드로밍
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+				<li class="boxmodel2-list-item todclock">
+
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+								<div class="boxmodel2-imggroup">
+				<span class="
+					boxmodel2-imggroup-mark blue
+
+
+
+
+				">휴대폰대여/로밍</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1290" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">플레이와이파이</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">00:00 ~ 24:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<!-- <dd class="boxmodel2-table-desc">032-743-5550</dd> -->
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-5550</dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1290');"><em class="color-lb">제2여객터미널 1층 일반지역 6번 출입구 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">포켓와이파이 단말기</dd>
+								</dl>
+							</div>
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								플레이와이파이
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+				<li class="boxmodel2-list-item todclock">
+
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+								<div class="boxmodel2-imggroup">
+				<span class="
+					boxmodel2-imggroup-mark blue
+
+
+
+
+				">호텔</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1291" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">환승호텔</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">00:00 ~ 24:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<!-- <dd class="boxmodel2-table-desc">032-743-3000</dd> -->
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-3000</dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1291');"><em class="color-lb">제2여객터미널 4층 면세지역 252번 게이트 맞은편</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">객실 50실, 라운지 카페, 비즈니스 센터 등</dd>
+								</dl>
+							</div>
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								워커힐 호텔의 경영 노하우와 서비스 정신을 바탕으로 운영되는 인천공항 환승호텔은 여행객들에게 안락하고 편안한 서비스를 제공하기 위해
+								정성을 다하고 있는 인천 공항 내 환승호텔 입니다. 피로가 쌓인 여행객들이 짧은 휴식을 취할 수 있도록 6시간 단위요금을 부과하고 Block
+								요금제로 운영됩니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+								<div class="boxmodel2-imggroup">
+				<span class="
+					boxmodel2-imggroup-mark blue
+
+
+
+
+				">라운지</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1292" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">마티나 골드</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">07:00 ~ 22:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<!-- <dd class="boxmodel2-table-desc">032-743-5060</dd> -->
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-5060</dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1292');"><em class="color-lb">제2여객터미널 4층 면세지역 249번 게이트 맞은편</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">뷔페, 음료, 주류 등</dd>
+								</dl>
+							</div>
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								엄선된 재료의 음식과 편안한 분위기까지 한층 업그레이드 된 워커힐 호텔의 품격있는 서비스를 그대로 전해드립니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<div class="mt40">
+			<div class="pagenation" id="resultPageNavi"><a class="ico first" href="javascript:getShopList(1);">처음</a><a class="ico prev" href="javascript:getShopList(0);">이전</a><ol class="pagenation-list"><li class="pagenation-list-item on"><a class="pagenation-list-link" href="javascript:getShopList(1);">1</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(2);">2</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(3);">3</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(4);">4</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(5);">5</a></li></ol><a class="ico next" href="javascript:getShopList(6);">다음</a><a class="ico last" href="javascript:getShopList(58);">마지막</a></div>
+		</div>
+	</div>
+</section>
+
+<!--=include _include/_base_footer.html -->

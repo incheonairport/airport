@@ -1,0 +1,2785 @@
+<!--=include _include/_base_header.html -->
+<section id="top-contents" class="contents">
+  <!--위치-->
+  <div class="location">
+    <div class="location-btn">
+      <button type="button" class="location-btn-minus ico"></button>
+      <button type="button" class="location-btn-plus ico"></button>
+      <button type="button" class="location-btn-print ico"></button>
+    </div>
+    <div class="location-bar">
+      <ul class="location-bar-nav">
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
+        <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">출발</a></li>
+        <li class="location-bar-nav-item ico"><a href="/ap/ko/dep/apAirlinesList.do" class="location-bar-nav-item-link">취항정보</a></li>
+        <li class="location-bar-nav-item"><a href="/ap/ko/dep/apAirlinesList.do" class="location-bar-nav-item-link">취항 항공사</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--//위치-->
+  <div class="inner-section">
+    <!--서브타이틀-->
+    <div class="contents-sub-head">
+      <h2 class="contents-sub-head-title">취항정보</h2>
+      <p class="contents-sub-head-article">항공사별 취항정보를 안내합니다.</p>
+    </div>
+    <!--//서브타이틀-->
+  </div>
+  <div class="contents-visual search-airline">
+    <div class="inner-section">
+      <!--취항항공사 검색-->
+      <form name="frmSearch" method="post" onsubmit="return false;">
+        <div class="search-airline-head">
+          <h4 class="search-airline-head-title"><strong>취항 항공사</strong> 검색</h4>
+          <div class="search-airline-name">
+            <select class="search-airline-name-option" id="SERCHTYPE" name="SERCHTYPE" onchange="fncSearchTypeChange(this)">
+              <option value="A">항공사명</option>
+              <option value="B">항공사코드(IATA)</option>
+              <option value="C">항공사코드(ICAO)</option>
+            </select>
+            <input type="text" id="SERCHVAL" name="SERCHVAL" value="" onblur="this.value=this.value.toUpperCase();" maxlength="40" class="search-airline-name-txt" autocomplete="off">
+            <button id="fncSearchClk" type="button" class="search-airline-name-btn ico">검색</button>
+          </div>
+        </div>
+      </form>
+      <!--//취항항공사검색-->
+      <nav class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item"><a href="/ap/ko/dep/apAirlinesList.do" class="tab-sub-list-item-link on">취항 항공사</a></li>
+          <li class="tab-sub-list-item"><a href="/ap/ko/dep/serviceCityList.do" class="tab-sub-list-item-link">취항 도시</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section class="contents">
+  <div class="inner-section mt40">
+    <h2 style="display:none;">취항 항공사 안내 상세</h2>
+    <!--취항정보-->
+    <div id="section-result">
+      <!-- 검색결과 데이터 목록 영역 -->
+      <div id="div-result-list">
+        <table class="table vt-dark airline-table even">
+          <caption>취항항공사 안내</caption>
+          <colgroup>
+            <col style="width:20%">
+            <col style="width:10%">
+            <col style="width:15%">
+            <col style="width:15%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+          </colgroup>
+          <thead>
+          <tr>
+            <th scope="col">항공사명</th>
+            <th scope="col">국적</th>
+            <th scope="col">대표연락처</th>
+            <th scope="col">공항연락처</th>
+            <th scope="col">IATA</th>
+            <th scope="col">ICAO</th>
+            <th scope="col">출발현황</th>
+            <th scope="col">도착현황</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.s7.ru/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=S7" alt="아이콘파일다운로드">
+                <br>S7 항공
+              </a>
+
+            </td>
+            <td class="center">
+              러시아
+            </td>
+            <td class="center">02-6399-6500</td>
+            <td class="center">032-743-7010</td>
+            <td class="center">S7</td>
+            <td class="center">SBI</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('S7','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('S7','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.garuda.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=GA" alt="아이콘파일다운로드">
+                <br>가루다인도네시아항공
+              </a>
+
+            </td>
+            <td class="center">
+              인도네시아
+            </td>
+            <td class="center">02-773-2092</td>
+            <td class="center">032-744-1991</td>
+            <td class="center">GA</td>
+            <td class="center">GIA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('GA','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('GA','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.koreanair.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" alt="아이콘파일다운로드">
+                <br>대한항공
+              </a>
+
+            </td>
+            <td class="center">
+              한국
+            </td>
+            <td class="center">1588-2001</td>
+            <td class="center">1588-2001</td>
+            <td class="center">KE</td>
+            <td class="center">KAL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('KE','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('KE','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://ko.delta.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=DL" alt="아이콘파일다운로드">
+                <br>델타항공
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center">02-754-1921</td>
+            <td class="center">032-744-6307</td>
+            <td class="center">DL</td>
+            <td class="center">DAL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('DL','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('DL','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.laoairlines.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=QV" alt="아이콘파일다운로드">
+                <br>라오항공
+              </a>
+
+            </td>
+            <td class="center">
+              라오스
+            </td>
+            <td class="center">02-6262-0808~0810</td>
+            <td class="center">032-743-3585</td>
+            <td class="center">QV</td>
+            <td class="center">LAO</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('QV','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('QV','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.royalairmaroc.com/int-en" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AT" alt="아이콘파일다운로드">
+                <br>로얄 에어 모로코
+              </a>
+
+            </td>
+            <td class="center">
+              모로코
+            </td>
+            <td class="center">-</td>
+            <td class="center">-</td>
+            <td class="center">AT</td>
+            <td class="center">RAM</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AT','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AT','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.lufthansa.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=LH" alt="아이콘파일다운로드">
+                <br>루프트한자항공
+              </a>
+
+            </td>
+            <td class="center">
+              독일
+            </td>
+            <td class="center">02-6022-4228</td>
+            <td class="center">070-8686-2560</td>
+            <td class="center">LH</td>
+            <td class="center">DLH</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('LH','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('LH','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.mandarin-airlines.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AE" alt="아이콘파일다운로드">
+                <br>만다린항공
+              </a>
+
+            </td>
+            <td class="center">
+              대만
+            </td>
+            <td class="center">032-743-1513</td>
+            <td class="center">032-743-1513</td>
+            <td class="center">AE</td>
+            <td class="center">MDA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AE','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AE','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.malaysiaairlines.com/kr/ko.html" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=MH" alt="아이콘파일다운로드">
+                <br>말레이시아항공
+              </a>
+
+            </td>
+            <td class="center">
+              말레이시아
+            </td>
+            <td class="center">02-7750-952</td>
+            <td class="center">032-743-0883</td>
+            <td class="center">MH</td>
+            <td class="center">MAS</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('MH','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('MH','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.miat.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OM" alt="아이콘파일다운로드">
+                <br>몽골항공
+              </a>
+
+            </td>
+            <td class="center">
+              몽골
+            </td>
+            <td class="center">02-756-9761</td>
+            <td class="center">032-744-6800</td>
+            <td class="center">OM</td>
+            <td class="center">MGL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('OM','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('OM','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.southernair.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=9S" alt="아이콘파일다운로드">
+                <br>미국남부화물항공
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center">032-742-9257</td>
+            <td class="center">032-742-9257</td>
+            <td class="center">9S</td>
+            <td class="center">SOO</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('9S','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('9S','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.vietnamairlines.com/wps/portal/kr/site/home?lang=kr" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=VN" alt="아이콘파일다운로드">
+                <br>베트남항공
+              </a>
+
+            </td>
+            <td class="center">
+              베트남
+            </td>
+            <td class="center">02-757-8920</td>
+            <td class="center">032-744-6565~6</td>
+            <td class="center">VN</td>
+            <td class="center">HVN</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('VN','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('VN','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.vietjetair.com/Sites/Web/en-US/Home" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=VJ" alt="아이콘파일다운로드">
+                <br>비엣젯항공
+              </a>
+
+            </td>
+            <td class="center">
+              베트남
+            </td>
+            <td class="center">02-319-4560</td>
+            <td class="center">032-743-0370</td>
+            <td class="center">VJ</td>
+            <td class="center">VJC</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('VJ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('VJ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.scal.com.cn" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=3U" alt="아이콘파일다운로드">
+                <br>사천항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">02-733-8778 </td>
+            <td class="center">032-743-5211</td>
+            <td class="center">3U</td>
+            <td class="center">CSC</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('3U','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('3U','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.shandongair.com.cn/kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=SC" alt="아이콘파일다운로드">
+                <br>산동항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">032-743-8202~3 </td>
+            <td class="center">032-743-8202~3</td>
+            <td class="center">SC</td>
+            <td class="center">CDG</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('SC','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('SC','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.shanghai-air.co.kr" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=FM" alt="아이콘파일다운로드">
+                <br>상하이항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">02-518-0330</td>
+            <td class="center">032-744-3780</td>
+            <td class="center">FM</td>
+            <td class="center">CSH</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('FM','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('FM','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="https://www.cebupacificair.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=5J" alt="아이콘파일다운로드">
+                <br>세부퍼시픽항공
+              </a>
+
+            </td>
+            <td class="center">
+              필리핀
+            </td>
+            <td class="center">02-3708-8599, 8998</td>
+            <td class="center">032-743-5705,5698</td>
+            <td class="center">5J</td>
+            <td class="center">CEB</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('5J','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('5J','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="#" target="">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=6J" alt="아이콘파일다운로드">
+                <br>솔라시드 항공
+              </a>
+
+            </td>
+            <td class="center">
+              일본
+            </td>
+            <td class="center">070-7545-2676</td>
+            <td class="center">070-7545-2676</td>
+            <td class="center">6J</td>
+            <td class="center">SNJ</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('6J','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('6J','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.skyangkorair.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=ZA" alt="아이콘파일다운로드">
+                <br>스카이 앙코르 항공
+              </a>
+
+            </td>
+            <td class="center">
+              캄보디아
+            </td>
+            <td class="center">02-752-2633</td>
+            <td class="center"> </td>
+            <td class="center">ZA</td>
+            <td class="center">SWM</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('ZA','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('ZA','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.flyscoot.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=TR" alt="아이콘파일다운로드">
+                <br>스쿠트타이거항공
+              </a>
+
+            </td>
+            <td class="center">
+              싱가포르
+            </td>
+            <td class="center">02-3483-5423</td>
+            <td class="center">032-743-2537</td>
+            <td class="center">TR</td>
+            <td class="center">TGW</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('TR','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('TR','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.silkwaywest.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=7L" alt="아이콘파일다운로드">
+                <br>실크웨이웨스트항공
+              </a>
+
+            </td>
+            <td class="center">
+              아제르바이잔
+            </td>
+            <td class="center">02-779-8864</td>
+            <td class="center">02-779-8864</td>
+            <td class="center">7L</td>
+            <td class="center">AZQ</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('7L','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('7L','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.shenzhenair.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=ZH" alt="아이콘파일다운로드">
+                <br>심천항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">02-773-9233</td>
+            <td class="center">032-744-3255</td>
+            <td class="center">ZH</td>
+            <td class="center">CSZ</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('ZH','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('ZH','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.singaporeair.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=SQ" alt="아이콘파일다운로드">
+                <br>싱가포르항공
+              </a>
+
+            </td>
+            <td class="center">
+              싱가포르
+            </td>
+            <td class="center">02-755-1226</td>
+            <td class="center">032-744-6500~2</td>
+            <td class="center">SQ</td>
+            <td class="center">SIA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('SQ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('SQ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="#" target="">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=XO" alt="아이콘파일다운로드">
+                <br>씨에어
+              </a>
+
+            </td>
+            <td class="center">
+              필리핀
+            </td>
+            <td class="center">632 8490101</td>
+            <td class="center">632 8490101</td>
+            <td class="center">XO</td>
+            <td class="center">SGD</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('XO','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('XO','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.american-airlines.co.kr/intl/kr/index.jsp" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AA" alt="아이콘파일다운로드">
+                <br>아메리칸항공
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center">02-3483-3909</td>
+            <td class="center">032-743-7260~3</td>
+            <td class="center">AA</td>
+            <td class="center">AAL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AA','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AA','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://flyasiana.com/main.asp" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" alt="아이콘파일다운로드">
+                <br>아시아나항공
+              </a>
+
+            </td>
+            <td class="center">
+              한국
+            </td>
+            <td class="center">1588-8000</td>
+            <td class="center">032-744-2135</td>
+            <td class="center">OZ</td>
+            <td class="center">AAR</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('OZ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('OZ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="#" target="">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AM" alt="아이콘파일다운로드">
+                <br>아에로멕시코
+              </a>
+
+            </td>
+            <td class="center">
+              멕시코
+            </td>
+            <td class="center">02-754-6336</td>
+            <td class="center">032-743-6620</td>
+            <td class="center">AM</td>
+            <td class="center">AMX</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AM','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AM','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.atlasair.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=5Y" alt="아이콘파일다운로드">
+                <br>아틀라스항공
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center">02-752-6310</td>
+            <td class="center">032-743-5220,3</td>
+            <td class="center">5Y</td>
+            <td class="center">GTI</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('5Y','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('5Y','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.alitalia.it/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AZ" alt="아이콘파일다운로드">
+                <br>알리탈리아 항공
+              </a>
+
+            </td>
+            <td class="center">
+              이탈리아
+            </td>
+            <td class="center">02-2222-7890</td>
+            <td class="center">02-2222-7890</td>
+            <td class="center">AZ</td>
+            <td class="center">AZA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AZ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AZ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://yakutiaair.co.kr" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=R3" alt="아이콘파일다운로드">
+                <br>야쿠티아 항공
+              </a>
+
+            </td>
+            <td class="center">
+              러시아
+            </td>
+            <td class="center">02-335-6944</td>
+            <td class="center">032-744-6944</td>
+            <td class="center">R3</td>
+            <td class="center">SYL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('R3','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('R3','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.yzr.com.cn/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=Y8" alt="아이콘파일다운로드">
+                <br>양쯔강익스프레스항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center"> </td>
+            <td class="center"> </td>
+            <td class="center">Y8</td>
+            <td class="center">YZR</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('Y8','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('Y8','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.emirates.com/korea/kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=EK" alt="아이콘파일다운로드">
+                <br>에미레이트항공
+              </a>
+
+            </td>
+            <td class="center">
+              아랍에미리트
+            </td>
+            <td class="center">02-2022-8400</td>
+            <td class="center">032-743-8101</td>
+            <td class="center">EK</td>
+            <td class="center">UAE</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('EK','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('EK','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.evaair.co.kr" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=BR" alt="아이콘파일다운로드">
+                <br>에바항공
+              </a>
+
+            </td>
+            <td class="center">
+              대만
+            </td>
+            <td class="center">02-756-0015</td>
+            <td class="center">032-744-3512</td>
+            <td class="center">BR</td>
+            <td class="center">EVA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('BR','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('BR','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.airmacau.co.kr" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=NX" alt="아이콘파일다운로드">
+                <br>에어 마카오
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">02-779-8899</td>
+            <td class="center">032-743-8999</td>
+            <td class="center">NX</td>
+            <td class="center">AMU</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('NX','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('NX','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="#" target="">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=UX" alt="아이콘파일다운로드">
+                <br>에어 유로파
+              </a>
+
+            </td>
+            <td class="center">
+              스페인
+            </td>
+            <td class="center">1588-2001</td>
+            <td class="center">032-742-7654</td>
+            <td class="center">UX</td>
+            <td class="center">AEA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('UX','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('UX','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.airfrance.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AF" alt="아이콘파일다운로드">
+                <br>에어 프랑스
+              </a>
+
+            </td>
+            <td class="center">
+              프랑스
+            </td>
+            <td class="center">02-3483-1033</td>
+            <td class="center">032-744-4900~1</td>
+            <td class="center">AF</td>
+            <td class="center">AFR</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AF','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AF','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.aerologic.aero/home" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=3S" alt="아이콘파일다운로드">
+                <br>에어로로직
+              </a>
+
+            </td>
+            <td class="center">
+              독일
+            </td>
+            <td class="center"> </td>
+            <td class="center">032-744-0884</td>
+            <td class="center">3S</td>
+            <td class="center">3SX</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('3S','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('3S','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.aeroflot.ru/cms/ko" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=SU" alt="아이콘파일다운로드">
+                <br>에어로플로트항공
+              </a>
+
+            </td>
+            <td class="center">
+              러시아
+            </td>
+            <td class="center">032-744-8672~3</td>
+            <td class="center">032-744-8672~3</td>
+            <td class="center">SU</td>
+            <td class="center">AFL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('SU','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('SU','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://airbridgecargo.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=RU" alt="아이콘파일다운로드">
+                <br>에어브릿지
+              </a>
+
+            </td>
+            <td class="center">
+              러시아
+            </td>
+            <td class="center">02-712-5803</td>
+            <td class="center">032-744-1419</td>
+            <td class="center">RU</td>
+            <td class="center">ABW</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('RU','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('RU','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="#" target="">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=RS" alt="아이콘파일다운로드">
+                <br>에어서울
+              </a>
+
+            </td>
+            <td class="center">
+              한국
+            </td>
+            <td class="center">1800-8100</td>
+            <td class="center">1800-8100</td>
+            <td class="center">RS</td>
+            <td class="center">ASV</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('RS','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('RS','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.airastana.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KC" alt="아이콘파일다운로드">
+                <br>에어아스타나
+              </a>
+
+            </td>
+            <td class="center">
+              카자흐스탄
+            </td>
+            <td class="center">02-3788-9170</td>
+            <td class="center">032-743-2620</td>
+            <td class="center">KC</td>
+            <td class="center">KZR</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('KC','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('KC','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.airasia.com/ph/en/home.page" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=Z2" alt="아이콘파일다운로드">
+                <br>에어아시아 필리핀
+              </a>
+
+            </td>
+            <td class="center">
+              필리핀
+            </td>
+            <td class="center">050-4092-00525</td>
+            <td class="center">050-4092-00525</td>
+            <td class="center">Z2</td>
+            <td class="center">EZD</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('Z2','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('Z2','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.airasia.com/kr/ko/home.page" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=D7" alt="아이콘파일다운로드">
+                <br>에어아시아엑스
+              </a>
+
+            </td>
+            <td class="center">
+              말레이시아
+            </td>
+            <td class="center">050-4092-00525</td>
+            <td class="center">032-743-4333</td>
+            <td class="center">D7</td>
+            <td class="center">XAX</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('D7','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('D7','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.airindia.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AI" alt="아이콘파일다운로드">
+                <br>에어인디아
+              </a>
+
+            </td>
+            <td class="center">
+              인도
+            </td>
+            <td class="center">02-752-6310</td>
+            <td class="center">032-743-0321</td>
+            <td class="center">AI</td>
+            <td class="center">AIC</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AI','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AI','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.air-incheon.com/ko/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KJ" alt="아이콘파일다운로드">
+                <br>에어인천
+              </a>
+
+            </td>
+            <td class="center">
+              한국
+            </td>
+            <td class="center">032-719-7890</td>
+            <td class="center">032-719-7890</td>
+            <td class="center">KJ</td>
+            <td class="center">AIH</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('KJ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('KJ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.air-japan.co.jp/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=NQ" alt="아이콘파일다운로드">
+                <br>에어재팬
+              </a>
+
+            </td>
+            <td class="center">
+              일본
+            </td>
+            <td class="center"> </td>
+            <td class="center"> </td>
+            <td class="center">NQ</td>
+            <td class="center">AJX</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('NQ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('NQ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.aircanada.ca/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AC" alt="아이콘파일다운로드">
+                <br>에어캐나다
+              </a>
+
+            </td>
+            <td class="center">
+              캐나다
+            </td>
+            <td class="center">02-3788-0100</td>
+            <td class="center">032-744-0898~9</td>
+            <td class="center">AC</td>
+            <td class="center">ACA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AC','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AC','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.airhongkong.com.hk/ahk/en/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=LD" alt="아이콘파일다운로드">
+                <br>에어홍콩
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center"> </td>
+            <td class="center">032)744-6766</td>
+            <td class="center">LD</td>
+            <td class="center">AHK</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('LD','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('LD','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.ethiopianairlines.com/en/default.aspx" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=ET" alt="아이콘파일다운로드">
+                <br>에티오피아항공
+              </a>
+
+            </td>
+            <td class="center">
+              에티오피아
+            </td>
+            <td class="center">02-733-0325</td>
+            <td class="center">032-743-5698</td>
+            <td class="center">ET</td>
+            <td class="center">ETH</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('ET','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('ET','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://flights.etihad.com/en-kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=EY" alt="아이콘파일다운로드">
+                <br>에티하드 항공
+              </a>
+
+            </td>
+            <td class="center">
+              아랍에미리트
+            </td>
+            <td class="center">02-3483-4888</td>
+            <td class="center">032-743-8760</td>
+            <td class="center">EY</td>
+            <td class="center">ETD</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('EY','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('EY','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.british-airways.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=BA" alt="아이콘파일다운로드">
+                <br>영국항공
+              </a>
+
+            </td>
+            <td class="center">
+              영국
+            </td>
+            <td class="center">02-3483-3337</td>
+            <td class="center">032-743-5703</td>
+            <td class="center">BA</td>
+            <td class="center">BAW</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('BA','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('BA','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.flyaurora.ru/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=HZ" alt="아이콘파일다운로드">
+                <br>오로라항공
+              </a>
+
+            </td>
+            <td class="center">
+              러시아
+            </td>
+            <td class="center">02-318-7033</td>
+            <td class="center">032-741-6035</td>
+            <td class="center">HZ</td>
+            <td class="center">SHU</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('HZ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('HZ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.uzbekair.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=HY" alt="아이콘파일다운로드">
+                <br>우즈베키스탄항공
+              </a>
+
+            </td>
+            <td class="center">
+              우즈베키스탄
+            </td>
+            <td class="center">02-754-1041</td>
+            <td class="center">032-744-3700</td>
+            <td class="center">HY</td>
+            <td class="center">UZB</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('HY','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('HY','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.ual.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=UA" alt="아이콘파일다운로드">
+                <br>유나이티드항공
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center">02-751-0300</td>
+            <td class="center">032-744-6666</td>
+            <td class="center">UA</td>
+            <td class="center">UAL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('UA','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('UA','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.uniairkorea.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=B7" alt="아이콘파일다운로드">
+                <br>유니항공
+              </a>
+
+            </td>
+            <td class="center">
+              대만
+            </td>
+            <td class="center">02-756-0015</td>
+            <td class="center">032-744-3512</td>
+            <td class="center">B7</td>
+            <td class="center">UIA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('B7','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('B7','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.ups.com/asia/kr/korindex.html" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=5X" alt="아이콘파일다운로드">
+                <br>유피에스항공
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center">1588-6886</td>
+            <td class="center">032-744-3000, 3041</td>
+            <td class="center">5X</td>
+            <td class="center">UPS</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('5X','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('5X','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.eastarjet.co.kr://" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=ZE" alt="아이콘파일다운로드">
+                <br>이스타항공
+              </a>
+
+            </td>
+            <td class="center">
+              한국
+            </td>
+            <td class="center">1544-0080</td>
+            <td class="center">070-8660-8175</td>
+            <td class="center">ZE</td>
+            <td class="center">ESR</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('ZE','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('ZE','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.jal.co.kr/ko/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=JL" alt="아이콘파일다운로드">
+                <br>일본항공
+              </a>
+
+            </td>
+            <td class="center">
+              일본
+            </td>
+            <td class="center">02-757-1711</td>
+            <td class="center">032-744-3601~3</td>
+            <td class="center">JL</td>
+            <td class="center">JAL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('JL','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('JL','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="www.jcairline.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=QD" alt="아이콘파일다운로드">
+                <br>제이씨 인터네셔널 항공
+              </a>
+
+            </td>
+            <td class="center">
+              캄보디아
+            </td>
+            <td class="center">02-720-2773</td>
+            <td class="center">010-8921-1524, 010-3340-1688</td>
+            <td class="center">QD</td>
+            <td class="center">JCC</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('QD','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('QD','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.jejuair.net" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=7C" alt="아이콘파일다운로드">
+                <br>제주항공
+              </a>
+
+            </td>
+            <td class="center">
+              한국
+            </td>
+            <td class="center">1599-1500</td>
+            <td class="center">1599-1500</td>
+            <td class="center">7C</td>
+            <td class="center">JJA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('7C','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('7C','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.jetairways.com/EN/IN/Home.aspx" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=9W" alt="아이콘파일다운로드">
+                <br>제트 에어웨이즈
+              </a>
+
+            </td>
+            <td class="center">
+              인도
+            </td>
+            <td class="center">-</td>
+            <td class="center">-</td>
+            <td class="center">9W</td>
+            <td class="center">JAI</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('9W','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('9W','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.airchina.kr" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CA" alt="아이콘파일다운로드">
+                <br>중국국제항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">02-774-6886</td>
+            <td class="center">032-744-3255~6</td>
+            <td class="center">CA</td>
+            <td class="center">CCA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('CA','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('CA','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://kr.csair.com/kor/kor/index.shtml?country=south korea" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CZ" alt="아이콘파일다운로드">
+                <br>중국남방항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">1899-5539</td>
+            <td class="center">032-743-3455~6</td>
+            <td class="center">CZ</td>
+            <td class="center">CSN</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('CZ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('CZ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.easternair.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=MU" alt="아이콘파일다운로드">
+                <br>중국동방항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">1661-2600</td>
+            <td class="center">032-744-3780</td>
+            <td class="center">MU</td>
+            <td class="center">CES</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('MU','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('MU','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.cnpostair.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CF" alt="아이콘파일다운로드">
+                <br>중국우정항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center"> </td>
+            <td class="center">032-744-4785</td>
+            <td class="center">CF</td>
+            <td class="center">CYZ</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('CF','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('CF','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.xiamenair.com/cn/en/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=MF" alt="아이콘파일다운로드">
+                <br>중국하문항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">02-3455-1666</td>
+            <td class="center"> </td>
+            <td class="center">MF</td>
+            <td class="center">CXA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('MF','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('MF','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.eal-ceair.com/index.html" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CK" alt="아이콘파일다운로드">
+                <br>중국화물항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">02-518-0330</td>
+            <td class="center">032-744-3793</td>
+            <td class="center">CK</td>
+            <td class="center">CKK</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('CK','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('CK','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.china-airlines.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CI" alt="아이콘파일다운로드">
+                <br>중화항공
+              </a>
+
+            </td>
+            <td class="center">
+              대만
+            </td>
+            <td class="center">02-317-8888</td>
+            <td class="center">032-743-1513~4</td>
+            <td class="center">CI</td>
+            <td class="center">CAL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('CI','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('CI','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.jinair.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=LJ" alt="아이콘파일다운로드">
+                <br>진에어
+              </a>
+
+            </td>
+            <td class="center">
+              한국
+            </td>
+            <td class="center">1600-6200</td>
+            <td class="center">032-743-1504</td>
+            <td class="center">LJ</td>
+            <td class="center">JNA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('LJ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('LJ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.czechairlines.kr/en/portal/homepage/kr_homepage.htm" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OK" alt="아이콘파일다운로드">
+                <br>체코항공
+              </a>
+
+            </td>
+            <td class="center">
+              체코
+            </td>
+            <td class="center">1544-9474</td>
+            <td class="center">1544-9474</td>
+            <td class="center">OK</td>
+            <td class="center">CSA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('OK','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('OK','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=9C" alt="아이콘파일다운로드">
+              <br>춘추항공
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center"> </td>
+            <td class="center"> </td>
+            <td class="center">9C</td>
+            <td class="center">CQH</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('9C','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('9C','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.cargolux.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CV" alt="아이콘파일다운로드">
+                <br>카고룩스항공
+              </a>
+
+            </td>
+            <td class="center">
+              룩셈부르크
+            </td>
+            <td class="center"> </td>
+            <td class="center">032-744-3711</td>
+            <td class="center">CV</td>
+            <td class="center">CLX</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('CV','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('CV','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.qatarairways.com/kr/ko/homepage.page" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=QR" alt="아이콘파일다운로드">
+                <br>카타르항공
+              </a>
+
+            </td>
+            <td class="center">
+              카타르
+            </td>
+            <td class="center">02-3772-9000</td>
+            <td class="center">032-744-3370~72</td>
+            <td class="center">QR</td>
+            <td class="center">QTR</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('QR','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('QR','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.cambodiaangkorair.com/en/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=K6" alt="아이콘파일다운로드">
+                <br>캄보디아 앙코르 항공
+              </a>
+
+            </td>
+            <td class="center">
+              캄보디아
+            </td>
+            <td class="center">02-730-1900</td>
+            <td class="center">02-730-1900</td>
+            <td class="center">K6</td>
+            <td class="center">VAV</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('K6','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('K6','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.cathaypacific.com/cpa/ko_KR/homepage" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CX" alt="아이콘파일다운로드">
+                <br>캐세이패시픽항공
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">1644-8003</td>
+            <td class="center">032-744-6777</td>
+            <td class="center">CX</td>
+            <td class="center">CPA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('CX','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('CX','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.klm.com/travel/kr_ko/index.htm" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KL" alt="아이콘파일다운로드">
+                <br>케이엘엠네덜란드항공
+              </a>
+
+            </td>
+            <td class="center">
+              네덜란드
+            </td>
+            <td class="center">02-3483-1133</td>
+            <td class="center">032-744-6700~1</td>
+            <td class="center">KL</td>
+            <td class="center">KLM</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('KL','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('KL','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.qantas.com.au/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=QF" alt="아이콘파일다운로드">
+                <br>콴타스항공
+              </a>
+
+            </td>
+            <td class="center">
+              오스트레일리아
+            </td>
+            <td class="center"> -</td>
+            <td class="center">-</td>
+            <td class="center">QF</td>
+            <td class="center">QFA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('QF','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('QF','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=XJ" alt="아이콘파일다운로드">
+              <br>타이에어아시아엑스
+            </td>
+            <td class="center">
+              태국
+            </td>
+            <td class="center">050-4092-00525</td>
+            <td class="center">050-4092-00525</td>
+            <td class="center">XJ</td>
+            <td class="center">TAX</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('XJ','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('XJ','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.thaiairways.com/homepage/en/home.htm" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=TG" alt="아이콘파일다운로드">
+                <br>타이항공
+              </a>
+
+            </td>
+            <td class="center">
+              태국
+            </td>
+            <td class="center">02-3707-0114</td>
+            <td class="center">032-744-3571</td>
+            <td class="center">TG</td>
+            <td class="center">THA</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('TG','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('TG','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.turkishairlines.com/ko-KR/index.aspx" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=TK" alt="아이콘파일다운로드">
+                <br>터키항공
+              </a>
+
+            </td>
+            <td class="center">
+              터키
+            </td>
+            <td class="center">02-3789-7054</td>
+            <td class="center">032-744-3737</td>
+            <td class="center">TK</td>
+            <td class="center">THY</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('TK','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('TK','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.tianjin-air.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=GS" alt="아이콘파일다운로드">
+                <br>텐진 에어라인
+              </a>
+
+            </td>
+            <td class="center">
+              중국
+            </td>
+            <td class="center">-</td>
+            <td class="center">-</td>
+            <td class="center">GS</td>
+            <td class="center">GCR</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('GS','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('GS','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://twayair.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=TW" alt="아이콘파일다운로드">
+                <br>티웨이항공
+              </a>
+
+            </td>
+            <td class="center">
+              한국
+            </td>
+            <td class="center">1688-8686</td>
+            <td class="center">1688-8686</td>
+            <td class="center">TW</td>
+            <td class="center">TWB</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('TW','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('TW','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="www.philippineair.co.kr" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=2P" alt="아이콘파일다운로드">
+                <br>팔익스프레스 항공
+              </a>
+
+            </td>
+            <td class="center">
+              필리핀
+            </td>
+            <td class="center">02-2085-8720</td>
+            <td class="center">032-744-3720~2</td>
+            <td class="center">2P</td>
+            <td class="center">GAP</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('2P','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('2P','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.panpacificair.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=8Y" alt="아이콘파일다운로드">
+                <br>팬퍼시픽항공
+              </a>
+
+            </td>
+            <td class="center">
+              필리핀
+            </td>
+            <td class="center">032-743-8700</td>
+            <td class="center">032-743-8700</td>
+            <td class="center">8Y</td>
+            <td class="center">AAP</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('8Y','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('8Y','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.fedex.com/kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=FX" alt="아이콘파일다운로드">
+                <br>페덱스
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center"> </td>
+            <td class="center">032-744-6114, 6230</td>
+            <td class="center">FX</td>
+            <td class="center">FDX</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('FX','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('FX','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.polaraircargo.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=PO" alt="아이콘파일다운로드">
+                <br>폴라에어카고
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center"> </td>
+            <td class="center">032-744-4215</td>
+            <td class="center">PO</td>
+            <td class="center">PAC</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('PO','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('PO','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.lot.com/kr/ko/?country=KR&amp;campaigntype=Brand&amp;gclid=CjwKEAjw7ZHABRCTr_DV4_ejvgQSJACr-YcwKQ" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=LO" alt="아이콘파일다운로드">
+                <br>폴란드항공
+              </a>
+
+            </td>
+            <td class="center">
+              폴란드
+            </td>
+            <td class="center">02-3788-0270</td>
+            <td class="center">02-3788-0270</td>
+            <td class="center">LO</td>
+            <td class="center">LOT</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('LO','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('LO','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.flypeach.com/kr/home.aspx" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=MM" alt="아이콘파일다운로드">
+                <br>피치항공
+              </a>
+
+            </td>
+            <td class="center">
+              일본
+            </td>
+            <td class="center">02-2023-6764</td>
+            <td class="center">032-743-5699</td>
+            <td class="center">MM</td>
+            <td class="center">APJ</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('MM','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('MM','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.finnaircargo.com/ko/cargo/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AY" alt="아이콘파일다운로드">
+                <br>핀에어
+              </a>
+
+            </td>
+            <td class="center">
+              핀란드
+            </td>
+            <td class="center">02-730-0067</td>
+            <td class="center">032-743-5698</td>
+            <td class="center">AY</td>
+            <td class="center">FIN</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('AY','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('AY','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.philippineair.co.kr/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=PR" alt="아이콘파일다운로드">
+                <br>필리핀항공
+              </a>
+
+            </td>
+            <td class="center">
+              필리핀
+            </td>
+            <td class="center">1544-1717</td>
+            <td class="center">032-744-3720~2</td>
+            <td class="center">PR</td>
+            <td class="center">PAL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('PR','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('PR','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.HawaiianAirlines.co.kr" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=HA" alt="아이콘파일다운로드">
+                <br>하와이안항공
+              </a>
+
+            </td>
+            <td class="center">
+              미국
+            </td>
+            <td class="center">02-775-5552</td>
+            <td class="center">032-743-7483</td>
+            <td class="center">HA</td>
+            <td class="center">HAL</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('HA','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('HA','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.hkexpress.com/" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=UO" alt="아이콘파일다운로드">
+                <br>홍콩익스프레스항공
+              </a>
+
+            </td>
+            <td class="center">
+              홍콩
+            </td>
+            <td class="center">007-988-523-8014</td>
+            <td class="center">주중 9시~18시, 국내요금 적용</td>
+            <td class="center">UO</td>
+            <td class="center">HKE</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('UO','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('UO','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center">
+
+              <a href="http://www.hongkongairlines.com" target="_blank">
+
+                <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=HX" alt="아이콘파일다운로드">
+                <br>홍콩항공
+              </a>
+
+            </td>
+            <td class="center">
+              홍콩
+            </td>
+            <td class="center">02-317-8899</td>
+            <td class="center">032-743-1012</td>
+            <td class="center">HX</td>
+            <td class="center">CRK</td>
+            <td class="center">
+              <a href="javascript:fncAirCon('HX','D')">
+                <img src="/static/ap/images/ico_airplane_departure.png" alt="출발현황 보기">
+              </a>
+            </td>
+            <td class="center">
+              <a href="#none" onclick="javascript:fncAirCon('HX','A'); return false;">
+                <img src="/static/ap/images/ico_airplane_arrival.png" alt="도착현황 보기">
+              </a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--//취항정보-->
+  </div>
+</section>
+<!--=include _include/_base_footer.html -->

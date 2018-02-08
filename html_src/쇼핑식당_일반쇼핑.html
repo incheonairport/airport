@@ -1,0 +1,567 @@
+<!--=include _include/_base_header.html -->
+
+<section id="top-contents" class="contents">
+	<div class="location">
+		<div class="location-btn">
+			<button type="button" class="location-btn-minus ico"></button>
+			<button type="button" class="location-btn-plus ico"></button>
+			<button type="button" class="location-btn-print ico"></button>
+		</div>
+		<div class="location-bar">
+			<ul class="location-bar-nav">
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/shp/getDutyInfoMain.do" class="location-bar-nav-item-link">쇼핑.식당</a></li>
+				<li class="location-bar-nav-item"><a href="/ap/ko/shp/getShopInfoMain.do" class="location-bar-nav-item-link">일반 쇼핑</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="inner-section">
+		<div class="contents-sub-head">
+			<h2 class="contents-sub-head-title">일반 쇼핑</h2>
+			<p class="contents-sub-head-article">고품격 쇼핑공간, 편리한 쇼핑시설, 더 많은 브랜드,더 많은 스타일</p>
+		</div>
+	</div>
+
+</section>
+
+<section class="bg-banner shopping">
+	<div class="inner-section">
+		<span class="bg-banner-tit">
+			Incheon Airport<br>
+			<strong>SHOPPING</strong>
+		</span>
+
+		<ul class="bg-banner-iconlist">
+			<li class="bg-banner-iconlist-item">
+				<a href="javascript:openLayer();" class="bg-banner-bgico event">이벤트</a>
+			</li>
+			<li class="bg-banner-iconlist-item">
+				<a href="javascript:openAirportMap('4');" class="bg-banner-bgico map">일반 쇼핑맵</a>
+			</li>
+		</ul>
+		<!-- 슬라이드배너 -->
+		<div class="bg-banner-banner">
+			<div class="slide-banner">
+				<div class="slide-banner-wrap">
+
+				</div>
+
+
+			</div>
+		</div>
+		<!-- 슬라이드배너 e-->
+	</div>
+</section>
+
+<section class="contents">
+	<input type="hidden" id="CODE_ID" value="A001">
+	<input type="hidden" id="SN" value="">
+	<div class="inner-section">
+
+		<div class="filter mt30">
+			<!-- 터미널별 검색 -->
+			<div class="filter-terminal-search">
+				<span class="filter-terminal-search-heading">터미널 별 검색</span>
+				<!-- 1차 필터 검색 -->
+				<div class="filter-terminal-search-depth1">
+					<div class="input-box field">
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('ALL');" checked="checked">
+							<label for="main-terminal" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">전체</label>
+						</div>
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('P01');">
+							<label for="main-terminal-1" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">제1 여객터미널</label>
+						</div>
+
+						<div class="input-box field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-2" class="field-radiomain" value="main-terminal-2" onclick="javascript:fncTerminalID('P03');">
+							<label for="main-terminal-2" class="field-radiomain-label" title="클릭하면 제2 여객터미널에서 검색이 가능합니다.">제2 여객터미널</label>
+						</div>
+					</div>
+
+					<div class="input-box base">
+						<input type="checkbox" name="search" id="NTCD24_AT" class="checkbox" value="todclock" onclick="javascript:getShopDetail24Hour();">
+						<label class="checkbox-label ico" for="NTCD24_AT">24시간</label>
+					</div>
+
+				</div>
+				<!-- 2차 필터 검색 -->
+				<div class="filter-terminal-search-depth2">
+					<div class="field">
+						<div class="field-group">
+							<input type="radio" name="shop-area" id="cat_all" class="field-radio" value="all" checked="">
+							<label class="field-radio-label" for="cat_all" onclick="javascript:getCategoryDetail();">전체</label>
+
+							<input type="radio" name="shop-area" id="41" class="field-radio" value="41" onclick="javascript:getCategoryDetail('41');">
+							<label class="field-radio-label" for="41">화장품</label>
+
+							<input type="radio" name="shop-area" id="42" class="field-radio" value="42" onclick="javascript:getCategoryDetail('42');">
+							<label class="field-radio-label" for="42">패션/액세서리</label>
+
+							<input type="radio" name="shop-area" id="43" class="field-radio" value="43" onclick="javascript:getCategoryDetail('43');">
+							<label class="field-radio-label" for="43">편의점/포장식품</label>
+
+							<input type="radio" name="shop-area" id="44" class="field-radio" value="44" onclick="javascript:getCategoryDetail('44');">
+							<label class="field-radio-label" for="44">서점</label>
+
+							<input type="radio" name="shop-area" id="45" class="field-radio" value="45" onclick="javascript:getCategoryDetail('45');">
+							<label class="field-radio-label" for="45">여행용품점</label>
+
+							<input type="radio" name="shop-area" id="46" class="field-radio" value="46" onclick="javascript:getCategoryDetail('46');">
+							<label class="field-radio-label" for="46">기념품</label>
+
+							<input type="radio" name="shop-area" id="47" class="field-radio" value="47" onclick="javascript:getCategoryDetail('47');">
+							<label class="field-radio-label" for="47">꽃</label>
+
+						</div>
+					</div>
+				</div>
+				<!-- 3차 (2차에서 3차가 있다면) 필터 검색 -->
+				<div class="filter-terminal-search-depth3">
+					<div class="field">
+						<div class="field-group big">
+							<input type="radio" name="product" title="Third Cate" id="cat_detail_all" class="field-radio" value="brand2-product" onclick="javascript:getShopDetail();" checked="">
+							<div id="detail_category">
+
+
+
+
+
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 매장검색 -->
+			<div class="filter-store-search">
+				<div class="filter-store-search-input">
+					<label for="SEARCH_STR" class="responsive-form-box-hide">브랜드검색</label>
+					<input type="text" id="SEARCH_STR" placeholder="매장명, 브랜드명 입력">
+				</div>
+				<div class="filter-store-search-icon">
+					<button type="button" title="키워드 검색을 할 수 있습니다." class="ico search-black" onclick="javascript:getShopSearchStr();">검색</button>
+				</div>
+			</div>
+		</div>
+		<div class="boxmodel2">
+			<ul class="boxmodel2-list" id="shop_detail">
+
+
+
+
+
+
+
+				<script>
+					$(document).ready(function(){
+						if("35" != "" && "35" != "0") {
+							setPageNation("1", "35");
+						}
+					});
+					function setTelNumber(telno) {
+						var TELNO_HTML = "";
+						if("" != telno && telno != undefined) {
+							var arrTELNO = telno.split(",");
+							for(var i=0; i<arrTELNO.length; i++ ) {
+								if(arrTELNO[i] != "" && arrTELNO[i] != undefined) {
+									var tel = changeTelNumber(arrTELNO[i]);
+									TELNO_HTML += tel;
+									if(i != arrTELNO.length-1 && TELNO_HTML != "") TELNO_HTML +="<br></arrTELNO.length;>";
+								}
+							}
+						}
+					}
+					function changeTelNumber(hp) {
+						return hp.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,"$1-$2-$3");
+					}
+					function openMap(sn) {
+						window.open("/ap/ko/map/mapInfo.do?SN=" + sn,'_blank');
+					}
+				</script>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+
+					boxmodel2-imggroup-mark brown
+
+				">
+
+					패션/액세서리
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1401" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">글라스스토리</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">07:00 ~ 22:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-3415</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1401');"><em class="color-lb">제2여객터미널 교통센터 지하 1층 중앙</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">안경, 선글라스, 콘텍트렌즈</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								글라스스토리는 '안경살땐 글라스스토리'라는 이념 하에 운영되고 있는 아이웨어&amp;콘택트렌즈 전문 브랜드 입니다.
+								안경이 패션 아이템으로 활용도가 높아지면서 단순히 안경을 판매하는 곳이 아닌 패션을 주도하는 트랜디한 복합문화공간으로
+								자리잡은 글라스스토리는 현재 전국 300여개의 매장을 보유하고 약 100여개 이상의 브랜드를 취급하고 있습니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+							</dl>
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+				<li class="boxmodel2-list-item todclock">
+
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+
+					boxmodel2-imggroup-mark brown
+
+				">
+
+					편의점/포장식품
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1404" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">세븐일레븐</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">00:00 ~ 24:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-1640</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1404');"><em class="color-lb">제2여객터미널 1층 일반지역 동편</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">도시락, 김밥, 담배, 음료, 주류, 티머니, 스낵, 생활필수품, 여행용품, 세면용품 등</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								가깝고 편리한 행복충전소 세븐일레븐에서는 음료, 과자, 빵, 담배, 전화카드, 티머니, 문구류 등 다양한 생활필수품과 친절한 서비스를 제공하고 있습니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+							</dl>
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+
+					boxmodel2-imggroup-mark brown
+
+				">
+
+					화장품
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1316" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">올리브영</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">07:00 ~ 22:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-5292</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1316');"><em class="color-lb">제2여객터미널 지하1층 중앙</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">화장품, 헤어&amp;바디케어, 헬스케어, 프래그런스, 미용소품, 잡화</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								대한민국 No.1 헬스&amp;뷰티 스토어
+								아름다움 뿐만 아니라 건강한 라이프스타일 전반에 걸친 트렌드를 자유롭게 느낄 수 있는 대한민국 대표 헬스&amp;뷰티 스토어입니다.
+								뷰티, 헤어, 바디, 헬스케어 등 다양한 카테고리의 제품과 함께 올리브영이 제안하는 트렌드를 경험해 보세요.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+							</dl>
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+				<li class="boxmodel2-list-item todclock">
+
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+
+					boxmodel2-imggroup-mark brown
+
+				">
+
+					편의점/포장식품
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1400" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">GS25</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">00:00 ~ 24:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1400');"><em class="color-lb">제2여객터미널 지하 1층 동편</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">먹거리, 음료, 신선식품, 기념품, 생활용품</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								GS25는 차별화 된 상품과 생활 서비스를 통해 고객 가치를 실천하는 대한민국 대표 편의점입니다
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+							</dl>
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+				<li class="boxmodel2-list-item todclock">
+
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+
+					boxmodel2-imggroup-mark brown
+
+				">
+
+					편의점/포장식품
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1403" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">GS25</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">00:00 ~ 24:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1403');"><em class="color-lb">제2여객터미널 1층 일반지역 서편</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">먹거리, 음료, 신선식품, 기념품, 생활용품</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								GS25는 차별화 된 상품과 생활 서비스를 통해 고객 가치를 실천하는 대한민국 대표 편의점입니다
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+							</dl>
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="mt40">
+			<div class="pagenation" id="resultPageNavi"><a class="ico first" href="javascript:getShopList(1);">처음</a><a class="ico prev" href="javascript:getShopList(0);">이전</a><ol class="pagenation-list"><li class="pagenation-list-item on"><a class="pagenation-list-link" href="javascript:getShopList(1);">1</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(2);">2</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(3);">3</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(4);">4</a></li></ol><a class="ico next" href="javascript:getShopList(5);">다음</a><a class="ico last" href="javascript:getShopList(4);">마지막</a></div>
+		</div>
+	</div>
+</section>
+
+<!--=include _include/_base_footer.html -->

@@ -1,0 +1,885 @@
+<!--=include _include/_base_header.html -->
+<section id="top-contents" class="contents">
+
+  <div class="location">
+    <div class="location-btn">
+      <button type="button" class="location-btn-minus ico">축소</button>
+      <button type="button" class="location-btn-plus ico">확대</button>
+      <button type="button" class="location-btn-print ico">인쇄</button>
+    </div>
+    <div class="location-bar">
+      <ul class="location-bar-nav">
+        <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link home ico">home</a></li>
+        <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link">도착</a></li>
+        <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link">도착시간</a></li>
+        <li class="location-bar-nav-item ico"><a href="" class="location-bar-nav-item-link">여객</a></li>
+        <li class="location-bar-nav-item"><a href="" class="location-bar-nav-item-link">여객 도착 시간표</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="inner-section">
+
+    <div class="contents-sub-head">
+      <h2 class="contents-sub-head-title">도착시간</h2>
+      <p class="contents-sub-head-article">항공사별/ 도시별/ 도착 정보를 안내합니다.</p>
+    </div>
+
+  </div>
+
+  <div class="contents-visual departure">
+    <div class="inner-section">
+      <!--혼잡도-->
+      <div class="congestion">
+        <div class="congestion-title"><span class="point">입국 비행기</span><br>한 눈에 보기</div>
+        <a href="" class="congestion-quick-link ico">바로가기</a>
+      </div>
+      <!--//혼잡도-->
+      <!--tab-->
+      <nav class="tab-main">
+        <ul class="tab-main-list">
+          <li class="tab-main-list-item"><a href="" class="tab-main-list-item-link left on">여객</a></li>
+          <li class="tab-main-list-item"><a href="" class="tab-main-list-item-link right">화물</a></li>
+        </ul>
+      </nav>
+      <!--tab-->
+      <!--subtab-->
+      <nav class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item"><a href="" class="tab-sub-list-item-link on">여객 도착 시간표</a></li>
+          <li class="tab-sub-list-item"><a href="" class="tab-sub-list-item-link">여객 도착 정기 운항편</a></li>
+        </ul>
+      </nav>
+      <!--//subtab-->
+    </div>
+  </div>
+  <!--//비주얼이미지-->
+</section>
+
+<!-- 180105 변경 출발은 dep 도착은 arr 추가요망-->
+<section class="contents arr">
+  <div class="inner-section">
+
+    <ul class="list2 mt30">
+      <li class="list2-item">
+        시즌 전환으로 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.
+      </li>
+      <li class="list2-item">
+        운항편명을 클릭하시면 탑승을 위한 이동경로 및 상세정보를 확인하실 수 있습니다.
+      </li>
+      <li class="list2-item">
+        항공기 출발시간 10~15분전까지 탑승을 완료하여 주시기 바랍니다.
+      </li>
+    </ul>
+
+    <!--검색영역-->
+    <div class="search-flight-detail mt30">
+      <div class="search-flight-detail-option">
+        <input type="radio" name="day" id="today" class="radio" value="today" checked>
+        <label for="today" class="search-option-btn">오늘</label>
+        <input type="radio" name="day" id="tomorrow" class="radio" value="tomorrow">
+        <label for="tomorrow" class="search-option-btn">내일</label>
+      </div>
+      <div class="search-flight-detail-select">
+        <label class="label-hide" for="arrive-date">도착날짜</label>
+        <select id="arrive-date" class="search-flight-detail-select-article">
+          <option>2017.08.21(월)</option>
+        </select>
+
+        <label class="label-hide" for="arrive-time">도착시간</label>
+        <select id="arrive-time" class="search-flight-detail-select-article">
+          <option>00:00~00:59</option>
+        </select>
+
+        <label class="label-hide" for="arrive-destination">목적지 선택</label>
+        <select id="arrive-destination" class="search-flight-detail-select-article">
+          <option>목적지 선택</option>
+        </select>
+
+        <label class="label-hide" for="arrive-airline">항공사 선택</label>
+        <select id="arrive-airline" class="search-flight-detail-select-article">
+          <option>항공사 선택</option>
+        </select>
+
+        <label class="label-hide" for="arrive-flightname">편명입력</label>
+        <input id="arrive-flightname" type="text" class="search-flight-detail-select-airplane" placeholder="편명입력">
+        <button type="button" class="search-flight-detail-select-btn ico">검색</button>
+      </div>
+    </div>
+    <!--//검색영역-->
+    <!--업데이트 시간-->
+    <div class="update">
+      <span class="update-time">마지막 업데이트:2017.08.21 13:35</span>
+      <button type="button" class="update-refresh ico">새로고침</button>
+    </div>
+    <!--//업데이트 시간-->
+    <!--도착시간표-->
+    <div class="table-like vt-dark">
+      <div class="caption-like">도착 시간을 나타내는 항목은</div>
+      <div class="tr-like">
+        <div class="th-like" style="width:159px;">도착시간</div>
+        <div class="th-like" style="width:195px">출발지</div>
+        <div class="th-like" style="width:265px">항공사/운항편명</div>
+        <div class="th-like" style="width:80px">터미널</div>
+        <div class="th-like" style="width:80px">도착게이트</div>
+        <div class="th-like" style="width:110px">수하물수취대</div>
+        <div class="th-like" style="width:91px">출구</div>
+        <div class="th-like" style="width:110px">도착현황</div>
+        <div class="th-like" style="width:90px">운항속보</div>
+      </div>
+      <div class="caption-like">순서로 표시됩니다.</div>
+
+      <!-- codeshare 에 대한 클래스 추가와 아이콘 추가 share된 첫번째 는 first 클래스-->
+      <div class="tr-like flight-info-basic codeshare first">
+        <span class="ico-codeshare">코드쉐어</span>
+        <a href="" class="flight-info-basic-link" title="클릭하면 상세 정보가 화면에 나타납니다.">
+          <div class="td-like flight-info-basic-status departure center">
+            <div class="time-changed"><strong>16:03</strong></div>
+            <div class="time-due">15:30</div>
+          </div>
+
+          <div class="td-like center">
+            쿠알라룸푸르
+          </div>
+
+          <div class="td-like">
+            <div class="flight-info-basic-airline f-left">
+              <img src="/static/ap/images/logo_sample.png" alt="로고 샘플">
+            </div>
+            <div class="flight">
+              <div class="flight-info-basic-flight-number"><strong>KE5845</strong></div>
+              <div class="flight-info-basic-flight-name font14">대한항공</div>
+            </div>
+          </div>
+
+          <div class="td-like center"><strong>T1</strong></div>
+
+          <div class="td-like center"><strong>29</strong></div>
+
+          <div class="td-like center"><strong>17</strong></div>
+
+          <div class="td-like center"><strong class="color-b">129</strong></div>
+
+          <div class="td-like center font16">도착</div>
+
+          <div class="td-like center ">
+            <button type="button" class="btn-newsflash">운항속보 보기</button>
+          </div>
+
+        </a>
+      </div>
+      <!--상세-->
+      <div class="tr-like flight-info-detail" style="display:block;">
+
+        <div class="td-like colspan-2">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">비행예상시간</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">4시간 25분</span></div>
+          </div>
+          <div class="flight-info-detail-airline arrival">
+            <div class="flight-info-detail-from f-left">
+              <div class="flight-info-detail-country"><strong>중국/텐진</strong></div>
+              <div class="flight-info-detail-date">2017.08.22<br />16:38</div>
+            </div>
+            <div class="flight-info-detail-from f-right">
+              <div class="flight-info-detail-country"><strong>대한민국 인천</strong></div>
+              <div class="flight-info-detail-date">2017.09.01<br />20:42</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">입국, 환영을 위한 빠른 경로<a href="" class="view-way" title="클릭하면 최단 경로를 확인할 수 있는 창이 나타납니다.">경로보기</a></div>
+          </div>
+
+          <div class="flight-info-detail-way">
+            <ul class="way-list arrival">
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">도착<br/>게이트</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">수화물<br/>수취대</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">입국장<br/>출구</span>
+                <span class="way-list-item-content">E</span>
+              </li>
+              <li class="way-list-item">
+                <span class="way-list-item-heading">주차장<br/>연결통로</span>
+                <span class="way-list-item-content">H/C</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">출발지 정보</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">시차 01시간 00분</span></div>
+          </div>
+
+          <div class="flight-info-detail-dest">
+            <div class="dest-weather">
+              <div class="dest-weather-img"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
+              <div class="dest-weather-temp">
+                <div class="min-temp">23 <span>/</span></div>
+                <div class="max-temp">28<span class="celsius">℃</span></div>
+              </div>
+            </div>
+            <div class="dest-date">
+              2017.08.22 (화)<br />17:38:24
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like share-close">
+          <div class="flight-info-detail-share ico">공유하기</div>
+          <div class="flight-info-detail-close ico" title="클릭하면 상세 정보가 닫힙니다">닫기</div>
+        </div>
+
+        <div class="td-pop">
+          <ul class="flight-info-detail-sns">
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns telegram">텔레그램</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns mail">메일</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns sms">SMS</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns copy">텍스트복사</a></li>
+          </ul>
+          <div class="td-pop-close-btn ico" title="클릭하면 sns 정보가 닫힙니다">닫기</div>
+        </div>
+
+      </div>
+      <!--//상세-->
+
+      <div class="tr-like flight-info-basic codeshare">
+        <span class="ico-codeshare">코드쉐어</span>
+        <a href="" class="flight-info-basic-link" title="클릭하면 상세 정보가 화면에 나타납니다.">
+          <div class="td-like flight-info-basic-status delay center">
+            <div class="time-changed"><strong>16:03</strong></div>
+            <div class="time-due">15:30</div>
+          </div>
+
+          <div class="td-like center">
+            쿠알라룸푸르
+          </div>
+
+          <div class="td-like">
+            <div class="flight-info-basic-airline f-left">
+              <img src="/static/ap/images/logo_sample.png" alt="로고 샘플">
+            </div>
+            <div class="flight">
+              <div class="flight-info-basic-flight-number"><strong>KE5845</strong></div>
+              <div class="flight-info-basic-flight-name font14">대한항공</div>
+            </div>
+          </div>
+
+          <div class="td-like center"><strong>T1</strong></div>
+
+          <div class="td-like center"><strong>29</strong></div>
+
+          <div class="td-like center"><strong>17</strong></div>
+
+          <div class="td-like center"><strong class="color-b">129</strong></div>
+
+          <div class="td-like center"><span class="situation-info delay">지연</span></div>
+
+          <div class="td-like center ">
+            <button type="button" class="btn-newsflash">운항속보 보기</button>
+          </div>
+
+        </a>
+      </div>
+      <!--상세-->
+      <div class="tr-like flight-info-detail">
+
+        <div class="td-like colspan-2">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">비행예상시간</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">4시간 25분</span></div>
+          </div>
+          <div class="flight-info-detail-airline arrival">
+            <div class="flight-info-detail-from f-left">
+              <div class="flight-info-detail-country"><strong>중국/텐진</strong></div>
+              <div class="flight-info-detail-date">2017.08.22<br />16:38</div>
+            </div>
+            <div class="flight-info-detail-from f-right">
+              <div class="flight-info-detail-country"><strong>대한민국 인천</strong></div>
+              <div class="flight-info-detail-date">2017.09.01<br />20:42</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">입국, 환영을 위한 빠른 경로<a href="" class="view-way" title="클릭하면 최단 경로를 확인할 수 있는 창이 나타납니다.">경로보기</a></div>
+           </div>
+
+          <div class="flight-info-detail-way">
+            <ul class="way-list arrival">
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">도착<br/>게이트</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">수화물<br/>수취대</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">입국장<br/>출구</span>
+                <span class="way-list-item-content">E</span>
+              </li>
+              <li class="way-list-item">
+                <span class="way-list-item-heading">주차장<br/>연결통로</span>
+                <span class="way-list-item-content">H/C</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">출발지 정보</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">시차 01시간 00분</span></div>
+          </div>
+
+          <div class="flight-info-detail-dest">
+            <div class="dest-weather">
+              <div class="dest-weather-img"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
+              <div class="dest-weather-temp">
+                <div class="min-temp">23 <span>/</span></div>
+                <div class="max-temp">28<span class="celsius">℃</span></div>
+              </div>
+            </div>
+            <div class="dest-date">
+              2017.08.22 (화)<br />17:38:24
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like share-close">
+          <div class="flight-info-detail-share ico">공유하기</div>
+          <div class="flight-info-detail-close ico" title="클릭하면 상세 정보가 닫힙니다">닫기</div>
+        </div>
+
+        <div class="td-pop">
+          <ul class="flight-info-detail-sns">
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns telegram">텔레그램</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns mail">메일</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns sms">SMS</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns copy">텍스트복사</a></li>
+          </ul>
+          <div class="td-pop-close-btn ico" title="클릭하면 sns 정보가 닫힙니다">닫기</div>
+        </div>
+
+      </div>
+      <!--//상세-->
+
+
+
+      <div class="tr-like flight-info-basic codeshare">
+        <span class="ico-codeshare">코드쉐어</span>
+        <a href="" class="flight-info-basic-link" title="클릭하면 상세 정보가 화면에 나타납니다.">
+          <div class="td-like flight-info-basic-status departure center">
+            <div class="time-changed"><strong>16:03</strong></div>
+            <div class="time-due">15:30</div>
+          </div>
+
+          <div class="td-like center">
+            쿠알라룸푸르
+          </div>
+
+          <div class="td-like">
+            <div class="flight-info-basic-airline f-left">
+              <img src="/static/ap/images/logo_sample.png" alt="로고 샘플">
+            </div>
+            <div class="flight">
+              <div class="flight-info-basic-flight-number"><strong>KE5845</strong></div>
+              <div class="flight-info-basic-flight-name font14">대한항공</div>
+            </div>
+          </div>
+
+          <div class="td-like center"><strong>T1</strong></div>
+
+          <div class="td-like center"><strong>29</strong></div>
+
+          <div class="td-like center"><strong>17</strong></div>
+
+          <div class="td-like center"><strong class="color-b">129</strong></div>
+
+          <div class="td-like center font16">도착</div>
+
+          <div class="td-like center ">
+            <button type="button" class="btn-newsflash">운항속보 보기</button>
+          </div>
+
+        </a>
+      </div>
+      <!--상세-->
+      <div class="tr-like flight-info-detail" style="display: block;">
+
+        <div class="td-like colspan-2">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">비행예상시간</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">4시간 25분</span></div>
+          </div>
+          <div class="flight-info-detail-airline arrival">
+            <div class="flight-info-detail-from f-left">
+              <div class="flight-info-detail-country"><strong>중국/텐진</strong></div>
+              <div class="flight-info-detail-date">2017.08.22<br />16:38</div>
+            </div>
+            <div class="flight-info-detail-from f-right">
+              <div class="flight-info-detail-country"><strong>대한민국 인천</strong></div>
+              <div class="flight-info-detail-date">2017.09.01<br />20:42</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">입국, 환영을 위한 빠른 경로<a href="" class="view-way" title="클릭하면 최단 경로를 확인할 수 있는 창이 나타납니다.">경로보기</a></div>
+          </div>
+
+          <div class="flight-info-detail-way">
+            <ul class="way-list arrival">
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">도착<br/>게이트</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">수화물<br/>수취대</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">입국장<br/>출구</span>
+                <span class="way-list-item-content">E</span>
+              </li>
+              <li class="way-list-item">
+                <span class="way-list-item-heading">주차장<br/>연결통로</span>
+                <span class="way-list-item-content">H/C</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">출발지 정보</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">시차 01시간 00분</span></div>
+          </div>
+
+          <div class="flight-info-detail-dest">
+            <div class="dest-weather">
+              <div class="dest-weather-img"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
+              <div class="dest-weather-temp">
+                <div class="min-temp">23 <span>/</span></div>
+                <div class="max-temp">28<span class="celsius">℃</span></div>
+              </div>
+            </div>
+            <div class="dest-date">
+              2017.08.22 (화)<br />17:38:24
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like share-close">
+          <div class="flight-info-detail-share ico">공유하기</div>
+          <div class="flight-info-detail-close ico" title="클릭하면 상세 정보가 닫힙니다">닫기</div>
+        </div>
+
+        <div class="td-pop">
+          <ul class="flight-info-detail-sns">
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns telegram">텔레그램</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns mail">메일</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns sms">SMS</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns copy">텍스트복사</a></li>
+          </ul>
+          <div class="td-pop-close-btn ico" title="클릭하면 sns 정보가 닫힙니다">닫기</div>
+        </div>
+
+      </div>
+      <!--//상세-->
+
+
+
+      <div class="tr-like flight-info-basic">
+        <a href="" class="flight-info-basic-link" title="클릭하면 상세 정보가 화면에 나타납니다.">
+
+          <div class="td-like flight-info-basic-status departure center">
+            <div class="time-changed"><strong>16:03</strong></div>
+            <div class="time-due">15:30</div>
+          </div>
+
+          <div class="td-like center">
+            쿠알라룸푸르
+          </div>
+
+          <div class="td-like">
+            <div class="flight-info-basic-airline f-left">
+              <img src="/static/ap/images/logo_sample.png" alt="로고 샘플">
+            </div>
+            <div class="flight">
+              <div class="flight-info-basic-flight-number"><strong>KE5845</strong></div>
+              <div class="flight-info-basic-flight-name font14">대한항공</div>
+            </div>
+          </div>
+
+          <div class="td-like center"><strong>T1</strong></div>
+
+          <div class="td-like center"><strong>29</strong></div>
+
+          <div class="td-like center"><strong>17</strong></div>
+
+          <div class="td-like center"><strong class="color-b">129</strong></div>
+
+          <div class="td-like center font16">도착</div>
+
+          <div class="td-like center ">
+            <button type="button" class="btn-newsflash">운항속보 보기</button>
+          </div>
+
+        </a>
+      </div>
+      <!--상세-->
+      <div class="tr-like flight-info-detail" style="display: block;">
+
+        <div class="td-like colspan-2">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">비행예상시간</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">4시간 25분</span></div>
+          </div>
+          <div class="flight-info-detail-airline arrival">
+            <div class="flight-info-detail-from f-left">
+              <div class="flight-info-detail-country"><strong>중국/텐진</strong></div>
+              <div class="flight-info-detail-date">2017.08.22<br />16:38</div>
+            </div>
+            <div class="flight-info-detail-from f-right">
+              <div class="flight-info-detail-country"><strong>대한민국 인천</strong></div>
+              <div class="flight-info-detail-date">2017.09.01<br />20:42</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">입국, 환영을 위한 빠른 경로<a href="" class="view-way" title="클릭하면 최단 경로를 확인할 수 있는 창이 나타납니다.">경로보기</a></div>
+          </div>
+
+          <div class="flight-info-detail-way">
+            <ul class="way-list arrival">
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">도착<br/>게이트</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">수화물<br/>수취대</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">입국장<br/>출구</span>
+                <span class="way-list-item-content">E</span>
+              </li>
+              <li class="way-list-item">
+                <span class="way-list-item-heading">주차장<br/>연결통로</span>
+                <span class="way-list-item-content">H/C</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">출발지 정보</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">시차 01시간 00분</span></div>
+          </div>
+
+          <div class="flight-info-detail-dest">
+            <div class="dest-weather">
+              <div class="dest-weather-img"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
+              <div class="dest-weather-temp">
+                <div class="min-temp">23 <span>/</span></div>
+                <div class="max-temp">28<span class="celsius">℃</span></div>
+              </div>
+            </div>
+            <div class="dest-date">
+              2017.08.22 (화)<br />17:38:24
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like share-close">
+          <div class="flight-info-detail-share ico">공유하기</div>
+          <div class="flight-info-detail-close ico" title="클릭하면 상세 정보가 닫힙니다">닫기</div>
+        </div>
+
+        <div class="td-pop">
+          <ul class="flight-info-detail-sns">
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns telegram">텔레그램</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns mail">메일</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns sms">SMS</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns copy">텍스트복사</a></li>
+          </ul>
+          <div class="td-pop-close-btn ico" title="클릭하면 sns 정보가 닫힙니다">닫기</div>
+        </div>
+
+      </div>
+      <!--//상세-->
+
+
+
+      <div class="tr-like flight-info-basic">
+        <a href="" class="flight-info-basic-link" title="클릭하면 상세 정보가 화면에 나타납니다.">
+
+          <div class="td-like flight-info-basic-status departure center">
+            <div class="time-changed"><strong>16:03</strong></div>
+            <div class="time-due">15:30</div>
+          </div>
+
+          <div class="td-like center">
+            쿠알라룸푸르
+          </div>
+
+          <div class="td-like">
+            <div class="flight-info-basic-airline f-left">
+              <img src="/static/ap/images/logo_sample.png" alt="로고 샘플">
+            </div>
+            <div class="flight">
+              <div class="flight-info-basic-flight-number"><strong>KE5845</strong></div>
+              <div class="flight-info-basic-flight-name font14">대한항공</div>
+            </div>
+          </div>
+
+          <div class="td-like center"><strong>T1</strong></div>
+
+          <div class="td-like center"><strong>29</strong></div>
+
+          <div class="td-like center"><strong>17</strong></div>
+
+          <div class="td-like center"><strong class="color-b">129</strong></div>
+
+          <div class="td-like center font16">도착</div>
+
+          <div class="td-like center ">
+            <button type="button" class="btn-newsflash">운항속보 보기</button>
+          </div>
+
+        </a>
+      </div>
+      <!--상세-->
+      <div class="tr-like flight-info-detail" style="display:block;">
+
+        <div class="td-like colspan-2">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">비행예상시간</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">4시간 25분</span></div>
+          </div>
+          <div class="flight-info-detail-airline arrival">
+            <div class="flight-info-detail-from f-left">
+              <div class="flight-info-detail-country"><strong>중국/텐진</strong></div>
+              <div class="flight-info-detail-date">2017.08.22<br />16:38</div>
+            </div>
+            <div class="flight-info-detail-from f-right">
+              <div class="flight-info-detail-country"><strong>대한민국 인천</strong></div>
+              <div class="flight-info-detail-date">2017.09.01<br />20:42</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">입국, 환영을 위한 빠른 경로<a href="" class="view-way" title="클릭하면 최단 경로를 확인할 수 있는 창이 나타납니다.">경로보기</a></div>
+          </div>
+
+          <div class="flight-info-detail-way">
+            <ul class="way-list arrival">
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">도착<br/>게이트</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">수화물<br/>수취대</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">입국장<br/>출구</span>
+                <span class="way-list-item-content">E</span>
+              </li>
+              <li class="way-list-item">
+                <span class="way-list-item-heading">주차장<br/>연결통로</span>
+                <span class="way-list-item-content">H/C</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">출발지 정보</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">시차 01시간 00분</span></div>
+          </div>
+
+          <div class="flight-info-detail-dest">
+            <div class="dest-weather">
+              <div class="dest-weather-img"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
+              <div class="dest-weather-temp">
+                <div class="min-temp">23 <span>/</span></div>
+                <div class="max-temp">28<span class="celsius">℃</span></div>
+              </div>
+            </div>
+            <div class="dest-date">
+              2017.08.22 (화)<br />17:38:24
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like share-close">
+          <div class="flight-info-detail-share ico">공유하기</div>
+          <div class="flight-info-detail-close ico" title="클릭하면 상세 정보가 닫힙니다">닫기</div>
+        </div>
+
+        <div class="td-pop">
+          <ul class="flight-info-detail-sns">
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns telegram">텔레그램</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns mail">메일</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns sms">SMS</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns copy">텍스트복사</a></li>
+          </ul>
+          <div class="td-pop-close-btn ico" title="클릭하면 sns 정보가 닫힙니다">닫기</div>
+        </div>
+
+      </div>
+      <!--//상세-->
+
+
+
+      <div class="tr-like flight-info-basic">
+        <a href="" class="flight-info-basic-link" title="클릭하면 상세 정보가 화면에 나타납니다.">
+
+          <div class="td-like flight-info-basic-status departure center">
+            <div class="time-changed"><strong>16:03</strong></div>
+            <div class="time-due">15:30</div>
+          </div>
+
+          <div class="td-like center">
+            쿠알라룸푸르
+          </div>
+
+          <div class="td-like">
+            <div class="flight-info-basic-airline f-left">
+              <img src="/static/ap/images/logo_sample.png" alt="로고 샘플">
+            </div>
+            <div class="flight">
+              <div class="flight-info-basic-flight-number"><strong>KE5845</strong></div>
+              <div class="flight-info-basic-flight-name font14">대한항공</div>
+            </div>
+          </div>
+
+          <div class="td-like center"><strong>T1</strong></div>
+
+          <div class="td-like center"><strong>29</strong></div>
+
+          <div class="td-like center"><strong>17</strong></div>
+
+          <div class="td-like center"><strong class="color-b">129</strong></div>
+
+          <div class="td-like center font16">도착</div>
+
+          <div class="td-like center ">
+            <button type="button" class="btn-newsflash">운항속보 보기</button>
+          </div>
+
+        </a>
+      </div>
+      <!--상세-->
+      <div class="tr-like flight-info-detail">
+
+        <div class="td-like colspan-2">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">비행예상시간</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">4시간 25분</span></div>
+          </div>
+          <div class="flight-info-detail-airline arrival">
+            <div class="flight-info-detail-from f-left">
+              <div class="flight-info-detail-country"><strong>중국/텐진</strong></div>
+              <div class="flight-info-detail-date">2017.08.22<br />16:38</div>
+            </div>
+            <div class="flight-info-detail-from f-right">
+              <div class="flight-info-detail-country"><strong>대한민국 인천</strong></div>
+              <div class="flight-info-detail-date">2017.09.01<br />20:42</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">입국, 환영을 위한 빠른 경로<a href="" class="view-way" title="클릭하면 최단 경로를 확인할 수 있는 창이 나타납니다.">경로보기</a></div>
+          </div>
+
+          <div class="flight-info-detail-way">
+            <ul class="way-list arrival">
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">도착<br/>게이트</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">수화물<br/>수취대</span>
+                <span class="way-list-item-content">38</span>
+              </li>
+              <li class="way-list-item ico">
+                <span class="way-list-item-heading">입국장<br/>출구</span>
+                <span class="way-list-item-content">E</span>
+              </li>
+              <li class="way-list-item">
+                <span class="way-list-item-heading">주차장<br/>연결통로</span>
+                <span class="way-list-item-content">H/C</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="td-like colspan-3">
+          <div class="flight-info-detail-heading">
+            <div class="flight-info-detail-heading-title">도착지 정보</div>
+            <div class="flight-info-detail-heading-desc"><span class="strong">시차 01시간 00분</span></div>
+          </div>
+
+          <div class="flight-info-detail-dest">
+            <div class="dest-weather">
+              <div class="dest-weather-img"><img src="/static/ap/images/icon_weather_sample.png" alt="맑음" /></div>
+              <div class="dest-weather-temp">
+                <div class="min-temp">23 <span>/</span></div>
+                <div class="max-temp">28<span class="celsius">℃</span></div>
+              </div>
+            </div>
+            <div class="dest-date">
+              2017.08.22 (화)<br />17:38:24
+            </div>
+          </div>
+        </div>
+
+        <div class="td-like share-close">
+          <div class="flight-info-detail-share ico">공유하기</div>
+          <div class="flight-info-detail-close ico" title="클릭하면 상세 정보가 닫힙니다">닫기</div>
+        </div>
+
+        <div class="td-pop">
+          <ul class="flight-info-detail-sns">
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns telegram">텔레그램</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns mail">메일</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns sms">SMS</a></li>
+            <li class="sns-item"><a href="" class="sns-item-link ico-sns copy">텍스트복사</a></li>
+          </ul>
+          <div class="td-pop-close-btn ico" title="클릭하면 sns 정보가 닫힙니다">닫기</div>
+        </div>
+
+      </div>
+      <!--//상세-->
+
+
+
+    </div>
+    <!--//도착시간표-->
+  </div>
+</section>
+<!--=include _include/_base_footer.html -->

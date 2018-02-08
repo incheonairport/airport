@@ -1,0 +1,1394 @@
+<!--=include _include/_base_header.html -->
+
+<section id="top-contents" class="contents">
+	<div class="location">
+		<div class="location-btn">
+			<button type="button" class="location-btn-minus ico"></button>
+			<button type="button" class="location-btn-plus ico"></button>
+			<button type="button" class="location-btn-print ico"></button>
+		</div>
+		<div class="location-bar">
+			<ul class="location-bar-nav">
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/shp/getDutyInfoMain.do" class="location-bar-nav-item-link">쇼핑.식당</a></li>
+				<li class="location-bar-nav-item"><a href="/ap/ko/shp/getDutyInfoMain.do" class="location-bar-nav-item-link">면세점 쇼핑</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="inner-section">
+		<div class="contents-sub-head">
+			<h2 class="contents-sub-head-title">면세점 쇼핑</h2>
+			<p class="contents-sub-head-article">고품격 쇼핑공간, 편리한 쇼핑시설, 더 많은 브랜드,더 많은 스타일</p>
+		</div>
+	</div>
+
+</section>
+
+<section class="bg-banner dutyfree">
+	<div class="inner-section">
+      <span class="bg-banner-tit">
+        Incheon Airport<br>
+        <strong>DUTY FREE</strong>
+      </span>
+
+		<ul class="bg-banner-iconlist">
+			<li class="bg-banner-iconlist-item">
+				<a href="javascript:openLayer();" class="bg-banner-bgico event">이벤트</a>
+			</li>
+			<li class="bg-banner-iconlist-item">
+				<a href="javascript:openAirportMap('2');" class="bg-banner-bgico map">면세점 쇼핑맵</a>
+			</li>
+			<!--
+			<li class="bg-banner-iconlist-item">
+				<a href="/ap_lp/ko/shp/txfr/taxfreter/taxfreter.do" class="bg-banner-bgico shopping">면세점 쇼핑 가이드</a>
+			</li>
+			 -->
+		</ul>
+		<!-- 슬라이드배너 -->
+		<div class="bg-banner-banner">
+			<div class="slide-banner">
+				<div class="slide-banner-wrap">
+
+				</div>
+
+
+			</div>
+		</div>
+		<!-- 슬라이드배너 e-->
+	</div>
+</section>
+
+<section class="contents">
+	<input type="hidden" id="CODE_ID" value="">
+	<input type="hidden" id="SN" value="">
+	<div class="inner-section">
+
+		<div class="filter mt30">
+			<!-- 터미널별 검색 -->
+			<div class="filter-terminal-search">
+				<span class="filter-terminal-search-heading">터미널 별 검색</span>
+				<!-- 1차 필터 검색 -->
+				<div class="filter-terminal-search-depth1">
+					<div class="input-box field">
+
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('ALL');" checked="checked">
+							<label for="main-terminal" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">전체</label>
+						</div>
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('P01');">
+							<label for="main-terminal-1" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">제1 여객터미널</label>
+						</div>
+
+						<div class="input-box field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-2" class="field-radiomain" value="main-terminal-2" onclick="javascript:fncTerminalID('P03');">
+							<label for="main-terminal-2" class="field-radiomain-label" title="클릭하면 제2 여객터미널에서 검색이 가능합니다.">제2 여객터미널</label>
+						</div>
+					</div>
+
+					<div class="input-box base">
+						<input type="checkbox" name="search" id="NTCD24_AT" class="checkbox" value="todclock" onclick="javascript:getDutyDetail24Hour();">
+						<label class="checkbox-label ico" for="NTCD24_AT">24시간</label>
+					</div>
+
+				</div>
+				<!-- 2차 필터 검색 -->
+				<div class="filter-terminal-search-depth2">
+					<div class="field">
+						<div class="field-group">
+							<input type="radio" name="shop-area" id="cat_all" class="field-radio" value="all" checked="">
+							<label class="field-radio-label" for="cat_all" onclick="javascript:getCategoryDetail();">전체</label>
+
+							<input type="radio" name="shop-area" id="21" class="field-radio" value="21" onclick="javascript:getCategoryDetail('21');">
+							<label class="field-radio-label" for="21">롯데면세점</label>
+
+							<input type="radio" name="shop-area" id="22" class="field-radio" value="22" onclick="javascript:getCategoryDetail('22');">
+							<label class="field-radio-label" for="22">신라면세점</label>
+
+							<input type="radio" name="shop-area" id="23" class="field-radio" value="23" onclick="javascript:getCategoryDetail('23');">
+							<label class="field-radio-label" for="23">신세계면세점</label>
+
+							<input type="radio" name="shop-area" id="25" class="field-radio" value="25" onclick="javascript:getCategoryDetail('25');">
+							<label class="field-radio-label" for="25">에스엠면세점</label>
+
+							<input type="radio" name="shop-area" id="26" class="field-radio" value="26" onclick="javascript:getCategoryDetail('26');">
+							<label class="field-radio-label" for="26">시티면세점</label>
+
+							<input type="radio" name="shop-area" id="27" class="field-radio" value="27" onclick="javascript:getCategoryDetail('27');">
+							<label class="field-radio-label" for="27">삼익면세점</label>
+
+							<input type="radio" name="shop-area" id="28" class="field-radio" value="28" onclick="javascript:getCategoryDetail('28');">
+							<label class="field-radio-label" for="28">엔타스면세점</label>
+
+							<input type="radio" name="shop-area" id="29" class="field-radio" value="29" onclick="javascript:getCategoryDetail('29');">
+							<label class="field-radio-label" for="29">명품브랜드</label>
+
+							<input type="radio" name="shop-area" id="2999" class="field-radio" value="2999" onclick="javascript:getCategoryDetail('2999');">
+							<label class="field-radio-label" for="2999">면세품인도장</label>
+
+						</div>
+					</div>
+				</div>
+				<!-- 3차 (2차에서 3차가 있다면) 필터 검색 -->
+				<div class="filter-terminal-search-depth3">
+					<div class="field">
+						<div class="field-group big">
+							<input type="radio" title="Third Cate" name="product" id="cat_detail_all" class="field-radio" value="brand2-product" onclick="javascript:getDutyDetail();" checked="">
+							<div id="detail_category">
+
+
+
+
+
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 브랜드검색 -->
+			<div class="filter-brand-search">
+				<button type="button" title="버튼을 클릭하면 브랜드 이름으로 검색할 수 있습니다." class="filter-brand-search-btn ico arrow-small-down-w">브랜드 검색</button>
+				<div class="filter-brand-search-detail">
+					<div class="filter-brand-search-detail-head">
+						<button type="button" title="버튼을 클릭하면 브랜드 검색 창이 닫힙니다" class="filter-brand-search-detail-close ico base-close">닫기</button>
+						<div class="field">
+							<div class="field-group">
+								<input type="radio" name="brand-name" id="brand-all" class="field-radio" value="brand-all" onclick="javascript:fncLoadBrandForChar();" checked="checked">
+								<label class="field-radio-label" for="brand-all">전체</label>
+							</div>
+							<div class="field-group brand">
+								<input type="radio" name="brand-name" id="brand-a" class="field-radio" value="brand-a" onclick="javascript:fncLoadBrandForChar('A');">
+								<label class="field-radio-label" for="brand-a">A</label>
+
+								<input type="radio" name="brand-name" id="brand-b" class="field-radio" value="brand-b" onclick="javascript:fncLoadBrandForChar('B');">
+								<label class="field-radio-label" for="brand-b">B</label>
+
+								<input type="radio" name="brand-name" id="brand-c" class="field-radio" value="brand-c" onclick="javascript:fncLoadBrandForChar('C');">
+								<label class="field-radio-label" for="brand-c">C</label>
+
+								<input type="radio" name="brand-name" id="brand-d" class="field-radio" value="brand-d" onclick="javascript:fncLoadBrandForChar('D');">
+								<label class="field-radio-label" for="brand-d">D</label>
+
+								<input type="radio" name="brand-name" id="brand-e" class="field-radio" value="brand-e" onclick="javascript:fncLoadBrandForChar('E');">
+								<label class="field-radio-label" for="brand-e">E</label>
+
+								<input type="radio" name="brand-name" id="brand-f" class="field-radio" value="brand-f" onclick="javascript:fncLoadBrandForChar('F');">
+								<label class="field-radio-label" for="brand-f">F</label>
+
+								<input type="radio" name="brand-name" id="brand-g" class="field-radio" value="brand-g" onclick="javascript:fncLoadBrandForChar('G');">
+								<label class="field-radio-label" for="brand-g">G</label>
+
+								<input type="radio" name="brand-name" id="brand-h" class="field-radio" value="brand-h" onclick="javascript:fncLoadBrandForChar('H');">
+								<label class="field-radio-label" for="brand-h">H</label>
+
+								<input type="radio" name="brand-name" id="brand-i" class="field-radio" value="brand-i" onclick="javascript:fncLoadBrandForChar('I');">
+								<label class="field-radio-label" for="brand-i">I</label>
+
+								<input type="radio" name="brand-name" id="brand-j" class="field-radio" value="brand-j" onclick="javascript:fncLoadBrandForChar('J');">
+								<label class="field-radio-label" for="brand-j">J</label>
+
+								<input type="radio" name="brand-name" id="brand-k" class="field-radio" value="brand-k" onclick="javascript:fncLoadBrandForChar('K');">
+								<label class="field-radio-label" for="brand-k">K</label>
+
+								<input type="radio" name="brand-name" id="brand-l" class="field-radio" value="brand-l" onclick="javascript:fncLoadBrandForChar('L');">
+								<label class="field-radio-label" for="brand-l">L</label>
+
+								<input type="radio" name="brand-name" id="brand-m" class="field-radio" value="brand-m" onclick="javascript:fncLoadBrandForChar('M');">
+								<label class="field-radio-label" for="brand-m">M</label>
+
+								<input type="radio" name="brand-name" id="brand-n" class="field-radio" value="brand-n" onclick="javascript:fncLoadBrandForChar('N');">
+								<label class="field-radio-label" for="brand-n">N</label>
+
+								<input type="radio" name="brand-name" id="brand-o" class="field-radio" value="brand-o" onclick="javascript:fncLoadBrandForChar('O');">
+								<label class="field-radio-label" for="brand-o">O</label>
+
+								<input type="radio" name="brand-name" id="brand-p" class="field-radio" value="brand-p" onclick="javascript:fncLoadBrandForChar('P');">
+								<label class="field-radio-label" for="brand-p">P</label>
+
+								<input type="radio" name="brand-name" id="brand-q" class="field-radio" value="brand-q" onclick="javascript:fncLoadBrandForChar('Q');">
+								<label class="field-radio-label" for="brand-q">Q</label>
+
+								<input type="radio" name="brand-name" id="brand-r" class="field-radio" value="brand-r" onclick="javascript:fncLoadBrandForChar('R');">
+								<label class="field-radio-label" for="brand-r">R</label>
+
+								<input type="radio" name="brand-name" id="brand-s" class="field-radio" value="brand-s" onclick="javascript:fncLoadBrandForChar('S');">
+								<label class="field-radio-label" for="brand-s">S</label>
+
+								<input type="radio" name="brand-name" id="brand-t" class="field-radio" value="brand-t" onclick="javascript:fncLoadBrandForChar('T');">
+								<label class="field-radio-label" for="brand-t">T</label>
+
+								<input type="radio" name="brand-name" id="brand-u" class="field-radio" value="brand-u" onclick="javascript:fncLoadBrandForChar('U');">
+								<label class="field-radio-label" for="brand-u">U</label>
+
+								<input type="radio" name="brand-name" id="brand-v" class="field-radio" value="brand-v" onclick="javascript:fncLoadBrandForChar('V');">
+								<label class="field-radio-label" for="brand-v">V</label>
+
+								<input type="radio" name="brand-name" id="brand-w" class="field-radio" value="brand-w" onclick="javascript:fncLoadBrandForChar('W');">
+								<label class="field-radio-label" for="brand-w">W</label>
+
+								<input type="radio" name="brand-name" id="brand-x" class="field-radio" value="brand-x" onclick="javascript:fncLoadBrandForChar('X');">
+								<label class="field-radio-label" for="brand-x">X</label>
+
+								<input type="radio" name="brand-name" id="brand-y" class="field-radio" value="brand-y" onclick="javascript:fncLoadBrandForChar('Y');">
+								<label class="field-radio-label" for="brand-y">Y</label>
+
+								<input type="radio" name="brand-name" id="brand-z" class="field-radio" value="brand-z" onclick="javascript:fncLoadBrandForChar('Z');">
+								<label class="field-radio-label" for="brand-z">Z</label>
+							</div>
+
+							<div class="field-group brand">
+								<input type="radio" name="brand-name" id="brand-giyeok" class="field-radio" value="brand-giyeok" onclick="javascript:fncLoadBrandForChar('ㄱ');">
+								<label class="field-radio-label" for="brand-giyeok">ㄱ</label>
+
+								<input type="radio" name="brand-name" id="brand-nieun" class="field-radio" value="brand-nieun" onclick="javascript:fncLoadBrandForChar('ㄴ');">
+								<label class="field-radio-label" for="brand-nieun">ㄴ</label>
+
+								<input type="radio" name="brand-name" id="brand-digeut" class="field-radio" value="brand-digeut" onclick="javascript:fncLoadBrandForChar('ㄷ');">
+								<label class="field-radio-label" for="brand-digeut">ㄷ</label>
+
+								<input type="radio" name="brand-name" id="brand-rieul" class="field-radio" value="brand-rieul" onclick="javascript:fncLoadBrandForChar('ㄹ');">
+								<label class="field-radio-label" for="brand-rieul">ㄹ</label>
+
+								<input type="radio" name="brand-name" id="brand-mieum" class="field-radio" value="brand-mieum" onclick="javascript:fncLoadBrandForChar('ㅁ');">
+								<label class="field-radio-label" for="brand-mieum">ㅁ</label>
+
+								<input type="radio" name="brand-name" id="brand-bieup" class="field-radio" value="brand-bieup" onclick="javascript:fncLoadBrandForChar('ㅂ');">
+								<label class="field-radio-label" for="brand-bieup">ㅂ</label>
+
+								<input type="radio" name="brand-name" id="brand-siot" class="field-radio" value="brand-siot" onclick="javascript:fncLoadBrandForChar('ㅅ');">
+								<label class="field-radio-label" for="brand-siot">ㅅ</label>
+
+								<input type="radio" name="brand-name" id="brand-ieung" class="field-radio" value="brand-ieung" onclick="javascript:fncLoadBrandForChar('ㅇ');">
+								<label class="field-radio-label" for="brand-ieung">ㅇ</label>
+
+								<input type="radio" name="brand-name" id="brand-jieut" class="field-radio" value="brand-jieut" onclick="javascript:fncLoadBrandForChar('ㅈ');">
+								<label class="field-radio-label" for="brand-jieut">ㅈ</label>
+
+								<input type="radio" name="brand-name" id="brand-chieut" class="field-radio" value="brand-chieut" onclick="javascript:fncLoadBrandForChar('ㅊ');">
+								<label class="field-radio-label" for="brand-chieut">ㅊ</label>
+
+								<input type="radio" name="brand-name" id="brand-kieuk" class="field-radio" value="brand-kieuk" onclick="javascript:fncLoadBrandForChar('ㅋ');">
+								<label class="field-radio-label" for="brand-kieuk">ㅋ</label>
+
+								<input type="radio" name="brand-name" id="brand-tieut" class="field-radio" value="brand-tieut" onclick="javascript:fncLoadBrandForChar('ㅌ');">
+								<label class="field-radio-label" for="brand-tieut">ㅌ</label>
+
+								<input type="radio" name="brand-name" id="brand-pieup" class="field-radio" value="brand-pieup" onclick="javascript:fncLoadBrandForChar('ㅍ');">
+								<label class="field-radio-label" for="brand-pieup">ㅍ</label>
+
+								<input type="radio" name="brand-name" id="brand-hieut" class="field-radio" value="brand-hieut" onclick="javascript:fncLoadBrandForChar('ㅎ');">
+								<label class="field-radio-label" for="brand-hieut">ㅎ</label>
+
+								<input type="radio" name="brand-name" id="brand-etc" class="field-radio" value="brand-etc" onclick="javascript:fncLoadBrandForChar('etc');">
+								<label class="field-radio-label pd10" for="brand-etc">기타</label>
+							</div>
+						</div>
+					</div>
+
+					<div id="brand_list_div" class="filter-brand-search-detail-result">
+						<ul class="brand-list" id="brand_list">
+
+
+
+
+
+
+
+							<script>
+								$(document).ready(function(){
+									var brandList = "[{BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=글렌데브론, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0220}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=그레이구스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0221}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=구찌, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0222}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=고프로, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0223}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=고려인삼제조, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0224}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=고디바, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0225}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=경흥아메스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0226}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=겐조, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0227}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=게이즈샵, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0228}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=게스컬렉션, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0229}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=게스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0230}, {BRAND_CATEGORY_ID=Y, CODE_ID=A100, DESC_NM=YANGHE, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0231}, {BRAND_CATEGORY_ID=W, CODE_ID=A100, DESC_NM=WULIANGYE, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0232}, {BRAND_CATEGORY_ID=W, CODE_ID=A100, DESC_NM=WITH MY SHOES, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0233}, {BRAND_CATEGORY_ID=V, CODE_ID=A100, DESC_NM=VIVIENNE WESTWOOD, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0234}, {BRAND_CATEGORY_ID=V, CODE_ID=A100, DESC_NM=VIKOR&ROLF, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0235}, {BRAND_CATEGORY_ID=V, CODE_ID=A100, DESC_NM=VEDI VERO, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0236}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=트래블블루, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0237}, {BRAND_CATEGORY_ID=S, CODE_ID=A100, DESC_NM=ST.듀퐁, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0238}, {BRAND_CATEGORY_ID=R, CODE_ID=A100, DESC_NM=ROWEMONT, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0239}, {BRAND_CATEGORY_ID=P, CODE_ID=A100, DESC_NM=PM, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0240}, {BRAND_CATEGORY_ID=N, CODE_ID=A100, DESC_NM=N.FAMILY, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0241}, {BRAND_CATEGORY_ID=M, CODE_ID=A100, DESC_NM=MOTHERNEST HEALTH, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0242}, {BRAND_CATEGORY_ID=M, CODE_ID=A100, DESC_NM=MEVIUS, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0243}, {BRAND_CATEGORY_ID=L, CODE_ID=A100, DESC_NM=LUZHOU LAOJIAO, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0244}, {BRAND_CATEGORY_ID=L, CODE_ID=A100, DESC_NM=LOUIS ROYER, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0245}, {BRAND_CATEGORY_ID=L, CODE_ID=A100, DESC_NM=LIQUN, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0246}, {BRAND_CATEGORY_ID=J, CODE_ID=A100, DESC_NM=JTI, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0247}, {BRAND_CATEGORY_ID=J, CODE_ID=A100, DESC_NM=JBL, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0248}, {BRAND_CATEGORY_ID=I, CODE_ID=A100, DESC_NM=IGS, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0249}, {BRAND_CATEGORY_ID=H, CODE_ID=A100, DESC_NM=HUANGHELOU, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0250}, {BRAND_CATEGORY_ID=H, CODE_ID=A100, DESC_NM=HSF , CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0251}, {BRAND_CATEGORY_ID=G, CODE_ID=A100, DESC_NM=GUM 목쿠션, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0252}, {BRAND_CATEGORY_ID=G, CODE_ID=A100, DESC_NM=GNC, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0253}, {BRAND_CATEGORY_ID=F, CODE_ID=A100, DESC_NM=FURLA, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0254}, {BRAND_CATEGORY_ID=E, CODE_ID=A100, DESC_NM=E.ARMANI, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0255}, {BRAND_CATEGORY_ID=D, CODE_ID=A100, DESC_NM=DW, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0256}, {BRAND_CATEGORY_ID=C, CODE_ID=A100, DESC_NM=CK, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0257}, {BRAND_CATEGORY_ID=C, CODE_ID=A100, DESC_NM=CHUGNHWA, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0258}, {BRAND_CATEGORY_ID=C, CODE_ID=A100, DESC_NM=CHOW TAI FOOK, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0259}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=캐스키드슨, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0260}, {BRAND_CATEGORY_ID=B, CODE_ID=A100, DESC_NM=BATK, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0261}, {BRAND_CATEGORY_ID=B, CODE_ID=A100, DESC_NM=BAT, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0262}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=에뛰드하우스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0263}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=닥터자르트, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0264}, {BRAND_CATEGORY_ID=ㄴ, CODE_ID=A100, DESC_NM=네이처리퍼블릭, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0265}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=토니모리, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0266}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=더샘, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0267}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=잇츠스킨, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0268}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=제이준, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0269}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=포니이펙트, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0270}, {BRAND_CATEGORY_ID=ㅊ, CODE_ID=A100, DESC_NM=차앤박, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0271}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=마이클코어스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0272}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=헤르메스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0273}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=지방시, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0274}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=마이크제이콥스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0275}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=코치, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0276}, {BRAND_CATEGORY_ID=M, CODE_ID=A100, DESC_NM=MCM, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0277}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=토즈, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0278}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=토리버치, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0279}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=모스키노, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0280}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=베르사체, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0281}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=아임쇼핑, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0282}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=아쿠아스쿠텀, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0283}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=후, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0001}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=호세꾸엘보, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0002}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=헤지스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0003}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=헤네시, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0004}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=해우촌, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0005}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=해밀턴, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0006}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=한삼인, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0007}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=하이웰, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0008}, {BRAND_CATEGORY_ID=ㅎ, CODE_ID=A100, DESC_NM=하나 CNT, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0009}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=필립스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0010}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=필립모리스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0011}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=피오니, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0012}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=피닉스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0013}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=프라다, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0014}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=폴리폴리, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0015}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=폴리스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0016}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=펜디, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0017}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=페라가모, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0018}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=판도라, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0019}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=판다, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0020}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=파슬, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0021}, {BRAND_CATEGORY_ID=ㅍ, CODE_ID=A100, DESC_NM=파나소닉, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0022}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=티파니, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0023}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=티쏘, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0024}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=트리코리아, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0025}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=투쿨포스쿨, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0026}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=투미, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0027}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=톰포드, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0028}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=토리버치, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0029}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=태산, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0030}, {BRAND_CATEGORY_ID=ㅌ, CODE_ID=A100, DESC_NM=태그호이어, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0031}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=키플링, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0032}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=키엘, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0033}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=클로에, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0034}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=크리니크, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0035}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=크레이겔러키, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0036}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=쿠쿠, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0037}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=쿠론, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0038}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=콤비타, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0039}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=코코아엔조이, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0040}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=코스메데코르테, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0041}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=코롬방, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0042}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=케이티앤지, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0043}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=캠퍼스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0044}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=캠퍼, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0045}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=캘빈클라인, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0046}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=캐논, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0047}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=캉골, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0048}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=칼라커펠트, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0049}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=카카오프렌즈, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0050}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=카카오봄, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0051}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=카린, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0052}, {BRAND_CATEGORY_ID=ㅋ, CODE_ID=A100, DESC_NM=카렐리야, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0053}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=질스튜어트, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0054}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=진락, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0055}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=지샥, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0056}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=지미추, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0057}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=쥬라, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0058}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=중화, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0059}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=종가집, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0060}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=조말론, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0061}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=조니워커, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0062}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=젠틀몬스터, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0063}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=제키스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0064}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=제이에스티나, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0065}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=정관장, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0066}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=잭다니엘, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0067}, {BRAND_CATEGORY_ID=ㅈ, CODE_ID=A100, DESC_NM=자수정, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0068}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=입생로랑, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0069}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=일억조, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0070}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=일렉콤, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0071}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=이니스프리, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0072}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=유앤아이, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0073}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=유림, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0074}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=원글라스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0075}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=올트모어, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0076}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=올세인츠, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0077}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=오타드, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0078}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=오클리, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0079}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=오쏘몰, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0080}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=오리진에이, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0081}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=오리스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0082}, {BRAND_CATEGORY_ID=M, CODE_ID=A100, DESC_NM=MLB, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0083}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=엘지, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0084}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=엘가, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0085}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=에트로, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0086}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=에이지투웨이스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0087}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=에이에이치씨, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0088}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=에스티로더, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0089}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=에스케이투, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0090}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=에스까다, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0091}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=에버펠디, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0092}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=양반김, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0093}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=애플, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0094}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=알바, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0095}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=알마니, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0096}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=알록스킨, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0097}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=안나수이, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0098}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=아토팜, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0099}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=아디다스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0100}, {BRAND_CATEGORY_ID=ㅇ, CODE_ID=A100, DESC_NM=아구아, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0101}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=시티즌, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0102}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=시바스리갈, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0103}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=시가드, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0104}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=스톤헨지, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0105}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=스카치블루, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0106}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=스카겐, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0107}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=스와치, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0108}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=스와로브스키, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0109}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=쉐클톤, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0110}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=수정방, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0111}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=솔가, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0112}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=소니, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0113}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=셀퓨전씨, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0114}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=셀린, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0115}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=세이코, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0116}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=세노비스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0117}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=설화수, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0118}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=샤보, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0119}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=샤넬, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0120}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=생로랑, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0121}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=샘소나이트, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0122}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=삼성, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0123}, {BRAND_CATEGORY_ID=ㅅ, CODE_ID=A100, DESC_NM=산새미, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0124}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=뽀로로, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0125}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=빅토리아시크릿, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0126}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=비츠, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0127}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=블랙모어스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0128}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=브릭스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0129}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=브레오, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0130}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=브라이틀링, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0131}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=브라운, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0132}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=불가리, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0133}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=봄비, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0134}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=봄베이사파이어, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0135}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=보테가베네타, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0136}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=보테가, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0137}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=보스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0138}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=보배알로에, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0139}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=뱅앤올룹슨, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0140}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=발베니, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0141}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=발망, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0142}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=발리, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0143}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=발렌티노, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0144}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=발렌타인, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0145}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=발렌시아가, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0146}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=바카디, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0147}, {BRAND_CATEGORY_ID=ㅂ, CODE_ID=A100, DESC_NM=바닐라코, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0148}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=미우미우, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0149}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=미송한과, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0150}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=몽클레어, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0151}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=몽블랑, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0152}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=몬테스알파, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0153}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=목화송이, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0154}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=모엣헤네시, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0155}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=모스키노, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0156}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=메트로시티, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0157}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=메종히브라, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0158}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=메디힐, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0159}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=맥켈란, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0160}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=맥, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0161}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=말보로, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0162}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=만다라덕, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0163}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=마텔, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0164}, {BRAND_CATEGORY_ID=ㅁ, CODE_ID=A100, DESC_NM=마오타이, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0165}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=리파, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0166}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=리틀하바나, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0167}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=리모와, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0168}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=리더스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0169}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=루이까또즈, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0170}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=롱샴, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0171}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=롯데헬스원, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0172}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=롯데주류, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0173}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=롯데제과, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0174}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=롯데와인, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0175}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=론진, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0176}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=로얄제과, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0177}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=로얄브라클라, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0178}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=로얄살루트, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0179}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=로버트몬다비, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0180}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=레인보우, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0181}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=레이벤, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0182}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=레스포삭, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0183}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=레미마틴, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0184}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=랩시리즈, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0185}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=랑콤, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0186}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=랑방, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0187}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=란셀, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0188}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=라인프렌즈, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0189}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=라베트리나, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0190}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=라미펜, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0191}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=라메르, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0192}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=라도, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0193}, {BRAND_CATEGORY_ID=ㄹ, CODE_ID=A100, DESC_NM=라네즈, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0194}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=디올, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0195}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=디디에두보, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0196}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=듀워스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0197}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=동원양반김, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0198}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=돔페리뇽, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0199}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=던힐, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0200}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=더샘, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0201}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=더블 해피니스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0202}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=대한무역, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0203}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=달모어, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0204}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=단즈카, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0205}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=닥터자르트, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0206}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=닥스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0207}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=다비도프 시가, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0208}, {BRAND_CATEGORY_ID=ㄷ, CODE_ID=A100, DESC_NM=다비도프, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0209}, {BRAND_CATEGORY_ID=ㄴ, CODE_ID=A100, DESC_NM=뉴에라, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0210}, {BRAND_CATEGORY_ID=ㄴ, CODE_ID=A100, DESC_NM=뉴발란스, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0211}, {BRAND_CATEGORY_ID=ㄴ, CODE_ID=A100, DESC_NM=누리아트, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0212}, {BRAND_CATEGORY_ID=ㄴ, CODE_ID=A100, DESC_NM=네이처리퍼블릭, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0213}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=끌로에, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0214}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=까스텔바작, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0215}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=까르띠에, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0216}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=글렌피딕, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0217}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=글렌모린지, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0218}, {BRAND_CATEGORY_ID=ㄱ, CODE_ID=A100, DESC_NM=글렌리벳, CODE_DC=면세점 쇼핑 브랜드(신규), CODE=0219}]";
+									if(brandList == "[]") $("#brand_list_div").hide();
+									else $("#brand_list_div").show();
+								});
+							</script>
+
+
+
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0220');return false;" class="brand-list-link">글렌데브론</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0221');return false;" class="brand-list-link">그레이구스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0222');return false;" class="brand-list-link">구찌</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0223');return false;" class="brand-list-link">고프로</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0224');return false;" class="brand-list-link">고려인삼제조</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0225');return false;" class="brand-list-link">고디바</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0226');return false;" class="brand-list-link">경흥아메스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0227');return false;" class="brand-list-link">겐조</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0228');return false;" class="brand-list-link">게이즈샵</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0229');return false;" class="brand-list-link">게스컬렉션</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0230');return false;" class="brand-list-link">게스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0231');return false;" class="brand-list-link">YANGHE</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0232');return false;" class="brand-list-link">WULIANGYE</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0233');return false;" class="brand-list-link">WITH MY SHOES</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0234');return false;" class="brand-list-link">VIVIENNE WESTWOOD</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0235');return false;" class="brand-list-link">VIKOR&amp;ROLF</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0236');return false;" class="brand-list-link">VEDI VERO</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0237');return false;" class="brand-list-link">트래블블루</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0238');return false;" class="brand-list-link">ST.듀퐁</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0239');return false;" class="brand-list-link">ROWEMONT</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0240');return false;" class="brand-list-link">PM</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0241');return false;" class="brand-list-link">N.FAMILY</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0242');return false;" class="brand-list-link">MOTHERNEST HEALTH</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0243');return false;" class="brand-list-link">MEVIUS</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0244');return false;" class="brand-list-link">LUZHOU LAOJIAO</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0245');return false;" class="brand-list-link">LOUIS ROYER</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0246');return false;" class="brand-list-link">LIQUN</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0247');return false;" class="brand-list-link">JTI</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0248');return false;" class="brand-list-link">JBL</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0249');return false;" class="brand-list-link">IGS</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0250');return false;" class="brand-list-link">HUANGHELOU</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0251');return false;" class="brand-list-link">HSF </a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0252');return false;" class="brand-list-link">GUM 목쿠션</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0253');return false;" class="brand-list-link">GNC</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0254');return false;" class="brand-list-link">FURLA</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0255');return false;" class="brand-list-link">E.ARMANI</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0256');return false;" class="brand-list-link">DW</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0257');return false;" class="brand-list-link">CK</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0258');return false;" class="brand-list-link">CHUGNHWA</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0259');return false;" class="brand-list-link">CHOW TAI FOOK</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0260');return false;" class="brand-list-link">캐스키드슨</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0261');return false;" class="brand-list-link">BATK</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0262');return false;" class="brand-list-link">BAT</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0263');return false;" class="brand-list-link">에뛰드하우스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0264');return false;" class="brand-list-link">닥터자르트</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0265');return false;" class="brand-list-link">네이처리퍼블릭</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0266');return false;" class="brand-list-link">토니모리</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0267');return false;" class="brand-list-link">더샘</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0268');return false;" class="brand-list-link">잇츠스킨</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0269');return false;" class="brand-list-link">제이준</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0270');return false;" class="brand-list-link">포니이펙트</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0271');return false;" class="brand-list-link">차앤박</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0272');return false;" class="brand-list-link">마이클코어스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0273');return false;" class="brand-list-link">헤르메스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0274');return false;" class="brand-list-link">지방시</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0275');return false;" class="brand-list-link">마이크제이콥스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0276');return false;" class="brand-list-link">코치</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0277');return false;" class="brand-list-link">MCM</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0278');return false;" class="brand-list-link">토즈</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0279');return false;" class="brand-list-link">토리버치</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0280');return false;" class="brand-list-link">모스키노</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0281');return false;" class="brand-list-link">베르사체</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0282');return false;" class="brand-list-link">아임쇼핑</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0283');return false;" class="brand-list-link">아쿠아스쿠텀</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0001');return false;" class="brand-list-link">후</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0002');return false;" class="brand-list-link">호세꾸엘보</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0003');return false;" class="brand-list-link">헤지스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0004');return false;" class="brand-list-link">헤네시</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0005');return false;" class="brand-list-link">해우촌</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0006');return false;" class="brand-list-link">해밀턴</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0007');return false;" class="brand-list-link">한삼인</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0008');return false;" class="brand-list-link">하이웰</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0009');return false;" class="brand-list-link">하나 CNT</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0010');return false;" class="brand-list-link">필립스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0011');return false;" class="brand-list-link">필립모리스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0012');return false;" class="brand-list-link">피오니</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0013');return false;" class="brand-list-link">피닉스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0014');return false;" class="brand-list-link">프라다</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0015');return false;" class="brand-list-link">폴리폴리</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0016');return false;" class="brand-list-link">폴리스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0017');return false;" class="brand-list-link">펜디</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0018');return false;" class="brand-list-link">페라가모</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0019');return false;" class="brand-list-link">판도라</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0020');return false;" class="brand-list-link">판다</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0021');return false;" class="brand-list-link">파슬</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0022');return false;" class="brand-list-link">파나소닉</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0023');return false;" class="brand-list-link">티파니</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0024');return false;" class="brand-list-link">티쏘</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0025');return false;" class="brand-list-link">트리코리아</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0026');return false;" class="brand-list-link">투쿨포스쿨</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0027');return false;" class="brand-list-link">투미</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0028');return false;" class="brand-list-link">톰포드</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0029');return false;" class="brand-list-link">토리버치</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0030');return false;" class="brand-list-link">태산</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0031');return false;" class="brand-list-link">태그호이어</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0032');return false;" class="brand-list-link">키플링</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0033');return false;" class="brand-list-link">키엘</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0034');return false;" class="brand-list-link">클로에</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0035');return false;" class="brand-list-link">크리니크</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0036');return false;" class="brand-list-link">크레이겔러키</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0037');return false;" class="brand-list-link">쿠쿠</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0038');return false;" class="brand-list-link">쿠론</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0039');return false;" class="brand-list-link">콤비타</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0040');return false;" class="brand-list-link">코코아엔조이</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0041');return false;" class="brand-list-link">코스메데코르테</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0042');return false;" class="brand-list-link">코롬방</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0043');return false;" class="brand-list-link">케이티앤지</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0044');return false;" class="brand-list-link">캠퍼스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0045');return false;" class="brand-list-link">캠퍼</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0046');return false;" class="brand-list-link">캘빈클라인</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0047');return false;" class="brand-list-link">캐논</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0048');return false;" class="brand-list-link">캉골</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0049');return false;" class="brand-list-link">칼라커펠트</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0050');return false;" class="brand-list-link">카카오프렌즈</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0051');return false;" class="brand-list-link">카카오봄</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0052');return false;" class="brand-list-link">카린</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0053');return false;" class="brand-list-link">카렐리야</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0054');return false;" class="brand-list-link">질스튜어트</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0055');return false;" class="brand-list-link">진락</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0056');return false;" class="brand-list-link">지샥</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0057');return false;" class="brand-list-link">지미추</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0058');return false;" class="brand-list-link">쥬라</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0059');return false;" class="brand-list-link">중화</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0060');return false;" class="brand-list-link">종가집</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0061');return false;" class="brand-list-link">조말론</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0062');return false;" class="brand-list-link">조니워커</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0063');return false;" class="brand-list-link">젠틀몬스터</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0064');return false;" class="brand-list-link">제키스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0065');return false;" class="brand-list-link">제이에스티나</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0066');return false;" class="brand-list-link">정관장</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0067');return false;" class="brand-list-link">잭다니엘</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0068');return false;" class="brand-list-link">자수정</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0069');return false;" class="brand-list-link">입생로랑</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0070');return false;" class="brand-list-link">일억조</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0071');return false;" class="brand-list-link">일렉콤</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0072');return false;" class="brand-list-link">이니스프리</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0073');return false;" class="brand-list-link">유앤아이</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0074');return false;" class="brand-list-link">유림</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0075');return false;" class="brand-list-link">원글라스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0076');return false;" class="brand-list-link">올트모어</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0077');return false;" class="brand-list-link">올세인츠</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0078');return false;" class="brand-list-link">오타드</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0079');return false;" class="brand-list-link">오클리</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0080');return false;" class="brand-list-link">오쏘몰</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0081');return false;" class="brand-list-link">오리진에이</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0082');return false;" class="brand-list-link">오리스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0083');return false;" class="brand-list-link">MLB</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0084');return false;" class="brand-list-link">엘지</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0085');return false;" class="brand-list-link">엘가</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0086');return false;" class="brand-list-link">에트로</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0087');return false;" class="brand-list-link">에이지투웨이스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0088');return false;" class="brand-list-link">에이에이치씨</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0089');return false;" class="brand-list-link">에스티로더</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0090');return false;" class="brand-list-link">에스케이투</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0091');return false;" class="brand-list-link">에스까다</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0092');return false;" class="brand-list-link">에버펠디</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0093');return false;" class="brand-list-link">양반김</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0094');return false;" class="brand-list-link">애플</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0095');return false;" class="brand-list-link">알바</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0096');return false;" class="brand-list-link">알마니</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0097');return false;" class="brand-list-link">알록스킨</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0098');return false;" class="brand-list-link">안나수이</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0099');return false;" class="brand-list-link">아토팜</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0100');return false;" class="brand-list-link">아디다스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0101');return false;" class="brand-list-link">아구아</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0102');return false;" class="brand-list-link">시티즌</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0103');return false;" class="brand-list-link">시바스리갈</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0104');return false;" class="brand-list-link">시가드</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0105');return false;" class="brand-list-link">스톤헨지</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0106');return false;" class="brand-list-link">스카치블루</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0107');return false;" class="brand-list-link">스카겐</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0108');return false;" class="brand-list-link">스와치</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0109');return false;" class="brand-list-link">스와로브스키</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0110');return false;" class="brand-list-link">쉐클톤</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0111');return false;" class="brand-list-link">수정방</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0112');return false;" class="brand-list-link">솔가</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0113');return false;" class="brand-list-link">소니</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0114');return false;" class="brand-list-link">셀퓨전씨</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0115');return false;" class="brand-list-link">셀린</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0116');return false;" class="brand-list-link">세이코</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0117');return false;" class="brand-list-link">세노비스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0118');return false;" class="brand-list-link">설화수</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0119');return false;" class="brand-list-link">샤보</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0120');return false;" class="brand-list-link">샤넬</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0121');return false;" class="brand-list-link">생로랑</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0122');return false;" class="brand-list-link">샘소나이트</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0123');return false;" class="brand-list-link">삼성</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0124');return false;" class="brand-list-link">산새미</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0125');return false;" class="brand-list-link">뽀로로</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0126');return false;" class="brand-list-link">빅토리아시크릿</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0127');return false;" class="brand-list-link">비츠</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0128');return false;" class="brand-list-link">블랙모어스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0129');return false;" class="brand-list-link">브릭스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0130');return false;" class="brand-list-link">브레오</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0131');return false;" class="brand-list-link">브라이틀링</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0132');return false;" class="brand-list-link">브라운</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0133');return false;" class="brand-list-link">불가리</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0134');return false;" class="brand-list-link">봄비</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0135');return false;" class="brand-list-link">봄베이사파이어</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0136');return false;" class="brand-list-link">보테가베네타</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0137');return false;" class="brand-list-link">보테가</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0138');return false;" class="brand-list-link">보스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0139');return false;" class="brand-list-link">보배알로에</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0140');return false;" class="brand-list-link">뱅앤올룹슨</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0141');return false;" class="brand-list-link">발베니</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0142');return false;" class="brand-list-link">발망</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0143');return false;" class="brand-list-link">발리</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0144');return false;" class="brand-list-link">발렌티노</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0145');return false;" class="brand-list-link">발렌타인</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0146');return false;" class="brand-list-link">발렌시아가</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0147');return false;" class="brand-list-link">바카디</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0148');return false;" class="brand-list-link">바닐라코</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0149');return false;" class="brand-list-link">미우미우</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0150');return false;" class="brand-list-link">미송한과</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0151');return false;" class="brand-list-link">몽클레어</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0152');return false;" class="brand-list-link">몽블랑</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0153');return false;" class="brand-list-link">몬테스알파</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0154');return false;" class="brand-list-link">목화송이</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0155');return false;" class="brand-list-link">모엣헤네시</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0156');return false;" class="brand-list-link">모스키노</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0157');return false;" class="brand-list-link">메트로시티</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0158');return false;" class="brand-list-link">메종히브라</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0159');return false;" class="brand-list-link">메디힐</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0160');return false;" class="brand-list-link">맥켈란</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0161');return false;" class="brand-list-link">맥</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0162');return false;" class="brand-list-link">말보로</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0163');return false;" class="brand-list-link">만다라덕</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0164');return false;" class="brand-list-link">마텔</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0165');return false;" class="brand-list-link">마오타이</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0166');return false;" class="brand-list-link">리파</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0167');return false;" class="brand-list-link">리틀하바나</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0168');return false;" class="brand-list-link">리모와</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0169');return false;" class="brand-list-link">리더스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0170');return false;" class="brand-list-link">루이까또즈</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0171');return false;" class="brand-list-link">롱샴</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0172');return false;" class="brand-list-link">롯데헬스원</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0173');return false;" class="brand-list-link">롯데주류</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0174');return false;" class="brand-list-link">롯데제과</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0175');return false;" class="brand-list-link">롯데와인</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0176');return false;" class="brand-list-link">론진</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0177');return false;" class="brand-list-link">로얄제과</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0178');return false;" class="brand-list-link">로얄브라클라</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0179');return false;" class="brand-list-link">로얄살루트</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0180');return false;" class="brand-list-link">로버트몬다비</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0181');return false;" class="brand-list-link">레인보우</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0182');return false;" class="brand-list-link">레이벤</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0183');return false;" class="brand-list-link">레스포삭</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0184');return false;" class="brand-list-link">레미마틴</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0185');return false;" class="brand-list-link">랩시리즈</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0186');return false;" class="brand-list-link">랑콤</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0187');return false;" class="brand-list-link">랑방</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0188');return false;" class="brand-list-link">란셀</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0189');return false;" class="brand-list-link">라인프렌즈</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0190');return false;" class="brand-list-link">라베트리나</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0191');return false;" class="brand-list-link">라미펜</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0192');return false;" class="brand-list-link">라메르</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0193');return false;" class="brand-list-link">라도</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0194');return false;" class="brand-list-link">라네즈</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0195');return false;" class="brand-list-link">디올</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0196');return false;" class="brand-list-link">디디에두보</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0197');return false;" class="brand-list-link">듀워스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0198');return false;" class="brand-list-link">동원양반김</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0199');return false;" class="brand-list-link">돔페리뇽</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0200');return false;" class="brand-list-link">던힐</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0201');return false;" class="brand-list-link">더샘</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0202');return false;" class="brand-list-link">더블 해피니스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0203');return false;" class="brand-list-link">대한무역</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0204');return false;" class="brand-list-link">달모어</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0205');return false;" class="brand-list-link">단즈카</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0206');return false;" class="brand-list-link">닥터자르트</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0207');return false;" class="brand-list-link">닥스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0208');return false;" class="brand-list-link">다비도프 시가</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0209');return false;" class="brand-list-link">다비도프</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0210');return false;" class="brand-list-link">뉴에라</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0211');return false;" class="brand-list-link">뉴발란스</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0212');return false;" class="brand-list-link">누리아트</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0213');return false;" class="brand-list-link">네이처리퍼블릭</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0214');return false;" class="brand-list-link">끌로에</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0215');return false;" class="brand-list-link">까스텔바작</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0216');return false;" class="brand-list-link">까르띠에</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0217');return false;" class="brand-list-link">글렌피딕</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0218');return false;" class="brand-list-link">글렌모린지</a></li>
+
+							<li class="brand-list-item"><a href="#" onclick="fncGoFacilityForBrand('A100', '0219');return false;" class="brand-list-link">글렌리벳</a></li>
+
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 매장검색 -->
+			<div class="filter-store-search">
+				<div class="filter-store-search-input">
+					<label for="SEARCH_STR" class="responsive-form-box-hide">브랜드검색</label>
+					<input type="text" id="SEARCH_STR" placeholder="매장명, 브랜드명 입력">
+				</div>
+				<div class="filter-store-search-icon">
+					<button type="button" title="키워드 검색을 할 수 있습니다." class="ico search-black" onclick="javascript:getDutySearchStr();">검색</button>
+				</div>
+			</div>
+		</div>
+		<div class="boxmodel2">
+			<ul class="boxmodel2-list" id="shop_detail">
+
+
+
+
+
+
+
+				<script>
+					$(document).ready(function(){
+						if("180" != "" && "180" != "0") {
+							setPageNation("1", "180");
+						}
+						else {
+							$("#resultPageNavi").html("");
+						}
+					});
+					function setTelNumber(telno, obj) {
+						var TELNO_HTML = "";
+						if("" != telno && telno != undefined) {
+							var arrTELNO = telno.split(",");
+							for(var i=0; i<arrTELNO.length; i++ ) {
+								if(arrTELNO[i] != "" && arrTELNO[i] != undefined) {
+									var tel = changeTelNumber(arrTELNO[i]);
+									TELNO_HTML += tel;
+									if(i != arrTELNO.length-1 && TELNO_HTML != "") TELNO_HTML +="<br></arrTELNO.length;>";
+								}
+							}
+							$(obj).html(TELNO_HTML);
+						}
+					}
+					function changeTelNumber(hp) {
+						return hp.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,"$1-$2-$3");
+					}
+					function openMap(sn) {
+						window.open("/ap/ko/map/mapInfo.do?SN=" + sn,'_blank');
+					}
+				</script>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+					boxmodel2-imggroup-mark green
+
+
+
+				">
+					럭셔리부티크
+
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1421" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">[신세계면세점] 발렌티노</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">06:30 ~ 21:30</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-4721</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1421');"><em class="color-lb">제2여객터미널 3층 면세지역 250번, 251번 게이트 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">핸드백, 지갑, 슈즈, 쥬얼리</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+							<p class="boxmodel2-desc">
+								Maison Valentino는 1960년도에 발렌티노 가라바니와 지안카를로 지암메티에 의해 설립되었다. 이후 2008년부터 2016년까지 중요한 창조적 진화를 통해 세계적인 패션계의 주역으로 자리 잡았다.
+								Maison Valentino는 미적 감각을 형성하는 창조 산업에 요구되는 전통과 혁신의 조합을 통해 럭셔리 부문에서 눈부신 활약을 펼치고 있다.
+								Valentino는 여성, 남성을 위한 오트 쿠튀르와 프레타포르테 라인과 함께 슈즈, 백, 가죽 소품, 아이웨어, 스카프, 타이, 향수를 포함한 Valentino Garavani 액세서리 라인을 제공한다. 전 세계 90여 개국에서 160개의 직영 부티크와 1300개 이상의 매장에서 Valentino의 패션 세계를 만나볼 수 있다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+					boxmodel2-imggroup-mark green
+
+
+
+				">
+					유아·기념품
+
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1420" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">[신세계면세점] 복합매장</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">06:30 ~ 21:30</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">1661-8778</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1420');"><em class="color-lb">제2여객터미널 3층 면세지역 250번, 251번 게이트 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">문구, 인형, 장신구, 소형가전, 패션 악세서리, 선글라스, 안경, 전자제품, 생활가전, 카메라, 이어폰, 오디오, 핸드폰, 스피커, 안마기</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+							<p class="boxmodel2-desc">
+								인천국제공항 제2여객터미널 3층 탑승지역에 위치하고 있으며, 세련된 인테리어와 다양한 브랜드를 입점하고 있습니다. 고품격 서비스와 함께 면세쇼핑의 편의를 최고의 만족도로 제공합니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+					boxmodel2-imggroup-mark green
+
+
+
+				">
+					유아·기념품
+
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1419" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">[신세계면세점] 복합매장</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">06:30 ~ 21:30</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">1661-8778</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1419');"><em class="color-lb">제2여객터미널 3층 면세지역 250번, 251번 게이트 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">문구, 인형, 장신구, 소형가전, 패션 악세서리, 선글라스, 안경, 전자제품, 생활가전, 카메라, 이어폰, 오디오, 핸드폰, 스피커, 안마기</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+							<p class="boxmodel2-desc">
+								인천국제공항 제2여객터미널 3층 탑승지역에 위치하고 있으며, 세련된 인테리어와 다양한 브랜드를 입점하고 있습니다. 고품격 서비스와 함께 면세쇼핑의 편의를 최고의 만족도로 제공합니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+					boxmodel2-imggroup-mark green
+
+
+
+				">
+					패션·액세서리
+
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1417" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">[신세계면세점] 패션/액세서리</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">06:30 ~ 21:30</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">1661-8778</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1417');"><em class="color-lb">제2여객터미널 3층 면세지역 250번, 251번 게이트 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">가방, 의류, 신발, 지갑, 파우치, 목베개, 폴딩백, 태그, 아답터, 핸드백, 벨트, 슈즈, 스카프, 악세서리, 선글라스</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+							<p class="boxmodel2-desc">
+								인천국제공항 제2여객터미널 3층 탑승지역에 위치하고 있으며, 세련된 인테리어와 다양한 브랜드를 입점하고 있습니다. 고품격 서비스와 함께 면세쇼핑의 편의를 최고의 만족도로 제공합니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+					boxmodel2-imggroup-mark green
+
+
+
+				">
+					패션·액세서리
+
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1418" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">[신세계면세점] 패션/액세서리</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">06:30 ~ 21:30</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">1661-8778</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1418');"><em class="color-lb">제2여객터미널 3층 면세지역 250번, 251번 게이트 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">가방, 의류, 신발, 지갑, 파우치, 목베개, 폴딩백, 태그, 아답터, 핸드백, 벨트, 슈즈, 스카프, 악세서리, 선글라스</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+							<p class="boxmodel2-desc">
+								인천국제공항 제2여객터미널 3층 탑승지역에 위치하고 있으며, 세련된 인테리어와 다양한 브랜드를 입점하고 있습니다. 고품격 서비스와 함께 면세쇼핑의 편의를 최고의 만족도로 제공합니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<div class="mt40">
+			<div class="pagenation" id="resultPageNavi"><a class="ico first" href="javascript:getShopList(1);">처음</a><a class="ico prev" href="javascript:getShopList(0);">이전</a><ol class="pagenation-list"><li class="pagenation-list-item on"><a class="pagenation-list-link" href="javascript:getShopList(1);">1</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(2);">2</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(3);">3</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(4);">4</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(5);">5</a></li></ol><a class="ico next" href="javascript:getShopList(6);">다음</a><a class="ico last" href="javascript:getShopList(36);">마지막</a></div>
+		</div>
+	</div>
+</section>
+
+<!--=include _include/_base_footer.html -->
