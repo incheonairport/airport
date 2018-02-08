@@ -1,0 +1,1046 @@
+<!--=include _include/_base_header.html -->
+
+<section id="top-contents" class="contents">
+	<div class="location">
+		<div class="location-btn">
+			<button type="button" class="location-btn-minus ico">축소</button>
+			<button type="button" class="location-btn-plus ico">확대</button>
+			<button type="button" class="location-btn-print ico">인쇄</button>
+		</div>
+		<div class="location-bar">
+			<ul class="location-bar-nav">
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/svc/getFacilityMain.do" class="location-bar-nav-item-link">안내·서비스</a></li>
+				<li class="location-bar-nav-item"><a href="/ap/ko/svc/attractionMain.do" class="location-bar-nav-item-link">공항즐기기</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="inner-section">
+		<div class="contents-sub-head">
+			<h2 class="contents-sub-head-title">공항즐기기</h2>
+			<p class="contents-sub-head-article">인천국제공항은 타 공항과는 차별화된 서비스와 콘텐츠를 제공합니다.</p>
+		</div>
+	</div>
+	<div class="sub-top type2 bg3">
+		<div class="inner-section">
+			<div class="sub-top-descbox">
+				<p class="sub-top-descbox-text">
+					<span class="sub-top-descbox-tit">뭔가 다른&nbsp;<em class="color-o">특별함</em>&nbsp;으로 가득한 인천국제공항</span><br>
+					<span class="sub-top-descbox-sub">고객의 여유시간을 더욱 풍요롭게!</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="contents facility">
+	<div class="inner-section">
+		<div class="filter mt30">
+			<!-- 터미널별 검색 -->
+			<div class="filter-terminal-search">
+				<span class="filter-terminal-search-heading">터미널 별 검색</span>
+				<!-- 1차 필터 검색 -->
+				<div class="filter-terminal-search-depth1">
+					<div class="input-box field">
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('ALL');" checked="checked">
+							<label for="main-terminal" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">전체</label>
+						</div>
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('P01');">
+							<label for="main-terminal-1" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">제1 여객터미널</label>
+						</div>
+
+						<div class="input-box field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-2" class="field-radiomain" value="main-terminal-2" onclick="javascript:fncTerminalID('P03');">
+							<label for="main-terminal-2" class="field-radiomain-label" title="클릭하면 제2 여객터미널에서 검색이 가능합니다.">제2 여객터미널</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="filter-terminal-search-depth2">
+					<div class="field">
+						<div class="field-division col-1">
+							<span class="field-group-tit">서비스 선택</span>
+						</div>
+						<div class="field-group" id="category_detail">
+
+
+
+
+
+
+
+							<input type="radio" name="CTGRY_ID" id="service-all" class="field-radio" value="service-all" onclick="javascript:getAttrDetail();" checked="">
+							<label class="field-radio-label" for="service-all">전체</label>
+
+							<input type="radio" name="CTGRY_ID" id="cat_51" class="field-radio" value="service-contry" onclick="javascript:getAttrDetail('51');">
+							<label class="field-radio-label" for="cat_51">문화공연</label>
+
+							<input type="radio" name="CTGRY_ID" id="cat_52" class="field-radio" value="service-contry" onclick="javascript:getAttrDetail('52');">
+							<label class="field-radio-label" for="cat_52">한국전통문화센터</label>
+
+							<input type="radio" name="CTGRY_ID" id="cat_53" class="field-radio" value="service-contry" onclick="javascript:getAttrDetail('53');">
+							<label class="field-radio-label" for="cat_53">퍼레이드</label>
+
+							<input type="radio" name="CTGRY_ID" id="cat_54" class="field-radio" value="service-contry" onclick="javascript:getAttrDetail('54');">
+							<label class="field-radio-label" for="cat_54">전시/박물관</label>
+
+							<input type="radio" name="CTGRY_ID" id="cat_55" class="field-radio" value="service-contry" onclick="javascript:getAttrDetail('55');">
+							<label class="field-radio-label" for="cat_55">예술품</label>
+
+							<input type="radio" name="CTGRY_ID" id="cat_56" class="field-radio" value="service-contry" onclick="javascript:getAttrDetail('56');">
+							<label class="field-radio-label" for="cat_56">미디어아트</label>
+
+							<input type="radio" name="CTGRY_ID" id="cat_57" class="field-radio" value="service-contry" onclick="javascript:getAttrDetail('57');">
+							<label class="field-radio-label" for="cat_57">전망대</label>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--
+    <div class="inner-section position-box70">
+      <div class="filter">
+        <div class="filter-service-field">
+          <div class="field">
+            <div class="field-group">
+              <div class="field-division col-1">
+                <span class="field-group-tit">터미널 선택</span>
+              </div>
+              <div class="field-division col-2">
+                <input type="radio" name="terminal" id="terminal" class="field-radio" value="terminal" checked onclick="javascript:fncTerminalID('ALL');">
+                <label class="field-radio-label" for="terminal">전체</label>
+
+                <input type="radio" name="terminal" id="terminal-1" class="field-radio" value="terminal-1" onclick="javascript:fncTerminalID('P01');">
+                <label class="field-radio-label" for="terminal-1">제 1터미널</label>
+
+                <input type="radio" name="terminal" id="terminal-2" class="field-radio" value="terminal-2" onclick="javascript:fncTerminalID('P03');">
+                <label class="field-radio-label" for="terminal-2">제 2터미널</label>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <div class="field-division col-1">
+                <span class="field-group-tit">서비스 선택</span>
+              </div>
+              <div class="field-division col-2" id="category_detail">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+   -->
+
+	<div class="inner-section">
+
+		<!-- 리스트탭 -->
+		<div class="boxmodel2-tab">
+			<div class="boxmodel2-tab-btngroup">
+				<!--
+				<button id="Tbtn" type="button" title="버튼을 클릭하면 썸네일 형태로 보여집니다" class="ico view-thumbnail on" onclick="javascript:loadPage('T');">썸네일 보기</button>
+				<button id="Lbtn" type="button" title="버튼을 클릭하면 리스트 형태로 보여집니다" class="ico view-list" onclick="javascript:loadPage('L');">리스트 보기</button>
+		 		-->
+			</div>
+		</div>
+		<div class="boxmodel2">
+			<ul class="boxmodel2-thumbnail" id="attr_detail">
+
+
+
+
+
+
+
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1972');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">문화공연</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1972" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">클래식 작은 음악회(T1)</span>
+								<span class="boxmodel2-map-link">제1여객터미널 면세지역 3층 중앙 소무대</span><br>
+								<p class="boxmodel2-desc">
+									세미 클래식부터 가요, 영화·드라마 OST까지 다양한 장르의 곡들을 현대적인 감각으로 재편곡한 크로스오버 공연을 선사합니다. |
+									공연시간 11:00~11:30 / 12:30~13:00 / 15:30~16:00 / 16:30~17:00 / 17:30~18:00
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1973');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">문화공연</span>
+									<img src="/static/noimg_big.png" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">노드정원 문화공연(T2)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 면세지역 3층 서편 248번, 동편 253번 게이트 맞은편</span><br>
+								<p class="boxmodel2-desc">
+									국악공연, 클래식 공연의 2개 공연이 시간대별로 동,서편 번갈아가며 공연합니다. | 공연시간 11:30 ~ 12:00 / 12:30 ~ 13:00 / 15:00 ~ 15:30 / 16:00 ~ 16:30 / 17:00 ~ 17:30
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1975');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">한국전통문화센터</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1975" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">한국전통문화센터(T1 동관)</span>
+								<span class="boxmodel2-map-link">제1여객터미널 면세지역 3층 동편 25번 게이트 부근</span><br>
+								<p class="boxmodel2-desc">
+									공예체험 - 한지, 단청, 나전, 민화 등 전통 공예품을 직접 만들어 볼 수 있습니다. |
+									국악공연 - 해금, 장구, 피리, 소리 등 한국 고유의 음악을 감상할 수 있습니다. |
+									문화상품 판매 - 중요무형문화재 보유자들이 제작한 작품 및 문화상품을 구매할 수 있습니다. |
+									운영시간: 연중무휴 07:00~22:00 | 공연시간 15:00~15:30 / 16:00~16:30 |
+									※ 체험 프로그램은 외국인 여객만 이용(무료) 가능합니다.
+									※ 공연시간은 공항 사정에 따라 변경될 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1976');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">한국전통문화센터</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1976" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">한국전통문화센터(T1 서관)</span>
+								<span class="boxmodel2-map-link">제1여객터미널 면세지역 3층 서편 29번 게이트 부근</span><br>
+								<p class="boxmodel2-desc">
+									공예체험 - 한지, 단청, 나전, 민화 등 전통 공예품을 직접 만들어 볼 수 있습니다. |
+									국악공연 - 해금, 장구, 피리, 소리 등 한국 고유의 음악을 감상할 수 있습니다. |
+									문화상품 판매 - 중요무형문화재 보유자들이 제작한 작품 및 문화상품을 구매할 수 있습니다. |
+									운영시간: 연중무휴 07:00~22:00 | 공연시간 12:30~13:00 / 14:00~14:30 |
+									※ 체험 프로그램은 외국인 여객만 이용(무료) 가능합니다. |
+									※ 공연시간은 공항 사정에 따라 변경될 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1977');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">한국전통문화센터</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1977" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">한국전통문화센터(탑승동)</span>
+								<span class="boxmodel2-map-link">탑승동 3층 동편</span><br>
+								<p class="boxmodel2-desc">
+									공예체험 - 한지, 단청, 나전, 민화 등 전통 공예품을 직접 만들어 볼 수 있습니다. |
+									복식체험 - 다양한 전통복식과 소품을 착용하고 기념 사진을 촬영할 수 있습니다. |
+									국악공연 - 해금, 장구, 피리, 소리 등 한국 고유의 음악을 감상할 수 있습니다. |
+									운영시간: 연중무휴 07:00~22:00 | 공연시간 10:30~11:00 / 11:30~12:00 |
+									※ 체험 프로그램은 외국인 여객만 이용(무료) 가능합니다.
+									※ 공연시간은 공항 사정에 따라 변경될 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1978');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">한국전통문화센터</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1978" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">한국전통문화센터(T2 동관)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 면세지역 3층 동편 253번 게이트 맞은편</span><br>
+								<p class="boxmodel2-desc">
+									전시 - 한글전(기획전시) |
+									한국문화체험 - 공예체험(한지, 민화 등 전통 공예품 키트), 스크래치 카드 체험(수문장교대의식, 경복궁 꽃담 등), 한글 만들기 체험 등 |
+									한옥 실내 직접 체험(대청마루 좌식 체험 등) |
+									문화상품 홍보 및 판매 - 국가무형문화재 보유자 제작한 작품 및 관련 문화상품 구입 가능 |
+
+									운영시간: 연중무휴 07:00~22:00
+
+									※ 체험 프로그램은 외국인 여객만 이용(무료) 가능합니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1979');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">한국전통문화센터</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1979" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">한국전통문화센터(T2 서관)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 면세지역 3층 서편 248번 게이트 맞은편</span><br>
+								<p class="boxmodel2-desc">
+									전시 - 한국의 장신(기획전시) |
+									한국문화체험 - 공예체험(한지, 민화 등 전통 공예품 키트), 스크래치 카드 체험(수문장교대의식, 경복궁 꽃담 등) 등 |
+									한옥 실내 직접 체험(대청마루 좌식 체험 등) |
+									전통복식 체험 |
+									문화상품 홍보 및 판매 - 국가무형문화재 보유자 제작한 작품 및 관련 문화상품 구입 가능 |
+									운영시간: 연중무휴 07:00~22:00 |
+									※ 체험 프로그램은 외국인 여객만 이용(무료) 가능합니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1980');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">퍼레이드</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1980" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">왕가의 산책</span>
+								<span class="boxmodel2-map-link">제1여객터미널 면세지역 3층 (한국전통문화센터 동·서관 사이)</span><br>
+								<p class="boxmodel2-desc">
+									조선시대 왕과 왕비를 비롯한 궁중 왕실의 일상모습을 재현한 행사입니다. 궁중복식 및 의장물을 착용한 출연진들과 함께 기념사진을 촬영할 수 있는 포토타임도 마련되어 있습니다. |
+									공연시간 11:30~12:20 / 14:00~14:40 / 16:00~16:50 |
+									※ 공연시간은 공항 사정에 따라 변경될 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1981');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">퍼레이드</span>
+									<img src="/static/noimg_big.png" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">탈춤공연</span>
+								<span class="boxmodel2-map-link">제2여객터미널 면세지역 3층 서편 248번, 동편 253번 게이트 맞은편</span><br>
+								<p class="boxmodel2-desc">
+									노드정원 서편 및 동편에서 한국의 흥과 멋을 느낄 수 있는 전통연희 탈춤공연이 진행됩니다. |
+									공연시간 서편 12:00 ~ 12:30 / 동편 14:00 ~ 14:30 |
+									※ 공연시간은 공항 사정에 따라 변경될 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1982');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">전시/박물관</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1982" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">한국문화거리</span>
+								<span class="boxmodel2-map-link">제1여객터미널 일반지역 4층 중앙</span><br>
+								<p class="boxmodel2-desc">
+									여객터미널 일반지역 4층 중앙에 위치한 한국문화거리에서는 한국 전통가옥을 대표하는 기와집과 정자 등이 마련되어 여객터미널 전체 전경을 한 눈에 감상하며 여유로운 휴식을 취할 수 있습니다. 또한 대문 안쪽에는 한국의 자연과 문화를 느낄 수 있는 인터렉티브 디지털 체험시설이 조성되어 흥미로운 경험을 제공합니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1983');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">전시/박물관</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1983" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">캐릭터와 함께하는 궁궐여행</span>
+								<span class="boxmodel2-map-link">제1여객터미널 면세지역 4층 환승편의지역 동측</span><br>
+								<p class="boxmodel2-desc">
+									국산 캐릭터와 경복궁의 아름다움을 접목하고 디지털 체험마당을 조성하여 보다 쉽고 재미있게 우리나라 궁궐을 소개하는 테마 공간입니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1984');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">전시/박물관</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1984" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">한국의 쉼과 멋</span>
+								<span class="boxmodel2-map-link">제1여객터미널 면세지역 4층 환승편의지역 서측</span><br>
+								<p class="boxmodel2-desc">
+									한국의 풍류와 여유를 느낄 수 있는 공간으로, 고서화에 나타난 정물을 모티브로 한 전통공예품을 전시하고 책가도 병풍을 활용한 체험요소를 도입하였습니다. 뿐만 아니라 우리나라 자연 경관을 기반으로 한 현대작가들의 전시작품을 감상하고 휴식을 취하실 수도 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1985');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">전시/박물관</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1985" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">한국문화박물관</span>
+								<span class="boxmodel2-map-link">탑승동 4층 중앙</span><br>
+								<p class="boxmodel2-desc">
+									인천공항에서는 국민과 외국인에게 우리나라 문화예술의 우수성을 홍보하고자 국립중앙박물관과 공동으로 한국문화박물관을 운영하고 있습니다. 한국문화박물관에는 5천년 유구한 역사 속에 살아 숨쉬는 우리민족의 찬란한 유물들이 전시되어 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1986');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">전시/박물관</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1986" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">유물 전시</span>
+								<span class="boxmodel2-map-link">제1여객터미널 면세지역 3층 동편 및 서편 엔틀러</span><br>
+								<p class="boxmodel2-desc">
+									제1여객터미널에는 출국 여객들이 탑승을 기다리며 한국의 역사를 느끼실 수 있도록 다양한 유물들을 전시했습니다. 대한민국의 찬란한 역사를 간직한 국보급 문화재들을 가까이에서 감상하실 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1987');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1987" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">Flying to the Future(김무기)</span>
+								<span class="boxmodel2-map-link">제1여객터미널 공항접근로 부근 </span><br>
+								<p class="boxmodel2-desc">
+									“Flying to the Future""는 세계 최고 허브공항과 초일류 미래공항의 이미지를 자연의 에너지인 태양광과 빛, 바람으로 형상화하여 유선형으로 표현한 조형물로 국제현상공모(‘07.9월)를 통하여 선정되었습니다.  초일류 공항으로 도약하는 인천공항의 비전을 담은 초현대적 디자인의 랜드마크로서 잊지못할 강렬한 인천공항의 이미지가 될 것입니다.  조형물 외부의 1만개 스테인리스로 만들어진 작은 비행선은 바람에 흔들리며 작은 소리와 호흡하는 듯 역동적인 모양을 만들어 내는데 이는 찬란하게 발전하는 인천국제공항을 상징합니다.  낮동안 태양광을 축전한 LED 조명으로 야간에도 화려하고 웅장한 모습을 감상할 수 있습니다.
+									규모: 가로 30m 높이18.7m
+									작가: 김무기
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1988');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1988" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">하늘을 걷다 (이종경, 박종빈, 최종운)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 공항접근로 부근</span><br>
+								<p class="boxmodel2-desc">
+									공항은 현실의 굴레를 벗어나는 출구이자 꿈을 찾아가는 입구로서, 일상성과 비일상성이 공존하는 경계의 장소이다. 작가는 이러한 장소성에 대한 이해를 바탕으로 여행자들의 움직임을 포착해, 실제 인체보다 10배 큰 규모로 확대한 조각을 만들었다. 거대한 인체상은 제2여객터미널의 랜드마크로서 기능하는 동시에 여객에게 현실의 공간을 넘어 상상의 공간으로 들어사는 관문이 된다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1989');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1989" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">Great Mobile (자비에 베이앙)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 일반지역 3층 4,5게이트 측면</span><br>
+								<p class="boxmodel2-desc">
+									공항의 장소적 특수성을 반영한 두 개의 모빌 작품은 인천국제공항의 광할한 공간을 연결하고 안내하는 랜드마크로 기능하며 작품이 설치된 공간을 유동적으로 흐르고 변화하는 공간으로 만든다. 모빌은 중력이나 힘과 같이 물리적인 힘을 가시적으로 보여주는 동시에 고정된 형태가 없이 변화하며 마치 자연의 풍경이나 밤과 낮, 황혼과 새벽처럼 잡을 수 없는 '어떤 것'으로 인식된다. 이런 점에서 작품은 다른 상황과 환경으로 이동하는 공항 이용객들의 공간적, 심리적 변화를 상징하며, 개인적 경험이나 작품을 감상하는 순간의 마음상태에 따라 작품의 의미를 다르게 해석할 수 있는 여지를 남긴다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1990');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1990" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">Media Cloud</span>
+								<span class="boxmodel2-map-link">제2여객터미널 면세지역 3층 윙</span><br>
+								<p class="boxmodel2-desc">
+									미디어 클라우드는 아이들을 위한 첨단 미디어 놀이터이자 어른들을 위한 아트테인먼트이다. 머리 위로 떠있는 LED 곡면 스크린에는 여객의 여행 기대감을 고조시키는 "상상의 여행"을 위한 체험공간이 펼쳐져 있다. 이 밖에 국내외 명화를 미디어아트로 재현한 영상 등이 IT와 예술이 결합된 새로운 미디어 갤러리를 선보인다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1991');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1991" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">Wings of Vision (지니 서)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 면세지역 3층 윙</span><br>
+								<p class="boxmodel2-desc">
+									끊임없이 변화하는 구름, 이 자연의 경이로움은 우리들의 마음을 시공을 뛰어넘는 상상의 영역으로 데려간다. 탑승게이트 지역 19개의 아트 파빌리온 위로 총 1,5000미터에 걸쳐 펼쳐진 이 국내 최대의 파사드 아트는 건축과 자연이 서로의 경계를 지우며 소통하도록 만든다. 작품은 공항의 동서편 날개 위로 일출에서 일몰까지 지속적으로 움직이며 변화하는 하루동안의 빛의 순환을 반영한다. 동쪽으로는 아침 하늘의 신선함, 서쪽으로는 저녁 노을의 포근한 빛이 펼쳐진다. 색깔은 빛을 머금고, 빛은 시간을 함축하며, 시간은 우리를 존재하게 한다. 이 아름다운 길의 끝에는 하늘로 향하는 새로운 여정이 기다리고 있다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1992');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1992" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">Bit.Fall (율리어스 포프)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 수하물수취지역 1층</span><br>
+								<p class="boxmodel2-desc">
+									폭포수처럼 낙하하는 수많은 물방울은 실시간으로 뉴스피드에서 노출빈도가 높은 단어를 랜덤표출한다. 이 작품은 순간적으로 세계의 단면을 보여주기도 하지만 작가는 개별적인 단어의 가치보다는 인간과 사회의 정보를 어떻게 소비하는지, 또한 소비되는 정보의 의미와 가치를 어떻게 변화하는지에 주목한다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1993');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1993" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">Ambiguous Wall (김병주)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 수하물수취지역 1층</span><br>
+								<p class="boxmodel2-desc">
+									작가는 서울을 상징하는 광화문, 구서울역사, 독립문 등의 서울의 랜드 스케이프를 선이라는 최소한의 표현방식으로 드러낸다. 한국을 처음 방문한 외국인들에게는 새로운 도시에 대한 흥미로움을, 타국을 여행하고 돌아온 한국인들에게는 익숙함과 편안함을 선사한다. 이 감상의 순간이 실제 건축물을 방문하였을 때의 경험에 영향을 미치며 대상에 대한 보다 흥미로운 읽기가 가능해진다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1995');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1995" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">빛과 그림자 (박태호)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 수하물수취지역 1층</span><br>
+								<p class="boxmodel2-desc">
+									흰 종이 위에 검은 먹으로 그려낸 듯한 산수는 가까이 다가가면 수 만개의 구슬이 박힌 부조의 면모를 드러낸다. 빛과 그림자는 각각의 구슬을 연결하며 전통 산수화의 특징인 깊이있는 담묵을 구현한다. 이 작품은 풍경의 재현을 넘어서, 관람자로 하여금 2차원과 3차원, 실체와 일루젼, 전통성과 현대성의 간극을 넘나드는 경험을 제공한다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1996');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1996" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">Hello (강희라)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 일반지역 3층 중앙부</span><br>
+								<p class="boxmodel2-desc">
+									Hello는 한글 모음과 자음 형상의 오브제 1,000개가 상하로 움직이며 3D의 이미지를 만들어내는 키네틱 모빌이다. 각각의 모터와 컨트롤러에 의해 섬세하게 작동하는 유닛들은 내부의 광원에서 빛을 발산하며 살아 움직이는 듯한 착시를 연출한다. 제2여객터미널 중앙부를 유영하는 거대한 "생명체"는 여행객을 맞이하고 배웅하며 "Hello" 인사를 건낸다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1997');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">예술품</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1997" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">꿈꾸는 공간 (오순미)</span>
+								<span class="boxmodel2-map-link">제2여객터미널 면세지역 3층 동,서편 노드정원</span><br>
+								<p class="boxmodel2-desc">
+									3층 실내정원에 위치한 원형의 조각은 우리가 살고 있는 행성의 축소판이다. 이는 인체보다 조금 큰 스케일의 쉘터 같은 내부로 관객을 꿀어들이는데, 안쪽면에는 세계 여러 도시들의 지명과 하늘 길이 음각으로 새겨져 있다. 출국을 앞둔 여객들은 거울 같은 표면 위로 자신의 모습을 비춰보며 행성의 내부에서 가상 여행을 경험한다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1998');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">미디어아트</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1998" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">T1 입국장 미디어월</span>
+								<span class="boxmodel2-map-link">제1여객터미널 2층 입국장</span><br>
+								<p class="boxmodel2-desc">
+									제1 여객터미널 입국장에 여객동선을 따라 조성된 미디어월 및 사진 전시를 통해 한국의 아름다움을 감상하실 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('1999');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">미디어아트</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1999" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">T2 입국장 미디어월</span>
+								<span class="boxmodel2-map-link">제2여객터미널 2층 입국장</span><br>
+								<p class="boxmodel2-desc">
+									제2 여객터미널 입국장에 여객동선을 따라 조성된 미디어월을 통해 한국의 아름다움을 감상하실 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('2000');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">미디어아트</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=2000" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">T2 공항 진입부 미디어월</span>
+								<span class="boxmodel2-map-link">제2여객터미널 진입부</span><br>
+								<p class="boxmodel2-desc">
+									제2여객터미널 진입부에 조성된 대형 LED 미디어월을 통해 한국의 아름다운 자연을 감상하실 수 있습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li class="boxmodel2-thumbnail-item" onclick="javascript:openLayerTab('2026');">
+					<a href="#" class="boxmodel2-thumbnail-link">
+						<div class="boxmodel2-thumbnail-box">
+							<div class="boxmodel2-thumbnail-box-split row-1">
+								<div class="boxmodel2-imggroup">
+						<span class="
+
+
+
+
+							boxmodel2-imggroup-mark gray
+						">문화공연</span>
+									<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=2026" class="imgbox" onerror="this.src='/static/noimg_big.png'" alt="관련 이미지">
+								</div>
+							</div>
+
+							<div class="boxmodel2-thumbnail-box-split row-2">
+								<span class="boxmodel2-maintit">밀레니엄홀 문화공연(T1)</span>
+								<span class="boxmodel2-map-link">제1여객터미널 일반지역 1층 중앙 밀레니엄홀</span><br>
+								<p class="boxmodel2-desc">
+									365일 문화와 예술로 가득한 인천국제공항은 공항을 방문하시는 분들을 위하여 재미와 감동이 함께하는 문화공연을 매일 마련하고 있습니다.
+									공연시간
+									15:30 ~ 16:00
+									16:30 ~ 17:00
+									17:30 ~ 18:00
+									※ 정기공연 기간에는 진행되지 않습니다.
+								</p>
+							</div>
+							<div class="boxmodel2-thumbnail-cover">
+								<span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+			</ul> <!-- thumbnail style -->
+		</div>
+
+	</div>
+</section>
+
+<!--=include _include/_base_footer.html -->

@@ -1,0 +1,5206 @@
+<!--=include _include/_base_header.html -->
+<section id="top-contents" class="contents">
+  <!-- submenu start -->
+
+
+  <script>
+    var _isOpen = ("true" == "true" );
+    var scrollPos = null;
+
+    function getDepCongestion(d, t) {
+// 	alert("서비스 준비중입니다.")
+//	return;
+
+      $(".layer").removeClass('on');
+
+      var url = "/ap/ko/dep/depCongestion.do";
+
+      var data = {'SEARCH_DATE' : d};
+
+      data['ON_TERM'] =  t;
+
+      if ( $('#departure_congestion').length == 0)
+      {
+        var dv = document.createElement("div");
+        dv.id = "departure_congestion";
+        dv.setAttribute("class", "departure_congestion layer size on");
+        dv.setAttribute("style", "background-color:white");
+        var layerWrap = document.getElementById("popupLayer");
+        if ( layerWrap == null )
+        {
+          layerWrap = document.createElement("div");
+          $(layerWrap).addClass("layer-wrap");
+          layerWrap.id = "popupLayer";
+          document.body.append(layerWrap);
+        }
+
+        layerWrap.appendChild(dv);
+      }
+
+      $('.loading-inner').removeClass('opacity');
+      $('.loading').css('opacity','0.8');
+      $('.loading').show();
+      fncLoadLinkIntoLayer(url, data, 'departure_congestion', 'departure_congestion_content', function(data,result,status){
+        openDepCongestion(data);
+        $('.loading').css('opacity','0');
+        $('.loading').hide();
+      });
+    }
+
+    function openDepCongestion(data, result, status) {
+      $('.layer').addClass("off");
+
+      $('#departure_congestion').removeClass("off");
+
+      LayerPopup.openPopup( $('#departure_congestion') );
+      LineTab1.setTab( $('.tab-nav') );
+      LineTab1.setTab( $('.tab-area') );
+
+      if ( scrollPos == null )
+      {
+        try
+        {
+          scrollPos = $('#t1_tr_'+$('#ymdh').val()).offset().top - $(".table2-article-box").offset().top;
+        }
+        catch(e){console.log(e.message);}
+      }
+      $(".table2-article-box").scrollTop(scrollPos);
+
+      $('.tab-area-heading').on('click', function(){
+
+//     	if (this.id == 't2_congestTabArea')
+//     	{
+//     		alert('서비스 준비중입니다!');
+//     		return;
+//     	}
+
+        $(this).siblings('.tab-area-heading').removeClass('on').next('.tab-area-content').removeClass('on');
+
+        $(this).addClass('on').next('.tab-area-content').addClass('on');
+
+        if ( scrollPos == null )
+        {
+          try
+          {
+            scrollPos = $('#t1_tr_'+$('#ymdh').val()).offset().top - $(".table2-article-box").offset().top;
+          }
+          catch(e){console.log(e.message)}
+        }
+        $(".table2-article-box").scrollTop(scrollPos);
+
+      });
+
+      $('.btn-type-tab').on('click', function(){
+
+        $(this).siblings('.btn-type-tab').removeClass('on');
+
+        $(this).addClass('on');
+
+      });
+
+      if ( $(".layer-close:visible").length >= 2 )  $($(".layer-close:visible")[0]).hide();
+
+      // Layer Popup 닫기
+//       $('.layer-close').on('click', function(){
+
+//         LayerPopup.closePopup( $(this).parent('.layer') );
+
+//       });
+    }
+
+
+    function closeTableGuide (e)
+    {
+      e.preventDefault();
+      $('.table-guide-pop-up').close();
+    }
+
+  </script>
+
+
+  <!--위치-->
+  <div class="location">
+    <div class="location-btn">
+      <button type="button" class="location-btn-minus ico"></button>
+      <button type="button" class="location-btn-plus ico"></button>
+      <button type="button" class="location-btn-print ico"></button>
+    </div>
+    <div class="location-bar">
+      <ul class="location-bar-nav">
+        <li class="location-bar-nav-item ico"><a href="/" class="location-bar-nav-item-link home ico">home</a></li>
+        <li class="location-bar-nav-item ico">
+          <a href="/ap/ko/dep/depPasSchList.do" class="location-bar-nav-item-link">출발</a>
+        </li>
+        <li class="location-bar-nav-item ico">
+          <a href="/ap/ko/dep/depPasSchList.do" class="location-bar-nav-item-link">출발시간</a>
+        </li>
+        <li class="location-bar-nav-item ico">
+          <a href="/ap/ko/dep/depPasSchList.do" class="location-bar-nav-item-link">여객</a>
+        </li>
+        <li class="location-bar-nav-item">
+          <a href="/ap/ko/dep/depPasSchList.do" class="location-bar-nav-item-link">여객 출발 시간표</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--//위치-->
+
+  <div class="inner-section">
+    <!--서브타이틀-->
+    <div class="contents-sub-head">
+      <h2 class="contents-sub-head-title">
+        출발시간
+      </h2>
+      <p class="contents-sub-head-article">
+        항공사별/도시별 출발 정보를 안내합니다.
+      </p>
+    </div>
+    <!--//서브타이틀-->
+  </div>
+  <!--비주얼이미지-->
+  <div class="contents-visual departure">
+    <div class="inner-section">
+
+      <!--혼잡도-->
+      <div class="congestion">
+        <div class="congestion-title">
+          출국장<br> <span class="point">혼잡도</span>보기
+        </div>
+        <a href="javascript:getDepCongestion('TODAY')" class="congestion-quick-link ico">바로가기</a>
+      </div>
+      <!--//혼잡도-->
+
+      <!--tab-->
+      <nav class="tab-main">
+        <ul class="tab-main-list">
+          <li class="tab-main-list-item">
+            <a href="/ap/ko/dep/depPasSchList.do" class="tab-main-list-item-link left on">
+              여객
+            </a>
+          </li>
+          <li class="tab-main-list-item">
+            <a href="/ap/ko/dep/depCargoSchList.do" class="tab-main-list-item-link right  ">
+              화물
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!--tab-->
+      <!--subtab-->
+      <nav class="tab-sub">
+        <ul class="tab-sub-list">
+          <li class="tab-sub-list-item">
+            <a href="/ap/ko/dep/depPasSchList.do" class="tab-sub-list-item-link on">
+              여객 출발 시간표
+            </a>
+          </li>
+          <li class="tab-sub-list-item">
+            <a href="/ap/ko/dep/pasRegSchList.do" class="tab-sub-list-item-link ">
+              여객 출발 정기 운항편
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!--//subtab-->
+    </div>
+  </div>
+  <!--//비주얼이미지-->
+
+
+  <!--// submenu end -->
+</section>
+
+<section id="main-contents" class="contents dep">
+  <div class="inner-section">
+    <h2 style="display:none;">출발시간</h2>
+
+    <ul class="list2 mt30">
+      <li class="list2-item">공항 운영상황에 따라 아래 정보는 변경될 수 있으니, 당일 이외 항공편에 대한 정확한 정보는 해당 항공사에 확인해주시기 바랍니다.</li>
+      <li class="list2-item">운항편명을 클릭하시면 탑승을 위한 이동경로 및 상세정보를 확인하실 수 있습니다.</li>
+
+    </ul>
+
+    <!--검색영역-->
+    <div class="search-flight-detail mt30">
+      <div class="search-flight-detail-option terminal">
+        <label for="TERM_ID" class="label-hide">터미널</label>
+        <select class="search-flight-detail-select-article" id="TERM_ID" name="TERM_ID">
+          <option value="">전체 터미널</option>
+          <option value="T1">T1</option>
+          <option value="T2">T2</option>
+        </select>
+      </div>
+      <!-- 
+				<div class="search-flight-detail-option">
+					
+					<input type="radio" name="day" id="today" class="radio" 
+						value="today" checked> <label for="today"
+						class="search-option-btn" onclick="fncTodayGoSearch(url)">오늘</label>
+					<input type="radio" name="day" id="tomorrow" class="radio"
+						value="tomorrow"> <label for="tomorrow"
+						class="search-option-btn"  onclick="fncTomorrowGoSearch(url)">내일</label>
+					
+				</div>
+				-->
+      <div class="search-flight-detail-select">
+        <select class="search-flight-detail-select-article" id="DAY_SEL" name="DAY_SEL" title="날짜 선택">
+
+          <option value="20180126">2018.01.26 (금)</option>
+
+          <option value="20180127">2018.01.27 (토)</option>
+
+          <option value="20180128">2018.01.28 (일)</option>
+
+          <option value="20180129">2018.01.29 (월)</option>
+
+          <option value="20180130">2018.01.30 (화)</option>
+
+          <option value="20180131">2018.01.31 (수)</option>
+
+          <option value="20180201">2018.02.01 (목)</option>
+
+          <option value="20180202">2018.02.02 (금)</option>
+
+          <option value="20180203">2018.02.03 (토)</option>
+
+          <option value="20180204">2018.02.04 (일)</option>
+
+          <option value="20180205">2018.02.05 (월)</option>
+
+          <option value="20180206">2018.02.06 (화)</option>
+
+          <option value="20180207">2018.02.07 (수)</option>
+
+          <option value="20180208">2018.02.08 (목)</option>
+
+          <option value="20180209">2018.02.09 (금)</option>
+
+          <option value="20180210">2018.02.10 (토)</option>
+
+          <option value="20180211">2018.02.11 (일)</option>
+
+          <option value="20180212">2018.02.12 (월)</option>
+
+          <option value="20180213">2018.02.13 (화)</option>
+
+          <option value="20180214">2018.02.14 (수)</option>
+
+        </select>
+        <!-- 시작시간 ~ 종료시간 수정구간 -->
+        <div class="search-flight-detail-select-article double">
+          <select class="search-flight-detail-select-article" id="FROM_TIME" name="FROM_TIME" title="시작 시간 선택">
+            <option value="0000">00:00</option>
+            <option value="0100">01:00</option>
+            <option value="0200">02:00</option>
+            <option value="0300">03:00</option>
+            <option value="0400">04:00</option>
+            <option value="0500">05:00</option>
+            <option value="0600">06:00</option>
+            <option value="0700">07:00</option>
+            <option value="0800">08:00</option>
+            <option value="0900">09:00</option>
+            <option value="1000">10:00</option>
+            <option value="1100">11:00</option>
+            <option value="1200">12:00</option>
+            <option value="1300" selected="">13:00</option>
+            <option value="1400">14:00</option>
+            <option value="1500">15:00</option>
+            <option value="1600">16:00</option>
+            <option value="1700">17:00</option>
+            <option value="1800">18:00</option>
+            <option value="1900">19:00</option>
+            <option value="2000">20:00</option>
+            <option value="2100">21:00</option>
+            <option value="2200">22:00</option>
+            <option value="2300">23:00</option>
+          </select>
+          <span class="dash">~</span>
+          <select class="search-flight-detail-select-article" id="TO_TIME" name="TO_TIME" title="종료 시간 선택">
+            <option value="0059">00:59</option>
+            <option value="0159">01:59</option>
+            <option value="0259">02:59</option>
+            <option value="0359">03:59</option>
+            <option value="0459">04:59</option>
+            <option value="0559">05:59</option>
+            <option value="0659">06:59</option>
+            <option value="0759">07:59</option>
+            <option value="0859">08:59</option>
+            <option value="0959">09:59</option>
+            <option value="1059">10:59</option>
+            <option value="1159">11:59</option>
+            <option value="1259">12:59</option>
+            <option value="1359" selected="">13:59</option>
+            <option value="1459">14:59</option>
+            <option value="1559">15:59</option>
+            <option value="1659">16:59</option>
+            <option value="1759">17:59</option>
+            <option value="1859">18:59</option>
+            <option value="1959">19:59</option>
+            <option value="2059">20:59</option>
+            <option value="2159">21:59</option>
+            <option value="2259">22:59</option>
+            <option value="2359">23:59</option>
+          </select>
+        </div>
+        <!-- 시작시간 ~ 종료시간 수정구간 -->
+        <select class="search-flight-detail-select-article" id="AIRPORT" name="AIRPORT" title="목적지 선택">
+          <option value="">목적지 선택</option>
+
+          <option value="KOJ">가고시마</option>
+
+          <option value="KHH">가오슝</option>
+
+          <option value="KMQ">고마쓰</option>
+
+          <option value="GUM">괌</option>
+
+          <option value="CAN">광저우</option>
+
+          <option value="KMJ">구마모토</option>
+
+          <option value="KWL">구이린(계림)</option>
+
+          <option value="KWE">구이양</option>
+
+          <option value="KKJ">기타큐슈</option>
+
+          <option value="NGS">나가사키</option>
+
+          <option value="NGO">나고야</option>
+
+          <option value="CXR">나트랑</option>
+
+          <option value="NNG">난닝</option>
+
+          <option value="NAN">난디</option>
+
+          <option value="NKG">난징</option>
+
+          <option value="OVB">노보시비르스크</option>
+
+          <option value="JFK">뉴욕</option>
+
+          <option value="KIJ">니가타</option>
+
+          <option value="DAD">다낭</option>
+
+          <option value="DLC">다롄</option>
+
+          <option value="TAK">다카마쓰</option>
+
+          <option value="DLI">달랏</option>
+
+          <option value="TAE">대구</option>
+
+          <option value="DFW">댈러스</option>
+
+          <option value="DPS">덴파사르</option>
+
+          <option value="DEL">델리</option>
+
+          <option value="NRT">도쿄/ 나리타</option>
+
+          <option value="HND">도쿄/ 하네다</option>
+
+          <option value="DOH">도하</option>
+
+          <option value="DXB">두바이</option>
+
+          <option value="DTW">디트로이트</option>
+
+          <option value="LAS">라스베이거스</option>
+
+          <option value="LHR">런던/히드로</option>
+
+          <option value="FCO">로마</option>
+
+          <option value="LAX">로스앤젤레스</option>
+
+          <option value="MNL">마닐라</option>
+
+          <option value="MAD">마드리드</option>
+
+          <option value="MYJ">마쓰야마</option>
+
+          <option value="MFM">마카오</option>
+
+          <option value="MLE">말레</option>
+
+          <option value="MEX">멕시코 시티</option>
+
+          <option value="SVO">모스크바</option>
+
+          <option value="MDG">무단장</option>
+
+          <option value="BOM">뭄바이</option>
+
+          <option value="MUC">뮌헨</option>
+
+          <option value="KMI">미야자키</option>
+
+          <option value="MXP">밀라노</option>
+
+          <option value="WAW">바르샤바</option>
+
+          <option value="BCN">바르셀로나</option>
+
+          <option value="BTH">바탐</option>
+
+          <option value="BWN">반다르스리브가완</option>
+
+          <option value="BKK">방콕</option>
+
+          <option value="DMK">방콕/돈므앙</option>
+
+          <option value="YVR">밴쿠버</option>
+
+          <option value="PEK">베이징</option>
+
+          <option value="TAG">보홀(탁빌라란)</option>
+
+          <option value="PUS">부산</option>
+
+          <option value="BNE">브리즈번</option>
+
+          <option value="VVO">블라디보스토크</option>
+
+          <option value="VIE">비엔나</option>
+
+          <option value="VTE">비엔티안</option>
+
+          <option value="HSG">사가</option>
+
+          <option value="SPN">사이판</option>
+
+          <option value="UUS">사할린</option>
+
+          <option value="CTS">삿포로</option>
+
+          <option value="PVG">상하이/ 푸동</option>
+
+          <option value="SFO">샌프란시스코</option>
+
+          <option value="XMN">샤먼</option>
+
+          <option value="SHE">선양</option>
+
+          <option value="SZX">선전</option>
+
+          <option value="CEB">세부</option>
+
+          <option value="SDJ">센다이</option>
+
+          <option value="SJW">스자좡</option>
+
+          <option value="SYD">시드니</option>
+
+          <option value="XIY">시안</option>
+
+          <option value="SEA">시애틀</option>
+
+          <option value="REP">시엠립</option>
+
+          <option value="FSZ">시즈오카</option>
+
+          <option value="ORD">시카고</option>
+
+          <option value="SIN">싱가포르</option>
+
+          <option value="SYX">싼야</option>
+
+          <option value="ADD">아디스 아바바</option>
+
+          <option value="AUH">아부다비</option>
+
+          <option value="TSE">아스타나</option>
+
+          <option value="AOJ">아오모리</option>
+
+          <option value="ALA">알마티</option>
+
+          <option value="AMS">암스테르담</option>
+
+          <option value="ATL">애틀랜타</option>
+
+          <option value="UBJ">야마구치 우베</option>
+
+          <option value="YKS">야쿠츠크</option>
+
+          <option value="RGN">양곤</option>
+
+          <option value="YNY">양양</option>
+
+          <option value="YNJ">옌지</option>
+
+          <option value="YNZ">옌청</option>
+
+          <option value="YNT">옌타이</option>
+
+          <option value="KIX">오사카/ 간사이</option>
+
+          <option value="OIT">오이타</option>
+
+          <option value="OKJ">오카야마</option>
+
+          <option value="AKL">오클랜드</option>
+
+          <option value="OKA">오키나와</option>
+
+          <option value="YGJ">요나고</option>
+
+          <option value="WUH">우한</option>
+
+          <option value="ULN">울란바토르</option>
+
+          <option value="IAD">워싱턴</option>
+
+          <option value="WNZ">원저우</option>
+
+          <option value="WEH">웨이하이</option>
+
+          <option value="IKT">이르쿠츠크</option>
+
+          <option value="IST">이스탄불</option>
+
+          <option value="JMU">자무쓰</option>
+
+          <option value="CGK">자카르타</option>
+
+          <option value="CGO">정저우</option>
+
+          <option value="JHB">조호바루</option>
+
+          <option value="TNA">지난</option>
+
+          <option value="CSX">창사</option>
+
+          <option value="CGQ">창춘</option>
+
+          <option value="CTU">청두</option>
+
+          <option value="CKG">충칭</option>
+
+          <option value="ZRH">취리히</option>
+
+          <option value="CNX">치앙마이</option>
+
+          <option value="TAO">칭다오</option>
+
+          <option value="KTM">카트만두</option>
+
+          <option value="KLO">칼리보</option>
+
+          <option value="ROR">코로르</option>
+
+          <option value="BKI">코타키나발루</option>
+
+          <option value="CMB">콜롬보</option>
+
+          <option value="KUL">쿠알라룸푸르</option>
+
+          <option value="KMG">쿤밍</option>
+
+          <option value="CRK">클라크필드</option>
+
+          <option value="TAS">타슈켄트</option>
+
+          <option value="RMQ">타이중/칭촨강</option>
+
+          <option value="TPE">타이페이</option>
+
+          <option value="TLV">텔아비브</option>
+
+          <option value="TSN">톈진</option>
+
+          <option value="YYZ">토론토</option>
+
+          <option value="CDG">파리</option>
+
+          <option value="PQC">푸꿕</option>
+
+          <option value="HKT">푸켓</option>
+
+          <option value="PNH">프놈펜</option>
+
+          <option value="PRG">프라하</option>
+
+          <option value="FRA">프랑크푸르트</option>
+
+          <option value="HAN">하노이</option>
+
+          <option value="KHV">하바로프스크</option>
+
+          <option value="HRB">하얼빈</option>
+
+          <option value="HAK">하이커우</option>
+
+          <option value="HPH">하이퐁</option>
+
+          <option value="HGH">항저우</option>
+
+          <option value="HFE">허페이</option>
+
+          <option value="HEL">헬싱키</option>
+
+          <option value="HNL">호놀룰루</option>
+
+          <option value="SGN">호찌민</option>
+
+          <option value="HKG">홍콩</option>
+
+          <option value="TXN">황산</option>
+
+          <option value="FUK">후쿠오카</option>
+
+          <option value="HIJ">히로시마</option>
+
+        </select>
+        <select class="search-flight-detail-select-article" id="AIRLINE" name="AIRLINE" title="항공사 선택">
+          <option value="">항공사 선택</option>
+
+          <option value="S7">S7 항공</option>
+
+          <option value="GA">가루다인도네시아항공</option>
+
+          <option value="SA">남아프리카항공</option>
+
+          <option value="KE">대한항공</option>
+
+          <option value="DL">델타항공</option>
+
+          <option value="QV">라오항공</option>
+
+          <option value="JT">라이온에어</option>
+
+          <option value="LA">란항공</option>
+
+          <option value="BI">로얄 브루네이 항공</option>
+
+          <option value="AT">로얄 에어 모로코</option>
+
+          <option value="LH">루프트한자항공</option>
+
+          <option value="AE">만다린항공</option>
+
+          <option value="MH">말레이시아항공</option>
+
+          <option value="OM">몽골항공</option>
+
+          <option value="8M">미얀마국제항공</option>
+
+          <option value="VA">베네주엘라 국제항공</option>
+
+          <option value="VN">베트남항공</option>
+
+          <option value="VJ">비엣젯항공</option>
+
+          <option value="SV">사우디 아라비안 항공</option>
+
+          <option value="3U">사천항공</option>
+
+          <option value="SC">산동항공</option>
+
+          <option value="FM">상하이항공</option>
+
+          <option value="5J">세부퍼시픽항공</option>
+
+          <option value="HM">세이셸항공</option>
+
+          <option value="ZA">스카이 앙코르 항공</option>
+
+          <option value="TR">스쿠트타이거항공</option>
+
+          <option value="ZH">심천항공</option>
+
+          <option value="SQ">싱가포르항공</option>
+
+          <option value="AR">아르헨티나 항공</option>
+
+          <option value="AA">아메리칸항공</option>
+
+          <option value="OZ">아시아나항공</option>
+
+          <option value="AM">아에로멕시코</option>
+
+          <option value="AZ">알리탈리아 항공</option>
+
+          <option value="R3">야쿠티아 항공</option>
+
+          <option value="EK">에미레이트항공</option>
+
+          <option value="BR">에바항공</option>
+
+          <option value="NZ">에어 뉴질랜드</option>
+
+          <option value="NX">에어 마카오</option>
+
+          <option value="UX">에어 유로파</option>
+
+          <option value="TN">에어 타히티 누이</option>
+
+          <option value="AF">에어 프랑스</option>
+
+          <option value="SU">에어로플로트항공</option>
+
+          <option value="RS">에어서울</option>
+
+          <option value="KC">에어아스타나</option>
+
+          <option value="Z2">에어아시아 필리핀</option>
+
+          <option value="D7">에어아시아엑스</option>
+
+          <option value="AI">에어인디아</option>
+
+          <option value="AC">에어캐나다</option>
+
+          <option value="ET">에티오피아항공</option>
+
+          <option value="EY">에티하드 항공</option>
+
+          <option value="BA">영국항공</option>
+
+          <option value="HZ">오로라항공</option>
+
+          <option value="WY">오만항공</option>
+
+          <option value="OS">오스트리아 항공</option>
+
+          <option value="HY">우즈베키스탄항공</option>
+
+          <option value="UA">유나이티드항공</option>
+
+          <option value="B7">유니항공</option>
+
+          <option value="ZE">이스타항공</option>
+
+          <option value="JL">일본항공</option>
+
+          <option value="NH">전일본공수</option>
+
+          <option value="QD">제이씨 인터네셔널 항공</option>
+
+          <option value="7C">제주항공</option>
+
+          <option value="9W">제트 에어웨이즈</option>
+
+          <option value="CA">중국국제항공</option>
+
+          <option value="CZ">중국남방항공</option>
+
+          <option value="MU">중국동방항공</option>
+
+          <option value="MF">중국하문항공</option>
+
+          <option value="CI">중화항공</option>
+
+          <option value="LJ">진에어</option>
+
+          <option value="OK">체코항공</option>
+
+          <option value="9C">춘추항공</option>
+
+          <option value="QR">카타르항공</option>
+
+          <option value="CX">캐세이패시픽항공</option>
+
+          <option value="KQ">케냐항공</option>
+
+          <option value="KL">케이엘엠네덜란드항공</option>
+
+          <option value="CM">코파항공</option>
+
+          <option value="QF">콴타스항공</option>
+
+          <option value="XJ">타이에어아시아엑스</option>
+
+          <option value="TG">타이항공</option>
+
+          <option value="TK">터키항공</option>
+
+          <option value="GS">텐진 에어라인</option>
+
+          <option value="TW">티웨이항공</option>
+
+          <option value="2P">팔익스프레스 항공</option>
+
+          <option value="8Y">팬퍼시픽항공</option>
+
+          <option value="BL">퍼스픽 항공</option>
+
+          <option value="LO">폴란드항공</option>
+
+          <option value="XY">플라이나스</option>
+
+          <option value="MM">피치항공</option>
+
+          <option value="AY">핀에어</option>
+
+          <option value="PR">필리핀항공</option>
+
+          <option value="HA">하와이안항공</option>
+
+          <option value="UO">홍콩익스프레스항공</option>
+
+          <option value="HX">홍콩항공</option>
+
+        </select>
+
+        <label for="AIRPLANE"></label>
+        <input type="text" id="AIRPLANE" name="AIRPLANE" class="search-flight-detail-select-airplane" placeholder="편명입력" value="" maxlength="8" autocomplete="off">
+
+        <button id="searchBtn" type="button" class="search-flight-detail-select-btn ico">검색</button>
+      </div>
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="curDate" name="curDate" value="20180208">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="startTime" name="startTime" value="1300">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="airPort" name="airPort" value="">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="endTime" name="endTime" value="1359">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="todayDate" name="todayDate" value="20180208">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="tomorrowDate" name="tomorrowDate" value="20180209">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="todayTime" name="todayTime" value="1326">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="userId" name="userId" value="">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="listCnt" name="listCnt" value="">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="curStime" name="curStime" value="1300">
+      <input type="hidden" title="개발에 필요한 빈 인풋" id="curEtime" name="curEtime" value="1359">
+    </div>
+    <!--//검색영역-->
+    <!-- 검색결과 표시영역 -->
+    <section id="section-result">
+      <h2 style="display:none;">검색 결과</h2>
+      <!-- 검색결과 데이터 목록 영역 -->
+      <div id="div-result-list">
+        <!--업데이트 시간-->
+        <div class="update">
+
+          <br> <span class="update-time">마지막 업데이트 : 2018.02.08 (목) 13:26</span>
+          <button id="refreshBtn" type="button" class="update-refresh ico">새로고침</button>
+        </div>
+        <!--//업데이트 시간-->
+        <!--출발시간표-->
+        <div class="table-like vt-dark">
+          <div class="caption-like">출발 시간을 나타내는 항목은</div>
+          <div class="tr-like">
+
+            <div class="th-like" style="width: 159px">출발시간</div>
+            <div class="th-like" style="width: 204px">목적지</div>
+            <div class="th-like" style="width: 265px">항공사/운항편명</div>
+            <div class="th-like" style="width: 100px">터미널</div>
+            <div class="th-like" style="width: 130px">체크인 카운터</div>
+            <div class="th-like" style="width: 91px">탑승구</div>
+            <div class="th-like" style="width: 110px">출발현황</div>
+            <div class="th-like" style="width: 93px">운항속보</div>
+
+          </div>
+          <div class="caption-like">순서로 표시됩니다.</div>
+
+          <!-- 
+							REMARK1             REMARKD2
+						    DEP = 출발
+						    CNL = 결항
+						    DEL = 지연        
+						    						BOR = 탑승중
+						    						FIN = 마감예정
+						    						GTC = 탑승마감
+						    						GTO = 탑승준비
+						    BOR = 탑승중
+						    FIN = 마감예정
+						    GTC = 탑승마감
+						    GTO = 탑승준비
+
+							ap.dep.depCargoSchList.S_0340=type-dark:출발
+							ap.dep.depCargoSchList.S_0360=type-red:결항
+							ap.dep.depCargoSchList.S_0380=type-red:지연
+							ap.dep.depCargoSchList.S_0400=type-blue:탑승중
+							ap.dep.depCargoSchList.S_0420=type-cyan:마감예정
+							ap.dep.depCargoSchList.S_0440=type-dark:탑승마감
+							ap.dep.depCargoSchList.S_0460=type-gray:탑승준비
+							ap.dep.depCargoSchList.S_0341=출발
+							ap.dep.depCargoSchList.S_0361=결항
+							ap.dep.depCargoSchList.S_0381=지연
+							ap.dep.depCargoSchList.S_0401=탑승중
+							ap.dep.depCargoSchList.S_0421=마감예정
+							ap.dep.depCargoSchList.S_0441=탑승마감
+							ap.dep.depCargoSchList.S_0461=탑승준비
+						 -->
+          <div class="codeshare-wrap">
+            <div id="afs_2018020200000002175443" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175443','SHE')">
+
+              <span class="ico-codeshare">코드쉐어</span>
+
+
+              <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+                <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                  <div class="time-changed">
+                    <strong>13:00</strong>
+                  </div>
+
+                  <div class="time-due">
+                    12:45
+                  </div>
+
+                </div>
+
+                <div class="td-like center" style="width: 204px;"><span title="SHE">선양</span> </div>
+
+
+
+                <div class="td-like" style="width: 265px;">
+                  <div class="flight-info-basic-airline f-left">
+                    <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CZ" onclick="window.open('http://kr.csair.com/kor/kor/index.shtml?country=south korea', '_blank');" alt="'중국남방항공">
+                  </div>
+                  <div class="flight">
+                    <div class="flight-info-basic-flight-number">
+                      <strong>CZ682</strong>
+                    </div>
+                    <div class="flight-info-basic-flight-name font14">중국남방항공</div>
+                  </div>
+                </div>
+
+                <div class="td-like center" style="width: 100px;">
+                  <strong>T1</strong>
+                </div>
+
+                <div class="td-like center" style="width: 130px;">
+
+                  <strong>H19-H36</strong>
+
+                </div>
+
+                <div class="td-like center" style="width: 91px;">
+
+                  <strong class="color-b">105</strong>
+
+                </div>
+
+                <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+                </div>
+
+                <div class="td-like center " style="width: 93px;">
+                  -
+                </div>
+
+                <!-- 											<div class="td-like center "></div> -->
+
+              </div>
+            </div>
+            <!--상세-->
+            <div>
+              <div id="afs_2018020200000002175443_d" class="tr-like flight-info-detail" style="display: none;"></div>
+            </div>
+            <!--//상세-->
+
+
+            <div id="afs_2018020200000002176252" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176252','SHE')">
+
+              <span class="ico-codeshare">코드쉐어</span>
+
+
+              <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+                <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                  <div class="time-changed">
+                    <strong>13:00</strong>
+                  </div>
+
+                  <div class="time-due">
+                    12:45
+                  </div>
+
+                </div>
+
+                <div class="td-like center" style="width: 204px;"><span title="SHE">선양</span> </div>
+
+
+
+                <div class="td-like" style="width: 265px;">
+                  <div class="flight-info-basic-airline f-left">
+                    <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                  </div>
+                  <div class="flight">
+                    <div class="flight-info-basic-flight-number">
+                      <strong>KE5831</strong>
+                    </div>
+                    <div class="flight-info-basic-flight-name font14">대한항공</div>
+                  </div>
+                </div>
+
+                <div class="td-like center" style="width: 100px;">
+                  <strong>T1</strong>
+                </div>
+
+                <div class="td-like center" style="width: 130px;">
+
+                  <strong>H19-H36</strong>
+
+                </div>
+
+                <div class="td-like center" style="width: 91px;">
+
+                  <strong class="color-b">105</strong>
+
+                </div>
+
+                <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+                </div>
+
+                <div class="td-like center " style="width: 93px;">
+
+                </div>
+
+                <!-- 											<div class="td-like center "></div> -->
+
+              </div>
+            </div>
+            <!--상세-->
+            <div>
+              <div id="afs_2018020200000002176252_d" class="tr-like flight-info-detail" style="display: none;"></div>
+            </div>
+            <!--//상세-->
+
+          </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175449" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175449','HGH')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:00</strong>
+                </div>
+
+                <div class="time-due">
+                  12:50
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="HGH">항저우</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CA" onclick="window.open('http://www.airchina.kr', '_blank');" alt="'중국국제항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CA140</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국국제항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>E19-E36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">11</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175449_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176239" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176239','HGH')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:00</strong>
+                </div>
+
+                <div class="time-due">
+                  12:50
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="HGH">항저우</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ6827</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>E19-E36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">11</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176239_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175539" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175539','ALA')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:00</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="ALA">알마티</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KC" onclick="window.open('http://www.airastana.com', '_blank');" alt="'에어아스타나">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KC910</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에어아스타나</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>D31-D36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">19</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175539_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176578" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176578','ALA')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:00</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="ALA">알마티</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ6961</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>D31-D36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">19</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176578_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175468" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175468','PEK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:00</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="PEK">베이징</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ333</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>L22-M18</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">30</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175468_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176447" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176447','PEK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:00</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="PEK">베이징</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CA" onclick="window.open('http://www.airchina.kr', '_blank');" alt="'중국국제항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CA5004</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국국제항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>L22-M18</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">30</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176447_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="flight-wrap">
+          <div id="afs_2018020700000002186738" class="tr-like flight-info-basic " onclick="getDetail('2018020700000002186738','GUM')">
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:02</strong>
+                </div>
+
+                <div class="time-due">
+                  11:05
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="GUM">괌</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE9113</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">242</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020700000002186738_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="flight-wrap">
+          <div id="afs_2018020200000002175063" class="tr-like flight-info-basic " onclick="getDetail('2018020200000002175063','NKG')">
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:03</strong>
+                </div>
+
+                <div class="time-due">
+                  12:30
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="NKG">난징</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ349</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>L22-M18</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">37</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175063_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175574" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175574','PEK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:05</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="PEK">베이징</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CA" onclick="window.open('http://www.airchina.kr', '_blank');" alt="'중국국제항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CA124</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국국제항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>E19-E36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">10</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175574_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176636" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176636','PEK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:05</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="PEK">베이징</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ6807</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>E19-E36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">10</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176636_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175576" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175576','MDG')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:06</strong>
+                </div>
+
+                <div class="time-due">
+                  12:50
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="MDG">무단장</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CZ" onclick="window.open('http://kr.csair.com/kor/kor/index.shtml?country=south korea', '_blank');" alt="'중국남방항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CZ6088</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국남방항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>H19-H36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">101</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175576_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176638" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176638','MDG')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:06</strong>
+                </div>
+
+                <div class="time-due">
+                  12:50
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="MDG">무단장</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE5811</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>H19-H36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">101</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176638_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175561" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175561','DEL')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:08</strong>
+                </div>
+
+                <div class="time-due">
+                  12:45
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="DEL">델리</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE481</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">254</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175561_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176598" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176598','DEL')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:08</strong>
+                </div>
+
+                <div class="time-due">
+                  12:45
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="DEL">델리</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=9W" onclick="window.open('http://www.jetairways.com/EN/IN/Home.aspx', '_blank');" alt="'제트 에어웨이즈">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>9W4672</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">제트 에어웨이즈</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">254</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176598_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175505" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175505','KIX')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:10</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="KIX">오사카/ 간사이</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=RS" alt="'에어서울">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>RS764</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에어서울</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>B21-B27</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">115</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175505_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176557" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176557','KIX')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:10</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="KIX">오사카/ 간사이</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ9638</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>B21-B27</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">115</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176557_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175514" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175514','TAO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:10</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="TAO">칭다오</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE841</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">256</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175514_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176360" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176360','TAO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:10</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="TAO">칭다오</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=MU" onclick="window.open('http://www.easternair.co.kr/', '_blank');" alt="'중국동방항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>MU8361</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국동방항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">256</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176360_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175559" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175559','DLC')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:12</strong>
+                </div>
+
+                <div class="time-due">
+                  12:50
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="DLC">다롄</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE869</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">233</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175559_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176585" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176585','DLC')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:12</strong>
+                </div>
+
+                <div class="time-due">
+                  12:50
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="DLC">다롄</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CZ" onclick="window.open('http://kr.csair.com/kor/kor/index.shtml?country=south korea', '_blank');" alt="'중국남방항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CZ4518</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국남방항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">233</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176585_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175451" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175451','TSN')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:14</strong>
+                </div>
+
+                <div class="time-due">
+                  12:45
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="TSN">톈진</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CA" onclick="window.open('http://www.airchina.kr', '_blank');" alt="'중국국제항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CA172</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국국제항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>E19-E36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">23</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175451_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176241" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176241','TSN')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:14</strong>
+                </div>
+
+                <div class="time-due">
+                  12:45
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="TSN">톈진</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ6811</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>E19-E36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">23</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176241_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175472" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175472','TAO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:15</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="TAO">칭다오</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=MU" onclick="window.open('http://www.easternair.co.kr/', '_blank');" alt="'중국동방항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>MU2034</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국동방항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>G27-H16</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">117</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175472_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176377" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176377','TAO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:15</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="TAO">칭다오</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE5843</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>G27-H16</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">117</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176377_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175728" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175728','DXB')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:18</strong>
+                </div>
+
+                <div class="time-due">
+                  12:45
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="DXB">두바이</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE951</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">268</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175728_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176552" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176552','DXB')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:18</strong>
+                </div>
+
+                <div class="time-due">
+                  12:45
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="DXB">두바이</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=SV" alt="'사우디 아라비안 항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>SV6121</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">사우디 아라비안 항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">268</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176552_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176551" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176551','DXB')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:18</strong>
+                </div>
+
+                <div class="time-due">
+                  12:45
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="DXB">두바이</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=EK" onclick="window.open('http://www.emirates.com/korea/kr/', '_blank');" alt="'에미레이트항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>EK7220</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에미레이트항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">268</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176551_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="flight-wrap">
+          <div id="afs_2018020200000002175192" class="tr-like flight-info-basic " onclick="getDetail('2018020200000002175192','HKG')">
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:19</strong>
+                </div>
+
+                <div class="time-due">
+                  12:35
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="HKG">홍콩</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=UO" onclick="window.open('http://www.hkexpress.com/', '_blank');" alt="'홍콩익스프레스항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>UO619</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">홍콩익스프레스항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>B32-B36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">118</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175192_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="flight-wrap">
+          <div id="afs_2018020200000002175438" class="tr-like flight-info-basic not-changed" onclick="getDetail('2018020200000002175438','CGQ')">
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:20</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="CGQ">창춘</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CZ" onclick="window.open('http://kr.csair.com/kor/kor/index.shtml?country=south korea', '_blank');" alt="'중국남방항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CZ688</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국남방항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>H19-H36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">102</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175438_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175723" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175723','SVO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:20</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="SVO">모스크바</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=SU" onclick="window.open('http://www.aeroflot.ru/cms/ko', '_blank');" alt="'에어로플로트항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>SU251</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에어로플로트항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>C27-C36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">121</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175723_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176539" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176539','SVO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:20</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="SVO">모스크바</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=GA" onclick="window.open('http://www.garuda.co.kr/', '_blank');" alt="'가루다인도네시아항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>GA9410</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">가루다인도네시아항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>C27-C36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">121</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176539_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176538" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176538','SVO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:20</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="SVO">모스크바</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE5923</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>C27-C36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">121</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176538_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="flight-wrap">
+          <div id="afs_2018020200000002175129" class="tr-like flight-info-basic " onclick="getDetail('2018020200000002175129','LHR')">
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:21</strong>
+                </div>
+
+                <div class="time-due">
+                  13:00
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="LHR">런던/히드로</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE907</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">251</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175129_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175771" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175771','PVG')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:24</strong>
+                </div>
+
+                <div class="time-due">
+                  12:55
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="PVG">상하이/ 푸동</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=MU" onclick="window.open('http://www.easternair.co.kr/', '_blank');" alt="'중국동방항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>MU5042</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국동방항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>G27-H16</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">129</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175771_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176382" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176382','PVG')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:24</strong>
+                </div>
+
+                <div class="time-due">
+                  12:55
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="PVG">상하이/ 푸동</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CZ" onclick="window.open('http://kr.csair.com/kor/kor/index.shtml?country=south korea', '_blank');" alt="'중국남방항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CZ514</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국남방항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>G27-H16</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">129</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176382_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176383" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176383','PVG')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:24</strong>
+                </div>
+
+                <div class="time-due">
+                  12:55
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="PVG">상하이/ 푸동</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=FM" onclick="window.open('http://www.shanghai-air.co.kr', '_blank');" alt="'상하이항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>FM5042</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">상하이항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>G27-H16</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">129</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176383_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176384" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176384','PVG')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-start center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:24</strong>
+                </div>
+
+                <div class="time-due">
+                  12:55
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="PVG">상하이/ 푸동</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE5857</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>G27-H16</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">129</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-start" title="DEP">
+															출발
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176384_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="flight-wrap">
+          <div id="afs_2018020200000002175128" class="tr-like flight-info-basic not-changed" onclick="getDetail('2018020200000002175128','FRA')">
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:25</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="FRA">프랑크푸르트</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE905</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">264</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+                -
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175128_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="flight-wrap">
+          <div id="afs_2018020200000002175153" class="tr-like flight-info-basic not-changed" onclick="getDetail('2018020200000002175153','OKA')">
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:30</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="OKA">오키나와</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=7C" onclick="window.open('http://www.jejuair.net', '_blank');" alt="'제주항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>7C1802</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">제주항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>F01-F18</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">16</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175153_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175802" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175802','FUK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-chekclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:30</strong>
+                </div>
+
+                <div class="time-due">
+                  13:10
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="FUK">후쿠오카</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE789</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">239</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-chekclose" title="CLO">
+															체크인마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175802_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176347" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176347','FUK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-chekclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:30</strong>
+                </div>
+
+                <div class="time-due">
+                  13:10
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="FUK">후쿠오카</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=JL" onclick="window.open('http://www.jal.co.kr/ko/', '_blank');" alt="'일본항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>JL5222</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">일본항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">239</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-chekclose" title="CLO">
+															체크인마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176347_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176346" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176346','FUK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-chekclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:30</strong>
+                </div>
+
+                <div class="time-due">
+                  13:10
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="FUK">후쿠오카</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=EY" onclick="window.open('http://flights.etihad.com/en-kr/', '_blank');" alt="'에티하드 항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>EY8481</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에티하드 항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">239</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-chekclose" title="CLO">
+															체크인마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176346_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176345" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176345','FUK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-chekclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:30</strong>
+                </div>
+
+                <div class="time-due">
+                  13:10
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="FUK">후쿠오카</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AZ" onclick="window.open('http://www.alitalia.it/', '_blank');" alt="'알리탈리아 항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>AZ2763</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">알리탈리아 항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">239</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-chekclose" title="CLO">
+															체크인마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176345_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176344" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176344','FUK')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-chekclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:30</strong>
+                </div>
+
+                <div class="time-due">
+                  13:10
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="FUK">후쿠오카</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=AF" onclick="window.open('http://www.airfrance.co.kr/', '_blank');" alt="'에어 프랑스">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>AF7906</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에어 프랑스</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">239</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-chekclose" title="CLO">
+															체크인마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176344_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175509" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175509','MFM')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:35</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="MFM">마카오</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=RS" alt="'에어서울">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>RS521</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에어서울</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>B21-B27</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">123</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175509_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176562" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176562','MFM')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:35</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="MFM">마카오</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ9681</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>B21-B27</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">123</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176562_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175459" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175459','KHV')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:35</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="KHV">하바로프스크</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=HZ" onclick="window.open('http://www.flyaurora.ru/', '_blank');" alt="'오로라항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>HZ5451</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">오로라항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>C20-C26</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">14</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175459_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176267" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176267','KHV')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-boclose center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:35</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="KHV">하바로프스크</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=SU" onclick="window.open('http://www.aeroflot.ru/cms/ko', '_blank');" alt="'에어로플로트항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>SU5451</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에어로플로트항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>C20-C26</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">14</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-boclose" title="GTC">
+															탑승마감
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176267_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175562" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175562','WEH')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-blue center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:35</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="WEH">웨이하이</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE839</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">243</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-blue" title="BOR">
+															탑승중
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175562_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176601" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176601','WEH')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-blue center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:35</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="WEH">웨이하이</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=MU" onclick="window.open('http://www.easternair.co.kr/', '_blank');" alt="'중국동방항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>MU8363</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국동방항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">243</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-blue" title="BOR">
+															탑승중
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176601_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175458" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175458','VVO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:35</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="VVO">블라디보스토크</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=HZ" onclick="window.open('http://www.flyaurora.ru/', '_blank');" alt="'오로라항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>HZ5437</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">오로라항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>C20-C26</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">6</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175458_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176266" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176266','VVO')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:35</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="VVO">블라디보스토크</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=SU" onclick="window.open('http://www.aeroflot.ru/cms/ko', '_blank');" alt="'에어로플로트항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>SU5437</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">에어로플로트항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>C20-C26</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">6</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176266_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175581" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175581','CTU')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-blue center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:45</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="CTU">청두</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CA" onclick="window.open('http://www.airchina.kr', '_blank');" alt="'중국국제항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CA402</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">중국국제항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>E19-E36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">24</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-blue" title="BOR">
+															탑승중
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175581_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176650" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176650','CTU')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-blue center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:45</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="CTU">청두</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OZ" onclick="window.open('http://flyasiana.com/main.asp', '_blank');" alt="'아시아나항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OZ6831</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">아시아나항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>E19-E36</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">24</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-blue" title="BOR">
+															탑승중
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176650_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="flight-wrap">
+          <div id="afs_2018020200000002175127" class="tr-like flight-info-basic not-changed" onclick="getDetail('2018020200000002175127','ZRH')">
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-cyan center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:45</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="ZRH">취리히</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE917</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">249</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-cyan" title="FIN">
+															마감예정
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175127_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175460" class="tr-like flight-info-basic   codeshare first not-changed" onclick="getDetail('2018020200000002175460','HKG')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-blue center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:55</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="HKG">홍콩</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=CX" onclick="window.open('http://www.cathaypacific.com/cpa/ko_KR/homepage', '_blank');" alt="'캐세이패시픽항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>CX433</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">캐세이패시픽항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>D01-D09</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">50</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-blue" title="BOR">
+															탑승중
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175460_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176509" class="tr-like flight-info-basic  codeshare not-changed" onclick="getDetail('2018020200000002176509','HKG')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-blue center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>13:55</strong>
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="HKG">홍콩</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=QR" onclick="window.open('http://www.qatarairways.com/kr/ko/homepage.page', '_blank');" alt="'카타르항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>QR5829</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">카타르항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T1</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>D01-D09</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">50</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-blue" title="BOR">
+															탑승중
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176509_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div><div class="codeshare-wrap">
+          <div id="afs_2018020200000002175520" class="tr-like flight-info-basic   codeshare first " onclick="getDetail('2018020200000002175520','ULN')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-red center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>15:30</strong>
+                </div>
+
+                <div class="time-due">
+                  13:00
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="ULN">울란바토르</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=KE" onclick="window.open('http://www.koreanair.co.kr/', '_blank');" alt="'대한항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>KE867</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">대한항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">246</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-red" title="현재상태 : ">
+															지연
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+                <button type="button" class="btn-newsflash" onclick="javascript:btnclick(event);">운항속보 보기</button>
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002175520_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+
+          <div id="afs_2018020200000002176363" class="tr-like flight-info-basic  codeshare " onclick="getDetail('2018020200000002176363','ULN')">
+
+            <span class="ico-codeshare">코드쉐어</span>
+
+
+            <div class="flight-info-basic-link " title="클릭하면 상세 정보가 화면에 나타납니다.">
+              <div class="td-like flight-info-basic-status type-red center" style="width: 159px;">
+                <div class="time-changed">
+                  <strong>15:30</strong>
+                </div>
+
+                <div class="time-due">
+                  13:00
+                </div>
+
+              </div>
+
+              <div class="td-like center" style="width: 204px;"><span title="ULN">울란바토르</span> </div>
+
+
+
+              <div class="td-like" style="width: 265px;">
+                <div class="flight-info-basic-airline f-left">
+                  <img src="/ap/dep/apAirlineIconDown.do?IATA_CODE=OM" onclick="window.open('http://www.miat.com/', '_blank');" alt="'몽골항공">
+                </div>
+                <div class="flight">
+                  <div class="flight-info-basic-flight-number">
+                    <strong>OM5302</strong>
+                  </div>
+                  <div class="flight-info-basic-flight-name font14">몽골항공</div>
+                </div>
+              </div>
+
+              <div class="td-like center" style="width: 100px;">
+                <strong>T2</strong>
+              </div>
+
+              <div class="td-like center" style="width: 130px;">
+
+                <strong>A,B,D,E,G,H</strong>
+
+              </div>
+
+              <div class="td-like center" style="width: 91px;">
+
+                <strong class="color-b">246</strong>
+
+              </div>
+
+              <div class="td-like center font16" style="width: 110px;">
+													
+														<span class="situation-info  type-red" title="현재상태 : ">
+															지연
+														</span>
+
+              </div>
+
+              <div class="td-like center " style="width: 93px;">
+
+              </div>
+
+              <!-- 											<div class="td-like center "></div> -->
+
+            </div>
+          </div>
+          <!--상세-->
+          <div>
+            <div id="afs_2018020200000002176363_d" class="tr-like flight-info-detail" style="display: none;"></div>
+          </div>
+          <!--//상세-->
+
+        </div>
+        </div>
+        <!--//출발시간표-->
+      </div>
+      <!-- //검색결과 데이터 목록 영역 -->
+    </section>
+    <!-- //검색결과 표시 영역 -->
+  </div>
+</section>
+<!--=include _include/_base_footer.html -->

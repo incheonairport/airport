@@ -1,0 +1,420 @@
+<!--=include _include/_base_header.html -->
+
+<section id="top-contents" class="contents">
+  <div class="location">
+    <div class="location-btn">
+      <button type="button" class="location-btn-minus ico">축소</button>
+      <button type="button" class="location-btn-plus ico">확대</button>
+      <button type="button" class="location-btn-print ico">인쇄</button>
+    </div>
+    <div class="location-bar">
+      <ul class="location-bar-nav">
+        <li class="location-bar-nav-item ico"><a href="/ap/ko/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+        <li class="location-bar-nav-item ico"><a href="/ap_cnt/ko/trn/intro/intro.do" class="location-bar-nav-item-link">환승</a></li>
+        <li class="location-bar-nav-item"><a href="/ap/ko/trn/trnServiceMain.do" class="location-bar-nav-item-link">환승편의시설</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="inner-section">
+    <div class="contents-sub-head">
+      <h2 class="contents-sub-head-title">환승편의시설</h2>
+      <p class="contents-sub-head-article">즐겁고 편안한 인천국제공항의 환승편의시설을 안내합니다.</p>
+    </div>
+  </div>
+
+  <div class="bg-banner transfer">
+    <div class="inner-section">
+			<span class="bg-banner-tit">
+				Incheon Airport<br>
+				<strong>Transfer Amenities</strong>
+			</span>
+
+      <ul class="bg-banner-iconlist">
+        <li class="bg-banner-iconlist-item">
+          <a href="javascript:openSurvey()" class="bg-banner-bgico survey">설문조사</a>
+        </li>
+        <li class="bg-banner-iconlist-item">
+          <a href="javascript:openCoupon()" class="bg-banner-bgico coupon">라운지 쿠폰 등록</a>
+        </li>
+      </ul>
+      <!-- 슬라이드배너 -->
+      <div class="bg-banner-banner">
+        <div class="slide-banner">
+          <div class="slide-banner-wrap">
+
+          </div>
+
+
+        </div>
+      </div>
+      <!-- 슬라이드배너 e-->
+    </div>
+  </div>
+</section>
+
+<section class="contents trn-service">
+  <div class="inner-section">
+    <h2 style="display:none;">환승 편의 시설 카테고리</h2>
+    <div class="filter mt30">
+      <!-- 터미널별 검색 -->
+      <div class="filter-terminal-search">
+        <div class="filter-terminal-search-depth2">
+          <div class="field">
+            <div class="field-division col-1">
+              <span class="field-group-tit">서비스 선택</span>
+            </div>
+            <div class="field-group" id="category">
+              <input type="radio" name="shop-area" id="cat_all" class="field-radio" value="all" onclick="javascript:getCategory();" checked="">
+              <label class="field-radio-label" for="cat_all">전체</label>
+
+              <input type="radio" name="shop-area" id="12" class="field-radio" value="12" onclick="javascript:getCategory('12', '122');">
+              <label class="field-radio-label" for="12">비즈니스</label>
+
+              <input type="radio" name="shop-area" id="13" class="field-radio" value="13" onclick="javascript:getCategory('13', '131');">
+              <label class="field-radio-label" for="13">안내·서비스</label>
+
+              <input type="radio" name="shop-area" id="14" class="field-radio" value="14" onclick="javascript:getCategory('14', '146');">
+              <label class="field-radio-label" for="14">휴식</label>
+
+              <input type="radio" name="shop-area" id="36" class="field-radio" value="36" onclick="javascript:getCategory('36', '0');">
+              <label class="field-radio-label" for="36">베이커리·카페·바</label>
+
+            </div>
+          </div>
+          <div class="field" style="display:none;" id="selCategoryDetail">
+            <div class="field-division col-1">
+              <span class="field-group-tit">분류 선택</span>
+            </div>
+            <div class="field-group" id="category_detail">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="boxmodel2 mt40">
+      <ul class="boxmodel2-list" id="shop_detail">
+
+
+
+
+
+
+
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1525');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+							boxmodel2-imggroup-mark blue
+
+
+
+
+						">
+						인터넷/복사/팩스
+
+						</span>
+                  <img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1525" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">Internet Zone(동편)</span>
+                <p class="boxmodel2-desc">
+                  Internet Zone(동편)
+                </p>
+                <span class="boxmodel2-map-link">제1여객터미널 4층 면세지역 동편</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1526');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+							boxmodel2-imggroup-mark blue
+
+
+
+
+						">
+						인터넷/복사/팩스
+
+						</span>
+                  <img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1526" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">Internet Zone(서편)</span>
+                <p class="boxmodel2-desc">
+                  Internet Zone(서편)
+                </p>
+                <span class="boxmodel2-map-link">제1여객터미널 4층 면세지역 서편</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1291');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+							boxmodel2-imggroup-mark blue
+
+
+
+
+						">
+						호텔
+
+						</span>
+                  <img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1291" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">환승호텔</span>
+                <p class="boxmodel2-desc">
+                  워커힐 호텔의 경영 노하우와 서비스 정신을 바탕으로 운영되는 인천공항 환승호텔은 여행객들에게 안락하고 편안한 서비스를 제공하기 위해
+                  정성을 다하고 있는 인천 공항 내 환승호텔 입니다. 피로가 쌓인 여행객들이 짧은 휴식을 취할 수 있도록 6시간 단위요금을 부과하고 Block
+                  요금제로 운영됩니다.
+                </p>
+                <span class="boxmodel2-map-link">제2여객터미널 4층 면세지역 252번 게이트 맞은편</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1293');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+							boxmodel2-imggroup-mark blue
+
+
+
+
+						">
+						라운지
+
+						</span>
+                  <img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1293" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">마티나 라운지</span>
+                <p class="boxmodel2-desc">
+                  엄선된 재료의 음식과 편안한 분위기까지 워커힐 호텔의 품격있는 서비스를 그대로 전해드립니다.
+                </p>
+                <span class="boxmodel2-map-link">제2여객터미널 4층 면세지역 252번 게이트 맞은편</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1292');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+							boxmodel2-imggroup-mark blue
+
+
+
+
+						">
+						라운지
+
+						</span>
+                  <img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1292" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">마티나 골드</span>
+                <p class="boxmodel2-desc">
+                  엄선된 재료의 음식과 편안한 분위기까지 한층 업그레이드 된 워커힐 호텔의 품격있는 서비스를 그대로 전해드립니다.
+                </p>
+                <span class="boxmodel2-map-link">제2여객터미널 4층 면세지역 249번 게이트 맞은편</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1296');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+							boxmodel2-imggroup-mark blue
+
+
+
+
+						">
+						케어·마사지
+
+						</span>
+                  <img src="/static/noimg_big.png" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">쁘라나스파</span>
+                <p class="boxmodel2-desc">
+                  여행으로 피곤해진 당신의 몸을 최상의 컨디션으로 만들어 드립니다.
+                </p>
+                <span class="boxmodel2-map-link">제2여객터미널 4층 면세지역 268번 게이트 부근</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1295');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+							boxmodel2-imggroup-mark blue
+
+
+
+
+						">
+						케어·마사지
+
+						</span>
+                  <img src="/static/noimg_big.png" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">쁘라나스파</span>
+                <p class="boxmodel2-desc">
+                  여행으로 피곤해진 당신의 몸을 최상의 컨디션으로 만들어 드립니다.
+                </p>
+                <span class="boxmodel2-map-link">제2여객터미널 4층 면세지역 231번 게이트 부근 (서편)</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1343');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+
+
+							boxmodel2-imggroup-mark red
+
+
+						">
+
+						베이커리·카페·바
+						</span>
+                  <img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1343" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">라운지L</span>
+                <p class="boxmodel2-desc">
+                  고급 뷔페, 다양한 음료와 주류를 즐기며, 미디어 실링과 그린 요소를 활용한 재충전의 시간을 경험하는 공간입니다.
+                </p>
+                <span class="boxmodel2-map-link">제2여객터미널 4층 면세지역 231번 게이트 부근</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="boxmodel2-thumbnail-item">
+          <a href="javascript:openLayerTab('1342');" class="boxmodel2-thumbnail-link">
+            <div class="boxmodel2-thumbnail-box">
+              <div class="boxmodel2-thumbnail-box-split row-1">
+                <div class="boxmodel2-imggroup">
+						<span class="
+
+
+							boxmodel2-imggroup-mark red
+
+
+						">
+
+						베이커리·카페·바
+						</span>
+                  <img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1342" class="imgbox" alt="관련 이미지" onerror="this.src='/static/noimg_big.png'">
+                </div>
+              </div>
+
+              <div class="boxmodel2-thumbnail-box-split row-2">
+                <span class="boxmodel2-maintit">SPC라운지</span>
+                <p class="boxmodel2-desc">
+
+                </p>
+                <span class="boxmodel2-map-link">제2여객터미널 4층 면세지역 268번 게이트 부근</span>
+              </div>
+              <div class="boxmodel2-thumbnail-cover">
+                <span class="boxmodel2-thumbnail-cover-text">자세히보기</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <script>
+          $(document).ready(function() {
+            if("40" != "" && "40" != "0") {
+              setPageNation("1", "40");
+            }
+            else {
+              $("#resultPageNavi").html("");
+            }
+          });
+        </script></ul>
+    </div>
+    <div class="mt40">
+      <div class="pagenation" id="resultPageNavi"><a class="ico first" href="javascript:getShopList(1);">처음</a><a class="ico prev" href="javascript:getShopList(0);">이전</a><ol class="pagenation-list"><li class="pagenation-list-item on"><a class="pagenation-list-link" href="javascript:getShopList(1);">1</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(2);">2</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(3);">3</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(4);">4</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(5);">5</a></li></ol><a class="ico next" href="javascript:getShopList(6);">다음</a><a class="ico last" href="javascript:getShopList(5);">마지막</a></div>
+    </div>
+  </div>
+</section>
+
+<!--=include _include/_base_footer.html -->

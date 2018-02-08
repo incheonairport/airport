@@ -1,0 +1,791 @@
+<!--=include _include/_base_header.html -->
+
+<section id="top-contents" class="contents">
+	<div class="location">
+		<div class="location-btn">
+			<button type="button" class="location-btn-minus ico"></button>
+			<button type="button" class="location-btn-plus ico"></button>
+			<button type="button" class="location-btn-print ico"></button>
+		</div>
+		<div class="location-bar">
+			<ul class="location-bar-nav">
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+				<li class="location-bar-nav-item ico"><a href="/ap/ko/shp/getDutyInfoMain.do" class="location-bar-nav-item-link">쇼핑.식당</a></li>
+				<li class="location-bar-nav-item"><a href="/ap/ko/shp/getFoodInfoMain.do" class="location-bar-nav-item-link">식당</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="inner-section">
+		<div class="contents-sub-head">
+			<h2 class="contents-sub-head-title">식당</h2>
+			<p class="contents-sub-head-article">고품격 쇼핑공간, 편리한 쇼핑시설, 더 많은 브랜드,더 많은 스타일</p>
+		</div>
+	</div>
+
+</section>
+
+<section class="bg-banner food">
+	<div class="inner-section">
+      <span class="bg-banner-tit">
+        Incheon Airport<br>
+        <strong>food</strong>
+      </span>
+
+		<ul class="bg-banner-iconlist">
+			<li class="bg-banner-iconlist-item">
+				<a href="javascript:openLayer();" class="bg-banner-bgico event">이벤트</a>
+			</li>
+			<li class="bg-banner-iconlist-item">
+				<a href="javascript:openAirportMap('3');" class="bg-banner-bgico map">식당맵</a>
+			</li>
+		</ul>
+		<!-- 슬라이드배너 -->
+		<div class="bg-banner-banner">
+			<div class="slide-banner">
+				<div class="slide-banner-wrap">
+
+				</div>
+
+
+			</div>
+		</div>
+		<!-- 슬라이드배너 e-->
+	</div>
+</section>
+
+<section class="contents">
+	<input type="hidden" id="CODE_ID" value="A001">
+	<input type="hidden" id="SN" value="">
+	<div class="inner-section">
+
+		<div class="filter mt30">
+			<!-- 터미널별 검색 -->
+			<div class="filter-terminal-search">
+				<span class="filter-terminal-search-heading">터미널 별 검색</span>
+				<!-- 1차 필터 검색 -->
+				<div class="filter-terminal-search-depth1">
+					<div class="input-box field">
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('ALL');" checked="checked">
+							<label for="main-terminal" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">전체</label>
+						</div>
+						<div class="field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-1" class="field-radiomain" value="main-terminal-1" onclick="javascript:fncTerminalID('P01');">
+							<label for="main-terminal-1" class="field-radiomain-label" title="클릭하면 제1 여객터미널에서 검색이 가능합니다.">제1 여객터미널</label>
+						</div>
+
+						<div class="input-box field-division">
+							<input type="radio" name="main-terminal" id="main-terminal-2" class="field-radiomain" value="main-terminal-2" onclick="javascript:fncTerminalID('P03');">
+							<label for="main-terminal-2" class="field-radiomain-label" title="클릭하면 제2 여객터미널에서 검색이 가능합니다.">제2 여객터미널</label>
+						</div>
+					</div>
+
+					<div class="input-box base">
+						<input type="checkbox" name="search" id="NTCD24_AT" class="checkbox" value="todclock" onclick="javascript:getShopDetail24Hour();">
+						<label class="checkbox-label ico" for="NTCD24_AT">24시간</label>
+					</div>
+
+				</div>
+				<!-- 2차 필터 검색 -->
+				<div class="filter-terminal-search-depth2">
+					<div class="field">
+						<div class="field-group">
+							<input type="radio" name="shop-area" id="cat_all" class="field-radio" value="all" checked="">
+							<label class="field-radio-label" for="cat_all" onclick="javascript:getCategoryDetail();">전체</label>
+
+							<input type="radio" name="shop-area" id="32" class="field-radio" value="32" onclick="javascript:getCategoryDetail('32');">
+							<label class="field-radio-label" for="32">한식</label>
+
+							<input type="radio" name="shop-area" id="33" class="field-radio" value="33" onclick="javascript:getCategoryDetail('33');">
+							<label class="field-radio-label" for="33">양식</label>
+
+							<input type="radio" name="shop-area" id="35" class="field-radio" value="35" onclick="javascript:getCategoryDetail('35');">
+							<label class="field-radio-label" for="35">중식·일식</label>
+
+							<input type="radio" name="shop-area" id="37" class="field-radio" value="37" onclick="javascript:getCategoryDetail('37');">
+							<label class="field-radio-label" for="37">월드푸드</label>
+
+							<input type="radio" name="shop-area" id="31" class="field-radio" value="31" onclick="javascript:getCategoryDetail('31');">
+							<label class="field-radio-label" for="31">패스트푸드·스낵</label>
+
+							<input type="radio" name="shop-area" id="34" class="field-radio" value="34" onclick="javascript:getCategoryDetail('34');">
+							<label class="field-radio-label" for="34">푸드코트</label>
+
+							<input type="radio" name="shop-area" id="36" class="field-radio" value="36" onclick="javascript:getCategoryDetail('36');">
+							<label class="field-radio-label" for="36">베이커리·카페·바</label>
+
+						</div>
+					</div>
+				</div>
+				<!-- 3차 (2차에서 3차가 있다면) 필터 검색 -->
+				<div class="filter-terminal-search-depth3">
+					<div class="field">
+						<div class="field-group big">
+							<input type="radio" name="product" title="Third Cate" id="cat_detail_all" class="field-radio" value="brand2-product" onclick="javascript:getShopDetail();" checked="">
+							<div id="detail_category">
+
+
+
+
+
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 브랜드검색 -->
+			<!--
+			<div class="filter-brand-search">
+				<button type="button" title="버튼을 클릭하면 브랜드 이름으로 검색할 수 있습니다." class="filter-brand-search-btn ico arrow-small-down-w">브랜드 검색</button>
+				<div class="filter-brand-search-detail">
+					<div class="filter-brand-search-detail-head">
+						<button type="button" title="버튼을 클릭하면 브랜드 검색 창이 닫힙니다" class="filter-brand-search-detail-close ico base-close">닫기</button>
+						<div class="field">
+							<div class="field-group">
+								<input type="radio" name="brand-name" id="brand-all" class="field-radio" value="brand-all" onclick="javascript:fncLoadBrandForChar();">
+								<label class="field-radio-label" for="brand-all">전체</label>
+							</div>
+							<div class="field-group brand">
+								<input type="radio" name="brand-name" id="brand-a" class="field-radio" value="brand-a" onclick="javascript:fncLoadBrandForChar('A');">
+								<label class="field-radio-label" for="brand-a">A</label>
+
+								<input type="radio" name="brand-name" id="brand-b" class="field-radio" value="brand-b" onclick="javascript:fncLoadBrandForChar('B');">
+								<label class="field-radio-label" for="brand-b">B</label>
+
+								<input type="radio" name="brand-name" id="brand-c" class="field-radio" value="brand-c" onclick="javascript:fncLoadBrandForChar('C');">
+								<label class="field-radio-label" for="brand-c">C</label>
+
+								<input type="radio" name="brand-name" id="brand-d" class="field-radio" value="brand-d" onclick="javascript:fncLoadBrandForChar('D');">
+								<label class="field-radio-label" for="brand-d">D</label>
+
+								<input type="radio" name="brand-name" id="brand-e" class="field-radio" value="brand-e" onclick="javascript:fncLoadBrandForChar('E');">
+								<label class="field-radio-label" for="brand-e">E</label>
+
+								<input type="radio" name="brand-name" id="brand-f" class="field-radio" value="brand-f" onclick="javascript:fncLoadBrandForChar('F');">
+								<label class="field-radio-label" for="brand-f">F</label>
+
+								<input type="radio" name="brand-name" id="brand-g" class="field-radio" value="brand-g" onclick="javascript:fncLoadBrandForChar('G');">
+								<label class="field-radio-label" for="brand-g">G</label>
+
+								<input type="radio" name="brand-name" id="brand-h" class="field-radio" value="brand-h" onclick="javascript:fncLoadBrandForChar('H');">
+								<label class="field-radio-label" for="brand-h">H</label>
+
+								<input type="radio" name="brand-name" id="brand-i" class="field-radio" value="brand-i" onclick="javascript:fncLoadBrandForChar('I');">
+								<label class="field-radio-label" for="brand-i">I</label>
+
+								<input type="radio" name="brand-name" id="brand-j" class="field-radio" value="brand-j" onclick="javascript:fncLoadBrandForChar('J');">
+								<label class="field-radio-label" for="brand-j">J</label>
+
+								<input type="radio" name="brand-name" id="brand-k" class="field-radio" value="brand-k" onclick="javascript:fncLoadBrandForChar('K');">
+								<label class="field-radio-label" for="brand-k">K</label>
+
+								<input type="radio" name="brand-name" id="brand-l" class="field-radio" value="brand-l" onclick="javascript:fncLoadBrandForChar('L');">
+								<label class="field-radio-label" for="brand-l">L</label>
+
+								<input type="radio" name="brand-name" id="brand-m" class="field-radio" value="brand-m" onclick="javascript:fncLoadBrandForChar('M');">
+								<label class="field-radio-label" for="brand-m">M</label>
+
+								<input type="radio" name="brand-name" id="brand-n" class="field-radio" value="brand-n" onclick="javascript:fncLoadBrandForChar('N');">
+								<label class="field-radio-label" for="brand-n">N</label>
+
+								<input type="radio" name="brand-name" id="brand-o" class="field-radio" value="brand-o" onclick="javascript:fncLoadBrandForChar('O');">
+								<label class="field-radio-label" for="brand-o">O</label>
+
+								<input type="radio" name="brand-name" id="brand-p" class="field-radio" value="brand-p" onclick="javascript:fncLoadBrandForChar('P');">
+								<label class="field-radio-label" for="brand-p">P</label>
+
+								<input type="radio" name="brand-name" id="brand-q" class="field-radio" value="brand-q" onclick="javascript:fncLoadBrandForChar('Q');">
+								<label class="field-radio-label" for="brand-q">Q</label>
+
+								<input type="radio" name="brand-name" id="brand-r" class="field-radio" value="brand-r" onclick="javascript:fncLoadBrandForChar('R');">
+								<label class="field-radio-label" for="brand-r">R</label>
+
+								<input type="radio" name="brand-name" id="brand-s" class="field-radio" value="brand-s" onclick="javascript:fncLoadBrandForChar('S');">
+								<label class="field-radio-label" for="brand-s">S</label>
+
+								<input type="radio" name="brand-name" id="brand-t" class="field-radio" value="brand-t" onclick="javascript:fncLoadBrandForChar('T');">
+								<label class="field-radio-label" for="brand-t">T</label>
+
+								<input type="radio" name="brand-name" id="brand-u" class="field-radio" value="brand-u" onclick="javascript:fncLoadBrandForChar('U');">
+								<label class="field-radio-label" for="brand-u">U</label>
+
+								<input type="radio" name="brand-name" id="brand-v" class="field-radio" value="brand-v" onclick="javascript:fncLoadBrandForChar('V');">
+								<label class="field-radio-label" for="brand-v">V</label>
+
+								<input type="radio" name="brand-name" id="brand-w" class="field-radio" value="brand-w" onclick="javascript:fncLoadBrandForChar('W');">
+								<label class="field-radio-label" for="brand-w">W</label>
+
+								<input type="radio" name="brand-name" id="brand-x" class="field-radio" value="brand-x" onclick="javascript:fncLoadBrandForChar('X');">
+								<label class="field-radio-label" for="brand-x">X</label>
+
+								<input type="radio" name="brand-name" id="brand-y" class="field-radio" value="brand-y" onclick="javascript:fncLoadBrandForChar('Y');">
+								<label class="field-radio-label" for="brand-y">Y</label>
+
+								<input type="radio" name="brand-name" id="brand-z" class="field-radio" value="brand-z" onclick="javascript:fncLoadBrandForChar('Z');">
+								<label class="field-radio-label" for="brand-z">Z</label>
+							</div>
+
+							<div class="field-group brand">
+								<input type="radio" name="brand-name" id="brand-giyeok" class="field-radio" value="brand-giyeok" onclick="javascript:fncLoadBrandForChar('ㄱ');">
+								<label class="field-radio-label" for="brand-giyeok">ㄱ</label>
+
+								<input type="radio" name="brand-name" id="brand-nieun" class="field-radio" value="brand-nieun" onclick="javascript:fncLoadBrandForChar('ㄴ');">
+								<label class="field-radio-label" for="brand-nieun">ㄴ</label>
+
+								<input type="radio" name="brand-name" id="brand-digeut" class="field-radio" value="brand-digeut" onclick="javascript:fncLoadBrandForChar('ㄷ');">
+								<label class="field-radio-label" for="brand-digeut">ㄷ</label>
+
+								<input type="radio" name="brand-name" id="brand-rieul" class="field-radio" value="brand-rieul" onclick="javascript:fncLoadBrandForChar('ㄹ');">
+								<label class="field-radio-label" for="brand-rieul">ㄹ</label>
+
+								<input type="radio" name="brand-name" id="brand-mieum" class="field-radio" value="brand-mieum" onclick="javascript:fncLoadBrandForChar('ㅁ');">
+								<label class="field-radio-label" for="brand-mieum">ㅁ</label>
+
+								<input type="radio" name="brand-name" id="brand-bieup" class="field-radio" value="brand-bieup" onclick="javascript:fncLoadBrandForChar('ㅂ');">
+								<label class="field-radio-label" for="brand-bieup">ㅂ</label>
+
+								<input type="radio" name="brand-name" id="brand-siot" class="field-radio" value="brand-siot" onclick="javascript:fncLoadBrandForChar('ㅅ');">
+								<label class="field-radio-label" for="brand-siot">ㅅ</label>
+
+								<input type="radio" name="brand-name" id="brand-ieung" class="field-radio" value="brand-ieung" onclick="javascript:fncLoadBrandForChar('ㅇ');">
+								<label class="field-radio-label" for="brand-ieung">ㅇ</label>
+
+								<input type="radio" name="brand-name" id="brand-jieut" class="field-radio" value="brand-jieut" onclick="javascript:fncLoadBrandForChar('ㅈ');">
+								<label class="field-radio-label" for="brand-jieut">ㅈ</label>
+
+								<input type="radio" name="brand-name" id="brand-chieut" class="field-radio" value="brand-chieut" onclick="javascript:fncLoadBrandForChar('ㅊ');">
+								<label class="field-radio-label" for="brand-chieut">ㅊ</label>
+
+								<input type="radio" name="brand-name" id="brand-kieuk" class="field-radio" value="brand-kieuk" onclick="javascript:fncLoadBrandForChar('ㅋ');">
+								<label class="field-radio-label" for="brand-kieuk">ㅋ</label>
+
+								<input type="radio" name="brand-name" id="brand-tieut" class="field-radio" value="brand-tieut" onclick="javascript:fncLoadBrandForChar('ㅌ');">
+								<label class="field-radio-label" for="brand-tieut">ㅌ</label>
+
+								<input type="radio" name="brand-name" id="brand-pieup" class="field-radio" value="brand-pieup" onclick="javascript:fncLoadBrandForChar('ㅍ');">
+								<label class="field-radio-label" for="brand-pieup">ㅍ</label>
+
+								<input type="radio" name="brand-name" id="brand-hieut" class="field-radio" value="brand-hieut" onclick="javascript:fncLoadBrandForChar('ㅎ');">
+								<label class="field-radio-label" for="brand-hieut">ㅎ</label>
+
+								<input type="radio" name="brand-name" id="brand-etc" class="field-radio" value="brand-etc" onclick="javascript:fncLoadBrandForChar('etc');">
+								<label class="field-radio-label pd10" for="brand-etc">기타</label>
+							</div>
+						</div>
+					</div>
+
+					<div id="brand_list_div" class="filter-brand-search-detail-result">
+						<ul class="brand-list" id="brand_list">
+						</ul>
+					</div>
+				</div>
+			</div>
+			 -->
+			<!-- 매장검색 -->
+			<div class="filter-store-search">
+				<div class="filter-store-search-input">
+					<label for="SEARCH_STR" class="responsive-form-box-hide">브랜드검색</label>
+					<input type="text" id="SEARCH_STR" placeholder="매장명, 브랜드명 입력">
+				</div>
+				<div class="filter-store-search-icon">
+					<button type="button" title="키워드 검색을 할 수 있습니다." class="ico search-black" onclick="javascript:getShopSearchStr();">검색</button>
+				</div>
+			</div>
+		</div>
+		<div class="boxmodel2">
+			<ul class="boxmodel2-list" id="shop_detail">
+
+
+
+
+
+
+
+				<script>
+					$(document).ready(function(){
+						if("137" != "" && "137" != "0") {
+							setPageNation("1", "137");
+						}
+						else {
+							$("#resultPageNavi").html("");
+						}
+					});
+					function openMap(sn) {
+						window.open("/ap/ko/map/mapInfo.do?SN=" + sn,'_blank');
+					}
+				</script>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+					boxmodel2-imggroup-mark red
+
+
+				">
+
+					베이커리·카페·바
+				</span>
+								<img src="/static/noimg_big.png" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">리틀잇츠</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">07:00 ~ 22:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-6545</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1312');"><em class="color-lb">제2여객터미널 3층 면세지역 231번 게이트 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">커피, 티, 주스, 샌드위치, 베이커리</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								리틀잇츠는 카라반 형태로 꾸며진 펀&amp;미니 카페로 부모님들과 아이들
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+					boxmodel2-imggroup-mark red
+
+
+				">
+
+					양식
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1310" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">빌라드샬롯</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">06:00 ~ 22:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-6541</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1310');"><em class="color-lb">제2여객터미널 4층 일반지역 중앙</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">파스타, 피자, 스테이크, 리조또, 샐러드</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								빌라드샬롯은 19세기 유럽의 대 저택을 모티브로 한 로맨틱한 공간으로, 파스타, 화덕 피자, 스테이크, 커피&amp;티 등 다양한 음식을 제공하는 유러피언 홈메이드 다이닝 입니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+					boxmodel2-imggroup-mark red
+
+
+				">
+
+					중식·일식
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1313" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">스노우폭스</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">07:00 ~ 22:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-8636</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1313');"><em class="color-lb">제2여객터미널 3층 면세지역 235번 게이트 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc"> 스시, 롤, 덮밥, 도시락</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								스노우폭스는 전세계 1300여개 매장을 운영하는 글로벌 기업으로 쉐프 들이 매장에서 직접 조리하는 레스토랑과 리테일샵의 장점을 완벽하게 있으며, "세상에서 가장 큰 도시락 회사"로 인정받고 있는 브랜드입니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+					boxmodel2-imggroup-mark red
+
+
+				">
+
+					베이커리·카페·바
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1309" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">공차</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">06:00 ~ 22:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-8630</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1309');"><em class="color-lb">제2여객터미널 3층 일반지역 1번 출입구 부근</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">밀크티, 주스, 스무디 , 커피</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								프리미엄 찻잎을 우려 새로움을 더해 다양한 즐거운 차 문화를 만드는 글로벌 티(Tea) 음료 전문 브랜드
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+
+
+
+				<li class="boxmodel2-list-item">
+
+
+					<div class="boxmodel2-list-box">
+						<div class="boxmodel2-list-box-split col-1">
+							<div class="boxmodel2-imggroup">
+				<span class="
+
+
+					boxmodel2-imggroup-mark red
+
+
+				">
+
+					베이커리·카페·바
+				</span>
+								<img src="/ap/cmm/ficImageDown.do?IMG_TYPE=1&amp;SN=1300" class="imgbox" alt="대표 이미지" onerror="this.src='/static/noimg_big.png'">
+							</div>
+						</div>
+						<div class="boxmodel2-list-box-split col-2">
+							<span class="boxmodel2-maintit">엔제리너스</span>
+							<div class="boxmodel2-column col-2">
+								<dl class="boxmodel2-table w60">
+									<dt class="boxmodel2-table-tit">영업시간</dt>
+									<dd class="boxmodel2-table-desc">06:00 ~ 22:00</dd>
+								</dl>
+								<dl class="boxmodel2-table w40">
+
+									<dt class="boxmodel2-table-tit">연락처</dt>
+									<dd class="boxmodel2-table-desc" id="TELNO">032-743-6555</dd>
+
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">위치</dt>
+									<dd class="boxmodel2-table-desc"><a href="#" onclick="javascript:openMap('1300');"><em class="color-lb">제2여객터미널 교통센터 지하 1층 중앙</em></a></dd>
+								</dl>
+							</div>
+
+							<div class="boxmodel2-column">
+								<dl class="boxmodel2-table">
+									<dt class="boxmodel2-table-tit">주요상품</dt>
+									<dd class="boxmodel2-table-desc">커피, 빵</dd>
+								</dl>
+							</div>
+
+						</div>
+						<!--
+            <button type="button" title="버튼을 클릭하면 상세정보가 펼쳐집니다." class="btn-type-small detail ico arrow-small-down">펼치기</button>
+             -->
+					</div>
+
+					<div class="boxmodel2-list-detail">
+						<span class="boxmodel2-list-tit">매장소개</span>
+						<div class="boxmodel2-list-detail-split col-1">
+
+
+							<p class="boxmodel2-desc">
+								엔제리너스 커피는 2000년 런칭하여 에스프레소 커피 시장의 성장을 선도하는 중심적인 역할을 하였습니다. 현재 전문화, 고급화로 발전하고
+								있는 커피 문화를 많은 사람들이 부담없이 즐길 수 있도록 하는 것이 엔제리너스 커피의 역할이라는 소명의식을 가지고 있습니다. 엔제리너스
+								커피만의 풍부한 커피 맛과 이를 편안하게 즐길 수 있는 공간을 통해, 고객의 기분좋은 경험을 제공하는데 앞장 서겠습니다.
+							</p>
+
+							<dl class="boxmodel2-list-info mt20">
+								<!--
+                  <dt class="boxmodel2-list-info-tit">레드벨벳롤케이크</dt>
+                  <dd class="boxmodel2-list-info-price">5,000원</dd>
+                  <dt class="boxmodel2-list-info-tit">소복아이스크림</dt>
+                  <dd class="boxmodel2-list-info-price">5,200원</dd>
+                 -->
+							</dl>
+							<!--
+              <span class="boxmodel2-list-subtit mt20">SMS 서비스 정보 받기</span>
+
+              <div class="responsive-form-box send">
+                <div class="responsive-form-box-area">
+                  <label for="phone01" class="responsive-form-box-hide">SMS 서비스 정보 받기</label>
+                  <input type="tel" id="phone01" placeholder="휴대폰 번호 입력" />
+                </div>
+                <button type="button" title="버튼을 클릭하면 SMS서비스 정보를 받습니다" class="responsive-form-box-btn">전송</button>
+              </div>
+               -->
+						</div>
+						<div class="boxmodel2-list-detail-split col-2">
+							<img src="/static/noimg_big.png" class="imgbox" alt="쇼핑 지도 이미지" onerror="this.src='/static/noimg_big.png'">
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<div class="mt40">
+			<div class="pagenation" id="resultPageNavi"><a class="ico first" href="javascript:getShopList(1);">처음</a><a class="ico prev" href="javascript:getShopList(0);">이전</a><ol class="pagenation-list"><li class="pagenation-list-item on"><a class="pagenation-list-link" href="javascript:getShopList(1);">1</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(2);">2</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(3);">3</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(4);">4</a></li><li class="pagenation-list-item"><a class="pagenation-list-link" href="javascript:getShopList(5);">5</a></li></ol><a class="ico next" href="javascript:getShopList(6);">다음</a><a class="ico last" href="javascript:getShopList(28);">마지막</a></div>
+		</div>
+	</div>
+</section>
+<!--=include _include/_base_footer.html -->
