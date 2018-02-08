@@ -1,4 +1,4 @@
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
 
   .ch{
     // 출/도착시간표 자세히보기 언어변경
@@ -41,6 +41,99 @@
   }
 
   .en{
+    .section-bg-contents2{
+      width:100%;
+    }
+    .logo-list{
+      width: 100%;
+      .section-bg-head2{
+        margin-bottom:10px;
+      }
+      .logo-list-item{
+        margin-right:20px;
+        margin-bottom:10px;
+        margin-left:0;
+        border:0;
+        &:nth-child(odd){
+          border-left:0;
+        }
+      }
+    }
+
+    .route-list{
+
+      &-item{
+        margin-bottom:20px;
+        &.h80{
+          height:auto;
+          .route-name{
+            height:auto;
+          }
+          .route-desc{
+            height:auto;
+            padding: 10px 25px;
+          }
+          .route-list-item{
+            height:auto;
+          }
+        }
+        height:auto;
+        .multi-col{
+          .route-list-item{
+
+            .route-name{
+              width:100%;
+              line-height:60px;
+            }
+            .route-desc{
+              width:100%;
+              padding: 10px 25px;
+            }
+
+          }
+        }
+
+        &.double-row{
+          height:auto;
+          .route-name{
+            height:auto;
+            line-height:inherit;
+          }
+
+          .route-desc{
+            height:auto;
+            line-height:inherit;
+            padding: 10px 25px;
+          }
+        }
+
+        &.arrival{
+          .route{
+            &-name{
+              width:100%;
+            }
+            &-desc{
+              width:100%;
+              padding: 10px 25px;
+            }
+          }
+        }
+
+        .route{
+          &-name{
+            width:100%;
+          }
+          &-desc{
+            width:100%;
+            height:auto;
+            float:none;
+          }
+        }
+
+      }
+
+    }
+
 
     // 출/도착시간표 자세히보기 언어변경
     .contents{

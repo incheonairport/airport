@@ -25,6 +25,7 @@ body {
   padding-top:101px;
 }
 
+
 %clearfix:after,
 .clearfix:after {
   content:"";
@@ -1562,4 +1563,8 @@ img.no-extend{
 .h-hide{
   // section 제목숨기기
   display:none;
+}
+
+.search-phone-box + .vt-dark{
+  margin-top:10px;
 }

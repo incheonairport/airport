@@ -554,6 +554,7 @@
 
 
         &-item{
+
           margin-left:4px;
           //border-left:1px solid rgba(255,255,255,.3);
           &:nth-child(odd){
@@ -735,20 +736,7 @@
     height:200px;
   }
 
-  .en .logo-list{
-    width: 90%;
-    margin: auto;
 
-    .logo-list-item{
-      margin-right:20px;
-      margin-bottom:10px;
-      margin-left:0;
-      border:0;
-      &:nth-child(odd){
-        border-left:0;
-      }
-    }
-  }
 
 
 
