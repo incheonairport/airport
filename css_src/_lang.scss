@@ -903,6 +903,10 @@
 
   }
 
+  .boxmodel-list-head{
+    font-size: 2rem;
+  }
+
 }
 
 .ja{
@@ -924,6 +928,15 @@
     }
   }
 
+  .gnb{
+    .bg{
+      .header-search-btn{
+        .gnb-search{
+          padding:6px 8px 6px 32px;
+        }
+      }
+    }
+  }
 
   .boxmodel-list-head.small{
     font-size:1.25rem;
@@ -992,4 +1005,5 @@
       word-break:normal;
     }
   }
+
 }
