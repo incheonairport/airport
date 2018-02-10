@@ -734,7 +734,8 @@
         .btn-type-small{
           color:#fff;
           background:#333649;
-          border: 1px solid #333649;
+          //border: 1px solid #333649;
+          border:0;
           line-height:1;
           &:after{
             background-position:-460px -67px;
@@ -872,10 +873,10 @@
             word-wrap: break-word;
             text-overflow: ellipsis;
             -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            -moz-box-orient: vertical;
-            -ms-box-orient: vertical;
-            box-orient: vertical;
+            //-webkit-box-orient: vertical;
+            //-moz-box-orient: vertical;
+            //-ms-box-orient: vertical;
+            //box-orient: vertical;
             height:5.6rem;
           }
           .boxmodel2-map-link{
@@ -1020,10 +1021,10 @@
         word-wrap: break-word;
         text-overflow: ellipsis;
         -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        -moz-box-orient: vertical;
-        -ms-box-orient: vertical;
-        box-orient: vertical;
+        //-webkit-box-orient: vertical;
+        //-moz-box-orient: vertical;
+        //-ms-box-orient: vertical;
+        //box-orient: vertical;
         height:2.4rem;
       }
       &.icodesc{
@@ -1108,7 +1109,8 @@
     .responsive-form-box-btn{
       width:58px;
       height:100%;
-      border:1px solid #2c8279;
+      //border:1px solid #2c8279;
+      border:0;
       background:#2c8279;
       color:#fff;
       font-size:0.875rem;

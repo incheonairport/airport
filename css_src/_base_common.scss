@@ -687,14 +687,17 @@ em{
     }
     .schedule {
       background: #2f4985;
-      border:5px solid #2f4985;
+      width:10px;
+      height:10px;
+      display:inline-block;
+      //border:5px solid #2f4985;
       border-radius: 20px;
       font-size: 0;
       position: relative;
       top: -5px;
       &.weekend{
         background: #2c8179;
-        border:5px solid #2c8179;
+        //border:5px solid #2c8179;
       }
     }
   }
@@ -934,14 +937,16 @@ em{
       }
       .schedule {
         background: #2f4985;
-        border:5px solid #2f4985;
+        width:10px;
+        height:10px;
+        display:inline-block;
+        //border:5px solid #2f4985;
         border-radius: 20px;
         font-size: 0;
         position: relative;
         top: -5px;
         &.weekend{
           background: #2c8179;
-          border:5px solid #2c8179;
         }
       }
     }

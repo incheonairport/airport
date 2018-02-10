@@ -2,6 +2,39 @@
  * Common Execution *
  ********************/
 
+$(document).ready(function(){
+
+
+  $('.gnb-depth1-link').on('focus', function(e){
+    $('#gnb').addClass('on');
+  });
+
+  //if($(window).outerWidth() > 1080){
+  //  $('.header-search-btn').on('focus', function(e){
+  //    $('.gnb-search').addClass('on');
+  //    $('#query').focus();
+  //  });
+  //}
+
+
+
+  $('.header-search-btn').on('focusout', function(e){
+    $('#gnb').removeClass('on');
+  });
+  //$(".skip-navigation-link").keydown(function (key) {
+  //
+  //  if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
+  //    searchBook();
+  //  }
+  //
+  //});
+  //
+  //searchBook = function (){
+  //  $('#gnb').toggleClass('on');
+  //};
+
+});
+
 $(function(){
   //scroll tab
 

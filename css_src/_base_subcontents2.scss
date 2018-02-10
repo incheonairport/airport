@@ -1215,7 +1215,8 @@
     text-align:left;
     &.point{
       background:#42519e;
-      border:1px solid #42519e;
+      border:0;
+      vertical-align:top;
       color:#fff;
     }
     &:hover{

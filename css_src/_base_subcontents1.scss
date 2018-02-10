@@ -1992,7 +1992,7 @@
     &:checked + .field2-radio-label {
       background:#000;
       color:#fff;
-      border: 1px solid #000;
+
     }
   }
   .field2-radiomain{
@@ -2313,7 +2313,7 @@
         &.on {
           color: #fff;
           background: #323648;
-          border: 1px solid #323648;
+          border:0;
           font-weight: 800;
           position: relative;
 

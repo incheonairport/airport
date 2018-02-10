@@ -124,3 +124,10 @@ input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
 }
+
+//:focus  {
+//  -webkit-outline-width:  1px  !important;
+//  /*  outline  속성은  border와  달리  추가  공간을  차지하지  않는다.  */
+//  outline-style:  solid  !important;
+//  -moz-outline-radius:  2px;
+//}

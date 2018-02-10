@@ -2163,7 +2163,8 @@ p.icontxt{
       }
       &:hover{
         background:#42519e;
-        border-color:#42519e;
+        border:0;
+        //border-color:#42519e;
         .pagenation-list-link{
           color:#fff;
         }
@@ -2171,7 +2172,8 @@ p.icontxt{
       // 활성화 클래스
       &.on{
         background:#42519e;
-        border-color:#42519e;
+        //border-color:#42519e;
+        border:0;
         .pagenation-list-link{
           color:#fff;
         }
@@ -3475,7 +3477,7 @@ img.no-extend{
 // 쇼핑식당 이벤트 상세 data 높이 강제조절.
 .event-img{
   img{
-    hieght:auto!important;
+    height:auto!important;
   }
 }
 
