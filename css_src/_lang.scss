@@ -1005,21 +1005,43 @@
 
   //출국경로, 입국경로
   .route-list{
+
     &-item{
-      .route-name{
-        font-size: 1.125rem;
-      }
 
-      .route-desc{
-        font-size: 1rem;
+      .multi-col{
+        .route-list-item{
+          &.moving{
 
-        span{
-          font-size: 0.75rem;
+            .route-desc{
+
+              font-size:1rem;
+              span{
+                font-size:0.75rem;
+              }
+            }
+          }
         }
       }
 
+      .route{
+
+        &-name{
+          font-size:1.125rem;
+        }
+
+        &-desc{
+          font-size:1rem;
+
+          &.small{
+            font-size:1rem;
+          }
+        }
+      }
 
     }
+
   }
+
+
 
 }
