@@ -890,8 +890,6 @@
 
   }
 
-
-
   .tab-sub.terms{
     .tab-sub-list-item{
       a{
@@ -1001,6 +999,26 @@
   .table{
     &.vt, &.vt-dark, &.hr{
       word-break:normal;
+    }
+  }
+
+
+  //출국경로, 입국경로
+  .route-list{
+    &-item{
+      .route-name{
+        font-size: 1.125rem;
+      }
+
+      .route-desc{
+        font-size: 1rem;
+
+        span{
+          font-size: 0.75rem;
+        }
+      }
+
+
     }
   }
 
