@@ -609,7 +609,10 @@
           }
 
           &:nth-child(5){
-            bottom:70px;
+
+            //웹접근성 임시방편
+            //bottom:70px;
+            bottom:130px;
           }
 
         }

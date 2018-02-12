@@ -543,7 +543,9 @@ strong{
     color:#41519e;
   }
   &.color-o{
-    color:#ffae44;
+    //접근성 임시방편
+    color:#fff;
+    //color:#ffae44;
   }
   &.color-r{
     color:#d43e41;
@@ -1524,6 +1526,8 @@ img.no-extend{
 
 
 .banner{
+  //웹접근선임시방편
+  display:none;
   width: 100%;
   padding: 40px;
   min-height: inherit;

@@ -155,7 +155,14 @@ $(function(){
 
     };
 
+
+
     $(window).scroll(function(){
+      $('.select-list').removeClass('on');
+      $('.select-link-default').removeClass('on');
+    });
+
+    $('.select-list .select-list-item:last-child .select-list-link').on('focusout', function(){
       $('.select-list').removeClass('on');
       $('.select-link-default').removeClass('on');
     });

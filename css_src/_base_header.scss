@@ -1,3 +1,10 @@
+
+//접근성 css추가
+.header-search-item.gnb-search.on .gnb-search-openbtn {display:none;}
+.header-search-item.gnb-search #btnTotalSearch {display: none;}
+.header-search-item.gnb-search.on #btnTotalSearch {display: inline-block;}
+
+
 .header.bg.fixed{
   .select-list{
     display:none;
@@ -490,6 +497,7 @@
       cursor:pointer;
 
       &.gnb{
+
         &-map{
           height:27px;
           padding-left:27px;
@@ -1127,6 +1135,11 @@
 
       &.top{
         padding-bottom: 5px;
+      }
+
+      // 웹접근성 임시방편
+      &:nth-child(4){
+        display:none;
       }
     }
     &-link{

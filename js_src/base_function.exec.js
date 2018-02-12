@@ -82,10 +82,12 @@ $(function(){
           $.fn.fullpage.moveSectionDown();
         });
 
-        //$('.select-list').on('mouseenter', function(){
-        //  $.fn.fullpage.setAllowScrolling(false, 'up');
+        //$('.relsite').on('click', function(){
+        //  $('#fullpage').fullpage(false);
         //
-        //  $(this).addEventListener('mousewheel', this._mouseWheel);
+        //  //$.fn.fullpage.setAutoScrolling(false, 'up');
+        //  //$.fn.fullpage.setAllowScrolling(false, 'up');
+        //  //$(this).addEventListener('mousewheel', this._mouseWheel);
         //
         //});
 
@@ -414,7 +416,41 @@ $(function(){
 
     });
 
-    $('.gnb-depth1-link').on('mouseenter', function(e){
+    //$('.gnb-depth1-link').on('mouseenter focusin', function(e){
+    //
+    //  if( $(window).outerWidth() > 1200 ){
+    //    e.stopPropagation();
+    //
+    //    if( !$('.gnb').hasClass('fixed') ){
+    //
+    //      //$('.header, .gnb').addClass('show');
+    //      $('.header, .gnb').addClass('bg');
+    //
+    //    }
+    //
+    //    $('.gnb').addClass('on');
+    //  }
+    //
+    //});
+
+    if($('html').hasClass('main') ){
+      $('.gnb-depth1-link').on('focusin', function(e){
+        $('.header').removeClass('top-big-open');
+        $('.gnb').removeClass('top-big-open');
+        if( $(window).outerWidth() > 1200 ){
+          e.stopPropagation();
+
+          if( !$('.gnb').hasClass('fixed') ){
+            //$('.header, .gnb').addClass('show');
+          }
+
+
+        }
+
+      });
+    }
+
+    $('.gnb-depth1-link').on('mouseenter focusin', function(e){
 
       if( $(window).outerWidth() > 1200 ){
         e.stopPropagation();
@@ -427,6 +463,23 @@ $(function(){
         }
 
         $('.gnb').addClass('on');
+      }
+
+    });
+
+    $('.gnb-depth1-link').on('mouseleave focusout', function(e){
+
+      if( $(window).outerWidth() > 1200 ){
+        e.stopPropagation();
+
+        if( !$('.gnb').hasClass('fixed') ){
+
+          //$('.header, .gnb').addClass('show');
+          $('.header, .gnb').addClass('bg');
+
+        }
+
+        $('.gnb').removeClass('on')
       }
 
     });
@@ -464,6 +517,7 @@ $(function(){
 
         $('.header-search-item.gnb-search').addClass('on');
         $(this).data('search', true);
+        $(".header-search-input").focus();
 
       }
 

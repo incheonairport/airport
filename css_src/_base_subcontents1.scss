@@ -1337,7 +1337,7 @@
   }
 
   &.system{
-    display:none;
+    display:none!important;
     max-width:550px;
     //min-width:565px;
     //overflow-y:auto;
@@ -2293,7 +2293,7 @@
     @extend %clearfix;
 
     &-item {
-      width: 164.2px;
+      width: 192px;
       border-right: 1px solid #d9d9d9;
       border-top: 1px solid #d9d9d9;
       float: left;

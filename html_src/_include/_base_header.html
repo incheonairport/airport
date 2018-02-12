@@ -199,12 +199,22 @@
     <div class="header-search-item gnb-map-wrap">
       <button type="button" class="header-search-btn ico gnb-map" onclick="javascript:openAirportMap();">공항지도</button>
     </div>
+    <!--<div class="header-search-item gnb-search">-->
+      <!--<label for="query"></label>-->
+      <!--<input type="text" id="query" name="query" class="header-search-input" placeholder="검색어 입력" maxlength="20" onkeydown="fncSearchMain()" title="통합 검색">-->
+      <!--<label for="btnTotalSearch"></label>-->
+      <!--<button type="button" id="btnTotalSearch" class="header-search-btn ico gnb-search gnb-search-openbtn" onclick="javascript:doSearch();">검색</button>-->
+      <!--<button type="button" class="header-search-close">닫기</button>-->
+    <!--</div>-->
+
+    <!-- 접근성 html search 수정 -->
     <div class="header-search-item gnb-search">
       <label for="query"></label>
-      <input type="text" id="query" name="query" class="header-search-input" placeholder="검색어 입력" maxlength="20" onkeydown="fncSearchMain()" title="통합 검색">
-      <label for="btnTotalSearch"></label>
-      <button type="button" id="btnTotalSearch" class="header-search-btn ico gnb-search" onclick="javascript:doSearch();">검색</button>
-      <button type="button" class="header-search-close">닫기</button>
+      <button class="header-search-btn ico gnb-search gnb-search-openbtn" type="button">검색</button>
+      <button class="header-search-btn ico gnb-search" id="btnTotalSearch" onclick="javascript:doSearch();" type="button">검색</button>
+      <input name="query" title="통합 검색" class="header-search-input" id="query" onkeydown="fncSearchMain()" type="text" maxlength="20" placeholder="검색어 입력" value="">
+      <label for="btnTotalSearch" ></label>
+      <button class="header-search-close" type="button">닫기</button>
     </div>
 
   </div>

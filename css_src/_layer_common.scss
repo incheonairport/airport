@@ -1745,7 +1745,10 @@ p.icontxt{
   }
 }
 
+
 .banner{
+  //웹접근선임시방편
+  display:none;
   //width: 1152px;
   //min-height: 240px;
   width: 100%;
@@ -2752,6 +2755,7 @@ button{
 
   }
   &.system{
+    display:none;
     min-width:565px;
     overflow-y:auto;
     border: 4px solid #fefefe;

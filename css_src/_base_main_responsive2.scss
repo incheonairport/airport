@@ -14,6 +14,278 @@
 
 
 
+  .fp-tableCell {
+    display: block;
+    height: auto !important;
+  }
+  .section3,.section2{
+    height:auto!important;
+  }
+
+  .main-visual-wrap{
+    position:static;
+  }
+
+  .main-visual-item {
+    //background-position: 50% 50%;
+    //background-size: 260%;
+  }
+  .main-visual-search-weather{
+    left:20px;;
+    top:-57px;
+    transform:none;
+    padding:0;
+
+    &:before{
+      display:none;
+    }
+  }
+
+  .main{
+    &-visual{
+      height:100vh;
+      &-control{
+
+        &-arrow{
+          >.arrow{
+            &.prev{
+              left:15px;
+              top:20px;
+            }
+            &.next{
+              right:15px;
+              top:20px;
+            }
+          }
+        }
+
+        &-paging{
+          //display:none;
+
+
+          .paging-item{
+            margin-right:5px;
+          }
+
+        }
+
+        &-bar{
+          width:0;
+          height:3px;
+          background:#ffae44;
+          position:absolute;
+          bottom:207px;
+          left:0;
+          z-index:110;
+        }
+      }
+      &-search{
+        height: auto;
+
+        &-flight{
+          width: 100%;
+          .area{
+            &-tab{
+              width: 48%;
+              &.departure{
+                font-size:1rem;
+              }
+              &.arrival{
+                font-size:1rem;
+              }
+            }
+            &-form{
+              padding-bottom:10px;
+              &-button{
+                right:0;
+              }
+            }
+          }
+
+        }
+        &-inner{
+          width: 100%;
+          padding: 0 15px;
+          margin-right:0;
+        }
+        &-title{
+          display: none;
+        }
+        &-weather{
+          //display: none;
+        }
+        #fnSearchResult{
+          overflow-y:hidden;
+          height:84px;
+        }
+        &-desc{
+          .airplane{
+            font-size:0.825rem;
+            margin-bottom:10px;
+
+            &-terminal{
+              width:100%;
+              margin-bottom:6px;
+            }
+
+            &-number{
+              width:auto;
+              margin-right:6px;
+              margin-bottom:6px;
+            }
+
+            &-destination{
+              margin-right:6px;
+              width:auto;
+            }
+
+            .situation-info {
+              margin-top:4px;
+            }
+
+            .date{
+              width:100%;
+            }
+
+            &-info-more{
+              position: absolute;
+              top: auto;
+              bottom: 0;
+              width: auto;
+              right: 0;
+            }
+
+            &-info-close{
+            }
+          }
+        }
+        //&-desc{
+        //  .airplane{
+        //    font-size:0.825rem;
+        //    &-info{
+        //      font-size:0.825rem;
+        //      .situation-info {
+        //        display:block;
+        //        margin-top:10px;
+        //        margin-bottom:10px;
+        //      }
+        //    }
+        //  }
+        //}
+      }
+    }
+  }
+
+  .section2{
+    background-size: cover;
+    height: auto;
+
+    .main{
+      &-content{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding: 35px 15px;
+        margin: 0 0;
+        &-heading{
+          //font-size: 1.25rem;
+          //color:#fff;
+        }
+      }
+      &-block{
+        width: 100%;
+
+        .link{
+          &-list{
+            height: auto;
+            padding:15px;
+          }
+        }
+
+        &-item{
+          width: 50%;
+          margin-right: 0;
+
+
+
+          &:last-child{
+            width:100%;
+            margin-bottom:0;
+
+            .guide-box{
+              width: 50%;
+              float: left;
+
+            }
+            .guide-wrap{
+              height:auto;
+              clear: both;
+              overflow: hidden;
+            }
+          }
+
+          .heading{
+            &-group{
+              height: auto;
+              padding: 35px;
+              .heading-desc{
+                padding: 0;
+              }
+              &.prepare{
+                background-size: cover;
+              }
+              &.airport{
+                background-size: cover;
+              }
+              &.transfer{
+                background-size: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .top-big-popup{
+
+
+    &-text{
+      display:block;
+      width:100%;
+      height:620px;
+      background:url(/static/ap/images/bg_mobile_top_big_popup_ko.png) no-repeat center top;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -60%);
+      -webkit-transform:translate(-50%, -60%);
+      -moz-transform:translate(-50%, -60%);
+      -ms-transform:translate(-50%, -60%);
+      -o-transform:translate(-50%, -60%);
+      text-indent:-99999em;
+      background-size:contain;
+    }
+
+    &-close{
+      display:none;
+    }
+
+  }
+
+}
+
+
+@media screen and (max-width:640px) {
+
+  body{
+    min-width:inherit;
+    overflow-x:hidden;
+  }
+
+
+
   .main-visual-item {
     //background-position: 50% 50%;
     //background-size: 260%;
@@ -98,7 +370,7 @@
             }
 
             &:nth-child(1){
-              font-size:2rem!important;
+              font-size:2.5rem!important;
             }
             &:nth-child(2){
               font-size:1.125rem!important;
@@ -279,6 +551,13 @@
           margin-bottom: 30px;
           &:last-child{
             margin-bottom:0;
+            .guide-box{
+              width: 100%;
+              float: none;
+            }
+            .guide-wrap{
+
+            }
           }
 
           .guide-wrap{

@@ -398,6 +398,8 @@
   font-size:1.125rem;
   background:none;
   & span{
+    //웹점근성임시방편
+    color:#fff;
     font-size:1rem;
   }
   &:before{
