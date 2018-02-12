@@ -1,4 +1,22 @@
 html.ie{
+
+  //.filter-terminal-search-depth1 .input-box .field-radiomain {
+  //  display: inline-block;
+  //  position: relative;
+  //  height: 10px;
+  //  top: -6px;
+  //  left: 0;
+  //}
+
+  .input-box.base {
+    padding:0 20px 0 0;
+    label:after{
+      display:none;
+    }
+  }
+
+
+
   &.main{
     body{
 

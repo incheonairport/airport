@@ -316,7 +316,13 @@
       .input-box{
         float:left;
         .field-radiomain{
-          display:none;
+          //display:none;
+          display: inline-block;
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 0;
+          left: 0;
         }
         &.base{
           margin-left:30px;
@@ -525,7 +531,13 @@
 .field{
   @extend %clearfix;
   .field-radio{
-    display:none;
+    //display:none;
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    z-index: -999;
+
     & + .field-radio-label{
       display: block;
       padding:5px 10px;
