@@ -450,7 +450,9 @@ $(function(){
       });
     }
 
-    $('.gnb-depth1-link').on('mouseenter focusin', function(e){
+
+
+    $('.gnb-depth1-item').on('mouseenter focusin', function(e){
 
       if( $(window).outerWidth() > 1200 ){
         e.stopPropagation();
@@ -467,7 +469,7 @@ $(function(){
 
     });
 
-    $('.gnb-depth1-link').on('mouseleave focusout', function(e){
+    $('.gnb-depth1-item').on('focusout', function(e){
 
       if( $(window).outerWidth() > 1200 ){
         e.stopPropagation();
