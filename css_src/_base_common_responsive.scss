@@ -869,4 +869,102 @@
   select,input[type="text"]{
     height: 40px!important;
   }
+
+  /* Bootstrap naming compatible */
+  /* Added /9 hack for IE9 so the td´s display as rows */
+  table.table-responsive {
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: Agenda-Light, sans-serif;
+    font-weight: 100;
+    /*background: #333;*/
+    color: #fff;
+    text-rendering: optimizeLegibility;
+    border-radius: 5px;
+  }
+  table.table-responsive caption {
+    font-size: 2rem;
+    /*color: #444;*/
+    margin: 1rem;
+  }
+  table.table-responsive thead th {
+    font-weight: 600;
+  }
+  table.table-responsive thead th,
+  table.table-responsive tbody td {
+    padding: 0.8rem;
+    font-size: 1.4rem;
+  }
+  table.table-responsive tbody td {
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    color: #444;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  /*table.table-responsive tbody tr {*/
+  /*border-top: 1px solid #ddd;*/
+  /*border-bottom: 1px solid #ddd;*/
+  /*}*/
+
+  @media screen and (max-width: 1080px) {
+    table.table-responsive{
+      text-align: center;
+    }
+    table.table-responsive tbody td img{
+      display: none !important;
+    }
+    table.table-responsive tbody td br{
+      display: none;
+    }
+    table.table-responsive caption {
+      background-image: none;
+    }
+    table.table-responsive thead {
+      display: none;
+    }
+    table.table-responsive tbody td {
+      padding: 0.6rem;
+      display: inline-table;
+      width: 50%;
+      float: left;
+      .schedule{
+        width: 6px!important;
+        height: 6px!important;
+        border-radius: 6px !important;
+        top: -10px!important;
+        left: 25%!important;
+      }
+    }
+    table.table-responsive tbody tr td:first-child {
+      background: #323648;
+      display: block;
+      width: 100%;
+      color: #fff;
+    }
+    table.table-responsive tbody td:last-child {
+      width: 50%;
+      font-size: 0.875rem;
+      height: 30px;
+    }
+    table.table-responsive tbody td:before {
+      content: attr(data-th);
+      font-weight: bold;
+      display: inline-block;
+      /*width: 6rem;*/
+    }
+    .table-responsive tbody td[data-type=currency] {
+      /*text-align: right;*/
+    }
+    .table-responsive tbody td[data-title]:before {
+      content: attr(data-title);
+      /*float: left;*/
+      text-align: center;
+      border-right: 1px solid #aaa;
+      width: 50%;
+      font-size: 1rem;
+      color: rgba(94, 93, 82, 0.75);
+    }
+  }
 }
