@@ -266,7 +266,16 @@
   // common
   table{
     .btn-type-small{
-      min-width:inherit;
+
+      min-width: inherit;
+      border-radius: 5px;
+      font-size: 0.825rem;
+      line-height: inherit;
+      padding: 5px 10px;
+      height: auto;
+      &:after{
+        display:none;
+      }
     }
   }
   // layout
@@ -895,11 +904,13 @@
     &.line{
       .inner-col {
         &:first-child {
-          border-bottom: 1px solid #d9d9d9;
-          padding-bottom:10px;
+
+
         }
         &:last-child {
           margin-top:16px;
+          border-bottom: 1px solid #d9d9d9;
+          padding-bottom: 30px!important;
         }
       }
       &:before{
@@ -1690,6 +1701,15 @@
         display: none;
       }
     }
+
+
+    //세관신고
+    &.customs-declaration{
+      background:url(/static/ap/images/bg_sub_layer_banner_bg_customs_declaration.jpg) no-repeat left;
+    }
+    &.dep-quarantine{
+      background:url(/static/ap/images/bg_sub_layer_banner_dep_declaration.jpg) no-repeat -170px;
+    }
   }
 
 
@@ -1819,8 +1839,7 @@
   .boxsing {
     border:0;
     border-bottom:1px solid #d9d9d9;
-    padding: 0;
-    padding-bottom: 15px;
+    padding: 0 0 30px;
   }
 
 
@@ -1922,11 +1941,33 @@
 
 
 @media screen and (max-width:439px) {
+  .table.vt.pd0 td, .table.vt-dark.pd0 td{
+    padding:10px 0!important;
+    word-wrap: break-word!important;
+  }
+  .table.vt th:after {
+    display:none;
+  }
   .table{
+    table-layout: fixed;
     //&.table-block{
     //  display:table!important;
     //  white-space: normal!important;
     //}
+
+    td,th,strong,p{
+      font-size:0.75rem!important;
+      word-break: inherit!important;
+      word-wrap: break-word!important;
+    }
+
+    td{
+      .list1-item{
+        &:before{
+          display:none;
+        }
+      }
+    }
     &.vt{
       &.board-list{
         overflow: visible;
@@ -1960,6 +2001,7 @@
         th{
           font-size: 0.815rem;
           padding: 10px 5px;
+
         }
         colgroup{
           col{
@@ -1986,19 +2028,20 @@
     }
     &.vt,
     &.vt-dark{
-      overflow-x:auto;
-      overflow-y: hidden;
-      white-space: nowrap;
-      display: inline-block;
+      //overflow-x:auto;
+      //overflow-y: hidden;
+      //white-space: nowrap;
+      //display: inline-block;
       th{
-        text-align: left;
-        padding:10px;
+        //text-align: left;
+        padding:5px;
+        vertical-align: middle;
         &.sub{
-          padding-left:12px;
+          padding-left:5px;
         }
       }
       td{
-        padding: 10px;
+        padding: 5px;
       }
       td.center{
         text-align: left;
@@ -2007,8 +2050,8 @@
     &.hr{
 
 
-      display:block;
-      overflow-x:auto;
+      //display:block;
+      //overflow-x:auto;
       .radio-box{
         margin-top:10px;
         &:first-child{
@@ -2024,10 +2067,9 @@
         line-height:1.4;
         letter-spacing: -1px;
         font-weight:900;
-        padding:0 11px;
-        font-size:1rem;
         padding:10px;
-        text-align:left;
+        font-size:1rem;
+        text-align:center;
       }
       td{
         padding: 10px;

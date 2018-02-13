@@ -658,7 +658,27 @@
 //}
 
 // table
+  .table.vt.pd0 td, .table.vt-dark.pd0 td{
+    padding:10px 0!important;
+    word-wrap: break-word!important;
+  }
+  .table.vt th:after {
+    display:none;
+  }
   .table{
+    td,th,strong,p{
+      font-size:0.75rem!important;
+      word-break: inherit!important;
+      word-wrap: break-word!important;
+    }
+
+    td{
+      .list1-item{
+        &:before{
+          display:none;
+        }
+      }
+    }
     &.table-block{
       display:table!important;
       white-space: normal!important;
@@ -726,10 +746,10 @@
     }
     &.vt,
     &.vt-dark{
-      overflow-x:auto;
-      overflow-y: hidden;
-      white-space: nowrap;
-      display: inline-block;
+      //overflow-x:auto;
+      //overflow-y: hidden;
+      //white-space: nowrap;
+      //display: inline-block;
       th{
         text-align: left;
         padding:10px;

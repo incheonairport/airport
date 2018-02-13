@@ -215,6 +215,9 @@
         border-right: none;
       }
       &-link {
+        &:hover{
+          color:#41519e;
+        }
 
         &.on {
           color: #41519e;

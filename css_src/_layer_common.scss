@@ -1159,13 +1159,17 @@
     color:#fff;
   }
   &:hover{
-
+    background: #42517D;
+    &:after{
+      right:16px!important;
+    }
   }
   &.ico{
     text-indent:0;
     &:after{
       left:auto;
       right:18px;
+      transition:all .4s;
     }
   }
   &.left{
@@ -1210,6 +1214,11 @@
     color:#fff;
   }
   &:hover{
+    color:#999;
+    &:after{
+      right:12px!important;
+
+    }
 
   }
   &.ico{
@@ -1217,6 +1226,7 @@
     &:after{
       left:auto;
       right:14px;
+      transition:all .4s;
     }
   }
 }

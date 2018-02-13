@@ -15,6 +15,52 @@ html.ie{
     }
   }
 
+  .checkbox{
+
+    &:checked {
+      &+label{
+        padding: 0 20px 0 10px;
+        &.ico:after {
+          display:none;
+        }
+      }
+    }
+    &-label{
+      padding: 0 20px 0 10px;
+      &.ico{
+        &:after {
+          display:none;
+        }
+      }
+    }
+  }
+  .checkbox-type2{
+    &-radio{
+      &:checked {
+        &+label{
+          padding: 0 20px 0 10px;
+          &.ico:after {
+            display:none;
+          }
+        }
+      }
+    }
+    &-label{
+      padding: 0 20px 0 10px;
+      &.ico{
+        &:after {
+          display:none;
+        }
+      }
+      &+.checkbox-type2-radio{
+      }
+      &.font18{
+      }
+    }
+    &.left{
+    }
+  }
+
 
 
   &.main{

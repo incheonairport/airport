@@ -184,4 +184,18 @@ $(function(){
 
   })();
 
+  // map touchmove
+  //(function(){
+  //  var tracks = [];
+  //  $('#mapArea svg').on("touchmove", function (event) {
+  //    if (event.originalEvent.touches.length === 2) {
+  //      tracks.push([ [event.originalEvent.touches[0].pageX, event.originalEvent.touches[0].pageY], [event.originalEvent.touches[1].pageX, event.originalEvent.touches[1].pageY] ]);
+  //    }
+  //  }).on("touchstart", function () {
+  //    tracks = [];
+  //  }).on("touchend", function () {
+  //
+  //  });
+  //})();
+
 });

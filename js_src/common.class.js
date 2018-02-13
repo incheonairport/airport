@@ -320,7 +320,7 @@ $(function(){
 
     this.showHideContent = function(showType, indexNum, $tableNode){
 
-      console.log(1);
+      //console.log(1);
 
       if(showType){
         $tableNode.eq(indexNum).addClass('on');

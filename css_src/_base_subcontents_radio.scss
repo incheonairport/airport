@@ -20,13 +20,11 @@ input[type="radio"],input[type="checkbox"]{
 
 .header-search-item button:focus{
   box-shadow:rgba(0,0,0,.5) 2px 2px 2px;
-  border-radius:10px;
 }
 
 input[type="radio"]:focus,input[type="checkbox"]:focus{
   +label{
     box-shadow:rgba(0,0,0,.5) 2px 2px 2px;
-    border-radius:10px;
   }
 }
 
@@ -172,6 +170,7 @@ input[type="radio"]:focus,input[type="checkbox"]:focus{
 .checkbox-type2{
   text-align: center;
   &-radio{
+
     //display: none;
     //width: 24px;
     //height: 24px;
