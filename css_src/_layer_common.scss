@@ -3555,3 +3555,116 @@ img.no-extend{
   // section 제목숨기기
   display:none;
 }
+
+// 교통주차 범주
+.map-common{
+  &-category{
+    display:inline-block;
+    margin-bottom: 10px;
+    @extend %clearfix;
+
+    &-item{
+      float: left;
+      line-height: 1.2;
+      width:auto;
+      //padding:0 10px;
+
+      &-name{
+        width:100%;
+        padding: 10px 0 5px 40px;
+        display:inline-block;
+        font-family: spoqa, sans-serif;
+        font-size: 0.875rem;
+        text-align: center;
+        position: relative;
+        &:before{
+          content: '';
+          display:block;
+          padding-left: 5px;
+          margin: 0 auto;
+          position: absolute;
+          top: 8px;
+          left:10px;
+          right:auto;
+          //bottom:0;
+          background: url(/static/ap/images/spr_ico_map_category.png) no-repeat;
+        }
+        &.entry114{
+          &:before{
+            background-position: 0 -1px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.arrival-af{
+          &:before{
+            background-position:-39px -1px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.infodesk{
+          &:before{
+            background-position: -78px -1px;
+            width: 22px;
+            height: 23px;
+          }
+        }
+        &.ticket{
+          &:before{
+            background-position: -124px -1px;
+            width: 22px;
+            height: 24px;
+          }
+        }
+        &.busstop{
+          &:before{
+            background-position: -166px 0px;
+            width: 22px;
+            height: 24px;
+          }
+        }
+        &.line1{
+          &:before{
+            background-position: -208px 0;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.line4{
+          &:before{
+            background-position:-249px 0;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.line5{
+          &:before{
+            background-position:-300px 0;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.line9{
+             &:before{
+               background-position: -351px 0;
+               width: 22px;
+               height: 22px;
+             }
+           }
+        &.gate{
+          &:before{
+            background-position: -391px 0;
+            width: 22px;
+            height: 22px;
+          }
+        }
+
+
+      }
+
+    }
+  }
+
+}
+
