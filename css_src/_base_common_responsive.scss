@@ -1098,11 +1098,6 @@
     line-height: 24px;
     width: 50%;
     //height: 30px;
-
-    &[data-title]:before {
-      display: none;
-    }
-
   }
   table.table-responsive tbody td:before {
     content: attr(data-th);
@@ -1125,6 +1120,9 @@
     width:25%;
 
     color: rgba(94, 93, 82, 0.75);
+  }
+  table.table-responsive tbody td:last-child[data-title]:before {
+    display: none;
   }
 
 }
