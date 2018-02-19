@@ -1122,7 +1122,7 @@
     color: rgba(94, 93, 82, 0.75);
   }
   table.table-responsive tbody td:last-child{
-    &[data-title]:before {
+    &:before {
       display: none;
     }
   }
