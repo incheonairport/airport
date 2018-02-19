@@ -156,11 +156,13 @@ $(function(){
     };
 
 
+    if( $(window).outerWidth() > 1080 ){
+      $(window).scroll(function(){
+        $('.select-list').removeClass('on');
+        $('.select-link-default').removeClass('on');
+      });
+    }
 
-    $(window).scroll(function(){
-      $('.select-list').removeClass('on');
-      $('.select-link-default').removeClass('on');
-    });
 
     $('.select-list .select-list-item:last-child .select-list-link').on('focusout', function(){
       $('.select-list').removeClass('on');
@@ -320,7 +322,7 @@ $(function(){
 
     this.showHideContent = function(showType, indexNum, $tableNode){
 
-      console.log(1);
+      //console.log(1);
 
       if(showType){
         $tableNode.eq(indexNum).addClass('on');

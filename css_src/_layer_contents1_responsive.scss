@@ -147,6 +147,7 @@
     }
     .search-area{
       width:100%;
+      display:block;
       &-txt{
         width:calc(100% - 132px);
         font-size:1rem;
@@ -919,77 +920,145 @@
       }
     }
   }
+
   .maglev-train-line{
-    padding: 46px 40px 40px;
+    padding:15px;
+    min-height: 150px;
     border: 1px solid #f3f4f8;
-    position: relative;
-    //background: url(/static/ap/images/bg_maglev_train_line_02.png) no-repeat;
-    //background-size: cover;
-    //min-height: 500px;
     &-list{
       width: 100%;
-      min-height: 415px;
       position: relative;
       &:before{
-        content: '';
-        display: block;
-        width: 49.5%;
-        height: 155px;
-        border: 5px solid #ffae43;
-        background: 0;
-        border-left: 0;
-        position: absolute;
-        top: 50px;
-        left: 25%;
-      }
-
-      &:after{
-        content: '';
-        display: block;
-        width: 50%;
-        height: 155px;
-        background: 0;
-        border: 5px solid #ffae43;
-        border-right: 0;
-        border-top: 0;
-        position: absolute;
-        top: 205px;
-        left: 24.5%;
+        width: 84%;
+        height: 3px;
+        top: 45px;
+        left: 27px;
       }
       &-article{
-        float: none;
-        width: 50%;
-        position: absolute;
-        margin-top: 130px;
-        &:nth-child(2){
-          right: 0;
-          top: 0;
-          margin-top: 85px;
-        }
-        &:nth-child(3){
-          right: 0;
-          top: 110px;
-        }
-        &:nth-child(4){
-          left: 0;
-          top: 110px;
-        }
-        &:nth-child(5){
-          left: 0;
-          top: 260px;
-        }
-        &:nth-child(6){
-          right: 0;
-          top: 260px;
-        }
+        text-align: center;
+        margin-top: 60px;
         &-link{
+          font-size:0.825rem;
+          margin-top: 10px;
+          &:before {
+
+
+          }
+          &.step-1:before{
+            background-size: 126px 70px;
+            width: 69px;
+            height: 70px;
+            top: -65px;
+            left: 50%;
+            margin-left: -22px;
+          }
           &.station:before{
-            top: -50px;
+            background:#ffae43;
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            border-radius:50px;
+            top: -20px;
+            left: 50%;
+            margin-left:-6px;
+          }
+
+          &.station:after{
+            content:'';
+            display:block;
+            background:#fff;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            border-radius:50px;
+            top: -17px;
+            left: 50%;
+            margin-left: -3px;
           }
         }
       }
     }
+    //&-time-table{
+    //  display:none;
+    //
+    //  &.on{
+    //    display:block;
+    //  }
+    //}
   }
+
+
+  //.maglev-train-line{
+  //  padding: 46px 40px 40px;
+  //  border: 1px solid #f3f4f8;
+  //  position: relative;
+  //  //background: url(/static/ap/images/bg_maglev_train_line_02.png) no-repeat;
+  //  //background-size: cover;
+  //  //min-height: 500px;
+  //  &-list{
+  //    width: 100%;
+  //    min-height: 415px;
+  //    position: relative;
+  //    &:before{
+  //      content: '';
+  //      display: block;
+  //      width: 49.5%;
+  //      height: 155px;
+  //      border: 5px solid #ffae43;
+  //      background: 0;
+  //      border-left: 0;
+  //      position: absolute;
+  //      top: 50px;
+  //      left: 25%;
+  //    }
+  //
+  //    &:after{
+  //      content: '';
+  //      display: block;
+  //      width: 50%;
+  //      height: 155px;
+  //      background: 0;
+  //      border: 5px solid #ffae43;
+  //      border-right: 0;
+  //      border-top: 0;
+  //      position: absolute;
+  //      top: 205px;
+  //      left: 24.5%;
+  //    }
+  //    &-article{
+  //      float: none;
+  //      width: 50%;
+  //      position: absolute;
+  //      margin-top: 130px;
+  //      &:nth-child(2){
+  //        right: 0;
+  //        top: 0;
+  //        margin-top: 85px;
+  //      }
+  //      &:nth-child(3){
+  //        right: 0;
+  //        top: 110px;
+  //      }
+  //      &:nth-child(4){
+  //        left: 0;
+  //        top: 110px;
+  //      }
+  //      &:nth-child(5){
+  //        left: 0;
+  //        top: 260px;
+  //      }
+  //      &:nth-child(6){
+  //        right: 0;
+  //        top: 260px;
+  //      }
+  //      &-link{
+  //        &.station:before{
+  //          top: -50px;
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
   .timesetting{
     &-date{
       &.f-left,
@@ -1124,7 +1193,6 @@
       }
       th{
         position:relative;
-
         float:left;
         width:100%;
         border-right:1px solid #d9d9d9;
@@ -1139,7 +1207,7 @@
         width:100%;
         text-align:center;
         margin-bottom:-1px;
-        padding:20px 10px;
+        padding:10px 10px;
         height:auto;
         line-height: 1.4;
         &.agreement-offer{

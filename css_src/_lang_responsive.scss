@@ -1,6 +1,10 @@
 @media screen and (max-width:1080px){
 
   .ch{
+
+    .contents-visual{
+      padding-top:30px;
+    }
     // 출/도착시간표 자세히보기 언어변경
     .contents{
       &.dep{
@@ -41,6 +45,30 @@
   }
 
   .en{
+    .boxmodel-list-head{
+      font-size: 1.25rem;
+    }
+    .contents-visual{
+      padding-top:30px;
+    }
+
+    .local-town-item-link{
+      padding:0 20px;
+    }
+
+    .route-bus-line-list-article > p{
+      width:auto;
+      background:none;
+      padding:0;
+      display: inline-block;
+      font-size:0.75rem;
+
+    }
+
+
+
+
+
     .section-bg-contents2{
       width:100%;
     }
@@ -171,6 +199,10 @@
   }
 
   .ja{
+
+    .contents-visual{
+      padding-top:30px;
+    }
 
     // 출/도착시간표 자세히보기 언어변경
     .contents{

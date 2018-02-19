@@ -1213,6 +1213,7 @@
     font-size:1.125rem;
     //font-weight:600;
     text-align:left;
+    transition:all .4s;
     &.point{
       background:#42519e;
       border:0;
@@ -1221,12 +1222,16 @@
     }
     &:hover{
 
+      &:after{
+        right:16px!important;
+      }
     }
     &.ico{
       text-indent:0;
       &:after{
         left:auto;
         right:18px;
+        transition:all .4s;
       }
     }
   }

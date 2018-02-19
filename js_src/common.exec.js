@@ -8,6 +8,8 @@ $(document).ready(function(){
 
 
 
+
+
 });
 
 $(function(){
@@ -181,6 +183,49 @@ $(function(){
       }
 
     });
+
+  })();
+
+
+  (function(){
+
+    if($(window).outerWidth() <= 1080){
+      var tabArea = $('.tab-nav-list');
+      var tabOnText = $('.tab-nav-list-link.on').text();
+      tabArea.prepend('<li class="menu-mobile-item"><button type="button" class="menu-mobile-ui"><span>메뉴선택</span></button></li>');
+      $('.menu-mobile-ui span').text(tabOnText);
+      $('.tab-nav-list .menu-mobile-ui').on('click', function(){
+        $(this).parent().siblings().toggleClass('open-ui');
+      });
+    }
+
+
+
+
+    //function onload( callback ) {
+    //  if(window.addEventListener){
+    //    window.addEventListener('load', callback)
+    //  }else{
+    //    window.attachEvent('onload', callback)
+    //  }
+    //}
+    //
+    //onload( function() {
+    //  document.querySelectorAll('table.vt-dark-res').forEach(function(element) {
+    //    var table  = element,
+    //        theads = Array.prototype.slice.call(table.querySelectorAll('th')).map(function(value) {
+    //          return value.innerHTML;
+    //        });
+    //
+    //    table.querySelectorAll('tr').forEach(function( tr ) {
+    //      tr.querySelectorAll('td').forEach(function( td, y ) {
+    //        td.setAttribute('data-th', theads[y]);
+    //      });
+    //    });
+    //
+    //  });
+    //});
+
 
   })();
 

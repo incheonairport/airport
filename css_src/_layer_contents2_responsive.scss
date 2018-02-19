@@ -108,22 +108,48 @@
     }
     &.packing{
       background:url(/static/ap/images/digr_info_graphic04_m.png) center no-repeat #323648;
-      height:400px;
-      background-size:contain;
+      height:280px;
+      background-size:contain!important;
+    }
+  }
+  .en{
+    .info-graphic{
+      &.packing{
+        background:url(/static/ap/images/digr_info_graphic04_m_en.png) center no-repeat #323648;
+        background-size:contain!important;
+      }
+    }
+  }
+  .ch{
+    .info-graphic{
+      &.packing{
+        background:url(/static/ap/images/digr_info_graphic04_m_ch.png) center no-repeat #323648;
+        background-size:contain!important;
+      }
+    }
+  }
+  .ja{
+    .info-graphic{
+      &.packing{
+        background:url(/static/ap/images/digr_info_graphic04_m_ja.png) center no-repeat #323648;
+        background-size:contain!important;
+      }
     }
   }
 
+
   // go link box
   .link-box{
-    padding:20px 0;
+    padding:20px;
     height:auto;
+    border-radius:10px;
     &-link{
       line-height:1.5;
       strong + span{
         display:block;
       }
       .link-strong{
-        font-size:1.125rem;
+        font-size:1rem;
       }
       .nowlink{
         display:none;

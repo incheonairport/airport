@@ -11,6 +11,15 @@
 }
 
 //출국장혼잡도
+.map-absolute-area{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  margin:auto;
+  display:block;
+}
 .map-departure-congestion01{
   position: relative;
   background:#f3f4f8;
@@ -206,6 +215,33 @@
     }
   }
 }
+.inner-tab2{
+  @extend %clearfix;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  .btn-type-tab{
+    box-sizing: border-box;
+    min-width: 120px;
+    height: 32px;
+    padding: 4px 20px;
+    border: 1px solid #666;
+    color: #444;
+    background: #ffffff;
+    float: left;
+    text-align: center;
+    font-size: 0.875rem;
+    &.on{
+      border: 0;
+      color: #fff;
+      background: #222;
+    }
+    &+.btn-type-tab{
+      margin: 0;
+    }
+  }
+}
 .table2{
   width: 100%;
   &-article {
@@ -221,8 +257,8 @@
     font-size: 0.875rem;
     line-height: 2.6;
     th{
-      font-size: 0.875rem;
-      padding: 0;
+      font-size: 0.875rem!important;
+      padding: 0!important;
       line-height: 2.6;
     }
     td{
@@ -813,6 +849,10 @@
 
 }
 
+
+.menu-mobile-ui{
+  display:none;
+}
 .tab{
 
   &-nav{
@@ -914,6 +954,12 @@
       line-height:54px;
       text-align:center;
       cursor:pointer;
+      a{
+        display:block;
+        width:100%;
+        height:100%;
+      }
+
 
       &.on{
         border:2px solid #42519e;
@@ -921,6 +967,9 @@
         background:#fff;
         font-weight:700;
         color:#42519e;
+        a{
+          color:#42519e;
+        }
       }
     }
 
@@ -1160,12 +1209,16 @@
   }
   &:hover{
 
+    &:after{
+      right:16px!important;
+    }
   }
   &.ico{
     text-indent:0;
     &:after{
       left:auto;
       right:18px;
+      transition:all .4s;
     }
   }
   &.left{
@@ -1210,6 +1263,11 @@
     color:#fff;
   }
   &:hover{
+    color:#999;
+    &:after{
+      right:12px!important;
+
+    }
 
   }
   &.ico{
@@ -1217,6 +1275,7 @@
     &:after{
       left:auto;
       right:14px;
+      transition:all .4s;
     }
   }
 }
@@ -3555,3 +3614,116 @@ img.no-extend{
   // section 제목숨기기
   display:none;
 }
+
+// 교통주차 범주
+.map-common{
+  &-category{
+    display:inline-block;
+    margin-bottom: 10px;
+    @extend %clearfix;
+
+    &-item{
+      float: left;
+      line-height: 1.2;
+      width:auto;
+      //padding:0 10px;
+
+      &-name{
+        width:100%;
+        padding: 10px 0 5px 40px;
+        display:inline-block;
+        font-family: spoqa, sans-serif;
+        font-size: 0.875rem;
+        text-align: center;
+        position: relative;
+        &:before{
+          content: '';
+          display:block;
+          padding-left: 5px;
+          margin: 0 auto;
+          position: absolute;
+          top: 8px;
+          left:10px;
+          right:auto;
+          //bottom:0;
+          background: url(/static/ap/images/spr_ico_map_category.png) no-repeat;
+        }
+        &.entry114{
+          &:before{
+            background-position: 0 -1px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.arrival-af{
+          &:before{
+            background-position:-39px -1px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.infodesk{
+          &:before{
+            background-position: -78px -1px;
+            width: 22px;
+            height: 23px;
+          }
+        }
+        &.ticket{
+          &:before{
+            background-position: -124px -1px;
+            width: 22px;
+            height: 24px;
+          }
+        }
+        &.busstop{
+          &:before{
+            background-position: -166px 0px;
+            width: 22px;
+            height: 24px;
+          }
+        }
+        &.line1{
+          &:before{
+            background-position: -208px 0;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.line4{
+          &:before{
+            background-position:-249px 0;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.line5{
+          &:before{
+            background-position:-300px 0;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        &.line9{
+             &:before{
+               background-position: -351px 0;
+               width: 22px;
+               height: 22px;
+             }
+           }
+        &.gate{
+          &:before{
+            background-position: -391px 0;
+            width: 22px;
+            height: 22px;
+          }
+        }
+
+
+      }
+
+    }
+  }
+
+}
+

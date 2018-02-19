@@ -334,7 +334,7 @@ $(function(){
     $('.guide-list').find('.guide-list-item').each(function(){
       var guideLink = $(this).find('.guide-list-link');
       var guideLinkText = guideLink.text().length;
-      console.log(guideLinkText);
+      //console.log(guideLinkText);
 
       if(guideLinkText < 4 ){
         $(this).addClass('layout-div');
@@ -433,22 +433,43 @@ $(function(){
     //
     //});
 
-    if($('html').hasClass('main') ){
-      $('.gnb-depth1-link').on('focusin', function(e){
-        $('.header').removeClass('top-big-open');
-        $('.gnb').removeClass('top-big-open');
-        if( $(window).outerWidth() > 1200 ){
-          e.stopPropagation();
 
-          if( !$('.gnb').hasClass('fixed') ){
-            //$('.header, .gnb').addClass('show');
-          }
-
-
-        }
-
+    if($('.header').hasClass('top-big-open') ){
+      $('.top-popup-inner').attr("tabindex", 0);
+      $('.header-site-link, .gnb-depth1-item, .gnb-depth1-link').on('focusin', function (e) {
+        $('.top-popup').addClass('.top-open');
+        $('.gnb, .header, .quick, .top-popup').removeClass('top-big-open');
+        //$('.gnb, .header, .quick').removeClass('top-open');
+        $('.header, .gnb').addClass('bg');
       });
+      $('.top-big-popup-close').on('focusout', function (e) {
+        //$('.gnb, .header, .quick').addClass('top-big-open');
+        //$('.gnb, .header, .quick').addClass('top-open');
+      });
+
     }
+
+
+
+
+    //if($('html').hasClass('main') ){
+    //
+    //  if( $(this).scrollTop() < 400 ) {
+    //    $('.gnb-depth1-link').on('focusin', function (e) {
+    //      $('.header').removeClass('top-big-open');
+    //      $('.gnb').removeClass('top-big-open');
+    //      $('.gnb').removeClass('top-open');
+    //      $('.header').removeClass('top-open');
+    //      if ($(window).outerWidth() > 1200) {
+    //        e.stopPropagation();
+    //
+    //        if (!$('.gnb').hasClass('fixed')) {
+    //          //$('.header, .gnb').addClass('show');
+    //        }
+    //      }
+    //    });
+    //  }
+    //}
 
 
 
@@ -494,7 +515,7 @@ $(function(){
 
         if( !$(this).data().open ){
 
-          console.log($(this).data().open);
+          //console.log($(this).data().open);
 
           $('.gnb-depth1-item').removeClass('on').children('.gnb-depth1-link').data('open', false);
           $(this).parents('.gnb-depth1-item').addClass('on');
@@ -502,7 +523,7 @@ $(function(){
 
         } else {
 
-          console.log($(this).data().open);
+          //console.log($(this).data().open);
 
           $(this).parents('.gnb-depth1-item').removeClass('on').children('.gnb-depth1-link').data('open', false);
           $(this).data('open', false);
@@ -638,7 +659,7 @@ $(function(){
 
     $('.top-popup-control-arrow .arrow.next').on('click', function(){
 
-      console.log(24);
+      //console.log(24);
 
       if( !TopPopup.checkAnimate() ){
 

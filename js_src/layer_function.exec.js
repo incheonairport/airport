@@ -1,7 +1,28 @@
 /*******************
  * Layer Execution *
  *******************/
+$(document).ready(function(){
 
+  $('.tab-area-heading a').on('click', function(e){
+    e.preventDefault();
+  });
+
+
+  $('#btnFindTermClose').on('click', function(){
+    $('.layer-terminal-check-btn').focus();
+
+  });
+
+  //$('#btnFindTermClose').on('keydown', function(){
+  //  $('.find-my-terminal').attr('tabindex', 0).focus();
+  //});
+
+  $('.layer-terminal-check-btn').on('click', function(){
+    $('.find-my-terminal').attr('tabindex', 0).focus();
+  });
+
+
+});
 $(function(){
 
   (function(){
@@ -183,5 +204,19 @@ $(function(){
     });
 
   })();
+
+  // map touchmove
+  //(function(){
+  //  var tracks = [];
+  //  $('#mapArea svg').on("touchmove", function (event) {
+  //    if (event.originalEvent.touches.length === 2) {
+  //      tracks.push([ [event.originalEvent.touches[0].pageX, event.originalEvent.touches[0].pageY], [event.originalEvent.touches[1].pageX, event.originalEvent.touches[1].pageY] ]);
+  //    }
+  //  }).on("touchstart", function () {
+  //    tracks = [];
+  //  }).on("touchend", function () {
+  //
+  //  });
+  //})();
 
 });

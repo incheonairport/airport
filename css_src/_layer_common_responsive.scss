@@ -85,22 +85,44 @@
     &.col-3{
       .step2-list-item{
         width: calc(33.33% - 8px);
-        min-height:380px;
+        //min-height:380px;
+        min-height:inherit!important;
       }
     }
     &.col-4{
-      .step2-list-item{
-        width: calc(25% - 9px);
-        min-height:592px;
-      }
+       .step2-list-item{
+         width: calc(25% - 9px);
+         //min-height:592px;
+         min-height:inherit!important;
+       }
+       &.white{
+         .step2-list-item{
+           //min-height:300px;
+           min-height:inherit!important;
+           margin-left:0;
+         }
+       }
+     }
+    &.col-5{
       &.white{
         .step2-list-item{
-          min-height:300px;
+          min-height:inherit!important;
+          margin-left:0;
+        }
+      }
+    }
+    &.col-6{
+      &.white{
+        .step2-list-item{
+          min-height:inherit!important;
+          margin-left:0;
         }
       }
     }
     &-item{
-      margin-left:12px;
+      margin-left:0;
+      margin-bottom:10px;
+      width:100%!important;
       .step2-list-head{
         text-align:center;
         .article-tit{
@@ -266,7 +288,16 @@
   // common
   table{
     .btn-type-small{
-      min-width:inherit;
+
+      min-width: inherit;
+      border-radius: 5px;
+      font-size: 0.825rem;
+      line-height: inherit;
+      padding: 5px 10px;
+      height: auto;
+      &:after{
+        display:none;
+      }
     }
   }
   // layout
@@ -374,6 +405,17 @@
 
 
   // 출국장혼잡도
+  // 서브 탭
+  .inner-tab2{
+    width:100%;
+    position: static;
+    .btn-type-tab{
+      box-sizing: border-box;
+      width:50%;
+      height: 50px;
+    }
+  }
+  // 팝업 지도 기능 이미지1
   .map-departure-congestion01{
     //height:240px;
     .map-absolute-area{
@@ -404,6 +446,7 @@
     }
 
   }
+  // 팝업 지도 기능 이미지2
   .map-departure-congestion02{
     //height:240px;
     & .map-absolute-area{
@@ -433,6 +476,7 @@
       }
     }
   }
+  // 팝업 지도 기능 포인터
   .congestion{
     &-mark1-1{
       position: absolute;
@@ -514,6 +558,7 @@
       }
     }
   }
+  // 스크롤 테이블
   .table2{
     &-article {
       position: static;
@@ -527,6 +572,7 @@
       text-align:center;
       th{
         text-align:center;
+        line-height:1.4;
       }
       td{
         text-align:center!important;
@@ -574,13 +620,15 @@
     }
 
     &-pop-up{
-      top: 0;
+      .laye-articler-title{
+        font-size:0.825rem;
+      }
+      top: -181px;
       left: 0;
       width: 100%;
+      padding: 10px!important;
       height: auto;
-      margin-bottom:20px;
-      background: #fff;
-      border: 2px solid #42519e;
+      margin-bottom:10px;
       &-depth{
       }
       &-list{
@@ -588,17 +636,21 @@
       }
       &-item{
         &:first-child{
-          width: 70px;
+          width: 58px;
         }
-        font-size: 0.825rem;
+        font-size: 0.75rem;
         letter-spacing: -1px;
         margin-left:0;
         float: left;
         line-height: 1;
         &:before{
-          width: 14px;
-          height: 14px;
+          width: 10px;
+          height: 10px;
+          margin-right:4px;
         }
+      }
+      dd.table-guide-pop-up-item:before{
+        display:none;
       }
     }
 
@@ -623,6 +675,257 @@
 
     }
   }
+  //.map-departure-congestion01{
+  //  //height:240px;
+  //  .map-absolute-area{
+  //    width: 256px;
+  //    height: 184px;
+  //    background-size:contain;
+  //  }
+  //  .remarks-column{
+  //    top:10px;
+  //    left:10px;
+  //    &-list{
+  //      &-item{
+  //        font-size:0.825rem;
+  //        &:before{
+  //          width: 14px;
+  //          height: 14px;
+  //          margin-top: 4px;
+  //        }
+  //        &:first-child:before{
+  //          background: #8a95a4;
+  //          border-radius: 0;
+  //        }
+  //        &+.remarks-column-list-item{
+  //          margin-top: 10px;
+  //        }
+  //      }
+  //    }
+  //  }
+  //
+  //}
+  //.map-departure-congestion02{
+  //  //height:240px;
+  //  & .map-absolute-area{
+  //    width: 256px;
+  //    height: 184px;
+  //    background-size:contain;
+  //  }
+  //  .remarks-column{
+  //    top:10px;
+  //    left:10px;
+  //    &-list{
+  //      &-item{
+  //        font-size:0.825rem;
+  //        &:before{
+  //          width: 14px;
+  //          height: 14px;
+  //          margin-top: 4px;
+  //        }
+  //        &:first-child:before{
+  //          background: #8a95a4;
+  //          border-radius: 0;
+  //        }
+  //        &+.remarks-column-list-item{
+  //          margin-top: 10px;
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
+  //.congestion{
+  //  &-mark1-1{
+  //    position: absolute;
+  //    top: 178px;
+  //    left: 322px;
+  //  }
+  //  &-mark1-2{
+  //    position: absolute;
+  //    top: 82px;
+  //    left: 158px;
+  //    .congestion-mark-number{
+  //      left: 31px;
+  //      top: 9px;
+  //    }
+  //  }
+  //  &-mark1-3{
+  //    position: absolute;
+  //    top: 72px;
+  //    left: 133px;
+  //  }
+  //  &-mark1-4{
+  //    position: absolute;
+  //    top: 72px;
+  //    left: 77px;
+  //  }
+  //  &-mark1-5{
+  //    position: absolute;
+  //    top: 84px;
+  //    left: 45px;
+  //    .congestion-mark-number{
+  //      right: -20px;
+  //      top: 9px;
+  //    }
+  //
+  //  }
+  //  &-mark1-6{
+  //    position: absolute;
+  //    top: 179px;
+  //    right: 161px;
+  //  }
+  //
+  //  &-mark2-1{
+  //    position: absolute;
+  //    top: 72px;
+  //    left: 138px;
+  //  }
+  //
+  //  &-mark2-2{
+  //    position: absolute;
+  //    top: 72px;
+  //    left: 70px;
+  //  }
+  //
+  //  &-mark{
+  //    &-number{
+  //      position:absolute;
+  //      border: 1px solid #7d7d7d;
+  //      height:20px;
+  //      &:after{
+  //        display:none;
+  //      }
+  //      &:before{
+  //        display:none;
+  //      }
+  //    }
+  //
+  //  }
+  //
+  //  &-mark{
+  //    &-color{
+  //      position:absolute;
+  //      width: 14px!important;
+  //      height: 14px!important;
+  //      font-size:0.75rem;
+  //      line-height:14px!important;
+  //      left: 19px;
+  //      right: 0;
+  //      bottom: -42px;
+  //    }
+  //  }
+  //}
+  //.table2{
+  //  &-article {
+  //    position: static;
+  //    padding-top:0;
+  //    &-box {
+  //      height:auto;
+  //      overflow: inherit;
+  //    }
+  //  }
+  //  &.vt-dark{
+  //    text-align:center;
+  //    th{
+  //      text-align:center;
+  //      line-height:1.4;
+  //    }
+  //    td{
+  //      text-align:center!important;
+  //    }
+  //  }
+  //  table{
+  //    position: static;
+  //  }
+  //  thead tr{
+  //    position: static;
+  //  }
+  //  thead th{
+  //
+  //    &.wid{
+  //      width:auto;
+  //    }
+  //    width: auto;
+  //  }
+  //  thead th:first-child{
+  //    width: auto;
+  //  }
+  //  tbody{
+  //    display: table-row-group;
+  //    height: auto;
+  //  }
+  //  tbody tr{
+  //    height:auto;
+  //  }
+  //  tbody td{
+  //    text-align: center;
+  //  }
+  //}
+  //.table-guide{
+  //  &-btn{
+  //    width:100%;
+  //    float: none;
+  //    padding: 0;
+  //    &-text{
+  //      font-size: 0.825rem;
+  //    }
+  //  }
+  //
+  //  &-ico{
+  //    float:right;
+  //    margin-left:0;
+  //  }
+  //
+  //  &-pop-up{
+  //    top: 0;
+  //    left: 0;
+  //    width: 100%;
+  //    height: auto;
+  //    margin-bottom:20px;
+  //    background: #fff;
+  //    border: 2px solid #42519e;
+  //    &-depth{
+  //    }
+  //    &-list{
+  //      margin-bottom: 10px;
+  //    }
+  //    &-item{
+  //      &:first-child{
+  //        width: 70px;
+  //      }
+  //      font-size: 0.825rem;
+  //      letter-spacing: -1px;
+  //      margin-left:0;
+  //      float: left;
+  //      line-height: 1;
+  //      &:before{
+  //        width: 14px;
+  //        height: 14px;
+  //      }
+  //    }
+  //  }
+  //
+  //  &-list{
+  //    float: none;
+  //    display:inline-block;
+  //    margin-top:20px;
+  //  }
+  //
+  //  &-item{
+  //    margin-left: 6px;
+  //    line-height:1;
+  //    letter-spacing:-1px;
+  //    &:first-child{
+  //      margin-left:0;
+  //    }
+  //    &:before{
+  //      margin-right:4px;
+  //      width: 14px;
+  //      height: 14px;
+  //    }
+  //
+  //  }
+  //}
 
   // layer popup
   .layer{
@@ -763,6 +1066,12 @@
     &-wrap{
       position:absolute;
     }
+    &.size{
+      width: 100%;
+      &.max-height{
+        max-height:inherit;
+      }
+    }
     &-area{
       padding:0;
     }
@@ -895,11 +1204,13 @@
     &.line{
       .inner-col {
         &:first-child {
-          border-bottom: 1px solid #d9d9d9;
-          padding-bottom:10px;
+
+
         }
         &:last-child {
           margin-top:16px;
+          border-bottom: 1px solid #d9d9d9;
+          padding-bottom: 30px!important;
         }
       }
       &:before{
@@ -976,13 +1287,63 @@
         }
       }
       &-list{
+        &.map{
+          .menu-mobile-ui{
+            display:none;
+          }
+          .tab-nav-list-item{
+            display:block;
+            width:50%!important;
+
+            .tab-nav-list-link{
+              background: #f2f2f2;
+              border: 1px solid #d9d9d9;
+              &.on{
+                background:#fff;
+              }
+            }
+          }
+        }
+        .menu-mobile-ui{
+          width:100%;
+          display: block;
+          padding: 5px 30px;
+          line-height: 1.5;
+          background: #f2f2f2;
+          border: 1px solid #d9d9d9;
+          font-size: 1rem;
+          font-weight: 900;
+          color: #666;
+          text-align: center;
+          position:relative;
+          &:after{
+            content: '';
+            width: 12px;
+            height: 7px;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            bottom: 0;
+            margin: auto;
+            transform: rotate(180deg);
+            background: url(/static/ap/images/spr_ico_global.png) no-repeat -67px -67px;
+          }
+
+        }
         &-item{
-          width:50%!important;
+          display:none;
+          width:100%!important;
+          &.open-ui{
+            display:block;
+          }
         }
         &-link{
+          padding:5px 30px;
+          border-width:1px;
           border-bottom-color:#d9d9d9;
           font-size:1rem;
-          border-width:2px;
+          background:#fff;
           &.on{
             border-bottom:2px solid #42519e;
           }
@@ -1074,12 +1435,15 @@
   }
   .btn-type-small{
     min-width:100%;
-    height:40px;
-    line-height:40px;;
-    font-size:1rem;
+    height:auto;
+    line-height:inherit;
+    font-size:0.825rem;
     font-weight:600;
-    padding:0;
+    padding:5px 10px;
     text-align:center;
+    &:after{
+      display:none;
+    }
   }
 
   .btn-type-event{
@@ -1356,20 +1720,20 @@
     &.col-3{
       .step2-list-item{
         width:100%;
-        min-height:inherit;
+        min-height:inherit!important;
       }
     }
     &.col-4{
       .step2-list-item{
         width:100%;
-        min-height:inherit;
+        min-height:inherit!important;
       }
     }
     &.col-5{
       &.white{
         .step2-list-item {
           width:100%;
-          min-height:inherit;
+          min-height:inherit!important;
         }
       }
     }
@@ -1377,30 +1741,43 @@
       &.white{
         .step2-list-item {
           width:100%;
-          min-height:inherit;
+          min-height:inherit!important;
 
         }
       }
     }
     &-item{
+      padding: 15px;
       float:none;
       margin-left:0;
       margin-top:24px;
-      padding:24px 20px 20px;
+      .article-num{
+        font-size:2rem!important;
+      }
+
+      //padding:24px 20px 20px;
       &:first-child{
         margin-top:0;
       }
       .step2-list-head{
         text-align:center;
         .article-tit{
-          font-size:1.125rem;
+          font-size:1rem;
+          padding: 0 20px;
+          display: inline-block;
+          line-height: 1.4;
         }
+
         .article-num-box{
           height:10px;
           margin-bottom:14px;
         }
       }
       .step2-list-body{
+        .list1-item{
+          margin-bottom:5px;
+          font-size:0.825rem;
+        }
         text-align:center;
         .article-desc{
           color:#fff;
@@ -1690,6 +2067,15 @@
         display: none;
       }
     }
+
+
+    //세관신고
+    &.customs-declaration{
+      background:url(/static/ap/images/bg_sub_layer_banner_bg_customs_declaration.jpg) no-repeat left;
+    }
+    &.dep-quarantine{
+      background:url(/static/ap/images/bg_sub_layer_banner_dep_declaration.jpg) no-repeat -170px;
+    }
   }
 
 
@@ -1819,8 +2205,7 @@
   .boxsing {
     border:0;
     border-bottom:1px solid #d9d9d9;
-    padding: 0;
-    padding-bottom: 15px;
+    padding: 0 0 30px;
   }
 
 
@@ -1921,12 +2306,152 @@
 }
 
 
-@media screen and (max-width:439px) {
+@media screen and (max-width:780px) {
+  // 교통주차 범주
+  .map-common{
+    &-category{
+
+      &-item{
+
+        &-name{
+          padding: 6px 0 0 26px;
+          &:before{
+            background-size: 398px 70px;
+          }
+          &.entry114{
+            &:before{
+              background-position: 0 0;
+              width: 11px;
+              height: 11px;
+            }
+          }
+          &.arrival-af{
+            &:before{
+              background-position:-20px 0px;
+              width: 11px;
+              height: 11px;
+            }
+          }
+          &.infodesk{
+            &:before{
+              background-position: -39px 0px;
+              width: 12px;
+              height: 12px;
+            }
+          }
+          &.ticket{
+            &:before{
+              background-position: -62px 0px;
+              width: 13px;
+              height: 13px;
+            }
+          }
+          &.busstop{
+            &:before{
+              background-position: -83px 0px;
+              width: 13px;
+              height: 12px;
+            }
+          }
+          &.line1{
+            &:before{
+              background-position: -104px 0;
+              width: 11px;
+              height: 11px;
+            }
+          }
+          &.line4{
+            &:before{
+              background-position:-125px 0;
+              width: 11px;
+              height: 11px;
+            }
+          }
+          &.line5{
+            &:before{
+              background-position:-150px 0;
+              width: 11px;
+              height: 11px;
+            }
+          }
+          &.line9{
+            &:before{
+              background-position: -176px 0;
+              width: 11px;
+              height: 11px;
+            }
+          }
+          &.gate{
+            &:before{
+              background-position: -196px 0;
+              width: 11px;
+              height: 11px;
+            }
+          }
+
+
+        }
+
+      }
+    }
+
+  }
+
+  .table.vt.pd0 td, .table.vt-dark.pd0 td{
+    padding:10px 0!important;
+    word-wrap: break-word!important;
+  }
+  .table.vt th:after {
+    display:none;
+  }
   .table{
+
     //&.table-block{
     //  display:table!important;
     //  white-space: normal!important;
     //}
+
+    td,th,strong,p{
+      font-size:0.75rem!important;
+      word-break: inherit!important;
+      word-wrap: break-word!important;
+    }
+
+    td{
+      .list1-item{
+        &:before{
+          display:none;
+        }
+      }
+
+      .download{
+        text-indent:-999em;
+        width:30px;
+        min-width:30px;
+        height:30px;
+        margin: auto;
+        &:after{
+          background: url(/static/ap/images/spr_ico_global.png) no-repeat -68px -98px;
+          width: 13px;
+          height: 12px;
+          right:auto;
+        }
+      }
+      .arrow-small-right{
+        text-indent:-999em;
+        width:30px;
+        min-width:30px;
+        height:30px;
+        margin: auto;
+        &:after{
+          background: url(/static/ap/images/spr_ico_global.png) no-repeat -383px -99px;
+          width: 14px;
+          height: 12px;
+          right:auto;
+        }
+
+      }
+    }
     &.vt{
       &.board-list{
         overflow: visible;
@@ -1934,6 +2459,7 @@
         //white-space: normal;
         display: block;
         //overflow-x: scroll;
+        white-space: nowrap;
         td{
           span{
             font-size:0.8125rem;
@@ -1960,6 +2486,7 @@
         th{
           font-size: 0.815rem;
           padding: 10px 5px;
+
         }
         colgroup{
           col{
@@ -1974,7 +2501,7 @@
         }
         .text-over{
           max-width: 0;
-          width: 83.4%;
+          width: 84.4%;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -1986,19 +2513,21 @@
     }
     &.vt,
     &.vt-dark{
-      overflow-x:auto;
-      overflow-y: hidden;
-      white-space: nowrap;
-      display: inline-block;
+      //overflow-x:auto;
+      //overflow-y: hidden;
+      //white-space: nowrap;
+      //display: inline-block;
+      table-layout: fixed;
       th{
-        text-align: left;
-        padding:10px;
+        //text-align: left;
+        padding:5px;
+        vertical-align: middle;
         &.sub{
-          padding-left:12px;
+          padding-left:5px;
         }
       }
       td{
-        padding: 10px;
+        padding: 5px;
       }
       td.center{
         text-align: left;
@@ -2007,8 +2536,8 @@
     &.hr{
 
 
-      display:block;
-      overflow-x:auto;
+      //display:block;
+      //overflow-x:auto;
       .radio-box{
         margin-top:10px;
         &:first-child{
@@ -2024,10 +2553,9 @@
         line-height:1.4;
         letter-spacing: -1px;
         font-weight:900;
-        padding:0 11px;
-        font-size:1rem;
         padding:10px;
-        text-align:left;
+        font-size:1rem;
+        text-align:center;
       }
       td{
         padding: 10px;

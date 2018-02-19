@@ -1176,8 +1176,13 @@
     &-item{
       width: 20%;
       float: left;
+      position:relative;
       .select-category{
-        display: none;
+        //display: none;
+        position: absolute;
+        //width:100%;
+        //height:46px;
+        //display:block;
         &-label{
           padding: 10px 20px;
           display: block;
@@ -1186,6 +1191,7 @@
           cursor: pointer;
           &.ico{
             text-indent: 0;
+
             &:after{
               background-position:-164px -32px;
               width: 13px;

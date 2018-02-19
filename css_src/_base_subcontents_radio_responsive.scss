@@ -1,6 +1,13 @@
 // 780
 @media screen and (max-width:1080px) {
+
+  .field-radio{
+    visibility:hidden;
+  }
   .radio-type1 {
+    &-radio{
+      visibility:hidden;
+    }
     &-label {
       height: 27px;
       padding: 0 20px 0 40px;
@@ -19,6 +26,9 @@
   }
 
   .radio-type2{
+    &-radio{
+      visibility:hidden;
+    }
     &-label{
       &+.radio-type1-radio{
         margin-left:40px;
@@ -69,6 +79,9 @@
 
 
   .checkbox-type2{
+    &-radio{
+      visibility:hidden;
+    }
     text-align: center;
     &-radio{
       display: none;

@@ -215,6 +215,9 @@
         border-right: none;
       }
       &-link {
+        &:hover{
+          color:#41519e;
+        }
 
         &.on {
           color: #41519e;
@@ -1294,7 +1297,11 @@ button{
   }
   @extend %clearfix;
   .field-radio{
-    display:none;
+    //display:none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
     & + .field-radio-label{
       display: block;
       padding:5px 10px;
