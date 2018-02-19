@@ -334,7 +334,7 @@ $(function(){
     $('.guide-list').find('.guide-list-item').each(function(){
       var guideLink = $(this).find('.guide-list-link');
       var guideLinkText = guideLink.text().length;
-      console.log(guideLinkText);
+      //console.log(guideLinkText);
 
       if(guideLinkText < 4 ){
         $(this).addClass('layout-div');

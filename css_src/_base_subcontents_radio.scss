@@ -75,7 +75,6 @@ input[type="radio"]:focus,input[type="checkbox"]:focus{
   }
 }
 
-
 .radio-type2{
   text-align:left;
   &-radio{
@@ -136,6 +135,7 @@ input[type="radio"]:focus,input[type="checkbox"]:focus{
   //width: 24px;
   //height: 24px;
   //position:absolute;
+
 
   &:checked {
     &+label{

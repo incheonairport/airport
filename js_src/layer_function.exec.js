@@ -1,7 +1,28 @@
 /*******************
  * Layer Execution *
  *******************/
+$(document).ready(function(){
 
+  $('.tab-area-heading a').on('click', function(e){
+    e.preventDefault();
+  });
+
+
+  $('#btnFindTermClose').on('click', function(){
+    $('.layer-terminal-check-btn').focus();
+
+  });
+
+  //$('#btnFindTermClose').on('keydown', function(){
+  //  $('.find-my-terminal').attr('tabindex', 0).focus();
+  //});
+
+  $('.layer-terminal-check-btn').on('click', function(){
+    $('.find-my-terminal').attr('tabindex', 0).focus();
+  });
+
+
+});
 $(function(){
 
   (function(){

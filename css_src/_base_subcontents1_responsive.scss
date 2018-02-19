@@ -8,6 +8,53 @@
   }
 
 
+/* 모바일 bg left로 밀기 */
+  .contents-visual{
+    &-head{
+      padding:0 20px;
+    }
+    &.departure{
+      background:url(/static/ap/images/bg_sub_visual_departure.jpg) left no-repeat;
+    }
+    &.search-airline{
+      background:url(/static/ap/images/bg_sub_visual_airline.jpg) left no-repeat;
+    }
+    &.facilities{
+      background:url(/static/ap/images/bg_base_top06.jpg) left no-repeat;
+    }
+    &.path-departure{
+      background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) left no-repeat;
+    }
+    &.airline-city{
+      background:url(/static/ap/images/bg_sub_visual_airline.jpg) left no-repeat;
+    }
+    &.departure-procedures{
+      background:url(/static/ap/images/bg_departure_procedures.jpg) left no-repeat;
+    }
+    &.bg1{
+      background:url(/static/ap/images/bg_movie01.jpg) left no-repeat;
+    }
+    &.bg4{
+      background:url(/static/ap/images/bg_base_top04.jpg) left no-repeat;
+    }
+    &.bg5{
+      background:url(/static/ap/images/bg_base_top05.jpg) left no-repeat;
+    }
+    &.path-departure{
+      background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) left no-repeat;
+    }
+    &.entry-route{
+      background:url(/static/ap/images/bg_entry_route.jpg) left no-repeat;
+    }
+    &.bg8{
+      background:url(/static/ap/images/bg_immigration_procedure.jpg) left no-repeat;
+    }
+    &.domestic{
+      background:url(/static/ap/images/bg_domestic.jpg) left no-repeat;
+    }
+  }
+
+
 
   //.contents-visual{
   //  &.departure-procedures{
@@ -273,8 +320,6 @@
       height: 50px;
     }
   }
-
-
   // 팝업 지도 기능 이미지1
   .map-departure-congestion01{
     //height:240px;
@@ -432,6 +477,7 @@
       text-align:center;
       th{
         text-align:center;
+        line-height:1.4;
       }
       td{
         text-align:center!important;
@@ -986,12 +1032,57 @@
 
   .tab{
     &-nav{
+      .menu-mobile-ui{
+        width:100%;
+        display: block;
+        padding: 5px 30px;
+        line-height: 1.5;
+        background: #f2f2f2;
+        border: 1px solid #d9d9d9;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #666;
+        text-align: center;
+        position:relative;
+        &:after{
+          content: '';
+          width: 12px;
+          height: 7px;
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 10px;
+          bottom: 0;
+          margin: auto;
+          transform: rotate(180deg);
+          background: url(/static/ap/images/spr_ico_global.png) no-repeat -67px -67px;
+        }
+
+      }
       &-list{
+        &.map{
+          .tab-nav-list-item{
+            display:block;
+            width:50%!important;
+          }
+        }
+        &-item{
+          display:none;
+          &.open-ui{
+            display:block;
+          }
+        }
+
+        width:100%!important;
+
         &-link{
-          height:54px;
+          padding:5px 30px;
+          border-width:1px;
           border-bottom-color:#d9d9d9;
           font-size:1rem;
-          letter-spacing:-1px;
+          background:#fff;
+          height: inherit;
+          line-height:1.5;
           &.on{
             border-bottom:2px solid #42519e;
           }
@@ -1103,6 +1194,19 @@
         right:0;
         bottom:0;
         margin:auto;
+      }
+
+      &.down{
+        margin-right:4px;
+        text-indent:-999em;
+        padding:0;
+        &:before{
+          top:0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin:auto;
+        }
       }
     }
     &.mb10{
@@ -1574,7 +1678,10 @@
       display: inline-block;
     }
   }
-
+  .y-scroll{
+    max-height: inherit;
+    overflow-y: inherit;
+  }
   //.table-m{
   //  display: inline-block !important;
   //  white-space: pre-line;

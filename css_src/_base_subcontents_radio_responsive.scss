@@ -1,7 +1,9 @@
 // 780
 @media screen and (max-width:1080px) {
 
-
+  .field-radio{
+    visibility:hidden;
+  }
   .radio-type1 {
     &-radio{
       visibility:hidden;

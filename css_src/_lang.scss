@@ -1,5 +1,62 @@
 .ch{
 
+  font-size:14px;
+
+  //검색
+  .gnb.bg .header-search-btn.gnb-search:after{
+    left:-1px;
+  }
+
+  .contents-visual{
+    padding-top:60px;
+  }
+
+  .tab-sub.terms{
+    .tab-sub-list-item{
+      a{
+        font-size: 1rem;
+        padding-top: 8px;
+        line-height: 18px;
+      }
+    }
+
+  }
+
+
+.header-search{
+  button{
+    font-size:0.825rem;
+  }
+}
+  .airline-table{
+    td{
+      &:nth-child(1):before{
+        content:'机场名称';
+      }
+      &:nth-child(2):before{
+        content:'国籍';
+      }
+      &:nth-child(3):before{
+        content:'代表联系';
+      }
+      &:nth-child(4):before{
+        content:'机场联系人';
+      }
+      &:nth-child(5):before{
+        content:'IATA';
+      }
+      &:nth-child(6):before{
+        content:'ICAO';
+      }
+      &:nth-child(7):before{
+        content:'出发状态';
+      }
+      &:nth-child(8):before{
+        content:'到达状态';
+      }
+    }
+  }
+
   * {
     font-family: 'Noto Sans SC', roboto, spoqa ,sans-serif!important;
   }
@@ -71,6 +128,86 @@
 }
 
 .en{
+
+  footer{
+    //footer 셀렉트
+    .select-link .select-list-item{
+      text-indent:0;
+    }
+    .select-link .select-list-link{
+      font-size: 0.75rem;
+      line-height: 1.4;
+      padding-left: 12px;
+      margin-bottom: 10px;
+    }
+  }
+
+
+
+  .faq-category{
+    &-list{
+      &-item{
+        .select-category{
+          &-label{
+            &.ico{
+              text-indent: 0;
+              font-size: 0.75rem;
+              letter-spacing: -0.5px;
+              &:after{
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .local-town-item{
+    padding:0 20px;
+    height:40px;
+    font-size:0.9rem;
+    letter-spacing:-1px;
+  }
+
+  .route-bus-line-list-article > p{
+   width:140px;
+    background:#f2f4f7;
+    padding:3px;
+    display: inline-block;
+  }
+
+  .airline-table{
+    td{
+      &:nth-child(1):before{
+        content:'Airline name';
+      }
+      &:nth-child(2):before{
+        content:'Nationality';
+      }
+      &:nth-child(3):before{
+        content:'Representative contact';
+      }
+      &:nth-child(4):before{
+        content:'Airport Contacts';
+      }
+      &:nth-child(5):before{
+        content:'IATA';
+      }
+      &:nth-child(6):before{
+        content:'ICAO';
+      }
+      &:nth-child(7):before{
+        content:'Departure Status	';
+      }
+      &:nth-child(8):before{
+        content:'Arrival Status';
+      }
+    }
+  }
+
+  .guidebox-col.col-3{
+    padding:20px;
+  }
   .contents-visual{
     padding-top:60px;
   }
@@ -98,9 +235,12 @@
     }
   }
 
+
   .tab-nav-list-link{
-    font-size:1.125rem;
+    font-size:0.825rem;
   }
+
+
 
   .contents-visual{
     .section-bg-contents2:last-child{
@@ -908,6 +1048,62 @@
 }
 
 .ja{
+  //검색버튼
+  .header-search-btn{
+    font-size:0.75rem;
+  }
+  .header-search-input{
+    font-size:0.75rem;
+  }
+  .gnb.bg .header-search-btn.gnb-search:after{
+    left:-2px;
+  }
+
+
+
+  .contents-visual{
+    padding-top:60px;
+  }
+
+  .tab-sub.terms{
+    .tab-sub-list-item{
+      a{
+        font-size: 1rem;
+        padding-top: 8px;
+        line-height: 18px;
+      }
+    }
+
+  }
+
+  .airline-table{
+    td{
+      &:nth-child(1):before{
+        content:'机场名称';
+      }
+      &:nth-child(2):before{
+        content:'国籍';
+      }
+      &:nth-child(3):before{
+        content:'代表联系';
+      }
+      &:nth-child(4):before{
+        content:'机场联系人';
+      }
+      &:nth-child(5):before{
+        content:'IATA';
+      }
+      &:nth-child(6):before{
+        content:'ICAO';
+      }
+      &:nth-child(7):before{
+        content:'出发状态';
+      }
+      &:nth-child(8):before{
+        content:'到达状态';
+      }
+    }
+  }
 
   //main
   .guide-wrap{

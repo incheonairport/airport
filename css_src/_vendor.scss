@@ -60,6 +60,52 @@ html.ie{
     &.left{
     }
   }
+  .radio-type1{
+    display:block;
+    &-radio{
+      &:checked {
+        &+label{
+          padding: 0 20px 0 10px;
+          &.ico:after {
+            display:none;
+          }
+        }
+      }
+    }
+    &-label{
+      padding: 0 20px 0 10px;
+      &.ico{
+        text-indent:0;
+        &:after {
+          display:none;
+        }
+      }
+    }
+  }
+  .radio-type2{
+    text-align:left;
+    display:block;
+    &-radio{
+      &:checked {
+        &+label{
+          padding: 0 20px 0 10px;
+          &.ico:after {
+            display:none;
+          }
+        }
+      }
+    }
+    &-label{
+      padding: 0 20px 0 10px;
+      &.ico{
+        text-indent:0;
+        &:after {
+          display:none;
+        }
+      }
+    }
+  }
+
 
 
 

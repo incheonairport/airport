@@ -67,7 +67,7 @@
   &-head{
     font-size: 2.25rem;
     .color-o{
-      color:#dd7714;
+      color:#fff;
     }
   }
   .inner-section{
@@ -186,7 +186,9 @@
     }
   }
 }
-
+.menu-mobile-ui{
+  display:none;
+}
 .tab{
   &-main{
     width: 416px;
@@ -1339,7 +1341,8 @@
   }
 
   &.system{
-    display:none!important;
+    display:none;
+    //display:none!important;
     max-width:550px;
     //min-width:565px;
     //overflow-y:auto;
@@ -1635,6 +1638,9 @@
   &-area{
     padding: 40px 20px;
     position: relative;
+    &.table-guide-pop-up{
+      width:100%!important;
+    }
   }
 
   &-title{
@@ -1849,7 +1855,20 @@
   }
 
   &.down{
-    padding:0 10px;
+    padding: 0 10px 0 30px;
+    position: relative;
+    &:before{
+      content:'';
+      display:block;
+      background: url(/static/ap/images/spr_ico_global.png) no-repeat -68px -98px;
+      width: 13px;
+      height: 12px;
+      position: absolute;
+      top:0;
+      left: 10px;
+      bottom: 0;
+      margin:auto;
+    }
   }
 }
 
@@ -2299,7 +2318,7 @@
     @extend %clearfix;
 
     &-item {
-      width: 192px;
+      width: 16.666%;
       border-right: 1px solid #d9d9d9;
       border-top: 1px solid #d9d9d9;
       float: left;
@@ -2505,7 +2524,6 @@
     }
   }
 }
-
 .map-departure-congestion02{
   position: relative;
   background:#f3f4f8;
@@ -2545,7 +2563,6 @@
     }
   }
 }
-
 .congestion{
   &-mark1-1{
     position: absolute;
@@ -2663,7 +2680,6 @@
     }
   }
 }
-
 .inner-tab2{
   @extend %clearfix;
   display: inline-block;
