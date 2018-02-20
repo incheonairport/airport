@@ -1220,12 +1220,14 @@
       vertical-align:top;
       color:#fff;
     }
-    &:hover{
-
-      &:after{
-        right:16px!important;
+    &.arrow-point-right{
+      &:hover{
+        &:after{
+          right:16px!important;
+        }
       }
     }
+
     &.ico{
       text-indent:0;
       &:after{

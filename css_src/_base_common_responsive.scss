@@ -97,6 +97,52 @@
   }
 }
 
+  //환승쪽 반응형
+  .things-form{
+    .timesetting-date{
+      width:50%;
+      min-height:40px;
+      float:left;
+    }
+    .search-flight-detail-select-btn{
+      width:100%;
+      height:40px!important;
+
+      &:after{
+      }
+    }
+  }
+
+  .kpop-reservation-list{
+    &-item{
+      width:50%;
+      padding:0;
+      &.ico{
+        text-indent:0;
+        &:after{
+          display:none;
+        }
+      }
+      &.on{
+        .list-article{
+          .article-txt{
+            color: #2f4985;
+            font-weight: 900;
+          }
+        }
+      }
+      .list-article{
+        background:#fff;
+        .article-txt{
+          line-height: 40px;
+        }
+        width: 100%;
+        height: 40px;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
 
   //tab control
 
@@ -712,8 +758,8 @@
         height:30px;
         margin: auto;
         &:after{
-          background: url(/static/ap/images/spr_ico_global.png) no-repeat -383px -99px;
-          width: 14px;
+          background: url(/static/ap/images/spr_ico_global.png) no-repeat -381px -99px;
+          width: 16px;
           height: 12px;
           right:auto;
         }

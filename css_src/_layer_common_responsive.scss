@@ -929,6 +929,10 @@
 
   // layer popup
   .layer{
+    .table2{
+      table-layout: inherit;
+    }
+
     height:100vh!important;
     padding:15px;
     &.find-my-terminal{
@@ -2307,6 +2311,22 @@
 
 
 @media screen and (max-width:780px) {
+  //버스검색 테이블 및 버튼
+  #busInfo{
+    .table.hr{
+      table-layout:fixed;
+      td{
+        .btn-type-small{
+          text-indent: 0;
+          width: auto;
+          &:after{
+            display:none;
+          }
+        }
+      }
+    }
+  }
+
   // 교통주차 범주
   .map-common{
     &-category{
@@ -2431,6 +2451,7 @@
         height:30px;
         margin: auto;
         &:after{
+          display:block!important;
           background: url(/static/ap/images/spr_ico_global.png) no-repeat -68px -98px;
           width: 13px;
           height: 12px;
@@ -2443,11 +2464,13 @@
         min-width:30px;
         height:30px;
         margin: auto;
+        padding: 7px;
         &:after{
+          display: block !important;
           background: url(/static/ap/images/spr_ico_global.png) no-repeat -383px -99px;
           width: 14px;
           height: 12px;
-          right:auto;
+          right: auto;
         }
 
       }

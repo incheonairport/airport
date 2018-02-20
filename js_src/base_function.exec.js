@@ -68,7 +68,7 @@ $(function(){
           scrollBar: true,
           scrollingSpeed: 1000,
           responsiveWidth: 1081,
-          normalScrollElements: '.layer.system, .layer',
+          normalScrollElements: '.layer.system, .layer, .relsite',
           afterLoad: function(anchorLink, index){
             if(index == 2){
               MainVisual.rollStop();

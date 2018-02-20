@@ -54,32 +54,55 @@ $(function(){
 
       topGap : 0,
 
-      bottomGap : 0
+      bottomGap : 0,
+
+      allGap : 0
 
     };
 
     this.setArrange = function(){
 
+
       busStop.topNumber = Math.ceil(busStop.allNumber / 2);
       busStop.bottomNumber = busStop.allNumber - busStop.topNumber;
       busStop.topGap = 100 / (busStop.topNumber - 1);
       busStop.bottomGap = 100 / (busStop.bottomNumber - 1);
+      busStop.allGap = 100 / (busStop.allNumber -1);
 
-      for(var i=0; i<busStop.topNumber; i++){
 
-        busStop.$node.eq(i).addClass('top').css({
-          left: busStop.topGap * i + '%'
-        });
+      //
+      if(busStop.allNumber <= 9){
+        $('.route-bus-line').addClass('short');
+        //console.log('9개이하');
+        for(var i=0; i<busStop.allNumber; i++){
 
+          busStop.$node.eq(i).addClass('top').css({
+            left: busStop.allGap * i + '%'
+          });
+
+        }
+      } else if(busStop.allNumber > 9){
+        //console.log('9개이상');
+        for(var i=0; i<busStop.topNumber; i++){
+
+          busStop.$node.eq(i).addClass('top').css({
+            left: busStop.topGap * i + '%'
+          });
+
+        }
+
+        for(var j=0; j<busStop.bottomNumber; j++ ){
+
+          busStop.$node.eq(j + busStop.topNumber).addClass('bottom').css({
+            left: busStop.bottomGap * j + '%'
+          });
+
+        }
       }
+      //
 
-      for(var j=0; j<busStop.bottomNumber; j++ ){
 
-        busStop.$node.eq(j + busStop.topNumber).addClass('bottom').css({
-          left: busStop.bottomGap * j + '%'
-        });
 
-      }
 
     };
 
