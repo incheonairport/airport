@@ -1571,6 +1571,53 @@ img.no-extend{
   }
 }
 
+//kpop 예약 스탭
+
+.kpop-reservation-list{
+  &-item{
+    float: left;
+    padding: 0 17px 0 10px;
+    &.ico{
+      text-indent:0;
+      &:after{
+        background-position: -158px -65px;
+        left: auto;
+        width: 6px;
+        height: 10px;
+      }
+    }
+
+    &.on{
+      .list-article{
+        .article-txt{
+         color: #2f4985;
+          font-weight: 900;
+        }
+        border: 2px solid #2f4985;
+        background-color: #fff;
+        box-sizing: border-box;
+      }
+
+    }
+    
+
+
+    .list-article{
+      .article-txt{
+        line-height: 50px;
+      }
+      display: inline-block;
+      width: 260px;
+      height: 50px;
+      border: 1px solid #d9d9d9;
+      background: #f7f5f5;
+      text-align: center;
+      font-size: 1rem;
+
+    }
+  }
+}
+
 .h-hide{
   // section 제목숨기기
   display:none;
