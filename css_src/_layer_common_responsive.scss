@@ -412,7 +412,7 @@
     .btn-type-tab{
       box-sizing: border-box;
       width:50%;
-      height: 50px;
+      height: 30px;
     }
   }
   // 팝업 지도 기능 이미지1
@@ -930,7 +930,19 @@
   // layer popup
   .layer{
     .table2{
-      table-layout: inherit;
+      table-layout: inherit!important;
+    }
+
+
+
+    .tab-area-heading{
+      width:50%!important;
+    }
+    &:nth-child(3){
+
+    }
+    .tab-area-heading+.tab-area-content+.tab-area-heading{
+      left:50%!important;
     }
 
     height:100vh!important;
@@ -2319,8 +2331,11 @@
         .btn-type-small{
           text-indent: 0;
           width: auto;
+          font-size: 0.75rem;
+          height: auto;
+          padding: 5px;
           &:after{
-            display:none;
+            background: none;
           }
         }
       }
