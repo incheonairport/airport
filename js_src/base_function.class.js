@@ -309,8 +309,12 @@ $(function(){
 
     // running in constructor when loading
     _init();
-    //this.rollFirst();
-    //this.rollAuto();
+
+    if($('.top-big-popup').length == 0) {
+      this.rollFirst();
+      this.rollAuto();
+    }
+
 
   };
 
