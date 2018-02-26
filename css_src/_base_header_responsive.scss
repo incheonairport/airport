@@ -1,4 +1,9 @@
 @media screen and (max-width:1200px) {
+  //접근성 관련 추가
+  //.header-search-item.gnb-search #btnTotalSearch {display: inline-block;}
+  //.header-search-item.gnb-search .gnb-search-openbtn {display:none;} 
+
+
   .top-open.top-popup .top-popup-inner{
     height:128px;
   }
@@ -85,8 +90,9 @@
         &-today{
           bottom:12px;
           right:0;
+
           &-label{
-            font-size: 0.825rem;
+
           }
         }
       }

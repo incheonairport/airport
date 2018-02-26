@@ -1,8 +1,12 @@
 
 //접근성 css추가
 .header-search-item.gnb-search.on .gnb-search-openbtn {display:none;}
-//.header-search-item.gnb-search #btnTotalSearch {display: none;}
 .header-search-item.gnb-search.on #btnTotalSearch {display: inline-block!important;}
+.top-popup-control-today .today-checkbox:focus + .today-label:before {outline:1px solid blue;}
+
+//.header-search-item.gnb-search.on .gnb-search-openbtn {display:none;} 
+//.header-search-item.gnb-search #btnTotalSearch {display: none;} 
+//.header-search-item.gnb-search.on #btnTotalSearch {display: inline-block;}
 
 
 .header.bg.fixed{
@@ -214,7 +218,7 @@
         }
         &-label{
           color: #c6c6c6;
-          font-size: 0.9375rem;
+          font-size: 0.825rem;
           cursor: pointer;
         }
       }
@@ -1144,7 +1148,7 @@
       }
     }
     &-link{
-      color:rgba(255,255,255,0.5);
+      color:rgba(255,255,255,1);
       font-size: 0.75rem;
       display:block;
 
@@ -1194,7 +1198,7 @@
     }
 
     &-top{
-      color:rgba(255,255,255,0.5);
+      color:rgba(255,255,255,1);
       font-size: 0.75rem;
     }
   }

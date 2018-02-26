@@ -528,6 +528,11 @@
   }
 }
 // 체크/라디오 그룹
+.field-division.small{
+  .field-radiomain-label{
+    font-size:1.25rem;
+  }
+}
 .field{
   @extend %clearfix;
   .field-radio{

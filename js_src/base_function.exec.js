@@ -430,10 +430,14 @@ $(function(){
 
   //Header 이벤트
   (function(){
+    $('.header-search-btn.gnb-search.gnb-search-openbtn').on('click',function(){
+      $('.header, .gnb').addClass('bg');
+    });
+
 
     $('.header').on({
 
-      'mouseenter' : function(){
+      'mouseenter focusin' : function(){
 
         if( $(window).outerWidth() > 1200 ){
           $('.header, .gnb').addClass('bg');
@@ -441,7 +445,7 @@ $(function(){
 
       },
 
-      'mouseleave' : function(){
+      'mouseleave focusout' : function(){
 
         if( $(window).outerWidth() > 1200 ){
           if( !$(this).hasClass('fixed') && !$('.total-search').hasClass('show') ){
@@ -458,7 +462,7 @@ $(function(){
 
     $('.gnb').on({
 
-      'mouseenter' : function(){
+      'mouseenter focusin' : function(){
 
         if( $(window).outerWidth() > 1200 ){
           if( !$(this).hasClass('fixed') ){
@@ -470,7 +474,7 @@ $(function(){
 
       },
 
-      'mouseleave' : function(){
+      'mouseleave focusin' : function(){
 
         if( $(window).outerWidth() > 1200 ){
           if( !$(this).hasClass('fixed') && !$('.total-search').hasClass('show') ){

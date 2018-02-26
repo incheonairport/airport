@@ -1,5 +1,6 @@
 // 1024
 @media screen and (max-width:1080px) {
+
   // guide box
   .guidebox {
     &-col {
@@ -671,6 +672,34 @@
       }
     }
   }
+
+
+  // 쇼핑식당
+  .filter-terminal-search-depth1+.filter-terminal-search-depth1{
+    //margin-top:-16px;
+  }
+
+  .filter-terminal-search.shopping{
+    height:270px;
+  }
+  .field-division.small{
+    font-size:0.825rem!important
+  }
+
+  .filter-store-search.shopping{
+    top:105px;
+  }
+
+  .filter-terminal-search-depth2.shopping{
+    top:158px;
+  }
+
+  .field-division.small{
+    .field-radiomain-label{
+    font-size:0.825rem;
+    }
+  }
+
   // 체크/라디오 그룹
   .field{
     .field-radio{
