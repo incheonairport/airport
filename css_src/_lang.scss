@@ -2,6 +2,10 @@
 
   font-size:14px;
 
+  .bg-banner.transfer .tab-sub.col-3{
+    bottom:-122px;
+  }
+
   //검색
   .gnb.bg .header-search-btn.gnb-search:after{
     left:-1px;
@@ -1054,7 +1058,26 @@
 }
 
 .ja{
+  font-size:14px;
+
+
+  .digr-way-bus-list-item{
+    font-size:0.825rem;
+  }
   //검색버튼
+  .boxmodel-btn-link{
+    font-size:1rem;
+    letter-spacing: -1px;
+    .link-guide{
+      font-size:0.825rem;
+      letter-spacing: -1px;
+    }
+  }
+
+  .top-notice{
+    margin:0 0 0 40px;
+  }
+
   .header-search-btn{
     font-size:0.75rem;
   }

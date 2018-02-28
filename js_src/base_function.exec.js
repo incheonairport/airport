@@ -57,6 +57,12 @@ $(function(){
 
   })();
 
+  (function(){
+    $('.user-input-link').on('click', function(e){
+      e.preventDefault();
+    })
+  })();
+
   // set full page
   (function(){
 
@@ -430,9 +436,9 @@ $(function(){
 
   //Header 이벤트
   (function(){
-    $('.header-search-btn.gnb-search.gnb-search-openbtn').on('click',function(){
-      $('.header, .gnb').addClass('bg');
-    });
+    //$('.header-search-btn.gnb-search.gnb-search-openbtn').on('click',function(){
+    //  $('.header, .gnb').addClass('bg');
+    //});
 
 
     $('.header').on({
@@ -474,7 +480,7 @@ $(function(){
 
       },
 
-      'mouseleave focusin' : function(){
+      'mouseleave focusout' : function(){
 
         if( $(window).outerWidth() > 1200 ){
           if( !$(this).hasClass('fixed') && !$('.total-search').hasClass('show') ){

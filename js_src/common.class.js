@@ -163,6 +163,20 @@ $(function(){
       });
     }
 
+    //$('.select-link-default').on('focusout', function(){
+    //  $('.select-list').removeClass('on');
+    //  $('.select-link-default').removeClass('on');
+    //});
+    //$(document).keydown(function() {
+    //  $('.select-link-default').on('focusout', function(){
+    //    $('.select-list').addClass('on');
+    //    $('.select-link-default').addClass('on');
+    //  });
+    //});
+
+
+
+
 
     $('.select-list .select-list-item:last-child .select-list-link').on('focusout', function(){
       $('.select-list').removeClass('on');

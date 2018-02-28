@@ -1809,6 +1809,7 @@ svg g{
     box-sizing: border-box;
     float:right;
     transition:all .4s;
+    z-index:10;
   }
   &-box{
     width: 249px;
