@@ -1,5 +1,12 @@
 // 780
 @media screen and (max-width:1080px) {
+  #trnSurveyLayer{
+    .radio-type2{
+      &-radio{
+        display:none;
+      }
+    }
+  }
 
   .field-radio{
     visibility:hidden;

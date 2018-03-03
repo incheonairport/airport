@@ -1,7 +1,9 @@
 .ch{
 
   font-size:14px;
-
+  .gnb.bg .header-search-btn.gnb-search{
+    padding: 4px 11px 6px 32px;
+  }
   .bg-banner.transfer .tab-sub.col-3{
     bottom:-122px;
   }
@@ -138,6 +140,9 @@
 }
 
 .en{
+  .bg-banner-bgico{
+    font-size:0.825rem;
+  }
 
   footer{
     //footer 셀렉트

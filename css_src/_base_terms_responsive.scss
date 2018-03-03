@@ -74,10 +74,22 @@
   }
 
   .tbl_st01 {
-    overflow-x:auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    display: inline-block;
+    //overflow-x:auto;
+    //overflow-y: hidden;
+    //white-space: nowrap;
+    //display: inline-block;
+    td{
+      font-size:0.75rem!important;
+      padding:0!important;
+    }
+    th{
+      font-size:0.75rem!important;
+      padding:0!important;
+    }
+  }
+
+  .terms_sub_txt{
+    margin:0;
   }
 
   .link_underline{

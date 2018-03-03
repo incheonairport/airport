@@ -481,6 +481,8 @@
       }
       td{
         text-align:center!important;
+        line-height: 1.4;
+        padding:5px 0;
       }
     }
     table{
@@ -541,7 +543,8 @@
       }
       &-item{
         &:first-child{
-          width: 58px;
+          width: auto;
+          margin-right: 20px;
         }
         font-size: 0.75rem;
         letter-spacing: -1px;
@@ -586,6 +589,8 @@
     padding:15px;
     height:100vh!important;
     &.find-my-terminal{
+      display: table;
+      padding: 15px;
       br{
         display:none;
       }
@@ -595,6 +600,8 @@
       .layer-area{
         text-align:center;
         padding:0;
+        display: table-cell;
+        vertical-align: middle;
       }
       .layer-title{
         font-size:1.5rem;
@@ -777,7 +784,8 @@
     }
     &-input-text.user-text{
       width:100%;
-      height: 50px;
+      height: 40px;
+      line-height:40px;
     }
     &-close{
       width: 16px;
@@ -985,6 +993,9 @@
   }
 
   // common
+  .tab-area-heading{
+
+  }
   .tab{
     &-main{
       width:100%;
@@ -1030,7 +1041,28 @@
     }
   }
 
+  .tab-nav-list.map{
+    .menu-mobile-item{
+      display:none;
+    }
+  }
+
   .tab{
+    .map{
+      display: flex;
+      .tab-nav-list-item{
+        display:block;
+        width:50%!important;
+        .tab-nav-list-link{
+          background: #f2f2f2;
+          border: 1px solid #d9d9d9;
+          height: 100%;
+          &.on{
+            background:#fff;
+          }
+        }
+      }
+    }
     &-nav{
       .menu-mobile-ui{
         width:100%;
@@ -1061,6 +1093,7 @@
       }
       &-list{
         &.map{
+          display:flex;
           .tab-nav-list-item{
             display:block;
             width:50%!important;
@@ -1087,8 +1120,8 @@
             border-bottom:2px solid #42519e;
           }
           &.active{
-            height:54px;
-            padding:14px 10px;
+            height:100%;
+            padding:5px;
             line-height:1.4;
           }
         }

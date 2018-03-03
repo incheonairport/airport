@@ -342,6 +342,7 @@
 
         &-paging{
           //display:none;
+          display:none;
           bottom:170px;
 
           .paging-item{
@@ -447,6 +448,11 @@
         }
         &-weather{
           //display: none;
+          .weather{
+            &-temperature{
+              margin:10px auto auto 0;
+            }
+          }
         }
         #fnSearchResult{
           overflow-y:hidden;

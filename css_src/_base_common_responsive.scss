@@ -33,6 +33,19 @@
 // 640
 @media screen and (max-width:1080px) {
 
+  #dv_loungeCoupon{
+    .text-center{
+      br{
+        display:none;
+      }
+    }
+  }
+  #departure_congestion_content{
+    .vt-dark{
+      table-layout: inherit;
+    }
+  }
+
   // 라운지쿠폰 CSS
 .layer{
   .coupon{
@@ -154,6 +167,18 @@
       }
     }
   }
+  .tab-nav{
+    .tab-nav-list{
+      .tab-nav-list-item{
+        width:100%!important;
+        .tab-nav-list-link{
+
+        }
+      }
+    }
+  }
+
+
 
 
 
@@ -1035,6 +1060,7 @@
   }
   select,input[type="text"]{
     height: 40px!important;
+    line-height:40px!important;
   }
 
 
@@ -1073,6 +1099,13 @@
 
 
   }
+
+
+  table.table-responsive tbody{
+    border-left:1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+  }
+
   table.table-responsive thead th,
   table.table-responsive tbody td {
     padding: 0.8rem;
@@ -1083,7 +1116,7 @@
     font-size: 1.4rem;
     color: #444;
     background: #fff;
-    border-top: 1px solid #ddd;
+    border-top:0;
     border-bottom: 1px solid #ddd;
   }
   /*table.table-responsive tbody tr {*/
@@ -1120,7 +1153,7 @@
     }
   }
   table.table-responsive tbody tr:first-child{
-    border-left: 1px solid #f2f4f7;
+    //border-left: 1px solid #f2f4f7;
   }
   table.table-responsive tbody tr td:first-child {
 
@@ -1128,7 +1161,7 @@
     background: #323648;
     display: block;
     width: 100%;
-    margin-top: 10px;
+    //margin-top: 10px;
     color: #fff;
     padding:0;
     line-height: 2.4;
@@ -1140,7 +1173,7 @@
   }
   table.table-responsive tbody td:last-child {
     font-size: 0.825rem!important;
-    border-bottom:0;
+    //border-bottom:0;
     line-height: 24px;
     width: 50%;
     //height: 30px;

@@ -153,6 +153,7 @@
         font-size:1rem;
       }
       &-btn{
+        padding-left:0;
         &.ico:after{
           top:0;
           right:66px;
@@ -860,11 +861,12 @@
       &-txt{
         width:calc(100% - 40px);
         height:40px;
-        font-size:0.8125rem;
+        line-height:40px;
+        font-size:0.825rem;
 
       }
       &-btn{
-        width:40px;
+        width:40px!important;
         height:40px;
         font-size: 1.125rem;
         &.ico{
@@ -1056,10 +1058,11 @@
   }
 
   // infographics
-  .customs_inspection{
+  .customs_inspection,.en .customs_inspection, .ch .customs_inspection, .ja .customs_inspection{
     height:200px;
   }
-  .digr_airport_railroad{
+
+  .digr_airport_railroad, .en .digr_airport_railroad, .ch .digr_airport_railroad, .ja .digr_airport_railroad{
     height:140px;
   }
   .digr_ktx_route{

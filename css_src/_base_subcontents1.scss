@@ -2865,13 +2865,14 @@
     }
   }
   &-num{
-    width: 63px;
+    display:inline-block;
+    min-width: 63px;
     height: 31px;
     background: #333649;
     color: #fff;
     text-align: center;
     font-size: 1rem;
-    padding: 8px 0;
+    padding: 8px;
     margin-right: 14px;
     float:left;
   }

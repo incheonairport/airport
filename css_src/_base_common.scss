@@ -7,6 +7,11 @@ body {
 }
 
 
+#dv_loungeCoupon{
+  input[type="radio"], input[type="checkbox"]{
+    display:none;
+  }
+}
 
 .vlog{
   text-align:center;

@@ -45,6 +45,89 @@
   }
 
   .en{
+    .global-search-result .multi-col.line:before{
+      display:none;
+    }
+    .step-member{
+      display:none;
+    }
+
+    .find-info-item{
+      &:last-child{
+        width:100%;
+        .sign-in-btn{
+          width: 100%;
+          margin-left: 0;
+          margin-right:0;
+          padding-left:33px;
+        }
+      }
+    }
+
+
+    .site-map-list-depth1-item.wide-row{
+      width:100%;
+    }
+    .lost-found .lost-box.found{
+      background: url(/static/ap/images/digr_lost_and_found_01_en.png) no-repeat left;
+      height: 500px;
+      background-size: contain !important;
+      margin-bottom:0;
+    }
+    .lost-found .lost-box.belongings {
+      background: url(/static/ap/images/digr_lost_and_found_02_en.png) no-repeat right;
+      height: 500px;
+      background-size: contain !important;
+      margin-bottom:0;
+    }
+
+    .map{
+      .tab-nav-list-link{
+        padding:5px 20px;
+      }
+    }
+    .filter-terminal-search-depth2{
+      .field .field-radio + .field-radio-label{
+        width: auto;
+        margin-right: 0;
+        border-left: 0;
+        text-align: center;
+        border-right: 0;
+        font-size: 0.5rem;
+        margin-bottom: -1px;
+        letter-spacing: 0;
+      }
+    }
+
+    .digr-airport-kal-route-en{
+      height:200px;
+    }
+    .maglev-train-line-list-article-link{
+      font-size:0.5rem;
+      letter-spacing:-0.5px;
+    }
+    .local-list-item{
+      padding: 10px 0;
+      font-size: 0.5rem;
+    }
+
+    .local-town-item{
+
+    }
+    .local-town-item{
+      width: 33.33%;
+      font-size: 0.75rem;
+      border-right:0;
+      padding: 0 20px;
+      height: auto!important;
+      width: auto;
+      margin-right: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 0;
+      word-wrap: break-word;
+    }
+
+
     .boxmodel-list-head{
       font-size: 1.25rem;
     }
@@ -53,7 +136,7 @@
     }
 
     .local-town-item-link{
-      padding:0 20px;
+
     }
 
     .route-bus-line-list-article > p{
@@ -199,6 +282,14 @@
   }
 
   .ja{
+    .main-visual-search-desc{
+      font-size:0.5rem;
+      letter-spacing:-1px;
+    }
+
+    .flight-info-basic .situation-info{
+      font-size:0.5rem;
+    }
     .digr-way-bus-list-item{
       font-size:0.5rem;
     }

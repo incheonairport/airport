@@ -12,15 +12,16 @@
     .flight-info-detail-way{
       width:100%;
       text-align:center;
-      margin:15px 0;
+      margin:10px 0;
       font-weight:400;
       padding-bottom:10px;
       border-bottom:1px solid #474a5b;
     }
     .way-list{
       margin:0!important;
-      padding:0 15px 15px;
+      padding:0;
       .way-list-item{
+
         margin-left:0!important;
         width:50%;
         float:left;
@@ -32,6 +33,7 @@
     .way-list-item-content{
       display: block!important;
       font-size:1rem;
+
     }
   }
 
@@ -1098,6 +1100,11 @@
   // 화물
   .contents{
     &.cargo{
+      .table-like.vt-dark .tr-like.not-changed .time-changed{
+        height: auto !important;
+        line-height: inherit !important;
+      }
+
 
       .list2.mt30{
         display:none;

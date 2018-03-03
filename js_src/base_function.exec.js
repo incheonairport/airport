@@ -245,6 +245,8 @@ $(function(){
 
     $(window).on('scroll', function(e){
 
+      scrollHeight = $('body').height() - $(window).height();
+
       var scrollAmount = ( $(this).scrollTop() / scrollHeight ) * 100;
       $('.scroll-amount').css({width : scrollAmount + '%'});
       var currentScroll = $(this).scrollTop();
