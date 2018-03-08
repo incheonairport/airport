@@ -94,6 +94,13 @@
 
 // 780
 @media screen and (max-width:780px) {
+
+  .ja{
+    .gnb-link{
+      font-size:0.825rem;
+    }
+  }
+
   .lnb-top{
     //top:-20px;
     &-list{
@@ -111,7 +118,7 @@
 
   .header{
     width:80%;
-    padding-top: 66px;
+    padding:66px 20px 0 20px;
     max-width:70%;
     min-width:260px;
 
@@ -139,7 +146,7 @@
   // mobile gnb...
   .mobile-header{
     width:100%;
-    height:70px;
+    height:60px;
     background:#fff;
     position:fixed;
     left:0;
@@ -162,16 +169,26 @@
   // mobile button open / close
   .layer-gnb{
     &-mobile-btn{
+      //display:block;
+      //width:25px;
+      //height:20px;
+      //padding:0;
+      //border:none;
+      //background:none;
+      //text-indent:-99999em;
+      //position:relative;
+      //top:22px;
+      //left:15px;
       display:block;
-      width:25px;
-      height:20px;
+      width:19px;
+      height:14px;
       padding:0;
       border:none;
       background:none;
       text-indent:-99999em;
-      position:relative;
+      position:absolute;
       top:22px;
-      left:15px;
+      left:25px;
 
       &:before, &:after {
         content: "";
@@ -185,7 +202,8 @@
       }
 
       &:after{
-        top:9px;
+        //top:9px;
+        top:6px;
       }
 
       span{
@@ -193,7 +211,7 @@
         width:13px;
         height:2px;
         background:#222;
-        text-indent:-99999em;
+        text-indent:-999em;
         position:absolute;
         bottom:0;
         left:0;
@@ -201,15 +219,25 @@
     }
 
     &-mobile-btn-close{
+      //display:block;
+      //width:25px;
+      //height:25px;
+      //background:url(/static/ap/images/spr_ico_global.png) no-repeat -95px -188px;
+      //border:none;
+      //position:absolute;
+      //top:20px;
+      //right:15px;
+      //text-indent:-99999em;
       display:block;
-      width:25px;
-      height:25px;
-      background:url(/static/ap/images/spr_ico_global.png) no-repeat -95px -188px;
-      border:none;
-      position:absolute;
-      top:20px;
-      right:15px;
-      text-indent:-99999em;
+      width: 16px;
+      height: 16px;
+      border: 0;
+      background: url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
+      position: absolute;
+      top: 27px;
+      right: 19px;
+      text-indent: -999em;
+      background-size:contain;
     }
   }
 
@@ -221,7 +249,8 @@
     max-width:284px;
     border:none;
     padding: 14px 0;
-    font-size:1.125rem;
+    font-size:1rem;
+    margin-top:20px;
 
   }
 

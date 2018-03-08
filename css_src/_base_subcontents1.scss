@@ -64,6 +64,16 @@
   padding-top: 70px;
   position:relative;
   background-size: cover;
+  &:before{
+    content:'';
+    display:block;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.2);
+    position: absolute;
+    top:0;
+    left:0;
+  }
   &-head{
     font-size: 2.25rem;
     .color-o{
@@ -184,6 +194,11 @@
     &.ico:after{
       left:95px;
     }
+
+    &:hover{
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #ffae44;
+    }
   }
 }
 .menu-mobile-ui{
@@ -201,10 +216,10 @@
         float: left;
         &-link{
           width: 208px;
-          height: 50px;
+          //height: 50px;
           line-height: 50px;
           color: #fff;
-          font-weight: 700;
+          font-weight: 400;
           display: inline-block;
           border: 2px solid rgba(255, 255, 255, .5);
           box-sizing: border-box;
@@ -213,6 +228,9 @@
             background:#fff;
             color: #42519e;
             font-weight: 900;
+            &:hover{
+              color:#42519e;
+            }
           }
           &.left{
             border-top-left-radius: 5px;
@@ -224,6 +242,10 @@
             border-bottom-right-radius:5px;
             border-left:none;
           }
+          &:hover{
+            color:rgba(255,255,255,0.5);
+          }
+
         }
       }
     }
@@ -256,7 +278,7 @@
             color: #42519e;
             background: #fff;
             font-weight: 800;
-             }
+           }
           }
         &:first-child{
           margin-left:0;
@@ -283,7 +305,7 @@
       width:166px;
     }
     .search-flight-detail-select-airplane{
-      width:150px;
+      //width:150px;
     }
     .search-flight-detail-select-article.double .search-flight-detail-select-article {
       width: 75px;
@@ -399,6 +421,9 @@
       background:#323648;
       text-indent: -9999px;
       display: inline-block;
+      &:hover{
+        background:#272a3a;
+      }
 
     }
   }
@@ -1226,8 +1251,9 @@
     line-height: 21px;
     border: 1px solid #d9d9d9;
     background: #fff;
-    font-size:0.8125rem;
+    font-size:0.825rem;
     color: #666;
+    border-radius:5px;
     &.ico{
       text-indent:0;
     }
@@ -1345,6 +1371,7 @@
     display:none;
     //display:none!important;
     max-width:550px;
+    min-width:550px;
     //min-width:565px;
     //overflow-y:auto;
     border: 4px solid #fefefe;
@@ -1569,7 +1596,7 @@
 
     &.system{
       position:absolute;
-      width:80%;
+      width:auto;
       height:auto;
 
       &:after{
@@ -1873,6 +1900,12 @@
   }
 }
 
+#TEL1,#TEL2,#TEL3{
+  width:30%!important;
+}
+
+
+
 .enter{
   width: 100%;
   padding: 20px 0 30px;
@@ -1882,7 +1915,7 @@
   &-btn{
     width: 180px;
     height: 40px;
-    font-size: 	1.125rem;
+    font-size: 	1rem;
     color: #fff;
     background: #323648;
     border: 0;

@@ -389,6 +389,23 @@
 // 780
 @media screen and (max-width:780px) {
 
+  .en .tab-nav-list-link{
+    font-size:0.825rem;
+  }
+
+  .en .route-bus-line-list-article > p{
+    width:auto!important;
+    background:none;
+    padding:0 3px!important;
+    display: inline-block;
+    line-height:1.2;
+  }
+
+  .en .local-list .local-list-item:nth-child(5n){
+    width:50%!important;
+  }
+
+
   // reset font
   article, aside, details, figcaption, figure,
   footer, header, menu, nav, section {
@@ -400,6 +417,11 @@
       .radio-box{
         width:100%!important;
       }
+      .radio-type2-label{
+        font-size:0.825rem;
+        padding: 4px 0 0 40px;
+      }
+
     }
   }
   .inner-list-item{
@@ -957,7 +979,7 @@
     height:100vh!important;
     padding:15px;
     &.find-my-terminal{
-      display: table;
+
       padding: 15px;
       br{
         display:none;
@@ -968,8 +990,7 @@
       .layer-area{
         text-align:center;
         padding:0;
-        display: table-cell;
-        vertical-align: middle;
+
       }
       .layer-title{
         font-size:1.5rem;
@@ -1524,7 +1545,7 @@
       padding-top: 10px;
       .btn-type-small{
         font-size:0.825rem;
-        text-align:left;
+        text-align:center;
         padding-left:10px;
       }
       .icontxt-title{
@@ -1604,7 +1625,7 @@
         &-inner{
           position:static;
           transform:none;
-          padding:10px;
+          padding:20px;
         }
       }
 

@@ -1,17 +1,61 @@
 .ch{
+  .find-info{
+    &-item{
+      float:left;
+      position: relative;
+      line-height: 3;
+      &:first-child{
+        &:after{
+          top: 14px;
+        }
+      }
+    }
+  }
+  .sign-in{
+
+    &-btn{
+      width: 190px;
+      height: 40px;
+      background-color: #323648;
+      color: white;
+      border: 0;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: 13px;
+      margin-top: 0;
+      margin-right: 4px;
+      box-sizing: border-box;
+      position: relative;
+      text-align: left;
+      padding-left: 19px;
+      &:after{
+        content: '';
+        display: block;
+        width: 8px;
+        height: 12px;
+        background: url(/static/ap/images/spr_ico_global.png) no-repeat -129px -64px;
+        position: absolute;
+        top: 14px;
+        right: 17px;
+      }
+    }
+  }
+  .section-bg-contents2{
+    width: 410px;
+  }
 
   font-size:14px;
-  .gnb.bg .header-search-btn.gnb-search{
-    padding: 4px 11px 6px 32px;
-  }
+  //.gnb.bg .header-search-btn.gnb-search{
+  //  padding: 4px 11px 6px 32px;
+  //}
   .bg-banner.transfer .tab-sub.col-3{
     bottom:-122px;
   }
 
   //검색
-  .gnb.bg .header-search-btn.gnb-search:after{
-    left:-1px;
-  }
+  //.gnb.bg .header-search-btn.gnb-search:after{
+  //  left:-1px;
+  //}
 
   .contents-visual{
     padding-top:60px;
@@ -29,11 +73,11 @@
   }
 
 
-.header-search{
-  button{
-    font-size:0.825rem;
-  }
-}
+  //.header-search{
+  //  button{
+  //    font-size:0.825rem;
+  //  }
+  //}
   .airline-table{
     td{
       &:nth-child(1):before{
@@ -101,7 +145,7 @@
       }
       &.airseoul{
         width: 76px;
-        background-position: -423px 0;
+        background-position: -423px -3px;
       }
       &.koreanair{
         width: 85px;
@@ -118,6 +162,11 @@
       &.delta{
         width: 70px;
         background-position: -249px -27px;
+      }
+      &.etc{
+        background:none;
+        text-indent: 0;
+        margin-top: 3px;
       }
     }
   }
@@ -140,6 +189,12 @@
 }
 
 .en{
+  //.header-search{
+  //  button{
+  //    font-size:0.825rem;
+  //  }
+  //}
+
   .bg-banner-bgico{
     font-size:0.825rem;
   }
@@ -188,6 +243,7 @@
    width:140px;
     background:#f2f4f7;
     padding:3px;
+    white-space: unset;
     display: inline-block;
   }
 
@@ -252,7 +308,7 @@
 
 
   .tab-nav-list-link{
-    font-size:0.825rem;
+    //font-size:0.825rem;
   }
 
 
@@ -276,17 +332,17 @@
     font-size:1.125rem;
   }
 
-  .gnb.bg .header-search-item.gnb-search{
-    width:83px;
+  //.gnb.bg .header-search-item.gnb-search{
+  //  width:83px;
+  //
+  //  &.on{
+  //    width:240px;
+  //  }
+  //}
 
-    &.on{
-      width:240px;
-    }
-  }
-
-  .gnb.bg .header-search{
-    padding-right:90px;
-  }
+  //.gnb.bg .header-search{
+  //  padding-right:90px;
+  //}
 
   .step2-list {
     &.col-4 {
@@ -446,7 +502,7 @@
       }
       &.airseoul{
         width: 76px;
-        background-position: -423px 0;
+        background-position: -423px -3px;
       }
       &.koreanair{
         width: 85px;
@@ -1063,9 +1119,69 @@
 }
 
 .ja{
+
+  .find-info{
+    &-item{
+      float:left;
+      position: relative;
+      line-height: 3;
+      &:first-child{
+        &:after{
+          top: 14px;
+        }
+      }
+    }
+  }
+  .sign-in{
+
+    &-btn{
+      width: 190px;
+      height: 40px;
+      background-color: #323648;
+      color: white;
+      border: 0;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: 13px;
+      margin-top: 0;
+      margin-right: 4px;
+      box-sizing: border-box;
+      position: relative;
+      text-align: left;
+      padding-left: 19px;
+      &:after{
+        content: '';
+        display: block;
+        width: 8px;
+        height: 12px;
+        background: url(/static/ap/images/spr_ico_global.png) no-repeat -129px -64px;
+        position: absolute;
+        top: 14px;
+        right: 17px;
+      }
+    }
+  }
+  .bg-banner.transfer .tab-sub.col-3{
+    bottom:-122px;
+  }
+
   font-size:14px;
+  .section-bg-contents2{
+    width: 410px;
+  }
 
+  //.header-search{
+  //  button{
+  //    font-size:0.825rem;
+  //  }
+  //}
 
+  .gnb-depth2{
+  }
+
+  .gnb-depth2-link{
+    font-size:1rem;
+  }
   .digr-way-bus-list-item{
     font-size:0.825rem;
   }
@@ -1084,14 +1200,14 @@
   }
 
   .header-search-btn{
-    font-size:0.75rem;
+    //font-size:0.75rem;
   }
   .header-search-input{
-    font-size:0.75rem;
+    //font-size:0.75rem;
   }
-  .gnb.bg .header-search-btn.gnb-search:after{
-    left:-2px;
-  }
+  //.gnb.bg .header-search-btn.gnb-search:after{
+  //  left:-2px;
+  //}
 
 
 
@@ -1203,7 +1319,7 @@
       }
       &.airseoul{
         width: 76px;
-        background-position: -423px 0;
+        background-position: -423px -3px;
       }
       &.koreanair{
         width: 85px;
@@ -1220,6 +1336,11 @@
       &.delta{
         width: 70px;
         background-position: -249px -27px;
+      }
+      &.etc{
+        background:none;
+        text-indent: 0;
+        margin-top: 3px;
       }
     }
   }

@@ -6,6 +6,16 @@ body {
 
 }
 
+.tbl-logo-link{
+  display:block;
+  cursor: pointer;
+  &:hover{
+    color:#d9d9d9;
+  }
+}
+.mtb10{
+  margin:10px 0;
+}
 
 #dv_loungeCoupon{
   input[type="radio"], input[type="checkbox"]{
@@ -723,7 +733,8 @@ em{
   width:100%;
 
   caption{
-    display:none;
+    text-indent: -999em;
+    font-size: 0;
   }
 
   &.vt{
@@ -1391,7 +1402,7 @@ select{
   width:150px;
   height:50px;
   border:1px solid #d9d9d9;
-  font-size:1rem!important;
+  font-size:0.825rem!important;
   position:relative;
   text-indent:24px;
   background:#fff;
@@ -1625,7 +1636,8 @@ img.no-extend{
 
 .h-hide{
   // section 제목숨기기
-  display:none;
+  text-indent: -999em;
+  font-size: 0;
 }
 
 .search-phone-box + .vt-dark{

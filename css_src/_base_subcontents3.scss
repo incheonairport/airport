@@ -184,10 +184,12 @@
   }
   &-bgico {
     display: inline-block;
-    height:76px;
+    height:auto;
     margin:0 30px;
     position: relative;
-    line-height:128px;
+    //line-height:128px;
+    line-height: 1.4;
+    padding-top: 60px;
     color:#fff;
     font-weight:700;
     &:hover{
@@ -306,7 +308,7 @@
     &-heading{
       display:block;
       height:0;
-      text-indent:-9999px;
+      text-indent:-999em;
     }
     &-depth1{
       height:46px;
@@ -530,9 +532,11 @@
 // 체크/라디오 그룹
 .field-division.small{
   .field-radiomain-label{
-    font-size:1.25rem;
+    font-size:1.25rem!important;
   }
 }
+
+
 .field{
   @extend %clearfix;
   .field-radio{

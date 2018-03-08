@@ -2,27 +2,45 @@
  * Layer Execution *
  *******************/
 $(document).ready(function(){
+  skipStrAdd();
+  locationTitleAdd();
+
+  function locationTitleAdd(){
+    var locationText = $('.location-bar-nav-item').length;
+    var lcDepA = $('.location-bar-nav-item').eq(1).text();
+    var lcDepB = $('.location-bar-nav-item').eq(2).text();
+    var lcDebC = $('.header-heading').text();
+    var lcDebD = $('.heading-level1').text();
+    var baseTit = $('title').text();
+    //console.log(locationText);
+    if(locationText === 3){
+      $('title').text(baseTit + "/" + lcDepA + "/" + lcDepB + "/" + lcDebC + "/" + lcDebD);
+    }
+  }
+
+  function skipStrAdd(){
+    $('.gnb').attr('id', 'gnb');
+    $('.contents').attr('id', 'top-contents');
+    var skipStr = '<div class="skip-navigation"><ul><li><a href="#top-contents" class="skip-navigation-link">' + '본문 바로가기' + '</a></li><li><a href="#gnb" class="skip-navigation-link">' + '주메뉴 바로가기' + '</a></li></ul>';
+    $('body').prepend(skipStr);
+
+    $('#btnFindTermClose').on('click', function(){
+      $('.layer-terminal-check-btn').focus();
+    });
+
+    $('.layer-terminal-check-btn').on('click', function(){
+      $('.find-my-terminal').attr('tabindex', 0).focus();
+    });
+  }
+
 
   $('.tab-area-heading a').on('click', function(e){
     e.preventDefault();
   });
 
-
-  $('#btnFindTermClose').on('click', function(){
-    $('.layer-terminal-check-btn').focus();
-
-  });
-
-  //$('#btnFindTermClose').on('keydown', function(){
-  //  $('.find-my-terminal').attr('tabindex', 0).focus();
-  //});
-
-  $('.layer-terminal-check-btn').on('click', function(){
-    $('.find-my-terminal').attr('tabindex', 0).focus();
-  });
-
-
 });
+
+
 $(function(){
 
   (function(){

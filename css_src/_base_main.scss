@@ -270,15 +270,25 @@
           -o-transform:translateY(-50%);
 
           text-indent:-99999em;
+          transition:all .3s;
 
           &.prev{
             left:80px;
+            &:hover{
+              opacity:.5;
+              left:75px;
+            }
           }
 
           &.next{
             background-position:-84px 0;
             right:80px;
+            &:hover{
+              opacity:.5;
+              right:75px;
+            }
           }
+
         }
       }
 
@@ -297,8 +307,8 @@
 
         .play-button{
           display:block;
-          width:11px;
-          height:11px;
+          width:15px;
+          height:15px;
           padding:0;
           border:none;
           border-radius:0;
@@ -310,7 +320,7 @@
           text-indent:-99999em;
 
           &.play{
-            background-position:-16px 0;
+            background-position:-25px 0;
           }
 
         }
@@ -326,8 +336,8 @@
 
             float:left;
             margin-right:10px;
-            width:11px;
-            height:11px;
+            width:15px;
+            height:15px;
             border:2px solid #fff;
             border-radius:50%;
             position:relative;
@@ -335,7 +345,7 @@
           }
           &-link{
             display:block;
-            width:11px;
+            width:15px;
             //height:11px;
             height:100%;
             //border:2px solid #333;
@@ -421,6 +431,9 @@
 
           .area{
             &-tab{
+              &-btn{
+                color:#aec5fb;
+              }
               width:257px;
               height:30px;
               padding-right:15px;
@@ -433,10 +446,19 @@
               font-weight:300;
               color:#aec5fb;
               text-align:center;
+              &:hover{
+                cursor: pointer;
+                .search-arrival{
+                  cursor: pointer;
+                }
+              }
 
               &.on{
                 border-color:#fff;
                 color:#fff;
+                &-btn{
+                  color:#fff;
+                }
               }
 
               &:before{
@@ -527,6 +549,9 @@
                 border:0;
 
                 text-indent:-99999em;
+                &:hover{
+                  opacity:.6;
+                }
               }
 
             }
@@ -997,6 +1022,10 @@
               position:absolute;
               top:0;
               left:0;
+            }
+            &:hover{
+              color: #439096;
+              border-bottom: 1px solid #439096;
             }
           }
 

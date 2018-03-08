@@ -1,7 +1,31 @@
 @media screen and (max-width:1080px){
 
   .ch{
+    .footer .sns-list-item{
+      width:20%!important;
+    }
 
+    .section-bg-contents2{
+      width:100%;
+    }
+    .find-info{
+      width: 100%;
+      .find-info-item{
+        &:last-child{
+          width:100%;
+          .sign-in-btn{
+            width: 100%;
+            margin-left: 0;
+            margin-right:0;
+            padding: 0 20px;
+            text-align: center;
+            &:after{
+              display:none;
+            }
+          }
+        }
+      }
+    }
     .contents-visual{
       padding-top:30px;
     }
@@ -45,6 +69,21 @@
   }
 
   .en{
+    .tab-scroll-x{
+
+    }
+
+    .tab-nav-list-link{
+      font-size:0.825rem;
+    }
+
+
+
+
+    .gnb.bg .header-search-item.gnb-search{
+      min-width:83px;
+    }
+
     .global-search-result .multi-col.line:before{
       display:none;
     }
@@ -52,17 +91,25 @@
       display:none;
     }
 
-    .find-info-item{
-      &:last-child{
-        width:100%;
-        .sign-in-btn{
-          width: 100%;
-          margin-left: 0;
-          margin-right:0;
-          padding-left:33px;
+    .find-info{
+      width: 100%;
+      .find-info-item{
+        &:last-child{
+          width:100%;
+          .sign-in-btn{
+            width: 100%;
+            margin-left: 0;
+            margin-right:0;
+            padding: 0 20px;
+            text-align: center;
+            &:after{
+              display:none;
+            }
+          }
         }
       }
     }
+
 
 
     .site-map-list-depth1-item.wide-row{
@@ -93,7 +140,7 @@
         border-left: 0;
         text-align: center;
         border-right: 0;
-        font-size: 0.5rem;
+        font-size: 0.75rem;
         margin-bottom: -1px;
         letter-spacing: 0;
       }
@@ -107,22 +154,17 @@
       letter-spacing:-0.5px;
     }
     .local-list-item{
-      padding: 10px 0;
+      padding: 0;
       font-size: 0.5rem;
     }
 
     .local-town-item{
-
-    }
-    .local-town-item{
-      width: 33.33%;
       font-size: 0.75rem;
       border-right:0;
-      padding: 0 20px;
-      height: auto!important;
+      padding: 0;
       width: auto;
-      margin-right: 10px;
-      font-size: 0.75rem;
+      height: auto!important;
+      margin-right: 20px;
       letter-spacing: 0;
       word-wrap: break-word;
     }
@@ -139,14 +181,6 @@
 
     }
 
-    .route-bus-line-list-article > p{
-      width:auto;
-      background:none;
-      padding:0;
-      display: inline-block;
-      font-size:0.75rem;
-
-    }
 
 
 
@@ -282,6 +316,37 @@
   }
 
   .ja{
+    .section-bg-contents2{
+      width:100%;
+    }
+    .section-bg-list-inner .btn-type-small{
+      width:166px;
+    }
+    .flight-info-detail-sns .sns-item-link{
+      font-size:0.75rem;
+    }
+    .layer .tab-area-heading{
+      font-size:0.825rem;
+      height:auto;
+    }
+    .find-info{
+      width: 100%;
+      .find-info-item{
+        &:last-child{
+          width:100%;
+          .sign-in-btn{
+            width: 100%;
+            margin-left: 0;
+            margin-right:0;
+            padding: 0 20px;
+            text-align: center;
+            &:after{
+              display:none;
+            }
+          }
+        }
+      }
+    }
     .main-visual-search-desc{
       font-size:0.5rem;
       letter-spacing:-1px;

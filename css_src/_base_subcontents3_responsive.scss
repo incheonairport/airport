@@ -230,8 +230,8 @@
     &-bgico {
       margin: 0;
       font-weight:400;
-      line-height:125px;
-      height:70px;
+      //line-height:125px;
+      //height:70px;
       &:hover{
         opacity:.8;
       }
@@ -526,6 +526,7 @@
         height:auto;
         line-height:inherit;
         margin-top:10px;
+        margin-bottom:0;
 
         .input-box{
           width:100%;
@@ -547,7 +548,7 @@
           &.base{
 
             margin-left:0;
-            margin-top:10px;
+            margin-top:0;
             & label:after{
               top: 0;
             }
@@ -696,7 +697,7 @@
 
   .field-division.small{
     .field-radiomain-label{
-    font-size:0.825rem;
+    font-size:0.825rem!important;
     }
   }
 
@@ -1022,7 +1023,7 @@
         }
       }
       .col-3{
-        padding:15px;
+        padding:20px;
         display:block;
         width:100%;
         border-bottom:1px solid #474a5b;

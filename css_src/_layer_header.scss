@@ -1,8 +1,35 @@
+.skip-navigation-link{
+  position:absolute;
+  left:-99999%;
+  text-decoration:none;
+
+  &:focus{
+    display:block;
+    left:0;
+    top:0;
+    z-index:999999;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    background:#000;
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+  }
+}
+
+
+.ja{
+  .gnb-link{
+    font-size:1rem;
+  }
+}
+
 .header{
   width:30%;
   max-width:500px;
   height:100%;
-  padding-top:232px;
+  padding:232px 20px 0 20px;
   background-size:cover!important;
   box-sizing:border-box;
   position:fixed;

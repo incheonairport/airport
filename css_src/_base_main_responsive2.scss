@@ -330,12 +330,18 @@
             &.prev{
               left:15px;
               top:20px;
+              &:hover{
+                left:15px;
+              }
             }
 
             &.next{
               background-position:-42px 0;
               right:15px;
               top:20px;
+              &:hover{
+                right:15px;
+              }
             }
           }
         }

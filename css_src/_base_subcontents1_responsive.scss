@@ -1,5 +1,10 @@
 // 1024
 @media screen and (max-width:1080px) {
+
+  #TEL1,#TEL2,#TEL3{
+    width:30%!important;
+    text-align:center;
+  }
   // layout
   .contents{
     width: 100%;
@@ -55,7 +60,9 @@
   }
 
 
-
+//.fit-content div{
+//  font-size:0.75rem!important;
+//}
   //.contents-visual{
   //  &.departure-procedures{
   //    margin-bottom:30px;
@@ -63,15 +70,23 @@
   //    padding-top:3em;
   //  }
   //}
-
+  .section-bg.airline-city.mt35{
+    display:none;
+  }
   .local {
     &-list {
       &-item {
         width: 14.2857%;
+        &-link{
+          height:auto;
+          line-height:2.4;
+        }
       }
     }
     &-town {
       padding: 30px 15px;
+      margin-bottom:10px;
+
       &-item {
         width:33.33%;
         border:0;
@@ -584,12 +599,16 @@
     }
   }
 
+  .layer-wrap.system{
+
+    //overflow:hidden;
+  }
   // layer popup
   .layer{
     padding:15px;
     height:100vh!important;
     &.find-my-terminal{
-      display: table;
+
       padding: 15px;
       br{
         display:none;
@@ -600,8 +619,7 @@
       .layer-area{
         text-align:center;
         padding:0;
-        display: table-cell;
-        vertical-align: middle;
+
       }
       .layer-title{
         font-size:1.5rem;
@@ -644,6 +662,14 @@
 
     }
     &.system{
+      .layer-area{
+        overflow-y: scroll;
+        height: calc(100% - 40px);
+      }
+      top:0!important;
+      left:0!important;
+      position: absolute;
+      overflow-y:hidden;
       .systemico{
         height:auto!important;
       }
@@ -655,7 +681,7 @@
       border: none;
       padding: 40px 0 0;
       br{
-        display:none;
+        //display:none;
       }
 
       .layer-system-list{
@@ -663,12 +689,16 @@
           margin:0 auto 15px auto;
         }
         &-tit{
+          font-size:1rem;
+          padding-bottom:0;
 
         }
         &-desc{
           color:#fff;
           text-align:left;
           line-height:1.7;
+          font-size: 0.825rem;
+          font-weight: 400;
         }
       }
 
@@ -677,6 +707,8 @@
         margin-bottom:20px;
         &.point{
           margin-bottom:20px;
+          font-size: 0.825rem;
+          font-weight: 400;
         }
 
         &.systemico:after{
@@ -684,9 +716,10 @@
         }
       }
       .layer-title{
-        font-size:1.25rem;
+        font-size:1rem;
+        padding-bottom:0;
         &:after{
-          margin: 15px auto 15px;
+          margin: 10px auto 10px;
         }
       }
 
@@ -863,6 +896,7 @@
     border-top:0;
     &-btn{
       width: 100%;
+      font-size:0.825rem;
     }
   }
 
@@ -1133,7 +1167,9 @@
 
       &-heading{
         border:2px solid #d9d9d9;
-        font-size:1rem;
+        //font-size:1rem;
+        font-size: 0.825rem;
+        height: 54px;
         &.on{
           border-bottom:2px solid #42519e;
         }

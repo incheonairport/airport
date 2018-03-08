@@ -45,9 +45,32 @@
       table-layout: inherit;
     }
   }
-
+  #editarea{
+    height:auto!important;
+    overflow-y: inherit!important;
+  }
+.layer.address-layer{
+  .timesetting-date-calendar{
+    width: 40px!important;
+  }
+}
   // 라운지쿠폰 CSS
+  .layer-text{
+    height:40px;
+    line-height:40px;
+  }
+  .object-list{
+    height:40px;
+    line-height:40px;
+  }
+  .user-text{
+    height:40px;
+    line-height:40px;
+  }
 .layer{
+  .tab-area-heading{
+    height:auto;
+  }
   .coupon{
     input[type="text"]{
       width:100%!important;
@@ -579,6 +602,7 @@
       height:40px;
       line-height:40px;
       float:left;
+      font-size:0.825rem;
       &:first-child{
         border-right:0!important;
       }
@@ -597,7 +621,19 @@
 
   }
 
-
+  .layer{
+    .input-align{
+      width:100%;
+      .capcha{
+        &:nth-child(3){
+        }
+      }
+      .user-input-text{
+      }
+      .capcha+.user-input-text{
+      }
+    }
+  }
 
   //.inner-col{
   //  .imgbox-extend{

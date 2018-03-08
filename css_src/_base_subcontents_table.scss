@@ -1,5 +1,7 @@
-section.cargo .flight-wrap{
-  border:0;
+section.cargo{
+  .table-like.vt-dark .flight-wrap{
+    border:0;
+  }
 }
 .flight-info-basic-airline{
   img{
@@ -18,6 +20,9 @@ section.cargo .flight-wrap{
       img{
         width: auto;
         height: auto;
+        &:hover{
+          opacity:.5;
+        }
       }
     }
   }
@@ -219,6 +224,9 @@ section.cargo .flight-wrap{
         background: #fff;
         text-indent:-999em ;
         background: url(/static/ap/images/ico_mobile_sms.png ) 50% no-repeat;
+        &:hover{
+          opacity:0.5;
+        }
       }
       &.share-close{
         padding: 0;
@@ -260,6 +268,9 @@ section.cargo .flight-wrap{
             width: 12px;
             height:12px;
           }
+        }
+        &:hover{
+          opacity:.5;
         }
       }
     }
@@ -469,6 +480,9 @@ section.cargo .flight-wrap{
           color: #fff;
           border: 1px solid rgba(255, 255, 255, 0.5);
           border-radius: 20px;
+          &:hover{
+            border:1px solid #ffae44;
+          }
         }
       }
       &-desc{
@@ -633,6 +647,12 @@ section.cargo .flight-wrap{
       text-align: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
+      &:hover{
+        &:after{
+          opacity:.5;
+        }
+      }
+
       &.ico{
         text-indent: 0;
         &:after {
@@ -657,6 +677,9 @@ section.cargo .flight-wrap{
       border:none;
       cursor: pointer;
       text-align: center;
+      &:hover{
+        opacity:0.5;
+      }
       &.ico{
         &:after {
           background-position:-95px -188px;

@@ -1,6 +1,32 @@
 /******************
  * Base Execution *
  ******************/
+$(document).ready(function(){
+  baselocationTitleAdd();
+
+  function baselocationTitleAdd(){
+    var locationText = $('.location-bar-nav-item').length;
+    var lcDepA = $('.location-bar-nav-item').eq(1).text();
+    var lcDepB = $('.location-bar-nav-item').eq(2).text();
+    var lcDepC = $('.location-bar-nav-item').eq(3).text();
+    var lcDepD = $('.location-bar-nav-item').eq(4).text();
+    var baseTit = $('title').text();
+    if(locationText === 2){
+      $('title').text(baseTit + "/" + lcDepA);
+    } else if(locationText === 3){
+      $('title').text(baseTit + "/" + lcDepA + "/" + lcDepB);
+    } else if(locationText === 4){
+      $('title').text(baseTit + "/" + lcDepA + "/" + lcDepB + "/" + lcDepC);
+    } else if(locationText === 5){
+      $('title').text(baseTit + "/" + lcDepA + "/" + lcDepB + "/" + lcDepC + "/" + lcDepD);
+    }
+  }
+
+  $('.tab-area-heading a, .quick-menu-list-link, .user-input-link').on('click', function(e){
+    e.preventDefault();
+  });
+
+});
 
   // loading
 (function(){
