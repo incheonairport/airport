@@ -91,6 +91,7 @@ section.cargo{
       &.codeshare{
         position:relative;
         margin-top:-1px;
+        display:block;
         &:first-child{
           .td-like{
             border-top:1px solid #999;
