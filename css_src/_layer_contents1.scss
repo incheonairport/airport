@@ -8,14 +8,15 @@
 
 /*공항철도 노선도*/
 .digr_airport_railroad{
-  height:274px;
+  //height:274px;
+  height:441px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_airport_railroad.png) center no-repeat #f3f4f8;
 }
 
 /*KTX 노선도*/
 .digr_ktx_route{
-  height:274px;
+  height:324px;
   text-indent:-999em;
   background: url(/static/ap/images/digr_ktx_route.png) center no-repeat #fff;
   border:1px solid #dcdcdc;
@@ -192,6 +193,12 @@
 
     @extend %clearfix;
 
+    &.time-table{
+      border:0;
+      background:none;
+      padding:0;
+    }
+
     &-item {
       font-size:1rem;
       width: 16.6%;
@@ -243,9 +250,9 @@
 
 /*다운로드버튼*/
 .btn-download{
-  width: 86px;
+  min-width: 86px;
   height: 26px;
-  padding-left:25px;
+  padding:0 15px 0 30px;
   line-height: 26px;
   border: 1px solid #d9d9d9;
   background:#f2f2f2;
@@ -267,8 +274,9 @@
   &.ico{
     text-indent: 0;
     &:after{
-      top:10px;
-      right:48px;
+      top: 10px;
+      left: 10px;
+      right: auto;
     }
   }
 }
@@ -336,19 +344,59 @@
 
 /*주차요금계산기*/
 .calculator{
+  @extend %clearfix;
   width: 100%;
   min-height: 98px;
   padding: 20px;
   background: #323648;
-  @extend %clearfix;
 }
+
+.btn-center{
+  display:table;
+  margin:auto;
+  padding:20px 0 60px;
+  .btn-type-small{
+    min-width:166px;
+  }
+
+  //다운로드 버튼타입
+  .btn-type-small{
+    &.download{
+      min-width: 0;
+      font-family: spoqa, sans-serif;
+      font-weight: 700;
+    }
+  }
+}
+
+.btn-pos-box{
+  position:relative;
+  .btn-type-small{
+    position: absolute;
+    right:0;
+    top:20px;
+  }
+}
+
+
 
 /*날짜및시간설정*/
 .timesetting{
   &-date{
+    .timesetting-subtit{
+      display:block;
+      color:#fff;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    @extend %clearfix;
+    &-title{
+      line-height: 56px;
+      padding-right: 10px;
+    }
     &.f-left,
     &.f-right{
-      height:56px;
+      min-height:56px;
     }
     &-day{
       width: 140px;
@@ -363,7 +411,7 @@
     }
     &-calendar{
       width: 46px;
-      height: 56px;
+      height: 56px!important;
       border: 1px solid #d9d9d9;
       border-left: 0;
       background: #fff;
@@ -383,6 +431,10 @@
       padding-left: 10px;
       border: 1px solid #d9d9d9;
       color: #666;
+      &.resize{
+        width: 365px;
+        height: 50px;
+      }
       +.timesetting-date-option{
         border-left: 0;
       }
@@ -533,6 +585,9 @@
 // 스탭3
 .departure-step{
   background: url(/static/ap/images/bg_departure_step.jpg) no-repeat;
+  &.domestic{
+    background: url(/static/ap/images/bg_domestic_step.jpg) no-repeat;
+  }
   &.background-no{
     background: none;
     .departure-step-list-article{
@@ -617,6 +672,27 @@
         width:25%;
         &:before {
           background: url(/static/ap/images/spr_ico_quarantine.png) no-repeat;
+        }
+        &.step-1:before{
+          background-position: -16px -16px;
+        }
+        &.step-2:before{
+          background-position: -154px -16px;
+        }
+        &.step-3:before{
+          background-position: -292px -16px;
+        }
+        &.step-4:before{
+          background-position: -16px -152px;
+        }
+      }
+    }
+    &.domestic-car-rental{
+      width: 802px;
+      .departure-step-list-article{
+        width:25%;
+        &:before {
+          background: url(/static/ap/images/spr_ico_domestic.png) no-repeat;
         }
         &.step-1:before{
           background-position: -16px -16px;
@@ -906,18 +982,19 @@
 .route-bus-stop{
   display: block;
   width: 1152px;
-  height: 400px;
-  background:#f2f4f7 url(/static/ap/images/bg_route_bus_area_search_t1_02.png) no-repeat center;
+  height: 440px;
+  background:url(/static/ap/images/bg_route_bus_area_search_t1_02.png) no-repeat center;
   //background-size: 100%;
   position: relative;
+  border:1px solid #d9d9d9;
   &-ico-box{
     display: block;
     position: absolute;
-    width: 529px;
-    height: 89px;
+    width: 903px;
+    height: 151px;
     top: 50%;
     left: 50%;
-    margin: -75px -276px;
+    margin: -15px -454px;
   }
   .exit{
     text-indent: -99999em;
@@ -926,64 +1003,120 @@
     height: 42px;
     position: absolute;
     &.exit-1{
-      top: -2px;
-      left: 15px;
+      top: -22px;
+      left: 10px;
     }
     &.exit-2{
-      top: 11px;
-      left: 55px;
+      top: -1px;
+      left: 54px;
     }
     &.exit-3{
-      top: 21px;
-      left: 96px;
+      top: 18px;
+      left: 110px;
     }
     &.exit-4{
-      top: 30px;
-      left: 137px;
+      top: 39px;
+      left: 179px;
     }
     &.exit-5{
-      top: 37px;
-      left: 175px;
+      top: 54px;
+      left: 245px;
     }
     &.exit-6{
-      top: 40px;
-      left: 212px;
+      top: 62px;
+      left: 316px;
     }
     &.exit-7{
-      top: 42px;
-      left: 246px;
+      top: 66px;
+      left: 393px;
     }
     &.exit-8{
-      top: 43px;
-      left: 282px;
+      top: 66px;
+      left: 455px;
     }
     &.exit-9{
-      top: 42px;
-      left: 317px;;
+      top: 64px;
+      left: 522px;
     }
     &.exit-10{
-      top: 39px;
-      left: 354px;
+      top: 56px;
+      left: 588px;
     }
     &.exit-11{
-      top: 34px;
-      left: 394px;
+      top: 44px;
+      left: 655px;
     }
     &.exit-12{
-      top: 27px;
-      left: 434px;
+      top: 29px;
+      left: 725px;
     }
     &.exit-13{
-      top: 14px;
-      left: 474px;
+      top: 7px;
+      left: 789px;
     }
     &.exit-14{
-      top: 0;
-      left: 513px;
+      top: -21px;
+      left: 852px;
     }
   }
 }
-
+.route-bus-stop2{
+  display: block;
+  width: 1152px;
+  height: 671px;
+  background:url(/static/ap/images/bg_route_bus_area_search_t2_02.png) no-repeat center;
+  border:1px solid #d9d9d9;
+  //background-size: 100%;
+  position: relative;
+  &-ico-box2{
+    display: block;
+    position: absolute;
+    width: 703px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin: -2px -361px;
+  }
+  .exit{
+    text-indent: -99999em;
+    background: url(/static/ap/images/ico_route_bus_area_search_t1.png) no-repeat;
+    width: 22px;
+    height: 42px;
+    position: absolute;
+    &.exit-1{
+      top: 86px;
+      left: 115px;
+    }
+    &.exit-2{
+      top: 155px;
+      left: 115px;
+    }
+    &.exit-3{
+      top: 182px;
+      left: 182px;
+    }
+    &.exit-4{
+      top: 182px;
+      left: 277px;
+    }
+    &.exit-5{
+      top: 182px;
+      left: 382px;
+    }
+    &.exit-6{
+      top: 182px;
+      left: 475px;
+    }
+    &.exit-7{
+      top: 155px;
+      left: 549px;
+    }
+    &.exit-8{
+      top: 86px;
+      left: 548px;
+    }
+  }
+}
 
 .font20, %font20{
   font-size: 1.25rem;
@@ -1018,6 +1151,8 @@ button{
       background: #fff;
       border: none;
       margin-bottom: 10px;
+      width:22px;
+      height:22px;
       &.ico{
         &:after{
           background-position: -34px -134px;
@@ -1077,17 +1212,170 @@ button{
 
 /*공항지도 검색*/
 
+
+// 체크/라디오 그룹
+.field{
+  &.map{
+
+    .field-radio{
+      & + .field-radio-label{
+        min-width:120px;
+        text-align:center;
+        padding:8px;
+        border: 1px solid #666;
+        border-left:0;
+      }
+    }
+    .field-group{
+      &:first-child{
+        border-left:1px solid #666;
+      }
+      label{
+        margin-right:0;
+      }
+    }
+  }
+  &.map-category-check{
+    margin-top:-1px;
+    background:#fff;
+    border:1px solid #6b6b6b;
+    padding:20px;
+    .field-radio{
+      & + .field-radio-label{
+        min-width:inherit;
+        text-align:center;
+        padding:8px;
+        border:none;
+        background:none;
+        font-size:1rem;
+        position:relative;
+        &:before{
+          content:'';
+          display:block;
+          width:1px;
+          height:9px;
+          background:#a1a1a1;
+          position: absolute;
+          top:0;
+          bottom:0;
+          left:0;
+          margin:auto;
+        }
+
+      }
+
+
+      & + .field-radio-label.first{
+        &:before{
+          display:none;
+        }
+      }
+
+
+      &:checked + .field-radio-label {
+        background:none;
+        color:#42519e;
+        border:none;
+        font-weight:900;
+      }
+    }
+    .field-group{
+
+      label{
+        margin-right:0;
+      }
+    }
+  }
+  @extend %clearfix;
+  .field-radio{
+    display:none;
+    & + .field-radio-label{
+      display: block;
+      padding:5px 10px;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      color: #666;
+      font-size:0.875rem;
+      float: left;
+      cursor: pointer;
+    }
+    &:checked + .field-radio-label {
+      background:#000;
+      color:#fff;
+      border: 1px solid #000;
+    }
+  }
+  &-group{
+    @extend %clearfix;
+    display:block;
+    margin-top:10px;
+    label{
+      margin-right:6px;
+    }
+    &:first-child{
+      margin-top:0;
+    }
+
+    &.brand{
+      .field-radio-label{
+        padding:0;
+        min-width:32px;
+        min-height:30px;
+        border:1px solid #666;
+        color:#000;
+        font-size:1rem;
+        font-weight:600;
+        line-height:30px;
+        vertical-align:middle;
+        text-align:center;
+        box-sizing:border-box;
+        &.pd10{
+          padding:0 10px;
+        }
+      }
+    }
+
+    &.big{
+      margin:30px 0 20px;
+      //border-left:1px solid #666;
+      .field-radio-label{
+        padding:10px 32px;
+        border:1px solid #666;
+        //border-left:0;
+        margin-bottom: 10px;
+        color:#000;
+        font-size:1.125rem;
+        vertical-align:middle;
+        text-align:center;
+        box-sizing:border-box;
+        margin-right:0;
+      }
+    }
+
+    &-tit{
+      min-width:150px;
+      margin-right:20px;
+      float:left;
+      font-size:1.25rem;
+      font-weight:900;
+      line-height:28px;
+    }
+  }
+}
 /*검색*/
 .search-map{
   width:100%;
-  padding: 20px 0;
-  @extend %clearfix;
+  padding: 10px 20px;
+  background:#f3f4f8;
+  border:1px solid #6b6b6b;
+  margin-top: -1px;
+  box-sizing:border-box;
   &-title{
     font-size: 1rem;
     font-weight:800;
     float: left;
     position: relative;
-    top:17px;
+    top:9px;
     padding-right: 15px;
 
     &.title2{
@@ -1116,7 +1404,7 @@ button{
       }
     }
     &-select, &-txt{
-      height:50px;
+      height:30px;
       padding: 0 10px;
       border: 1px solid #d9d9d9;
       border-right:0;
@@ -1138,21 +1426,18 @@ button{
 
   &-btn{
     width: 80px;
-    height: 50px;
+    height: 30px;
     background: #42519e;
     border: none;
     color: #fff;
     font-size: 1rem;
     font-weight: 900;
-    line-height: 50px;
+    line-height: 30px;
   }
-  &-box{
-    padding: 20px 0;
-  }
-
   &-svg{
     width:calc(100% - 249px);
-    height: 602px;
+    background:#333649;
+    height: 700px;
     border: 1px solid #d9d9d9;
     border-right: 0;
     float: left;
@@ -1160,64 +1445,299 @@ button{
     img{
       width:100%;
     }
-  }
-  &-clear{
-    @extend %clearfix;
 
-    .search-map-header{
+    &-control{
+      position:absolute;
+      top:20px;
+      left:20px;
+      border:1px solid #a6a7ab;
+      width:32px;
+      z-index:2;
+      background:#fff;
 
+      .zoom-level{
+        width:30px;
+        height:64px;
+        background:#fff url(/static/ap/images/bg_map_zoom_ruler.png) no-repeat;
+
+        position:relative;
+        &-item{
+          text-indent:-999em;
+          width:30px;
+          height:17px;
+          position:relative;
+          border:none;
+          &:first-child:before{
+            display:none;
+          }
+          &:before{
+            content:'';
+            display:block;
+            width:12px;
+            height:1px;
+            background:#a6a7ab;
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            margin:auto;
+          }
+          &.on{
+            background:#dbdfe7;
+          }
+        }
+
+      }
+
+      .ui-slider-handle{
+        width:30px;
+        height:15px;
+        background:#dbdfe7;
+        position:absolute;
+        cursor:pointer;
+        //top:0;
+      }
+
+      .svgbtn{
+        width:30px;
+        height:30px;
+        background:#fff;
+        text-indent:-999em;
+        position:relative;
+        border:none;
+        &:after{
+          content:'';
+          display:block;
+          background: url(/static/ap/images/spr_svgmap_controller.png) no-repeat;
+          position:absolute;
+          top:0;
+          left:0;
+          right:0;
+          bottom: 0;
+          margin:auto;
+        }
+        &.zoom-in{
+          margin-bottom:15px;
+          border-bottom:1px solid #d9d9d9;
+          &:after{
+            width: 10px;
+            height: 10px;
+            background-position:-12px -20px;
+          }
+        }
+        &.zoom-out{
+          border-top:1px solid #d9d9d9;
+          &:after{
+            width: 10px;
+            height: 2px;
+            background-position:-36px -24px;
+          }
+        }
+        &.map-full-screen{
+          width:30px;
+          height:30px;
+          background:#fff;
+          text-indent:-999em;
+          position:relative;
+          border:none;
+          &:after{
+            content:'';
+            display:block;
+            background: url(/static/ap/images/ico_map_fullscreen.png) no-repeat;
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            margin:auto;
+          }
+
+          &.full-screen{
+            &:after{
+              background-position:-30px 0;
+            }
+          }
+        }
+
+        &:hover{
+          &:after{
+            opacity:.5;
+          }
+        }
+      }
     }
-    .search-map-body{
-      .search-map-item{
-        margin-top:34px;
+  }
+
+  &-clear{
+    position:relative;
+    overflow:hidden;
+    min-height:700px;
+    margin-top:20px;
+    @extend %clearfix;
+    &.full-screen{
+      height:800px;
+      .search-map-svg{
+        height:100%;
+      }
+
+      .search-map-wrap{
+        height:100%;
+      }
+    }
+    &.on{ // 펼침 접기
+      border:1px solid #d9d9d9;
+      .search-map-svg{
+        width:100%;
+        border:0;
+        position:absolute;
+      }
+      .search-map-wrap{
+        right:-249px;
+      }
+      .search-map-control{
+        &:after{
+          transform:rotate(180deg);
+        }
+      }
+    }
+
+  }
+  &-result{
+    &.off{
+      .search-map-list{
+        display:none
       }
     }
   }
   &-wrap{
+    position: relative;
     width: 249px;
     height: 602px;
-    overflow: auto;
-    padding: 30px 0;
+    backgrond:#fff;
     border: 1px solid #d9d9d9;
     box-sizing: border-box;
     float:right;
   }
+  &-box{
+    width: 249px;
+    height: 602px;
+    overflow: auto;
+    &-inner{
+      padding:0 20px 20px;
+    }
+    &-level1{
+      border-bottom:2px solid #d9d9d9;
+      padding:10px 20px;
+      background:#333649;
+      color:#fff;
+      font-size:1.5rem;
+      font-weight:400;
+    }
+    &-level2{
+      display:block;
+      font-size:1.25rem;
+      font-weight:300;
+      padding-bottom:10px;
+      border-bottom:1px solid #d9d9d9;
+      margin:10px 20px 0;
+      position:relative;
+      &+.search-map-box-inner{
+        display:none;
+      }
+      &.on+.search-map-box-inner{
+        display:block;
+      }
+      &.on:after{
+        transform:rotate(270deg);
+      }
+      &:after{
+        content:'';
+        display:block;
+        background: url(/static/ap/images/spr_ico_global.png) no-repeat -158px -65px;
+        width: 6px;
+        height: 10px;
+        position:absolute;
+        top:0;
+        bottom:10px;
+        margin:auto;
+        right:10px;
+        transform:rotate(90deg);
+      }
+
+    }
+    &-level3{
+      display:block;
+      font-size:1rem;
+      font-weight:400;
+      background:#f2f4f7;
+      padding:8px;
+      &.on{
+        background:#333649;
+        color:#fff;
+        &+.search-map-list{
+          display:block;
+        }
+      }
+      &+.search-map-list{
+        display:none;
+      }
+    }
+  }
 
   &-list{
-    &-tit{
-      padding-left: 20px;
-    }
+    margin-top:10px;
     &-item{
-      padding-left: 32px;
-      line-height:1.4;
-      margin-top:2px;
 
-      &:before{
-        left: 20px;
-      }
-      &:hover{
-        background-color: #f2f2f2;
+      &:hover,&.on{
         font-weight: 900;
-
         .search-map-list-link{
           color: #42519e;
         }
       }
-
     }
-
     &-link{
+      color:#666;
       font-size: 1rem;
-
-      &:hover{
-
-      }
     }
+  }
+  &-control{
+    //display:none;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:-22px;
+    margin:auto;
+    background: #fff;
+    width:22px;
+    height:68px;
+    border:1px solid #d9d9d9;
+    border-right:0;
+    text-indent:-999em;
+    &:after{
+      content:'';
+      display:block;
+      background: url(/static/ap/images/spr_ico_global.png) no-repeat -101px -64px;
+      width: 8px;
+      height: 12px;
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      margin:auto;
+    }
+  }
 
+  &-contents{
+    &.full-screen{
+      width:50%;
+      margin:30px auto 0;
+    }
   }
 
 
 }
+
 
 /*환승절차*/
 .transit-step{
@@ -1248,4 +1768,105 @@ button{
     }
   }
 }
+
+//input
+.user-text{
+  width: 250px;
+  height: 50px;
+  line-height:50px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  &.wide{
+    width: 100%;
+  }
+  &.height{
+    height:200px;
+    padding:15px;
+    line-height: 1.5;
+    font-family: roboto, spoqa, sans-serif;
+  }
+  &.email{
+    width:140px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  &.email-wide{
+    width: 85%;
+    margin-bottom: 10px;
+  }
+  &.direct-input{
+    width:296px;
+    height:40px;
+  }
+  &.color-gr{
+    background: #f2f2f2;
+  }
+}
+///*파일 첨부, 주소 검색*/
+//.user{
+//  &-input{
+//    width:957px;
+//    &-text{
+//      width:800px;
+//      height:50px;
+//      font-size:1rem;
+//      border: 1px solid #d9d9d9;
+//      box-sizing: border-box;
+//      float:left;
+//    }
+//    &-link{
+//      min-width:145px;
+//      height:50px;
+//      line-height: 50px;
+//      padding: 0 20px;
+//      background-color: #f2f2f2;
+//      border: 1px solid #d9d9d9;
+//      font-weight: 900;
+//      text-align: center;
+//      display: inline-block;
+//      &.small{
+//        min-width:84px;
+//        height:26px;
+//        line-height:26px;
+//        font-size: 0.8125rem;
+//        font-weight:700;
+//        color: #666;
+//      }
+//    }
+//    &.id{
+//      width: 410px;
+//      .user-input-text{
+//        width: 263px;
+//        padding: 0 10px;
+//        border-right: 0;
+//        float:left;
+//      }
+//    }
+//  }
+//
+//}
+//.object-list{
+//  width:250px;
+//  height:50px;
+//  padding: 0 15px;
+//  border: 1px solid #d9d9d9;
+//  font-size: 1rem;
+//  vertical-align: top;
+//  &option{
+//    font-size: 1rem;
+//  }
+//  &.email{
+//    width: 157px;
+//    margin-right: 8px;
+//  }
+//  &.small{
+//    width: 150px;
+//  }
+//  &-title{
+//    line-height: 50px;
+//    padding: 0 10px;
+//  }
+//}
 

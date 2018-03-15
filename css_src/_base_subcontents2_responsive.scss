@@ -1,5 +1,5 @@
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   // boxmodel
   .boxmodel {
     &.parking{
@@ -198,6 +198,11 @@
         height:66px;
         line-height:66px;
       }
+      &.row-2{
+        overflow: inherit;
+        height:38px;
+        line-height:38px;
+      }
     }
     .guide-desc{
       text-align:center;
@@ -219,14 +224,14 @@
 
 
 // 780
-@media all and (max-width:780px) {
+@media screen and (max-width:1024px) {
   .top-notice{
     display:inline-block;
     width:100%;
     margin:0;
     .top-notice-desc{
+      text-align:center;
       letter-spacing:-1px;
-      padding-top:10px;
       color:#fff;
       font-size:0.825rem;
       &:before{
@@ -238,7 +243,8 @@
         height: 12px;
       }
       margin-bottom:30px;
-      padding:0 15px;
+      padding:10px 15px 0;
+      border-top:1px solid rgba(255,255,255,0.3);
     }
     &:before{
       display:none;
@@ -283,7 +289,473 @@
 }
 
 // 640
-@media all and (max-width:639px) {
+@media screen and (max-width:1024px) {
+
+  // top visual
+  .sub-top{
+    &-inner{
+      width:100%;
+    }
+    min-height:inherit;
+    height:inherit!important;
+    padding:30px 15px;
+    &-descbox{
+      font-size:1.5rem;
+      line-height:1.4;
+      &.center{
+        span{
+          padding: 0 20px;
+          display: block;
+        }
+      }
+      &-text{
+
+      }
+      &-tit{
+        font-size:1.5rem;
+        line-height:1.4;
+        display: inline-block;
+        padding: 0 20px;
+      }
+      &-sub{
+        font-size:1rem;
+      }
+    }
+    &-linkbox{
+      height:inherit;
+      font-size:1rem;
+      line-height:inherit;
+      border:none;
+      background:none;
+      .btn-type-round-under{
+        margin-top:20px;
+      }
+    }
+    &.type2{
+      .sub-top-descbox{
+        padding-top:0;
+      }
+    }
+    &.type3{
+
+      .sub-top-descbox{
+        display:block;
+        padding-top:52px;
+        .sub-top-descbox-text{
+          .sub-top-descbox-tit{
+            font-size:2rem;
+            .text-georgia{
+              font-size:3rem;
+            }
+          }
+          .btn-type-infolink{
+            margin-left:0;
+            margin-top:10px;
+          }
+        }
+      }
+    }
+    &.type4{
+
+      .sub-top-descbox{
+        .sub-top-descbox-text{
+          font-family:roboto, sans-serif;
+          &:after{
+            content:'';
+            display:block;
+            width:2px;
+            height:40px;
+            background:#fff;
+            margin:20px auto;
+          }
+          .sub-top-descbox-tit{
+            font-size:3rem;
+            font-weight:900;
+            line-height:1;
+          }
+          .sub-top-descbox-sub{
+            display:block;
+            font-size:1.5rem;
+
+          }
+          .btn-type-infolink{
+            margin-left:8px;
+            vertical-align: super;
+          }
+        }
+
+      }
+    }
+  }
+
+
+
+  // middle visual
+  .section-bg-head:after{
+    margin:15px auto;
+  }
+  .section-bg{
+    height:inherit!important;
+    background-size:cover!important;
+    &.airline-city{
+      padding:60px 0;
+    }
+    &.transfer-bg{
+      padding-top:30px;
+    }
+    &-inner{
+      //padding:60px 15px;
+      &.split{
+        float:none;
+        width:100%;
+        height:40%;
+        padding:30px 15px;
+        br{
+          display:none;
+        }
+      }
+      &.bgcolor-b{
+        text-align:center;
+        padding:30px 15px;
+        height:60%;
+      }
+    }
+    &-list{
+      margin-top:0;
+      &.col-multi{
+        .section-bg-list-tit{
+          font-size:1rem;
+        }
+        .section-bg-list-item{
+          width:100%;
+          .btn-type-small{
+            margin-top:10px;
+          }
+          .section-bg-list-inner{
+
+          }
+        }
+      }
+      &.col-4{
+        .section-bg-list-item{
+          width:100%;
+          padding:14px 20px;
+          &:nth-child(3n){
+            margin-left:0;
+          }
+        }
+      }
+      &.col-5{
+        .section-bg-list-item{
+          width:100%;
+          padding:14px 20px;
+          &:nth-child(4n){
+            margin-left:0;
+          }
+        }
+        .section-bg-list-tit{
+          font-size:1.125rem;
+          font-weight:700;
+        }
+      }
+      &-item{
+        margin-bottom:-2px;
+        margin-left:0;
+        border:none;
+        width:100%!important;
+        background:none;
+        &:first-child{
+          margin-left:0;
+        }
+      }
+      &-inner{
+        display:table-cell;
+        vertical-align:middle;
+        text-align:center;
+        & .btn-type-small{
+          margin-top:8px;
+        width:100px;
+        }
+      }
+      &-tit{
+        font-size:1.125rem;
+        font-weight:700;
+      }
+    }
+    &-head{
+      font-size:1.5rem; 
+      &:after{
+        margin:20px auto;
+      }
+    }
+    &-head2{
+      text-align:center;
+      margin-bottom:0;
+      &:after{
+        display:none;
+      }
+    }
+    &-desc{
+      font-size:1rem;
+      &.left{
+        text-align:center;
+      }
+    }
+    &-sublist{
+      //border-top:2px solid #fff;
+      margin:15px auto auto;
+      &-tit{
+        font-size:1rem;
+        margin-top:20px;
+      }
+      &-desc{
+        font-size:0.825rem;
+        br{
+          display: block!important;
+        }
+      }
+    }
+    .contents-sub-head{
+      padding:0!important;
+      .clip-white{
+        &:after{
+          margin:20px auto 0;
+        }
+      }
+    }
+    &.parking-info{
+      height:540px;
+      background-size:cover;
+      .section-bg-inner{
+        height: inherit;
+      }
+    }
+    .btn-type-infolink{
+      margin-bottom:15px;
+      border:1px solid #fff;
+    }
+    &-contents2{
+      width:100%;
+      float:none;
+      margin-left:0;
+      margin-bottom:15px;
+      text-align:center;
+      padding:0 15px;
+      .logo-text{
+        &.mt20{
+          margin-top:10px;
+        }
+      }
+      .logo-list{
+        width:100%;
+        display:inline-block;
+
+
+
+        &-item{
+          margin-left:4px;
+          //border-left:1px solid rgba(255,255,255,.3);
+          &:nth-child(odd){
+            //border-left:0;
+          }
+        }
+      }
+    }
+  }
+  .section-bg-contents2+.congestion{
+    margin-bottom:0;
+  }
+
+  // icon text
+  .icontxt {
+    display:block;
+    &:before {
+      display: block;
+      margin:auto;
+      background-size: 377px 176px;
+      width:77px;
+      height:77px;
+    }
+    &-title{
+      display:block;
+      font-size: 1.5rem;
+      padding:20px 0 ;
+    }
+    &.icon-check-passport{
+      &:before{
+        background-position: -7px -10px;
+      }
+    }
+
+    &.icon-check-visa{
+      &:before{
+        background-position: -91px -10px;
+      }
+    }
+
+    &.icon-check-international-driver-license{
+      &:before{
+        background-position: -176px -10px
+      }
+    }
+  }
+
+  //button
+  .btn-type{
+    &-infolink{
+      width:100%;
+      padding:0;
+      font-size:1rem;
+      text-align:center;
+    }
+    &-normal{
+      width:100%;
+      padding:0;
+      font-size:1rem;
+      text-align:center;
+    }
+
+    &-round-under{
+      width:100%;
+      padding:0;
+      font-size:1rem;
+      text-align: center;
+    }
+
+    &-small{
+      width:100%;
+      height:30px;
+      line-height:30px;
+      font-size:1rem;
+      &.detail{
+      }
+    }
+    &-down{
+    }
+  }
+
+  //common
+  .guide-desc{
+    font-size:0.825rem;
+    line-height:1.4;
+
+    &.color{
+      color:#d43e41;
+    }
+
+    &.mark{
+      text-indent:-20px;
+      padding-left:20px;
+
+      &:before{
+        content:"※";
+      }
+
+      &-center{
+        text-indent: 0;
+        padding: 0 0;
+        text-align: center;
+      }
+    }
+    &.mark2{
+      text-indent:-20px;
+      padding-left:20px;
+
+      &:before{
+        content:"*";
+        position: relative;
+        top: 4px;
+      }
+    }
+  }
+  .inner-tab{
+    position: static;
+    margin-top:20px;
+    &-heading{
+      border:none;
+      background: #3e4b91;
+      color:#fff;
+      &.on{
+        background:#fff;
+        color: #42519e;
+        font-weight:800;
+      }
+    }
+  }
+
+  // top map visual
+  .rough-map{
+    height:400px;
+    min-height:400px;
+    .congestion{
+      top:60px;
+      border-left:0;
+    }
+    &-tit{
+      position:static;
+      display: inherit;
+      text-align:center;
+      font-size:1.5rem;
+      font-weight:400;
+    }
+    &.arrival{
+    }
+  }
+
+  .etc-page {
+    margin-top: 140px;
+    &-article {
+      .btn-type-normal {
+        margin-top: 30px;
+      }
+    }
+    &-heading {
+      font-size: 1.125rem;
+      &:before {
+        width: 144px;
+        height: 144px;
+      }
+    }
+    &-desc {
+      margin-top: 30px;
+      font-size: 0.9375rem;
+    }
+    &-link {
+      color: #42519e;
+    }
+  }
+
+  .digr-terminal-interconnection{
+    background: url(/static/ap/images/digr_terminal_interconnection.png) no-repeat center;
+    background-size:contain;
+    height:200px;
+  }
+
+  .en .logo-list{
+    width: 90%;
+    margin: auto;
+
+    .logo-list-item{
+      margin-right:20px;
+      margin-bottom:10px;
+      margin-left:0;
+      border:0;
+      &:nth-child(odd){
+        border-left:0;
+      }
+    }
+  }
+
+
+
+}
+
+
+@media screen and (max-width:639px){
+
+
+
+
   // boxmodel
   .boxmodel{
     &-list{
@@ -321,11 +793,20 @@
           padding:20px 10px 16px;
           margin:0!important;
           &.img{
-            height:300px!important;
-            min-height:300px;
+            //height:300px!important;
+            min-height:inherit;
+            padding:30px 15px;
+            background-position: center!important;
+
+            .boxmodel-btn-group{
+              margin-top:auto;
+
+            }
+
             .boxmodel-list-head{
               font-size:1.875rem;
               line-height:1.4;
+              margin-top:0!important;
             }
             .boxmodel-list-desc{
               max-width:inherit;
@@ -335,6 +816,7 @@
         }
         &.col-1{
           .leave-check{
+            padding:0;
             .col-btn{
               &-link1{
                 width:33.33%;
@@ -346,7 +828,7 @@
                 width: 100%;
               }
             }
-        }
+          }
 
         }
         &.col-3{
@@ -463,415 +945,43 @@
         }
       }
     }
+    .boxmodel-list-desc-left{
+      text-align:center
+    }
+
+
     .guide-desc{
       font-size:0.825rem;
     }
-  }
-
-  // top visual
-  .sub-top{
-    &-inner{
-      width:100%;
-    }
-    min-height:inherit;
-    height:inherit!important;
-    padding:60px 15px;
-    &-descbox{
-      font-size:1.5rem;
-      line-height:1.4;
-      &.center{
-        span{
-          padding: 0 20px;
-          display: block;
-        }
+    .boxmodel-list-item-inner.img{
+      position:relative;
+      .boxmodel-list-head{
+        position:relative;
       }
-      &-text{
-
+      .boxmodel-list-desc{
+        position:relative;
       }
-      &-tit{
-        font-size:1.5rem;
-        line-height:1.4;
-        display: inline-block;
-        padding: 0 20px;
-      }
-      &-sub{
-        font-size:1rem;
-      }
-    }
-    &-linkbox{
-      height:inherit;
-      font-size:1rem;
-      line-height:inherit;
-      border:none;
-      background:none;
-      .btn-type-round-under{
-        margin-top:20px;
-      }
-    }
-    &.type2{
-      .sub-top-descbox{
-        padding-top:0;
-      }
-    }
-    &.type3{
-
-      .sub-top-descbox{
+      &:before{
+        content: '';
+       position:absolute;
+        left:0;
+        top:0;
         display:block;
-        padding-top:52px;
-        .sub-top-descbox-text{
-          .sub-top-descbox-tit{
-            font-size:2rem;
-            .text-georgia{
-              font-size:3rem;
-            }
-          }
-          .btn-type-infolink{
-            margin-left:0;
-            margin-top:10px;
-          }
-        }
-      }
-    }
-    &.type4{
-
-      .sub-top-descbox{
-        .sub-top-descbox-text{
-          font-family:roboto, sans-serif;
-          &:after{
-            content:'';
-            display:block;
-            width:2px;
-            height:40px;
-            background:#fff;
-            margin:20px auto;
-          }
-          .sub-top-descbox-tit{
-            font-size:3rem;
-            font-weight:900;
-            line-height:1;
-          }
-          .sub-top-descbox-sub{
-            display:block;
-            font-size:1.5rem;
-
-          }
-          .btn-type-infolink{
-            margin-left:8px;
-            vertical-align: super;
-          }
-        }
-
-      }
-    }
-  }
-
-
-
-  // middle visual
-  .section-bg{
-    height:inherit!important;
-    background-size:cover!important;
-    &.airline-city{
-      padding:60px 0;
-    }
-    &-inner{
-      //padding:60px 15px;
-      &.split{
-        float:none;
         width:100%;
-        height:40%;
-        padding:60px 15px;
-        br{
-          display:none;
-        }
-      }
-      &.bgcolor-b{
-        text-align:center;
-        padding:60px 15px;
-        height:60%;
-      }
-    }
-    &-list{
-      margin-top:30px;
-      &.col-4{
-        .section-bg-list-item{
-          width:100%;
-          padding:14px 20px;
-          &:nth-child(3n){
-            margin-left:0;
-          }
-        }
-      }
-      &.col-5{
-        .section-bg-list-item{
-          width:100%;
-          padding:14px 20px;
-          &:nth-child(4n){
-            margin-left:0;
-          }
-        }
-        .section-bg-list-tit{
-          font-size:1.125rem;
-          font-weight:700;
-        }
-      }
-      &-item{
-        margin-bottom:-2px;
-        margin-left:0;
-        &:first-child{
-          margin-left:0;
-        }
-      }
-      &-inner{
-        display:table-cell;
-        vertical-align:middle;
-        text-align:center;
-        & .btn-type-small{
-          margin-top:8px;
-        width:100px;
-        }
-      }
-      &-tit{
-        font-size:1.125rem;
-        font-weight:700;
-      }
-    }
-    &-head{
-      font-size:1.5rem; 
-      &:after{
-        margin:20px auto;
-      }
-    }
-    &-head2{
-      text-align:center;
-      &:after{
-        width:100%;
-      }
-    }
-    &-desc{
-      font-size:1rem;
-      &.left{
-        text-align:center;
-      }
-    }
-    &-sublist{
-      border-top:2px solid #fff;
-      margin:20px auto auto;
-      &-tit{
-        font-size:1rem;
-        margin-top:20px;
-      }
-      &-desc{
-        font-size:0.825rem;
-        br{
-          display: block!important;
-        }
-      }
-    }
-    .contents-sub-head{
-      padding:0!important;
-      .clip-white{
-        &:after{
-          margin:20px auto 0;
-        }
-      }
-    }
-    &.parking-info{
-      height:540px;
-      background-size:cover;
-      .section-bg-inner{
-        height: inherit;
-      }
-    }
-    .btn-type-infolink{
-      margin-bottom:30px;
-    }
-    &-contents2{
-      width:100%;
-      float:none;
-      margin-left:0;
-      margin-bottom:30px;
-      text-align:center;
-      padding:15px;
-      .logo-text{
-        &.mt20{
-          margin-top:10px;
-        }
-      }
-      .logo-list{
-        display:inline-block;
-      }
-    }
-  }
-  .section-bg-contents2+.congestion{
-    margin-bottom:0;
-  }
-
-  // icon text
-  .icontxt {
-    display:block;
-    &:before {
-      display: block;
-      margin:auto;
-      background-size: 377px 176px;
-      width:77px;
-      height:77px;
-    }
-    &-title{
-      display:block;
-      font-size: 1.5rem;
-      padding:20px 0 ;
-    }
-    &.icon-check-passport{
-      &:before{
-        background-position: -7px -10px;
-      }
-    }
-
-    &.icon-check-visa{
-      &:before{
-        background-position: -91px -10px;
-      }
-    }
-
-    &.icon-check-international-driver-license{
-      &:before{
-        background-position: -176px -10px
+        height:100%;
+        background:rgba(0,0,0,0.3);
       }
     }
   }
 
-  //button
-  .btn-type{
-    &-infolink{
-      width:100%;
-      padding:0;
-      font-size:1rem;
-      text-align:center;
-    }
-    &-normal{
-      width:100%;
-      padding:0;
-      font-size:1rem;
-      text-align:center;
-    }
+  .btn-type-normal{
+    height:40px;
+    line-height:40px;
+    font-size:1rem;
 
-    &-round-under{
-      width:100%;
-      padding:0;
-      font-size:1rem;
-      text-align: center;
-    }
-
-    &-small{
-      width:100%;
-      height:40px;
-      line-height:40px;
-      font-size:1rem;
-      &.detail{
-      }
-    }
-    &-down{
-    }
-  }
-
-  //common
-  .guide-desc{
-    font-size:0.825rem;
-    line-height:1.4;
-
-    &.color{
-      color:#d43e41;
-    }
-
-    &.mark{
-      text-indent:-20px;
-      padding-left:20px;
-
-      &:before{
-        content:"※";
-      }
-
-      &-center{
-        text-indent: 0;
-        padding: 0 0;
-        text-align: center;
-      }
-    }
-    &.mark2{
-      text-indent:-20px;
-      padding-left:20px;
-
-      &:before{
-        content:"*";
-        position: relative;
-        top: 4px;
-      }
-    }
-  }
-  .inner-tab{
-    position: static;
-    margin-top:20px;
-    &-heading{
-      border:none;
-      background: #3e4b91;
-      color:#fff;
-      &.on{
-        background:#fff;
-        color: #42519e;
-        font-weight:800;
-      }
-    }
-  }
-
-  // top map visual
-  .rough-map{
-    height:400px;
-    min-height:400px;
-    .congestion{
-      top:60px;
-      border-left:0;
-    }
-    &-tit{
-      position:static;
-      display: inherit;
-      text-align:center;
-      font-size:1.5rem;
+    strong{
       font-weight:400;
     }
-    &.arrival{
-    }
-  }
-
-  .etc-page {
-    margin-top: 140px;
-    &-article {
-      .btn-type-normal {
-        margin-top: 30px;
-      }
-    }
-    &-heading {
-      font-size: 1.125rem;
-      &:before {
-        width: 144px;
-        height: 144px;
-      }
-    }
-    &-desc {
-      margin-top: 30px;
-      font-size: 0.9375rem;
-    }
-    &-link {
-      color: #42519e;
-    }
-  }
-
-  .digr-terminal-interconnection{
-    background: url(/static/ap/images/digr_terminal_interconnection.png) no-repeat center;
-    background-size:contain;
-    height:200px;
   }
 
 }
-
-

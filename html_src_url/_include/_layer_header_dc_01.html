@@ -1,20 +1,30 @@
 <header class="header traffic-parking">
-  <button type="button" class="layer-terminal-check-btn"><span>내 터미널 확인</span></button>
+
+  <div class="location-bar">
+    <ul class="location-bar-nav">
+      <li class="location-bar-nav-item ico"><a class="location-bar-nav-item-link home ico" href="/">home</a></li>
+      <li class="location-bar-nav-item ico"><a class="location-bar-nav-item-link" href="/ap_cnt/${LANG_SE}/tpt/direction/direction.do">교통/주차</a></li>
+      <li class="location-bar-nav-item"><a class="location-bar-nav-item-link lnb-top-list-item-link back" href="#">대중교통</a></li>
+    </ul>
+  </div>
+  <div class="lnb-top">
+    <button type="button" class="layer-terminal-check-btn"><span>내 터미널 확인</span></button>
+  </div>
 
   <h1 class="header-heading">버스</h1>
   <nav class="gnb">
     <ul>
       <li class="gnb-item">
-        <a id="busstoinft1" href="javascript:openCMSLayerContents('busstoinft1');" class="gnb-link on">버스정차장 안내</a>
+        <a id="busstoinft1_busstoinft2" href="javascript:openCMSLayerContents('busstoinft1');" class="gnb-link on">버스정차장 안내</a>
       </li>
       <li class="gnb-item">
-        <a href="/ap/ko/tpt/busRouteList.do" class="gnb-link">버스 검색</a>
+        <a href="/ap/${LANG_SE}/tpt/busRouteList.do" class="gnb-link">버스 검색</a>
       </li>
       <li class="gnb-item">
-        <a id="pblctpt1" href="javascript:openCMSLayerContents('pblctpt1');" class="gnb-link">심야버스</a>
+        <a id="pblctpt1_airlim_kallim" href="javascript:openCMSLayerContents('pblctpt1');" class="gnb-link">심야버스</a>
       </li>
       <li class="gnb-item">
-        <a id="cirbus1" href="javascript:openCMSLayerContents('cirbus1');" class="gnb-link">무료순환버스 안내</a>
+        <a id="cirbus1_cirbus2_cirbus3_cirbus4_cirbus5" href="javascript:openCMSLayerContents('cirbus1');" class="gnb-link">무료순환버스 안내</a>
       </li>
     </ul>
   </nav>

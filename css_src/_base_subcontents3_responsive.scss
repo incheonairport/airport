@@ -1,5 +1,5 @@
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   // guide box
   .guidebox {
     &-col {
@@ -41,6 +41,7 @@
 
   .boxmodel2{
     min-width:1152px;
+
     &-tab{
       &-btngroup{
       }
@@ -183,7 +184,7 @@
 }
 
 // 640
-@media all and (max-width:639px) {
+@media screen and (max-width:1024px) {
   .position-box108{
     margin-top:0;
   }
@@ -207,12 +208,12 @@
     &-iconlist{
       position: static;
       float: none;
-      margin-bottom:30px;
+
       &-item{
-        width:100%;
+        width:50%;
         text-align:center;
         border:0;
-        margin-bottom:14px;
+
       }
     }
     &-bgico {
@@ -233,24 +234,24 @@
         right: 0;
         left: 0;
       }
-      &.shopping:after {
-        background-position: -84px -19px;
-        background-size: 205px 200px;
-        width: 25px;
-        height: 18px;
-      }
-      &.event:after {
-        background-position: -15px -17px;
-        background-size: 205px 200px;
-        width: 22px;
-        height: 22px;
-      }
-      &.map:after {
-        background-position: -51px -17px;
-        background-size: 205px 200px;
-        width: 22px;
-        height: 21px;
-      }
+      //&.shopping:after {
+      //  background-position: -84px -19px;
+      //  background-size: 205px 200px;
+      //  width: 25px;
+      //  height: 18px;
+      //}
+      //&.event:after {
+      //  background-position: -15px -17px;
+      //  background-size: 205px 200px;
+      //  width: 22px;
+      //  height: 22px;
+      //}
+      //&.map:after {
+      //  background-position: -51px -17px;
+      //  background-size: 205px 200px;
+      //  width: 22px;
+      //  height: 21px;
+      //}
     }
     &-tit{
       display:block;
@@ -265,6 +266,9 @@
     &-banner{
       width:100%;
       position: static;
+    }
+    &.transfer{
+      height:100%;
     }
   }
   // slide banner
@@ -297,7 +301,7 @@
   }
   .filter{
     min-width:100%;
-    height:360px;
+    height:auto;
     &.on{
       .filter-brand-search-detail{
         display:block;
@@ -305,7 +309,7 @@
     }
     // 터미널검색
     &-terminal-search{
-
+      height:250px;
       &-heading{
         display:block;
         height:0;
@@ -357,7 +361,8 @@
       }
       &-depth2{
         position:absolute;
-        top:196px;
+        top:149px;
+        width:100%;
         padding:0px;
         background:none;
         border:0;
@@ -372,6 +377,7 @@
         width:100%;
         text-align:center;
         top:140px;
+        position: static;
       }
       &-detail{
         display:none;
@@ -517,6 +523,25 @@
   }
   .boxmodel2{
     min-width:100%;
+    &.course{
+      .boxmodel2-table-tit{
+        width:100%;
+      }
+      .boxmodel2-table-desc{
+        width:100%;
+      }
+
+
+    }
+    .boxmodel2-simple-detail{
+      padding:0 15px 15px;
+    }
+    .boxmodel-hrtour-mark{
+      display:block;
+      margin-top:10px;
+      width:120px;
+
+    }
     &-tab{
       &-btngroup{
       }
@@ -594,6 +619,9 @@
           }
         }
       }
+      &-tit{
+        font-size:1.125rem;
+      }
       &-detail{
         padding:15px;
         &-split{
@@ -619,8 +647,11 @@
       &-item{
         width:100%;
         margin-right:0!important;
+        height:auto;
+
       }
       &-link{
+
       }
       &-box{
         &-split{
@@ -656,8 +687,14 @@
         }
       }
     }
+    &-maintit{
+      font-size:1.125rem;
+      line-height:1.3;
+      margin-bottom:10px;
+    }
     &-table{
       border-top:1px solid #f3f4f8;
+      padding:6px 0;
       &-tit{
         width:auto;
         float:none;
@@ -673,8 +710,9 @@
   .responsive-form-box{
     position:static;
     &-area{
-      width:100%;
+      width:calc(100% - 50px);
       height:100%;
+      float:left;
     }
     // 휴대폰전송버튼
     &.send{
@@ -684,10 +722,11 @@
       input{
         height:40px;
         border-right:1px solid #a5a7aa;
-        border-bottom:0;
+        //border-bottom:0;
+        font-size:1rem;
       }
       .responsive-form-box-btn{
-        width:100%;
+        width:50px;
         height:40px;
       }
     }
@@ -807,5 +846,91 @@
   }
 
 
+  /*주차요금계산기*/
+  .calculator{
+    width: 100%;
+    background:none;
+    padding:0;
+    margin-bottom:20px;
+    .timesetting-date.f-left{
+      .timesetting-subtit{
+        margin-top:0;
+      }
+    }
+  }
+
+  .timesetting{
+
+    &-date{
+      width:100%;
+      .timesetting-subtit{
+        text-align:center;
+        line-height:50px;
+        margin-bottom:0;
+        background:#f1f1f1;
+        color:#333
+      }
+      &-day{
+        width:calc(100% - 50px);
+        height:50px;
+      }
+      &-calendar{
+        width: 50px;
+        height: 50px;
+      }
+      &-option{
+        width: 100%;
+        height: 50px;
+      }
+    }
+    &-dash{
+      margin: 0 auto;
+      padding-left: 15px;
+      text-align: center;
+      color: #fff;
+      font-size: 1.375rem;
+      line-height: 58px;
+    }
+  }
+
+  /*날짜및시간설정*/
+  .view-list{
+    &-date{
+
+      .timesetting-subtit{
+        margin-top:20px;
+      }
+      &-day{
+        width: calc(100% - 46px);
+        height: 50px;
+        border-right: 1px solid #d9d9d9;
+      }
+      &-calendar{
+        width: 46px;
+        height: 50px;
+      }
+      &-option{
+        width: 100%;
+        height: 50px;
+      }
+    }
+  }
+
+  .btn-center{
+    display:block;
+  }
+
+  .boxmodel2{
+    .imgbox-extend{
+      height: auto;
+      .imgbox{
+        width:100%;
+      }
+    }
+  }
+
+  .ft20{
+    font-size:1rem;
+  }
 }
 

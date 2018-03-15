@@ -36,19 +36,19 @@ $(function(){
 
   (function(){
 
-    $('.select-link-default').on('click', function(){
-      SelectBox.toggleSelectList( $(this) );
+    $('.select-link-default').data('open', false).on('click', function(){
+
+      if( !$(this).data().open ){
+        SelectBox.toggleSelectList( $(this) );
+      } else {
+        SelectBox.hideList(e);
+      }
+
     });
 
     $('.select-list .select-list-link').on('click',function(){
 
       SelectBox.afterClickList( $(this) );
-
-    });
-
-    $(document).mouseup(function (e) {
-
-      SelectBox.hideList(e);
 
     });
 
@@ -98,6 +98,20 @@ $(function(){
       $(this).addClass('on');
 
     });
+
+  })();
+
+  /**
+   * 레이어 팝업
+   */
+
+  (function(){
+
+    $(window).on('resize', function(){
+
+      LayerPopup.setPopupHeight();
+
+    }).resize();
 
   })();
 

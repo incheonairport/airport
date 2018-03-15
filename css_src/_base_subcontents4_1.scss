@@ -1,9 +1,9 @@
 
 
-.contact-list{
-  width:1152px;
-  margin: 0 auto;
-}
+//.contact-list{
+//  width:1152px;
+//  margin: 0 auto;
+//}
 
 .sub-menu-tab{
   &-iconlist{
@@ -175,19 +175,32 @@
 
   &-item{
     float:left;
+    position: relative;
+    &:first-child{
+      padding-right: 10px;
+      &:after{
+        content: '';
+        display: block;
+        width: 1px;
+        height: 15px;
+        position: absolute;
+        top: 4px;
+        right: 0;
+        background: #666;
+      }
+    }
   }
 
   &-link{
     font-size: 1rem;
     color:#444;
 
-    &.id{
-      margin-right: 5px;
-
-    }
+    //&.id{
+    //  margin-right: 5px;
+    //}
 
     &.pw{
-      padding-left: 5px;
+      padding-left: 10px;
     }
   }
 }
@@ -242,8 +255,207 @@
 
 }
 
+.route-list{
 
+  &-item{
+    height:60px;
+    position:relative;
+    margin-bottom:2px;
+    .multi-col{
+      .route-list-item{
+        .route-name{
+          width:40%;
+        }
+        .route-desc{
+          width:60%;
+        }
 
+        &.moving{
+          .route-desc{
+            line-height:1.4;
+            font-size:1rem;
+            padding-top:9px;
+            letter-spacing:-1px;
+          }
+        }
+      }
+    }
+
+    &:after{
+      content:"";
+      display:block;
+      width:4px;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+
+    &.double-row{
+      height:122px;
+      .route-name{
+        height:122px;
+        line-height:122px;
+
+        .move{
+          top:50%;
+          transform:translateY(-50%);
+        }
+      }
+
+      .route-desc{
+        height:122px;
+        line-height:122px;
+      }
+    }
+
+    &.general{
+      &:after{
+        background:#a87b50;
+      }
+    }
+
+    &.departure{
+      &:after{
+        background:#132d5b;
+      }
+    }
+
+    &.moving{
+      &:after{
+        background:#b34b58;
+      }
+    }
+
+    &.tax-free{
+      &:after{
+        background:#6182c0;
+      }
+    }
+
+    &.tax-free2{
+      &:after{
+        background:#bfdfe0;
+      }
+    }
+
+    &.arrival{
+      &:after{
+        background:#42519e;
+      }
+    }
+
+    .route{
+      &-name{
+        width:20%;
+        height:60px;
+        padding-left:25px;
+        border:{
+          top:1px solid #d9d9d9;
+          bottom:1px solid #d9d9d9;
+          right:1px solid #d9d9d9;
+        }
+        float:left;
+        font-size:1.25rem;
+        font-weight:700;
+        line-height:60px;
+        position:relative;
+
+        .move{
+          font-size:0.85rem;
+          font-weight:400;
+          position:absolute;
+          top:10px;
+          right:20px;
+          line-height:normal;
+          padding-bottom:16px;
+
+          &:after{
+            content:"";
+            display:block;
+            width:0;
+            height:0;
+            position:absolute;
+            top:19px;
+            left:2px;
+          }
+
+          &.general{
+            &:after{
+              border:{
+                top:14px solid #a97c50;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
+          &.departure{
+            &:after{
+              border:{
+                top:14px solid #132d5b;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
+          &.tax-free{
+            &:after{
+              border:{
+                top:14px solid #6182D1;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
+          &.tax-free2{
+            &:after{
+              border:{
+                top:14px solid #bfdfe0;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+
+          &.moving{
+            &:after{
+              border:{
+                top:14px solid #b34b58;
+                left:10px solid transparent;
+                right:10px solid transparent;
+              }
+            }
+          }
+        }
+      }
+
+      &-desc{
+        width:80%;
+        height:60px;
+        padding-left:33px;
+        border:{
+          top:1px solid #d9d9d9;
+          bottom:1px solid #d9d9d9;
+          right:1px solid #d9d9d9;
+        }
+        float:left;
+        font-size:1.125rem;
+        line-height:60px;
+
+        &.small{
+          font-size:1rem;
+          line-height:1.4;
+          padding:9px 33px 0;
+        }
+      }
+    }
+
+  }
+
+}
 
 
 

@@ -1,5 +1,5 @@
 // 1560
-@media all and (max-width:1559px) {
+@media screen and (max-width:1559px) {
   // step3
   .departure-step{
     &-list{
@@ -46,6 +46,9 @@
   // date time setting
   .timesetting{
     &-date{
+      .timesetting-subtit{
+        margin-top:10px;
+      }
       &.f-left,
       &.f-right{
         float:none;
@@ -58,12 +61,41 @@
       }
       &-option{
         width: 33.333%;
+
+      &.resize{
+        width:100%;
+      }
+
       }
     }
     &-dash{
       float:none;
     }
+
   }
+  .btn-pos-box{
+    position:static;
+    .btn-type-small{
+      position: static;
+    }
+  }
+  .btn-center{
+    display:block;
+    padding:20px 0;
+
+    .btn-type-small{
+      min-width:100%;
+    }
+    .btn-type-normal{
+      font-size:1rem;
+    }
+    .btn-type-small{
+      &.download{
+      }
+    }
+  }
+
+
   .maglev-train{
     &-line{
       &-list {
@@ -79,7 +111,7 @@
     }
   }
   .bussearch{
-    padding:30px 0;
+    padding:15px 0;
     &-title{
       display:block;
       padding-right:0;
@@ -182,6 +214,14 @@
     background-size:contain;
   }
 
+  .digr-city-airport-terminal-seoul{
+    background-size:contain;
+  }
+
+  .digr-city-airport-terminal-samsung{
+    background-size:contain;
+  }
+
   .digr-city-airport-terminal-kwangmyung{
     background-size:contain;
   }
@@ -217,7 +257,7 @@
         }
       }
       &-select, &-txt{
-        height:50px;
+        height:30px;
         padding: 0 10px;
         border: 1px solid #d9d9d9;
         border-right:0;
@@ -231,73 +271,40 @@
       }
       &-select{
         width: 100px;
-        margin-bottom:10px;
       }
     }
-
     &-btn{
       width: 50px;
     }
     &-box{
-      padding: 20px 0;
-      .checkbox{
-        &-label{
-          padding:0 10px 0 40px!important;
-        }
-      }
+
     }
 
     &-svg{
       width:100%;
       border-right: 1px solid #d9d9d9;
       float: none;
+
+
     }
     &-clear{
-      .search-map-header{
-        float:left;
-        width:20%;
-      }
-      .search-map-body{
-        float:left;
-        width:80%;
-        .search-map-item{
-          width:calc(33.33% - 20px);
-          float:left;
-          margin-top:0;
-          margin-bottom:34px;
-          margin-left:20px;
-        }
-      }
+
     }
     &-wrap{
-      width: 100%;
-      height: 240px;
-      border-top:0;
+      background:#fff;
       float:none;
+      position:absolute;
+      top:0;
+      right:0;
     }
-    &-list{
-      &-tit{
-      }
-      &-item{
-
-        &:before{
-        }
-        &:hover{
-          .search-map-list-link{
-          }
-        }
-      }
-      &-link{
-        &:hover{
-
-        }
-      }
+    &-control{
+      //display:block;
     }
   }
 }
 
 // 1260
-@media all and (max-width:1259px) {
+@media screen and (max-width:1259px) {
 
 
   .travel-info{
@@ -320,15 +327,26 @@
 }
   /*버스지역*/
   .local {
+    border:0;
     &-list {
+      border:1px solid #a5a7aa;
+      border-bottom:0;
       &-item {
         width:33.333%;
+        border:0;
         border-bottom:1px solid #a5a7aa;
+
+        &:first-child{
+          border-left:0;
+        }
+        &:nth-child(4),&:nth-child(7),&:nth-child(10){
+          border-left:0;
+        }
         &:nth-child(3n){
           border-right:0;
         }
         &:last-child{
-          border-right:1px solid #a5a7aa;
+          width:66.66%;
         }
         &-link {
           font-size:0.9rem;
@@ -342,12 +360,15 @@
     }
     &-town {
       padding:10px;
-      border-top:0;
+      margin-top:10px;
+      border:1px solid #a5a7aa;
+      max-height:300px;
+      overflow-y:auto;
       &-item {
-        margin-bottom:10px;
-        width:33.33%;
+        width:50%;
         font-size:1rem;
         border:0;
+        margin-bottom:10px;
         &:nth-child(8n){
           border-right:0;
         }
@@ -367,10 +388,23 @@
 }
 
 // 780
-@media all and (max-width:780px) {
+@media screen and (max-width:780px) {
+  // 체크/라디오 그룹
+  .field{
+    &.map{
+      .field-radio{
+        & + .field-radio-label{
+          min-width:16.666%;
+          padding:14px;
+        }
+      }
+    }
+  }
   /*공항지도 검색*/
   .search-map{
-    width:100%;
+    padding:0;
+    background:none;
+    border:none;
     &-title{
       display:none;
       &.title2{
@@ -386,9 +420,6 @@
           margin-right: 0;
         }
       }
-      &-select, &-txt{
-
-      }
       &-select{
         width:100%;
         &.small{
@@ -402,70 +433,79 @@
       margin-top:10px;
     }
     &-box{
-      padding: 20px 0;
-      .checkbox{
-        &-label{
-
-          padding:0 10px 0 40px!important;
+      width: 180px;
+      &-level1{
+        font-size:1rem;
+        font-weight:700;
+      }
+      &-level2{
+        font-size:1rem;
+      }
+      &-level3{
+        font-size:0.825rem;
+        .search-map-list-link{
+          font-size:0.825rem;
         }
+
       }
     }
 
     &-svg{
       height:320px;
-      border-right: 1px solid #d9d9d9;
       float: none;
+      &-control{
+        position:absolute;
+        top:20px;
+        left:20px;
+        border:1px solid #a6a7ab;
+        width:32px;
+        z-index:2;
+        .zoom-level{
+          //display:none;
+        }
+        .svgbtn{
+          &:first-child{
+            border-bottom:1px solid #a6a7ab;
+          }
+
+        }
+      }
     }
     &-clear{
-      .search-map-header{
-        float:none;
-        width:100%;
+      //width: 180px;
+      min-height:320px;
+      &.full-screen{
+        height:320px;
+        .search-map-svg{
+          height:100%;
+        }
+
+        .search-map-wrap{
+          height:100%;
+        }
       }
-      .search-map-body{
-        float:none;
-        width:100%;
-        .search-map-item{
+      &.on{ // 펼침 접기
+        border:1px solid #d9d9d9;
+        .search-map-svg{
           width:100%;
-          float:none;
-          margin:0;
-          border-top:1px solid #d9d9d9!important;
-          padding-top:10px;
-          &:first-child{
-            border-top:0;
+          border:0;
+          position:absolute;
+        }
+        .search-map-wrap{
+          right:-180px;
+        }
+        .search-map-control{
+          &:after{
+            transform:rotate(180deg);
           }
         }
       }
     }
     &-wrap{
-      width: 100%;
-      height:auto;
-      overflow:inherit;
-      float:none;
-      border:0;
+      width: 180px;
+      height:320px;
     }
-    &-list{
-      &-tit{
-        padding-left:0;
-        margin-bottom:10px;
-      }
-      &-item{
-        margin-top:0;
-        padding-left:10px;
 
-        &:before{
-          left:0;
-        }
-        &:hover{
-          .search-map-list-link{
-          }
-        }
-      }
-      &-link{
-        &:hover{
-
-        }
-      }
-    }
   }
 
   /*여행정보 검색창*/
@@ -489,9 +529,9 @@
   .departure-step{
     background-size: cover;
     &-list{
-      padding: 30px 10px 0;
+      padding: 30px 0 0;
       .departure-step-list-article {
-        width:50%!important;
+        width:33.33%!important;
         font-size:0.825rem;
         height:130px;
 
@@ -608,7 +648,18 @@
   // input
   .input-bg{
     width: 100%;
-    height: 56px;
+    height: 40px;
+    line-height:40px;
+  }
+
+  /*약관*/
+  .agreement-box{
+    &-title{
+      font-size: 1rem;
+    }
+    &-txt{
+      font-size: 0.825rem;
+    }
   }
 
   // car search
@@ -668,18 +719,46 @@
 
   // reflash button
   .update{
+    margin-bottom: 10px;
+    text-align: left;
+    overflow:hidden;
     &-time{
-      font-size: 1rem;
+      line-height:26px;
     }
     &-refresh{
-      width:100%;
-      font-size:1rem;
-      font-weight:700;
-      line-height: 40px;
-      height: 40px;
-      margin-top:10px;
+      float:right;
+      width:26px;
+      padding:0;
+      line-height:inherit;
+      border-radius:50%;
+      &.ico{
+        text-indent:-9999px;
+      }
+      &.ico:after{
+        top:3px;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+      }
+    }
+    &.mb10{
+      margin-bottom: 10px;
     }
   }
+  //.update{
+  //  &-time{
+  //    font-size: 1rem;
+  //  }
+  //  &-refresh{
+  //    width:100%;
+  //    font-size:1rem;
+  //    font-weight:700;
+  //    line-height: 40px;
+  //    height: 40px;
+  //    margin-top:10px;
+  //  }
+  //}
 
   // parking box
   .congested{
@@ -728,6 +807,7 @@
     padding:0;
     margin-bottom:0;
     &-title{
+      display:none;
       width:auto;
       border-right: 0;
       font-size: 1.125rem;
@@ -748,6 +828,7 @@
   }
   .bussearch{
     &-title{
+      display:none;
       font-size: 1.125rem;
       float: none;
       font-weight:900;
@@ -852,20 +933,33 @@
         float:none;
       }
       &-day{
-        width:calc(100% - 46px);
+        width:calc(100% - 50px);
+        height:40px;
+        line-height:40px;
       }
       &-calendar{
-        width: 46px;
+        width: 50px;
+        height:40px!important;
       }
       &-option{
-        width:100%;
+        width:50%;
         border-top:0;
+        height:40px;
+        line-height:40px;
         border-left:1px solid #d9d9d9!important;
       }
     }
     &-dash{
+      padding-left:0;
       float:none;
+      color:#222;
+      line-height:30px;
     }
+  }
+  .calculator{
+    background:none;
+    padding:0;
+    margin-bottom:10px;
   }
   .timesetting-date-calendar:after{
     //right:20px;
@@ -876,7 +970,7 @@
     height:200px;
   }
   .digr_airport_railroad{
-    height:200px;
+    height:140px;
   }
   .digr_ktx_route{
     height:200px;
@@ -884,6 +978,310 @@
 
   .digr-city-airport-terminal-kwangmyung{
     height:200px;
+  }
+
+  .digr-city-airport-terminal-seoul{
+    height: 140px;
+  }
+
+  .digr-city-airport-terminal-samsung{
+    height: 140px;
+  }
+
+  .digr-city-airport-terminal-kwangmyung{
+    height: 140px;
+  }
+
+  .digr-airport-limousine-route{
+    height:140px;
+  }
+
+  /* Kal 운행노선 */
+  .digr-airport-kal-route{
+    height:140px;
+  }
+
+  /*환승절차*/
+  .transit-step{
+    .list3{
+      &-item{
+        float: none;
+        &.ico{
+          &:after{
+            display:none;
+          }
+        }
+        &+.list3-item{
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .travel-info{
+    .travel-info-box-title{
+      font-size:1.125rem;
+      line-height:1.4;
+    }
+    .btn-type-small{
+      width:100%;
+    }
+    .imgbox-extend {
+      overflow-x: auto;
+      .imgbox {
+        width:100%;
+      }
+    }
+  }
+
+  .travel-info-detail-txt{
+    img{width:100%}
+  }
+
+  //글작성 게시판 추가
+  .table{
+
+    &.hr.writing,&.hr.info{
+      border-top:1px solid #d9d9d9;
+      display:block;
+      overflow-x:inherit;
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display:block;
+      }
+
+      tr:after{
+        content:'';
+        display:block;
+        clear:both;
+      }
+      th{
+        position:relative;
+
+        float:left;
+        width:100%;
+        border-right:1px solid #d9d9d9;
+        border-left:1px solid #d9d9d9;
+        padding:10px;
+
+      }
+      td{
+        position:relative;
+        border:1px solid #d9d9d9;
+        float:left;
+        width:100%;
+        text-align:center;
+        margin-bottom:-1px;
+        padding:20px 10px;
+        height:auto;
+        line-height: 1.4;
+        &.agreement-offer{
+          padding:25px 20px;
+        }
+      }
+
+    }
+  }
+
+  //input
+  .user-text{
+    width: 100%;
+
+    &.height{
+
+    }
+    &.email{
+
+    }
+    &.email-wide{
+      width: 100%;
+      margin-bottom:0;
+    }
+    &.direct-input{
+      width:100%;
+      height:50px;
+      line-height:50px;
+    }
+
+  }
+
+  .object-list{
+    width:100%;
+    height:50px;
+
+    &.email{
+      width: 100%;
+      margin-right:0;
+    }
+    &.small{
+      width: 100%;
+    }
+    &-title{
+      line-height: 50px;
+      padding: 0 10px;
+    }
+  }
+
+  .to-calculate .btn-type-normal{
+    font-size:1rem;
+    font-weight:400;
+  }
+
+
+//버스검색
+  .route-bus-stop{
+    width: 288px;
+    height: 184px;
+    background-size:contain;
+    border:none;
+    margin:auto;
+    &-ico-box{
+      width: 247px;
+      height: 109px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .exit{
+      width: 11px;
+      height: 21px;
+      background-size:cover;
+      &.exit-1{
+        top: 36px;
+        left: 9px;
+      }
+      &.exit-2{
+        top: 41px;
+        left: 20px;
+      }
+      &.exit-3{
+        top: 46px;
+        left: 34px;
+      }
+      &.exit-4{
+        top: 51px;
+        left: 52px;
+      }
+      &.exit-5{
+        top: 54px;
+        left: 68px;
+      }
+      &.exit-6{
+        top: 56px;
+        left: 86px;
+      }
+      &.exit-7{
+        top: 58px;
+        left: 105px;
+      }
+      &.exit-8{
+        top: 58px;
+        left: 121px;
+      }
+      &.exit-9{
+        top: 57px;
+        left: 137px;
+      }
+      &.exit-10{
+        top: 55px;
+        left: 155px;
+      }
+      &.exit-11{
+        top: 52px;
+        left: 172px;
+      }
+      &.exit-12{
+        top: 48px;
+        left: 189px;
+      }
+      &.exit-13{
+        top: 42px;
+        left: 206px;
+      }
+      &.exit-14{
+        top: 36px;
+        left: 221px;
+      }
+    }
+  }
+  .route-bus-stop2{
+    width: 288px;
+    height: 184px;
+    background-size:contain;
+    border:none;
+    margin:auto;
+    &-ico-box2{
+      width: 186px;
+      height: 154px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .exit{
+      width: 11px;
+      height: 21px;
+      background-size:cover;
+      &.exit-1{
+        top: 89px;
+        left: 29px;
+      }
+      &.exit-2{
+        top: 106px;
+        left: 29px;
+      }
+      &.exit-3{
+        top: 111px;
+        left: 45px;
+      }
+      &.exit-4{
+        top: 111px;
+        left: 69px;
+      }
+      &.exit-5{
+        top: 111px;
+        left: 95px;
+      }
+      &.exit-6{
+        top: 111px;
+        left: 119px;
+      }
+      &.exit-7{
+        top: 105px;
+        left: 136px;
+        z-index: 2;
+      }
+      &.exit-8{
+        top: 89px;
+        left: 138px;
+      }
+    }
+  }
+
+  /*다운로드버튼*/
+  .btn-download{
+    min-width: 100%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+    padding: 0;
+    &.big{
+      font-size: 1rem;
+      &.ico{
+        &:after{
+        }
+      }
+    }
+    &.ico{
+      &:after{
+      }
+    }
   }
 }
 

@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-#top-contents{
-  margin-top:101px;
+#top-contents.contents{
+  padding-top:101px;
 }
 
 %clearfix:after,
@@ -30,6 +30,7 @@
         font-size:2.875rem;
         font-weight:400;
         text-align:center;
+        color: #fff;
       }
     }
 
@@ -85,6 +86,9 @@
         }
         &:before{
           display:none;
+        }
+        .contents-sub-head-title-lv3{
+          color:#fff;
         }
       }
     }
@@ -455,7 +459,7 @@
     background: #fff;
     transition: height .4s;
     border: 1px solid #d9d9d9;
-    z-index: 10;
+    z-index: 100;
 
     &.on {
       display: block;
@@ -826,11 +830,31 @@ em{
   &.vt-dark{
     border-bottom:1px solid #a5a7aa;
 
+    &.info{
+      min-height: 300px;
+    }
+
     tbody{
       tr:first-child{
         td{
           border-top:0;
         }
+      }
+    }
+
+    tr {
+
+      &.span{
+        td{
+          border-right: 1px solid #f2f4f7;
+          &:first-child {
+            border-left:0;
+          }
+        }
+      }
+
+      &.on {
+        background: #f3f4f8;
       }
     }
 
@@ -1299,4 +1323,77 @@ select{
 
 .f-spoqa{
   font-family: spoqa sans-serif;
+}
+
+.pop-share-box{
+  margin-top:10px;
+  &:first-child{
+    margin-top:0px;
+  }
+  &.line{
+    border-bottom:1px solid #d9d9d9;
+    padding-bottom:20px;
+  }
+
+  &-desc{
+    margin-bottom:10px;
+  }
+}
+.capcha{
+  width:150px;
+  height:50px;
+  border:1px solid #d9d9d9;
+  font-size:1rem!important;
+  position:relative;
+  text-indent:24px;
+  background:#fff;
+  &:before{
+    content:'';
+    display:block;
+    background: url(/static/ap/images/spr_service_ico.png) no-repeat;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:24px;
+    margin:auto;
+  }
+  &.reflash{
+    &:before{
+      background-position:-29px -18px;
+      width: 21px;
+      height: 21px;
+    }
+
+  }
+  &.sound{
+    &:before{
+      background-position: -68px -17px;
+      width: 25px;
+      height: 23px;
+    }
+  }
+}
+.input-align{
+  clear: both;
+  overflow:hidden;
+
+  .capcha{
+    float:left;
+    &:nth-child(3){
+      border-left:0;
+    }
+  }
+  img{
+    float:left;
+  }
+  .user-input-text{
+    width:550px!important;
+  }
+  .capcha+.user-input-text{
+    border-top:0!important;
+  }
+}
+
+img.no-extend{
+  width:100%;
 }

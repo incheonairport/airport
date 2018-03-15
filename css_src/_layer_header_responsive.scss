@@ -1,13 +1,25 @@
 // 1740
-@media all and (max-width:1739px) {
+@media screen and (max-width:1739px) {
   .header{
     max-width:330px;
+
+    &-heading br{
+      display:block;
+    }
+  }
+  .lnb-top{
+    &-list{
+      &-item{
+        min-width: 60px;
+        margin: 0;
+      }
+    }
   }
 }
 
 
 // 1260
-@media all and (max-width:1259px) {
+@media screen and (max-width:1259px) {
   .header{
     max-width:260px;
     &-heading{
@@ -24,26 +36,74 @@
     }
   }
 
-  .layer-terminal-check-btn{
-    width:200px;
-    max-width:200px;
-    margin-left:-100px;
+  .layer-terminal-check-btn.one{
+    //width:200px;
+    //max-width:200px;
+    //margin-left:-100px;
+  }
+
+  .lnb-top{
+    &-list{
+      .layer-terminal-check-btn{
+        //   width:200px;
+        //   max-width:200px;
+        //   margin-left:-100px;
+        text-indent: -999em;
+        font-size: 0;
+      }
+      &-item{
+        min-width: 60px;
+        margin: 0;
+        height:42px;
+        &-link{
+          //display: inline-block;
+          //position: relative;
+          //text-indent: -999em;
+          //font-size: 0;
+
+          &.home {
+            text-indent: -999em;
+            font-size: 0;
+            height:auto;
+            margin-top:10px;
+          }
+          &.back{
+            //text-indent: -999em;
+            //font-size: 0;
+            //height:auto;
+            //margin-top:10px;
+          }
+
+        }
+
+
+
+      }
+    }
   }
 }
 
 
 // 780
-@media all and (max-width:780px) {
-  .layer-terminal-check-btn{
-    width:160px;
-    max-width:200px;
-    margin-left:-80px;
-    top:10px;
+@media screen and (max-width:780px) {
+  .lnb-top{
+    //top:-20px;
+    &-list{
+      border-bottom:0;
+      border:none;
+    }
+
+  }
+  .layer-terminal-check-btn.one{
+    //border:none;
+    //span{
+    //  display:none;
+    //}
   }
 
   .header{
-    width:70%;
-    padding-top: 136px;
+    width:80%;
+    padding-top: 66px;
     max-width:70%;
     min-width:260px;
 
@@ -51,7 +111,7 @@
     z-index:9999;
     &-heading{
       margin-bottom:36px;
-      font-size:2.125rem;
+      font-size:1.5rem;
       &-sub{
         display:block;
         margin-top:10px;
@@ -65,7 +125,7 @@
       margin-bottom:18px;
     }
     &-link{
-      font-size:1.125em;
+      font-size:1em;
     }
   }
   // mobile gnb...
@@ -142,6 +202,32 @@
       top:20px;
       right:15px;
       text-indent:-99999em;
+    }
+  }
+
+
+
+  .layer-terminal-check-btn{
+    position:static;
+    width:80%;
+    max-width:284px;
+    border:none;
+    padding: 14px 0;
+    font-size:1.125rem;
+
+  }
+
+
+  .en{
+    // location lnb
+    .location{
+      &-bar{
+        &-nav{
+          &-item {
+            float: none;
+          }
+        }
+      }
     }
   }
 }

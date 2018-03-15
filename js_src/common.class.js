@@ -30,12 +30,19 @@ $(function(){
           $('html').addClass('safari');
         }
 
-      }
-
-      if(ua.toLowerCase().indexOf('firefox') != -1){
+      } else if(ua.toLowerCase().indexOf('firefox') != -1){
         $('html').addClass('firefox');
-      }
 
+      } else if(ua.toLowerCase().indexOf('msie 9.0') != -1){
+        $('html').addClass('ie ie9');
+
+      } else if(ua.toLowerCase().indexOf('msie 10.0') != -1){
+        $('html').addClass('ie ie10');
+
+      } else if(ua.toLowerCase().indexOf('rv:11.0') != -1){
+        $('html').addClass('ie ie11');
+
+      }
     };
 
     var checkOS = function(){
@@ -61,15 +68,15 @@ $(function(){
 
     var calcTabWidth = function( $currentTab, findClass ){
 
-      if ($('html').hasClass('mobile')) {
+      //if ($('html').hasClass('mobile')) {
 
-        tabWidth = 100 / Math.ceil( $currentTab.find(findClass).length / 2 );
+        //tabWidth = 100 / Math.ceil( $currentTab.find(findClass).length / 2 );
 
-      } else {
+      //} else {
 
         tabWidth = 100 / $currentTab.find(findClass).length;
 
-      }
+      //}
 
     };
 
@@ -179,7 +186,38 @@ $(function(){
       $currentPopup.removeClass('on');
       $nextPopup.addClass('on');
 
-    }
+    };
+
+    this.setPopupHeight = function(){
+
+      var winHeight = $(window).height();
+
+      if( $('.layer').hasClass('system') ){
+
+        var winHeightHalf = winHeight/2;
+
+        $('.layer.system').css({height:winHeightHalf});
+        $('.layer-article.systemico').css({height:(winHeightHalf - 160)});
+
+      } else {
+
+        $('.layer').each(function(){
+
+          if( $(this).height() >= winHeight ){
+
+            $(this).css({height:winHeight*0.96});
+
+          } else {
+
+            $(this).attr('style', '');
+
+          }
+
+        });
+
+      }
+
+    };
 
   };
 

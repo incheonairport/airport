@@ -1,17 +1,27 @@
 
 // 640
-@media all and (max-width:639px) {
+@media screen and (max-width:1024px) {
+
+  body{
+    min-width:inherit;
+    overflow-x:hidden;
+  }
+
   .main-visual-item {
-    background-position: 50% 50%;
-    background-size: 260%;
+    //background-position: 50% 50%;
+    //background-size: 260%;
   }
   .main-visual-search-weather{
-    left: -380px;
-    top:-66px;
+    left:20px;;
+    top:-57px;
+    transform:none;
+    padding:0;
+
     &:before{
       display:none;
     }
   }
+
   .main{
     &-visual{
       height:100vh;
@@ -36,19 +46,24 @@
 
             &.prev{
               left:15px;
-              top:-20px;
+              top:20px;
             }
 
             &.next{
               background-position:-42px 0;
               right:15px;
-              top:-20px;
+              top:20px;
             }
           }
         }
 
         &-paging{
-          display:none;
+          //display:none;
+          bottom:160px;
+
+          .paging-item{
+            margin-right:5px;
+          }
 
         }
 
@@ -78,19 +93,40 @@
               font-size:1.125rem!important;
               line-height:1.4;
               padding:0 30px;
+              margin-bottom:15px;
             }
 
             &:nth-child(3){
               font-size:1.125rem!important;
               line-height:1.4;
               padding:0 30px;
-              margin-top:15px;
+              //margin-top:15px;
               &:after{
                 display:none;
               }
 
             }
           }
+        }
+
+        &:nth-child(1){
+          //background:url();
+        }
+
+        &:nth-child(2){
+          background-image:url(/static/ap/images/bg_mobile_main_visual_02.jpg) !important;
+        }
+
+        &:nth-child(3){
+          background-image:url(/static/ap/images/bg_mobile_main_visual_03.jpg) !important;
+        }
+
+        &:nth-child(4){
+          background-image:url(/static/ap/images/bg_mobile_main_visual_04.jpg) !important;
+        }
+
+        &:nth-child(5){
+          background-image:url(/static/ap/images/bg_mobile_main_visual_05.jpg) !important;
         }
       }
 
@@ -167,7 +203,7 @@
         padding: 35px 15px;
         &-heading{
           font-size: 1.25rem;
-          color:#fff;
+          //color:#fff;
         }
       }
       &-block{
@@ -188,24 +224,20 @@
             margin-bottom:0;
           }
 
-          .link{
-            &-list{
-              &-sub{
-                padding-left:0;
-                &:last-child{}
-                &-item{
-                  &:first-child{
-                    width:auto;
-                    padding-left:0;
-
-                  }
-
-                }
-              }
-
-
-            }
-          }
+          //.link{
+          //  &-list{
+          //    &-sub{
+          //      padding-left:0;
+          //      &:last-child{}
+          //      &-item{
+          //        &:first-child{
+          //          width:auto;
+          //          padding-left:0;
+          //        }
+          //      }
+          //    }
+          //  }
+          //}
 
           .heading{
             &-group{

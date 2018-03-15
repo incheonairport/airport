@@ -1,15 +1,23 @@
 // 1560
-@media all and (max-width:1559px) {
+@media screen and (max-width:1559px) {
   // button position
   .font-normal{
     display:inline-block;
   }
   .btn-type-small{
     &.position{
-      margin:10px 0;
-      display:inline-block;
+      //margin:10px 0;
+      //display:inline-block;
+      display: table-cell;
+      top: 10px;
       position:relative;
-      top:0;
+    }
+  }
+  .icon-koreanair,.icon-asiana{
+    .icontxt-title{
+      &:before{
+        display:none;
+      }
     }
   }
 
@@ -46,7 +54,12 @@
 
 
 // 780
-@media all and (max-width:780px) {
+@media screen and (max-width:780px) {
+  .btn-type-small{
+    &.position{
+      display: block;
+    }
+  }
   // logo list
   .company-wrap{
     .company-list{
@@ -153,6 +166,33 @@
   // video box
   .video-box{
     height:188px;
+  }
+
+  .detail-column{
+    &.col-2{
+      .detail-table{
+        width:100%;
+        float:none;
+        &.w60{
+          width:100%;
+        }
+        &.w40{
+          width:100%;
+        }
+      }
+    }
+    .detail-table{
+      &-tit{
+        width:100%;
+        float:none;
+        margin-bottom:6px;
+      }
+      &-desc{
+        width:100%;
+        float:none;
+      }
+    }
+
   }
 
 }

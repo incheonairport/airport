@@ -1,7 +1,750 @@
 .ch{
 
   * {
-    font-family:dotum, sans-serif !important;
+    font-family: 'Noto Sans SC', roboto, spoqa ,sans-serif!important;
+  }
+  .logo-list{
+    @extend %clearfix;
+    &-item{
+      float: left;
+      font-size: 0.875rem;
+      text-indent: -99999em;
+      display: block;
+      background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+      color: #fff;
+      margin-left: 20px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &.asiana{
+        width: 93px;
+        background-position: 0 0;
+      }
+      &.jejuair{
+        width: 53px;
+        background-position: -108px 0;
+      }
+      &.jinair{
+        width: 67px;
+        background-position: -186px 0;
+      }
+      &.tway{
+        width: 30px;
+        background-position: -276px 0;
+      }
+      &.eastar{
+        width: 64px;
+        background-position: -334px 0;
+      }
+      &.airseoul{
+        width: 76px;
+        background-position: -423px 0;
+      }
+      &.koreanair{
+        width: 85px;
+        background-position: 0 -27px;
+      }
+      &.airfrance{
+        width: 92px;
+        background-position: -98px -28px;
+      }
+      &.klm{
+        width: 28px;
+        background-position: -208px -28px;
+      }
+      &.delta{
+        width: 70px;
+        background-position: -249px -27px;
+      }
+    }
   }
 
+}
+
+.en{
+
+  .tab-nav-list-link{
+    font-size:1.125rem;
+  }
+
+  .contents-visual{
+    .section-bg-contents2:last-child{
+      width:485px;
+      .logo-list{
+        .etc{
+         margin-left:0;
+        }
+      }
+    }
+  }
+
+  .search-airline-name-btn{
+    font-size:1.125rem;
+  }
+
+
+
+  .bussearch .search-area-btn{
+    font-size:1.125rem;
+  }
+
+  .gnb.bg .header-search-item.gnb-search{
+    width:83px;
+
+    &.on{
+      width:350px;
+    }
+  }
+
+  .gnb.bg .header-search{
+    padding-right:90px;
+  }
+
+  .step2-list {
+    &.col-4 {
+      .step2-list-item {
+        min-height: 570px;
+      }
+      &.white{
+        .step2-list-item {
+          min-height: 316px;
+        }
+      }
+    }
+
+    &.col-6 {
+      &.white{
+        .step2-list-item {
+          min-height: 320px;
+        }
+      }
+    }
+
+    &.white{
+      .btn-type-small{
+        height: auto;
+        line-height: 1.4;
+        padding: 5px 30px 5px 15px;
+      }
+    }
+  }
+
+  .layer{
+    &-article{
+      margin-bottom:20px;
+      position: relative;
+      @extend %clearfix;
+      .textarea{
+        width: 100%;
+        height: 200px;
+        padding: 0 10px;
+        line-height: 1.7;
+        text-align: left;
+        border: 1px solid #d9d9d9;
+        box-sizing: border-box;
+        color: #666;
+        font-family: roboto, spoqa, sans-serif;
+      }
+    }
+
+    .inner-tab{
+      .btn-type-tab{
+        padding:0 20px;
+      }
+    }
+  }
+
+  .step-member{
+
+    width:100%;
+    height:59px;
+
+    background:url(/static/ap/images/spr_bg_step_member_en.png) no-repeat;
+
+    text-indent:-99999em;
+
+    &.step-2{
+      background-position:center 0;
+    }
+
+    &.step-4{
+      background-position:center -69px;
+    }
+
+    &.step-5{
+      background-position:center -138px;
+    }
+  }
+
+  .find-info{
+    &-item{
+      float:left;
+      position: relative;
+      line-height: 3;
+      &:first-child{
+        &:after{
+          top: 14px;
+        }
+      }
+    }
+  }
+
+  .sign-in{
+
+    &-btn{
+      width: 190px;
+      height: 40px;
+      background-color: #323648;
+      color: white;
+      border: 0;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: 13px;
+      margin-top: 0;
+      margin-right: 4px;
+      box-sizing: border-box;
+      position: relative;
+      text-align: left;
+      padding-left: 19px;
+      &:after{
+        content: '';
+        display: block;
+        width: 8px;
+        height: 12px;
+        background: url(/static/ap/images/spr_ico_global.png) no-repeat -129px -64px;
+        position: absolute;
+        top: 14px;
+        right: 17px;
+      }
+    }
+  }
+
+  .f-spoqa{
+    font-family: roboto, spoqa, sans-serif;
+  }
+
+  .logo-list{
+    @extend %clearfix;
+    &-item{
+      float: left;
+      font-size: 0.875rem;
+      text-indent: -99999em;
+      display: block;
+      background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+      color: #fff;
+      margin-left: 20px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &.asiana{
+        width: 93px;
+        background-position: 0 0;
+      }
+      &.jejuair{
+        width: 53px;
+        background-position: -108px 0;
+      }
+      &.jinair{
+        width: 67px;
+        background-position: -186px 0;
+      }
+      &.tway{
+        width: 30px;
+        background-position: -276px 0;
+      }
+      &.eastar{
+        width: 64px;
+        background-position: -334px 0;
+      }
+      &.airseoul{
+        width: 76px;
+        background-position: -423px 0;
+      }
+      &.koreanair{
+        width: 85px;
+        background-position: 0 -27px;
+      }
+      &.airfrance{
+        width: 92px;
+        background-position: -98px -28px;
+      }
+      &.klm{
+        width: 28px;
+        background-position: -208px -28px;
+      }
+      &.delta{
+        width: 70px;
+        background-position: -249px -27px;
+      }
+      &.etc{
+        background: none;
+        text-indent: 0;
+        margin-top: 3px;
+      }
+    }
+  }
+
+  .search-flight-search-btn.ico:after {
+    right: 77px;
+    top: -2px;
+  }
+
+  .search-flight-detail-option input[type="radio"].radio+.search-option-btn {
+    min-width: 58px;
+    text-align: center;
+    padding: 0 6px;
+  }
+
+  .global-search{
+
+    &-category{
+      &-item{
+        padding:0;
+      }
+    }
+
+    &-result{
+      width: 100%;
+      margin-top: 30px;
+      text-align: left;
+      border-top: 1px solid #d9d9d9;
+      .multi-col.line:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #d9d9d9;
+        position: absolute;
+        top: 0;
+        left: 80%;
+      }
+      &-total{
+        margin-top: 30px;
+        font-size: 1.25rem;
+      }
+      &-box{
+        margin: 5px 0 30px;
+        // border:1px solid #d9d9d9;
+        position: relative;
+        &-title{
+          font-size: 1.25rem;
+          font-weight: 800;
+          padding: 20px 30px;
+          border-bottom:1px solid #d9d9d9;
+        }
+        &-quick{
+          position: absolute;
+          top:15px;
+          right:20px;
+          &-list{
+            @extend %clearfix;
+            .box-quick{
+              &-title{
+
+                color: #666;
+                font-size: 1rem;
+                float: left;
+                margin-top: 8px;
+                margin-right: 10px;
+              }
+              &-item{
+                float: left;
+                .btn-type-small{
+                  font-size: 0.875rem;
+                  min-width: 95px;
+                  margin-left: 10px;
+                }
+              }
+            }
+          }
+        }
+        &-ico{
+          display: inline-block;
+          position: relative;
+          text-indent: -999em;
+          padding-right: 15px;
+          &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: auto;
+            background: url(/static/ap/images/spr_ico_search_result_box.png) no-repeat;
+          }
+          &.map{
+            &:before{
+              background-position: -10px -10px;
+              width: 24px;
+              height: 24px;
+            }
+          }
+          &.link{
+            &:before{
+              background-position: -44px -10px;
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+        .list{
+          @extend %clearfix;
+          padding: 20px 30px;
+          &-item{
+            width: 33.333%;
+            float: left;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            em{
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+
+
+      .result-category{
+        padding-top: 30px;
+        &-article{
+          border-bottom: 1px solid #d9d9d9;
+          position: relative;
+          &-more{
+            position: absolute;
+            top: 37px;
+            right: 0;
+            font-size: 1rem;
+            display: inline-block;
+            padding-right:30px;
+            &:after{
+              content: '';
+              display:inline-block;
+              position: relative;
+              top: 0;
+              right:-10px;
+              left: auto;
+              bottom: 0;
+              margin: auto;
+              background: url(/static/ap/images/ico_arrow_result_category_btn.png) no-repeat;
+              width: 7px;
+              height: 13px;
+            }
+          }
+          .not-find{
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #d9d9d9;
+          }
+        }
+        &-title {
+          padding: 30px 45px  25px;
+          font-size: 1.25rem;
+          font-weight: 800;
+          &:before{
+            content: '';
+            display: block;
+            margin: 0 auto;
+            position: absolute;
+            top: 33px;
+            left: 10px;
+            right: auto;
+            bottom: 0;
+            background: url(/static/ap/images/spr_ico_global_search_category.png) no-repeat;
+          }
+          &.search-all {
+            &:before {
+              background-position: -21px -12px;
+              width: 22px;
+              height: 22px;
+            }
+          }
+          &.search-start {
+            &:before {
+              background-position: -64px -18px;
+              width: 24px;
+              height: 10px;
+            }
+          }
+          &.search-arrive {
+            &:before {
+              background-position: -110px -15px;
+              width: 22px;
+              height: 15px;
+            }
+          }
+          &.search-transfer {
+            &:before {
+              background-position: -158px -13px;
+              width: 16px;
+              height: 19px;
+            }
+          }
+          &.search-traffic {
+            &:before {
+              background-position: -194px -12px;
+              width: 22px;
+              height: 22px;
+              top: 30px;
+            }
+          }
+          &.search-shopping {
+            &:before {
+              background-position: -235px -12px;
+              width: 22px;
+              height: 22px;
+              top: 30px;
+            }
+          }
+          &.search-service {
+            &:before {
+              background-position: -315px -12px;
+              width: 30px;
+              height: 23px;
+              top: 30px;
+            }
+          }
+          &.search-map {
+            &:before {
+              background-position: -272px -11px;
+              width: 27px;
+              height: 24px;
+              top: 29px;
+            }
+          }
+          &.search-cs{
+            &:before{
+              background-position: -361px -12px;
+              width: 22px;
+              height: 22px;
+              top: 30px;
+            }
+          }
+          &.search-co{
+            &:before{
+              background-position:-21px -52px;
+              width: 22px;
+              height:23px;
+              top:30px;
+            }
+          }
+          &.search-cyber{
+            &:before{
+              background-position:-64px -52px;
+              width: 31px;
+              height:23px;
+              top:30px;
+            }
+          }
+          &.search-client{
+            &:before{
+              background-position:-105px -49px;
+              width: 30px;
+              height:24px;
+              top:30px;
+            }
+          }
+          &.search-business{
+            &:before{
+              background-position:-155px -51px;
+              width: 26px;
+              height:20px;
+              top:30px;
+            }
+          }
+          &.search-support{
+            &:before{
+              background-position:-193px -51px;
+              width: 23px;
+              height:21px;
+              top:30px;
+            }
+          }
+          &.search-recruit{
+            &:before{
+              background-position: -232px -47px;
+              width: 26px;
+              height: 22px;
+              top:30px;
+            }
+          }
+        }
+        .table.vt.borad-view{
+          border-top: 1px solid #d9d9d9;
+          border-bottom:1px solid #d9d9d9;
+          &+.table.vt.borad-view{
+            border-top: none;
+            border-bottom:none;
+          }
+          .reply-box{
+            padding: 20px 40px;
+            margin-bottom: 0;
+            border: none;
+            background: #fff;
+            .reply-head{
+              margin:10px 0 0 0;
+            }
+            .location-list{
+              @extend %clearfix;
+              &-item{
+                float: left;
+                display: inline-block;
+                position: relative;
+                padding-right: 20px;
+                font-size: 0.875rem;
+                &:after{
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  right:6px;
+                  left: auto;
+                  bottom: 0;
+                  margin: auto;
+                  background: url(/static/ap/images/ico_arrow_search_location_list.png) no-repeat;
+                  width: 5px;
+                  height: 9px;
+                }
+                &:last-child{
+                  &:after{
+                    background: none;
+                  }
+                }
+              }
+            }
+            .reply-body{
+              &-desc{
+                margin-bottom:10px;
+                font-size: 1.25rem;
+              }
+              &-txt{
+                font-size: 1rem;
+                line-height: 1.7;
+              }
+              .thum{
+                width: 103px;
+                height: 103px;
+                border: 1px solid #d9d9d9;
+                text-align: center;
+                float: left;
+                margin-right: 20px;
+                &.error{
+                  display: none;
+                }
+              }
+            }
+            .view-file{
+              border: none;
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+    }
+
+    &-research{
+      position:absolute;
+      top:15px;
+      right:-205px;
+    }
+  }
+
+  .global-search-area-field-btn{
+    font-size:1rem;
+    &:after{
+      top: 1px;
+      right: 91px;
+    }
+  }
+
+  /*footer*/
+  .footer{
+    &-call {
+      margin: 20px 0 15px;
+    }
+    &-contact{
+      &-item{
+        display: block;
+        &:before{
+          width:0;
+          margin-right:0;
+        }
+      }
+    }
+  }
+
+}
+
+.ja{
+  * {
+    font-family: 'Noto Sans JP', roboto, spoqa, sans-serif!important;
+  }
+
+
+  .boxmodel-list-head.small{
+    font-size:1.25rem;
+  }
+
+  .logo-list{
+    @extend %clearfix;
+    &-item{
+      float: left;
+      font-size: 0.875rem;
+      text-indent: -99999em;
+      display: block;
+      background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+      color: #fff;
+      margin-left: 20px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &.asiana{
+        width: 93px;
+        background-position: 0 0;
+      }
+      &.jejuair{
+        width: 53px;
+        background-position: -108px 0;
+      }
+      &.jinair{
+        width: 67px;
+        background-position: -186px 0;
+      }
+      &.tway{
+        width: 30px;
+        background-position: -276px 0;
+      }
+      &.eastar{
+        width: 64px;
+        background-position: -334px 0;
+      }
+      &.airseoul{
+        width: 76px;
+        background-position: -423px 0;
+      }
+      &.koreanair{
+        width: 85px;
+        background-position: 0 -27px;
+      }
+      &.airfrance{
+        width: 92px;
+        background-position: -98px -28px;
+      }
+      &.klm{
+        width: 28px;
+        background-position: -208px -28px;
+      }
+      &.delta{
+        width: 70px;
+        background-position: -249px -27px;
+      }
+    }
+  }
+
+
+  // 테이블 조절 ( 임시 180114 )
+  .table{
+    &.vt, &.vt-dark, &.hr{
+      word-break:normal;
+    }
+  }
 }

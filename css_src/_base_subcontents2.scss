@@ -9,7 +9,7 @@
   }
   &-tit{
     position:absolute;
-    top:0px;
+    top:0;
     color:#fff;
     font-family: nanumsq, sans-serif;
     font-size:2.875rem;
@@ -204,13 +204,18 @@
   &.path-departure{
     background:url(/static/ap/images/bg_sub_visual_path_departure.jpg) center no-repeat;
   }
+  //주차안내
   &.bg7{
   background: url(/static/ap/images/bg_parking_info.jpg) center no-repeat;
   }
   &.bg8{
     background:url(/static/ap/images/bg_immigration_procedure.jpg) center no-repeat;
   }
-
+  //오시는길
+  &.direction{
+    background:url(/static/ap/images/bg_sub_layer_banner_bg_direction.jpg) no-repeat center;
+    background-size: cover;
+  }
 }
 
 
@@ -254,6 +259,41 @@
   &-list{
     @extend %clearfix;
     margin-top:34px;
+    &.col-multi{
+      .section-bg-list-item{
+        float:none;
+        width:570px;
+        margin:auto;
+        display:block;
+        @extend %clearfix;
+        .btn-type-small{
+          margin-top:20px
+        }
+        .section-bg-list-inner{
+          float:left;
+          width:50%;
+          position:relative;
+          &:before{
+            content: '';
+            display:block;
+            background:rgba(255,255,255,.5);
+            width:1px;
+            height:20px;
+            position:absolute;
+            top:0;
+            bottom:0;
+            margin:auto;
+
+          }
+
+          &:first-child{
+            &:before{
+              display:none;
+            }
+          }
+        }
+      }
+    }
     &.col-2{
       display: inline-block;
       .section-bg-list-item{
@@ -394,8 +434,13 @@
   display:inline-block;
   width:860px;
   margin:20px 0 0 40px;
+
+  &.tight{
+    margin-top:0;
+  }
+
   .top-notice-desc{
-    letter-spacing:-1px;
+    //letter-spacing:-1px;
     padding-top:10px;
     color:#fff;
     font-size:0.825rem;
@@ -408,6 +453,8 @@
       height: 12px;
     }
   }
+
+
   &:before{
     content: '';
     display: block;
@@ -699,6 +746,9 @@
         }
 
         &.img{
+          .boxmodel-btn-group{
+            margin-top: 72%;
+          }
           border:none;
           background-size:cover!important;
           &.leave{
@@ -1320,11 +1370,15 @@
   &-item{
     float: left;
     font-size: 0.875rem;
-    text-indent: -99999em;
+    //text-indent: -99999em;
     display: block;
-    background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+    //background: url(/static/ap/images/spr_departure_procedures_logo.png)no-repeat;
+    color: #fff;
     margin-left: 20px;
     &:first-child{
+      margin-left: 0;
+    }
+    /*&:first-child{
       margin-left: 0;
     }
     &.asiana{
@@ -1366,7 +1420,7 @@
     &.delta{
       width: 70px;
       background-position: -249px -27px;
-    }
+    }*/
   }
 }
 

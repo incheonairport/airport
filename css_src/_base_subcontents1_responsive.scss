@@ -1,9 +1,10 @@
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   // layout
   .contents{
     width: 100%;
     min-width: 100%;
+
   }
 
 
@@ -34,11 +35,14 @@
 }
 
 // 640
-@media all and (max-width:639px) {
+@media screen and (max-width:1024px) {
 
   .location{
+    display:none;
     position: static;
-    padding:15px 15px 0;
+    padding:10px 15px;
+    height: auto;
+    border-bottom: 1px solid #d9d9d9;
     &-btn{
       display:none;
       position: static;
@@ -47,12 +51,23 @@
       position: static;
       &-nav{
         &-item {
+          display:none;
           padding-left: 20px;
           float: left;
           line-height:1.7;
           &-link{
             color: #666;
             font-size:0.75rem;
+          }
+          &:last-child{
+            display:block;
+            width:100%;
+            text-align: center;
+            padding: 0;
+            .location-bar-nav-item-link{
+              font-size:0.825rem;
+              font-weight:900;
+            }
           }
         }
       }
@@ -87,25 +102,30 @@
         text-align:center;
       }
       &-btn{
-        font-size:1.125rem;
-        width:50px;
+        width:100%!important;
         height:50px;
+        margin-top:10px;
+        padding:0;
         &.ico{
+          font-size:1rem;
           text-indent:0;
         }
         &.ico:after{
+          display:none;
           top:0;
           left:0;
           right:0;
           bottom:0;
           margin:auto;
         }
+
       }
       .search-flight-search-txt+.search-flight-search-btn{
         width:100%;
         font-size:1.125rem;
         padding:0;
         text-indent:0;
+        margin-top:0;
         &.ico{
 
         }
@@ -126,8 +146,8 @@
         & + .search-option-btn{
           width:50%;
           text-align:center;
-          height: 50px;
-          line-height: 50px;
+          height: 40px;
+          line-height: 40px;
         }
       }
     }
@@ -135,41 +155,53 @@
       height: auto;
       float: none;
       &-article{
-        width: 100%;
+        width: 50%;
         padding:0 10px;
         border-bottom:1px solid #d9d9d9;
-        border-right:0;
-        height:50px;
-        line-height:50px;
+        //border-right:0;
+        height:40px;
+        line-height:40px;
         &:nth-child(4n){
           border-right:0;
         }
+        &.double{
+          .search-flight-detail-select-article{
+            width:50%;
+            &:last-child{
+              border-right:0;
+              border-left:0;
+            }
+          }
+          .dash{
+            display:none;
+          }
+        }
       }
       &-airplane{
-        height:50px;
-        line-height:50px;
-        width:100%;
+        height:40px;
+        line-height:40px;
+        width:calc(100% - 40px);
       }
       &-btn{
-        width:100%;
-        height:50px;
+        width:40px;
+        height:40px;
         &:after{
-          display:none;
+          //display:none;
         }
         &:before{
-          content:'검색';
-          display: block;
-          width:100%;
-          height:50px;
-          color:#fff;
-          font-size:1.125rem;
-          font-weight:700;
-          text-align: center;
-          text-indent:14px;
-          line-height:50px;
-          position:absolute;
-          top:0;
-          left:0;
+          //
+          //display: block;
+          //width:100%;
+          //height:50px;
+          //color:#fff;
+          //font-size:1.125rem;
+          //font-weight:700;
+          //text-align: center;
+          //text-indent:14px;
+          //line-height:50px;
+          //position:absolute;
+          //top:0;
+          //left:0;
         }
       }
     }
@@ -190,7 +222,7 @@
   .map-departure-congestion01{
     height:240px;
     .map-absolute-area{
-      width: 268px;
+      width: 256px;
       height: 184px;
       background-size:contain;
     }
@@ -199,43 +231,90 @@
   .map-departure-congestion02{
     height:240px;
     & .map-absolute-area{
-      width: 268px;
+      width: 256px;
       height: 184px;
       background-size:contain;
     }
   }
   // 팝업 지도 기능 포인터
   .congestion{
-    &-mark1{
-      top: 87px;
-      left: 55px;
+    &-mark1-1{
+      position: absolute;
+      top: 178px;
+      left: 322px;
     }
-    &-mark2{
-      top: 75px;
-      left: 83px;
+    &-mark1-2{
+      position: absolute;
+      top: 82px;
+      left: 158px;
+      .congestion-mark-number{
+        left: 31px;
+        top: 9px;
+      }
     }
-    &-mark3{
-      top: 74px;
-      right: 83px;
+    &-mark1-3{
+      position: absolute;
+      top: 72px;
+      left: 133px;
     }
-    &-mark4{
-      top: 87px;
-      right: 54px;
+    &-mark1-4{
+      position: absolute;
+      top: 72px;
+      left: 77px;
     }
-    &-mark5{
-      top: 91px;
-      left: 79px;
+    &-mark1-5{
+      position: absolute;
+      top: 84px;
+      left: 45px;
+      .congestion-mark-number{
+        right: -20px;
+        top: 9px;
+      }
+
     }
-    &-mark6{
-      top: 91px;
-      right: 79px;
+    &-mark1-6{
+      position: absolute;
+      top: 179px;
+      right: 161px;
     }
+
+    &-mark2-1{
+      position: absolute;
+      top: 72px;
+      left: 138px;
+    }
+
+    &-mark2-2{
+      position: absolute;
+      top: 72px;
+      left: 70px;
+    }
+
+    &-mark{
+      &-number{
+        position:absolute;
+        border: 1px solid #7d7d7d;
+        height:20px;
+        &:after{
+          display:none;
+        }
+        &:before{
+          display:none;
+        }
+      }
+
+    }
+
     &-mark{
       &-color{
-        width: 14px;
-        height: 14px;
+        position:absolute;
+        width: 14px!important;
+        height: 14px!important;
         font-size:0.75rem;
-        line-height:14px;
+        line-height:14px!important;
+        left: 19px;
+        right: 0;
+        bottom: -42px;
       }
     }
   }
@@ -352,6 +431,126 @@
 
   // layer popup
   .layer{
+    padding:15px;
+    &.find-my-terminal{
+      br{
+        display:none;
+      }
+      min-width:100%;
+      border: none;
+      padding: 40px 15px 0;
+      .layer-area{
+        text-align:center;
+        padding:0;
+      }
+      .layer-title{
+        font-size:1.5rem;
+        &:before{
+          margin:0 auto 15px;
+        }
+      }
+      .layer-article{
+        margin-bottom:0;
+      }
+
+      .layer-check{
+        width:100%;
+        height:50px;
+        font-size: 1rem;
+        line-height:50px;
+      }
+      .layer-search{
+        width:100%;
+        height:50px;
+        line-height:50px;
+        border: 0;
+        font-size: 1rem;
+      }
+      .layer-inputbox{
+        display:inline-block;
+        width:100%;
+        &-desc{
+          color:#fff;
+          margin:10px 0;
+        }
+      }
+      .layer-inputbox-btn{
+        padding:16px;
+        margin-bottom:10px;
+        display:block;
+        width:100%;
+        font-size:1rem;
+      }
+
+    }
+    &.system{
+      min-width:100%;
+      border: none;
+      padding: 40px 15px 0;
+      br{
+        display:none;
+      }
+
+      .layer-system-list{
+        &:last-child{
+          margin:0 auto 15px auto;
+        }
+        &-tit{
+
+        }
+        &-desc{
+          color:#fff;
+          text-align:left;
+          line-height:1.7;
+        }
+      }
+
+      .layer-system-desc{
+        color:#fff;
+        margin-bottom:20px;
+        &.point{
+          margin-bottom:20px;
+        }
+        &.systemico:after{
+          margin:20px auto 50px;
+        }
+      }
+      .layer-title{
+        font-size:1.5rem;
+        &:after{
+          margin: 15px auto 15px;
+        }
+      }
+
+      .btn-group{
+        margin-top:20px;
+      }
+      .layer-inputbox-btn{
+        min-width:100%;
+        margin-left:0;
+        padding:10px;
+        border-radius:50px;
+        margin-top:10px;
+        font-size:1rem;
+        &:first-child{
+          margin-left:0;
+        }
+
+        &:after{
+          content:'';
+          display:block;
+          width:6px;
+          height:10px;
+          background:url(/static/ap/images/ico_system_arrow.png ) center no-repeat;
+          position:absolute;
+          right:10px;
+          top:0;
+          bottom:0;
+          margin:auto;
+        }
+      }
+
+    }
     .list1-item{
       br{
         display:none;
@@ -371,14 +570,31 @@
     &.size{
       width: 100%;
     }
+    &.capchasize{
+      width:100%;
+    }
     &.md-terminal{
       width: 100%;
     }
     &.address-layer{
       width: 100%;
+      &.size{
+        width: 100%;
+      }
+      &.max-size{
+        width: 100%;
+        &.max-height{
+          max-height:inherit;
+        }
+      }
     }
+
     &.login-area{
       width: 100%;
+    }
+    &.questionnaire{
+      width: 100%;
+
     }
     &-area{
       padding: 15px;
@@ -545,14 +761,18 @@
 
   // contents visual
   .contents-visual{
+    &-head{
+      font-size:1.125rem;
+      margin-bottom:20px
+    }
     .inner-section{
       padding:0;
     }
     &.departure-procedures{
-      padding:60px 15px;
+      padding:30px 15px;
     }
     &.airline-city{
-      padding: 60px 0 0;
+      padding: 30px 0 0;
     }
     .sub-top-descbox{
       padding-bottom:30px;
@@ -560,16 +780,19 @@
     min-height:inherit;
     height:auto;
     //height:240px;
-    padding: 60px 0 0;
+    padding: 30px 0 0;
     background-size: cover!important;
     &.search-airline{
-      padding:60px 0 0;
+      padding:30px 0 0;
     }
     &.facilities{
-      padding:60px 0;
+      padding:30px 0 0;
       .search-airline-name{
        margin-bottom:30px;
       }
+    }
+    &.path-departure{
+      padding:30px 0 0;
     }
   }
   .congestion{
@@ -577,9 +800,10 @@
     padding-left:0;
     float: none;
     position:static;
-    margin-bottom:40px;
+    margin-bottom:15px;
     &-title{
       padding:0 15px;
+      font-size:1.125rem;
       br{
         display:none
       }
@@ -594,7 +818,7 @@
     &-main{
       width:100%;
       height:auto;
-      margin-bottom:30px;
+      margin-bottom:15px;
       padding:0 30px;
       &-list{
         width:100%;
@@ -602,9 +826,11 @@
           width:50%;
           &-link{
             width:100%;
+            height:40px;
+            line-height:40px;
             display: inline-block;
             border: 1px solid rgba(255, 255, 255, .5);
-            font-size: 1.125rem;
+            font-size: 1rem;
           }
         }
       }
@@ -613,12 +839,17 @@
     &-sub{
       position: static;
       &-list{
+        display:flex;
         &-item {
           float: left;
           width:50%;
+          height:auto;
           &-link{
             font-size: 	1rem;
             letter-spacing:-1px;
+            line-height:1.4;
+            padding:15px;
+
           }
           &+.tab-sub-list-item{
             margin-left:0;
@@ -667,8 +898,9 @@
       padding:0 15px;
       &-title{
         margin-bottom: 10px;
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 400;
+        padding-top:10px;
       }
     }
     &-name{
@@ -681,21 +913,44 @@
         border:1px solid #d9d9d9
       }
       &-txt{
-        width:100%;
-        height: 50px;
+        width:calc(100% - 40px);
+        height: 40px;
         font-size: 1rem;
       }
       &-btn{
-        width:100%;
-        height:50px;
+        width:40px;
+        height:40px;
         padding-left:0;
         font-size:1.125rem;
         line-height:50px;
         &.ico{
+          text-indent:-999em;
 
         }
         &.ico:after{
-          display:none;
+          left:0;
+          right:0;
+
+        }
+      }
+    }
+  }
+
+  .contents-visual.search-airline{
+    .search-airline{
+      &-name{
+
+        &-option{
+          width:40%;
+          height: 40px;
+         }
+        &-txt{
+          width:calc(60% - 40px);
+          height: 40px;
+        }
+        &-btn{
+          width:40px;
+          height:40px;
         }
       }
     }
@@ -750,7 +1005,7 @@
       }
     }
     &-town {
-      padding:20px 1;
+      padding:20px;
       &-item {
         text-align:left;
         padding-right:0;
@@ -761,6 +1016,341 @@
       }
     }
   }
+
+  .question{
+
+    &-wrap{
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      &.last-question{
+        border: 0;
+        margin-bottom: 0;
+      }
+    }
+    &-num{
+      font-size: 0.825rem;
+      padding: 10px ;
+      margin-right:0;
+      float:none;
+      margin-bottom:10px;
+    }
+    &-txt{
+      line-height:1.4;
+      float:none;
+    }
+    &-length{
+      font-size:0.825rem;
+    }
+  }
+
+  .site-map{
+    &-heading{
+      font-size: 1.125rem;
+      padding-bottom:10px;
+    }
+    &-list{
+      &-depth1{
+        &-item{
+          width:100%;
+          float:none;
+          margin-right:0;
+          margin-bottom:20px;
+          border: 1px solid #d9d9d9;
+          padding: 20px;
+        }
+      }
+      &-depth2{
+        padding-top: 10px;
+        border:none;
+        &-item{
+          border-bottom:1px solid #d9d9d9;
+        }
+      }
+    }
+  }
+
+  .global-search{
+    border-bottom:0;
+    &-area{
+      &-field{
+        width:100%;
+        &-txt{
+          width:calc(100% - 70px);
+          height: 50px;
+          padding: 0 15px;
+          border:1px solid #d9d9d9;
+          font-size: 1rem;
+        }
+        &-btn{
+          width:70px;
+          height: 50px;
+          padding-left: 30px;
+          line-height: 50px;
+
+          &.ico{
+            text-indent:-999em;
+            padding:0;
+            &:after{
+              //display:none;
+              top:0;
+              right:0;
+              left:0;
+              bottom:0;
+              margin:auto;
+            }
+          }
+        }
+        &-checkbox{
+          display:block;
+          position:static;
+          float: none;
+          margin-top:10px;
+        }
+      }
+    }
+    &-option{
+
+    }
+    &-tag{
+      margin:10px 0;
+      &-item{
+        margin-left:15px;
+        &-link{
+          font-size:0.825rem;
+        }
+      }
+    }
+    .tab-nav{
+    }
+    &-word {
+      //width: 170px;
+      padding:10px 0;
+      background: #fff;
+      //border: 1px solid #d9d9d9;
+      //float:right;
+      //margin-top:65px;
+
+      &-title{
+        font-family: nanumsq, sans-serif;
+        font-weight: 700;
+        font-size:1.25rem;
+        margin-bottom: 20px;
+      }
+      &-list{
+        clear:both;
+        overflow:hidden;
+        &-item{
+          float:left;
+          width:50%;
+          &-link{
+          }
+        }
+      }
+      .word-list-btn{
+        position: absolute;
+        top:30px;
+        right:20px;
+        &-link{
+          width: 20px;
+        }
+      }
+    }
+    &-result-tab{
+      display: block;
+      text-align: center;
+    }
+    &-category{
+
+
+      width:100%;
+      &-item{
+        width:33.33%;
+        &+.global-search-category-item{
+          border-left:none;
+        }
+        &:nth-child(4),:nth-child(7){
+
+        }
+        &-link{
+          width: 100%;
+          padding:0;
+          font-size: 0.825rem;
+          line-height: 1.8;
+          &:before{
+            display:none;
+          }
+        }
+
+      }
+      &.co{
+        .global-search-category-item-link{
+          width:150px ;
+        }
+      }
+    }
+
+    &-result{
+      width: 100%;
+      margin-top: 10px;
+      .multi-col.line:before {
+        display:none;
+      }
+      &-total{
+        margin-top: 15px;
+        font-size: 1rem;
+      }
+
+      &-box{
+        margin:0;
+        position: relative;
+        &-title{
+          font-size: 1.125rem;
+          padding: 20px 0;
+          border-bottom:1px solid #d9d9d9;
+        }
+        &-quick{
+          position: static;
+          &-list{
+
+            .box-quick{
+              &-title{
+                color: #666;
+                font-size: 1rem;
+                float: none;
+                text-align:center;
+                margin-top: 10px;
+                margin-bottom:10px;
+                margin-right:0;
+              }
+              &-item{
+                width: calc(33.33% - 10px);
+                margin-right: 10px;
+                .btn-type-small{
+                  font-size:1rem;
+                  margin-left:0;
+                }
+              }
+            }
+          }
+        }
+
+        .list{
+          padding:20px 0;
+          &-item{
+            width:100%;
+            float:none;
+          }
+        }
+      }
+
+
+      .result-category{
+        padding-top:0;
+        &-article{
+          &-more{
+          }
+          .not-find{
+          }
+        }
+        &-title {
+          font-size: 1.125rem;
+        }
+        .table.vt.borad-view{
+          &+.table.vt.borad-view{
+
+          }
+          .reply-box{
+            padding:10px 0 60px 0;
+            .reply-head{
+
+            }
+            .reply-body{
+              &-desc{
+                font-size: 1.125rem;
+              }
+              &-txt{
+                font-size: 1rem;
+              }
+              .thum{
+                width: 100%;
+                height: auto;
+                float: none;
+                margin-right:0;
+                .imgbox-extend{
+                  height:auto;
+                  img{
+                    width:100%;
+                    margin-bottom:10px;
+                  }
+                }
+
+              }
+            }
+            .view-file{
+              border: none;
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+    }
+
+    &-research{
+      position:static;
+      top:15px;
+      right:-205px;
+      .checkbox-label{
+        margin-top:10px;
+      }
+    }
+  }
+
+  .tab-sub.col-3{
+    .tab-sub-list-item{
+      width:33.33%;
+      &:first-child{
+        margin-left:0;
+      }
+    }
+
+  }
+
+
+  .digr-incheon-airport-glance01{
+    height: 194px;
+    background-size:contain;
+  }
+
+  .digr-incheon-airport-glance02 {
+    height: 194px;
+    background-size:contain;
+  }
+
+  .layer{
+    .tab-area-heading{
+      width:50%!important;
+    }
+    &:nth-child(3){
+
+    }
+    .tab-area-heading+.tab-area-content+.tab-area-heading{
+      left:50%!important;
+    }
+  }
+  .layer.size.max-height {
+
+    max-height: 100%;
+    img {
+      width:100%;
+    }
+  }
+
+  .en{
+    .global-search-category-item{
+      height:70px;
+    }
+  }
+
 
 }
 

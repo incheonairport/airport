@@ -3,6 +3,7 @@
   position:relative;
   background-repeat:no-repeat;
   background-position:center top;
+  background-size:cover;
 
   &.auto-height{
     height:auto;
@@ -11,6 +12,55 @@
   //&.bg-fixed{
   //  background-attachment:fixed;
   //}
+}
+
+.top-big-popup{
+  background:url(/static/ap/images/bg_top_big_popup.jpg) no-repeat center top;
+
+  &.none{
+    display:none;
+  }
+
+  &-text{
+    width:661px;
+    height:432px;
+    background:url(/static/ap/images/bg_top_big_popup_text.png) no-repeat;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -60%);
+    text-indent:-99999em;
+  }
+
+  &-close{
+    display:block;
+    width:90px;
+    height:90px;
+    border:0;
+    background:url(/static/ap/images/bg_top_big_popup_arrow.png) no-repeat;
+    position:absolute;
+    top:67%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-indent:-99999em;
+
+    &:after{
+      content:"";
+      display:block;
+      width:43px;
+      height:65px;
+      background:url(/static/ap/images/scrolloff.gif) no-repeat;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+    }
+  }
+
+}
+
+.full-page-wrapper{
+  overflow:hidden;
 }
 
 .main{
@@ -48,10 +98,24 @@
       top:0;
       left:0;
 
-      background-position:center top;
+      background-position:center;
+      background-size:cover;
+
+      &.text-ir{
+        text-indent:-99999em;
+      }
 
       .visual{
         &-text{
+          &.text-right{
+            //position:absolute;
+            right:270px;
+          }
+
+          &.text-left{
+            //position:absolute;
+            left:270px;
+          }
 
           &-box{
             text-align:center;
@@ -109,25 +173,26 @@
             font-family:nanumsq, sans-serif;
             font-weight:300;
             opacity:0;
+            margin-bottom:20px;
           }
 
           &:nth-child(3){
-            margin-top:30px;
-            padding-top:30px;
+            //margin-top:30px;
+            //padding-top:30px;
             position:relative;
             opacity:0;
-
-            &:after{
-              content:"";
-              display:block;
-              width:50px;
-              height:1px;
-              background:#fff;
-              position:absolute;
-              top:0;
-              left:50%;
-              transform:translateX(-50%);
-            }
+            //
+            //&:after{
+            //  content:"";
+            //  display:block;
+            //  width:50px;
+            //  height:1px;
+            //  background:#fff;
+            //  position:absolute;
+            //  top:0;
+            //  left:50%;
+            //  transform:translateX(-50%);
+            //}
           }
           &:nth-child(4) {
             margin-top: 60px;
@@ -259,7 +324,7 @@
 
     &-search{
       width:100%;
-      height:230px;
+      height:160px;
       padding-top:33px;
       background:url(/static/ap/images/bg_main_flight_search.png) no-repeat;
 
@@ -270,25 +335,43 @@
       color:#fff;
       text-align:center;
 
+      //overflow:hidden;
+
       z-index:100;
 
       @extend %clearfix;
 
+      transition:all .3s ease-out;
+
+      &.on{
+        height:230px;
+
+        .airplane-info-more{
+          display:block;
+        }
+
+        .airplane-info-close{
+          display:block;
+        }
+      }
+
       &-inner{
         display:inline-block;
-        margin-right:100px;
+        width:882px;
+        @extend %clearfix;
       }
 
       &-title{
-        margin:52px 25px auto auto;
+        margin:43px 50px auto auto;
         font-size:1.75rem;
         font-weight:300;
         float:left;
+        cursor:pointer;
       }
 
       &-flight{
-        width:370px;
-        padding-top:45px;
+        width:520px;
+        padding-top:35px;
         float:left;
         position:relative;
 
@@ -297,7 +380,7 @@
 
           .area{
             &-tab{
-              width:183px;
+              width:257px;
               height:30px;
               padding-right:15px;
               border-bottom:1px solid #aec5fb;
@@ -345,7 +428,7 @@
 
                 &:before{
                   margin-right:5px;
-                  background-position:-51px -25px;
+                  background-position:-51px -23px;
                 }
               }
             }
@@ -353,7 +436,7 @@
             &-form{
               display:none;
               position:relative;
-              padding-bottom:15px;
+              padding-bottom:5px;
               border-bottom:1px solid #fff;
 
               &.on{
@@ -364,6 +447,7 @@
                 display:block;
                 width:100%;
                 height:40px;
+                line-height:40px;
                 background:transparent;
               //url(/static/ap/images/bg_search_flight_place_holder.png) no-repeat 20px center;
                 border:none;
@@ -396,7 +480,7 @@
 
                 position:absolute;
                 top:8px;
-                right:-30px;
+                right:0;
 
                 background:transparent url(/static/ap/images/ico_main_visual_search.png) no-repeat;
                 border:0;
@@ -411,10 +495,10 @@
 
       &-weather{
         position:absolute;
-        top:75px;
+        top:65px;
         left:50%;
-        transform:translateX(350px);
-        padding-left:45px;
+        transform:translateX(310px);
+        padding-left:40px;
 
         @extend %clearfix;
 
@@ -433,80 +517,112 @@
           content:"";
           display:block;
           width:1px;
-          height:72px;
+          height:30px;
           background:#fff;
           position:absolute;
-          top:-12px;
+          top:50%;
           left:0;
           opacity:0.2;
+          transform:translateY(-50%);
         }
       }
 
       &-desc{
-        margin-top:11px;
+        margin-top:100px;
         font-size:0.8125rem;
         color:#a0a5be;
         text-align:initial;
         position:relative;
+        clear:both;
 
         .airplane{
-          font-size:1.25rem;
+          font-size:0.8825rem;
           color:#fff;
+          margin-bottom:10px;
 
-          &-number{
+          &-terminal{
+            display:inline-block;
+            width:150px;
             color:#fff193;
           }
 
-          &-info{
-            font-size:1rem;
+          &-number{
+            display:inline-block;
+            width:200px;
             color:#fff;
-            margin-top:7px;
+          }
 
-            .situation-info {
-              width: 70px;
-              height: 28px;
-              margin: 0 auto;
-              line-height: 29px;
-              display: inline-block;
-              color: #fff;
-              font-size: 0.875rem;
-              border-radius: 5px;
-              text-align:center;
+          &-destination{
+            display:inline-block;
+            width:200px;
+            color:#fff;
 
-              &.delay,
-              &.type-red{
-                background: #d43e41;
-              }
-              &.boarding-on,
-              &.type-blue{
-                background: #42519e;
-              }
-              &.boarding-closing,
-              &.type-cyan{
-                background: #2c8179;
-              }
-              &.type-gray{
-                background: #999;
-              }
+            .city{
+              color:#ffae44;
+            }
+          }
 
+          .situation-info {
+            width: auto;
+            height: 21px;
+            padding:0 10px;
+            //margin-left:20px;
+            line-height: 21px;
+            display: inline-block;
+            color: #fff;
+            font-size: 0.875rem;
+            border-radius: 5px;
+            text-align:center;
+
+            &.delay,
+            &.type-red{
+              background: #d43e41;
+            }
+            &.boarding-on,
+            &.type-blue{
+              background: #42519e;
+            }
+            &.boarding-closing,
+            &.type-cyan{
+              background: #2c8179;
+            }
+            &.type-gray{
+              background: #999;
             }
 
-            .date{
-              margin-right:10px;
-            }
+          }
 
-            &-close{
-              display:block;
-              width:22px;
-              height:22px;
-              border:0;
-              background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
-              position:absolute;
-              top:15px;
-              right:0;
-              text-indent:-99999em;
-            }
+          .date{
+            display:inline-block;
+            //margin-left:128px;
+            width:130px;
+          }
 
+          &-info-more{
+            display:none;
+            //width:22px;
+            height:30px;
+            //padding-top:20px;
+            border:1px solid #fff193;
+            background:none;
+            position:absolute;
+            top:47px;
+            right:0;
+            font-size:0.875rem;
+            color:#fff193;
+            //text-indent:-99999em;
+          }
+
+          &-info-close{
+            display:none;
+            width:22px;
+            height:22px;
+            border:0;
+            background:url(/static/ap/images/ico_airplane_info_close.png) no-repeat;
+            position:absolute;
+            top:0;
+            right:0;
+            text-indent:-99999em;
           }
         }
       }
@@ -522,7 +638,7 @@
     transform:translate(-50%, -50%);
 
     &-heading{
-      color:#fff;
+      //color:#222;
       font-size:2.5rem;
       font-weight:300;
       text-align:center;
@@ -531,7 +647,7 @@
       position:relative;
 
       &.sub-script:after{
-        content:"Manual For Travellers";
+        content:"Manual For Passenger";
         display:block;
 
         width:100%;
@@ -572,8 +688,8 @@
 
         &-group{
           width:100%;
-          height:220px;
-          padding-top:90px;
+          height:200px;
+          padding-top:75px;
           text-align:center;
           font-family:nanumsq, sans-serif;
 
@@ -606,7 +722,7 @@
 
       .link-list{
         width:100%;
-        height:245px;
+        height:325px;
         padding:25px 20px;
         border:1px solid #dee3eb;
         border-top:0;
@@ -614,16 +730,17 @@
 
         &-item{
 
-          margin-bottom:12px;
+          margin-bottom:5px;
           position:relative;
 
           @extend %clearfix;
 
           &-title{
-            position:absolute;
-            top:0;
-            left:0;
+            //position:absolute;
+            //top:0;
+            //left:0;
 
+            margin-bottom:5px;
             font-family:nanumsq, sans-serif;
             font-size:1.125rem;
             font-weight:400;
@@ -633,16 +750,32 @@
         }
 
         &-sub{
-          padding-left:130px;
+          //padding-left:130px;
           float:left;
 
           @extend %clearfix;
 
           &-item{
             float:left;
+            margin-right:10px;
+            position:relative;
+            padding-left:7px;
 
             &:first-child{
-              width:130px;
+              //width:130px;
+            }
+
+            &:after{
+              content:"";
+              display:block;
+              width:2px;
+              height:2px;
+              border-radius:2px;
+              background:#222;
+              position:absolute;
+              top:50%;
+              left:0;
+              margin-top:-4px;
             }
           }
 
@@ -651,6 +784,11 @@
             color:#666;
             position:relative;
             top:-3px;
+
+            &:hover{
+              color:#439096;
+              border-bottom:1px solid #439096;
+            }
           }
         }
 
@@ -810,7 +948,17 @@
             }
 
           }
+          &.d-shopping{
 
+            &.t1:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat 0 0;
+            }
+
+            &.t2:before{
+              background:url(/static/ap/images/spr_ico_main_guide.png) no-repeat -140px 0;
+            }
+
+          }
         }
       }
 
@@ -823,6 +971,10 @@
     margin:0 auto;
     position:relative;
     overflow:hidden;
+
+    &-wrap{
+      position:relative;
+    }
 
     &-list{
       position:relative;

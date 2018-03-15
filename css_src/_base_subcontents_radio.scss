@@ -67,7 +67,7 @@
         background-position:-130px -293px;
         width: 27px;
         height: 27px;
-        top:0px;
+        top:0;
         left:0;
         right:auto;
         display: block;
@@ -96,6 +96,7 @@
   &:checked {
     &+label{
       color:#222;
+      line-height:30px;
       &.ico:after {
         background-position:-271px -293px;
       }
@@ -105,7 +106,7 @@
     height: 27px;
     padding:0 20px 0 40px;
     font-size: 1rem;
-    line-height:1.7;
+    line-height:30px;
     color: #666;
     &.ico{
       text-indent:0;
@@ -113,7 +114,7 @@
         background-position:-225px -293px;
         width: 27px;
         height: 27px;
-        top:0px;
+        top:0;
         left:0;
         right:auto;
         display: block;

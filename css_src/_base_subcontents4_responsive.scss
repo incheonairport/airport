@@ -1,5 +1,5 @@
 // 1024
-@media all and (max-width:1023px) {
+@media screen and (max-width:1024px) {
   // layout
   //.multi-col{
   //  &.double{
@@ -56,7 +56,7 @@
 }
 
 // 640
-@media all and (max-width:640px) {
+@media screen and (max-width:1024px) {
 
   .multi-col{
     min-width:100%;
@@ -117,15 +117,21 @@
       width:100%;
       height:auto;
       position: static;
+      background:none;
+      margin-bottom:10px;
+
     }
 
     &-head{
       width:100%;
       display: inline-block;
-      padding:15px;
+      padding:0;
       position: static;
       margin:0;
+
       &-title{
+        display:none;
+        color:#222;
         float: none;
         font-size: 1rem;
         margin-right:0;
@@ -236,15 +242,40 @@
       position:absolute;
       &.first{
         left:0;
+        &:after{
+          background-position:-118px -30px;
+          background-size: 250px 200px;
+          width: 10px;
+          height: 10px;
+        }
+
       }
       &.prev{
         left:30px;
+        &:after{
+          background-position:-134px -30px;
+          background-size: 250px 200px;
+          width: 6px;
+          height: 10px;
+        }
       }
       &.next{
         right:30px;
+        &:after{
+          background-position: -148px -30px;
+          background-size: 250px 200px;
+          width: 6px;
+          height: 10px;
+        }
       }
       &.last{
         right:0;
+        &:after{
+          background-position: -159px -30px;
+          background-size: 250px 200px;
+          width: 10px;
+          height: 10px;
+        }
       }
     }
     &-list{
@@ -294,7 +325,8 @@
     }
 
     .layer-article-input.search-address{
-      width: calc(100% - 50px);
+      width: 100%;
+      border-right:1px solid #d9d9d9;
     }
     .address-select {
       &-title {
@@ -385,14 +417,21 @@
             display: none;
           }
         }
+        &:after{
+          display:none;
+        }
       }
 
       &-link{
         width: 100%;
         height: 130px;
+        font-size:0.825rem;
         &:hover::after, &.on::after
         {
           display:none;
+        }
+        &:before{
+          margin: 0 auto 10px;
         }
       }
     }
@@ -518,7 +557,7 @@
       margin-bottom:10px;
       font-size:1.125rem;
       .big{
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
     }
     &-txt{
@@ -624,6 +663,11 @@
       width:100%;
       margin-top:20px
     }
+    &.direct-input{
+      width:100%;
+      height:50px;
+      margin-top:20px;
+    }
   }
   .user{
     &-input{
@@ -648,6 +692,10 @@
       .user-input-link{
         margin-top:10px;
       }
+      &-link{
+        height:40px;
+        line-height:40px;
+      }
     }
 
   }
@@ -665,12 +713,12 @@
     &.low{
       .timesetting-date-day,
       .timesetting-date-option{
-        width:calc(100% - 46px);
+        width:calc(100% - 50px);
         float:left;
       }
       .timesetting-date-calendar
       {
-        height:50px;
+        height:40px;
       }
     }
   }
@@ -688,8 +736,9 @@
   .search-phone{
     &-box{
       height:auto;
-      border: 1px solid #d9d9d9;
-      padding:0 15px 15px;
+      border:none;
+      padding:0;
+      background:none;
     }
 
     &-head{
@@ -707,6 +756,7 @@
       margin: 0 auto;
 
       &-label{
+        font-size:1.125rem;
         width:100%;
         display:block;
         float: none;
@@ -831,6 +881,7 @@
 
 
   //글작성 게시판 추가
+  //글작성 게시판 추가
   .table{
 
     &.hr.writing{
@@ -879,6 +930,54 @@
       }
     }
   }
+  //.table{
+  //
+  //  &.hr.writing{
+  //    border-top:1px solid #d9d9d9;
+  //    display:block;
+  //    thead,
+  //    tbody,
+  //    tr,
+  //    th,
+  //    td {
+  //      display:block;
+  //    }
+  //
+  //    tr:after{
+  //      content:'';
+  //      display:block;
+  //      clear:both;
+  //    }
+  //    th{
+  //      position:relative;
+  //
+  //      float:left;
+  //      width:100%;
+  //      border-right:1px solid #d9d9d9;
+  //      border-left:1px solid #d9d9d9;
+  //      border-bottom:1px solid #d9d9d9;
+  //      padding:10px;
+  //      text-align:center;
+  //
+  //    }
+  //    td{
+  //      position:relative;
+  //      border:none;
+  //      float:left;
+  //      width:100%;
+  //      text-align:center;
+  //      min-height:40px;
+  //      margin-bottom:20px;
+  //      vertical-align:middle;
+  //      padding:0;
+  //      height:auto;
+  //      line-height: 40px;
+  //      &.agreement-offer{
+  //        padding:25px 20px;
+  //      }
+  //    }
+  //  }
+  //}
 
   .font18{
     font-size:1rem;
@@ -901,6 +1000,7 @@
       margin-bottom: 30px;
       text-align: center;
       &-list{
+        width:100%;
         margin-bottom:30px;
         &-item{
           width:33.33%;
@@ -965,27 +1065,12 @@
 
   }
 
-  //.step-member{
-  //  &.step-1{
-  //    background-position:-346px 0;
-  //  }
-  //
-  //  &.step-2{
-  //    background-position:center -69px;
-  //  }
-  //
-  //  &.step-3{
-  //    background-position:center -138px;
-  //  }
-  //
-  //  &.step-4{
-  //    background-position:center -207px;
-  //  }
-  //
-  //  &.step-5{
-  //    background-position:center -276px;
-  //  }
-  //}
+  .step-member{
+    width:100%;
+    height:auto;
+    border-top:1px solid #d9d9d9;
+    background:none;
+  }
 
 }
 
